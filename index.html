@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لیگ گداهای اسرسی - فصل دوم</title>
+    <title>لیگ گداهای استرسی - فصل دوم</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap');
 
@@ -110,7 +110,7 @@
 
         /* بخش مسابقات */
         .hero-banner {
-            max-width: 650px;
+            max-width: 680px;
             margin: 0 auto;
         }
 
@@ -146,22 +146,25 @@
             padding-bottom: 6px;
         }
 
+        /* طراحی کاملاً فیکس و منظم برای ویندوز و موبایل با CSS Grid پیشرفته */
         .match-row-card {
             background-color: var(--card-bg);
             border-radius: 14px;
-            padding: 14px 20px;
+            padding: 16px 20px;
             margin-bottom: 12px;
             border: 1px solid rgba(255,255,255,0.05);
             box-shadow: 0 3px 10px rgba(0,0,0,0.25);
             display: grid;
-            grid-template-columns: 1fr 140px 1fr;
+            grid-template-columns: 1fr 150px 1fr;
             align-items: center;
+            gap: 10px;
         }
 
         .team-side {
             display: flex;
             align-items: center;
             gap: 12px;
+            width: 100%;
         }
 
         .team-side.left {
@@ -197,9 +200,10 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: rgba(0,0,0,0.15);
-            padding: 6px 10px;
-            border-radius: 8px;
+            background: rgba(0,0,0,0.2);
+            padding: 8px 12px;
+            border-radius: 10px;
+            width: 100%;
         }
 
         .match-time {
@@ -227,7 +231,7 @@
             background-color: var(--card-bg);
             border-radius: 15px;
             overflow: hidden;
-            max-width: 600px;
+            max-width: 680px;
             margin: 0 auto;
         }
 
@@ -253,9 +257,9 @@
         .name-col { flex: 1; text-align: right; }
         .score-col { width: 50px; text-align: left; font-weight: bold; }
 
-        /* --- تب کل‌کل و حواشی (طالع‌بینی، اخبار، نظرسنجی) --- */
+        /* --- تب کل‌کل و حواشی --- */
         .banter-container {
-            max-width: 650px;
+            max-width: 680px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -280,19 +284,23 @@
             gap: 8px;
         }
 
-        /* استایل نظرسنجی بازی‌های مهم */
+        /* نظرسنجی تعاملی */
         .poll-match-box {
             background: #121824;
             border-radius: 10px;
-            padding: 12px;
-            margin-bottom: 12px;
+            padding: 14px;
+            margin-bottom: 14px;
+        }
+
+        .poll-match-box:last-child {
+            margin-bottom: 0;
         }
 
         .poll-teams-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-size: 13px;
             font-weight: 700;
         }
@@ -309,6 +317,31 @@
             object-fit: contain;
         }
 
+        .poll-buttons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .poll-btn {
+            background-color: #243044;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 8px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .poll-btn:hover {
+            background-color: #2e3d55;
+            border-color: var(--accent-yellow);
+        }
+
         .poll-bars {
             display: flex;
             height: 10px;
@@ -322,19 +355,19 @@
         .poll-bar-home {
             background-color: var(--accent-yellow);
             height: 100%;
-            transition: width 0.5s ease;
+            transition: width 0.4s ease;
         }
 
         .poll-bar-draw {
             background-color: var(--text-gray);
             height: 100%;
-            transition: width 0.5s ease;
+            transition: width 0.4s ease;
         }
 
         .poll-bar-away {
             background-color: var(--accent-green);
             height: 100%;
-            transition: width 0.5s ease;
+            transition: width 0.4s ease;
         }
 
         .poll-stats-text {
@@ -359,11 +392,11 @@
             color: var(--accent-yellow);
         }
 
-        /* اخبار و شایعات */
+        /* بخش اخبار (قابل ویرایش توسط شما) */
         .news-item {
             border-right: 3px solid var(--accent-yellow);
             padding-right: 12px;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
         }
 
         .news-item:last-child {
@@ -419,6 +452,7 @@
             fill: currentColor;
         }
 
+        /* تنظیمات واکنش‌گرایی برای موبایل */
         @media (max-width: 480px) {
             .match-row-card {
                 grid-template-columns: 1fr 110px 1fr;
@@ -440,14 +474,14 @@
         <svg class="splash-cup" viewBox="0 0 24 24" fill="#f5c518">
             <path d="M19,5H17V3A1,1 0 0,0 16,2H8A1,1 0 0,0 7,3V5H5A3,3 0 0,0 2,8V9A3,3 0 0,0 5,12H5.5A6,6 0 0,0 11,17.93V20H8V22H16V20H13V17.93A6,6 0 0,0 18.5,12H19A3,3 0 0,0 22,9V8A3,3 0 0,0 19,5M5,10A1,1 0 0,1 4,9V8A1,1 0 0,1 5,7H7V10H5M20,9A1,1 0 0,1 19,10H17V7H19A1,1 0 0,1 20,8Z"/>
         </svg>
-        <div class="splash-title">لیگ گداهای اسرسی <span>فصل دوم</span></div>
+        <div class="splash-title">لیگ گداهای استرسی <span>فصل دوم</span></div>
         <div class="loading-bar">
             <div class="loading-progress"></div>
         </div>
     </div>
 
     <!-- هدر بالای صفحه -->
-    <header>لیگ گداهای اسرسی</header>
+    <header>لیگ گداهای استرسی</header>
 
     <!-- تب ۱: خانه / مسابقات -->
     <div id="tab-home" class="tab-content active">
@@ -455,7 +489,7 @@
 
             <div class="matchweek-banner">
                 <h2>هفته پنجم پیش‌بینی‌ها</h2>
-                <span>Matchweek 5 • مسابقات حساس این هفته</span>
+                <span>پیش بینی کنید یادتون نره</span>
             </div>
 
             <div class="date-divider">جمعه ۲۷ شهریور</div>
@@ -672,19 +706,19 @@
         </div>
     </div>
 
-    <!-- تب ۳: کل‌کل و طنز (طالع‌بینی، نظرسنجی پیش‌بینی‌ها، اخبار و شایعات) -->
+    <!-- تب ۳: کل‌کل و حواشی -->
     <div id="tab-banter" class="tab-content">
         <div class="banter-container">
 
-            <!-- بخش ۱: پیش‌بینی بازی‌های مهم (نظرخواهی گروه) -->
+            <!-- بخش ۱: نظرسنجی زنده بازی‌های مهم -->
             <div class="banter-card">
                 <div class="banter-title">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V12H17V10H13V6H11Z"/></svg>
-                    نظرسنجی و پیش‌بینی بازی‌های مهم هفته
+                    پیش‌بینی و نظرسنجی زنده (کدوم تیم می‌بره؟)
                 </div>
 
-                <!-- نظرسنجی بازی ۱ -->
-                <div class="poll-match-box">
+                <!-- نظرسنجی بازی اول -->
+                <div class="poll-match-box" id="poll-1">
                     <div class="poll-teams-header">
                         <div class="poll-team-item">
                             <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9906.png" alt="Atletico">
@@ -696,20 +730,27 @@
                             <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8633.png" alt="Real Madrid">
                         </div>
                     </div>
+                    
+                    <div class="poll-buttons-grid">
+                        <button class="poll-btn" onclick="vote(1, 'home')">برد اتلتیکو</button>
+                        <button class="poll-btn" onclick="vote(1, 'draw')">مساوی</button>
+                        <button class="poll-btn" onclick="vote(1, 'away')">برد رئال</button>
+                    </div>
+
                     <div class="poll-bars">
-                        <div class="poll-bar-home" style="width: 35%;" title="اتلتیکو: 35%"></div>
-                        <div class="poll-bar-draw" style="width: 20%;" title="مساوی: 20%"></div>
-                        <div class="poll-bar-away" style="width: 45%;" title="رئال: 45%"></div>
+                        <div class="poll-bar-home" id="p1-home" style="width: 35%;"></div>
+                        <div class="poll-bar-draw" id="p1-draw" style="width: 20%;"></div>
+                        <div class="poll-bar-away" id="p1-away" style="width: 45%;"></div>
                     </div>
                     <div class="poll-stats-text">
-                        <span>اتلتیکو (۳۵٪)</span>
-                        <span>مساوی (۲۰٪)</span>
-                        <span>رئال مادرید (۴۵٪)</span>
+                        <span id="p1-home-txt">اتلتیکو (۳۵٪)</span>
+                        <span id="p1-draw-txt">مساوی (۲۰٪)</span>
+                        <span id="p1-away-txt">رئال (۴۵٪)</span>
                     </div>
                 </div>
 
-                <!-- نظرسنجی بازی ۲ -->
-                <div class="poll-match-box">
+                <!-- نظرسنجی بازی دوم -->
+                <div class="poll-match-box" id="poll-2">
                     <div class="poll-teams-header">
                         <div class="poll-team-item">
                             <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8686.png" alt="Roma">
@@ -721,20 +762,27 @@
                             <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8636.png" alt="Inter">
                         </div>
                     </div>
+
+                    <div class="poll-buttons-grid">
+                        <button class="poll-btn" onclick="vote(2, 'home')">برد رم</button>
+                        <button class="poll-btn" onclick="vote(2, 'draw')">مساوی</button>
+                        <button class="poll-btn" onclick="vote(2, 'away')">برد اینتر</button>
+                    </div>
+
                     <div class="poll-bars">
-                        <div class="poll-bar-home" style="width: 25%;" title="رم: 25%"></div>
-                        <div class="poll-bar-draw" style="width: 30%;" title="مساوی: 30%"></div>
-                        <div class="poll-bar-away" style="width: 45%;" title="اینتر: 45%"></div>
+                        <div class="poll-bar-home" id="p2-home" style="width: 25%;"></div>
+                        <div class="poll-bar-draw" id="p2-draw" style="width: 30%;"></div>
+                        <div class="poll-bar-away" id="p2-away" style="width: 45%;"></div>
                     </div>
                     <div class="poll-stats-text">
-                        <span>رم (۲۵٪)</span>
-                        <span>مساوی (۳۰٪)</span>
-                        <span>اینتر (۴۵٪)</span>
+                        <span id="p2-home-txt">رم (۲۵٪)</span>
+                        <span id="p2-draw-txt">مساوی (۳۰٪)</span>
+                        <span id="p2-away-txt">اینتر (۴۵٪)</span>
                     </div>
                 </div>
             </div>
 
-            <!-- بخش ۲: طالع‌بینی فوتبالیش -->
+            <!-- بخش ۲: طالع‌بینی طنز -->
             <div class="banter-card">
                 <div class="banter-title">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,16H13V18H11V16M12,6C9.79,6 8,7.79 8,10H10C10,8.9 10.9,8 12,8C13.1,8 14,8.9 14,10C14,12 11,11.75 11,15H13C13,12.75 16,12.5 16,10C16,7.79 14.21,6 12,6Z"/></svg>
@@ -747,21 +795,23 @@
                 </div>
             </div>
 
-            <!-- بخش ۳: اخبار و شایعات گروه -->
+            <!-- بخش ۳: اخبار اختصاصی (آماده برای قرار دادن خبرهای شما؛ هر زمان خواستید متن زیر را تغییر دهید) -->
             <div class="banter-card">
                 <div class="banter-title">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20,11H4V8H20M20,15H4V13H20M20,19H4V17H20M2,5V19A2,2 0 0,0 4,21H20A2,2 0 0,0 22,19V5A2,2 0 0,0 20,3H4A2,2 0 0,0 2,5Z"/></svg>
                     اخبار فوری و حواشی لیگ
                 </div>
                 
+                <!-- خبر اول -->
                 <div class="news-item">
-                    <div class="news-title">واکنش مهدی پس از دیدن ۱۵ امتیاز خود: «توطئه‌ست!»</div>
-                    <div class="news-desc">مهدی پس از آنالیز جدول رده‌بندی اعلام کرد سیستم پیش‌بینی با او خصومت شخصی دارد و به زودی با یک کامبک استثنایی همه را شگفت‌زده خواهد کرد.</div>
+                    <div class="news-title">عنوان خبر اول را اینجا بنویسید</div>
+                    <div class="news-desc">متن کامل خبر، حاشیه یا طنز مربوط به گروه را اینجا وارد کنید تا در سایت نمایش داده شود.</div>
                 </div>
 
+                <!-- خبر دوم -->
                 <div class="news-item">
-                    <div class="news-title">آماده‌باش سنگین در اردوی مدعیان صدر</div>
-                    <div class="news-desc">گزارش‌ها حاکی از آن است که رقابت بین Asm A و رضا غتیفی برای تصاحب قطعی صدر جدول به اوج هیجان رسیده و تمرینات پیش‌بینی در پشت درهای بسته در حال انجام است.</div>
+                    <div class="news-title">عنوان خبر دوم را اینجا بنویسید</div>
+                    <div class="news-desc">متن خبر دوم یا اطلاعیه لیگ پیش‌بینی را اینجا بنویسید.</div>
                 </div>
             </div>
 
@@ -785,6 +835,39 @@
     </nav>
 
     <script>
+        const pollData = {
+            1: { home: 35, draw: 20, away: 45, voted: false },
+            2: { home: 25, draw: 30, away: 45, voted: false }
+        };
+
+        function vote(pollId, choice) {
+            if (pollData[pollId].voted) {
+                alert('شما قبلاً در این نظرسنجی رای داده‌اید! 😉');
+                return;
+            }
+
+            pollData[pollId][choice] += 1;
+            pollData[pollId].voted = true;
+
+            const total = pollData[pollId].home + pollData[pollId].draw + pollData[pollId].away;
+            const homePercent = Math.round((pollData[pollId].home / total) * 100);
+            const drawPercent = Math.round((pollData[pollId].draw / total) * 100);
+            const awayPercent = 100 - (homePercent + drawPercent);
+
+            document.getElementById(`p${pollId}-home`).style.width = homePercent + '%';
+            document.getElementById(`p${pollId}-draw`).style.width = drawPercent + '%';
+            document.getElementById(`p${pollId}-away`).style.width = awayPercent + '%';
+
+            const homeName = pollId === 1 ? 'اتلتیکو' : 'رم';
+            const awayName = pollId === 1 ? 'رئال' : 'اینتر';
+
+            document.getElementById(`p${pollId}-home-txt`).innerText = `${homeName} (${homePercent}٪)`;
+            document.getElementById(`p${pollId}-draw-txt`).innerText = `مساوی (${drawPercent}٪)`;
+            document.getElementById(`p${pollId}-away-txt`).innerText = `${awayName} (${awayPercent}٪)`;
+
+            alert('رای شما با موفقیت ثبت شد! 🚀');
+        }
+
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const splash = document.getElementById('splash-screen');
