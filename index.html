@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لیگ گداهای اسرسی - فصل دوم</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap');
+
+        :root {
+            --bg-dark: #121824;
+            --card-bg: #1c2536;
+            --accent-yellow: #f5c518;
+            --accent-green: #2ecc71;
+            --text-light: #ffffff;
+            --text-gray: #9aa4b2;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            padding-bottom: 90px;
+        }
+
+        /* --- صفحه لودینگ (Splash Screen) --- */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0b1017;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .splash-cup {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px rgba(245, 197, 24, 0.5));
+        }
+
+        .splash-title {
+            font-size: 26px;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .splash-title span {
+            color: var(--accent-yellow);
+        }
+
+        .loading-bar {
+            width: 200px;
+            height: 8px;
+            background-color: #243044;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .loading-progress {
+            width: 50%;
+            height: 100%;
+            background-color: var(--accent-yellow);
+            border-radius: 4px;
+            animation: loadAnim 1.5s infinite alternate;
+        }
+
+        @keyframes loadAnim {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* --- هدر سایت --- */
+        header {
+            background-color: #1a2332;
+            padding: 15px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 18px;
+            border-bottom: 1px solid #2a3649;
+        }
+
+        /* --- محتوای صفحات (Tabs) --- */
+        .tab-content {
+            display: none;
+            padding: 15px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* بخش هیرو و مسابقه اول (مشابه عکس دوم) */
+        .hero-banner {
+            background: linear-gradient(rgba(20, 40, 20, 0.8), rgba(10, 20, 10, 0.9)), url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .match-ticket {
+            background-color: rgba(28, 37, 54, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .match-teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .team-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .score-input {
+            width: 45px;
+            height: 45px;
+            background-color: #243044;
+            border: 1px solid #3a4b66;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .match-info-bar {
+            font-size: 13px;
+            color: var(--accent-yellow);
+            margin-top: 10px;
+            border-top: 1px solid #2a3649;
+            padding-top: 10px;
+        }
+
+        /* --- جدول رده‌بندی ۱۳ نفره --- */
+        .table-container {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .table-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 20px;
+            border-bottom: 1px solid #243044;
+            align-items: center;
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-row.highlight {
+            background-color: rgba(46, 204, 113, 0.1);
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .rank-col { width: 40px; font-weight: bold; color: var(--text-gray); }
+        .name-col { flex: 1; text-align: right; }
+        .score-col { width: 50px; text-align: left; font-weight: bold; }
+
+        /* --- نوار ناوبری پایین (Bottom Nav) --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #1a2332;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-top: 1px solid #2a3649;
+            z-index: 1000;
+        }
+
+        .nav-item {
+            background: none;
+            border: none;
+            color: var(--text-gray);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .nav-item.active {
+            color: var(--accent-yellow);
+        }
+
+        .nav-item svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- صفحه لودینگ اولیه (دقیقاً مشابه عکس کاپ دار) -->
+    <div id="splash-screen">
+        <!-- آیکون کاپ طلایی -->
+        <svg class="splash-cup" viewBox="0 0 24 24" fill="#f5c518">
+            <path d="M19,5H17V3A1,1 0 0,0 16,2H8A1,1 0 0,0 7,3V5H5A3,3 0 0,0 2,8V9A3,3 0 0,0 5,12H5.5A6,6 0 0,0 11,17.93V20H8V22H16V20H13V17.93A6,6 0 0,0 18.5,12H19A3,3 0 0,0 22,9V8A3,3 0 0,0 19,5M5,10A1,1 0 0,1 4,9V8A1,1 0 0,1 5,7H7V10H5M20,9A1,1 0 0,1 19,10H17V7H19A1,1 0 0,1 20,8Z"/>
+        </svg>
+        <div class="splash-title">لیگ گداهای اسرسی <span>فصل دوم</span></div>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+    </div>
+
+    <!-- هدر بالای صفحه -->
+    <header>لیگ گداهای اسرسی</header>
+
+    <!-- تب ۱: خانه / مسابقات -->
+    <div id="tab-home" class="tab-content active">
+        <div class="hero-banner">
+            <div style="font-size: 14px; color: #a0aec0; margin-bottom: 5px;">هفته اول | پیش‌بینی مسابقه حساس</div>
+            <div class="match-ticket">
+                <div style="font-size: 13px; color: var(--accent-yellow); margin-bottom: 10px;">جمعه ۲۷ شهریور | ساعت ۲۲:۳۰</div>
+                <div class="match-teams">
+                    <div class="team-box">
+                        <span>برنتفورد</span>
+                        <input type="number" class="score-input" value="-">
+                    </div>
+                    <span style="color: var(--text-gray);">VS</span>
+                    <div class="team-box">
+                        <span>چلسی</span>
+                        <input type="number" class="score-input" value="-">
+                    </div>
+                </div>
+                <div class="match-info-bar">بازی هنوز شروع نشده است</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- تب ۲: جدول رده‌بندی (۱۳ نفره دقیق) -->
+    <div id="tab-table" class="tab-content">
+        <h2 style="font-size: 16px; margin-bottom: 15px; color: var(--accent-yellow);">🏆 جدول رده‌بندی ۱۳ نفره</h2>
+        <div class="table-container">
+            <div class="table-row">
+                <span class="rank-col">1</span>
+                <span class="name-col">Asm A</span>
+                <span class="score-col">52</span>
+            </div>
+            <div class="table-row highlight">
+                <span class="rank-col">2</span>
+                <span class="name-col">REZA GHATIFI</span>
+                <span class="score-col">48</span>
+            </div>
+            <div class="table-row">
+                <span class="rank-col">3</span>
+                <span class="name-col">Mahdi</span>
+                <span class="score-col">45</span>
+            </div>
+            <div class="table-row">
+                <span class="rank-col">4</span>
+                <span class="name-col">Donya Asil</span>
+                <span class="score-col">44</span>
+            </div>
+            <div class="table-row">
+                <span class="rank-col">5</span>
+                <span class="name-col">حبیب نعیمی</span>
+                <span class="score-col">43</span>
+            </div>
+            <div class="table-row">
+                <span class="rank-col">6</span>
+                <span class="name-col">محمد خلیلاوی پور</span>
+                <span class="score-col">40</span>
+            </div>
+            <div class="table-row">
+                <span class="rank-col">7</span>
+                <span class="name-col">hajar daoudi</span>
+                <span class="score-col">38</span>
+            </div>
+            <div class="table-row">
+                <span class="rank-col">8</span>
+                <span class="name-col">Ahlam Aljaber</span>
+                <span class="score-col">37</span>
+            </div>
+            <div class="table-row">
+                <span class="rank-col">9</span>
+                <span class="name-col">hey10</span>
+                <span class="score-col">34</span>
+            </div>
+            <div class="table-row">
+                <span class="rank-col">10</span>
+                <span class="name-col">امین دریس</span>
+                <span class="score-col">33</span>
+            </div>
+            <div class="table-row">
+                <span class="rank-col">11</span>
+                <span class="name-col">Sama salehi</span>
+                <span class="score-col">30</span>
+            </div>
+            <div class="table-row">
+                <span class="rank-col">12</span>
+                <span class="name-col">محمد جاسمیان</span>
+                <span class="score-col">24</span>
+            </div>
+            <div class="table-row">
+                <span class="rank-col">13</span>
+                <span class="name-col">مهدی</span>
+                <span class="score-col">15</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- تب ۳: کل‌کل و طنز -->
+    <div id="tab-banter" class="tab-content">
+        <h2 style="font-size: 16px; margin-bottom: 15px; color: var(--accent-yellow);">🔥 بخش کل‌کل و حواشی گروه</h2>
+        <div style="background-color: var(--card-bg); padding: 15px; border-radius: 12px; margin-bottom: 10px;">
+            <h4 style="margin-bottom: 5px; color: #fff;">واکنش مهدی پس از دیدن ته جدول:</h4>
+            <p style="font-size: 14px; color: var(--text-gray);">«من گفتم ۱۵ امتیاز کمه، ولی سیستم داره بر علیه من توطئه می‌کنه!»</p>
+        </div>
+    </div>
+
+    <!-- منوی پایین صفحه (Bottom Navigation) -->
+    <nav class="bottom-nav">
+        <button class="nav-item active" onclick="switchTab('home', this)">
+            <svg viewBox="0 0 24 24"><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"/></svg>
+            خانه
+        </button>
+        <button class="nav-item" onclick="switchTab('table', this)">
+            <svg viewBox="0 0 24 24"><path d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z"/></svg>
+            جدول قهرمانی
+        </button>
+        <button class="nav-item" onclick="switchTab('banter', this)">
+            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V12H17V10H13V6H11Z"/></svg>
+            کل‌کل‌ها
+        </button>
+    </nav>
+
+    <script>
+        // پنهان کردن صفحه لودینگ پس از 2 ثانیه
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splash-screen');
+                splash.style.opacity = '0';
+                setTimeout(() => splash.style.display = 'none', 500);
+            }, 2000);
+        });
+
+        // سیستم جابجایی تب‌ها در منوی پایین
+        function switchTab(tabName, element) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+
+            document.getElementById('tab-' + tabName).classList.add('active');
+            element.classList.add('active');
+        }
+    </script>
+</body>
+</html>
