@@ -146,7 +146,6 @@
             padding-bottom: 6px;
         }
 
-        /* طراحی فیکس برای ویندوز و موبایل با ساختار Grid */
         .match-row-card {
             background-color: var(--card-bg);
             border-radius: 14px;
@@ -342,6 +341,12 @@
             border-color: var(--accent-yellow);
         }
 
+        .poll-btn.selected {
+            background-color: var(--accent-yellow);
+            color: #121824;
+            border-color: var(--accent-yellow);
+        }
+
         .poll-bars {
             display: flex;
             height: 10px;
@@ -377,22 +382,15 @@
             color: var(--text-gray);
         }
 
-        /* طالع‌بینی طنز */
-        .horoscope-box {
-            font-size: 13px;
-            line-height: 1.8;
-            color: #d1d5db;
+        .user-vote-status {
+            font-size: 11px;
+            color: var(--accent-green);
+            text-align: center;
+            margin-top: 6px;
+            font-weight: 700;
         }
 
-        .horoscope-box p {
-            margin-bottom: 10px;
-        }
-
-        .horoscope-box strong {
-            color: var(--accent-yellow);
-        }
-
-        /* بخش اخبار با قابلیت نمایش عکس باکیفیت */
+        /* بخش اخبار */
         .news-item {
             background-color: #121824;
             border-radius: 10px;
@@ -500,7 +498,7 @@
 
             <div class="matchweek-banner">
                 <h2>هفته پنجم پیش‌بینی‌ها</h2>
-                <span>Matchweek 5 • مسابقات حساس این هفته</span>
+                <span>Matchweek 5 • ۲۷ الی ۲۹ شهریور ماه</span>
             </div>
 
             <div class="date-divider">جمعه ۲۷ شهریور</div>
@@ -721,7 +719,7 @@
     <div id="tab-banter" class="tab-content">
         <div class="banter-container">
 
-            <!-- بخش ۱: نظرسنجی زنده بازی‌های مهم -->
+            <!-- بخش ۱: نظرسنجی زنده بازی‌های مهم با نمایش انتخاب کاربر -->
             <div class="banter-card">
                 <div class="banter-title">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V12H17V10H13V6H11Z"/></svg>
@@ -742,7 +740,7 @@
                         </div>
                     </div>
                     
-                    <div class="poll-buttons-grid">
+                    <div class="poll-buttons-grid" id="poll-btns-1">
                         <button class="poll-btn" onclick="vote(1, 'home')">برد اتلتیکو</button>
                         <button class="poll-btn" onclick="vote(1, 'draw')">مساوی</button>
                         <button class="poll-btn" onclick="vote(1, 'away')">برد رئال</button>
@@ -758,6 +756,7 @@
                         <span id="p1-draw-txt">مساوی (۲۰٪)</span>
                         <span id="p1-away-txt">رئال (۴۵٪)</span>
                     </div>
+                    <div class="user-vote-status" id="p1-status"></div>
                 </div>
 
                 <!-- نظرسنجی بازی دوم -->
@@ -774,7 +773,7 @@
                         </div>
                     </div>
 
-                    <div class="poll-buttons-grid">
+                    <div class="poll-buttons-grid" id="poll-btns-2">
                         <button class="poll-btn" onclick="vote(2, 'home')">برد رم</button>
                         <button class="poll-btn" onclick="vote(2, 'draw')">مساوی</button>
                         <button class="poll-btn" onclick="vote(2, 'away')">برد اینتر</button>
@@ -790,41 +789,29 @@
                         <span id="p2-draw-txt">مساوی (۳۰٪)</span>
                         <span id="p2-away-txt">اینتر (۴۵٪)</span>
                     </div>
+                    <div class="user-vote-status" id="p2-status"></div>
                 </div>
             </div>
 
-            <!-- بخش ۲: طالع‌بینی طنز -->
-            <div class="banter-card">
-                <div class="banter-title">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,16H13V18H11V16M12,6C9.79,6 8,7.79 8,10H10C10,8.9 10.9,8 12,8C13.1,8 14,8.9 14,10C14,12 11,11.75 11,15H13C13,12.75 16,12.5 16,10C16,7.79 14.21,6 12,6Z"/></svg>
-                    طالع‌بینی هفته پنجم (گداهای استرسی)
-                </div>
-                <div class="horoscope-box">
-                    <p>🌟 <strong>صدرنشینان (مثل Asm A و رضا غتیفی):</strong> ستاره بخت شما در آسمان جدول می‌درخشد، اما مراقب چشم زخم باشید! یک اشتباه کوچک در پیش‌بینی دربی مادرید می‌تواند شما را از تخت پادشاهی به زیر بکشد.</p>
-                    <p>🔥 <strong>میانی‌های جدول (از حبیب تا امین):</strong> حس ششم شما این هفته به شدت قوی است. اگر به حرف دلتان گوش کنید شاید چند پله صعود کنید، ولی اگر به عقلتان رجوع کنید احتمالاً باز هم مساوی می‌آورید!</p>
-                    <p>🥶 <strong>ته جدول (بحران‌زدگان عزیز، مهدی و محمد جاسمیان):</strong> سیاره استرس و بدبیاری همچنان روی سر شما سایه افکنده. کائنات توصیه می‌کند این هفته کورکورانه روی تیم‌های مهمان شرط ببندید؛ شاید معجزه‌ای رخ داد و از ته جدول فرار کردید!</p>
-                </div>
-            </div>
-
-            <!-- بخش ۳: اخبار اختصاصی گروه و اروپا (همراه با عکس‌های به‌روز و واقعی) -->
+            <!-- بخش ۲: اخبار اختصاصی گروه و اروپا با عکس‌های اختصاصی درخواست‌شده -->
             <div class="banter-card">
                 <div class="banter-title">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20,11H4V8H20M20,15H4V13H20M20,19H4V17H20M2,5V19A2,2 0 0,0 4,21H20A2,2 0 0,0 22,19V5A2,2 0 0,0 20,3H4A2,2 0 0,0 2,5Z"/></svg>
                     اخبار فوری و حواشی لیگ (سپتامبر ۲۰۲۶)
                 </div>
                 
-                <!-- خبر اول: آقای پیرا -->
+                <!-- خبر اول: آقای پیرا (عکس تیمی بارسلونا) -->
                 <div class="news-item">
-                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80" alt="Pira Focus" class="news-img">
+                    <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=600&q=80" alt="Barcelona Team" class="news-img">
                     <div class="news-content">
-                        <div class="news-title">نقشه سرّی آقای پیرا برای شکار رضا قطیفی در صدر!</div>
+                        <div class="news-title">نقشه سرّی آقای پیرا برای شکار رضا غتیفی در صدر!</div>
                         <div class="news-desc">آقای پیرا با ۳۴ امتیاز در رتبه ۹ جدول کمین کرده و اعلام کرده با تمرکز کامل و آنالیز دقیق بازی‌های این هفته، قصد دارد فاصله امتیازی‌اش را با رضا غتیفی به حداقل برساند. باید دید این صعود استراتژیک موفق خواهد بود یا خیر.</div>
                     </div>
                 </div>
 
-                <!-- خبر دوم: محمد خلیلاوی -->
+                <!-- خبر دوم: محمد خلیلاوی (عکس آتش‌نشانی) -->
                 <div class="news-item">
-                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w5=600&q=80" alt="Khalilavi Defense" class="news-img">
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=600&q=80" alt="Firefighter" class="news-img">
                     <div class="news-content">
                         <div class="news-title">عبور از بحران آتش‌نشانی؛ خلیلاوی همچنان معتاد به نتایج ۱-۰ اقتصادی!</div>
                         <div class="news-desc">محمد خلیلاوی در حالی هفته سختی را پشت سر گذاشته که خطر انفجار کپسول آتش‌نشانی از بیخ گوشش رد شده است! با این حال او همچنان به سبک دفاعی و نتایج اقتصادی ۱-۰ وفادار است و به بازی هجومی هیچ اعتقادی ندارد.</div>
@@ -849,12 +836,12 @@
                     </div>
                 </div>
 
-                <!-- خبر پنجم: اینتر و رم -->
+                <!-- خبر پنجم: اینتر و رم (عکس استادیوم المپیکو رم) -->
                 <div class="news-item">
-                    <img src="https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=600&q=80" alt="Inter Roma" class="news-img">
+                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80" alt="Stadio Olimpico Roma" class="news-img">
                     <div class="news-content">
                         <div class="news-title">نبرد بزرگ سری آ در المپیکو؛ اینتر به مصاف رم می‌رود</div>
-                        <div class="news-desc">تحلیل‌گران فوتبال ایتالیا تقابل آ.اس. رم و اینتر میلان در ورزشگاه المپیکو را به عنوان یکی از مهم‌ترین بازی‌های هفته پنجم سری آ (سپتامبر ۲۰۲۶) ارزیابی کرده‌اند؛ مسابقه‌ای که جدول بالای سری آ را به شدت تحت تأثیر قرار خواهد داد.</div>
+                        <div class="news-desc">تحلیل‌گران فوتبال ایتالیا تقابل آ.اس. رم و اینتر میلان در ورزشگاه المپیکو رم را به عنوان یکی از مهم‌ترین بازی‌های هفته پنجم سری آ (سپتامبر ۲۰۲۶) ارزیابی کرده‌اند؛ مسابقه‌ای که جدول بالای سری آ را به شدت تحت تأثیر قرار خواهد داد.</div>
                     </div>
                 </div>
 
@@ -881,8 +868,8 @@
 
     <script>
         const pollData = {
-            1: { home: 35, draw: 20, away: 45, voted: false },
-            2: { home: 25, draw: 30, away: 45, voted: false }
+            1: { home: 35, draw: 20, away: 45, voted: false, userChoice: null },
+            2: { home: 25, draw: 30, away: 45, voted: false, userChoice: null }
         };
 
         function vote(pollId, choice) {
@@ -893,6 +880,7 @@
 
             pollData[pollId][choice] += 1;
             pollData[pollId].voted = true;
+            pollData[pollId].userChoice = choice;
 
             const total = pollData[pollId].home + pollData[pollId].draw + pollData[pollId].away;
             const homePercent = Math.round((pollData[pollId].home / total) * 100);
@@ -910,6 +898,19 @@
             document.getElementById(`p${pollId}-draw-txt`).innerText = `مساوی (${drawPercent}٪)`;
             document.getElementById(`p${pollId}-away-txt`).innerText = `${awayName} (${awayPercent}٪)`;
 
+            // مشخص کردن دکمه‌ای که کاربر انتخاب کرده با استایل خاص
+            const buttons = document.querySelectorAll(`#poll-btns-${pollId} .poll-btn`);
+            buttons.forEach((btn, idx) => {
+                const choices = ['home', 'draw', 'away'];
+                if (choices[idx] === choice) {
+                    btn.classList.add('selected');
+                }
+            });
+
+            // نمایش متن وضعیت رای کاربر
+            let choiceText = choice === 'home' ? (pollId === 1 ? 'برد اتلتیکو' : 'برد رم') : (choice === 'draw' ? 'مساوی' : (pollId === 1 ? 'برد رئال' : 'برد اینتر'));
+            document.getElementById(`p${pollId}-status`).innerText = `✅ رای شما ثبت شد: ${choiceText}`;
+
             alert('رای شما با موفقیت ثبت شد! 🚀');
         }
 
@@ -922,7 +923,6 @@
         });
 
         function switchTab(tabName, element) {
-            document.querySelectorAll('.tab-content').rootClassNames?.(); // safe check
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
 
