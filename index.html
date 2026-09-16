@@ -12,6 +12,7 @@
             --card-bg: #1c2536;
             --accent-yellow: #f5c518;
             --accent-green: #2ecc71;
+            --accent-red: #e74c3c;
             --text-light: #ffffff;
             --text-gray: #9aa4b2;
         }
@@ -113,7 +114,6 @@
             margin: 0 auto;
         }
 
-        /* هدر شیک هفته پنجم */
         .matchweek-banner {
             background: linear-gradient(135deg, #243044, #1c2536);
             border: 2px solid var(--accent-yellow);
@@ -146,7 +146,6 @@
             padding-bottom: 6px;
         }
 
-        /* کارت بازی مینیمال و استاندارد برای دسکتاپ و موبایل با ساختار Grid */
         .match-row-card {
             background-color: var(--card-bg);
             border-radius: 14px;
@@ -254,6 +253,136 @@
         .name-col { flex: 1; text-align: right; }
         .score-col { width: 50px; text-align: left; font-weight: bold; }
 
+        /* --- تب کل‌کل و حواشی (طالع‌بینی، اخبار، نظرسنجی) --- */
+        .banter-container {
+            max-width: 650px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .banter-card {
+            background-color: var(--card-bg);
+            border-radius: 14px;
+            padding: 18px;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .banter-title {
+            font-size: 16px;
+            font-weight: 900;
+            color: var(--accent-yellow);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* استایل نظرسنجی بازی‌های مهم */
+        .poll-match-box {
+            background: #121824;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+
+        .poll-teams-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .poll-team-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .poll-team-item img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        .poll-bars {
+            display: flex;
+            height: 10px;
+            background: #243044;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 8px;
+            gap: 2px;
+        }
+
+        .poll-bar-home {
+            background-color: var(--accent-yellow);
+            height: 100%;
+            transition: width 0.5s ease;
+        }
+
+        .poll-bar-draw {
+            background-color: var(--text-gray);
+            height: 100%;
+            transition: width 0.5s ease;
+        }
+
+        .poll-bar-away {
+            background-color: var(--accent-green);
+            height: 100%;
+            transition: width 0.5s ease;
+        }
+
+        .poll-stats-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--text-gray);
+        }
+
+        /* طالع‌بینی طنز */
+        .horoscope-box {
+            font-size: 13px;
+            line-height: 1.8;
+            color: #d1d5db;
+        }
+
+        .horoscope-box p {
+            margin-bottom: 10px;
+        }
+
+        .horoscope-box strong {
+            color: var(--accent-yellow);
+        }
+
+        /* اخبار و شایعات */
+        .news-item {
+            border-right: 3px solid var(--accent-yellow);
+            padding-right: 12px;
+            margin-bottom: 14px;
+        }
+
+        .news-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .news-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .news-desc {
+            font-size: 12px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
         /* --- نوار ناوبری پایین --- */
         .bottom-nav {
             position: fixed;
@@ -290,7 +419,6 @@
             fill: currentColor;
         }
 
-        /* واکنش‌گرایی برای موبایل‌های کوچک */
         @media (max-width: 480px) {
             .match-row-card {
                 grid-template-columns: 1fr 110px 1fr;
@@ -325,16 +453,13 @@
     <div id="tab-home" class="tab-content active">
         <div class="hero-banner">
 
-            <!-- بنر شاخص هفته پنجم -->
             <div class="matchweek-banner">
                 <h2>هفته پنجم پیش‌بینی‌ها</h2>
                 <span>Matchweek 5 • مسابقات حساس این هفته</span>
             </div>
 
-            <!-- تاریخ روز اول: جمعه ۲۷ شهریور -->
             <div class="date-divider">جمعه ۲۷ شهریور</div>
 
-            <!-- بازی ۱: برنتفورد - چلسی -->
             <div class="match-row-card">
                 <div class="team-side left">
                     <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
@@ -351,10 +476,8 @@
                 </div>
             </div>
 
-            <!-- تاریخ روز دوم: شنبه ۲۸ شهریور -->
             <div class="date-divider">شنبه ۲۸ شهریور</div>
 
-            <!-- بازی ۲: بورنموث - لیورپول -->
             <div class="match-row-card">
                 <div class="team-side left">
                     <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8678.png" alt="Bournemouth">
@@ -371,7 +494,6 @@
                 </div>
             </div>
 
-            <!-- بازی ۳: اتلتیکو مادرید - رئال مادرید -->
             <div class="match-row-card">
                 <div class="team-side left">
                     <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9906.png" alt="Atletico">
@@ -388,7 +510,6 @@
                 </div>
             </div>
 
-            <!-- بازی ۴: فولام - منچستر یونایتد -->
             <div class="match-row-card">
                 <div class="team-side left">
                     <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9879.png" alt="Fulham">
@@ -405,7 +526,6 @@
                 </div>
             </div>
 
-            <!-- بازی ۵: برایتون - آرسنال -->
             <div class="match-row-card">
                 <div class="team-side left">
                     <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10204.png" alt="Brighton">
@@ -422,7 +542,6 @@
                 </div>
             </div>
 
-            <!-- بازی ۶: رم - اینتر -->
             <div class="match-row-card">
                 <div class="team-side left">
                     <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8686.png" alt="Roma">
@@ -439,7 +558,6 @@
                 </div>
             </div>
 
-            <!-- بازی ۷: سویا - بارسلونا -->
             <div class="match-row-card">
                 <div class="team-side left">
                     <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8302.png" alt="Sevilla">
@@ -456,10 +574,8 @@
                 </div>
             </div>
 
-            <!-- تاریخ روز سوم: یکشنبه ۲۹ شهریور -->
             <div class="date-divider">یکشنبه ۲۹ شهریور</div>
 
-            <!-- بازی ۸: تاتنهام - استون ویلا -->
             <div class="match-row-card">
                 <div class="team-side left">
                     <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8586.png" alt="Tottenham">
@@ -476,7 +592,6 @@
                 </div>
             </div>
 
-            <!-- دکمه اتصال مستقیم به فوت‌موب -->
             <div style="margin: 25px 0; text-align: center;">
                 <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" style="display: block; background-color: var(--accent-yellow); color: #121824; font-weight: 900; padding: 14px; border-radius: 12px; text-decoration: none; font-size: 15px; box-shadow: 0 4px 10px rgba(245, 197, 24, 0.3);">
                     ورود به لیگ پیش‌بینی در فوت‌موب 🚀
@@ -557,12 +672,99 @@
         </div>
     </div>
 
-    <!-- تب ۳: کل‌کل و طنز -->
+    <!-- تب ۳: کل‌کل و طنز (طالع‌بینی، نظرسنجی پیش‌بینی‌ها، اخبار و شایعات) -->
     <div id="tab-banter" class="tab-content">
-        <h2 style="font-size: 16px; margin-bottom: 15px; color: var(--accent-yellow); text-align: center;">🔥 بخش کل‌کل و حواشی گروه</h2>
-        <div style="background-color: var(--card-bg); padding: 15px; border-radius: 12px; max-width: 600px; margin: 0 auto;">
-            <h4 style="margin-bottom: 5px; color: #fff;">واکنش مهدی پس از دیدن ته جدول:</h4>
-            <p style="font-size: 14px; color: var(--text-gray);">«من گفتم ۱۵ امتیاز کمه، ولی سیستم داره بر علیه من توطئه می‌کنه!»</p>
+        <div class="banter-container">
+
+            <!-- بخش ۱: پیش‌بینی بازی‌های مهم (نظرخواهی گروه) -->
+            <div class="banter-card">
+                <div class="banter-title">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V12H17V10H13V6H11Z"/></svg>
+                    نظرسنجی و پیش‌بینی بازی‌های مهم هفته
+                </div>
+
+                <!-- نظرسنجی بازی ۱ -->
+                <div class="poll-match-box">
+                    <div class="poll-teams-header">
+                        <div class="poll-team-item">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9906.png" alt="Atletico">
+                            <span>اتلتیکو مادرید</span>
+                        </div>
+                        <span style="color: var(--accent-yellow); font-size: 11px;">دربی مادرید</span>
+                        <div class="poll-team-item">
+                            <span>رئال مادرید</span>
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8633.png" alt="Real Madrid">
+                        </div>
+                    </div>
+                    <div class="poll-bars">
+                        <div class="poll-bar-home" style="width: 35%;" title="اتلتیکو: 35%"></div>
+                        <div class="poll-bar-draw" style="width: 20%;" title="مساوی: 20%"></div>
+                        <div class="poll-bar-away" style="width: 45%;" title="رئال: 45%"></div>
+                    </div>
+                    <div class="poll-stats-text">
+                        <span>اتلتیکو (۳۵٪)</span>
+                        <span>مساوی (۲۰٪)</span>
+                        <span>رئال مادرید (۴۵٪)</span>
+                    </div>
+                </div>
+
+                <!-- نظرسنجی بازی ۲ -->
+                <div class="poll-match-box">
+                    <div class="poll-teams-header">
+                        <div class="poll-team-item">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8686.png" alt="Roma">
+                            <span>رم</span>
+                        </div>
+                        <span style="color: var(--accent-yellow); font-size: 11px;">نبرد سری آ</span>
+                        <div class="poll-team-item">
+                            <span>اینتر</span>
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8636.png" alt="Inter">
+                        </div>
+                    </div>
+                    <div class="poll-bars">
+                        <div class="poll-bar-home" style="width: 25%;" title="رم: 25%"></div>
+                        <div class="poll-bar-draw" style="width: 30%;" title="مساوی: 30%"></div>
+                        <div class="poll-bar-away" style="width: 45%;" title="اینتر: 45%"></div>
+                    </div>
+                    <div class="poll-stats-text">
+                        <span>رم (۲۵٪)</span>
+                        <span>مساوی (۳۰٪)</span>
+                        <span>اینتر (۴۵٪)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بخش ۲: طالع‌بینی فوتبالیش -->
+            <div class="banter-card">
+                <div class="banter-title">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,16H13V18H11V16M12,6C9.79,6 8,7.79 8,10H10C10,8.9 10.9,8 12,8C13.1,8 14,8.9 14,10C14,12 11,11.75 11,15H13C13,12.75 16,12.5 16,10C16,7.79 14.21,6 12,6Z"/></svg>
+                    طالع‌بینی هفته پنجم (گداهای استرسی)
+                </div>
+                <div class="horoscope-box">
+                    <p>🌟 <strong>صدرنشینان (مثل Asm A و رضا غتیفی):</strong> ستاره بخت شما در آسمان جدول می‌درخشد، اما مراقب چشم زخم باشید! یک اشتباه کوچک در پیش‌بینی دربی مادرید می‌تواند شما را از تخت پادشاهی به زیر بکشد.</p>
+                    <p>🔥 <strong>میانی‌های جدول (از حبیب تا امین):</strong> حس ششم شما این هفته به شدت قوی است. اگر به حرف دلتان گوش کنید شاید چند پله صعود کنید، ولی اگر به عقلتان رجوع کنید احتمالاً باز هم مساوی می‌آورید!</p>
+                    <p>🥶 <strong>ته جدول (بحران‌زدگان عزیز، مهدی و محمد جاسمیان):</strong> سیاره استرس و بدبیاری همچنان روی سر شما سایه افکنده. کائنات توصیه می‌کند این هفته کورکورانه روی تیم‌های مهمان شرط ببندید؛ شاید معجزه‌ای رخ داد و از ته جدول فرار کردید!</p>
+                </div>
+            </div>
+
+            <!-- بخش ۳: اخبار و شایعات گروه -->
+            <div class="banter-card">
+                <div class="banter-title">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20,11H4V8H20M20,15H4V13H20M20,19H4V17H20M2,5V19A2,2 0 0,0 4,21H20A2,2 0 0,0 22,19V5A2,2 0 0,0 20,3H4A2,2 0 0,0 2,5Z"/></svg>
+                    اخبار فوری و حواشی لیگ
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-title">واکنش مهدی پس از دیدن ۱۵ امتیاز خود: «توطئه‌ست!»</div>
+                    <div class="news-desc">مهدی پس از آنالیز جدول رده‌بندی اعلام کرد سیستم پیش‌بینی با او خصومت شخصی دارد و به زودی با یک کامبک استثنایی همه را شگفت‌زده خواهد کرد.</div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">آماده‌باش سنگین در اردوی مدعیان صدر</div>
+                    <div class="news-desc">گزارش‌ها حاکی از آن است که رقابت بین Asm A و رضا غتیفی برای تصاحب قطعی صدر جدول به اوج هیجان رسیده و تمرینات پیش‌بینی در پشت درهای بسته در حال انجام است.</div>
+                </div>
+            </div>
+
         </div>
     </div>
 
