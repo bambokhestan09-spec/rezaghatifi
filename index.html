@@ -107,60 +107,79 @@
             display: block;
         }
 
-        /* بخش مسابقات */
+        /* بخش مسابقات به سبک جدید و مینیمال */
         .hero-banner {
             max-width: 600px;
             margin: 0 auto;
         }
 
+        /* هدر شیک هفته پنجم */
+        .matchweek-banner {
+            background: linear-gradient(135deg, #243044, #1c2536);
+            border: 2px solid var(--accent-yellow);
+            border-radius: 14px;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(245, 197, 24, 0.2);
+        }
+
+        .matchweek-banner h2 {
+            color: var(--accent-yellow);
+            font-size: 20px;
+            font-weight: 900;
+            margin-bottom: 4px;
+        }
+
+        .matchweek-banner span {
+            color: var(--text-gray);
+            font-size: 13px;
+        }
+
         .date-divider {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 900;
             color: var(--accent-yellow);
-            margin: 20px 0 10px 0;
+            margin: 25px 0 12px 0;
             text-align: right;
             border-bottom: 1px solid #2a3649;
-            padding-bottom: 5px;
+            padding-bottom: 6px;
         }
 
-        .match-ticket {
+        /* کارت بازی خطی جدید */
+        .match-row-card {
             background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid rgba(255,255,255,0.05);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-
-        .league-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
-            color: var(--text-gray);
+            border-radius: 14px;
+            padding: 14px 16px;
             margin-bottom: 12px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 8px;
-        }
-
-        .match-main {
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.25);
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
         }
 
-        .team-box {
+        .team-side {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             flex: 1;
-            text-align: center;
         }
 
-        .team-box img {
-            width: 38px;
-            height: 38px;
+        .team-side.left {
+            justify-content: flex-start;
+            text-align: right;
+        }
+
+        .team-side.right {
+            justify-content: flex-end;
+            text-align: left;
+            flex-direction: row-reverse;
+        }
+
+        .team-side img {
+            width: 32px;
+            height: 32px;
             object-fit: contain;
         }
 
@@ -170,35 +189,31 @@
             color: #fff;
         }
 
-        .prediction-boxes {
+        .match-center-info {
             display: flex;
-            gap: 6px;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 12px;
+            min-width: 100px;
         }
 
-        .score-input-box {
-            width: 36px;
-            height: 42px;
-            background-color: #243044;
-            border: 1px solid #324158;
-            border-radius: 8px;
-            color: #fff;
-            font-size: 18px;
-            font-weight: bold;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .match-time {
+            font-size: 16px;
+            font-weight: 900;
+            color: var(--accent-yellow);
+            letter-spacing: 0.5px;
         }
 
-        .win-prob {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .match-date-sub {
             font-size: 11px;
             color: var(--text-gray);
-            margin-top: 12px;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 8px;
+            margin-top: 2px;
+        }
+
+        .match-league-sub {
+            font-size: 10px;
+            color: #7b8898;
+            margin-top: 1px;
         }
 
         /* --- جدول رده‌بندی ۱۳ نفره --- */
@@ -289,225 +304,154 @@
     <div id="tab-home" class="tab-content active">
         <div class="hero-banner">
 
-            <!-- تاریخ روز اول -->
+            <!-- بنر شاخص هفته پنجم -->
+            <div class="matchweek-banner">
+                <h2>هفته پنجم پیش‌بینی‌ها</h2>
+                <span>Matchweek 5 • مسابقات حساس این هفته</span>
+            </div>
+
+            <!-- تاریخ روز اول: جمعه ۲۷ شهریور -->
             <div class="date-divider">جمعه ۲۷ شهریور</div>
 
             <!-- بازی ۱: برنتفورد - چلسی -->
-            <div class="match-ticket">
-                <div class="league-header">
-                    <span>🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League</span>
-                    <span>۲۲:۳۰</span>
+            <div class="match-row-card">
+                <div class="team-side left">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
+                    <span class="team-name">برنتفورد</span>
                 </div>
-                <div class="match-main">
-                    <div class="team-box">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
-                        <span class="team-name">برنتفورد</span>
-                    </div>
-                    <div class="prediction-boxes">
-                        <div class="score-input-box">?</div>
-                        <div class="score-input-box">?</div>
-                    </div>
-                    <div class="team-box">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" alt="Chelsea">
-                        <span class="team-name">چلسی</span>
-                    </div>
+                <div class="match-center-info">
+                    <span class="match-time">۲۲:۳۰</span>
+                    <span class="match-date-sub">۲۷ شهریور</span>
+                    <span class="match-league-sub">Premier League</span>
                 </div>
-                <div class="win-prob">
-                    <span>برد ۳۲٪</span>
-                    <span>Win probability</span>
-                    <span>برد ۴۲٪</span>
+                <div class="team-side right">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" alt="Chelsea">
+                    <span class="team-name">چلسی</span>
                 </div>
             </div>
 
+            <!-- تاریخ روز دوم: شنبه ۲۸ شهریور -->
+            <div class="date-divider">شنبه ۲۸ شهریور</div>
+
             <!-- بازی ۲: بورنموث - لیورپول -->
-            <div class="match-ticket">
-                <div class="league-header">
-                    <span>🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League</span>
-                    <span>۱۶:۳۰</span>
+            <div class="match-row-card">
+                <div class="team-side left">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8678.png" alt="Bournemouth">
+                    <span class="team-name">بورنموث</span>
                 </div>
-                <div class="match-main">
-                    <div class="team-box">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8678.png" alt="Bournemouth">
-                        <span class="team-name">بورنموث</span>
-                    </div>
-                    <div class="prediction-boxes">
-                        <div class="score-input-box">?</div>
-                        <div class="score-input-box">?</div>
-                    </div>
-                    <div class="team-box">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8650.png" alt="Liverpool">
-                        <span class="team-name">لیورپول</span>
-                    </div>
+                <div class="match-center-info">
+                    <span class="match-time">۱۶:۳۰</span>
+                    <span class="match-date-sub">۲۸ شهریور</span>
+                    <span class="match-league-sub">Premier League</span>
                 </div>
-                <div class="win-prob">
-                    <span>برد ۳۲٪</span>
-                    <span>Win probability</span>
-                    <span>برد ۴۴٪</span>
+                <div class="team-side right">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8650.png" alt="Liverpool">
+                    <span class="team-name">لیورپول</span>
                 </div>
             </div>
 
             <!-- بازی ۳: اتلتیکو مادرید - رئال مادرید -->
-            <div class="match-ticket">
-                <div class="league-header">
-                    <span>🇪🇸 LaLiga</span>
-                    <span>۱۷:۴۵</span>
+            <div class="match-row-card">
+                <div class="team-side left">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9906.png" alt="Atletico">
+                    <span class="team-name">اتلتیکو مادرید</span>
                 </div>
-                <div class="match-main">
-                    <div class="team-box">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9906.png" alt="Atletico Madrid">
-                        <span class="team-name">اتلتیکو مادرید</span>
-                    </div>
-                    <div class="prediction-boxes">
-                        <div class="score-input-box">?</div>
-                        <div class="score-input-box">?</div>
-                    </div>
-                    <div class="team-box">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8633.png" alt="Real Madrid">
-                        <span class="team-name">رئال مادرید</span>
-                    </div>
+                <div class="match-center-info">
+                    <span class="match-time">۱۷:۴۵</span>
+                    <span class="match-date-sub">۲۸ شهریور</span>
+                    <span class="match-league-sub">LaLiga</span>
                 </div>
-                <div class="win-prob">
-                    <span>برد ۲۵٪</span>
-                    <span>Win probability</span>
-                    <span>برد ۵۱٪</span>
+                <div class="team-side right">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8633.png" alt="Real Madrid">
+                    <span class="team-name">رئال مادرید</span>
                 </div>
             </div>
 
             <!-- بازی ۴: فولام - منچستر یونایتد -->
-            <div class="match-ticket">
-                <div class="league-header">
-                    <span>🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League</span>
-                    <span>۱۹:۰۰</span>
+            <div class="match-row-card">
+                <div class="team-side left">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9879.png" alt="Fulham">
+                    <span class="team-name">فولام</span>
                 </div>
-                <div class="match-main">
-                    <div class="team-box">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9879.png" alt="Fulham">
-                        <span class="team-name">فولام</span>
-                    </div>
-                    <div class="prediction-boxes">
-                        <div class="score-input-box">?</div>
-                        <div class="score-input-box">?</div>
-                    </div>
-                    <div class="team-box">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10260.png" alt="Man United">
-                        <span class="team-name">منچستر یونایتد</span>
-                    </div>
+                <div class="match-center-info">
+                    <span class="match-time">۱۹:۰۰</span>
+                    <span class="match-date-sub">۲۸ شهریور</span>
+                    <span class="match-league-sub">Premier League</span>
                 </div>
-                <div class="win-prob">
-                    <span>برد ۲۸٪</span>
-                    <span>Win probability</span>
-                    <span>برد ۴۷٪</span>
+                <div class="team-side right">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10260.png" alt="Man United">
+                    <span class="team-name">منچستر یونایتد</span>
                 </div>
             </div>
 
             <!-- بازی ۵: برایتون - آرسنال -->
-            <div class="match-ticket">
-                <div class="league-header">
-                    <span>🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League</span>
-                    <span>۱۷:۳۰</span>
+            <div class="match-row-card">
+                <div class="team-side left">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10204.png" alt="Brighton">
+                    <span class="team-name">برایتون</span>
                 </div>
-                <div class="match-main">
-                    <div class="team-box">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10204.png" alt="Brighton">
-                        <span class="team-name">برایتون</span>
-                    </div>
-                    <div class="prediction-boxes">
-                        <div class="score-input-box">?</div>
-                        <div class="score-input-box">?</div>
-                    </div>
-                    <div class="team-box">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9825.png" alt="Arsenal">
-                        <span class="team-name">آرسنال</span>
-                    </div>
+                <div class="match-center-info">
+                    <span class="match-time">۱۷:۳۰</span>
+                    <span class="match-date-sub">۲۸ شهریور</span>
+                    <span class="match-league-sub">Premier League</span>
                 </div>
-                <div class="win-prob">
-                    <span>برد ۲۱٪</span>
-                    <span>Win probability</span>
-                    <span>برد ۵۵٪</span>
+                <div class="team-side right">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9825.png" alt="Arsenal">
+                    <span class="team-name">آرسنال</span>
                 </div>
             </div>
 
             <!-- بازی ۶: رم - اینتر -->
-            <div class="match-ticket">
-                <div class="league-header">
-                    <span>🇮🇹 Serie A</span>
-                    <span>۱۹:۳۰</span>
+            <div class="match-row-card">
+                <div class="team-side left">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8686.png" alt="Roma">
+                    <span class="team-name">رم</span>
                 </div>
-                <div class="match-main">
-                    <div class="team-box">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8686.png" alt="Roma">
-                        <span class="team-name">رم</span>
-                    </div>
-                    <div class="prediction-boxes">
-                        <div class="score-input-box">?</div>
-                        <div class="score-input-box">?</div>
-                    </div>
-                    <div class="team-box">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8636.png" alt="Inter">
-                        <span class="team-name">اینتر</span>
-                    </div>
+                <div class="match-center-info">
+                    <span class="match-time">۱۹:۳۰</span>
+                    <span class="match-date-sub">۲۸ شهریور</span>
+                    <span class="match-league-sub">Serie A</span>
                 </div>
-                <div class="win-prob">
-                    <span>برد ۳۹٪</span>
-                    <span>Win probability</span>
-                    <span>برد ۳۴٪</span>
+                <div class="team-side right">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8636.png" alt="Inter">
+                    <span class="team-name">اینتر</span>
                 </div>
             </div>
 
             <!-- بازی ۷: سویا - بارسلونا -->
-            <div class="match-ticket">
-                <div class="league-header">
-                    <span>🇪🇸 LaLiga</span>
-                    <span>۲۲:۳۰</span>
+            <div class="match-row-card">
+                <div class="team-side left">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8302.png" alt="Sevilla">
+                    <span class="team-name">سویا</span>
                 </div>
-                <div class="match-main">
-                    <div class="team-box">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8302.png" alt="Sevilla">
-                        <span class="team-name">سویا</span>
-                    </div>
-                    <div class="prediction-boxes">
-                        <div class="score-input-box">?</div>
-                        <div class="score-input-box">?</div>
-                    </div>
-                    <div class="team-box">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png" alt="Barcelona">
-                        <span class="team-name">بارسلونا</span>
-                    </div>
+                <div class="match-center-info">
+                    <span class="match-time">۲۲:۳۰</span>
+                    <span class="match-date-sub">۲۸ شهریور</span>
+                    <span class="match-league-sub">LaLiga</span>
                 </div>
-                <div class="win-prob">
-                    <span>برد ۹٪</span>
-                    <span>Win probability</span>
-                    <span>برد ۷۵٪</span>
+                <div class="team-side right">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png" alt="Barcelona">
+                    <span class="team-name">بارسلونا</span>
                 </div>
             </div>
 
-            <!-- تاریخ روز دوم -->
-            <div class="date-divider">شنبه ۲۸ شهریور</div>
+            <!-- تاریخ روز سوم: یکشنبه ۲۹ شهریور -->
+            <div class="date-divider">یکشنبه ۲۹ شهریور</div>
 
             <!-- بازی ۸: تاتنهام - استون ویلا -->
-            <div class="match-ticket">
-                <div class="league-header">
-                    <span>🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League</span>
-                    <span>۱۵:۰۰</span>
+            <div class="match-row-card">
+                <div class="team-side left">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8586.png" alt="Tottenham">
+                    <span class="team-name">تاتنهام</span>
                 </div>
-                <div class="match-main">
-                    <div class="team-box">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8586.png" alt="Tottenham">
-                        <span class="team-name">تاتنهام</span>
-                    </div>
-                    <div class="prediction-boxes">
-                        <div class="score-input-box">?</div>
-                        <div class="score-input-box">?</div>
-                    </div>
-                    <div class="team-box">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10252.png" alt="Aston Villa">
-                        <span class="team-name">استون ویلا</span>
-                    </div>
+                <div class="match-center-info">
+                    <span class="match-time">۱۵:۰۰</span>
+                    <span class="match-date-sub">۲۹ شهریور</span>
+                    <span class="match-league-sub">Premier League</span>
                 </div>
-                <div class="win-prob">
-                    <span>برد ۴۷٪</span>
-                    <span>Win probability</span>
-                    <span>برد ۲۶٪</span>
+                <div class="team-side right">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10252.png" alt="Aston Villa">
+                    <span class="team-name">استون ویلا</span>
                 </div>
             </div>
 
@@ -615,7 +559,9 @@
             <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V12H17V10H13V6H11Z"/></svg>
             کل‌کل‌ها
         </button>
-    </nav><script>
+    </nav>
+
+    <script>
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const splash = document.getElementById('splash-screen');
