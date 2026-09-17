@@ -257,7 +257,7 @@
             margin-top: 1px;
         }
 
-        /* --- جدول رده‌بندی ۱۳ نفره --- */
+        /* --- جدول رده‌بندی ۱۳ نفره اصلی و قبلی --- */
         .table-container {
             background-color: var(--card-bg);
             border-radius: 15px;
@@ -422,7 +422,7 @@
             font-weight: 700;
         }
 
-        /* --- استایل‌های پیشرفته بخش اخبار --- */
+        /* --- استایل اخبار بدون عکس (متنی و شیک) --- */
         .news-header-banner {
             background: linear-gradient(135deg, #243044, #121824);
             border-right: 4px solid var(--accent-yellow);
@@ -458,60 +458,41 @@
 
         .news-card-modern {
             background-color: var(--card-bg);
-            border-radius: 16px;
+            border-radius: 14px;
             overflow: hidden;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-            transition: transform 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            padding: 16px;
         }
 
-        .news-img-wrapper {
-            position: relative;
-            width: 100%;
-            height: 200px;
-        }
-
-        .news-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .news-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
         }
 
         .news-tag {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(18, 24, 36, 0.85);
-            backdrop-filter: blur(4px);
+            background: rgba(245, 197, 24, 0.15);
             color: var(--accent-yellow);
             font-size: 11px;
             font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 8px;
+            padding: 3px 8px;
+            border-radius: 6px;
             border: 1px solid rgba(245, 197, 24, 0.3);
         }
 
         .news-date {
-            position: absolute;
-            bottom: 12px;
-            left: 12px;
-            background: rgba(0, 0, 0, 0.7);
             color: var(--text-gray);
-            font-size: 10px;
-            padding: 3px 8px;
-            border-radius: 6px;
-        }
-
-        .news-body {
-            padding: 16px;
+            font-size: 11px;
         }
 
         .news-body-title {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 900;
             color: #ffffff;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             line-height: 1.5;
         }
 
@@ -519,7 +500,7 @@
             font-size: 13px;
             color: var(--text-gray);
             line-height: 1.7;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
 
         .news-footer {
@@ -527,13 +508,10 @@
             justify-content: space-between;
             align-items: center;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 12px;
+            padding-top: 10px;
         }
 
         .news-author {
-            display: flex;
-            align-items: center;
-            gap: 6px;
             font-size: 11px;
             color: #7b8898;
         }
@@ -781,7 +759,7 @@
         </div>
     </div>
 
-    <!-- تب ۲: جدول رده‌بندی (فصل دوم) -->
+    <!-- تب ۲: جدول رده‌بندی ۱۳ نفره اصلی -->
     <div id="tab-table" class="tab-content">
         <h2 style="font-size: 16px; margin-bottom: 15px; color: var(--accent-yellow); text-align: center;">🏆 جدول رده‌بندی ۱۳ نفره</h2>
         <div class="table-container">
@@ -931,7 +909,7 @@
                 </div>
             </div>
 
-            <!-- بخش ۲: اخبار جدید و پیشرفته مجله‌ای -->
+            <!-- بخش ۲: اخبار بدون عکس (متنی، خلوت و مدرن) -->
             <div class="banter-card">
                 <div class="news-header-banner">
                     <div class="news-header-title">📰 اخبار اختصاصی و حواشی لیگ</div>
@@ -940,96 +918,76 @@
 
                 <!-- خبر ۱: آقای پیرا -->
                 <div class="news-card-modern">
-                    <div class="news-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=600&q=80" alt="Barcelona Team">
+                    <div class="news-card-header">
                         <span class="news-tag">حواشی لیگ</span>
                         <span class="news-date">۲۷ شهریور ۱۴۰۵</span>
                     </div>
-                    <div class="news-body">
-                        <h3 class="news-body-title">نقشه سرّی آقای پیرا برای شکار رضا قطیفی در صدر!</h3>
-                        <p class="news-body-desc">
-                            آقای پیرا با ۳۴ امتیاز در رتبه ۹ جدول کمین کرده و در مصاحبه اختصاصی اعلام کرده با آنالیز دقیق بازی‌های هفته پنجم و ترکیب جدیدش، قصد دارد فاصله امتیازی‌اش را با رضا قطیفی به حداقل برساند!
-                        </p>
-                        <div class="news-footer">
-                            <div class="news-author">
-                                <span>✍️ تحریریه گداهای استرسی</span>
-                            </div>
-                            <div class="news-actions">
-                                <button class="news-action-btn" onclick="this.style.color='#e74c3c'">❤️ <span>۱۲</span></button>
-                                <button class="news-action-btn">💬 <span>۴</span></button>
-                            </div>
+                    <h3 class="news-body-title">نقشه سرّی آقای پیرا برای شکار رضا قطیفی در صدر!</h3>
+                    <p class="news-body-desc">
+                        آقای پیرا با ۳۴ امتیاز در رتبه ۹ جدول کمین کرده و در مصاحبه اختصاصی اعلام کرده با آنالیز دقیق بازی‌های هفته پنجم و ترکیب جدیدش، قصد دارد فاصله امتیازی‌اش را با رضا قطیفی به حداقل برساند!
+                    </p>
+                    <div class="news-footer">
+                        <span class="news-author">✍️ تحریریه گداهای استرسی</span>
+                        <div class="news-actions">
+                            <button class="news-action-btn" onclick="this.style.color='#e74c3c'">❤️ <span>۱۲</span></button>
+                            <button class="news-action-btn">💬 <span>۴</span></button>
                         </div>
                     </div>
                 </div>
 
                 <!-- خبر ۲: محمد خلیلاوی -->
                 <div class="news-card-modern">
-                    <div class="news-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=600&q=80" alt="Firefighter">
+                    <div class="news-card-header">
                         <span class="news-tag">اختصاصی</span>
                         <span class="news-date">۲۶ شهریور ۱۴۰۵</span>
                     </div>
-                    <div class="news-body">
-                        <h3 class="news-body-title">عبور از بحران آتش‌نشانی؛ خلیلاوی همچنان معتاد به نتایج ۱-۰ اقتصادی!</h3>
-                        <p class="news-body-desc">
-                            محمد خلیلاوی پس از عبور از خطرات و حواشی هفته گذشته، همچنان به سبک دفاعی و برد‌های حداقل ۱-۰ وفادار مانده است. وی در پاسخ به منتقدان گفت: «زیبا بازی کردن مهم نیست، مهم ۳ امتیاز و بقا در جدول است!»
-                        </p>
-                        <div class="news-footer">
-                            <div class="news-author">
-                                <span>✍️ گزارشگر اختصاصی</span>
-                            </div>
-                            <div class="news-actions">
-                                <button class="news-action-btn" onclick="this.style.color='#e74c3c'">❤️ <span>۱۹</span></button>
-                                <button class="news-action-btn">💬 <span>۷</span></button>
-                            </div>
+                    <h3 class="news-body-title">عبور از بحران آتش‌نشانی؛ خلیلاوی همچنان معتاد به نتایج ۱-۰ اقتصادی!</h3>
+                    <p class="news-body-desc">
+                        محمد خلیلاوی پس از عبور از خطرات و حواشی هفته گذشته، همچنان به سبک دفاعی و برد‌های حداقل ۱-۰ وفادار مانده است. وی در پاسخ به منتقدان گفت: «زیبا بازی کردن مهم نیست، مهم ۳ امتیاز و بقا در جدول است!»
+                    </p>
+                    <div class="news-footer">
+                        <span class="news-author">✍️ گزارشگر اختصاصی</span>
+                        <div class="news-actions">
+                            <button class="news-action-btn" onclick="this.style.color='#e74c3c'">❤️ <span>۱۹</span></button>
+                            <button class="news-action-btn">💬 <span>۷</span></button>
                         </div>
                     </div>
                 </div>
 
                 <!-- خبر ۳: دربی مادرید -->
                 <div class="news-card-modern">
-                    <div class="news-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=600&q=80" alt="Madrid Derby">
+                    <div class="news-card-header">
                         <span class="news-tag">فوتبال اروپا</span>
                         <span class="news-date">۲۸ شهریور ۱۴۰۵</span>
                     </div>
-                    <div class="news-body">
-                        <h3 class="news-body-title">پیش‌بینی معتبر اروپا: نبرد سرنوشت‌ساز اتلتیکو و رئال در متروپولیتانو</h3>
-                        <p class="news-body-desc">
-                            تقابل جذاب اتلتیکو مادرید و رئال مادرید در استادیوم متروپولیتانو، تعیین‌کننده‌ترین بازی این هفته برای پیش‌بینی‌کنندگان لیگ است. ۷۰٪ اعضای گروه برد رئال مادرید را پیش‌بینی کرده‌اند.
-                        </p>
-                        <div class="news-footer">
-                            <div class="news-author">
-                                <span>✍️ لا لیگا نیوز</span>
-                            </div>
-                            <div class="news-actions">
-                                <button class="news-action-btn" onclick="this.style.color='#e74c3c'">❤️ <span>۱۵</span></button>
-                                <button class="news-action-btn">💬 <span>۲</span></button>
-                            </div>
+                    <h3 class="news-body-title">پیش‌بینی معتبر اروپا: نبرد سرنوشت‌ساز اتلتیکو و رئال در متروپولیتانو</h3>
+                    <p class="news-body-desc">
+                        تقابل جذاب اتلتیکو مادرید و رئال مادرید در استادیوم متروپولیتانو، تعیین‌کننده‌ترین بازی این هفته برای پیش‌بینی‌کنندگان لیگ است. ۷۰٪ اعضای گروه برد رئال مادرید را پیش‌بینی کرده‌اند.
+                    </p>
+                    <div class="news-footer">
+                        <span class="news-author">✍️ لا لیگا نیوز</span>
+                        <div class="news-actions">
+                            <button class="news-action-btn" onclick="this.style.color='#e74c3c'">❤️ <span>۱۵</span></button>
+                            <button class="news-action-btn">💬 <span>۲</span></button>
                         </div>
                     </div>
                 </div>
 
                 <!-- خبر ۴: رم و اینتر -->
                 <div class="news-card-modern">
-                    <div class="news-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80" alt="Stadio Olimpico Roma">
+                    <div class="news-card-header">
                         <span class="news-tag">سری آ</span>
                         <span class="news-date">۲۸ شهریور ۱۴۰۵</span>
                     </div>
-                    <div class="news-body">
-                        <h3 class="news-body-title">نبرد سنگین سری آ در المپیکو؛ رم میزبان افعی‌های اینتر</h3>
-                        <p class="news-body-desc">
-                            رم در شرایطی میزبان اینتر است که هر دو تیم برای صعود به بالای جدول نیاز مبرم به ۳ امتیاز دارند. این بازی بیشترین اختلاف نظر را در نظرسنجی گروه به همراه داشته است.
-                        </p>
-                        <div class="news-footer">
-                            <div class="news-author">
-                                <span>✍️ آنالیز سری آ</span>
-                            </div>
-                            <div class="news-actions">
-                                <button class="news-action-btn" onclick="this.style.color='#e74c3c'">❤️ <span>۸</span></button>
-                                <button class="news-action-btn">💬 <span>۳</span></button>
-                            </div>
+                    <h3 class="news-body-title">نبرد سنگین سری آ در المپیکو؛ رم میزبان افعی‌های اینتر</h3>
+                    <p class="news-body-desc">
+                        رم در شرایطی میزبان اینتر است که هر دو تیم برای صعود به بالای جدول نیاز مبرم به ۳ امتیاز دارند. این بازی بیشترین اختلاف نظر را در نظرسنجی گروه به همراه داشته است.
+                    </p>
+                    <div class="news-footer">
+                        <span class="news-author">✍️ آنالیز سری آ</span>
+                        <div class="news-actions">
+                            <button class="news-action-btn" onclick="this.style.color='#e74c3c'">❤️ <span>۸</span></button>
+                            <button class="news-action-btn">💬 <span>۳</span></button>
                         </div>
                     </div>
                 </div>
@@ -1050,7 +1008,7 @@
             جدول قهرمانی
         </button>
         <button class="nav-item" onclick="switchTab('banter', this)">
-            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V12H17V10H13V6H11Z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V12H17V10H13V6H11Z"/></svg>
             کل‌کل‌ها
         </button>
     </nav>
