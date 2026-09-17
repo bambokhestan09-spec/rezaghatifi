@@ -5,13 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>لیگ گداهای استرسی - فصل دوم</title>
 
-    <!-- OneSignal Web Push SDK -->
+    <!-- OneSignal Web Push SDK with Auto Prompt -->
     <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
     <script>
       window.OneSignalDeferred = window.OneSignalDeferred || [];
-      OneSignalDeferred.push(function(OneSignal) {
-        OneSignal.init({
+      OneSignalDeferred.push(async function(OneSignal) {
+        await OneSignal.init({
           appId: "f19f2dbb-0424-48d9-b02f-90dfcaceb6a5",
+          slidedown: {
+            prompts: [
+              {
+                type: "push",
+                autoPrompt: true,
+                text: {
+                  actionMessage: "برای اطلاع از اخبار لیگ و یادآوری مسابقات، نوتیفیکیشن را فعال کنید.",
+                  acceptButton: "فعال‌سازی",
+                  cancelButton: "بعداً"
+                }
+              }
+            ]
+          }
         });
       });
     </script>
