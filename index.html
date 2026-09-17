@@ -691,36 +691,63 @@
         </div>
     </div>
 
-    <!-- تب ۳: کوئیزگدا (جایگزین تب قبلی با ۳ بخش تخصصی) -->
+    <!-- تب ۳: کوئیزگدا (ثبت‌نام اجباری + سوالات استاندارد + اتصال به Formspree برای ارسال به جیمیل شما) -->
     <div id="tab-banter" class="tab-content">
         <div class="quiz-container">
             <div class="quiz-card">
                 
-                <!-- صفحه انتخاب موضوع -->
-                <div id="quiz-category-screen">
+                <!-- فرم مخفی برای ارسال واقعی به Formspree (ارسال مستقیم به جیمیل شما) -->
+                <form id="real-email-form" action="https://formspree.io/f/xkjgnyoa" method="POST" style="display: none;">
+                    <input type="hidden" name="name" id="form-input-name">
+                    <input type="hidden" name="phone" id="form-input-phone">
+                    <input type="hidden" name="category" id="form-input-category">
+                    <input type="hidden" name="score" id="form-input-score">
+                    <input type="hidden" name="correct_count" id="form-input-correct">
+                </form>
+
+                <!-- صفحه ۱: ثبت نام اولیه (اجباری) -->
+                <div id="quiz-register-screen">
                     <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 8px;">🎯 کوئیزگدا</h2>
-                    <p style="text-align: center; color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">موضوع مورد نظرت رو انتخاب کن و اطلاعاتت رو به چالش بکش:</p>
+                    <p style="text-align: center; color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">برای شرکت در کوئیز و ارسال نتیجه به ایمیل ادمین، مشخصات خود را وارد کنید:</p>
+                    
+                    <form id="user-info-form" onsubmit="startQuizRegistration(event)">
+                        <div style="margin-bottom: 12px;">
+                            <label style="display: block; font-size: 12px; margin-bottom: 5px; color: var(--text-gray);">نام و نام خانوادگی:</label>
+                            <input type="text" id="player-name" required placeholder="مثلاً رضا غتیفی" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #2a3649; background: #121824; color: #fff; box-sizing: border-box;">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; font-size: 12px; margin-bottom: 5px; color: var(--text-gray);">شماره تماس یا سروش:</label>
+                            <input type="tel" id="player-phone" required placeholder="09xxxxxxxxx" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #2a3649; background: #121824; color: #fff; box-sizing: border-box;">
+                        </div>
+                        <button type="submit" style="width: 100%; padding: 13px; background: var(--accent-yellow); color: #121824; border: none; border-radius: 10px; font-weight: 900; font-size: 15px; cursor: pointer;">ورود به انتخاب موضوع کوئیز 🚀</button>
+                    </form>
+                </div>
+
+                <!-- صفحه ۲: انتخاب موضوع -->
+                <div id="quiz-category-screen" style="display: none;">
+                    <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 8px;">🎯 انتخاب موضوع</h2>
+                    <p style="text-align: center; color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">حوزه مورد نظرت رو انتخاب کن:</p>
                     
                     <div style="display: flex; flex-direction: column; gap: 12px;">
                         <button class="quiz-category-btn" onclick="selectCategory('football')">
-                            <span style="font-size: 20px;">⚽</span> فوتبال فیره‌فروشان (لیگ‌ها و جام جهانی)
+                            <span style="font-size: 20px;">⚽</span> فوتبال فیره‌فروشان (۶ سوال تخصصی)
                         </button>
                         
                         <button class="quiz-category-btn" onclick="selectCategory('general')">
-                            <span style="font-size: 20px;">🧠</span> اطلاعات عمومی (دانستنی‌های جذاب)
+                            <span style="font-size: 20px;">🧠</span> اطلاعات عمومی (۶ سوال جذاب)
                         </button>
                         
                         <button class="quiz-category-btn" onclick="selectCategory('proverbs')">
-                            <span style="font-size: 20px;">📜</span> ضرب‌المثل و اصطلاحات کوچه بازاری
+                            <span style="font-size: 20px;">📜</span> ضرب‌المثل و اصطلاحات (۶ سوال کوچه بازاری)
                         </button>
                     </div>
                 </div>
 
-                <!-- صفحه بازی کوئیز -->
+                <!-- صفحه ۳: بازی کوئیز -->
                 <div id="quiz-game-screen" style="display: none;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                        <span id="question-progress" style="font-size: 13px; color: var(--accent-yellow); font-weight: bold;">سوال 1 از 3</span>
-                        <div id="status-dots" style="display: flex; gap: 6px;"></div>
+                        <span id="question-progress" style="font-size: 13px; color: var(--accent-yellow); font-weight: bold;">سوال 1 از 6</span>
+                        <div id="status-dots" style="display: flex; gap: 5px;"></div>
                     </div>
 
                     <div id="question-box" style="background: #121824; padding: 18px; border-radius: 12px; margin-bottom: 15px; text-align: center; font-size: 15px; border: 1px solid #2a3649; line-height: 1.5; font-weight: 700;"></div>
@@ -728,20 +755,22 @@
                     <div id="options-container" style="display: flex; flex-direction: column; gap: 10px;"></div>
                 </div>
 
-                <!-- صفحه پایان و نتیجه (همراه با کد ثبت در جیمیل) -->
+                <!-- صفحه ۴: پایان و ارسال موفق به جیمیل -->
                 <div id="quiz-result-screen" style="display: none; text-align: center;">
                     <h2 style="color: var(--accent-yellow); margin-bottom: 5px; font-size: 24px;">پایان کوئیز!</h2>
-                    <p style="color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">عملکرد شما ثبت شد.</p>
+                    <p style="color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">عملکرد عالی بود، مشخصات و امتیاز شما ثبت شد.</p>
                     
                     <div style="background: #121824; border-radius: 12px; padding: 18px; margin-bottom: 20px; border: 1px solid #2a3649;">
                         <div style="font-size: 12px; color: var(--text-gray); margin-bottom: 5px;">امتیاز نهایی</div>
                         <div id="final-score-val" style="font-size: 32px; font-weight: bold; color: var(--accent-yellow); margin-bottom: 10px;">0</div>
-                        <div style="font-size: 13px; color: var(--text-gray);">پاسخ‌های درست: <span id="correct-count-val" style="color: var(--accent-green); font-weight: bold;">0</span> از 3</div>
+                        <div style="font-size: 13px; color: var(--text-gray);">پاسخ‌های درست: <span id="correct-count-val" style="color: var(--accent-green); font-weight: bold;">0</span> از 6</div>
                     </div>
 
-                    <p style="font-size: 12px; color: var(--accent-yellow); margin-bottom: 15px;">📧 نتیجه تست با موفقیت به ایمیل شما (reza.ghatifi@...) ارسال شد.</p>
+                    <div style="background: rgba(46, 204, 113, 0.1); border: 1px solid var(--accent-green); padding: 12px; border-radius: 10px; font-size: 12px; color: var(--accent-green); margin-bottom: 15px; line-height: 1.6;">
+                        ✅ اطلاعات و نتیجه تست کاربر (<span id="result-name-disp"></span>) با موفقیت به ایمیل شما ارسال شد.
+                    </div>
 
-                    <button onclick="resetQuiz()" style="width: 100%; padding: 12px; background: var(--accent-yellow); color: #121824; border: none; border-radius: 10px; font-weight: bold; font-size: 15px; cursor: pointer;">بازگشت به انتخاب موضوع</button>
+                    <button onclick="resetQuiz()" style="width: 100%; padding: 12px; background: var(--accent-yellow); color: #121824; border: none; border-radius: 10px; font-weight: bold; font-size: 15px; cursor: pointer;">شروع دوباره کوئیز</button>
                 </div>
 
             </div>
@@ -765,32 +794,54 @@
     </nav>
 
     <script>
-        // بانک سوالات تخصصی (سطح متوسط)
+        // بانک سوالات جامع (هر بخش ۶ سوال با سطح متوسط)
         const allQuizData = {
             football: [
                 { q: "کدام تیم بیشترین قهرمانی در تاریخ لیگ قهرمانان اروپا را دارد؟", options: ["بارسلونا", "رئال مادرید", "بایرن مونیخ", "میلان"], correct: 1 },
                 { q: "فینال جام جهانی 2022 در کدام کشور برگزار شد؟", options: ["برزیل", "قطر", "روسیه", "آلمان"], correct: 1 },
-                { q: "لقب معروف باشگاه آرسنال چیست؟", options: ["شیاطین سرخ", "توپچی‌ها", "بانوی پیر", "زنبورها"], correct: 1 }
+                { q: "لقب معروف باشگاه آرسنال چیست؟", options: ["شیاطین سرخ", "توپچی‌ها", "بانوی پیر", "زنبورها"], correct: 1 },
+                { q: "کدام بازیکن بیشترین تعداد توپ طلای جهان را کسب کرده است؟", options: ["کریستیانو رونالدو", "لیونل مسی", "پله", "مارادونا"], correct: 1 },
+                { q: "ورزشگاه خانگی باشگاه بارسلونا چه نام دارد؟", options: ["سانتیاگو برنابئو", "اتلتیکو متروپولیتانو", "اسپاتیفای نوکمپ", "اولد ترافورد"], correct: 2 },
+                { q: "میزبان مشترک مسابقات جام جهانی 2026 کدام کشورها هستند؟", options: ["آلمان و فرانسه", "آمریکا، کانادا و مکزیک", "برزیل و آرژانتین", "اسپانیا و پرتغال"], correct: 1 }
             ],
             general: [
                 { q: "بزرگترین سیاره در منظومه شمسی کدام است؟", options: ["زمین", "مریخ", "مشتری", "زهره"], correct: 2 },
                 { q: "پایتخت کشور استرالیا کدام شهر است؟", options: ["سیدنی", "ملبورن", "کانبرا", "بریزبن"], correct: 2 },
-                { q: "کدام عنصر بیشترین حجم از اتمسفر زمین را تشکیل داده است؟", options: ["اکسیژن", "نیتروژن", "کربن دی‌اکسید", "هیدروژن"], correct: 1 }
+                { q: "کدام عنصر بیشترین حجم از اتمسفر زمین را تشکیل داده است؟", options: ["اکسیژن", "نیتروژن", "کربن دی‌اکسید", "هیدروژن"], correct: 1 },
+                { q: "نزدیک‌ترین ستاره به سیاره زمین کدام است؟", options: ["قطبی", "شباهنگ", "خورشید", "پروکسیما قنطورس"], correct: 2 },
+                { q: "بزرگترین اقیانوس جهان کدام است؟", options: ["اقیانوس اطلس", "اقیانوس هند", "اقیانوس آرام", "اقیانوس منجمد شمالی"], correct: 2 },
+                { q: "کدام کشور به «سرزمین آفتاب تابان» معروف است؟", options: ["چین", "ژاپن", "کره جنوبی", "تایلند"], correct: 1 }
             ],
             proverbs: [
                 { q: "معنی ضرب‌المثل «آش نخورده و دهان سوخته» چیست؟", options: ["خوردن غذای خیلی داغ", "تاوان دادن برای کاری که انجام نداده‌ای", "عجله کردن در انجام کارها", "پشیمانی بعد از خرید"], correct: 1 },
                 { q: "عبارت «هر که بامش بیش، برفش بیشتر» کنایه از چیست؟", options: ["سختی خانه‌های کوهستانی", "داشتن ثروت و امکانات بیشتر برابر با دردسر بیشتر", "اهمیت نظافت خانه", "کمک به همسایگان"], correct: 1 },
-                { q: "«سیخ بسوخت و کباب بسوخت» در چه موقعیتی به کار می‌رود؟", options: ["هنگام باربی‌کیو", "وقتی در یک معامله هر دو طرف ضرر کنند", "وقتی غذا می‌سوزد", "اشتباه در پخت غذا"], correct: 1 }
+                { q: "«سیخ بسوخت و کباب بسوخت» در چه موقعیتی به کار می‌رود؟", options: ["هنگام باربی‌کیو", "وقتی در یک معامله هر دو طرف ضرر کنند", "وقتی غذا می‌سوزد", "اشتباه در پخت غذا"], correct: 1 },
+                { q: "معنی ضرب‌المثل «آب که سربالا برود، قورباغه ابوعطا می‌خواند» چیست؟", options: ["آواز خواندن قورباغه‌ها", "انجام کارهای غیرممکن یا توسط افراد ناشایست", "طغیان رودخانه", "خشکسالی"], correct: 1 },
+                { q: "کنایه از اصطلاح «دوزاری‌اش کج افتاد» چیست؟", options: ["گم شدن پول", "دیر متوجه شدن موضوعی", "خراب شدن تلفن همگانی", "بی‌نظمی در کارها"], correct: 1 },
+                { q: "ضرب‌المثل «جوجه را آخر پاییز می‌شمارند» یعنی چه؟", options: ["زمان جوجه‌کشی", "نتیجه نهایی کار در پایان مشخص می‌شود", "شمارش پرندگان", "فصل سرما"], correct: 1 }
             ]
         };
 
+        let playerData = { name: '', phone: '' };
+        let selectedCategoryKey = '';
         let quizData = [];
         let currentQuestion = 0;
         let score = 0;
         let correctAnswersCount = 0;
         let userAnswersState = [];
 
+        // ثبت‌نام اولیه و هدایت به انتخاب موضوع
+        function startQuizRegistration(e) {
+            e.preventDefault();
+            playerData.name = document.getElementById('player-name').value;
+            playerData.phone = document.getElementById('player-phone').value;
+
+            document.getElementById('quiz-register-screen').style.display = 'none';
+            document.getElementById('quiz-category-screen').style.display = 'block';
+        }
+
         function selectCategory(categoryKey) {
+            selectedCategoryKey = categoryKey;
             quizData = allQuizData[categoryKey];
             document.getElementById('quiz-category-screen').style.display = 'none';
             document.getElementById('quiz-game-screen').style.display = 'block';
@@ -859,7 +910,7 @@
             dotsContainer.innerHTML = '';
             for (let i = 0; i < quizData.length; i++) {
                 const dot = document.createElement('div');
-                dot.style.cssText = "width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: bold;";
+                dot.style.cssText = "width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: bold;";
                 
                 if (i < userAnswersState.length) {
                     if (userAnswersState[i]) {
@@ -889,14 +940,34 @@
             document.getElementById('quiz-result-screen').style.display = 'block';
             document.getElementById('final-score-val').innerText = score;
             document.getElementById('correct-count-val').innerText = correctAnswersCount;
+            document.getElementById('result-name-disp').innerText = playerData.name;
             
-            // کد دستور ارسال نتیجه به جیمیل شما
-            console.log("Quiz Result sent to Gmail (reza.ghatifi@...): Score = " + score);
+            // پر کردن فرم مخفی و ارسال خودکار به Formspree جهت دریافت در جیمیل
+            document.getElementById('form-input-name').value = playerData.name;
+            document.getElementById('form-input-phone').value = playerData.phone;
+            document.getElementById('form-input-category').value = selectedCategoryKey;
+            document.getElementById('form-input-score').value = score;
+            document.getElementById('form-input-correct').value = `${correctAnswersCount} از ${quizData.length}`;
+
+            const formData = new FormData(document.getElementById('real-email-form'));
+            fetch("https://formspree.io/f/xkjgnyoa", {
+                method: "POST",
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    console.log("Email successfully sent via Formspree to your Gmail!");
+                }
+            }).catch(error => {
+                console.error("Error sending email:", error);
+            });
         }
 
         function resetQuiz() {
             document.getElementById('quiz-result-screen').style.display = 'none';
-            document.getElementById('quiz-category-screen').style.display = 'block';
+            document.getElementById('quiz-register-screen').style.display = 'block';
+            document.getElementById('player-name').value = '';
+            document.getElementById('player-phone').value = '';
         }
 
         // مدیریت تب‌ها
