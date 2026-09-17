@@ -63,139 +63,51 @@
             padding-bottom: 90px;
         }
 
-        /* --- صفحه لودینگ --- */
         #splash-screen {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background-color: #0b1017;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            z-index: 9999; transition: opacity 0.5s ease;
         }
 
-        .splash-cup {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 15px rgba(245, 197, 24, 0.5));
-        }
-
-        .splash-title {
-            font-size: 26px;
-            font-weight: 900;
-            color: #fff;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
+        .splash-cup { width: 120px; height: 120px; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(245, 197, 24, 0.5)); }
+        .splash-title { font-size: 26px; font-weight: 900; color: #fff; margin-bottom: 30px; text-align: center; }
         .splash-title span { color: var(--accent-yellow); }
 
-        .loading-bar {
-            width: 200px;
-            height: 8px;
-            background-color: #243044;
-            border-radius: 4px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .loading-progress {
-            width: 50%;
-            height: 100%;
-            background-color: var(--accent-yellow);
-            border-radius: 4px;
-            animation: loadAnim 1.5s infinite alternate;
-        }
+        .loading-bar { width: 200px; height: 8px; background-color: #243044; border-radius: 4px; overflow: hidden; position: relative; }
+        .loading-progress { width: 50%; height: 100%; background-color: var(--accent-yellow); border-radius: 4px; animation: loadAnim 1.5s infinite alternate; }
 
         @keyframes loadAnim {
             0% { transform: translateX(-100%); }
             100% { transform: translateX(100%); }
         }
 
-        header {
-            background-color: #1a2332;
-            padding: 15px;
-            text-align: center;
-            font-weight: 700;
-            font-size: 18px;
-            border-bottom: 1px solid #2a3649;
-        }
+        header { background-color: #1a2332; padding: 15px; text-align: center; font-weight: 700; font-size: 18px; border-bottom: 1px solid #2a3649; }
 
-        .tab-content {
-            display: none;
-            padding: 15px;
-        }
+        .tab-content { display: none; padding: 15px; }
+        .tab-content.active { display: block; }
 
-        .tab-content.active {
-            display: block;
-        }
-
-        /* --- بخش خانه و مسابقات --- */
         .hero-banner { max-width: 680px; margin: 0 auto; }
 
         .matchweek-banner {
             background: linear-gradient(135deg, #243044, #1c2536);
             border: 2px solid var(--accent-yellow);
-            border-radius: 14px;
-            padding: 15px;
-            text-align: center;
-            margin-bottom: 20px;
+            border-radius: 14px; padding: 15px; text-align: center; margin-bottom: 20px;
             box-shadow: 0 4px 15px rgba(245, 197, 24, 0.2);
         }
-
         .matchweek-banner h2 { color: var(--accent-yellow); font-size: 20px; font-weight: 900; margin-bottom: 4px; }
         .matchweek-banner span { color: var(--text-gray); font-size: 13px; }
 
         .date-divider {
-            font-size: 15px;
-            font-weight: 900;
-            color: var(--accent-yellow);
-            margin: 25px 0 12px 0;
-            text-align: right;
-            border-bottom: 1px solid #2a3649;
-            padding-bottom: 6px;
+            font-size: 15px; font-weight: 900; color: var(--accent-yellow);
+            margin: 25px 0 12px 0; text-align: right; border-bottom: 1px solid #2a3649; padding-bottom: 6px;
         }
-
-        .match-card-container {
-            background-size: cover;
-            background-position: center;
-            border-radius: 16px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            border: 1px solid rgba(245, 197, 24, 0.4);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
-        }
-
-        .match-overlay {
-            background: linear-gradient(rgba(18, 24, 36, 0.85), rgba(18, 24, 36, 0.95));
-            padding: 20px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-
-        .team-box { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-        .team-logo { width: 50px; height: 50px; object-fit: contain; }
-        .match-info { text-align: center; }
-        .match-status { font-size: 11px; background: var(--accent-yellow); color: #121824; font-weight: 900; padding: 2px 8px; border-radius: 6px; margin-top: 4px; display: inline-block; }
 
         .match-row-card {
-            background-color: var(--card-bg);
-            border-radius: 14px;
-            padding: 16px 20px;
-            margin-bottom: 12px;
-            border: 1px solid rgba(255,255,255,0.05);
-            box-shadow: 0 3px 10px rgba(0,0,0,0.25);
-            display: grid;
-            grid-template-columns: 1fr 150px 1fr;
-            align-items: center;
-            gap: 10px;
+            background-color: var(--card-bg); border-radius: 14px; padding: 16px 20px; margin-bottom: 12px;
+            border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+            display: grid; grid-template-columns: 1fr 150px 1fr; align-items: center; gap: 10px;
         }
 
         .team-side { display: flex; align-items: center; gap: 12px; width: 100%; }
@@ -205,53 +117,28 @@
         .team-name { font-size: 14px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
         .match-center-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: rgba(0,0,0,0.2);
-            padding: 8px 12px;
-            border-radius: 10px;
-            width: 100%;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+            background: rgba(0,0,0,0.2); padding: 8px 12px; border-radius: 10px; width: 100%;
         }
-
         .match-time { font-size: 16px; font-weight: 900; color: var(--accent-yellow); letter-spacing: 0.5px; line-height: 1.2; }
         .match-date-sub { font-size: 11px; color: var(--text-gray); margin-top: 2px; }
         .match-league-sub { font-size: 10px; color: #7b8898; margin-top: 1px; }
 
-        /* --- کادر بالای جدول --- */
+        /* کادر شیک بالای جدول */
         .league-banner-card {
             background: radial-gradient(circle at top right, rgba(245, 197, 24, 0.2), transparent 70%), #1c2536;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: 18px 22px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 680px;
-            margin-left: auto;
-            margin-right: auto;
+            border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 18px 22px; margin-bottom: 20px;
+            display: flex; justify-content: space-between; align-items: center; max-width: 680px; margin-left: auto; margin-right: auto;
             box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
-
         .league-banner-title { font-size: 18px; font-weight: 900; color: #ffffff; margin-bottom: 4px; }
         .league-banner-subtitle { font-size: 16px; font-weight: 900; color: var(--accent-yellow); }
-
         .cup-hex-icon {
-            background: rgba(0, 0, 0, 0.25);
-            border: 2px solid var(--accent-yellow);
-            width: 58px;
-            height: 58px;
+            background: rgba(0, 0, 0, 0.25); border: 2px solid var(--accent-yellow); width: 58px; height: 58px;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            filter: drop-shadow(0 0 8px rgba(245, 197, 24, 0.3));
+            display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 0 8px rgba(245, 197, 24, 0.3));
         }
 
-        /* --- جدول ۱۳ نفره --- */
         .table-container { background-color: var(--card-bg); border-radius: 15px; overflow: hidden; max-width: 680px; margin: 0 auto; }
         .table-row { display: flex; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid #243044; align-items: center; }
         .table-row:last-child { border-bottom: none; }
@@ -260,157 +147,40 @@
         .name-col { flex: 1; text-align: right; }
         .score-col { width: 50px; text-align: left; font-weight: bold; }
 
-        /* --- استایل تب اختصاصی «بیا رد شو» (WhatsApp Story Style) --- */
-        #tab-stories {
-            padding: 0;
-            height: calc(100vh - 140px);
-            position: relative;
-        }
-
+        /* تب بیا رد شو */
+        #tab-stories { padding: 10px; display: flex; justify-content: center; align-items: center; }
         .story-app-container {
-            width: 100%;
-            height: 100%;
-            max-width: 450px;
-            margin: 0 auto;
-            background: #000;
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            width: 100%; max-width: 450px; height: 560px; background: #000; border-radius: 20px; overflow: hidden;
+            position: relative; display: flex; flex-direction: column; justify-content: space-between;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.1);
         }
+        .story-bars-header { position: absolute; top: 12px; left: 12px; right: 12px; display: flex; gap: 5px; z-index: 10; }
+        .story-bar-item { height: 3px; flex: 1; background: rgba(255, 255, 255, 0.3); border-radius: 2px; overflow: hidden; }
+        .story-bar-fill { height: 100%; width: 0%; background: #ffffff; }
 
-        .story-bars-header {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            right: 15px;
-            display: flex;
-            gap: 6px;
-            z-index: 10;
-        }
+        .story-profile-header { position: absolute; top: 24px; right: 15px; left: 15px; display: flex; align-items: center; gap: 10px; z-index: 10; }
+        .story-profile-header img { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--accent-yellow); object-fit: cover; }
+        .story-profile-title { font-size: 13px; font-weight: 900; color: #fff; }
+        .story-profile-time { font-size: 10px; color: #ccc; }
 
-        .story-bar-item {
-            height: 3px;
-            flex: 1;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 2px;
-            overflow: hidden;
-        }
+        .story-main-display { width: 100%; height: 100%; position: absolute; top: 0; left: 0; display: flex; align-items: center; justify-content: center; background: #111; }
+        .story-main-display img, .story-main-display video { width: 100%; height: 100%; object-fit: cover; }
 
-        .story-bar-fill {
-            height: 100%;
-            width: 0%;
-            background: #ffffff;
-        }
-
-        .story-bar-item.active .story-bar-fill {
-            animation: storyProgress 6s linear forwards;
-        }
-
-        .story-bar-item.seen .story-bar-fill {
-            width: 100%;
-        }
-
-        @keyframes storyProgress {
-            from { width: 0%; }
-            to { width: 100%; }
-        }
-
-        .story-profile-header {
-            position: absolute;
-            top: 28px;
-            right: 15px;
-            left: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            z-index: 10;
-        }
-
-        .story-profile-header img {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: 2px solid var(--accent-yellow);
-        }
-
-        .story-profile-title {
-            font-size: 13px;
-            font-weight: 900;
-            color: #fff;
-        }
-
-        .story-profile-time {
-            font-size: 10px;
-            color: #ccc;
-        }
-
-        .story-main-display {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .story-main-display img, .story-main-display video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .story-touch-left, .story-touch-right {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 40%;
-            z-index: 8;
-        }
-
+        .story-touch-left, .story-touch-right { position: absolute; top: 0; bottom: 0; width: 45%; z-index: 8; cursor: pointer; }
         .story-touch-left { left: 0; }
         .story-touch-right { right: 0; }
 
         .story-bottom-desc-box {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.9) 80%);
-            padding: 30px 20px 20px 20px;
-            z-index: 10;
+            position: absolute; bottom: 0; left: 0; right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.96) 70%);
+            padding: 25px 15px 15px 15px; z-index: 10;
         }
+        .story-desc-tag { background: var(--accent-yellow); color: #121824; font-size: 10px; font-weight: 900; padding: 2px 8px; border-radius: 6px; display: inline-block; margin-bottom: 4px; }
+        .story-desc-title { font-size: 15px; font-weight: 900; color: #fff; margin-bottom: 4px; }
+        .story-desc-text { font-size: 12px; color: #ddd; line-height: 1.5; margin-bottom: 6px; }
+        .story-results-mini { font-size: 11px; color: #fff; background: rgba(0,0,0,0.65); padding: 8px; border-radius: 8px; line-height: 1.5; border-right: 3px solid var(--accent-yellow); }
 
-        .story-desc-tag {
-            background: var(--accent-yellow);
-            color: #121824;
-            font-size: 10px;
-            font-weight: 900;
-            padding: 2px 8px;
-            border-radius: 6px;
-            display: inline-block;
-            margin-bottom: 6px;
-        }
-
-        .story-desc-title {
-            font-size: 16px;
-            font-weight: 900;
-            color: #fff;
-            margin-bottom: 6px;
-        }
-
-        .story-desc-text {
-            font-size: 12px;
-            color: #ddd;
-            line-height: 1.6;
-        }
-
-        /* --- کل‌کل و اخبار --- */
+        /* کل‌کل و نظرسنجی‌ها */
         .banter-container { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
         .banter-card { background-color: var(--card-bg); border-radius: 14px; padding: 18px; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
         .banter-title { font-size: 16px; font-weight: 900; color: var(--accent-yellow); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
@@ -432,32 +202,14 @@
         .poll-stats-text { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-gray); }
         .user-vote-status { font-size: 11px; color: var(--accent-green); text-align: center; margin-top: 6px; font-weight: 700; }
 
-        /* --- نوار پایین (تغییر یافته) --- */
         .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #1a2332;
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-            border-top: 1px solid #2a3649;
-            z-index: 1000;
+            position: fixed; bottom: 0; left: 0; width: 100%; background-color: #1a2332;
+            display: flex; justify-content: space-around; padding: 10px 0; border-top: 1px solid #2a3649; z-index: 1000;
         }
-
         .nav-item {
-            background: none;
-            border: none;
-            color: var(--text-gray);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 11px;
-            cursor: pointer;
-            gap: 4px;
+            background: none; border: none; color: var(--text-gray);
+            display: flex; flex-direction: column; align-items: center; font-size: 11px; cursor: pointer; gap: 4px;
         }
-
         .nav-item.active { color: var(--accent-yellow); }
         .nav-item svg { width: 22px; height: 22px; fill: currentColor; }
 
@@ -480,7 +232,7 @@
 
     <header>لیگ گداهای استرسی</header>
 
-    <!-- تب ۱: خانه / مسابقات -->
+    <!-- تب ۱: خانه / مسابقات کامل هفته -->
     <div id="tab-home" class="tab-content active">
         <div class="hero-banner">
             <button onclick="requestNotification()" style="width: 100%; background: #f5c518; color: #121824; font-weight: 900; border: none; padding: 12px; border-radius: 12px; margin-bottom: 15px; cursor: pointer; font-size: 13px; box-shadow: 0 4px 10px rgba(245, 197, 24, 0.25);">
@@ -492,24 +244,7 @@
                 <span>لیگ گداهای استرسی فصل دوم</span>
             </div>
 
-            <div class="match-card-container" style="background-image: url('https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=1000&q=80');">
-              <div class="match-overlay">
-                <div class="team-box">
-                  <img src="https://ssl.gstatic.com/onebox/media/sports/logos/optimized/fhBITrIlbQxhVB6IjxUO6Q_500x500.png" alt="چلسی" class="team-logo" />
-                  <span class="team-name">چلسی</span>
-                </div>
-                <div class="match-info">
-                  <span class="match-time" style="font-size: 20px;">۲۲:۳۰</span>
-                  <br><span class="match-status">جمعه ۲۷ شهریور</span>
-                </div>
-                <div class="team-box">
-                  <img src="https://ssl.gstatic.com/onebox/media/sports/logos/optimized/k2_S9348d4xG_0vH9q0x3A_500x500.png" alt="برنتفورد" class="team-logo" />
-                  <span class="team-name">برنتفورد</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="date-divider">جمعه ۲۷ شهریور</div>
+            <div class="date-divider">جمعه ۲۷ شهریور (شروع پیش‌بینی‌ها)</div>
 
             <div class="match-row-card">
                 <div class="team-side left">
@@ -561,6 +296,88 @@
                 </div>
             </div>
 
+            <div class="match-row-card">
+                <div class="team-side left">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9879.png" alt="Fulham">
+                    <span class="team-name">فولام</span>
+                </div>
+                <div class="match-center-info">
+                    <span class="match-time">۱۹:۰۰</span>
+                    <span class="match-date-sub">۲۸ شهریور</span>
+                    <span class="match-league-sub">Premier League</span>
+                </div>
+                <div class="team-side right">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10260.png" alt="Man United">
+                    <span class="team-name">منچستر یونایتد</span>
+                </div>
+            </div>
+
+            <div class="match-row-card">
+                <div class="team-side left">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10204.png" alt="Brighton">
+                    <span class="team-name">برایتون</span>
+                </div>
+                <div class="match-center-info">
+                    <span class="match-time">۱۷:۳۰</span>
+                    <span class="match-date-sub">۲۸ شهریور</span>
+                    <span class="match-league-sub">Premier League</span>
+                </div>
+                <div class="team-side right">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9825.png" alt="Arsenal">
+                    <span class="team-name">آرسنال</span>
+                </div>
+            </div>
+
+            <div class="match-row-card">
+                <div class="team-side left">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8686.png" alt="Roma">
+                    <span class="team-name">رم</span>
+                </div>
+                <div class="match-center-info">
+                    <span class="match-time">۱۹:۳۰</span>
+                    <span class="match-date-sub">۲۸ شهریور</span>
+                    <span class="match-league-sub">Serie A</span>
+                </div>
+                <div class="team-side right">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8636.png" alt="Inter">
+                    <span class="team-name">اینتر</span>
+                </div>
+            </div>
+
+            <div class="match-row-card">
+                <div class="team-side left">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8302.png" alt="Sevilla">
+                    <span class="team-name">سویا</span>
+                </div>
+                <div class="match-center-info">
+                    <span class="match-time">۲۲:۳۰</span>
+                    <span class="match-date-sub">۲۸ شهریور</span>
+                    <span class="match-league-sub">LaLiga</span>
+                </div>
+                <div class="team-side right">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png" alt="Barcelona">
+                    <span class="team-name">بارسلونا</span>
+                </div>
+            </div>
+
+            <div class="date-divider">یکشنبه ۲۹ شهریور</div>
+
+            <div class="match-row-card">
+                <div class="team-side left">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8586.png" alt="Tottenham">
+                    <span class="team-name">تاتنهام</span>
+                </div>
+                <div class="match-center-info">
+                    <span class="match-time">۱۵:۰۰</span>
+                    <span class="match-date-sub">۲۹ شهریور</span>
+                    <span class="match-league-sub">Premier League</span>
+                </div>
+                <div class="team-side right">
+                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10252.png" alt="Aston Villa">
+                    <span class="team-name">استون ویلا</span>
+                </div>
+            </div>
+
             <div style="margin: 25px 0; text-align: center;">
                 <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" style="display: block; background-color: var(--accent-yellow); color: #121824; font-weight: 900; padding: 14px; border-radius: 12px; text-decoration: none; font-size: 15px; box-shadow: 0 4px 10px rgba(245, 197, 24, 0.3);">
                     ورود به لیگ پیش‌بینی در فوت‌موب 🚀
@@ -600,7 +417,7 @@
         </div>
     </div>
 
-    <!-- تب ۳: بخش جدید و کاملاً مجزای «بیا رد شو» (استوری خودکار واتساپ) -->
+    <!-- تب ۳: بخش استوری خودکار «بیا رد شو» (شامل نتایج دقیق بارسلونا و ویدیو کانسلو) -->
     <div id="tab-stories" class="tab-content">
         <div class="story-app-container">
             <div class="story-bars-header" id="storyBarsBox"></div>
@@ -622,11 +439,12 @@
                 <span id="tabStoryTag" class="story-desc-tag"></span>
                 <div id="tabStoryTitle" class="story-desc-title"></div>
                 <div id="tabStoryText" class="story-desc-text"></div>
+                <div id="tabStoryExtra" class="story-results-mini" style="display:none;"></div>
             </div>
         </div>
     </div>
 
-    <!-- تب ۴: کل‌کل و حواشی -->
+    <!-- تب ۴: کل‌کل و نظرسنجی‌ها -->
     <div id="tab-banter" class="tab-content">
         <div class="banter-container">
             <div class="banter-card">
@@ -654,11 +472,31 @@
                     <div class="poll-stats-text"><span id="p1-home-txt">اتلتیکو (۳۵٪)</span><span id="p1-draw-txt">مساوی (۲۰٪)</span><span id="p1-away-txt">رئال (۴۵٪)</span></div>
                     <div class="user-vote-status" id="p1-status"></div>
                 </div>
+
+                <div class="poll-match-box" id="poll-2">
+                    <div class="poll-teams-header">
+                        <div class="poll-team-item"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8686.png" alt="Roma"><span>رم</span></div>
+                        <span style="color: var(--accent-yellow); font-size: 11px;">نبرد سری آ</span>
+                        <div class="poll-team-item"><span>اینتر</span><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8636.png" alt="Inter"></div>
+                    </div>
+                    <div class="poll-buttons-grid" id="poll-btns-2">
+                        <button class="poll-btn" onclick="vote(2, 'home')">برد رم</button>
+                        <button class="poll-btn" onclick="vote(2, 'draw')">مساوی</button>
+                        <button class="poll-btn" onclick="vote(2, 'away')">برد اینتر</button>
+                    </div>
+                    <div class="poll-bars">
+                        <div class="poll-bar-home" id="p2-home" style="width: 25%;"></div>
+                        <div class="poll-bar-draw" id="p2-draw" style="width: 30%;"></div>
+                        <div class="poll-bar-away" id="p2-away" style="width: 45%;"></div>
+                    </div>
+                    <div class="poll-stats-text"><span id="p2-home-txt">رم (۲۵٪)</span><span id="p2-draw-txt">مساوی (۳۰٪)</span><span id="p2-away-txt">اینتر (۴۵٪)</span></div>
+                    <div class="user-vote-status" id="p2-status"></div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- نوار ناوبری پایین صفحه (با تب اضافه شدهٔ «بیا رد شو») -->
+    <!-- نوار ناوبری پایین صفحه -->
     <nav class="bottom-nav">
         <button class="nav-item active" onclick="switchTab('home', this)">
             <svg viewBox="0 0 24 24"><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"/></svg>
@@ -679,37 +517,40 @@
     </nav>
 
     <script>
-        // دیتای تب «بیا رد شو»
+        // دیتای بخش «بیا رد شو» بر اساس درخواست شما و تصویر ارسال شده
         const tabStoriesData = [
             {
-                authorName: "گل‌های دیشب کانسلو",
+                authorName: "گل‌های کانسلو",
                 authorImg: "https://images.fotmob.com/image_resources/logo/teamlogo/8634.png",
-                timeAgo: "۲ ساعت پیش",
+                timeAgo: "دیشب",
                 mediaType: "video",
-                mediaUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
-                tag: "ویدیو اختصاصی",
-                title: "درخشش کانلسو برابر راسینگ سانتاندر",
-                text: "گل‌های دیشب ژائو کانسلو برای بارسلونا مقابل راسینگ سانتاندر که بازی را کُن‌فَکُون کرد!"
+                mediaUrl: "https://assets.mixkit.co/videos/preview/mixkit-football-player-scoring-a-goal-41135-large.mp4",
+                tag: "ویدیو گل",
+                title: "گل‌های دیشب کانسلو برای بارسلونا",
+                text: "درخشش و گلزنی ژائو کانسلو مقابل راسینگ سانتاندر[span_1](start_span)[span_1](end_span).",
+                extra: ""
             },
             {
-                authorName: "نتایج آتشین بارسلونا",
+                authorName: "نتایج بارسلونا",
                 authorImg: "https://images.fotmob.com/image_resources/logo/teamlogo/8634.png",
-                timeAgo: "۵ ساعت پیش",
+                timeAgo: "فصل ۲۰۲۶",
                 mediaType: "image",
                 mediaUrl: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=80",
-                tag: "خبر زنده",
+                tag: "گزارش نتایج",
                 title: "بارسلونا در حال جر دادن تیمها!",
-                text: "بردهای ۵-۰، ۵-۲ و ۷-۲ بارسلونا در فصل ۲۰۲۶ کادر فنی حریفان را شگفت‌زده کرده است."
+                text: "نتایج کامل و دقیق بارسلونا در مسابقات اخیر[span_2](start_span)[span_2](end_span):",
+                extra: "• الچه 0 - 5 بارسلونا[span_3](start_span)[span_3](end_span)<br>• بارسلونا 2 - 0 اتلتیک بیلبائو[span_4](start_span)[span_4](end_span)<br>• بارسلونا 5 - 2 رایو وایکانو[span_5](start_span)[span_5](end_span)<br>• والنسیا 0 - 5 بارسلونا[span_6](start_span)[span_6](end_span)<br>• بارسلونا 5 - 1 فاینورد (لیگ قهرمانان)[span_7](start_span)[span_7](end_span)<br>• لوانته 2 - 4 بارسلونا[span_8](start_span)[span_8](end_span)<br>• بارسلونا 7 - 2 راسینگ سانتاندر[span_9](start_span)[span_9](end_span)"
             },
             {
-                authorName: "پیش‌بینی‌ها از جمعه",
+                authorName: "شروع پیش‌بینی‌ها",
                 authorImg: "https://images.fotmob.com/image_resources/logo/teamlogo/8455.png",
-                timeAgo: "۱۰ ساعت پیش",
+                timeAgo: "جمعه ۲۷ شهریور",
                 mediaType: "image",
-                mediaUrl: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1000&q=80",
-                tag: "اطلاعیه لیگ",
-                title: "شروع پیش‌بینی از روز جمعه",
-                text: "اولین بازی هفته بین چلسی و برنتفورد ساعت ۲۲:۳۰ جمعه شروع می‌شود. فرم را تا قبل از بازی ثبت کنید!"
+                mediaUrl: "https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=1000&q=80",
+                tag: "هفته پنجم",
+                title: "شروع پیش‌بینی‌ها با نبرد چلسی و برنتفورد",
+                text: "رقابت‌های این هفته از روز جمعه ساعت ۲۲:۳۰ با بازی چلسی و برنتفورد رسماً آغاز می‌شود.",
+                extra: ""
             }
         ];
 
@@ -721,8 +562,17 @@
             barsBox.innerHTML = '';
             tabStoriesData.forEach((_, idx) => {
                 const bar = document.createElement('div');
-                bar.className = 'story-bar-item' + (idx === currentStoryIdx ? ' active' : (idx < currentStoryIdx ? ' seen' : ''));
-                bar.innerHTML = '<div class="story-bar-fill"></div>';
+                bar.className = 'story-bar-item';
+                const fill = document.createElement('div');
+                fill.className = 'story-bar-fill';
+                
+                if (idx < currentStoryIdx) {
+                    fill.style.width = '100%';
+                } else if (idx === currentStoryIdx) {
+                    fill.style.transition = 'width 6s linear';
+                    setTimeout(() => { fill.style.width = '100%'; }, 50);
+                }
+                bar.appendChild(fill);
                 barsBox.appendChild(bar);
             });
         }
@@ -737,6 +587,14 @@
             document.getElementById('tabStoryTag').innerText = data.tag;
             document.getElementById('tabStoryTitle').innerText = data.title;
             document.getElementById('tabStoryText').innerText = data.text;
+
+            const extraBox = document.getElementById('tabStoryExtra');
+            if (data.extra) {
+                extraBox.innerHTML = data.extra;
+                extraBox.style.display = 'block';
+            } else {
+                extraBox.style.display = 'none';
+            }
 
             const mediaBox = document.getElementById('tabStoryMediaBox');
             if (data.mediaType === 'video') {
@@ -768,13 +626,27 @@
             }
         }
 
-        const pollData = { 1: { home: 35, draw: 20, away: 45, voted: false } };
+        const pollData = {
+            1: { home: 35, draw: 20, away: 45, voted: false },
+            2: { home: 25, draw: 30, away: 45, voted: false }
+        };
 
         function vote(pollId, choice) {
-            if (pollData[pollId].voted) { alert('شما قبلاً رای داده‌اید!'); return; }
+            if (pollData[pollId].voted) { alert('شما قبلاً در این نظرسنجی رای داده‌اید! 😉'); return; }
             pollData[pollId][choice] += 1;
             pollData[pollId].voted = true;
-            document.getElementById(`p${pollId}-status`).innerText = `✅ رای شما ثبت شد`;
+
+            const total = pollData[pollId].home + pollData[pollId].draw + pollData[pollId].away;
+            const homePercent = Math.round((pollData[pollId].home / total) * 100);
+            const drawPercent = Math.round((pollData[pollId].draw / total) * 100);
+            const awayPercent = 100 - (homePercent + drawPercent);
+
+            document.getElementById(`p${pollId}-home`).style.width = homePercent + '%';
+            document.getElementById(`p${pollId}-draw`).style.width = drawPercent + '%';
+            document.getElementById(`p${pollId}-away`).style.width = awayPercent + '%';
+
+            document.getElementById(`p${pollId}-status`).innerText = `✅ رای شما ثبت شد!`;
+            alert('رای شما با موفقیت ثبت شد! 🚀');
         }
 
         window.addEventListener('load', () => {
@@ -793,6 +665,7 @@
             element.classList.add('active');
 
             if (tabName === 'stories') {
+                currentStoryIdx = 0;
                 loadCurrentStory();
             } else {
                 clearTimeout(tabStoryTimer);
