@@ -28,7 +28,6 @@
         });
       });
 
-      // تابع دستی برای فعال‌سازی در آیفون
       function requestNotification() {
         window.OneSignalDeferred.push(function(OneSignal) {
           OneSignal.Notifications.requestPermission();
@@ -140,7 +139,6 @@
             display: block;
         }
 
-        /* بخش مسابقات */
         .hero-banner {
             max-width: 680px;
             margin: 0 auto;
@@ -255,6 +253,62 @@
             font-size: 10px;
             color: #7b8898;
             margin-top: 1px;
+        }
+
+        /* --- استایل بخش استوری‌های خبر و نتایج (شبیه واتساپ) --- */
+        .story-container {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .whatsapp-story-card {
+            background: linear-gradient(145deg, #182232, #0d131d);
+            border: 1px solid rgba(245, 197, 24, 0.2);
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .whatsapp-story-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--accent-yellow);
+        }
+
+        .story-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 12px;
+            color: var(--accent-yellow);
+            font-weight: 700;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 8px;
+        }
+
+        .story-body {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #e2e8f0;
+            font-weight: 700;
+            text-align: right;
+        }
+
+        .story-footer {
+            margin-top: 12px;
+            font-size: 11px;
+            color: var(--text-gray);
+            text-align: left;
         }
 
         /* --- کادر شیک بالای جدول --- */
@@ -384,7 +438,7 @@
             border-color: var(--accent-yellow);
         }
 
-        /* --- نوار ناوبری پایین --- */
+        /* --- نوار ناوبری پایین (۴ تب) --- */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -405,9 +459,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-size: 12px;
+            font-size: 11px;
             cursor: pointer;
-            gap: 4px;
+            gap: 3px;
         }
 
         .nav-item.active {
@@ -415,8 +469,8 @@
         }
 
         .nav-item svg {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             fill: currentColor;
         }
 
@@ -454,7 +508,6 @@
     <div id="tab-home" class="tab-content active">
         <div class="hero-banner">
 
-            <!-- دکمه دستی نوتیفیکیشن مخصوص آیفون و اندروید -->
             <button onclick="requestNotification()" style="width: 100%; background: #f5c518; color: #121824; font-weight: 900; border: none; padding: 12px; border-radius: 12px; margin-bottom: 15px; cursor: pointer; font-size: 13px; box-shadow: 0 4px 10px rgba(245, 197, 24, 0.25);">
                 🔔 دریافت خبرها و یادآوری مسابقات (کلیک کنید)
             </button>
@@ -608,8 +661,6 @@
 
     <!-- تب ۲: جدول رده‌بندی ۱۳ نفره اصلی -->
     <div id="tab-table" class="tab-content">
-
-        <!-- کادر عنوان جدول -->
         <div class="league-banner-card">
             <div>
                 <div class="league-banner-title">جدول لیگ گداهای استرسی</div>
@@ -623,80 +674,72 @@
         </div>
 
         <div class="table-container">
-            <div class="table-row">
-                <span class="rank-col">1</span>
-                <span class="name-col">Asm A</span>
-                <span class="score-col">52</span>
+            <div class="table-row"><span class="rank-col">1</span><span class="name-col">Asm A</span><span class="score-col">52</span></div>
+            <div class="table-row highlight"><span class="rank-col">2</span><span class="name-col">REZA GHATIFI</span><span class="score-col">48</span></div>
+            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Mahdi</span><span class="score-col">45</span></div>
+            <div class="table-row"><span class="rank-col">4</span><span class="name-col">Donya Asil</span><span class="score-col">44</span></div>
+            <div class="table-row"><span class="rank-col">5</span><span class="name-col">حبیب نعیمی</span><span class="score-col">43</span></div>
+            <div class="table-row"><span class="rank-col">6</span><span class="name-col">محمد خلیلاوی پور</span><span class="score-col">40</span></div>
+            <div class="table-row"><span class="rank-col">7</span><span class="name-col">hajar daoudi</span><span class="score-col">38</span></div>
+            <div class="table-row"><span class="rank-col">8</span><span class="name-col">Ahlam Aljaber</span><span class="score-col">37</span></div>
+            <div class="table-row"><span class="rank-col">9</span><span class="name-col">hey10</span><span class="score-col">34</span></div>
+            <div class="table-row"><span class="rank-col">10</span><span class="name-col">امین دریس</span><span class="score-col">33</span></div>
+            <div class="table-row"><span class="rank-col">11</span><span class="name-col">Sama salehi</span><span class="score-col">30</span></div>
+            <div class="table-row"><span class="rank-col">12</span><span class="name-col">محمد جاسمیان</span><span class="score-col">24</span></div>
+            <div class="table-row"><span class="rank-col">13</span><span class="name-col">مهدی</span><span class="score-col">15</span></div>
+        </div>
+    </div>
+
+    <!-- تب ۳: استوری‌وز گدا (اخبار و نتایج زنده شبیه استوری واتساپ) -->
+    <div id="tab-stories" class="tab-content">
+        <div class="story-container">
+            <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">⚡ استوری‌وز و اخبار لیگ</h2>
+            <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 20px;">آخرین نتایج، کل‌کل‌ها و اخبار فوری به سبک استوری</p>
+
+            <div class="whatsapp-story-card">
+                <div class="story-header">
+                    <span>🔥 نتیجه زنده / فینال هفته</span>
+                    <span>امروز</span>
+                </div>
+                <div class="story-body">
+                    ⚽ منچستر یونایتد ۲ - ۱ فولام<br>
+                    شیاطین سرخ در دقایق پایانی بازی را درآوردند تا استرس هواداران به اوج برسد!
+                </div>
+                <div class="story-footer">مدیریت لیگ گداها</div>
             </div>
-            <div class="table-row highlight">
-                <span class="rank-col">2</span>
-                <span class="name-col">REZA GHATIFI</span>
-                <span class="score-col">48</span>
+
+            <div class="whatsapp-story-card">
+                <div class="story-header">
+                    <span>🚨 خبر فوری و حاشیه‌ای</span>
+                    <span>دیروز</span>
+                </div>
+                <div class="story-body">
+                    😎 رکورددار پیش‌بینی این هفته:<br>
+                    «Asm A» با اختلاف در صدر جدول باقی ماند. آیا کسی می‌تواند او را پایین بکشد؟ گداهای عزیز دست به کار شوید!
+                </div>
+                <div class="story-footer">کانبو فوتبال</div>
             </div>
-            <div class="table-row">
-                <span class="rank-col">3</span>
-                <span class="name-col">Mahdi</span>
-                <span class="score-col">45</span>
-            </div>
-            <div class="table-row">
-                <span class="rank-col">4</span>
-                <span class="name-col">Donya Asil</span>
-                <span class="score-col">44</span>
-            </div>
-            <div class="table-row">
-                <span class="rank-col">5</span>
-                <span class="name-col">حبیب نعیمی</span>
-                <span class="score-col">43</span>
-            </div>
-            <div class="table-row">
-                <span class="rank-col">6</span>
-                <span class="name-col">محمد خلیلاوی پور</span>
-                <span class="score-col">40</span>
-            </div>
-            <div class="table-row">
-                <span class="rank-col">7</span>
-                <span class="name-col">hajar daoudi</span>
-                <span class="score-col">38</span>
-            </div>
-            <div class="table-row">
-                <span class="rank-col">8</span>
-                <span class="name-col">Ahlam Aljaber</span>
-                <span class="score-col">37</span>
-            </div>
-            <div class="table-row">
-                <span class="rank-col">9</span>
-                <span class="name-col">hey10</span>
-                <span class="score-col">34</span>
-            </div>
-            <div class="table-row">
-                <span class="rank-col">10</span>
-                <span class="name-col">امین دریس</span>
-                <span class="score-col">33</span>
-            </div>
-            <div class="table-row">
-                <span class="rank-col">11</span>
-                <span class="name-col">Sama salehi</span>
-                <span class="score-col">30</span>
-            </div>
-            <div class="table-row">
-                <span class="rank-col">12</span>
-                <span class="name-col">محمد جاسمیان</span>
-                <span class="score-col">24</span>
-            </div>
-            <div class="table-row">
-                <span class="rank-col">13</span>
-                <span class="name-col">مهدی</span>
-                <span class="score-col">15</span>
+
+            <div class="whatsapp-story-card">
+                <div class="story-header">
+                    <span>📢 اطلاعیه مهم</span>
+                    <span>۲ روز پیش</span>
+                </div>
+                <div class="story-body">
+                    ⚠️ یادآوری:<br>
+                    مهلت ثبت پیش‌بینی بازی‌های هفته پنجم فردا ساعت ۱۴:۰۰ به اتمام می‌رسد. بهانه‌های «یادم رفت» پذیرفته نیست! 😂
+                </div>
+                <div class="story-footer">لیگ گداهای استرسی ۲</div>
             </div>
         </div>
     </div>
 
-    <!-- تب ۳: کوئیزگدا (ثبت‌نام اجباری + سوالات استاندارد + اتصال به Formspree برای ارسال به جیمیل شما) -->
+    <!-- تب ۴: کوئیزگدا (به همراه فرم ارسال به Formspree جهت ایمیل شما) -->
     <div id="tab-banter" class="tab-content">
         <div class="quiz-container">
             <div class="quiz-card">
                 
-                <!-- فرم مخفی برای ارسال واقعی به Formspree (ارسال مستقیم به جیمیل شما) -->
+                <!-- فرم Formspree متصل به ایمیل شما: https://formspree.io/f/xkjgnyoa -->
                 <form id="real-email-form" action="https://formspree.io/f/xkjgnyoa" method="POST" style="display: none;">
                     <input type="hidden" name="name" id="form-input-name">
                     <input type="hidden" name="phone" id="form-input-phone">
@@ -705,7 +748,6 @@
                     <input type="hidden" name="correct_count" id="form-input-correct">
                 </form>
 
-                <!-- صفحه ۱: ثبت نام اولیه (اجباری) -->
                 <div id="quiz-register-screen">
                     <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 8px;">🎯 کوئیزگدا</h2>
                     <p style="text-align: center; color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">برای شرکت در کوئیز و ارسال نتیجه به ایمیل ادمین، مشخصات خود را وارد کنید:</p>
@@ -723,7 +765,6 @@
                     </form>
                 </div>
 
-                <!-- صفحه ۲: انتخاب موضوع -->
                 <div id="quiz-category-screen" style="display: none;">
                     <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 8px;">🎯 انتخاب موضوع</h2>
                     <p style="text-align: center; color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">حوزه مورد نظرت رو انتخاب کن:</p>
@@ -743,7 +784,6 @@
                     </div>
                 </div>
 
-                <!-- صفحه ۳: بازی کوئیز -->
                 <div id="quiz-game-screen" style="display: none;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
                         <span id="question-progress" style="font-size: 13px; color: var(--accent-yellow); font-weight: bold;">سوال 1 از 6</span>
@@ -755,7 +795,6 @@
                     <div id="options-container" style="display: flex; flex-direction: column; gap: 10px;"></div>
                 </div>
 
-                <!-- صفحه ۴: پایان و ارسال موفق به جیمیل -->
                 <div id="quiz-result-screen" style="display: none; text-align: center;">
                     <h2 style="color: var(--accent-yellow); margin-bottom: 5px; font-size: 24px;">پایان کوئیز!</h2>
                     <p style="color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">عملکرد عالی بود، مشخصات و امتیاز شما ثبت شد.</p>
@@ -777,7 +816,7 @@
         </div>
     </div>
 
-    <!-- منوی پایین صفحه -->
+    <!-- منوی پایین صفحه (۴ تب کامل) -->
     <nav class="bottom-nav">
         <button class="nav-item active" onclick="switchTab('home', this)">
             <svg viewBox="0 0 24 24"><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"/></svg>
@@ -785,7 +824,11 @@
         </button>
         <button class="nav-item" onclick="switchTab('table', this)">
             <svg viewBox="0 0 24 24"><path d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z"/></svg>
-            جدول رده‌بندی
+            جدول
+        </button>
+        <button class="nav-item" onclick="switchTab('stories', this)">
+            <svg viewBox="0 0 24 24"><path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M11,16.5L6,11.5L7.41,10.09L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/></svg>
+            استوری‌وز
         </button>
         <button class="nav-item" onclick="switchTab('banter', this)">
             <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V12H17V10H13V6H11Z"/></svg>
@@ -794,7 +837,6 @@
     </nav>
 
     <script>
-        // بانک سوالات جامع (هر بخش ۶ سوال با سطح متوسط)
         const allQuizData = {
             football: [
                 { q: "کدام تیم بیشترین قهرمانی در تاریخ لیگ قهرمانان اروپا را دارد؟", options: ["بارسلونا", "رئال مادرید", "بایرن مونیخ", "میلان"], correct: 1 },
@@ -830,7 +872,6 @@
         let correctAnswersCount = 0;
         let userAnswersState = [];
 
-        // ثبت‌نام اولیه و هدایت به انتخاب موضوع
         function startQuizRegistration(e) {
             e.preventDefault();
             playerData.name = document.getElementById('player-name').value;
@@ -942,7 +983,6 @@
             document.getElementById('correct-count-val').innerText = correctAnswersCount;
             document.getElementById('result-name-disp').innerText = playerData.name;
             
-            // پر کردن فرم مخفی و ارسال خودکار به Formspree جهت دریافت در جیمیل
             document.getElementById('form-input-name').value = playerData.name;
             document.getElementById('form-input-phone').value = playerData.phone;
             document.getElementById('form-input-category').value = selectedCategoryKey;
@@ -970,7 +1010,6 @@
             document.getElementById('player-phone').value = '';
         }
 
-        // مدیریت تب‌ها
         function switchTab(tabId, btnElement) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
@@ -980,7 +1019,6 @@
             window.scrollTo(0, 0);
         }
 
-        // لودینگ اولیه صفحه
         window.addEventListener('load', function() {
             setTimeout(function() {
                 const splash = document.getElementById('splash-screen');
