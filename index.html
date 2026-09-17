@@ -1,308 +1,125 @@
+Mom Mom, [⁨15⁩ سپتامبر ⁨2026⁩، در ⁨1:48 AM⁩]
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گداهای استرسی ۲ | پیش‌بینی فوتبال</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>GEDA CHOLHA - ALL YOU CAN PLAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.3/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap');
-        body {
+        :root {
+            --bg-blue: #071933;
+            --dark-blue: #040d1a;
+            --accent-red: #ff334b;
+            --accent-gold: #f39c12;
+            --card-bg: rgba(13, 31, 60, 0.85);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-white: #ffffff;
+            --paper-bg: #fdfbf7;
+            --paper-text: #1f1f1f;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
             font-family: 'Vazirmatn', sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
         }
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        /* انیمیشن نرم برای نوارهای تیکرپیش */
-        .ticker-dropdown {
-            max-height: 0;
+
+        /* Splash Screen */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 30%, #0d2847 0%, var(--dark-blue) 80%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            color: var(--text-white);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
-            transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
-        }
-        .ticker-dropdown.show {
-            max-height: 300px;
-        }
-    </style>
-</head>
-<body class="pb-24">
-
-    <!-- هدر اصلی -->
-    <header class="bg-slate-900/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-800 p-4 text-center">
-        <h1 class="text-xl font-black text-emerald-400 tracking-wider">گداهای استرسی ۲ ⚽🔥</h1>
-        <p class="text-xs text-slate-400 mt-1">رقابت پیش‌بینی فوتبال اروپا</p>
-    </header>
-
-    <main class="container mx-auto p-4 max-w-md">
-
-        <!-- ۱. تب خانه (مسابقات هفته) -->
-        <div id="tab-home" class="tab-content active space-y-4">
-            <div class="flex justify-between items-center bg-slate-800/60 p-3 rounded-xl border border-slate-700">
-                <span class="text-sm font-bold text-slate-200">🔔 اعلان‌های مسابقات</span>
-                <button onclick="triggerOneSignal()" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs px-3 py-1.5 rounded-lg font-bold transition">فعال‌سازی نوتیف</button>
-            </div>
-
-            <h2 class="text-sm font-bold text-slate-400">📅 مسابقات هفته پنجم</h2>
-            
-            <!-- کارت بازی ۱ -->
-            <div class="bg-slate-800 p-4 rounded-2xl border border-slate-700 shadow-lg space-y-3">
-                <div class="flex justify-between items-center text-xs text-slate-400 border-b border-slate-700 pb-2">
-                    <span>لیگ برتر انگلیس</span>
-                    <span class="text-emerald-400 font-bold">امشب - ۲۲:۳۰</span>
-                </div>
-                <div class="flex justify-between items-center">
-                    <div class="flex items-center space-x-3 space-x-reverse">
-                        <span class="font-bold text-sm">چلسی</span>
-                    </div>
-                    <span class="bg-slate-700 px-3 py-1 rounded-lg text-xs font-black text-amber-400">VS</span>
-                    <div class="flex items-center space-x-3 space-x-reverse">
-                        <span class="font-bold text-sm">برنتفورد</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- کارت بازی ۲ -->
-            <div class="bg-slate-800 p-4 rounded-2xl border border-slate-700 shadow-lg space-y-3">
-                <div class="flex justify-between items-center text-xs text-slate-400 border-b border-slate-700 pb-2">
-                    <span>لالیگا اسپانیا</span>
-                    <span class="text-emerald-400 font-bold">فردا - ۲۳:۰۰</span>
-                </div>
-                <div class="flex justify-between items-center">
-                    <div class="flex items-center space-x-3 space-x-reverse">
-                        <span class="font-bold text-sm">رئال مادرید</span>
-                    </div>
-                    <span class="bg-slate-700 px-3 py-1 rounded-lg text-xs font-black text-amber-400">VS</span>
-                    <div class="flex items-center space-x-3 space-x-reverse">
-                        <span class="font-bold text-sm">بارسلونا</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- لینک فوت‌موب -->
-            <a href="https://www.fotmob.com" target="_blank" class="block bg-gradient-to-r from-emerald-600 to-teal-700 text-center text-white py-3 rounded-xl font-bold text-sm shadow-md hover:opacity-90 transition">
-                🌐 مشاهده جزئیات کامل در FotMob
-            </a>
-        </div>
-
-        <!-- ۲. تب جدول رده‌بندی (۱۳ نفره) -->
-        <div id="tab-table" class="tab-content space-y-3">
-            <h2 class="text-sm font-bold text-slate-400 mb-2">🏆 جدول رده‌بندی ۱۳ نفره رقابت‌ها</h2>
-            <div class="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden shadow-lg">
-                <table class="w-full text-right text-xs">
-                    <thead class="bg-slate-900 text-slate-400 border-b border-slate-700">
-                        <tr>
-                            <p class="p-3">رتبه</p>
-                            <th class="p-3">نام عضو</th>
-                            <th class="p-3 text-center">بازی</th>
-                            <th class="p-3 text-center">امتیاز</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-700/50">
-                        <tr class="bg-emerald-950/20"><td class="p-3 font-bold text-emerald-400">1</td><td class="p-3 font-bold">الجابر</td><td class="p-3 text-center">5</td><td class="p-3 text-center font-black text-emerald-400">15</td></tr>
-                        <tr><td class="p-3">2</td><td class="p-3">مهدی</td><td class="p-3 text-center">5</td><td class="p-3 text-center font-bold">13</td></tr>
-                        <tr><td class="p-3">3</td><td class="p-3">رضا</td><td class="p-3 text-center">5</td><td class="p-3 text-center font-bold">12</td></tr>
-                        <tr><td class="p-3">4</td><td class="p-3">علی</td><td class="p-3 text-center">5</td><td class="p-3 text-center font-bold">11</td></tr>
-                        <tr><td class="p-3">5</td><td class="p-3">محمد</td><td class="p-3 text-center">5</td><td class="p-3 text-center font-bold">10</td></tr>
-                        <tr><td class="p-3">6</td><td class="p-3">سهیل</td><td class="p-3 text-center">5</td><td class="p-3 text-center font-bold">9</td></tr>
-                        <tr><td class="p-3">7</td><td class="p-3">امیر</td><td class="p-3 text-center">5</td><td class="p-3 text-center font-bold">8</td></tr>
-                        <tr><td class="p-3">8</td><td class="p-3">حسین</td><td class="p-3 text-center">5</td><td class="p-3 text-center font-bold">8</td></tr>
-                        <tr><td class="p-3">9</td><td class="p-3">مسعود</td><td class="p-3 text-center">5</td><td class="p-3 text-center font-bold">7</td></tr>
-                        <tr><td class="p-3">10</td><td class="p-3">پیمان</td><td class="p-3 text-center">5</td><td class="p-3 text-center font-bold">6</td></tr>
-                        <tr><td class="p-3">11</td><td class="p-3">داود</td><td class="p-3 text-center">5</td><td class="p-3 text-center font-bold">5</td></tr>
-                        <tr><td class="p-3">12</td><td class="p-3">فرهاد</td><td class="p-3 text-center">5</td><td class="p-3 text-center font-bold">4</td></tr>
-                        <tr><td class="p-3">13</td><td class="p-3">نوید</td><td class="p-3 text-center">5</td><td class="p-3 text-center font-bold">3</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- ۳. تب جدید «تیکرپیش» (مشاهده پیش‌بینی ۱۳ عضو) -->
-        <div id="tab-ticker" class="tab-content space-y-3">
-            <h2 class="text-sm font-bold text-slate-400 mb-2">⚡ تیکرپیش: بررسی پیش‌بینی اعضا</h2>
-            <p class="text-xs text-slate-500 mb-3">روی نام هر عضو بزنید تا پیش‌بینی ثبت‌شده‌اش برای مسابقات هفته را ببینید.</p>
-            
-            <div id="ticker-members-list" class="space-y-2">
-                <!-- حلقه اعضا بصورت داینامیک یا ثابت درج می‌شود -->
-                <!-- نمونه برای الجابر -->
-                <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden shadow">
-                    <button onclick="toggleTicker('ticker-1')" class="w-full flex justify-between items-center p-3 text-right hover:bg-slate-750 transition">
-                        <span class="font-bold text-sm text-emerald-400">1. الجابر</span>
-                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300" id="icon-ticker-1"></i>
-                    </button>
-                    <div id="ticker-1" class="ticker-dropdown bg-slate-900 px-4">
-                        <div class="py-3 space-y-2 text-xs border-t border-slate-800">
-                            <div class="flex justify-between items-center bg-slate-800/70 p-2 rounded-lg">
-                                <span>🔵 چلسی - برنتفورد 🐝</span>
-                                <span class="bg-emerald-600/30 text-emerald-400 px-2 py-0.5 rounded font-bold">۲ - ۱</span>
-                            </div>
-                            <div class="flex justify-between items-center bg-slate-800/70 p-2 rounded-lg">
-                                <span>⚪ رئال مادرید - بارسلونا 🔵🔴</span>
-                                <span class="bg-emerald-600/30 text-emerald-400 px-2 py-0.5 rounded font-bold">۱ - ۱</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- نمونه برای مهدی -->
-                <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden shadow">
-                    <button onclick="toggleTicker('ticker-2')" class="w-full flex justify-between items-center p-3 text-right hover:bg-slate-750 transition">
-                        <span class="font-bold text-sm text-slate-200">2. مهدی</span>
-                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300" id="icon-ticker-2"></i>
-                    </button>
-                    <div id="ticker-2" class="ticker-dropdown bg-slate-900 px-4">
-                        <div class="py-3 space-y-2 text-xs border-t border-slate-800">
-                            <div class="flex justify-between items-center bg-slate-800/70 p-2 rounded-lg">
-                                <span>🔵 چلسی - برنتفورد 🐝</span>
-                                <span class="bg-emerald-600/30 text-emerald-400 px-2 py-0.5 rounded font-bold">۰ - ۲</span>
-                            </div>
-                            <div class="flex justify-between items-center bg-slate-800/70 p-2 rounded-lg">
-                                <span>⚪ رئال مادرید - بارسلونا 🔵🔴</span>
-                                <span class="bg-emerald-600/30 text-emerald-400 px-2 py-0.5 rounded font-bold">۳ - ۲</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- نمونه برای رضا -->
-                <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden shadow">
-                    <button onclick="toggleTicker('ticker-3')" class="w-full flex justify-between items-center p-3 text-right hover:bg-slate-750 transition">
-                        <span class="font-bold text-sm text-slate-200">3. رضا</span>
-                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300" id="icon-ticker-3"></i>
-                    </button>
-                    <div id="ticker-3" class="ticker-dropdown bg-slate-900 px-4">
-                        <div class="py-3 space-y-2 text-xs border-t border-slate-800">
-                            <div class="flex justify-between items-center bg-slate-800/70 p-2 rounded-lg">
-                                <span>🔵 چلسی - برنتفورد 🐝</span>
-                                <span class="bg-emerald-600/30 text-emerald-400 px-2 py-0.5 rounded font-bold">۱ - ۱</span>
-                            </div>
-                            <div class="flex justify-between items-center bg-slate-800/70 p-2 rounded-lg">
-                                <span>⚪ رئال مادرید - بارسلونا 🔵🔴</span>
-                                <span class="bg-emerald-600/30 text-emerald-400 px-2 py-0.5 rounded font-bold">۲ - ۲</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- (بقیه اعضا ۱۳ گانه به همین شکل قابل امتداد هستند) -->
-            </div>
-        </div>
-
-        <!-- ۴. تب کل‌کل‌ها و اخبار (بازگشت به حالت قبلی) -->
-        <div id="tab-banter" class="tab-content space-y-4">
-            <h2 class="text-sm font-bold text-slate-400 mb-2">🔥 اخبار و کل‌کل‌های داغ</h2>
-            
-            <!-- خبر اول -->
-            <div class="bg-slate-800 p-4 rounded-2xl border border-slate-700 space-y-2">
-                <span class="text-xs text-emerald-400 font-bold">خبر ویژه هفته</span>
-                <h3 class="font-bold text-sm">کری‌خوانی سنگین در گروه سروش پیش از دربی!</h3>
-                <p class="text-xs text-slate-400 leading-relaxed">اعضای گروه گداهای استرسی این هفته جنگ روانی عجیبی رو روی نتایج بارسا و رئال راه انداختن...</p>
-            </div>
-
-            <!-- بخش نظرسنجی زنده -->
-            <div class="bg-slate-800 p-4 rounded-2xl border border-slate-700 space-y-3">
-                <h3 class="font-bold text-sm text-slate-200">📊 نظرسنجی زنده: قهرمان این فصل کیه؟</h3>
-                <div class="space-y-2 text-xs">
-                    <div>
-                        <div class="flex justify-between mb-1"><span>بارسلونا</span><span class="text-emerald-400 font-bold">۵۸٪</span></div>
-                        <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden"><div class="bg-emerald-500 h-full" style="width: 58%"></div></div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between mb-1"><span>رئال مادرید</span><span class="text-amber-400 font-bold">۴۲٪</span></div>
-                        <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden"><div class="bg-amber-500 h-full" style="width: 42%"></div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- نوار ناوبری پایین صفحه (Bottom Navigation) -->
-    <nav class="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 py-2 px-4 z-50">
-        <div class="flex justify-around items-center max-w-md mx-auto">
-            <button onclick="switchTab('home')" id="btn-home" class="flex flex-col items-center text-emerald-400 transition">
-                <i class="fa-solid fa-house text-lg mb-1"></i>
-                <span class="text-[10px] font-medium">خانه</span>
-            </button>
-            <button onclick="switchTab('table')" id="btn-table" class="flex flex-col items-center text-slate-400 hover:text-slate-200 transition">
-                <i class="fa-solid fa-ranking-star text-lg mb-1"></i>
-                <span class="text-[10px] font-medium">جدول</span>
-            </button>
-            <!-- دکمه تب جدید تیکرپیش با استایل زمین فوتبال -->
-            <button onclick="switchTab('ticker')" id="btn-ticker" class="flex flex-col items-center text-slate-400 hover:text-slate-200 transition">
-                <div class="w-8 h-8 rounded-full bg-emerald-700/30 border border-emerald-500 flex items-center justify-center mb-0.5">
-                    <i class="fa-solid fa-futbol text-emerald-400 text-xs"></i>
-                </div>
-                <span class="text-[10px] font-medium">تیکرپیش</span>
-            </button>
-            <button onclick="switchTab('banter')" id="btn-banter" class="flex flex-col items-center text-slate-400 hover:text-slate-200 transition">
-                <i class="fa-solid fa-comments text-lg mb-1"></i>
-                <span class="text-[10px] font-medium">کل‌کل‌ها</span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- جاوا اسکریپت برای مدیریت تب‌ها و باز/بسته شدن خودکار تیکرپیش -->
-    <script>
-        let activeTimer = null;
-
-        function switchTab(tabName) {
-            // مخفی کردن تمام تب‌ها
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            // غیرفعال کردن رنگ تمام دکمه‌ها
-            document.querySelectorAll('nav button').forEach(el => {
-                el.classList.remove('text-emerald-400');
-                el.classList.add('text-slate-400');
-            });
-
-            // فعال کردن تب و دکمه مربوطه
-            document.getElementById('tab-' + tabName).classList.add('active');
-            const activeBtn = document.getElementById('btn-' + tabName);
-            activeBtn.classList.remove('text-slate-400');
-            activeBtn.classList.add('text-emerald-400');
+            padding: 20px;
+            text-align: center;
         }
 
-        function toggleTicker(id) {
-            const dropdown = document.getElementById(id);
-            const icon = document.getElementById('icon-' + id);
-            
-            // اگر از قبل تایمری روشن بود، پاکش کن
-            if (activeTimer) {
-                clearTimeout(activeTimer);
-            }
-
-            // بستن بقیه کشوها برای تمیزی کار
-            document.querySelectorAll('.ticker-dropdown').forEach(el => {
-                if (el.id !== id) el.classList.remove('show');
-            });
-            document.querySelectorAll('.fa-chevron-down').forEach(el => {
-                if (el.id !== 'icon-' + id) el.style.transform = 'rotate(0deg)';
-            });
-
-            // باز یا بسته کردن این مورد
-            dropdown.classList.toggle('show');
-            const isOpen = dropdown.classList.contains('show');
-            
-            if (isOpen) {
-                icon.style.transform = 'rotate(180deg)';
-                // بستن خودکار بعد از ۵ ثانیه
-                activeTimer = setTimeout(() => {
-                    dropdown.classList.remove('show');
-                    icon.style.transform = 'rotate(0deg)';
-                }, 5000);
-            } else {
-                icon.style.transform = 'rotate(0deg)';
-            }
+        .splash-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            animation: pulseSplash 2.5s ease-in-out infinite;
         }
 
-        function triggerOneSignal() {
-            alert('سیستم نوتیفیکیشن وان‌سیگنال با موفقیت متصل شد!');
+        .splash-title {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: clamp(1.8rem, 6vw, 3rem);
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 4px 20px rgba(243, 156, 18, 0.4));
+            text-align: center;
         }
-    </script>
-</body>
-</html>
+
+        .loading-dots {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .loading-dots span {
+            width: 10px;
+            height: 10px;
+            background-color: var(--text-white);
+            border-radius: 50%;
+            animation: bounceDot 1.4s infinite ease-in-out both;
+        }
+
+        .loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+        .loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes bounceDot {
+            0%, 80%, 100% { transform: scale(0); opacity: 0.3; }
+            40% { transform: scale(1.0); opacity: 1; background-color: var(--accent-gold); box-shadow: 0 0 10px var(--accent-gold); }
+        }
+
+        @keyframes pulseSplash {
+            0%, 100% { transform: scale(0.98); opacity: 0.95; }
+            50% { transform: scale(1.02); opacity: 1; }
+        }
+
+        .fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* Body & Layout */
+        body {
+            background-color: var(--bg-blue);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(29, 78, 216, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(211, 47, 47, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 50% 30%, #0f3057 0%, var(--bg-blue) 90%);
+            color: var(--text-white);
+            padding: 20px 10px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 950px;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 10px 10px 25px;
+        }
