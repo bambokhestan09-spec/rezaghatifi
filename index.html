@@ -164,7 +164,7 @@
         .story-profile-time { font-size: 10px; color: #ccc; }
 
         .story-main-display { width: 100%; height: 100%; position: absolute; top: 0; left: 0; display: flex; align-items: center; justify-content: center; background: #111; }
-        .story-main-display img, .story-main-display video { width: 100%; height: 100%; object-fit: cover; }
+        .story-main-display img, .story-main-display iframe { width: 100%; height: 100%; object-fit: cover; border: none; }
 
         .story-touch-left, .story-touch-right { position: absolute; top: 0; bottom: 0; width: 45%; z-index: 8; cursor: pointer; }
         .story-touch-left { left: 0; }
@@ -174,11 +174,12 @@
             position: absolute; bottom: 0; left: 0; right: 0;
             background: linear-gradient(transparent, rgba(0,0,0,0.96) 70%);
             padding: 25px 15px 15px 15px; z-index: 10;
+            pointer-events: none;
         }
         .story-desc-tag { background: var(--accent-yellow); color: #121824; font-size: 10px; font-weight: 900; padding: 2px 8px; border-radius: 6px; display: inline-block; margin-bottom: 4px; }
         .story-desc-title { font-size: 15px; font-weight: 900; color: #fff; margin-bottom: 4px; }
         .story-desc-text { font-size: 12px; color: #ddd; line-height: 1.5; margin-bottom: 6px; }
-        .story-results-mini { font-size: 11px; color: #fff; background: rgba(0,0,0,0.65); padding: 8px; border-radius: 8px; line-height: 1.5; border-right: 3px solid var(--accent-yellow); }
+        .story-results-mini { font-size: 11px; color: #fff; background: rgba(0,0,0,0.75); padding: 8px; border-radius: 8px; line-height: 1.5; border-right: 3px solid var(--accent-yellow); }
 
         /* کل‌کل و نظرسنجی‌ها */
         .banter-container { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
@@ -417,7 +418,7 @@
         </div>
     </div>
 
-    <!-- تب ۳: بخش استوری خودکار «بیا رد شو» (شامل نتایج دقیق بارسلونا و ویدیو کانسلو) -->
+    <!-- تب ۳: بخش استوری خودکار «بیا رد شو» (شامل نتایج دقیق بارسلونا و ویدیو) -->
     <div id="tab-stories" class="tab-content">
         <div class="story-app-container">
             <div class="story-bars-header" id="storyBarsBox"></div>
@@ -517,17 +518,16 @@
     </nav>
 
     <script>
-        // دیتای بخش «بیا رد شو» بر اساس درخواست شما و تصویر ارسال شده
         const tabStoriesData = [
             {
                 authorName: "گل‌های کانسلو",
                 authorImg: "https://images.fotmob.com/image_resources/logo/teamlogo/8634.png",
                 timeAgo: "دیشب",
-                mediaType: "video",
-                mediaUrl: "https://assets.mixkit.co/videos/preview/mixkit-football-player-scoring-a-goal-41135-large.mp4",
+                mediaType: "iframe",
+                mediaUrl: "https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&mute=1&controls=0&loop=1&playlist=ScMzIvxBSi4",
                 tag: "ویدیو گل",
                 title: "گل‌های دیشب کانسلو برای بارسلونا",
-                text: "درخشش و گلزنی ژائو کانسلو مقابل راسینگ سانتاندر[span_1](start_span)[span_1](end_span).",
+                text: "درخشش و گلزنی ژائو کانسلو مقابل راسینگ سانتاندر.",
                 extra: ""
             },
             {
@@ -538,8 +538,8 @@
                 mediaUrl: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=80",
                 tag: "گزارش نتایج",
                 title: "بارسلونا در حال جر دادن تیمها!",
-                text: "نتایج کامل و دقیق بارسلونا در مسابقات اخیر[span_2](start_span)[span_2](end_span):",
-                extra: "• الچه 0 - 5 بارسلونا[span_3](start_span)[span_3](end_span)<br>• بارسلونا 2 - 0 اتلتیک بیلبائو[span_4](start_span)[span_4](end_span)<br>• بارسلونا 5 - 2 رایو وایکانو[span_5](start_span)[span_5](end_span)<br>• والنسیا 0 - 5 بارسلونا[span_6](start_span)[span_6](end_span)<br>• بارسلونا 5 - 1 فاینورد (لیگ قهرمانان)[span_7](start_span)[span_7](end_span)<br>• لوانته 2 - 4 بارسلونا[span_8](start_span)[span_8](end_span)<br>• بارسلونا 7 - 2 راسینگ سانتاندر[span_9](start_span)[span_9](end_span)"
+                text: "نتایج کامل و دقیق بارسلونا در مسابقات اخیر:",
+                extra: "• الچه 0 - 5 بارسلونا<br>• بارسلونا 2 - 0 اتلتیک بیلبائو<br>• بارسلونا 5 - 2 رایو وایکانو<br>• والنسیا 0 - 5 بارسلونا<br>• بارسلونا 5 - 1 فاینورد (لیگ قهرمانان)<br>• لوانته 2 - 4 بارسلونا<br>• بارسلونا 7 - 2 راسینگ سانتاندر"
             },
             {
                 authorName: "شروع پیش‌بینی‌ها",
@@ -597,8 +597,8 @@
             }
 
             const mediaBox = document.getElementById('tabStoryMediaBox');
-            if (data.mediaType === 'video') {
-                mediaBox.innerHTML = `<video src="${data.mediaUrl}" autoplay playsinline muted loop style="width:100%; height:100%; object-fit:cover;"></video>`;
+            if (data.mediaType === 'iframe') {
+                mediaBox.innerHTML = `<iframe src="${data.mediaUrl}" allow="autoplay" style="width:100%; height:100%; object-fit:cover; pointer-events:none;"></iframe>`;
             } else {
                 mediaBox.innerHTML = `<img src="${data.mediaUrl}" style="width:100%; height:100%; object-fit:cover;">`;
             }
