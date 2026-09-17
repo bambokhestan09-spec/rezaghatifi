@@ -257,7 +257,48 @@
             margin-top: 1px;
         }
 
-        /* --- جدول رده‌بندی ۱۳ نفره اصلی و قبلی --- */
+        /* --- کادر شیک بالای جدول --- */
+        .league-banner-card {
+            background: radial-gradient(circle at top right, rgba(245, 197, 24, 0.2), transparent 70%), #1c2536;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 18px 22px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        .league-banner-title {
+            font-size: 18px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .league-banner-subtitle {
+            font-size: 16px;
+            font-weight: 900;
+            color: var(--accent-yellow);
+        }
+
+        .cup-hex-icon {
+            background: rgba(0, 0, 0, 0.25);
+            border: 2px solid var(--accent-yellow);
+            width: 58px;
+            height: 58px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0 0 8px rgba(245, 197, 24, 0.3));
+        }
+
+        /* --- جدول رده‌بندی ۱۳ نفره اصلی --- */
         .table-container {
             background-color: var(--card-bg);
             border-radius: 15px;
@@ -422,7 +463,7 @@
             font-weight: 700;
         }
 
-        /* --- استایل اخبار بدون عکس (متنی و شیک) --- */
+        /* --- استایل اخبار متنی --- */
         .news-header-banner {
             background: linear-gradient(135deg, #243044, #121824);
             border-right: 4px solid var(--accent-yellow);
@@ -761,7 +802,20 @@
 
     <!-- تب ۲: جدول رده‌بندی ۱۳ نفره اصلی -->
     <div id="tab-table" class="tab-content">
-        <h2 style="font-size: 16px; margin-bottom: 15px; color: var(--accent-yellow); text-align: center;">🏆 جدول رده‌بندی ۱۳ نفره</h2>
+
+        <!-- کادر عنوان جدول -->
+        <div class="league-banner-card">
+            <div>
+                <div class="league-banner-title">جدول لیگ گداهای استرسی</div>
+                <div class="league-banner-subtitle">فصل دوم</div>
+            </div>
+            <div class="cup-hex-icon">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="#f5c518">
+                    <path d="M19,5H17V3A1,1 0 0,0 16,2H8A1,1 0 0,0 7,3V5H5A3,3 0 0,0 2,8V9A3,3 0 0,0 5,12H5.5A6,6 0 0,0 11,17.93V20H8V22H16V20H13V17.93A6,6 0 0,0 18.5,12H19A3,3 0 0,0 22,9V8A3,3 0 0,0 19,5M5,10A1,1 0 0,1 4,9V8A1,1 0 0,1 5,7H7V10H5M20,9A1,1 0 0,1 19,10H17V7H19A1,1 0 0,1 20,8Z"/>
+                </svg>
+            </div>
+        </div>
+
         <div class="table-container">
             <div class="table-row">
                 <span class="rank-col">1</span>
