@@ -129,7 +129,6 @@
             border-bottom: 1px solid #2a3649;
         }
 
-        /* --- محتوای صفحات (Tabs) --- */
         .tab-content {
             display: none;
             padding: 15px;
@@ -255,60 +254,79 @@
             margin-top: 1px;
         }
 
-        /* --- استایل بخش استوری‌های خبر و نتایج (شبیه واتساپ) --- */
-        .story-container {
-            max-width: 500px;
+        /* --- استایل بخش استوری‌های متحرک اخبار و نتایج --- */
+        .story-section {
+            max-width: 450px;
             margin: 0 auto;
+            text-align: center;
+        }
+
+        .instagram-story-viewer {
+            background: linear-gradient(145deg, #182232, #0b1017);
+            border: 2px solid var(--accent-yellow);
+            border-radius: 20px;
+            height: 380px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
-        }
-
-        .whatsapp-story-card {
-            background: linear-gradient(145deg, #182232, #0d131d);
-            border: 1px solid rgba(245, 197, 24, 0.2);
-            border-radius: 18px;
+            justify-content: space-between;
             padding: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
-        .whatsapp-story-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 5px;
+        .story-bars {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 15px;
+        }
+
+        .story-bar {
+            flex: 1;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .story-bar-fill {
+            width: 0%;
             height: 100%;
             background-color: var(--accent-yellow);
+            transition: width linear;
         }
 
-        .story-header {
+        .story-header-info {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
             font-size: 12px;
             color: var(--accent-yellow);
             font-weight: 700;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 8px;
         }
 
-        .story-body {
-            font-size: 14px;
-            line-height: 1.8;
-            color: #e2e8f0;
-            font-weight: 700;
-            text-align: right;
+        .story-main-content {
+            font-size: 16px;
+            font-weight: 900;
+            line-height: 2;
+            color: #fff;
+            padding: 20px 10px;
+            animation: fadeInStory 0.4s ease-in-out;
         }
 
-        .story-footer {
-            margin-top: 12px;
+        @keyframes fadeInStory {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .story-nav-hints {
+            display: flex;
+            justify-content: space-between;
             font-size: 11px;
             color: var(--text-gray);
-            text-align: left;
+            margin-top: 10px;
         }
 
         /* --- کادر شیک بالای جدول --- */
@@ -352,7 +370,6 @@
             filter: drop-shadow(0 0 8px rgba(245, 197, 24, 0.3));
         }
 
-        /* --- جدول رده‌بندی ۱۳ نفره اصلی --- */
         .table-container {
             background-color: var(--card-bg);
             border-radius: 15px;
@@ -383,7 +400,6 @@
         .name-col { flex: 1; text-align: right; }
         .score-col { width: 50px; text-align: left; font-weight: bold; }
 
-        /* --- تب کوئیزگدا --- */
         .quiz-container {
             max-width: 680px;
             margin: 0 auto;
@@ -438,7 +454,6 @@
             border-color: var(--accent-yellow);
         }
 
-        /* --- نوار ناوبری پایین (۴ تب) --- */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -501,13 +516,11 @@
         </div>
     </div>
 
-    <!-- هدر بالای صفحه -->
     <header>لیگ گداهای استرسی</header>
 
-    <!-- تب ۱: خانه / مسابقات -->
+    <!-- تب ۱: مسابقات -->
     <div id="tab-home" class="tab-content active">
         <div class="hero-banner">
-
             <button onclick="requestNotification()" style="width: 100%; background: #f5c518; color: #121824; font-weight: 900; border: none; padding: 12px; border-radius: 12px; margin-bottom: 15px; cursor: pointer; font-size: 13px; box-shadow: 0 4px 10px rgba(245, 197, 24, 0.25);">
                 🔔 دریافت خبرها و یادآوری مسابقات (کلیک کنید)
             </button>
@@ -518,137 +531,54 @@
             </div>
 
             <div class="date-divider">جمعه ۲۷ شهریور</div>
-
             <div class="match-row-card">
-                <div class="team-side left">
-                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
-                    <span class="team-name">برنتفورد</span>
-                </div>
-                <div class="match-center-info">
-                    <span class="match-time">۲۲:۳۰</span>
-                    <span class="match-date-sub">۲۷ شهریور</span>
-                    <span class="match-league-sub">Premier League</span>
-                </div>
-                <div class="team-side right">
-                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" alt="Chelsea">
-                    <span class="team-name">چلسی</span>
-                </div>
+                <div class="team-side left"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png"><span class="team-name">برنتفورد</span></div>
+                <div class="match-center-info"><span class="match-time">۲۲:۳۰</span><span class="match-date-sub">۲۷ شهریور</span><span class="match-league-sub">Premier League</span></div>
+                <div class="team-side right"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png"><span class="team-name">چلسی</span></div>
             </div>
 
             <div class="date-divider">شنبه ۲۸ شهریور</div>
-
             <div class="match-row-card">
-                <div class="team-side left">
-                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8678.png" alt="Bournemouth">
-                    <span class="team-name">بورنموث</span>
-                </div>
-                <div class="match-center-info">
-                    <span class="match-time">۱۶:۳۰</span>
-                    <span class="match-date-sub">۲۸ شهریور</span>
-                    <span class="match-league-sub">Premier League</span>
-                </div>
-                <div class="team-side right">
-                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8650.png" alt="Liverpool">
-                    <span class="team-name">لیورپول</span>
-                </div>
+                <div class="team-side left"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8678.png"><span class="team-name">بورنموث</span></div>
+                <div class="match-center-info"><span class="match-time">۱۶:۳۰</span><span class="match-date-sub">۲۸ شهریور</span><span class="match-league-sub">Premier League</span></div>
+                <div class="team-side right"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8650.png"><span class="team-name">لیورپول</span></div>
             </div>
 
             <div class="match-row-card">
-                <div class="team-side left">
-                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9906.png" alt="Atletico">
-                    <span class="team-name">اتلتیکو مادرید</span>
-                </div>
-                <div class="match-center-info">
-                    <span class="match-time">۱۷:۴۵</span>
-                    <span class="match-date-sub">۲۸ شهریور</span>
-                    <span class="match-league-sub">LaLiga</span>
-                </div>
-                <div class="team-side right">
-                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8633.png" alt="Real Madrid">
-                    <span class="team-name">رئال مادرید</span>
-                </div>
+                <div class="team-side left"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/9906.png"><span class="team-name">اتلتیکو مادرید</span></div>
+                <div class="match-center-info"><span class="match-time">۱۷:۴۵</span><span class="match-date-sub">۲۸ شهریور</span><span class="match-league-sub">LaLiga</span></div>
+                <div class="team-side right"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8633.png"><span class="team-name">رئال مادرید</span></div>
             </div>
 
             <div class="match-row-card">
-                <div class="team-side left">
-                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9879.png" alt="Fulham">
-                    <span class="team-name">فولام</span>
-                </div>
-                <div class="match-center-info">
-                    <span class="match-time">۱۹:۰۰</span>
-                    <span class="match-date-sub">۲۸ شهریور</span>
-                    <span class="match-league-sub">Premier League</span>
-                </div>
-                <div class="team-side right">
-                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10260.png" alt="Man United">
-                    <span class="team-name">منچستر یونایتد</span>
-                </div>
+                <div class="team-side left"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/9879.png"><span class="team-name">فولام</span></div>
+                <div class="match-center-info"><span class="match-time">۱۹:۰۰</span><span class="match-date-sub">۲۸ شهریور</span><span class="match-league-sub">Premier League</span></div>
+                <div class="team-side right"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/10260.png"><span class="team-name">منچستر یونایتد</span></div>
             </div>
 
             <div class="match-row-card">
-                <div class="team-side left">
-                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10204.png" alt="Brighton">
-                    <span class="team-name">برایتون</span>
-                </div>
-                <div class="match-center-info">
-                    <span class="match-time">۱۷:۳۰</span>
-                    <span class="match-date-sub">۲۸ شهریور</span>
-                    <span class="match-league-sub">Premier League</span>
-                </div>
-                <div class="team-side right">
-                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9825.png" alt="Arsenal">
-                    <span class="team-name">آرسنال</span>
-                </div>
+                <div class="team-side left"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/10204.png"><span class="team-name">برایتون</span></div>
+                <div class="match-center-info"><span class="match-time">۱۷:۳۰</span><span class="match-date-sub">۲۸ شهریور</span><span class="match-league-sub">Premier League</span></div>
+                <div class="team-side right"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/9825.png"><span class="team-name">آرسنال</span></div>
             </div>
 
             <div class="match-row-card">
-                <div class="team-side left">
-                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8686.png" alt="Roma">
-                    <span class="team-name">رم</span>
-                </div>
-                <div class="match-center-info">
-                    <span class="match-time">۱۹:۳۰</span>
-                    <span class="match-date-sub">۲۸ شهریور</span>
-                    <span class="match-league-sub">Serie A</span>
-                </div>
-                <div class="team-side right">
-                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8636.png" alt="Inter">
-                    <span class="team-name">اینتر</span>
-                </div>
+                <div class="team-side left"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8686.png"><span class="team-name">رم</span></div>
+                <div class="match-center-info"><span class="match-time">۱۹:۳۰</span><span class="match-date-sub">۲۸ شهریور</span><span class="match-league-sub">Serie A</span></div>
+                <div class="team-side right"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8636.png"><span class="team-name">اینتر</span></div>
             </div>
 
             <div class="match-row-card">
-                <div class="team-side left">
-                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8302.png" alt="Sevilla">
-                    <span class="team-name">سویا</span>
-                </div>
-                <div class="match-center-info">
-                    <span class="match-time">۲۲:۳۰</span>
-                    <span class="match-date-sub">۲۸ شهریور</span>
-                    <span class="match-league-sub">LaLiga</span>
-                </div>
-                <div class="team-side right">
-                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png" alt="Barcelona">
-                    <span class="team-name">بارسلونا</span>
-                </div>
+                <div class="team-side left"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8302.png"><span class="team-name">سویا</span></div>
+                <div class="match-center-info"><span class="match-time">۲۲:۳۰</span><span class="match-date-sub">۲۸ شهریور</span><span class="match-league-sub">LaLiga</span></div>
+                <div class="team-side right"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png"><span class="team-name">بارسلونا</span></div>
             </div>
 
             <div class="date-divider">یکشنبه ۲۹ شهریور</div>
-
             <div class="match-row-card">
-                <div class="team-side left">
-                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8586.png" alt="Tottenham">
-                    <span class="team-name">تاتنهام</span>
-                </div>
-                <div class="match-center-info">
-                    <span class="match-time">۱۵:۰۰</span>
-                    <span class="match-date-sub">۲۹ شهریور</span>
-                    <span class="match-league-sub">Premier League</span>
-                </div>
-                <div class="team-side right">
-                    <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10252.png" alt="Aston Villa">
-                    <span class="team-name">استون ویلا</span>
-                </div>
+                <div class="team-side left"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8586.png"><span class="team-name">تاتنهام</span></div>
+                <div class="match-center-info"><span class="match-time">۱۵:۰۰</span><span class="match-date-sub">۲۹ شهریور</span><span class="match-league-sub">Premier League</span></div>
+                <div class="team-side right"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/10252.png"><span class="team-name">استون ویلا</span></div>
             </div>
 
             <div style="margin: 25px 0; text-align: center;">
@@ -659,7 +589,7 @@
         </div>
     </div>
 
-    <!-- تب ۲: جدول رده‌بندی ۱۳ نفره اصلی -->
+    <!-- تب ۲: جدول رده‌بندی -->
     <div id="tab-table" class="tab-content">
         <div class="league-banner-card">
             <div>
@@ -667,9 +597,7 @@
                 <div class="league-banner-subtitle">فصل دوم</div>
             </div>
             <div class="cup-hex-icon">
-                <svg viewBox="0 0 24 24" width="30" height="30" fill="#f5c518">
-                    <path d="M19,5H17V3A1,1 0 0,0 16,2H8A1,1 0 0,0 7,3V5H5A3,3 0 0,0 2,8V9A3,3 0 0,0 5,12H5.5A6,6 0 0,0 11,17.93V20H8V22H16V20H13V17.93A6,6 0 0,0 18.5,12H19A3,3 0 0,0 22,9V8A3,3 0 0,0 19,5M5,10A1,1 0 0,1 4,9V8A1,1 0 0,1 5,7H7V10H5M20,9A1,1 0 0,1 19,10H17V7H19A1,1 0 0,1 20,8Z"/>
-                </svg>
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="#f5c518"><path d="M19,5H17V3A1,1 0 0,0 16,2H8A1,1 0 0,0 7,3V5H5A3,3 0 0,0 2,8V9A3,3 0 0,0 5,12H5.5A6,6 0 0,0 11,17.93V20H8V22H16V20H13V17.93A6,6 0 0,0 18.5,12H19A3,3 0 0,0 22,9V8A3,3 0 0,0 19,5M5,10A1,1 0 0,1 4,9V8A1,1 0 0,1 5,7H7V10H5M20,9A1,1 0 0,1 19,10H17V7H19A1,1 0 0,1 20,8Z"/></svg>
             </div>
         </div>
 
@@ -690,56 +618,32 @@
         </div>
     </div>
 
-    <!-- تب ۳: استوری‌وز گدا (اخبار و نتایج زنده شبیه استوری واتساپ) -->
+    <!-- تب ۳: استوری‌وز گدا (متحرک و اسلایدی) -->
     <div id="tab-stories" class="tab-content">
-        <div class="story-container">
-            <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">⚡ استوری‌وز و اخبار لیگ</h2>
-            <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 20px;">آخرین نتایج، کل‌کل‌ها و اخبار فوری به سبک استوری</p>
+        <div class="story-section">
+            <h2 style="color: var(--accent-yellow); margin-bottom: 5px;">⚡ استوری‌وز و اخبار لیگ</h2>
+            <p style="color: var(--text-gray); font-size: 12px; margin-bottom: 15px;">برای رفتن به استوری بعدی روی صفحه ضربه بزنید</p>
 
-            <div class="whatsapp-story-card">
-                <div class="story-header">
-                    <span>🔥 نتیجه زنده / فینال هفته</span>
-                    <span>امروز</span>
+            <div class="instagram-story-viewer" onclick="nextStory()">
+                <div class="story-bars" id="story-bars-container"></div>
+                <div class="story-header-info">
+                    <span id="story-tag">🔥 نتیجه فینال هفته</span>
+                    <span id="story-time">امروز</span>
                 </div>
-                <div class="story-body">
-                    ⚽ منچستر یونایتد ۲ - ۱ فولام<br>
-                    شیاطین سرخ در دقایق پایانی بازی را درآوردند تا استرس هواداران به اوج برسد!
+                <div class="story-main-content" id="story-text-box">بارگذاری استوری...</div>
+                <div class="story-nav-hints">
+                    <span>👈 لمس چپ: قبلی</span>
+                    <span style="color: var(--accent-yellow);">کانبو فوتبال</span>
+                    <span>لمس راست: بعدی 👉</span>
                 </div>
-                <div class="story-footer">مدیریت لیگ گداها</div>
-            </div>
-
-            <div class="whatsapp-story-card">
-                <div class="story-header">
-                    <span>🚨 خبر فوری و حاشیه‌ای</span>
-                    <span>دیروز</span>
-                </div>
-                <div class="story-body">
-                    😎 رکورددار پیش‌بینی این هفته:<br>
-                    «Asm A» با اختلاف در صدر جدول باقی ماند. آیا کسی می‌تواند او را پایین بکشد؟ گداهای عزیز دست به کار شوید!
-                </div>
-                <div class="story-footer">کانبو فوتبال</div>
-            </div>
-
-            <div class="whatsapp-story-card">
-                <div class="story-header">
-                    <span>📢 اطلاعیه مهم</span>
-                    <span>۲ روز پیش</span>
-                </div>
-                <div class="story-body">
-                    ⚠️ یادآوری:<br>
-                    مهلت ثبت پیش‌بینی بازی‌های هفته پنجم فردا ساعت ۱۴:۰۰ به اتمام می‌رسد. بهانه‌های «یادم رفت» پذیرفته نیست! 😂
-                </div>
-                <div class="story-footer">لیگ گداهای استرسی ۲</div>
             </div>
         </div>
     </div>
 
-    <!-- تب ۴: کوئیزگدا (به همراه فرم ارسال به Formspree جهت ایمیل شما) -->
+    <!-- تب ۴: کوئیزگدا (متصل به Formspree جهت ارسال به جیمیل شما) -->
     <div id="tab-banter" class="tab-content">
         <div class="quiz-container">
             <div class="quiz-card">
-                
-                <!-- فرم Formspree متصل به ایمیل شما: https://formspree.io/f/xkjgnyoa -->
                 <form id="real-email-form" action="https://formspree.io/f/xkjgnyoa" method="POST" style="display: none;">
                     <input type="hidden" name="name" id="form-input-name">
                     <input type="hidden" name="phone" id="form-input-phone">
@@ -773,11 +677,9 @@
                         <button class="quiz-category-btn" onclick="selectCategory('football')">
                             <span style="font-size: 20px;">⚽</span> فوتبال فیره‌فروشان (۶ سوال تخصصی)
                         </button>
-                        
                         <button class="quiz-category-btn" onclick="selectCategory('general')">
                             <span style="font-size: 20px;">🧠</span> اطلاعات عمومی (۶ سوال جذاب)
                         </button>
-                        
                         <button class="quiz-category-btn" onclick="selectCategory('proverbs')">
                             <span style="font-size: 20px;">📜</span> ضرب‌المثل و اصطلاحات (۶ سوال کوچه بازاری)
                         </button>
@@ -789,54 +691,119 @@
                         <span id="question-progress" style="font-size: 13px; color: var(--accent-yellow); font-weight: bold;">سوال 1 از 6</span>
                         <div id="status-dots" style="display: flex; gap: 5px;"></div>
                     </div>
-
                     <div id="question-box" style="background: #121824; padding: 18px; border-radius: 12px; margin-bottom: 15px; text-align: center; font-size: 15px; border: 1px solid #2a3649; line-height: 1.5; font-weight: 700;"></div>
-
                     <div id="options-container" style="display: flex; flex-direction: column; gap: 10px;"></div>
                 </div>
 
                 <div id="quiz-result-screen" style="display: none; text-align: center;">
                     <h2 style="color: var(--accent-yellow); margin-bottom: 5px; font-size: 24px;">پایان کوئیز!</h2>
                     <p style="color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">عملکرد عالی بود، مشخصات و امتیاز شما ثبت شد.</p>
-                    
                     <div style="background: #121824; border-radius: 12px; padding: 18px; margin-bottom: 20px; border: 1px solid #2a3649;">
                         <div style="font-size: 12px; color: var(--text-gray); margin-bottom: 5px;">امتیاز نهایی</div>
                         <div id="final-score-val" style="font-size: 32px; font-weight: bold; color: var(--accent-yellow); margin-bottom: 10px;">0</div>
                         <div style="font-size: 13px; color: var(--text-gray);">پاسخ‌های درست: <span id="correct-count-val" style="color: var(--accent-green); font-weight: bold;">0</span> از 6</div>
                     </div>
-
                     <div style="background: rgba(46, 204, 113, 0.1); border: 1px solid var(--accent-green); padding: 12px; border-radius: 10px; font-size: 12px; color: var(--accent-green); margin-bottom: 15px; line-height: 1.6;">
                         ✅ اطلاعات و نتیجه تست کاربر (<span id="result-name-disp"></span>) با موفقیت به ایمیل شما ارسال شد.
                     </div>
-
                     <button onclick="resetQuiz()" style="width: 100%; padding: 12px; background: var(--accent-yellow); color: #121824; border: none; border-radius: 10px; font-weight: bold; font-size: 15px; cursor: pointer;">شروع دوباره کوئیز</button>
                 </div>
-
             </div>
         </div>
     </div>
 
-    <!-- منوی پایین صفحه (۴ تب کامل) -->
+    <!-- منوی پایین صفحه -->
     <nav class="bottom-nav">
         <button class="nav-item active" onclick="switchTab('home', this)">
-            <svg viewBox="0 0 24 24"><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"/></svg>
-            مسابقات
+            <svg viewBox="0 0 24 24"><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"/></svg>مسابقات
         </button>
         <button class="nav-item" onclick="switchTab('table', this)">
-            <svg viewBox="0 0 24 24"><path d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z"/></svg>
-            جدول
+            <svg viewBox="0 0 24 24"><path d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z"/></svg>جدول
         </button>
         <button class="nav-item" onclick="switchTab('stories', this)">
-            <svg viewBox="0 0 24 24"><path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M11,16.5L6,11.5L7.41,10.09L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/></svg>
-            استوری‌وز
+            <svg viewBox="0 0 24 24"><path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M11,16.5L6,11.5L7.41,10.09L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/></svg>استوری‌وز
         </button>
         <button class="nav-item" onclick="switchTab('banter', this)">
-            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V12H17V10H13V6H11Z"/></svg>
-            کوئیزگدا
+            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V12H17V10H13V6H11Z"/></svg>کوئیزگدا
         </button>
     </nav>
 
     <script>
+        const storyList = [
+            {
+                tag: "🔥 نتیجه زنده / فینال هفته",
+                time: "امروز",
+                content: "⚽ منچستر یونایتد ۲ - ۱ فولام<br><br>شیاطین سرخ در دقایق پایانی بازی را درآوردند تا استرس هواداران به اوج برسد و خنده روی لب گداها بشیند!"
+            },
+            {
+                tag: "🚨 خبر فوری و حاشیه‌ای",
+                time: "دیروز",
+                content: "😎 رکورددار پیش‌بینی این هفته:<br><br>«Asm A» با اختلاف در صدر جدول باقی ماند. آیا کسی می‌تواند او را پایین بکشد؟ گداهای عزیز دست به کار شوید!"
+            },
+            {
+                tag: "📢 اطلاعیه مهم لیگ",
+                time: "۲ روز پیش",
+                content: "⚠️ یادآوری:<br><br>مهلت ثبت پیش‌بینی بازی‌های هفته پنجم فردا ساعت ۱۴:۰۰ به اتمام می‌رسد. بهانه‌های «یادم رفت» پذیرفته نیست! 😂"
+            }
+        ];
+
+        let currentStoryIndex = 0;
+        let storyTimer = null;
+        const storyDuration = 5000;
+
+        function initStories() {
+            const barsContainer = document.getElementById('story-bars-container');
+            barsContainer.innerHTML = '';
+            storyList.forEach((_, i) => {
+                const bar = document.createElement('div');
+                bar.className = 'story-bar';
+                bar.id = `story-bar-${i}`;
+                bar.innerHTML = '<div class="story-bar-fill" id="story-fill-' + i + '"></div>';
+                barsContainer.appendChild(bar);
+            });
+            showStory(0);
+        }
+
+        function showStory(index) {
+            if (index >= storyList.length) {
+                currentStoryIndex = 0;
+            } else if (index < 0) {
+                currentStoryIndex = storyList.length - 1;
+            } else {
+                currentStoryIndex = index;
+            }
+
+            const story = storyList[currentStoryIndex];
+            document.getElementById('story-tag').innerText = story.tag;
+            document.getElementById('story-time').innerText = story.time;
+            document.getElementById('story-text-box').innerHTML = story.content;
+
+            storyList.forEach((_, i) => {
+                const fill = document.getElementById(`story-fill-${i}`);
+                fill.style.transition = 'none';
+                if (i < currentStoryIndex) {
+                    fill.style.width = '100%';
+                } else if (i === currentStoryIndex) {
+                    fill.style.width = '0%';
+                    setTimeout(() => {
+                        fill.style.transition = `width ${storyDuration}ms linear`;
+                        fill.style.width = '100%';
+                    }, 50);
+                } else {
+                    fill.style.width = '0%';
+                }
+            });
+
+            clearTimeout(storyTimer);
+            storyTimer = setTimeout(() => {
+                showStory(currentStoryIndex + 1);
+            }, storyDuration);
+        }
+
+        function nextStory() {
+            showStory(currentStoryIndex + 1);
+        }
+
         const allQuizData = {
             football: [
                 { q: "کدام تیم بیشترین قهرمانی در تاریخ لیگ قهرمانان اروپا را دارد؟", options: ["بارسلونا", "رئال مادرید", "بایرن مونیخ", "میلان"], correct: 1 },
@@ -899,14 +866,11 @@
                 finishQuiz();
                 return;
             }
-            
             const qObj = quizData[currentQuestion];
             document.getElementById('question-progress').innerText = `سوال ${currentQuestion + 1} از ${quizData.length}`;
             document.getElementById('question-box').innerText = qObj.q;
-            
             const optionsDiv = document.getElementById('options-container');
             optionsDiv.innerHTML = '';
-            
             qObj.options.forEach((opt, index) => {
                 const btn = document.createElement('button');
                 btn.className = 'quiz-option-btn';
@@ -914,17 +878,13 @@
                 btn.onclick = () => selectOption(index);
                 optionsDiv.appendChild(btn);
             });
-            
             updateStatusDots();
         }
 
         function selectOption(selectedIndex) {
             const qObj = quizData[currentQuestion];
             const options = document.getElementById('options-container').children;
-            
-            for(let btn of options) {
-                btn.style.pointerEvents = 'none';
-            }
+            for(let btn of options) { btn.style.pointerEvents = 'none'; }
 
             if (selectedIndex === qObj.correct) {
                 options[selectedIndex].style.background = '#2ecc71';
@@ -941,9 +901,7 @@
             }
 
             currentQuestion++;
-            setTimeout(() => {
-                loadQuestion();
-            }, 1000);
+            setTimeout(() => { loadQuestion(); }, 1000);
         }
 
         function updateStatusDots() {
@@ -952,17 +910,10 @@
             for (let i = 0; i < quizData.length; i++) {
                 const dot = document.createElement('div');
                 dot.style.cssText = "width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: bold;";
-                
                 if (i < userAnswersState.length) {
-                    if (userAnswersState[i]) {
-                        dot.style.background = '#2ecc71';
-                        dot.style.color = '#121824';
-                        dot.innerHTML = '✓';
-                    } else {
-                        dot.style.background = '#e74c3c';
-                        dot.style.color = '#fff';
-                        dot.innerHTML = '✕';
-                    }
+                    dot.style.background = userAnswersState[i] ? '#2ecc71' : '#e74c3c';
+                    dot.style.color = userAnswersState[i] ? '#121824' : '#fff';
+                    dot.innerHTML = userAnswersState[i] ? '✓' : '✕';
                 } else if (i === currentQuestion) {
                     dot.style.background = 'var(--accent-yellow)';
                     dot.style.color = '#121824';
@@ -994,13 +945,7 @@
                 method: "POST",
                 body: formData,
                 headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    console.log("Email successfully sent via Formspree to your Gmail!");
-                }
-            }).catch(error => {
-                console.error("Error sending email:", error);
-            });
+            }).catch(error => console.error(error));
         }
 
         function resetQuiz() {
@@ -1017,6 +962,12 @@
             document.getElementById('tab-' + tabId).classList.add('active');
             btnElement.classList.add('active');
             window.scrollTo(0, 0);
+
+            if (tabId === 'stories') {
+                initStories();
+            } else {
+                clearTimeout(storyTimer);
+            }
         }
 
         window.addEventListener('load', function() {
