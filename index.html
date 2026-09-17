@@ -329,253 +329,10 @@
         .name-col { flex: 1; text-align: right; }
         .score-col { width: 50px; text-align: left; font-weight: bold; }
 
-        /* --- تب کل‌کل و حواشی --- */
-        .banter-container {
+        /* --- تب کوئیزگدا --- */
+        .quiz-container {
             max-width: 680px;
             margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .banter-card {
-            background-color: var(--card-bg);
-            border-radius: 14px;
-            padding: 18px;
-            border: 1px solid rgba(255,255,255,0.05);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        .banter-title {
-            font-size: 16px;
-            font-weight: 900;
-            color: var(--accent-yellow);
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* نظرسنجی تعاملی */
-        .poll-match-box {
-            background: #121824;
-            border-radius: 10px;
-            padding: 14px;
-            margin-bottom: 14px;
-        }
-
-        .poll-match-box:last-child {
-            margin-bottom: 0;
-        }
-
-        .poll-teams-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-        .poll-team-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .poll-team-item img {
-            width: 24px;
-            height: 24px;
-            object-fit: contain;
-        }
-
-        .poll-buttons-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 8px;
-            margin-bottom: 10px;
-        }
-
-        .poll-btn {
-            background-color: #243044;
-            color: #fff;
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 8px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-align: center;
-        }
-
-        .poll-btn:hover {
-            background-color: #2e3d55;
-            border-color: var(--accent-yellow);
-        }
-
-        .poll-btn.selected {
-            background-color: var(--accent-yellow);
-            color: #121824;
-            border-color: var(--accent-yellow);
-        }
-
-        .poll-bars {
-            display: flex;
-            height: 10px;
-            background: #243044;
-            border-radius: 5px;
-            overflow: hidden;
-            margin-bottom: 8px;
-            gap: 2px;
-        }
-
-        .poll-bar-home {
-            background-color: var(--accent-yellow);
-            height: 100%;
-            transition: width 0.4s ease;
-        }
-
-        .poll-bar-draw {
-            background-color: var(--text-gray);
-            height: 100%;
-            transition: width 0.4s ease;
-        }
-
-        .poll-bar-away {
-            background-color: var(--accent-green);
-            height: 100%;
-            transition: width 0.4s ease;
-        }
-
-        .poll-stats-text {
-            display: flex;
-            justify-content: space-between;
-            font-size: 11px;
-            color: var(--text-gray);
-        }
-
-        .user-vote-status {
-            font-size: 11px;
-            color: var(--accent-green);
-            text-align: center;
-            margin-top: 6px;
-            font-weight: 700;
-        }
-
-        /* --- استایل اخبار متنی --- */
-        .news-header-banner {
-            background: linear-gradient(135deg, #243044, #121824);
-            border-right: 4px solid var(--accent-yellow);
-            padding: 12px 16px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .news-header-title {
-            font-size: 16px;
-            font-weight: 900;
-            color: #fff;
-        }
-
-        .news-badge {
-            background-color: var(--accent-red);
-            color: #fff;
-            font-size: 11px;
-            padding: 3px 8px;
-            border-radius: 12px;
-            font-weight: bold;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-
-        .news-card-modern {
-            background-color: var(--card-bg);
-            border-radius: 14px;
-            overflow: hidden;
-            margin-bottom: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-            padding: 16px;
-        }
-
-        .news-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .news-tag {
-            background: rgba(245, 197, 24, 0.15);
-            color: var(--accent-yellow);
-            font-size: 11px;
-            font-weight: 700;
-            padding: 3px 8px;
-            border-radius: 6px;
-            border: 1px solid rgba(245, 197, 24, 0.3);
-        }
-
-        .news-date {
-            color: var(--text-gray);
-            font-size: 11px;
-        }
-
-        .news-body-title {
-            font-size: 15px;
-            font-weight: 900;
-            color: #ffffff;
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-
-        .news-body-desc {
-            font-size: 13px;
-            color: var(--text-gray);
-            line-height: 1.7;
-            margin-bottom: 12px;
-        }
-
-        .news-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 10px;
-        }
-
-        .news-author {
-            font-size: 11px;
-            color: #7b8898;
-        }
-
-        .news-actions {
-            display: flex;
-            gap: 12px;
-        }
-
-        .news-action-btn {
-            background: none;
-            border: none;
-            color: var(--text-gray);
-            font-size: 12px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            transition: color 0.2s ease;
-        }
-
-        .news-action-btn:hover {
-            color: var(--accent-yellow);
         }
 
         /* --- نوار ناوبری پایین --- */
@@ -885,169 +642,73 @@
         </div>
     </div>
 
-    <!-- تب ۳: کل‌کل و حواشی -->
+    <!-- تب ۳: کوئیزگدا (جایگزین کل‌کل) -->
     <div id="tab-banter" class="tab-content">
-        <div class="banter-container">
-
-            <!-- بخش ۱: نظرسنجی زنده بازی‌های مهم -->
-            <div class="banter-card">
-                <div class="banter-title">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V12H17V10H13V6H11Z"/></svg>
-                    پیش‌بینی و نظرسنجی زنده (کدوم تیم می‌بره؟)
-                </div>
-
-                <!-- نظرسنجی بازی اول -->
-                <div class="poll-match-box" id="poll-1">
-                    <div class="poll-teams-header">
-                        <div class="poll-team-item">
-                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9906.png" alt="Atletico">
-                            <span>اتلتیکو مادرید</span>
-                        </div>
-                        <span style="color: var(--accent-yellow); font-size: 11px;">دربی مادرید</span>
-                        <div class="poll-team-item">
-                            <span>رئال مادرید</span>
-                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8633.png" alt="Real Madrid">
-                        </div>
-                    </div>
+        <div class="quiz-container">
+            <div style="background: #1c2536; border-radius: 20px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                
+                <!-- فرم ثبت نام اولیه -->
+                <div id="quiz-register-screen">
+                    <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 10px;">⚽ کوئیزگدا</h2>
+                    <p style="text-align: center; color: var(--text-gray); font-size: 14px; margin-bottom: 25px;">نام و شماره خود را وارد کنید تا مسابقه شروع شود</p>
                     
-                    <div class="poll-buttons-grid" id="poll-btns-1">
-                        <button class="poll-btn" onclick="vote(1, 'home')">برد اتلتیکو</button>
-                        <button class="poll-btn" onclick="vote(1, 'draw')">مساوی</button>
-                        <button class="poll-btn" onclick="vote(1, 'away')">برد رئال</button>
-                    </div>
-
-                    <div class="poll-bars">
-                        <div class="poll-bar-home" id="p1-home" style="width: 35%;"></div>
-                        <div class="poll-bar-draw" id="p1-draw" style="width: 20%;"></div>
-                        <div class="poll-bar-away" id="p1-away" style="width: 45%;"></div>
-                    </div>
-                    <div class="poll-stats-text">
-                        <span id="p1-home-txt">اتلتیکو (۳۵٪)</span>
-                        <span id="p1-draw-txt">مساوی (۲۰٪)</span>
-                        <span id="p1-away-txt">رئال (۴۵٪)</span>
-                    </div>
-                    <div class="user-vote-status" id="p1-status"></div>
+                    <form id="user-info-form">
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; margin-bottom: 5px; font-size: 13px;">نام و نام خانوادگی:</label>
+                            <input type="text" id="player-name" required placeholder="مثلاً رضا غتیفی" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #2a3b5c; background: #0b0f19; color: #fff; box-sizing: border-box;">
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 5px; font-size: 13px;">شماره تماس / سروش:</label>
+                            <input type="tel" id="player-phone" required placeholder="09xxxxxxxxx" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #2a3b5c; background: #0b0f19; color: #fff; box-sizing: border-box;">
+                        </div>
+                        
+                        <button type="submit" style="width: 100%; padding: 14px; background: var(--accent-yellow); color: #121824; border: none; border-radius: 10px; font-weight: bold; font-size: 16px; cursor: pointer;">شروع کوئیز</button>
+                    </form>
                 </div>
 
-                <!-- نظرسنجی بازی دوم -->
-                <div class="poll-match-box" id="poll-2">
-                    <div class="poll-teams-header">
-                        <div class="poll-team-item">
-                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8686.png" alt="Roma">
-                            <span>رم</span>
-                        </div>
-                        <span style="color: var(--accent-yellow); font-size: 11px;">نبرد سری آ</span>
-                        <div class="poll-team-item">
-                            <span>اینتر</span>
-                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8636.png" alt="Inter">
-                        </div>
+                <!-- صفحه سوالات کوئیز -->
+                <div id="quiz-game-screen" style="display: none;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <span id="question-progress" style="font-size: 14px; color: var(--accent-yellow); font-weight: bold;">سوال 1 از 10</span>
+                        <span id="current-score-badge" style="font-size: 14px; background: #121824; padding: 5px 12px; border-radius: 20px;">امتیاز: 0</span>
                     </div>
 
-                    <div class="poll-buttons-grid" id="poll-btns-2">
-                        <button class="poll-btn" onclick="vote(2, 'home')">برد رم</button>
-                        <button class="poll-btn" onclick="vote(2, 'draw')">مساوی</button>
-                        <button class="poll-btn" onclick="vote(2, 'away')">برد اینتر</button>
-                    </div>
+                    <!-- نوار وضعیت پاسخ‌ها (تیک و ضربدرها) -->
+                    <div id="status-dots" style="display: flex; justify-content: center; gap: 6px; margin-bottom: 20px; flex-wrap: wrap;"></div>
 
-                    <div class="poll-bars">
-                        <div class="poll-bar-home" id="p2-home" style="width: 25%;"></div>
-                        <div class="poll-bar-draw" id="p2-draw" style="width: 30%;"></div>
-                        <div class="poll-bar-away" id="p2-away" style="width: 45%;"></div>
-                    </div>
-                    <div class="poll-stats-text">
-                        <span id="p2-home-txt">رم (۲۵٪)</span>
-                        <span id="p2-draw-txt">مساوی (۳۰٪)</span>
-                        <span id="p2-away-txt">اینتر (۴۵٪)</span>
-                    </div>
-                    <div class="user-vote-status" id="p2-status"></div>
-                </div>
-            </div>
+                    <!-- متن سوال -->
+                    <div id="question-box" style="background: #121824; padding: 20px; border-radius: 12px; margin-bottom: 20px; text-align: center; font-size: 16px; min-height: 70px; display: flex; align-items: center; justify-content: center; line-height: 1.5;"></div>
 
-            <!-- بخش ۲: اخبار بدون عکس (متنی، خلوت و مدرن) -->
-            <div class="banter-card">
-                <div class="news-header-banner">
-                    <div class="news-header-title">📰 اخبار اختصاصی و حواشی لیگ</div>
-                    <span class="news-badge">زنده و فوری</span>
+                    <!-- گزینه‌ها -->
+                    <div id="options-container" style="display: flex; flex-direction: column; gap: 10px;"></div>
                 </div>
 
-                <!-- خبر ۱: آقای پیرا -->
-                <div class="news-card-modern">
-                    <div class="news-card-header">
-                        <span class="news-tag">حواشی لیگ</span>
-                        <span class="news-date">۲۷ شهریور ۱۴۰۵</span>
-                    </div>
-                    <h3 class="news-body-title">نقشه سرّی آقای پیرا برای شکار رضا قطیفی در صدر!</h3>
-                    <p class="news-body-desc">
-                        آقای پیرا با ۳۴ امتیاز در رتبه ۹ جدول کمین کرده و در مصاحبه اختصاصی اعلام کرده با آنالیز دقیق بازی‌های هفته پنجم و ترکیب جدیدش، قصد دارد فاصله امتیازی‌اش را با رضا قطیفی به حداقل برساند!
-                    </p>
-                    <div class="news-footer">
-                        <span class="news-author">✍️ تحریریه گداهای استرسی</span>
-                        <div class="news-actions">
-                            <button class="news-action-btn" onclick="this.style.color='#e74c3c'">❤️ <span>۱۲</span></button>
-                            <button class="news-action-btn">💬 <span>۴</span></button>
+                <!-- صفحه پایان و نتیجه -->
+                <div id="quiz-result-screen" style="display: none; text-align: center;">
+                    <h2 style="color: var(--accent-yellow); margin-bottom: 5px; font-size: 26px;">GREAT STUFF!</h2>
+                    <p style="color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">عملکرد عالی بود - اطلاعات و امتیاز شما برای ادمین ارسال شد.</p>
+                    
+                    <div style="background: #121824; border-radius: 15px; padding: 20px; margin-bottom: 20px;">
+                        <div style="font-size: 12px; color: var(--text-gray); margin-bottom: 5px;">امتیاز نهایی شما</div>
+                        <div id="final-score-val" style="font-size: 36px; font-weight: bold; color: var(--accent-yellow); margin-bottom: 15px;">0</div>
+                        
+                        <div style="border-top: 1px solid #2a3b5c; padding-top: 15px; display: flex; justify-content: space-around;">
+                            <div>
+                                <div style="font-size: 11px; color: var(--text-gray);">پاسخ‌های درست</div>
+                                <div id="correct-count-val" style="font-size: 18px; font-weight: bold; color: var(--accent-green);">0</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 11px; color: var(--text-gray);">امتیاز کل</div>
+                                <div style="font-size: 18px; font-weight: bold;">1000</div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- خبر ۲: محمد خلیلاوی -->
-                <div class="news-card-modern">
-                    <div class="news-card-header">
-                        <span class="news-tag">اختصاصی</span>
-                        <span class="news-date">۲۶ شهریور ۱۴۰۵</span>
-                    </div>
-                    <h3 class="news-body-title">عبور از بحران آتش‌نشانی؛ خلیلاوی همچنان معتاد به نتایج ۱-۰ اقتصادی!</h3>
-                    <p class="news-body-desc">
-                        محمد خلیلاوی پس از عبور از خطرات و حواشی هفته گذشته، همچنان به سبک دفاعی و برد‌های حداقل ۱-۰ وفادار مانده است. وی در پاسخ به منتقدان گفت: «زیبا بازی کردن مهم نیست، مهم ۳ امتیاز و بقا در جدول است!»
-                    </p>
-                    <div class="news-footer">
-                        <span class="news-author">✍️ گزارشگر اختصاصی</span>
-                        <div class="news-actions">
-                            <button class="news-action-btn" onclick="this.style.color='#e74c3c'">❤️ <span>۱۹</span></button>
-                            <button class="news-action-btn">💬 <span>۷</span></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- خبر ۳: دربی مادرید -->
-                <div class="news-card-modern">
-                    <div class="news-card-header">
-                        <span class="news-tag">فوتبال اروپا</span>
-                        <span class="news-date">۲۸ شهریور ۱۴۰۵</span>
-                    </div>
-                    <h3 class="news-body-title">پیش‌بینی معتبر اروپا: نبرد سرنوشت‌ساز اتلتیکو و رئال در متروپولیتانو</h3>
-                    <p class="news-body-desc">
-                        تقابل جذاب اتلتیکو مادرید و رئال مادرید در استادیوم متروپولیتانو، تعیین‌کننده‌ترین بازی این هفته برای پیش‌بینی‌کنندگان لیگ است. ۷۰٪ اعضای گروه برد رئال مادرید را پیش‌بینی کرده‌اند.
-                    </p>
-                    <div class="news-footer">
-                        <span class="news-author">✍️ لا لیگا نیوز</span>
-                        <div class="news-actions">
-                            <button class="news-action-btn" onclick="this.style.color='#e74c3c'">❤️ <span>۱۵</span></button>
-                            <button class="news-action-btn">💬 <span>۲</span></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- خبر ۴: رم و اینتر -->
-                <div class="news-card-modern">
-                    <div class="news-card-header">
-                        <span class="news-tag">سری آ</span>
-                        <span class="news-date">۲۸ شهریور ۱۴۰۵</span>
-                    </div>
-                    <h3 class="news-body-title">نبرد سنگین سری آ در المپیکو؛ رم میزبان افعی‌های اینتر</h3>
-                    <p class="news-body-desc">
-                        رم در شرایطی میزبان اینتر است که هر دو تیم برای صعود به بالای جدول نیاز مبرم به ۳ امتیاز دارند. این بازی بیشترین اختلاف نظر را در نظرسنجی گروه به همراه داشته است.
-                    </p>
-                    <div class="news-footer">
-                        <span class="news-author">✍️ آنالیز سری آ</span>
-                        <div class="news-actions">
-                            <button class="news-action-btn" onclick="this.style.color='#e74c3c'">❤️ <span>۸</span></button>
-                            <button class="news-action-btn">💬 <span>۳</span></button>
-                        </div>
-                    </div>
+                    <button onclick="location.reload();" style="width: 100%; padding: 14px; background: var(--accent-yellow); color: #121824; border: none; border-radius: 10px; font-weight: bold; font-size: 16px; cursor: pointer;">تلاش مجدد / کوئیز جدید</button>
                 </div>
 
             </div>
-
         </div>
     </div>
 
@@ -1062,55 +723,134 @@
             جدول قهرمانی
         </button>
         <button class="nav-item" onclick="switchTab('banter', this)">
-            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V12H17V10H13V6H11Z"/></svg>
-            کل‌کل‌ها
+            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 12,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V12H17V10H13V6H11Z"/></svg>
+            کوئیزگدا
         </button>
     </nav>
 
     <script>
-        const pollData = {
-            1: { home: 35, draw: 20, away: 45, voted: false, userChoice: null },
-            2: { home: 25, draw: 30, away: 45, voted: false, userChoice: null }
-        };
+        // اسکریپت کوئیزگدا
+        const quizData = [
+            { q: "ورزشگاه خانگی باشگاه بارسلونا چه نام دارد؟", options: ["سانتیاگو برنابئو", "اتلتیکو متروپولیتانو", "اسپاتیفای نوکمپ", "آلیانز آرنا"], correct: 2 },
+            { q: "کدام تیم قهرمان جام جهانی 2022 قطر شد؟", options: ["فرانسه", "آرژانتین", "برزیل", "آلمان"], correct: 1 },
+            { q: "رکورددار بیشترین توپ طلا در تاریخ فوتبال کیست؟", options: ["کریستیانو رونالدو", "لیونل مسی", "پله", "یوهان کرایف"], correct: 1 },
+            { q: "لقب باشگاه لیورپول چیست؟", options: ["شیاطین سرخ", "توپچی‌ها", "قرمزها (The Reds)", "بانوی پیر"], correct: 2 },
+            { q: "مسابقات لیگ قهرمانان اروپا زیر نظر کدام نهاد برگزار می‌شود؟", options: ["فیفا", "یوفا", "ای اف سی", "کونمبول"], correct: 1 },
+            { q: "کدام بازیکن به «آقای گل ملی جهان» معروف است؟", options: ["علی دایی", "کریستیانو رونالدو", "فرانس پوشکاش", "لئو مسی"], correct: 1 },
+            { q: "ورزشگاه اختصاصی باشگاه رئال مادرید کدام است؟", options: ["سن السیرو", "واندا متروپولیتانو", "سانتیاگو برنابئو", "امارات"], correct: 2 },
+            { q: "کدام کشور میزبان جام جهانی 2026 است؟", options: ["آلمان", "برزیل", "آمریکا، کانادا و مکزیک", "قطر"], correct: 2 },
+            { q: "تعداد بازیکنان داخل زمین هر تیم فوتبال چند نفر است؟", options: ["10 نفر", "11 نفر", "12 نفر", "9 نفر"], correct: 1 },
+            { q: "کدام تیم قهرمان رقابت‌های یورو 2024 شد؟", options: ["انگلیس", "اسپانیا", "فرانسه", "آلمان"], correct: 1 }
+        ];
 
-        function vote(pollId, choice) {
-            if (pollData[pollId].voted) {
-                alert('شما قبلاً در این نظرسنجی رای داده‌اید! 😉');
+        let currentQuestion = 0;
+        let score = 0;
+        let correctAnswersCount = 0;
+        let userAnswersState = [];
+        let playerData = { name: '', phone: '' };
+
+        document.getElementById('user-info-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            playerData.name = document.getElementById('player-name').value;
+            playerData.phone = document.getElementById('player-phone').value;
+            
+            document.getElementById('quiz-register-screen').style.display = 'none';
+            document.getElementById('quiz-game-screen').style.display = 'block';
+            loadQuestion();
+        });
+
+        function loadQuestion() {
+            if (currentQuestion >= quizData.length) {
+                finishQuiz();
                 return;
             }
-
-            pollData[pollId][choice] += 1;
-            pollData[pollId].voted = true;
-            pollData[pollId].userChoice = choice;
-
-            const total = pollData[pollId].home + pollData[pollId].draw + pollData[pollId].away;
-            const homePercent = Math.round((pollData[pollId].home / total) * 100);
-            const drawPercent = Math.round((pollData[pollId].draw / total) * 100);
-            const awayPercent = 100 - (homePercent + drawPercent);
-
-            document.getElementById(`p${pollId}-home`).style.width = homePercent + '%';
-            document.getElementById(`p${pollId}-draw`).style.width = drawPercent + '%';
-            document.getElementById(`p${pollId}-away`).style.width = awayPercent + '%';
-
-            const homeName = pollId === 1 ? 'اتلتیکو' : 'رم';
-            const awayName = pollId === 1 ? 'رئال' : 'اینتر';
-
-            document.getElementById(`p${pollId}-home-txt`).innerText = `${homeName} (${homePercent}٪)`;
-            document.getElementById(`p${pollId}-draw-txt`).innerText = `مساوی (${drawPercent}٪)`;
-            document.getElementById(`p${pollId}-away-txt`).innerText = `${awayName} (${awayPercent}٪)`;
-
-            const buttons = document.querySelectorAll(`#poll-btns-${pollId} .poll-btn`);
-            buttons.forEach((btn, idx) => {
-                const choices = ['home', 'draw', 'away'];
-                if (choices[idx] === choice) {
-                    btn.classList.add('selected');
-                }
+            
+            const qObj = quizData[currentQuestion];
+            document.getElementById('question-progress').innerText = `سوال ${currentQuestion + 1} از ${quizData.length}`;
+            document.getElementById('current-score-badge').innerText = `امتیاز: ${score}`;
+            document.getElementById('question-box').innerText = qObj.q;
+            
+            const optionsDiv = document.getElementById('options-container');
+            optionsDiv.innerHTML = '';
+            
+            qObj.options.forEach((opt, index) => {
+                const btn = document.createElement('button');
+                btn.innerText = opt;
+                btn.style.cssText = "width: 100%; padding: 12px; background: #0b0f19; color: #fff; border: 1px solid #2a3b5c; border-radius: 10px; font-size: 14px; cursor: pointer; text-align: center; transition: 0.2s;";
+                btn.onmouseover = () => btn.style.background = '#1f2b45';
+                btn.onmouseout = () => btn.style.background = '#0b0f19';
+                btn.onclick = () => selectOption(index);
+                optionsDiv.appendChild(btn);
             });
+            
+            updateStatusDots();
+        }
 
-            let choiceText = choice === 'home' ? (pollId === 1 ? 'برد اتلتیکو' : 'برد رم') : (choice === 'draw' ? 'مساوی' : (pollId === 1 ? 'برد رئال' : 'برد اینتر'));
-            document.getElementById(`p${pollId}-status`).innerText = `✅ رای شما ثبت شد: ${choiceText}`;
+        function selectOption(selectedIndex) {
+            const qObj = quizData[currentQuestion];
+            const isCorrect = (selectedIndex === qObj.correct);
+            
+            if (isCorrect) {
+                score += 100;
+                correctAnswersCount++;
+                userAnswersState.push(true);
+            } else {
+                userAnswersState.push(false);
+            }
+            
+            currentQuestion++;
+            loadQuestion();
+        }
 
-            alert('رای شما با موفقیت ثبت شد! 🚀');
+        function updateStatusDots() {
+            const dotsContainer = document.getElementById('status-dots');
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < quizData.length; i++) {
+                const dot = document.createElement('div');
+                dot.style.cssText = "width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;";
+                
+                if (i < userAnswersState.length) {
+                    if (userAnswersState[i]) {
+                        dot.style.background = '#2ecc71';
+                        dot.style.color = '#fff';
+                        dot.innerHTML = '✓';
+                    } else {
+                        dot.style.background = '#e74c3c';
+                        dot.style.color = '#fff';
+                        dot.innerHTML = '✕';
+                    }
+                } else if (i === currentQuestion) {
+                    dot.style.background = '#f5c518';
+                    dot.style.color = '#121824';
+                    dot.innerHTML = i + 1;
+                } else {
+                    dot.style.background = '#121824';
+                    dot.style.color = '#9aa4b2';
+                    dot.innerHTML = i + 1;
+                }
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function finishQuiz() {
+            document.getElementById('quiz-game-screen').style.display = 'none';
+            document.getElementById('quiz-result-screen').style.display = 'block';
+            
+            document.getElementById('final-score-val').innerText = score;
+            document.getElementById('correct-count-val').innerText = `${correctAnswersCount} از 10`;
+            
+            // ارسال خودکار نتایج به ایمیل از طریق Formspree
+            fetch("https://formspree.io/f/xkjgnyoa", {
+                method: "POST",
+                headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: playerData.name,
+                    phone: playerData.phone,
+                    score: score,
+                    correctAnswers: correctAnswersCount,
+                    details: userAnswersState.map((ans, idx) => `سوال ${idx+1}: ${ans ? 'درست' : 'غلط'}`).join(', ')
+                })
+            }).catch(err => console.log('Error sending to formspree', err));
         }
 
         window.addEventListener('load', () => {
