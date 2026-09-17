@@ -254,7 +254,7 @@
             margin-top: 1px;
         }
 
-        /* --- استایل بخش استوری‌های متحرک اخبار و نتایج --- */
+        /* --- پلیر استوری‌وز متحرک (اینستاگرامی) --- */
         .story-section {
             max-width: 450px;
             margin: 0 auto;
@@ -265,7 +265,7 @@
             background: linear-gradient(145deg, #182232, #0b1017);
             border: 2px solid var(--accent-yellow);
             border-radius: 20px;
-            height: 380px;
+            height: 420px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -279,7 +279,7 @@
         .story-bars {
             display: flex;
             gap: 6px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .story-bar {
@@ -308,12 +308,15 @@
         }
 
         .story-main-content {
-            font-size: 16px;
-            font-weight: 900;
-            line-height: 2;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.8;
             color: #fff;
-            padding: 20px 10px;
+            padding: 10px 5px;
+            text-align: right;
             animation: fadeInStory 0.4s ease-in-out;
+            overflow-y: auto;
+            max-height: 260px;
         }
 
         @keyframes fadeInStory {
@@ -326,7 +329,39 @@
             justify-content: space-between;
             font-size: 11px;
             color: var(--text-gray);
-            margin-top: 10px;
+            margin-top: 5px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 8px;
+        }
+
+        /* --- استایل نتایج بارسلونا در استوری‌ها با لوگو --- */
+        .barca-results-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .barca-match-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0,0,0,0.3);
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+
+        .barca-team {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .barca-team img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
         }
 
         /* --- کادر شیک بالای جدول --- */
@@ -618,7 +653,7 @@
         </div>
     </div>
 
-    <!-- تب ۳: استوری‌وز گدا (متحرک و اسلایدی) -->
+    <!-- تب ۳: استوری‌وز گدا (متحرک و اینستاگرامی با ۴ خبر جدید) -->
     <div id="tab-stories" class="tab-content">
         <div class="story-section">
             <h2 style="color: var(--accent-yellow); margin-bottom: 5px;">⚡ استوری‌وز و اخبار لیگ</h2>
@@ -627,7 +662,7 @@
             <div class="instagram-story-viewer" onclick="nextStory()">
                 <div class="story-bars" id="story-bars-container"></div>
                 <div class="story-header-info">
-                    <span id="story-tag">🔥 نتیجه فینال هفته</span>
+                    <span id="story-tag">🔥 استارت هفته پیش‌بینی</span>
                     <span id="story-time">امروز</span>
                 </div>
                 <div class="story-main-content" id="story-text-box">بارگذاری استوری...</div>
@@ -640,7 +675,7 @@
         </div>
     </div>
 
-    <!-- تب ۴: کوئیزگدا (متصل به Formspree جهت ارسال به جیمیل شما) -->
+    <!-- تب ۴: کوئیزگدا (متصل به Formspree برای ارسال به جیمیل شما) -->
     <div id="tab-banter" class="tab-content">
         <div class="quiz-container">
             <div class="quiz-card">
@@ -712,7 +747,7 @@
         </div>
     </div>
 
-    <!-- منوی پایین صفحه -->
+    <!-- منوی پایین صفحه (۴ تب اصلی) -->
     <nav class="bottom-nav">
         <button class="nav-item active" onclick="switchTab('home', this)">
             <svg viewBox="0 0 24 24"><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"/></svg>مسابقات
@@ -729,27 +764,79 @@
     </nav>
 
     <script>
+        // آرایه ۴ خبر تنظیم‌شده شما با لوگوها و جزئیات کامل
         const storyList = [
             {
-                tag: "🔥 نتیجه زنده / فینال هفته",
+                tag: "🔥 استارت هفته پیش‌بینی",
                 time: "امروز",
-                content: "⚽ منچستر یونایتد ۲ - ۱ فولام<br><br>شیاطین سرخ در دقایق پایانی بازی را درآوردند تا استرس هواداران به اوج برسد و خنده روی لب گداها بشیند!"
+                content: `
+                    هفته اول پیش‌بینی از روز جمعه با نبرد جذاب آغاز می‌شود!<br><br>
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 15px; background: rgba(0,0,0,0.3); padding: 10px; border-radius: 10px; margin: 10px 0;">
+                        <div style="display: flex; align-items: center; gap: 6px;"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" style="width:24px;height:24px;"><span>برنتفورد</span></div>
+                        <span style="color:var(--accent-yellow); font-weight:bold;">VS</span>
+                        <div style="display: flex; align-items: center; gap: 6px;"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" style="width:24px;height:24px;"><span>چلسی</span></div>
+                    </div>
+                    همه گداهای استرسی در همین شروع هفته می‌خواهند اختلاف خودشان را با زویدات در صدر جدول کمتر کنند!
+                `
             },
             {
-                tag: "🚨 خبر فوری و حاشیه‌ای",
+                tag: "🚨 حاشیه و مصاحبه داغ",
                 time: "دیروز",
-                content: "😎 رکورددار پیش‌بینی این هفته:<br><br>«Asm A» با اختلاف در صدر جدول باقی ماند. آیا کسی می‌تواند او را پایین بکشد؟ گداهای عزیز دست به کار شوید!"
+                content: `
+                    آقای خلیلاوی در هفته گذشته با وجود ترکیدن کپسول آتش‌نشانی، طی مصاحبه با خبرنگار <b>فیره نیوز</b> گفت:<br><br>
+                    <i>«آقا چیزی نبود! فقط عین شاطر نونوایی پودر از سر تا پامون می‌ریخت...»</i><br><br>
+                    آخرش معلوم نشد کی ترکیدن کپسول رو گردن گرفت...؟ شاید <b>نیسی</b>! 😂
+                `
             },
             {
-                tag: "📢 اطلاعیه مهم لیگ",
+                tag: "⚽ بارسلونا فاز گلباران!",
                 time: "۲ روز پیش",
-                content: "⚠️ یادآوری:<br><br>مهلت ثبت پیش‌بینی بازی‌های هفته پنجم فردا ساعت ۱۴:۰۰ به اتمام می‌رسد. بهانه‌های «یادم رفت» پذیرفته نیست! 😂"
+                content: `
+                    بارسلونا رسماً وارد فاز «هر بازی ۵ تا به بالا» شده! کاتالان‌ها در بازی‌های اخیر آتش به پا کردند:<br>
+                    <div class="barca-results-list">
+                        <div class="barca-match-row">
+                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png"> بارسلونا</span>
+                            <span style="color:var(--accent-yellow); font-weight:bold;">۵ - ۰</span>
+                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/10281.png"> الچه</span>
+                        </div>
+                        <div class="barca-match-row">
+                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png"> بارسلونا</span>
+                            <span style="color:var(--accent-yellow); font-weight:bold;">۵ - ۰</span>
+                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8614.png"> والنسیا</span>
+                        </div>
+                        <div class="barca-match-row">
+                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png"> بارسلونا</span>
+                            <span style="color:var(--accent-yellow); font-weight:bold;">۵ - ۱</span>
+                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/10216.png"> فاینورد</span>
+                        </div>
+                        <div class="barca-match-row">
+                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png"> بارسلونا</span>
+                            <span style="color:var(--accent-yellow); font-weight:bold;">۴ - ۲</span>
+                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8370.png"> لوانته</span>
+                        </div>
+                        <div class="barca-match-row">
+                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png"> بارسلونا</span>
+                            <span style="color:var(--accent-yellow); font-weight:bold;">۷ - ۲</span>
+                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/10268.png"> ریسینگ سانتاندر</span>
+                        </div>
+                    </div>
+                    <span style="display:block; margin-top:8px; font-size:12px; color:var(--text-gray);">انگار بارسا با دروازه‌بان‌ها قهره؛ فقط فعلاً یادش رفته دروازه خودش هم وجود داره! 😅</span>
+                `
+            },
+            {
+                tag: "🔍 پرونده ویژه و محرمانه",
+                time: "۳ روز پیش",
+                content: `
+                    <b>فوری | پرونده عکس جنجالی وارد مرحله تحقیقات شد!</b><br><br>
+                    بخشنده در کمیته بازرسی گروه، شخصاً در حال بررسی ماجرای ارسال سایت نامناسب است؛ اما نکته عجیب ماجرا اینجاست که وی به فرستنده اصلی هم شک کرده و حتی احتمال داده کار خودِ مدیر گروه بوده باشد!<br><br>
+                    منابع آگاه می‌گویند تحقیقات ادامه دارد و بخشنده فعلاً با جدیت مشغول پیدا کردن «مجرم ناشناس» است؛ در حالی که خودش هم یکی از مظنونان احتمالی پرونده محسوب می‌شود! 🕵️‍♂️😂
+                `
             }
         ];
 
         let currentStoryIndex = 0;
         let storyTimer = null;
-        const storyDuration = 5000;
+        const storyDuration = 6000; // ۶ ثانیه برای هر استوری
 
         function initStories() {
             const barsContainer = document.getElementById('story-bars-container');
@@ -804,6 +891,7 @@
             showStory(currentStoryIndex + 1);
         }
 
+        // --- بانک سوالات کوئیزگدا ---
         const allQuizData = {
             football: [
                 { q: "کدام تیم بیشترین قهرمانی در تاریخ لیگ قهرمانان اروپا را دارد؟", options: ["بارسلونا", "رئال مادرید", "بایرن مونیخ", "میلان"], correct: 1 },
