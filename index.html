@@ -655,7 +655,7 @@
             line-height: 1.9;
         }
 
-        /* --- استایل بخش شاخ‌به‌شاخ (دقیقاً مشابه سبک تصویر ارسالی با نام‌های جدول) --- */
+        /* --- استایل بخش شاخ‌به‌شاخ (دقیقاً مشابه سبک تصویر ارسالی برای هر فرد جداگانه) --- */
         .h2h-container {
             max-width: 680px;
             margin: 0 auto;
@@ -664,74 +664,62 @@
             gap: 15px;
         }
 
-        .h2h-match-card {
+        .h2h-card {
             background-color: var(--card-bg);
             border-radius: 16px;
-            padding: 16px 20px;
+            padding: 16px;
             border: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
-        .h2h-team-row {
+        .h2h-card-header {
+            font-size: 14px;
+            font-weight: 900;
+            color: var(--accent-yellow);
+            border-bottom: 1px solid #2a3649;
+            padding-bottom: 8px;
+            margin-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .h2h-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: #121824;
-            padding: 10px 15px;
+            padding: 10px 14px;
             border-radius: 10px;
             border: 1px solid #2a3649;
         }
 
-        .h2h-team-info {
+        .h2h-team-side {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
-        .h2h-team-info img {
-            width: 28px;
-            height: 28px;
+        .h2h-team-side img {
+            width: 26px;
+            height: 26px;
             object-fit: contain;
         }
 
         .h2h-team-name {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
             color: #ffffff;
         }
 
-        .h2h-members-box {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 4px;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 10px;
-        }
-
-        .h2h-member-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0,0,0,0.2);
-            padding: 8px 14px;
-            border-radius: 8px;
-            font-size: 13px;
-        }
-
-        .h2h-member-name {
-            color: var(--text-gray);
-            font-weight: 700;
-        }
-
-        .h2h-member-score {
+        .h2h-score {
             font-family: monospace;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 900;
-            color: var(--accent-yellow);
+            color: var(--text-light);
         }
 
         /* --- کادر شیک بالای جدول --- */
@@ -1352,105 +1340,256 @@
         </div>
     </div>
 
-    <!-- تب ۶: شاخ‌به‌شاخ (طراحی دقیق مطابق درخواست و تصویر ارسالی) -->
+    <!-- تب ۶: شاخ‌به‌شاخ (طراحی دقیق مطابق درخواست برای هر فرد جداگانه برای بازی برنتفورد و چلسی) -->
     <div id="tab-stories" class="tab-content">
         <div class="h2h-container">
             <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">شاخ‌به‌شاخ</h2>
-            <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 15px;">مقایسه پیش‌بینی اعضای جدول برای مسابقات هفته پنجم</p>
+            <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 15px;">پیش‌بینی اعضای جدول برای بازی برنتفورد و چلسی</p>
 
-            <!-- بازی: برنتفورد - چلسی -->
-            <div class="h2h-match-card">
-                <div class="h2h-team-row">
-                    <div class="h2h-team-info">
+            <!-- Asm A -->
+            <div class="h2h-card">
+                <div class="h2h-card-header"><span>Asm A</span></div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
                         <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
                         <span class="h2h-team-name">برنتفورد</span>
                     </div>
+                    <span class="h2h-score">۰</span>
                 </div>
-                <div class="h2h-team-row">
-                    <div class="h2h-team-info">
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
                         <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" alt="Chelsea">
                         <span class="h2h-team-name">چلسی</span>
                     </div>
-                </div>
-
-                <div class="h2h-members-box">
-                    <div class="h2h-member-row"><span class="h2h-member-name">Asm A</span><span class="h2h-member-score">۰ - ۲</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">REZA GHATIFI</span><span class="h2h-member-score">۱ - ۲</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">Mahdi</span><span class="h2h-member-score">۱ - ۱</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">Donya Asil</span><span class="h2h-member-score">۱ - ۲</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">حبیب نعیمی</span><span class="h2h-member-score">۱ - ۳</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">محمد خلیلاوی پور</span><span class="h2h-member-score">۲ - ۳</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">hajar daoudi</span><span class="h2h-member-score">۰ - ۲</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">Ahlam Aljaber</span><span class="h2h-member-score">۱ - ۲</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">hey10</span><span class="h2h-member-score">۱ - ۱</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">امین دریس</span><span class="h2h-member-score">۰ - ۳</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">Sama salehi</span><span class="h2h-member-score">۱ - ۲</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">محمد جاسمیان</span><span class="h2h-member-score">۰ - ۲</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">مهدی</span><span class="h2h-member-score">۱ - ۲</span></div>
+                    <span class="h2h-score">۲</span>
                 </div>
             </div>
 
-            <!-- بازی: سویا - بارسلونا -->
-            <div class="h2h-match-card">
-                <div class="h2h-team-row">
-                    <div class="h2h-team-info">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8302.png" alt="Sevilla">
-                        <span class="h2h-team-name">سویا</span>
+            <!-- REZA GHATIFI -->
+            <div class="h2h-card">
+                <div class="h2h-card-header"><span>REZA GHATIFI</span></div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
+                        <span class="h2h-team-name">برنتفورد</span>
                     </div>
+                    <span class="h2h-score">۱</span>
                 </div>
-                <div class="h2h-team-row">
-                    <div class="h2h-team-info">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png" alt="Barcelona">
-                        <span class="h2h-team-name">بارسلونا</span>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" alt="Chelsea">
+                        <span class="h2h-team-name">چلسی</span>
                     </div>
-                </div>
-
-                <div class="h2h-members-box">
-                    <div class="h2h-member-row"><span class="h2h-member-name">Asm A</span><span class="h2h-member-score">۲ - ۵</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">REZA GHATIFI</span><span class="h2h-member-score">۱ - ۴</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">Mahdi</span><span class="h2h-member-score">۱ - ۳</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">Donya Asil</span><span class="h2h-member-score">۰ - ۳</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">حبیب نعیمی</span><span class="h2h-member-score">۰ - ۳</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">محمد خلیلاوی پور</span><span class="h2h-member-score">۰ - ۴</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">hajar daoudi</span><span class="h2h-member-score">۱ - ۳</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">Ahlam Aljaber</span><span class="h2h-member-score">۱ - ۳</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">hey10</span><span class="h2h-member-score">۲ - ۴</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">امین دریس</span><span class="h2h-member-score">۱ - ۳</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">Sama salehi</span><span class="h2h-member-score">۰ - ۲</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">محمد جاسمیان</span><span class="h2h-member-score">۱ - ۳</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">مهدی</span><span class="h2h-member-score">۱ - ۳</span></div>
+                    <span class="h2h-score">۲</span>
                 </div>
             </div>
 
-            <!-- بازی: برایتون - آرسنال -->
-            <div class="h2h-match-card">
-                <div class="h2h-team-row">
-                    <div class="h2h-team-info">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10204.png" alt="Brighton">
-                        <span class="h2h-team-name">برایتون</span>
+            <!-- Mahdi -->
+            <div class="h2h-card">
+                <div class="h2h-card-header"><span>Mahdi</span></div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
+                        <span class="h2h-team-name">برنتفورد</span>
                     </div>
+                    <span class="h2h-score">۱</span>
                 </div>
-                <div class="h2h-team-row">
-                    <div class="h2h-team-info">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9825.png" alt="Arsenal">
-                        <span class="h2h-team-name">آرسنال</span>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" alt="Chelsea">
+                        <span class="h2h-team-name">چلسی</span>
                     </div>
+                    <span class="h2h-score">۱</span>
                 </div>
+            </div>
 
-                <div class="h2h-members-box">
-                    <div class="h2h-member-row"><span class="h2h-member-name">Asm A</span><span class="h2h-member-score">۲ - ۲</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">REZA GHATIFI</span><span class="h2h-member-score">۱ - ۱</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">Mahdi</span><span class="h2h-member-score">۰ - ۱</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">Donya Asil</span><span class="h2h-member-score">۱ - ۲</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">حبیب نعیمی</span><span class="h2h-member-score">۰ - ۲</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">محمد خلیلاوی پور</span><span class="h2h-member-score">۱ - ۳</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">hajar daoudi</span><span class="h2h-member-score">۱ - ۲</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">Ahlam Aljaber</span><span class="h2h-member-score">۱ - ۱</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">hey10</span><span class="h2h-member-score">۲ - ۲</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">امین دریس</span><span class="h2h-member-score">۰ - ۲</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">Sama salehi</span><span class="h2h-member-score">۱ - ۲</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">محمد جاسمیان</span><span class="h2h-member-score">۱ - ۱</span></div>
-                    <div class="h2h-member-row"><span class="h2h-member-name">مهدی</span><span class="h2h-member-score">۱ - ۲</span></div>
+            <!-- Donya Asil -->
+            <div class="h2h-card">
+                <div class="h2h-card-header"><span>Donya Asil</span></div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
+                        <span class="h2h-team-name">برنتفورد</span>
+                    </div>
+                    <span class="h2h-score">۱</span>
+                </div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" alt="Chelsea">
+                        <span class="h2h-team-name">چلسی</span>
+                    </div>
+                    <span class="h2h-score">۲</span>
+                </div>
+            </div>
+
+            <!-- حبیب نعیمی -->
+            <div class="h2h-card">
+                <div class="h2h-card-header"><span>حبیب نعیمی</span></div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
+                        <span class="h2h-team-name">برنتفورد</span>
+                    </div>
+                    <span class="h2h-score">۱</span>
+                </div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" alt="Chelsea">
+                        <span class="h2h-team-name">چلسی</span>
+                    </div>
+                    <span class="h2h-score">۳</span>
+                </div>
+            </div>
+
+            <!-- محمد خلیلاوی پور -->
+            <div class="h2h-card">
+                <div class="h2h-card-header"><span>محمد خلیلاوی پور</span></div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
+                        <span class="h2h-team-name">برنتفورد</span>
+                    </div>
+                    <span class="h2h-score">۲</span>
+                </div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" alt="Chelsea">
+                        <span class="h2h-team-name">چلسی</span>
+                    </div>
+                    <span class="h2h-score">۳</span>
+                </div>
+            </div>
+
+            <!-- hajar daoudi -->
+            <div class="h2h-card">
+                <div class="h2h-card-header"><span>hajar daoudi</span></div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
+                        <span class="h2h-team-name">برنتفورد</span>
+                    </div>
+                    <span class="h2h-score">۰</span>
+                </div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" alt="Chelsea">
+                        <span class="h2h-team-name">چلسی</span>
+                    </div>
+                    <span class="h2h-score">۲</span>
+                </div>
+            </div>
+
+            <!-- Ahlam Aljaber -->
+            <div class="h2h-card">
+                <div class="h2h-card-header"><span>Ahlam Aljaber</span></div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
+                        <span class="h2h-team-name">برنتفورد</span>
+                    </div>
+                    <span class="h2h-score">۱</span>
+                </div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" alt="Chelsea">
+                        <span class="h2h-team-name">چلسی</span>
+                    </div>
+                    <span class="h2h-score">۲</span>
+                </div>
+            </div>
+
+            <!-- hey10 -->
+            <div class="h2h-card">
+                <div class="h2h-card-header"><span>hey10</span></div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
+                        <span class="h2h-team-name">برنتفورد</span>
+                    </div>
+                    <span class="h2h-score">۱</span>
+                </div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" alt="Chelsea">
+                        <span class="h2h-team-name">چلسی</span>
+                    </div>
+                    <span class="h2h-score">۱</span>
+                </div>
+            </div>
+
+            <!-- امین دریس -->
+            <div class="h2h-card">
+                <div class="h2h-card-header"><span>امین دریس</span></div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
+                        <span class="h2h-team-name">برنتفورد</span>
+                    </div>
+                    <span class="h2h-score">۰</span>
+                </div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" alt="Chelsea">
+                        <span class="h2h-team-name">چلسی</span>
+                    </div>
+                    <span class="h2h-score">۳</span>
+                </div>
+            </div>
+
+            <!-- Sama salehi -->
+            <div class="h2h-card">
+                <div class="h2h-card-header"><span>Sama salehi</span></div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
+                        <span class="h2h-team-name">برنتفورد</span>
+                    </div>
+                    <span class="h2h-score">۱</span>
+                </div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" alt="Chelsea">
+                        <span class="h2h-team-name">چلسی</span>
+                    </div>
+                    <span class="h2h-score">۲</span>
+                </div>
+            </div>
+
+            <!-- محمد جاسمیان -->
+            <div class="h2h-card">
+                <div class="h2h-card-header"><span>محمد جاسمیان</span></div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
+                        <span class="h2h-team-name">برنتفورد</span>
+                    </div>
+                    <span class="h2h-score">۰</span>
+                </div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" alt="Chelsea">
+                        <span class="h2h-team-name">چلسی</span>
+                    </div>
+                    <span class="h2h-score">۲</span>
+                </div>
+            </div>
+
+            <!-- مهدی -->
+            <div class="h2h-card">
+                <div class="h2h-card-header"><span>مهدی</span></div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
+                        <span class="h2h-team-name">برنتفورد</span>
+                    </div>
+                    <span class="h2h-score">۱</span>
+                </div>
+                <div class="h2h-row">
+                    <div class="h2h-team-side">
+                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" alt="Chelsea">
+                        <span class="h2h-team-name">چلسی</span>
+                    </div>
+                    <span class="h2h-score">۲</span>
                 </div>
             </div>
 
