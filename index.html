@@ -1170,6 +1170,28 @@
             <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">گیشه اخبار و رویدادها</h2>
             <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 10px;">اخبار لحظه‌ای، گزارش‌های ویژه و حاشیه‌ها</p>
 
+            <!-- توییت جدید: خبر فوری زاکانی -->
+            <div class="twitter-card" style="border-color: rgba(231, 76, 60, 0.4);">
+                <div class="twitter-header">
+                    <div class="twitter-profile-info">
+                        <div class="twitter-avatar" style="background: var(--accent-red); color: #fff;">🚨</div>
+                        <div class="twitter-name-box">
+                            <span class="twitter-display-name">خبر فوری <span class="twitter-badge urgent">فوری</span></span>
+                            <span class="twitter-handle">@GishehNews</span>
+                        </div>
+                    </div>
+                    <span class="news-badge" style="background: var(--accent-red); color: #fff;">مهم</span>
+                </div>
+                <div class="twitter-tweet-text">
+                    <strong>هماهنگی دولت و شهرداری:</strong><br>
+                    دولت و شهرداری هماهنگ شدند تا از ۵ مهر قیمت برخی اقلام اساسی کاهش ‌یابد و تا ۶ ماه ثابت بماند.
+                </div>
+                <div class="twitter-footer">
+                    <span>گیشه اخبار اقتصادی و شهری</span>
+                    <span class="twitter-live-timestamp" id="t-time-zakani">۲۷ شهریور ۱۴۰۵ - ۱۹:۲۰</span>
+                </div>
+            </div>
+
             <!-- توییت ۱: خبر فوری یمن و عربستان -->
             <div class="twitter-card" style="border-color: rgba(231, 76, 60, 0.4);">
                 <div class="twitter-header">
@@ -1456,12 +1478,14 @@
             const timeEl2 = document.getElementById('live-time-2');
             const tTime1 = document.getElementById('t-time-1');
             const tTime2 = document.getElementById('t-time-2');
+            const tTimeZakani = document.getElementById('t-time-zakani');
             const storyTime = document.getElementById('story-time-live');
 
             if (timeEl1) timeEl1.innerText = `۲۷ شهریور ۱۴۰۵ - ${timeString}`;
             if (timeEl2) timeEl2.innerText = `۲۷ شهریور ۱۴۰۵ - ${timeString}`;
             if (tTime1) tTime1.innerText = `۲۷ شهریور ۱۴۰۵ - ${timeString}`;
             if (tTime2) tTime2.innerText = `۲۷ شهریور ۱۴۰۵ - ${timeString}`;
+            if (tTimeZakani) tTimeZakani.innerText = `۲۷ شهریور ۱۴۰۵ - ${timeString}`;
             if (storyTime) storyTime.innerText = timeString;
         }
         setInterval(updateLiveClock, 1000);
