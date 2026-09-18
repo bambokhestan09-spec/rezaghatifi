@@ -379,110 +379,132 @@
             height: 85px;
         }
 
-        /* --- استایل بخش گیشه --- */
+        /* --- استایل بخش گیشه (تایملاین شبیه به توییتر / ایکس) --- */
         .news-container {
             max-width: 680px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;
         }
 
-        .featured-news-card {
-            background: linear-gradient(145deg, #1c2536, #121824);
-            border: 2px solid var(--accent-yellow);
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        .twitter-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: border-color 0.2s ease;
         }
 
-        .featured-news-img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-bottom: 2px solid rgba(245, 197, 24, 0.3);
+        .twitter-card:hover {
+            border-color: rgba(245, 197, 24, 0.4);
         }
 
-        .featured-news-content {
-            padding: 20px;
-        }
-
-        .news-meta-header {
+        .twitter-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
         }
 
-        .news-badge {
-            background: var(--accent-yellow);
+        .twitter-profile-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .twitter-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-yellow), #e67e22);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
             color: #121824;
-            font-size: 11px;
-            font-weight: 900;
-            padding: 3px 10px;
-            border-radius: 6px;
+            font-size: 15px;
+            flex-shrink: 0;
         }
 
-        .news-live-time {
-            font-size: 11px;
-            color: var(--accent-yellow);
-            font-weight: 700;
-        }
-
-        .featured-news-title {
-            font-size: 17px;
-            font-weight: 900;
-            color: #fff;
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-
-        .featured-news-text {
-            font-size: 13px;
-            color: #cbd5e1;
-            line-height: 1.8;
-        }
-
-        .small-news-card {
-            background-color: var(--card-bg);
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        .twitter-name-box {
             display: flex;
             flex-direction: column;
         }
 
-        .small-news-img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-        }
-
-        .small-news-body {
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .small-news-category {
-            font-size: 11px;
-            color: var(--accent-yellow);
-            font-weight: 700;
-        }
-
-        .small-news-title {
+        .twitter-display-name {
             font-size: 14px;
             font-weight: 900;
             color: #fff;
-            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
-        .small-news-text {
+        .twitter-handle {
             font-size: 12px;
             color: var(--text-gray);
-            line-height: 1.7;
+        }
+
+        .twitter-badge {
+            background: rgba(245, 197, 24, 0.15);
+            color: var(--accent-yellow);
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(245, 197, 24, 0.3);
+        }
+
+        .twitter-badge.urgent {
+            background: rgba(231, 76, 60, 0.15);
+            color: var(--accent-red);
+            border-color: rgba(231, 76, 60, 0.3);
+        }
+
+        .twitter-tweet-text {
+            font-size: 14px;
+            color: #e2e8f0;
+            line-height: 1.8;
+            text-align: right;
+            word-break: break-word;
+        }
+
+        .twitter-media-box {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            max-height: 280px;
+            border: 1px solid rgba(255,255,255,0.06);
+            margin-top: 4px;
+        }
+
+        .twitter-media-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .twitter-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 10px;
+            margin-top: 2px;
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        .twitter-live-timestamp {
+            color: var(--accent-yellow);
+            font-weight: 700;
+            font-family: monospace;
+            letter-spacing: 0.5px;
         }
 
         /* --- استایل بخش سوت پایان --- */
@@ -1154,116 +1176,189 @@
         </div>
     </div>
 
-    <!-- تب ۵: گیشه -->
+    <!-- تب ۵: گیشه (به سبک تایملاین ایکس / توییتر با تاریخ و ساعت دقیق زنده) -->
     <div id="tab-gisheh" class="tab-content">
         <div class="news-container">
             <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">گیشه اخبار و رویدادها</h2>
             <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 10px;">اخبار لحظه‌ای، گزارش‌های ویژه و حاشیه‌ها</p>
 
-            <!-- خبر فوری جدید: یمن و عربستان -->
-            <div class="featured-news-card" style="border-color: #e74c3c;">
-                <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80" alt="Yemen News" class="featured-news-img">
-                <div class="featured-news-content">
-                    <div class="news-meta-header">
-                        <span class="news-badge" style="background: #e74c3c; color: #fff;">🚨 خبر فوری</span>
-                        <span class="news-live-time">۲۷ شهریور ۱۴۰۵</span>
+            <!-- توییت ۱: خبر فوری یمن و عربستان -->
+            <div class="twitter-card" style="border-color: rgba(231, 76, 60, 0.4);">
+                <div class="twitter-header">
+                    <div class="twitter-profile-info">
+                        <div class="twitter-avatar" style="background: var(--accent-red); color: #fff;">🚨</div>
+                        <div class="twitter-name-box">
+                            <span class="twitter-display-name">خبر فوری <span class="twitter-badge urgent">فوری</span></span>
+                            <span class="twitter-handle">@GishehNews</span>
+                        </div>
                     </div>
-                    <h3 class="featured-news-title">آمادگی عربستان برای لغو محاصره یمن در ازای آتش‌بس؛ موضع انصارالله چیست؟</h3>
-                    <p class="featured-news-text">
-                        عربستان سعودی آمادگی خود را برای لغو محاصره یمن و اجازه ورود کمک‌ها به این کشور در مقابل موافقت یمن با آتش‌بس ابراز کرده است، اما بررسی‌های میدانی و سیاسی نشان می‌دهد که به نظر نمی‌رسد انصارالله از این پیشنهاد استقبال چندانی کند.
-                    </p>
+                    <span class="news-badge" style="background: var(--accent-red); color: #fff;">مهم</span>
+                </div>
+                <div class="twitter-tweet-text">
+                    عربستان آمادگی خود را برای لغو محاصره یمن و اجازه ورود کمک‌ها به این کشور در مقابل موافقت یمن با آتش‌بس ابراز کرده است، اما به نظر نمی‌رسد انصارالله از این پیشنهاد استقبال کند.
+                </div>
+                <div class="twitter-media-box">
+                    <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80" alt="Yemen News">
+                </div>
+                <div class="twitter-footer">
+                    <span>گیشه اخبار بین‌الملل</span>
+                    <span class="twitter-live-timestamp" id="t-time-1">۲۷ شهریور ۱۴۰۵ - ۱۸:۲۰</span>
                 </div>
             </div>
 
-            <!-- خبر قبلی: موشک قاسم بصیر -->
-            <div class="featured-news-card" style="border-color: #e74c3c;">
-                <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=800&q=80" alt="Missile Qasem Basir" class="featured-news-img">
-                <div class="featured-news-content">
-                    <div class="news-meta-header">
-                        <span class="news-badge" style="background: #e74c3c; color: #fff;">گزارش ویژه نظامی</span>
-                        <span class="news-live-time" id="live-time-new">۲۷ شهریور ۱۴۰۵</span>
+            <!-- توییت ۲: موشک قاسم بصیر -->
+            <div class="twitter-card">
+                <div class="twitter-header">
+                    <div class="twitter-profile-info">
+                        <div class="twitter-avatar">ع</div>
+                        <div class="twitter-name-box">
+                            <span class="twitter-display-name">گزارش ویژه نظامی <span class="twitter-badge">تحلیلی</span></span>
+                            <span class="twitter-handle">@Military_Report</span>
+                        </div>
                     </div>
-                    <h3 class="featured-news-title">جزئیات تازه‌یاب از موشک بالستیک «قاسم بصیر» و تحولات تنگه هرمز</h3>
-                    <p class="featured-news-text">
-                        بر اساس گزارش‌های منتشرشده در شهریور ۱۴۰۵، جزئیات تازه‌ای پیرامون موشک بالستیک «قاسم بصیر» ایران مطرح شده است:<br>
-                        • <strong>برد اعلام‌شده:</strong> دست‌کم حدود ۱۲۰۰ کیلومتر با پیشران سوخت جامد.<br>
-                        • <strong>هدایت پیشرفته:</strong> استفاده از جست‌وجوگر الکترو-اپتیکی / تصویری حرارتی در مرحله نهایی (بدون اتکای صرف به GPS) و مقاومت بالا در برابر جنگ الکترونیک.<br>
-                        • <strong>بدنه و طراحی:</strong> استفاده از مواد کامپوزیتی / فیبر کربن به ادعای منابعی مانند Janes جهت کاهش بازتاب راداری به عنوان نسخه ارتقایافته خانواده حاج قاسم.<br><br>
-                        <em>نکته تحلیلی:</em> در درگیری‌های اخیر و حمله به شناورهای نزدیک تنگه هرمز، برخی رسانه‌ها احتمال استفاده از موشکی با این مشخصات را مطرح کرده‌اند، هرچند منابعی مانند تلگراف و ایران اینترنشنال تصریح می‌کنند که استفاده قطعی از این مدل هنوز به صورت مستقل تأیید نشده است.
-                    </p>
+                    <span class="news-badge">نظامی</span>
+                </div>
+                <div class="twitter-tweet-text">
+                    <strong>جزئیات تازه‌یاب از موشک بالستیک «قاسم بصیر» و تحولات تنگه هرمز:</strong><br>
+                    • برد اعلام‌شده: دست‌کم حدود ۱۲۰۰ کیلومتر با پیشران سوخت جامد.<br>
+                    • هدایت پیشرفته: استفاده از جست‌وجوگر الکترو-اپتیکی / تصویری حرارتی در مرحله نهایی (بدون اتکای صرف به GPS) و مقاومت بالا در برابر جنگ الکترونیک.<br>
+                    • بدنه و طراحی: استفاده از مواد کامپوزیتی / فیبر کربن به ادعای منابعی مانند Janes جهت کاهش بازتاب راداری به عنوان نسخه ارتقایافته خانواده حاج قاسم.<br><br>
+                    <em>نکته:</em> در درگیری‌های اخیر نزدیک تنگه هرمز، برخی رسانه‌ها احتمال استفاده از موشکی با این مشخصات را مطرح کرده‌اند، هرچند منابعی مانند تلگراف تصریح می‌کنند استفاده قطعی هنوز به صورت مستقل تأیید نشده است.
+                </div>
+                <div class="twitter-media-box">
+                    <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=800&q=80" alt="Missile Qasem Basir">
+                </div>
+                <div class="twitter-footer">
+                    <span>رصد دفاعی و امنیتی</span>
+                    <span class="twitter-live-timestamp" id="t-time-2">۲۷ شهریور ۱۴۰۵ - ۱۶:۴۵</span>
                 </div>
             </div>
 
-            <div class="featured-news-card">
-                <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=800&q=80" alt="Missile Attack" class="featured-news-img">
-                <div class="featured-news-content">
-                    <div class="news-meta-header">
-                        <span class="news-badge">گزارش ویژه امنیتی</span>
-                        <span class="news-live-time" id="live-time-1">۲۷ شهریور ۱۴۰۵ - ۱۰:۱۲</span>
+            <!-- توییت ۳: پاسخ موشکی به پایگاه آمریکا در اردن -->
+            <div class="twitter-card">
+                <div class="twitter-header">
+                    <div class="twitter-profile-info">
+                        <div class="twitter-avatar">پ</div>
+                        <div class="twitter-name-box">
+                            <span class="twitter-display-name">امنیت منطقه <span class="twitter-badge">گزارش ویژه</span></span>
+                            <span class="twitter-handle">@SecReports</span>
+                        </div>
                     </div>
-                    <h3 class="featured-news-title">پاسخ موشکی سنگین به پایگاه آمریکا در اردن پس از حمله به نفت‌کش ایرانی</h3>
-                    <p class="featured-news-text">
-                        آخرین حمله ایالات متحده به یک نفت‌کش ایرانی ۸ روز پیش، در ۹ سپتامبر، رخ داد.<br>
-                        اندکی پس از آن، ایران در اقدامی قاطع ۲۰ موشک بالستیک به سمت یک پایگاه ایالات متحده در اردن شلیک کرد. اردن و ایالات متحده بیش از ۷۰ رهگیر هوایی شلیک کردند، اما حداقل چند موشک ایرانی از دفاع هوایی عبور کرده و به ۹ هواپیمای نظامی ایالات متحده آسیب جدی وارد ساختند. از آن زمان، هیچ‌گونه حمله‌ای از سوی ایالات متحده به نفت‌کش‌های ایرانی صورت نگرفته است.
-                    </p>
+                    <span class="news-badge">امنیت</span>
+                </div>
+                <div class="twitter-tweet-text">
+                    <strong>پاسخ موشکی سنگین به پایگاه آمریکا در اردن پس از حمله به نفت‌کش ایرانی:</strong><br>
+                    آخرین حمله ایالات متحده به یک نفت‌کش ایرانی ۸ روز پیش، در ۹ سپتامبر، رخ داد. اندکی پس از آن، ایران در اقدامی قاطع ۲۰ موشک بالستیک به سمت یک پایگاه ایالات متحده در اردن شلیک کرد. اردن و ایالات متحده بیش از ۷۰ رهگیر هوایی شلیک کردند، اما حداقل چند موشک ایرانی عبور کرده و به ۹ هواپیمای نظامی آسیب زدند. از آن زمان، هیچ‌گونه حمله‌ای صورت نگرفته است.
+                </div>
+                <div class="twitter-media-box">
+                    <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=800&q=80" alt="Missile Attack">
+                </div>
+                <div class="twitter-footer">
+                    <span>مرکز رصد تحولات</span>
+                    <span class="twitter-live-timestamp" id="live-time-1">۲۷ شهریور ۱۴۰۵ - ۱۰:۱۲</span>
                 </div>
             </div>
 
-            <div class="small-news-card">
-                <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800&q=80" alt="Pakistan Crisis" class="small-news-img">
-                <div class="small-news-body">
-                    <div class="news-meta-header">
-                        <span class="small-news-category">اقتصاد بین‌الملل</span>
-                        <span class="news-live-time" id="live-time-2">۲۷ شهریور ۱۴۰۵ - ۱۰:۱۲</span>
+            <!-- توییت ۴: پاکستان -->
+            <div class="twitter-card">
+                <div class="twitter-header">
+                    <div class="twitter-profile-info">
+                        <div class="twitter-avatar">ا</div>
+                        <div class="twitter-name-box">
+                            <span class="twitter-display-name">اقتصاد بین‌الملل</span>
+                            <span class="twitter-handle">@EcoGlobal</span>
+                        </div>
                     </div>
-                    <h4 class="small-news-title">پاکستان در حالت بحران مطلق: تعطیلی بازارها تا ساعت ۹ شب!</h4>
-                    <p class="small-news-text">
-                        کشور پاکستان در پی بحران شدید انرژی و اقتصادی وارد شرایط فوق‌العاده شده است. طبق تصمیمات اضطراب‌آور دولت، بازارها و مراکز تجاری حداکثر تا ساعت ۹ شب باید تعطیل شوند، مصرف سوخت ملی ۵۰ درصد کاهش یافته و سفرهای خارجی به شدت محدود شده است.
-                    </p>
+                    <span class="news-badge">اقتصادی</span>
+                </div>
+                <div class="twitter-tweet-text">
+                    <strong>پاکستان در حالت بحران مطلق: تعطیلی بازارها تا ساعت ۹ شب!</strong><br>
+                    کشور پاکستان در پی بحران شدید انرژی و اقتصادی وارد شرایط فوق‌العاده شده است. طبق تصمیمات اضطراب‌آور دولت، بازارها و مراکز تجاری حداکثر تا ساعت ۹ شب باید تعطیل شوند، مصرف سوخت ملی ۵۰ درصد کاهش یافته و سفرهای خارجی به شدت محدود شده است.
+                </div>
+                <div class="twitter-media-box">
+                    <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800&q=80" alt="Pakistan Crisis">
+                </div>
+                <div class="twitter-footer">
+                    <span>گزارش‌های اقتصادی</span>
+                    <span class="twitter-live-timestamp" id="live-time-2">۲۷ شهریور ۱۴۰۵ - ۱۰:۱۲</span>
                 </div>
             </div>
 
-            <div class="small-news-card">
-                <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80" alt="Zahedan" class="small-news-img">
-                <div class="small-news-body">
-                    <div class="news-meta-header">
-                        <span class="small-news-category">گزارش منطقه‌ای</span>
-                        <span class="news-live-time">۲۷ شهریور ۱۴۰۵</span>
+            <!-- توییت ۵: زاهدان -->
+            <div class="twitter-card">
+                <div class="twitter-header">
+                    <div class="twitter-profile-info">
+                        <div class="twitter-avatar">ز</div>
+                        <div class="twitter-name-box">
+                            <span class="twitter-display-name">خبر منطقه‌ای</span>
+                            <span class="twitter-handle">@LocalNewsIR</span>
+                        </div>
                     </div>
-                    <h4 class="small-news-title">وضعیت زاهدان پس از دو ساعت درگیری</h4>
-                    <p class="small-news-text">
-                        پس از حدود دو ساعت درگیری، فعلاً تیراندازی‌ها در سطح شهر زاهدان متوقف شده است. چندین آمبولانس به خیابان‌های دانشجو و دانشگاه اعزام شده و ایست بازرسی‌های مختلفی در سطح شهر ایجاد شده است.
-                    </p>
+                    <span class="news-badge">منطقه‌ای</span>
+                </div>
+                <div class="twitter-tweet-text">
+                    <strong>وضعیت زاهدان پس از دو ساعت درگیری:</strong><br>
+                    پس از حدود دو ساعت درگیری، فعلاً تیراندازی‌ها در سطح شهر زاهدان متوقف شده است. چندین آمبولانس به خیابان‌های دانشجو و دانشگاه اعزام شده و ایست بازرسی‌های مختلفی در سطح شهر ایجاد شده است.
+                </div>
+                <div class="twitter-media-box">
+                    <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80" alt="Zahedan">
+                </div>
+                <div class="twitter-footer">
+                    <span>اخبار استان‌ها</span>
+                    <span class="twitter-live-timestamp">۲۷ شهریور ۱۴۰۵ - ۰۸:۳۰</span>
                 </div>
             </div>
 
-            <div class="small-news-card">
-                <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=800&q=80" alt="Missile" class="small-news-img">
-                <div class="small-news-body">
-                    <div class="news-meta-header">
-                        <span class="small-news-category">تجهیزات و نظامی</span>
-                        <span class="news-live-time">۲۷ شهریور ۱۴۰۵</span>
+            <!-- توییت ۶: موشک بدون بالک -->
+            <div class="twitter-card">
+                <div class="twitter-header">
+                    <div class="twitter-profile-info">
+                        <div class="twitter-avatar">ت</div>
+                        <div class="twitter-name-box">
+                            <span class="twitter-display-name">تجهیزات نظامی</span>
+                            <span class="twitter-handle">@DefTechIR</span>
+                        </div>
                     </div>
-                    <h4 class="small-news-title">رونمایی از موشک ناشناخته بدون بالک</h4>
-                    <p class="small-news-text">
-                        در آخرین عملیات علیه ناوهای آمریکایی، موشک ناشناخته‌ای بدون بالک مشاهده شد. نمونه مشابه این سلاح پیش‌تر در رزمایش پیامبر اعظم (ص) دیده شده بود.
-                    </p>
+                    <span class="news-badge">فناوری</span>
+                </div>
+                <div class="twitter-tweet-text">
+                    <strong>رونمایی از موشک ناشناخته بدون بالک:</strong><br>
+                    در آخرین عملیات علیه ناوهای آمریکایی، موشک ناشناخته‌ای بدون بالک مشاهده شد. نمونه مشابه این سلاح پیش‌تر در رزمایش پیامبر اعظم (ص) دیده شده بود.
+                </div>
+                <div class="twitter-media-box">
+                    <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=800&q=80" alt="Missile">
+                </div>
+                <div class="twitter-footer">
+                    <span>رصد تسلیحاتی</span>
+                    <span class="twitter-live-timestamp">۲۷ شهریور ۱۴۰۵ - ۰۶:۱۵</span>
                 </div>
             </div>
 
-            <div class="small-news-card">
-                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="Oil Crisis" class="small-news-img">
-                <div class="small-news-body">
-                    <div class="news-meta-header">
-                        <span class="small-news-category">تحولات انرژی</span>
-                        <span class="news-live-time">۲۷ شهریور ۱۴۰۵</span>
+            <!-- توییت ۷: نفت عربستان -->
+            <div class="twitter-card">
+                <div class="twitter-header">
+                    <div class="twitter-profile-info">
+                        <div class="twitter-avatar">ع</div>
+                        <div class="twitter-name-box">
+                            <span class="twitter-display-name">تحولات انرژی</span>
+                            <span class="twitter-handle">@EnergyNews</span>
+                        </div>
                     </div>
-                    <h4 class="small-news-title">عربستان پس از ۷۰ سال مجبور به واردات محصولات نفتی شد!</h4>
-                    <p class="small-news-text">
-                        به دنبال آسیب‌های جدی به خطوط لوله، عربستان سعودی پس از تقریباً ۷۰ سال تصمیم به واردات گسترده محصولات نفتی و گازوئیل گرفته است.
-                    </p>
+                    <span class="news-badge">انرژی</span>
+                </div>
+                <div class="twitter-tweet-text">
+                    <strong>عربستان پس از ۷۰ سال مجبور به واردات محصولات نفتی شد!</strong><br>
+                    به دنبال آسیب‌های جدی به خطوط لوله، عربستان سعودی پس از تقریباً ۷۰ سال تصمیم به واردات گسترده محصولات نفتی و گازوئیل گرفته است.
+                </div>
+                <div class="twitter-media-box">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="Oil Crisis">
+                </div>
+                <div class="twitter-footer">
+                    <span>بازار انرژی جهان</span>
+                    <span class="twitter-live-timestamp">۲۷ شهریور ۱۴۰۵ - ۰۴:۰۰</span>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -1395,10 +1490,14 @@
             
             const timeEl1 = document.getElementById('live-time-1');
             const timeEl2 = document.getElementById('live-time-2');
+            const tTime1 = document.getElementById('t-time-1');
+            const tTime2 = document.getElementById('t-time-2');
             const storyTime = document.getElementById('story-time-live');
 
             if (timeEl1) timeEl1.innerText = `۲۷ شهریور ۱۴۰۵ - ${timeString}`;
             if (timeEl2) timeEl2.innerText = `۲۷ شهریور ۱۴۰۵ - ${timeString}`;
+            if (tTime1) tTime1.innerText = `۲۷ شهریور ۱۴۰۵ - ${timeString}`;
+            if (tTime2) tTime2.innerText = `۲۷ شهریور ۱۴۰۵ - ${timeString}`;
             if (storyTime) storyTime.innerText = timeString;
         }
         setInterval(updateLiveClock, 1000);
