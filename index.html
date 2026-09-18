@@ -1102,7 +1102,7 @@
 
                     <h3 class="analysis-headline">نکته مهم بازی:</h3>
                     <p class="analysis-text" style="margin-bottom: 15px;">
-                        سبک برنتفورد دقیقاً می‌تواند برای دفاع فعلی چلسی دردسرساز شود؛ توپ‌های دوم، انتقال سریع و ضربات ایستگاهی. از طرف دیگر، چلسی از نظر کیفیت هجومی توانایی ایجاد موقعیت زیادی دارد و در مجموع بازی‌هایش تاکنون ۱۹ گل ردوبدل شده؛ بیشترین مجموع گل در بازی‌های یک تیم در لیگ تا این مقطع.
+                        سبک برنتفورد دقیقاً می‌تواند برای دفاع فعلی چلسی دردسرساز شود؛ توپ‌های دوم، انتقال سریع و ضربات ایستگاهی. از طرف دیگر, چلسی از نظر کیفیت هجومی توانایی ایجاد موقعیت زیادی دارد و در مجموع بازی‌هایش تاکنون ۱۹ گل ردوبدل شده؛ بیشترین مجموع گل در بازی‌های یک تیم در لیگ تا این مقطع.
                     </p>
 
                     <div style="background: rgba(245, 197, 24, 0.1); border: 1px solid var(--accent-yellow); padding: 15px; border-radius: 12px; margin-top: 15px;">
@@ -1381,22 +1381,19 @@
                     <p style="text-align: center; color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">حوزه مورد نظرت رو انتخاب کن:</p>
                     
                     <div style="display: flex; flex-direction: column; gap: 12px;">
-                        <button class="quiz-category-btn" onclick="selectCategory('football')">
-                            فوتبال فیره‌فروشان (۶ سوال تخصصی)
+                        <button class="quiz-category-btn" onclick="selectCategory('food')">
+                            🍔 کوئیز غذا (۱۸ سوال جذاب)
                         </button>
-                        <button class="quiz-category-btn" onclick="selectCategory('general')">
-                            اطلاعات عمومی (۶ سوال جذاب)
-                        </button>
-                        <button class="quiz-category-btn" onclick="selectCategory('proverbs')">
-                            ضرب‌المثل و اصطلاحات (۶ سوال کوچه بازاری)
+                        <button class="quiz-category-btn" onclick="selectCategory('cities')">
+                            🌍 کوئیز شهرشناسی (۱۸ سوال جذاب)
                         </button>
                     </div>
                 </div>
 
                 <div id="quiz-game-screen" style="display: none;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                        <span id="question-progress" style="font-size: 13px; color: var(--accent-yellow); font-weight: bold;">سوال 1 از 6</span>
-                        <div id="status-dots" style="display: flex; gap: 5px;"></div>
+                        <span id="question-progress" style="font-size: 13px; color: var(--accent-yellow); font-weight: bold;">سوال 1 از 18</span>
+                        <div id="status-dots" style="display: flex; gap: 3px; flex-wrap: wrap; max-width: 60%;"></div>
                     </div>
                     <div id="question-box" style="background: #121824; padding: 18px; border-radius: 12px; margin-bottom: 15px; text-align: center; font-size: 15px; border: 1px solid #2a3649; line-height: 1.5; font-weight: 700;"></div>
                     <div id="options-container" style="display: flex; flex-direction: column; gap: 10px;"></div>
@@ -1408,7 +1405,7 @@
                     <div style="background: #121824; border-radius: 12px; padding: 18px; margin-bottom: 20px; border: 1px solid #2a3649;">
                         <div style="font-size: 12px; color: var(--text-gray); margin-bottom: 5px;">امتیاز نهایی</div>
                         <div id="final-score-val" style="font-size: 32px; font-weight: bold; color: var(--accent-yellow); margin-bottom: 10px;">0</div>
-                        <div style="font-size: 13px; color: var(--text-gray);">پاسخ‌های درست: <span id="correct-count-val" style="color: var(--accent-green); font-weight: bold;">0</span> از 6</div>
+                        <div style="font-size: 13px; color: var(--text-gray);">پاسخ‌های درست: <span id="correct-count-val" style="color: var(--accent-green); font-weight: bold;">0</span> از 18</div>
                     </div>
                     <div style="background: rgba(46, 204, 113, 0.1); border: 1px solid var(--accent-green); padding: 12px; border-radius: 10px; font-size: 12px; color: var(--accent-green); margin-bottom: 15px; line-height: 1.6;">
                         اطلاعات و نتیجه تست کاربر (<span id="result-name-disp"></span>) با موفقیت به ایمیل شما ارسال شد.
@@ -1546,29 +1543,45 @@
         }
 
         const allQuizData = {
-            football: [
-                { q: "کدام تیم بیشترین قهرمانی در تاریخ لیگ قهرمانان اروپا را دارد؟", options: ["بارسلونا", "رئال مادرید", "بایرن مونیخ", "میلان"], correct: 1 },
-                { q: "فینال جام جهانی 2022 در کدام کشور برگزار شد؟", options: ["برزیل", "قطر", "روسیه", "آلمان"], correct: 1 },
-                { q: "لقب معروف باشگاه آرسنال چیست؟", options: ["شیاطین سرخ", "توپچی‌ها", "بانوی پیر", "زنبورها"], correct: 1 },
-                { q: "کدام بازیکن بیشترین تعداد توپ طلای جهان را کسب کرده است؟", options: ["کریستیانو رونالدو", "لیونل مسی", "پله", "مارادونا"], correct: 1 },
-                { q: "ورزشگاه خانگی باشگاه بارسلونا چه نام دارد؟", options: ["سانتیاگو برنابئو", "اتلتیکو متروپولیتانو", "اسپاتیفای نوکمپ", "اولد ترافورد"], correct: 2 },
-                { q: "میزبان مشترک مسابقات جام جهانی 2026 کدام کشورها هستند؟", options: ["آلمان و فرانسه", "آمریکا، کانادا و مکزیک", "برزیل و آرژانتین", "اسپانیا و پرتغال"], correct: 1 }
+            food: [
+                { q: "غذای «پائیا» اصالتاً متعلق به کدام کشور است؟", options: ["ایتالیا", "اسپانیا", "پرتغال", "یونان"], correct: 1 },
+                { q: "ماده اصلی هوموس چیست؟", options: ["عدس", "نخود", "لوبیا", "سیب‌زمینی"], correct: 1 },
+                { q: "سوشی بیشتر با کدام کشور شناخته می‌شود؟", options: ["چین", "کره جنوبی", "ژاپن", "تایلند"], correct: 2 },
+                { q: "پنیر پارمزان اصالتاً متعلق به کدام کشور است؟", options: ["فرانسه", "ایتالیا", "سوئیس", "هلند"], correct: 1 },
+                { q: "غذای «فتوچینی آلفردو» بیشتر با کدام شهر مرتبط است؟", options: ["رم", "میلان", "ونیز", "ناپل"], correct: 0 },
+                { q: "ماده اصلی «گواکاموله» چیست؟", options: ["آووکادو", "خیار", "نخود", "بادمجان"], correct: 0 },
+                { q: "«کیمچی» غذای سنتی کدام کشور است؟", options: ["ژاپن", "کره جنوبی", "ویتنام", "چین"], correct: 1 },
+                { q: "زعفران بیشتر در کدام بخش غذا استفاده می‌شود؟", options: ["طعم‌دهی و رنگ‌دهی", "افزایش نمک", "ششیرین کردن", "غلیظ کردن غذا"], correct: 0 },
+                { q: "غذای «موساکا» بیشتر با کدام کشور شناخته می‌شود؟", options: ["یونان", "اسپانیا", "مکزیک", "هند"], correct: 0 },
+                { q: "ماده اصلی «فلافل» معمولاً چیست؟", options: ["نخود یا باقلا", "گوشت", "برنج", "ذرت"], correct: 0 },
+                { q: "«تام یام» یک غذای معروف کدام کشور است؟", options: ["هند", "تایلند", "اندونزی", "فیلیپین"], correct: 1 },
+                { q: "کدام نوع پاستا شکل مارپیچی دارد؟", options: ["پنه", "فوسیلی", "لازانیا", "اسپاگتی"], correct: 1 },
+                { q: "«تاکو» غذای معروف کدام کشور است؟", options: ["مکزیک", "برزیل", "آرژانتین", "کلمبیا"], correct: 0 },
+                { q: "ماده اصلی «توفو» از چه چیزی تهیه می‌شود؟", options: ["گندم", "سویا", "برنج", "ذرت"], correct: 1 },
+                { q: "«کروسان» بیشتر با کدام کشور شناخته می‌شود؟", options: ["فرانسه", "بلژیک", "اتریش", "آلمان"], correct: 0 },
+                { q: "کدام ادویه بخش مهمی از ترکیب کاری هندی است؟", options: ["زردچوبه", "دارچین", "وانیل", "زعفران"], correct: 0 },
+                { q: "«گولاش» غذای سنتی کدام کشور است؟", options: ["مجارستان", "لهستان", "رومانی", "روسیه"], correct: 0 },
+                { q: "برنج پایه اصلی کدام غذای معروف ایتالیایی است؟", options: ["ریزوتو", "راتاتویی", "گراتن", "پاستا"], correct: 0 }
             ],
-            general: [
-                { q: "بزرگترین سیاره در منظومه شمسی کدام است؟", options: ["زمین", "مریخ", "مشتری", "زهره"], correct: 2 },
-                { q: "پایتخت کشور استرالیا کدام شهر است؟", options: ["سیدنی", "ملبورن", "کانبرا", "بریزبن"], correct: 2 },
-                { q: "کدام عنصر بیشترین حجم از اتمسفر زمین را تشکیل داده است؟", options: ["اکسیژن", "نیتروژن", "کربن دی‌اکسید", "هیدروژن"], correct: 1 },
-                { q: "نزدیک‌ترین ستاره به سیاره زمین کدام است؟", options: ["قطبی", "شباهنگ", "خورشید", "پروکسیما قنطورس"], correct: 2 },
-                { q: "بزرگترین اقیانوس جهان کدام است؟", options: ["اقیانوس اطلس", "اقیانوس هند", "اقیانوس آرام", "اقیانوس منجمد شمالی"], correct: 2 },
-                { q: "کدام کشور به «سرزمین آفتاب تابان» معروف است؟", options: ["چین", "ژاپن", "کره جنوبی", "تایلند"], correct: 1 }
-            ],
-            proverbs: [
-                { q: "معنی ضرب‌المثل «آش نخورده و دهان سوخته» چیست؟", options: ["خوردن غذای خیلی داغ", "تاوان دادن برای کاری که انجام نداده‌ای", "عجله کردن در انجام کارها", "پشیمانی بعد از خرید"], correct: 1 },
-                { q: "عبارت «هر که بامش بیش، برفش بیشتر» کنایه از چیست؟", options: ["سختی خانه‌های کوهستانی", "داشتن ثروت و امکانات بیشتر برابر با دردسر بیشتر", "اهمیت نظافت خانه", "کمک به همسایگان"], correct: 1 },
-                { q: "«سیخ بسوخت و کباب بسوخت» در چه موقعیتی به کار می‌رود؟", options: ["هنگام باربی‌کیو", "وقتی در یک معامله هر دو طرف ضرر کنند", "وقتی غذا می‌سوزد", "اشتباه در پخت غذا"], correct: 1 },
-                { q: "معنی ضرب‌المثل «آب که سربالا برود، قورباغه ابوعطا می‌خواند» چیست؟", options: ["آواز خواندن قورباغه‌ها", "انجام کارهای غیرممکن یا توسط افراد ناشایست", "طغیان رودخانه", "خشکسالی"], correct: 1 },
-                { q: "کنایه از اصطلاح «دوزاری‌اش کج افتاد» چیست؟", options: ["گم شدن پول", "دیر متوجه شدن موضوعی", "خراب شدن تلفن همگانی", "بی‌نظمی در کارها"], correct: 1 },
-                { q: "ضرب‌المثل «جوجه را آخر پاییز می‌شمارند» یعنی چه؟", options: ["زمان جوجه‌کشی", "نتیجه نهایی کار در پایان مشخص می‌شود", "شمارش پرندگان", "فصل سرما"], correct: 1 }
+            cities: [
+                { q: "پایتخت استرالیا کدام شهر است؟", options: ["سیدنی", "ملبورن", "کانبرا", "بریزبن"], correct: 2 },
+                { q: "شهر بارسلونا در کدام کشور قرار دارد؟", options: ["پرتغال", "اسپانیا", "ایتالیا", "فرانسه"], correct: 1 },
+                { q: "برج ایفل در کدام شهر قرار دارد؟", options: ["لندن", "پاریس", "رم", "بروکسل"], correct: 1 },
+                { q: "استانبول در کدام کشور قرار دارد؟", options: ["یونان", "ترکیه", "بلغارستان", "گرجستان"], correct: 1 },
+                { q: "پایتخت کانادا کدام شهر است؟", options: ["تورنتو", "ونکوور", "مونترال", "اتاوا"], correct: 3 },
+                { q: "شهر «ماراکش» در کدام کشور قرار دارد؟", options: ["تونس", "مراکش", "الجزایر", "مصر"], correct: 1 },
+                { q: "ونیز به چه ویژگی جغرافیایی معروف است؟", options: ["آسمان‌خراش‌ها", "کانال‌های آبی", "بیابان‌های بزرگ", "آتشفشان‌ها"], correct: 1 },
+                { q: "شهر دبی در کدام کشور قرار دارد؟", options: ["قطر", "امارات متحده عربی", "بحرین", "عمان"], correct: 1 },
+                { q: "پایتخت ژاپن کدام شهر است؟", options: ["اوساکا", "کیوتو", "توکیو", "هیروشیما"], correct: 2 },
+                { q: "شهر لیسبون پایتخت کدام کشور است؟", options: ["اسپانیا", "پرتغال", "ایتالیا", "یونان"], correct: 1 },
+                { q: "شهر نیویورک در کدام کشور قرار دارد؟", options: ["کانادا", "آمریکا", "مکزیک", "برزیل"], correct: 1 },
+                { q: "پایتخت برزیل کدام شهر است؟", options: ["سائوپائولو", "ریو دو ژانیرو", "برازیلیا", "سالوادور"], correct: 2 },
+                { q: "شهر «فلورانس» در کدام کشور قرار دارد؟", options: ["فرانسه", "ایتالیا", "اتریش", "سوئیس"], correct: 1 },
+                { q: "کدام شهر به «شهر کانال‌ها» معروف است؟", options: ["ونیز", "مادرید", "برلین", "لیون"], correct: 0 },
+                { q: "پایتخت نروژ کدام شهر است؟", options: ["استکهلم", "اسلو", "هلسینکی", "کپنهاگ"], correct: 1 },
+                { q: "شهر مونیخ در کدام کشور قرار دارد؟", options: ["آلمان", "اتریش", "سوئیس", "هلند"], correct: 0 },
+                { q: "کدام شهر پایتخت نیوزیلند است؟", options: ["اوکلند", "کرایست‌چرچ", "ولینگتون", "هامیلتون"], correct: 2 },
+                { q: "شهر کیپ‌تاون در کدام کشور قرار دارد؟", options: ["کنیا", "آفریقای جنوبی", "نیجریه", "غنا"], correct: 1 }
             ]
         };
 
@@ -1650,11 +1663,11 @@
             dotsContainer.innerHTML = '';
             for (let i = 0; i < quizData.length; i++) {
                 const dot = document.createElement('div');
-                dot.style.cssText = "width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: bold;";
+                dot.style.cssText = "width: 14px; height: 14px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: bold;";
                 if (i < userAnswersState.length) {
                     dot.style.background = userAnswersState[i] ? '#2ecc71' : '#e74c3c';
                     dot.style.color = userAnswersState[i] ? '#121824' : '#fff';
-                    dot.innerHTML = userAnswersState[i] ? 'V' : 'X';
+                    dot.innerHTML = userAnswersState[i] ? '✓' : '✗';
                 } else if (i === currentQuestion) {
                     dot.style.background = 'var(--accent-yellow)';
                     dot.style.color = '#121824';
