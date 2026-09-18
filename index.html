@@ -254,6 +254,132 @@
             margin-top: 1px;
         }
 
+        /* --- استایل بخش سکو (با آیکون‌های وکتوری آدمک متحرک) --- */
+        .podium-container {
+            max-width: 680px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .podium-header-box {
+            background: linear-gradient(135deg, #1c2536, #121824);
+            border: 2px solid var(--accent-yellow);
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        .podium-title {
+            font-size: 18px;
+            font-weight: 900;
+            color: var(--accent-yellow);
+            margin-bottom: 6px;
+        }
+
+        .podium-subtitle {
+            font-size: 13px;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .podium-graphic-box {
+            background: var(--card-bg);
+            border-radius: 18px;
+            padding: 25px 15px;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 12px;
+            min-height: 350px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .podium-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 30%;
+            text-align: center;
+        }
+
+        /* استایل و انیمیشن آیکون آدمک وکتوری */
+        .avatar-icon-box {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2a3649, #1a2332);
+            border: 2px solid var(--accent-yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 6px;
+            animation: avatarFloat 3s ease-in-out infinite;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+
+        .avatar-icon-box svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--accent-yellow);
+        }
+
+        @keyframes avatarFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .podium-user-badge {
+            font-size: 12px;
+            font-weight: 900;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 6px 10px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .podium-block {
+            width: 100%;
+            background: linear-gradient(180deg, #2a3649, #1a2332);
+            border-top: 4px solid var(--accent-yellow);
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--accent-yellow);
+            box-shadow: inset 0 5px 10px rgba(0,0,0,0.3);
+        }
+
+        .podium-column.first {
+            transform: translateY(-15px);
+        }
+        .podium-column.first .podium-block {
+            height: 150px;
+            background: linear-gradient(180deg, #384761, #202c3f);
+            border-color: #ffd700;
+        }
+
+        .podium-column.second .podium-block {
+            height: 110px;
+        }
+
+        .podium-column.third .podium-block {
+            height: 80px;
+        }
+
         /* --- استایل بخش گیشه --- */
         .news-container {
             max-width: 680px;
@@ -809,7 +935,7 @@
     <div id="tab-home" class="tab-content active">
         <div class="hero-banner">
             <button onclick="requestNotification()" style="width: 100%; background: #f5c518; color: #121824; font-weight: 900; border: none; padding: 12px; border-radius: 12px; margin-bottom: 15px; cursor: pointer; font-size: 13px; box-shadow: 0 4px 10px rgba(245, 197, 24, 0.25);">
-                🔔 دریافت خبرها و یادآوری مسابقات (کلیک کنید)
+                دریافت خبرها و یادآوری مسابقات (کلیک کنید)
             </button>
 
             <div class="matchweek-banner">
@@ -870,7 +996,7 @@
 
             <div style="margin: 25px 0; text-align: center;">
                 <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" style="display: block; background-color: var(--accent-yellow); color: #121824; font-weight: 900; padding: 14px; border-radius: 12px; text-decoration: none; font-size: 15px; box-shadow: 0 4px 10px rgba(245, 197, 24, 0.3);">
-                    ورود به لیگ پیش‌بینی در فوت‌موب 🚀
+                    ورود به لیگ پیش‌بینی در فوت‌موب
                 </a>
             </div>
         </div>
@@ -905,14 +1031,52 @@
         </div>
     </div>
 
-    <!-- تب ۳: سوت پایان (با گرافیک سوت و برد برایتون) -->
+    <!-- تب ۳: سکو (با آدمک‌های متحرک وکتوری برای نعیمی، رضا قطیفی و زویدات) -->
+    <div id="tab-podium" class="tab-content">
+        <div class="podium-container">
+            <div class="podium-header-box">
+                <div class="podium-title">سکوی افتخارات و عناوین هفته چهارم</div>
+                <div class="podium-subtitle">نبرد استرس و پیش‌بینی؛ جایی که بزرگان موقتاً روی سکو می‌روند تا بقیه حرص بخورند!</div>
+            </div>
+
+            <div class="podium-graphic-box">
+                <!-- سکوی دوم: نعیمی (آدمک پسر) -->
+                <div class="podium-column second">
+                    <div class="avatar-icon-box">
+                        <svg viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/></svg>
+                    </div>
+                    <div class="podium-user-badge" style="color: #a0aec0;">نعیمی</div>
+                    <div class="podium-block">۲</div>
+                </div>
+
+                <!-- سکوی اول: رضا قطیفی (آدمک پسر با تاج طلا) -->
+                <div class="podium-column first">
+                    <div class="avatar-icon-box" style="border-color: #ffd700;">
+                        <svg viewBox="0 0 24 24" fill="#ffd700"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/></svg>
+                    </div>
+                    <div class="podium-user-badge" style="color: var(--accent-yellow); background: rgba(245,197,24,0.15); border-color: var(--accent-yellow);">رضا قطیفی</div>
+                    <div class="podium-block">۱</div>
+                </div>
+
+                <!-- سکوی سوم: زویدات (آدمک دختر با موی بلند/فرم متفاوت) -->
+                <div class="podium-column third">
+                    <div class="avatar-icon-box" style="border-color: #ed64a6;">
+                        <svg viewBox="0 0 24 24" fill="#ed64a6"><path d="M12,2A3,3 0 0,1 15,5V6.14C17.86,6.93 20,9.58 20,12.72V14H4V12.72C4,9.58 6.14,6.93 9,6.14V5A3,3 0 0,1 12,2M12,16C15.31,16 18,17.34 18,19V21H6V19C6,17.34 8.69,16 12,16Z"/></svg>
+                    </div>
+                    <div class="podium-user-badge" style="color: #ed64a6;">زویدات</div>
+                    <div class="podium-block">۳</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- تب ۴: سوت پایان -->
     <div id="tab-soutpayan" class="tab-content">
         <div class="match-analysis-container">
-            <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">🎙️ سوت پایان | تحلیل و بررسی مسابقات</h2>
+            <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">سوت پایان | تحلیل و بررسی مسابقات</h2>
             <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 10px;">تحلیل موشکافانه و کارشناسی نتایج داغ هفته بر اساس رسانه‌های معتبر اروپایی</p>
 
             <div class="analysis-card">
-                <!-- بنر گرافیکی اختصاصی با فونت کشیده و آیکون سوت و بند -->
                 <div class="match-banner-graphic">
                     <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" alt="Stadium" class="bg-stadium">
                     <div class="match-banner-overlay">
@@ -923,7 +1087,6 @@
                         <div class="graphic-center-content">
                             <div class="sout-payan-title-wrapper">
                                 <span class="sout-payan-title">سوت پایان</span>
-                                <span class="whistle-icon-badge">📯</span>
                             </div>
                             <div class="sout-payan-sub">تحلیل ویژه هفته پیش‌بینی</div>
                         </div>
@@ -940,7 +1103,6 @@
                     </div>
                 </div>
 
-                <!-- متن تحلیل و گزارش کاملاً تخصصی و معتبر اروپایی (برد برایتون) -->
                 <div class="analysis-body-content">
                     <h3 class="analysis-headline">شاهکار برایتون در اولد ترافورد؛ کامبک رویایی و پیروزی ۳ بر ۲ مقابل شیاطین سرخ!</h3>
                     <p class="analysis-text">
@@ -952,10 +1114,10 @@
         </div>
     </div>
 
-    <!-- تب ۴: گیشه (اخبار با تاریخ دقیق و پویای امروز: ۲۷ شهریور ۱۴۰۵) -->
+    <!-- تب ۵: گیشه -->
     <div id="tab-gisheh" class="tab-content">
         <div class="news-container">
-            <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">📰 گیشه اخبار و رویدادها</h2>
+            <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">گیشه اخبار و رویدادها</h2>
             <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 10px;">اخبار لحظه‌ای، گزارش‌های ویژه و حاشیه‌ها</p>
 
             <div class="featured-news-card">
@@ -986,32 +1148,74 @@
                     </p>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- تب ۵: استوری‌وز (اخبار کوتاه با تاریخ روز) -->
-    <div id="tab-stories" class="tab-content">
-        <div class="story-section">
-            <h2 style="color: var(--accent-yellow); margin-bottom: 5px;">⚡ استوری‌وز لیگ</h2>
-            <p style="color: var(--text-gray); font-size: 12px; margin-bottom: 15px;">برای رفتن به استوری بعدی روی صفحه ضربه بزنید</p>
-
-            <div class="instagram-story-viewer" onclick="nextStory()">
-                <div class="story-bars" id="story-bars-container"></div>
-                <div class="story-header-info">
-                    <span id="story-tag">🔥 استارت هفته</span>
-                    <span id="story-time-live">۱۰:۱۲</span>
+            <div class="small-news-card">
+                <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80" alt="Zahedan" class="small-news-img">
+                <div class="small-news-body">
+                    <div class="news-meta-header">
+                        <span class="small-news-category">گزارش منطقه‌ای</span>
+                        <span class="news-live-time">۲۷ شهریور ۱۴۰۵</span>
+                    </div>
+                    <h4 class="small-news-title">وضعیت زاهدان پس از دو ساعت درگیری</h4>
+                    <p class="small-news-text">
+                        پس از حدود دو ساعت درگیری، فعلاً تیراندازی‌ها در سطح شهر زاهدان متوقف شده است. چندین آمبولانس به خیابان‌های دانشجو و دانشگاه اعزام شده و ایست بازرسی‌های مختلفی در سطح شهر ایجاد شده است.
+                    </p>
                 </div>
-                <div class="story-main-content" id="story-text-box">بارگذاری استوری...</div>
-                <div class="story-nav-hints">
-                    <span>👈 لمس چپ: قبلی</span>
-                    <span style="color: var(--accent-yellow);">کانبو فوتبال</span>
-                    <span>لمس راست: بعدی 👉</span>
+            </div>
+
+            <div class="small-news-card">
+                <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=800&q=80" alt="Missile" class="small-news-img">
+                <div class="small-news-body">
+                    <div class="news-meta-header">
+                        <span class="small-news-category">تجهیزات و نظامی</span>
+                        <span class="news-live-time">۲۷ شهریور ۱۴۰۵</span>
+                    </div>
+                    <h4 class="small-news-title">رونمایی از موشک ناشناخته بدون بالک</h4>
+                    <p class="small-news-text">
+                        در آخرین عملیات علیه ناوهای آمریکایی، موشک ناشناخته‌ای بدون بالک مشاهده شد. نمونه مشابه این سلاح پیش‌تر در رزمایش پیامبر اعظم (ص) دیده شده بود.
+                    </p>
+                </div>
+            </div>
+
+            <div class="small-news-card">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="Oil Crisis" class="small-news-img">
+                <div class="small-news-body">
+                    <div class="news-meta-header">
+                        <span class="small-news-category">تحولات انرژی</span>
+                        <span class="news-live-time">۲۷ شهریور ۱۴۰۵</span>
+                    </div>
+                    <h4 class="small-news-title">عربستان پس از ۷۰ سال مجبور به واردات محصولات نفتی شد!</h4>
+                    <p class="small-news-text">
+                        به دنبال آسیب‌های جدی به خطوط لوله، عربستان سعودی پس از تقریباً ۷۰ سال تصمیم به واردات گسترده محصولات نفتی و گازوئیل گرفته است.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- تب ۶: کوئیزگدا (متصل به Formspree برای ارسال به جیمیل شما) -->
+    <!-- تب ۶: استوری‌وز -->
+    <div id="tab-stories" class="tab-content">
+        <div class="story-section">
+            <h2 style="color: var(--accent-yellow); margin-bottom: 5px;">استوری‌وز لیگ</h2>
+            <p style="color: var(--text-gray); font-size: 12px; margin-bottom: 15px;">برای رفتن به استوری بعدی روی صفحه ضربه بزنید</p>
+
+            <div class="instagram-story-viewer" onclick="nextStory()">
+                <div class="story-bars" id="story-bars-container"></div>
+                <div class="story-header-info">
+                    <span id="story-tag">استارت هفته</span>
+                    <span id="story-time-live">۱۰:۱۲</span>
+                </div>
+                <div class="story-main-content" id="story-text-box">بارگذاری استوری...</div>
+                <div class="story-nav-hints">
+                    <span>لمس چپ: قبلی</span>
+                    <span style="color: var(--accent-yellow);">کانبو فوتبال</span>
+                    <span>لمس راست: بعدی</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- تب ۷: کوئیزگدا -->
     <div id="tab-banter" class="tab-content">
         <div class="quiz-container">
             <div class="quiz-card">
@@ -1024,7 +1228,7 @@
                 </form>
 
                 <div id="quiz-register-screen">
-                    <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 8px;">🎯 کوئیزگدا</h2>
+                    <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 8px;">کوئیزگدا</h2>
                     <p style="text-align: center; color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">برای شرکت در کوئیز و ارسال نتیجه به ایمیل ادمین، مشخصات خود را وارد کنید:</p>
                     
                     <form id="user-info-form" onsubmit="startQuizRegistration(event)">
@@ -1036,23 +1240,23 @@
                             <label style="display: block; font-size: 12px; margin-bottom: 5px; color: var(--text-gray);">شماره تماس یا سروش:</label>
                             <input type="tel" id="player-phone" required placeholder="09xxxxxxxxx" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #2a3649; background: #121824; color: #fff; box-sizing: border-box;">
                         </div>
-                        <button type="submit" style="width: 100%; padding: 13px; background: var(--accent-yellow); color: #121824; border: none; border-radius: 10px; font-weight: 900; font-size: 15px; cursor: pointer;">ورود به انتخاب موضوع کوئیز 🚀</button>
+                        <button type="submit" style="width: 100%; padding: 13px; background: var(--accent-yellow); color: #121824; border: none; border-radius: 10px; font-weight: 900; font-size: 15px; cursor: pointer;">ورود به انتخاب موضوع کوئیز</button>
                     </form>
                 </div>
 
                 <div id="quiz-category-screen" style="display: none;">
-                    <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 8px;">🎯 انتخاب موضوع</h2>
+                    <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 8px;">انتخاب موضوع</h2>
                     <p style="text-align: center; color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">حوزه مورد نظرت رو انتخاب کن:</p>
                     
                     <div style="display: flex; flex-direction: column; gap: 12px;">
                         <button class="quiz-category-btn" onclick="selectCategory('football')">
-                            <span style="font-size: 20px;">⚽</span> فوتبال فیره‌فروشان (۶ سوال تخصصی)
+                            فوتبال فیره‌فروشان (۶ سوال تخصصی)
                         </button>
                         <button class="quiz-category-btn" onclick="selectCategory('general')">
-                            <span style="font-size: 20px;">🧠</span> اطلاعات عمومی (۶ سوال جذاب)
+                            اطلاعات عمومی (۶ سوال جذاب)
                         </button>
                         <button class="quiz-category-btn" onclick="selectCategory('proverbs')">
-                            <span style="font-size: 20px;">📜</span> ضرب‌المثل و اصطلاحات (۶ سوال کوچه بازاری)
+                            ضرب‌المثل و اصطلاحات (۶ سوال کوچه بازاری)
                         </button>
                     </div>
                 </div>
@@ -1075,7 +1279,7 @@
                         <div style="font-size: 13px; color: var(--text-gray);">پاسخ‌های درست: <span id="correct-count-val" style="color: var(--accent-green); font-weight: bold;">0</span> از 6</div>
                     </div>
                     <div style="background: rgba(46, 204, 113, 0.1); border: 1px solid var(--accent-green); padding: 12px; border-radius: 10px; font-size: 12px; color: var(--accent-green); margin-bottom: 15px; line-height: 1.6;">
-                        ✅ اطلاعات و نتیجه تست کاربر (<span id="result-name-disp"></span>) با موفقیت به ایمیل شما ارسال شد.
+                        اطلاعات و نتیجه تست کاربر (<span id="result-name-disp"></span>) با موفقیت به ایمیل شما ارسال شد.
                     </div>
                     <button onclick="resetQuiz()" style="width: 100%; padding: 12px; background: var(--accent-yellow); color: #121824; border: none; border-radius: 10px; font-weight: bold; font-size: 15px; cursor: pointer;">شروع دوباره کوئیز</button>
                 </div>
@@ -1083,7 +1287,7 @@
         </div>
     </div>
 
-    <!-- منوی پایین صفحه با آیکون سوت داور -->
+    <!-- منوی پایین صفحه -->
     <nav class="bottom-nav">
         <button class="nav-item active" onclick="switchTab('home', this)">
             <svg viewBox="0 0 24 24"><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"/></svg>مسابقات
@@ -1091,7 +1295,11 @@
         <button class="nav-item" onclick="switchTab('table', this)">
             <svg viewBox="0 0 24 24"><path d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z"/></svg>جدول
         </button>
-        <!-- آیکون سوت داور برای بخش سوت پایان -->
+        <!-- تب سکو با آیکون مدال -->
+        <button class="nav-item" onclick="switchTab('podium', this)">
+            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6Z"/></svg>سکو
+        </button>
+        <!-- تب سوت پایان با آیکون سوت داور -->
         <button class="nav-item" onclick="switchTab('soutpayan', this)">
             <svg viewBox="0 0 24 24"><path d="M15,3C13.89,3 13,3.89 13,5V6H6A2,2 0 0,0 4,8V16A2,2 0 0,0 6,18H13V19C13,20.1 13.89,21 15,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3H15M15,5H19V7H15V5M6,8H13V16H6V8M15,9H19V11H15V9M15,13H19V15H15V13Z"/></svg>سوت پایان
         </button>
@@ -1107,7 +1315,7 @@
     </nav>
 
     <script>
-        // اسکریپت ساعت پویا برای به‌روزرسانی زمان در گیشه و استوری‌وز با تاریخ دقیق امروز (۲۷ شهریور ۱۴۰۵)
+        // اسکریپت ساعت پویا برای به‌روزرسانی زمان با تاریخ دقیق امروز (۲۷ شهریور ۱۴۰۵)
         function updateLiveClock() {
             const now = new Date();
             const hours = String(now.getHours()).padStart(2, '0');
@@ -1127,22 +1335,22 @@
 
         const storyList = [
             {
-                tag: "🔍 پرونده ویژه",
+                tag: "پرونده ویژه",
                 time: "امروز",
                 content: "فوری | پرونده عکس جنجالی وارد مرحله تحقیقات شد! بخشنده در کمیته بازرسی گروه، شخصاً در حال بررسی ماجرای ارسال سایت نامناسب است؛ اما نکته عجیب اینجاست که وی به فرستنده اصلی هم شک کرده و حتی احتمال داده کار خودِ مدیر گروه بوده باشد!"
             },
             {
-                tag: "⚽ طوفان بارسلونا",
+                tag: "طوفان بارسلونا",
                 time: "دیروز",
                 content: "بارسلونا رسماً وارد فاز «هر بازی ۵ تا به بالا» شد! کاتالان‌ها در بازی‌های اخیر آتش به پا کردند: الچه ۰–۵، والنسیا ۰–۵، فاینورد ۱–۵، لوانته ۲–۴ و حالا ۷–۲ مقابل ریسینگ سانتاندر!"
             },
             {
-                tag: "🚨 حاشیه و مصاحبه",
+                tag: "حاشیه و مصاحبه",
                 time: "۲ روز پیش",
                 content: "آقای خلیلاوی در هفته گذشته با وجود ترکیدن کپسول آتش‌نشانی، با مصاحبه با خبرنگار فیره نیوز گفت: «آقا چیزی نبود، فقط عین شاطر نونوایی پودر از سر تا پامون می‌ریخت!»"
             },
             {
-                tag: "🔥 استارت هفته پیش‌بینی",
+                tag: "استارت هفته پیش‌بینی",
                 time: "۳ روز پیش",
                 content: "هفته اول پیش‌بینی از روز جمعه آغاز می‌شود و همه گداهای استرسی در همون شروع این هفته می‌خواهند اختلاف خودشون رو با زویدات در صدر جدول کمتر کنن!"
             }
@@ -1313,7 +1521,7 @@
                 if (i < userAnswersState.length) {
                     dot.style.background = userAnswersState[i] ? '#2ecc71' : '#e74c3c';
                     dot.style.color = userAnswersState[i] ? '#121824' : '#fff';
-                    dot.innerHTML = userAnswersState[i] ? '✓' : '✕';
+                    dot.innerHTML = userAnswersState[i] ? 'V' : 'X';
                 } else if (i === currentQuestion) {
                     dot.style.background = 'var(--accent-yellow)';
                     dot.style.color = '#121824';
