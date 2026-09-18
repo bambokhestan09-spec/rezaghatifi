@@ -254,7 +254,7 @@
             margin-top: 1px;
         }
 
-        /* --- استایل بخش گیشه (اخبار ساختاریافته) --- */
+        /* --- استایل بخش گیشه (اخبار حرفه‌ای با عکس و تاریخ شمسی) --- */
         .news-container {
             max-width: 680px;
             margin: 0 auto;
@@ -273,7 +273,7 @@
 
         .featured-news-img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
             border-bottom: 2px solid rgba(245, 197, 24, 0.3);
         }
@@ -282,15 +282,26 @@
             padding: 20px;
         }
 
+        .news-meta-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
         .news-badge {
-            display: inline-block;
             background: var(--accent-yellow);
             color: #121824;
             font-size: 11px;
             font-weight: 900;
             padding: 3px 10px;
             border-radius: 6px;
-            margin-bottom: 10px;
+        }
+
+        .news-live-time {
+            font-size: 11px;
+            color: var(--accent-yellow);
+            font-weight: 700;
         }
 
         .featured-news-title {
@@ -310,9 +321,21 @@
         .small-news-card {
             background-color: var(--card-bg);
             border-radius: 14px;
-            padding: 16px;
+            overflow: hidden;
             border: 1px solid rgba(255,255,255,0.05);
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .small-news-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .small-news-body {
+            padding: 16px;
             display: flex;
             flex-direction: column;
             gap: 8px;
@@ -348,7 +371,7 @@
             background: linear-gradient(145deg, #182232, #0b1017);
             border: 2px solid var(--accent-yellow);
             border-radius: 20px;
-            height: 380px;
+            height: 400px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -391,11 +414,11 @@
         }
 
         .story-main-content {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
             line-height: 1.8;
             color: #fff;
-            padding: 15px 5px;
+            padding: 10px 5px;
             text-align: right;
             animation: fadeInStory 0.4s ease-in-out;
         }
@@ -704,49 +727,91 @@
         </div>
     </div>
 
-    <!-- تب ۳: گیشه (بخش اخبار ساختاریافته جدید) -->
+    <!-- تب ۳: گیشه (اخبار ساختاریافته حرفه‌ای با تاریخ شمسی و ساعت پویا) -->
     <div id="tab-gisheh" class="tab-content">
         <div class="news-container">
-            <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">📰 گیشه اخبار لیگ و حاشیه‌ها</h2>
-            <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 10px;">آخرین اخبار، گزارش‌ها و اتفاقات داغ</p>
+            <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">📰 گیشه اخبار و رویدادها</h2>
+            <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 10px;">اخبار لحظه‌ای، گزارش‌های ویژه و حاشیه‌ها</p>
 
-            <!-- خبر اصلی و بزرگ (زاهدان) -->
+            <!-- خبر ویژه ۱: تنش دریایی و پاسخ موشکی به اردن -->
             <div class="featured-news-card">
-                <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80" alt="News" class="featured-news-img">
+                <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=800&q=80" alt="Missile Attack" class="featured-news-img">
                 <div class="featured-news-content">
-                    <span class="news-badge">گزارش ویژه و فوری</span>
-                    <h3 class="featured-news-title">وضعیت زاهدان پس از دو ساعت درگیری</h3>
+                    <div class="news-meta-header">
+                        <span class="news-badge">گزارش ویژه امنیتی</span>
+                        <span class="news-live-time" id="live-time-1">۱۹ شهریور ۱۴۰۵ - ۰۸:۱۴</span>
+                    </div>
+                    <h3 class="featured-news-title">پاسخ موشکی سنگین به پایگاه آمریکا در اردن پس از حمله به نفت‌کش ایرانی</h3>
                     <p class="featured-news-text">
-                        - پس از حدود دو ساعت درگیری، فعلاً تیراندازی‌ها در سطح شهر زاهدان متوقف شده است.<br>
-                        - چندین آمبولانس به خیابان‌های دانشجو و دانشگاه شهر زاهدان اعزام شده‌اند.<br>
-                        - یک خودرو هدف اصلی حمله بوده است.<br>
-                        - در سطح شهر زاهدان ایست بازرسی‌های مختلف ایجاد شده است.<br>
-                        - تعداد تلفات و زخمی‌ها تاکنون توسط بیمارستان‌های شهر زاهدان اعلام نشده است.<br>
-                        <i style="color: var(--accent-yellow); display:block; margin-top:8px;">جزئیات درگیری متعاقباً اعلام خواهد شد.</i>
+                        آخرین حمله ایالات متحده به یک نفت‌کش ایرانی ۸ روز پیش، در تاریخ ۱۸ شهریور (۹ سپتامبر)، رخ داد.<br>
+                        اندکی پس از آن، ایران در اقدامی قاطع ۲۰ موشک بالستیک به سمت یک پایگاه ایالات متحده در اردن شلیک کرد. اردن و ایالات متحده بیش از ۷۰ رهگیر هوایی شلیک کردند، اما حداقل چند موشک ایرانی از دفاع هوایی عبور کرده و به ۹ هواپیمای نظامی ایالات متحده آسیب جدی وارد ساختند. از آن زمان تاکنون، هیچ‌گونه حمله دیگری از سوی ایالات متحده به نفت‌کش‌های ایرانی صورت نگرفته است.
                     </p>
                 </div>
             </div>
 
-            <!-- سایر اخبار (کارت‌های کوچکتر) -->
+            <!-- خبر ۲: بحران اقتصادی پاکستان -->
             <div class="small-news-card">
-                <span class="small-news-category">تجهیزات و نظامی</span>
-                <h4 class="small-news-title">رونمایی از موشک ناشناخته بدون بالک</h4>
-                <p class="small-news-text">
-                    در آخرین عملیات علیه ناوهای آمریکایی، در تصاویر منتشر شده موشک ناشناخته‌ای دیده شد که هیچ بالکی ندارد. آخرین بار نمونه مشابه آن در رزمایش پیامبر اعظم (ص) ۱۴ سپاه و در مزرعه موشکی دیده شده بود که آن هم فاقد بالک بود و مشخصات آن محرمانه بود.
-                </p>
+                <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800&q=80" alt="Pakistan Crisis" class="small-news-img">
+                <div class="small-news-body">
+                    <div class="news-meta-header">
+                        <span class="small-news-category">اقتصاد بین‌الملل</span>
+                        <span class="news-live-time" id="live-time-2">۱۹ شهریور ۱۴۰۵ - ۰۸:۱۴</span>
+                    </div>
+                    <h4 class="small-news-title">پاکستان در حالت بحران مطلق: تعطیلی بازارها تا ساعت ۹ شب!</h4>
+                    <p class="small-news-text">
+                        کشور پاکستان در پی بحران شدید انرژی و اقتصادی وارد شرایط فوق‌العاده شده است. طبق تصمیمات اضطراب‌آور دولت، بازارها و مراکز تجاری حداکثر تا ساعت ۹ شب باید تعطیل شوند، مصرف سوخت ملی ۵۰ درصد کاهش یافته و سفرهای خارجی مسئولان و شهروندان به شدت محدود شده است.
+                    </p>
+                </div>
             </div>
 
+            <!-- خبر ۳: وضعیت زاهدان -->
             <div class="small-news-card">
-                <span class="small-news-category">تحولات اقتصادی و منطقه‌ای</span>
-                <h4 class="small-news-title">عربستان پس از ۷۰ سال مجبور به واردات محصولات نفتی شد!</h4>
-                <p class="small-news-text">
-                    بعد از قطر، اکنون نوبت عربستان شده است. عربستان سعودی به دلیل آسیب‌های جدی وارد شده به خطوط لوله و پالایشگاه‌ها، پس از تقریباً ۷۰ سال، تصمیم به واردات گسترده محصولات نفتی گرفته است. آن‌ها در تلاش هستند تا سوخت، به‌ویژه گازوئیل، را از طریق دریای مدیترانه به این کشور وارد کنند. ارتش یمن به رهبری انصارالله به تنهایی، سبک زندگی پر زرق و برق و تجملاتی عربستان سعودی را برهم زده و با کمک خداوند، این روند را ادامه خواهد داد. اتهامات عربستان سعودی، سلاح‌های آمریکا و کینه‌تویی اسرائیل نمی‌توانند جلوی این روند را بگیرند.
-                </p>
+                <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80" alt="Zahedan" class="small-news-img">
+                <div class="small-news-body">
+                    <div class="news-meta-header">
+                        <span class="small-news-category">گزارش منطقه‌ای</span>
+                        <span class="news-live-time">۱۸ شهریور ۱۴۰۵</span>
+                    </div>
+                    <h4 class="small-news-title">وضعیت زاهدان پس از دو ساعت درگیری</h4>
+                    <p class="small-news-text">
+                        پس از حدود دو ساعت درگیری، فعلاً تیراندازی‌ها در سطح شهر زاهدان متوقف شده است. چندین آمبولانس به خیابان‌های دانشجو و دانشگاه اعزام شده و ایست بازرسی‌های مختلفی در سطح شهر ایجاد شده است. جزئیات تکمیلی متعاقباً اعلام خواهد شد.
+                    </p>
+                </div>
+            </div>
+
+            <!-- خبر ۴: موشک بدون بالک -->
+            <div class="small-news-card">
+                <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=800&q=80" alt="Missile" class="small-news-img">
+                <div class="small-news-body">
+                    <div class="news-meta-header">
+                        <span class="small-news-category">تجهیزات و نظامی</span>
+                        <span class="news-live-time">۱۷ شهریور ۱۴۰۵</span>
+                    </div>
+                    <h4 class="small-news-title">رونمایی از موشک ناشناخته بدون بالک</h4>
+                    <p class="small-news-text">
+                        در آخرین عملیات علیه ناوهای آمریکایی، موشک ناشناخته‌ای بدون بالک مشاهده شد. نمونه مشابه این سلاح پیش‌تر در رزمایش پیامبر اعظم (ص) ۱۴ سپاه دیده شده بود و مشخصات آن کاملاً محرمانه باقی مانده است.
+                    </p>
+                </div>
+            </div>
+
+            <!-- خبر ۵: بحران سوخت عربستان -->
+            <div class="small-news-card">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="Oil Crisis" class="small-news-img">
+                <div class="small-news-body">
+                    <div class="news-meta-header">
+                        <span class="small-news-category">تحولات انرژی</span>
+                        <span class="news-live-time">۱۶ شهریور ۱۴۰۵</span>
+                    </div>
+                    <h4 class="small-news-title">عربستان پس از ۷۰ سال مجبور به واردات محصولات نفتی شد!</h4>
+                    <p class="small-news-text">
+                        به دنبال آسیب‌های جدی به خطوط لوله و پالایشگاه‌ها، عربستان سعودی پس از تقریباً ۷۰ سال تصمیم به واردات گسترده محصولات نفتی و گازوئیل از طریق دریای مدیترانه گرفته است. ارتش یمن به رهبری انصارالله ساختار سنتی انرژی منطقه را به چالش کشیده است.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- تب ۴: استوری‌وز (اخبار کوتاه و متحرک اینستاگرامی) -->
+    <!-- تب ۴: استوری‌وز (اخبار کوتاه و متحرک اینستاگرامی با ساعت پویا) -->
     <div id="tab-stories" class="tab-content">
         <div class="story-section">
             <h2 style="color: var(--accent-yellow); margin-bottom: 5px;">⚡ استوری‌وز لیگ</h2>
@@ -756,7 +821,7 @@
                 <div class="story-bars" id="story-bars-container"></div>
                 <div class="story-header-info">
                     <span id="story-tag">🔥 استارت هفته</span>
-                    <span id="story-time">امروز</span>
+                    <span id="story-time-live">۰۸:۱۴</span>
                 </div>
                 <div class="story-main-content" id="story-text-box">بارگذاری استوری...</div>
                 <div class="story-nav-hints">
@@ -860,26 +925,44 @@
     </nav>
 
     <script>
+        // اسکریپت ساعت پویا برای به‌روزرسانی زمان در گیشه و استوری‌وز
+        function updateLiveClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const timeString = `${hours}:${minutes}`;
+            
+            const timeEl1 = document.getElementById('live-time-1');
+            const timeEl2 = document.getElementById('live-time-2');
+            const storyTime = document.getElementById('story-time-live');
+
+            if (timeEl1) timeEl1.innerText = `۱۹ شهریور ۱۴۰۵ - ${timeString}`;
+            if (timeEl2) timeEl2.innerText = `۱۹ شهریور ۱۴۰۵ - ${timeString}`;
+            if (storyTime) storyTime.innerText = timeString;
+        }
+        setInterval(updateLiveClock, 1000);
+        window.onload = updateLiveClock;
+
         const storyList = [
             {
-                tag: "🔥 استارت هفته پیش‌بینی",
+                tag: "🔥 تنش موشکی جدید",
                 time: "امروز",
+                content: "پس از حمله ایالات متحده به نفت‌کش ایرانی در ۹ سپتامبر، ایران با شلیک ۲۰ موشک بالستیک به پایگاه آمریکا در اردن پاسخ داد و به ۹ هواپیمای آمریکایی آسیب زد!"
+            },
+            {
+                tag: "🚨 بحران پاکستان",
+                time: "امروز",
+                content: "پاکستان در بحران شدید اقتصادی؛ بازارها تا ساعت ۹ شب تعطیل، مصرف سوخت ۵۰ درصد کاهش و سفرهای خارجی محدود شد."
+            },
+            {
+                tag: "⚽ استارت هفته پیش‌بینی",
+                time: "دیروز",
                 content: "هفته اول پیش‌بینی از روز جمعه با بازی چلسی و برنتفورد آغاز می‌شود و همه گداهای استرسی در همون شروع این هفته می‌خواهند اختلاف خودشون رو با زویدات در صدر جدول کمتر کنن!"
             },
             {
                 tag: "🚨 حاشیه و مصاحبه",
-                time: "دیروز",
-                content: "آقای خلیلاوی در هفته گذشته با وجود ترکیدن کپسول آتش‌نشانی با مصاحبه با خبرنگار فیره نیوز گفت: آقا چیزی نبود فقط عین شاطر نونوایی پودر از سرتا پامون میریخت. آخرش معلوم نشد کی ترکیدن کپسول رو گردن گرفت...؟ شاید نیسی!"
-            },
-            {
-                tag: "⚽ طوفان بارسلونا",
                 time: "۲ روز پیش",
-                content: "بارسلونا رسماً وارد فاز «هر بازی ۵ تا به بالا» شده! کاتالان‌ها در بازی‌های اخیر: الچه ۰–۵، والنسیا ۰–۵، فاینورد ۱–۵، لوانته ۲–۴ و حالا ۷–۲ مقابل ریسینگ سانتاندر! انگار بارسا با دروازه‌بان‌ها قهره!"
-            },
-            {
-                tag: "🔍 پرونده ویژه",
-                time: "۳ روز پیش",
-                content: "فوری | پرونده عکس جنجالی وارد مرحله تحقیقات شد! بخشنده در کمیته بازرسی گروه، شخصاً در حال بررسی ماجرای ارسال سایت نامناسب است؛ اما نکته عجیب اینجاست که وی به فرستنده اصلی هم شک کرده و حتی احتمال داده کار خودِ مدیر گروه بوده باشد!"
+                content: "آقای خلیلاوی در هفته گذشته با وجود ترکیدن کپسول آتش‌نشانی با مصاحبه با خبرنگار فیره نیوز گفت: آقا چیزی نبود فقط عین شاطر نونوایی پودر از سرتا پامون میریخت!"
             }
         ];
 
@@ -911,7 +994,6 @@
 
             const story = storyList[currentStoryIndex];
             document.getElementById('story-tag').innerText = story.tag;
-            document.getElementById('story-time').innerText = story.time;
             document.getElementById('story-text-box').innerText = story.content;
 
             storyList.forEach((_, i) => {
