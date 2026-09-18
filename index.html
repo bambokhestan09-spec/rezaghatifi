@@ -858,38 +858,42 @@
             border-color: var(--accent-yellow);
         }
 
+        /* --- منوی پایین سفید با ایکون‌های تیره و حالت فعال سبز --- */
         .bottom-nav {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: #1a2332;
+            background-color: #ffffff;
             display: flex;
             justify-content: space-around;
             padding: 10px 0;
-            border-top: 1px solid #2a3649;
+            border-top: 1px solid #dcdcdc;
             z-index: 1000;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
         }
 
         .nav-item {
             background: none;
             border: none;
-            color: var(--text-gray);
+            color: #333333;
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-size: 9px;
+            font-size: 10px;
+            font-weight: 700;
             cursor: pointer;
             gap: 2px;
+            transition: color 0.2s ease;
         }
 
         .nav-item.active {
-            color: var(--accent-yellow);
+            color: var(--accent-green);
         }
 
         .nav-item svg {
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             fill: currentColor;
         }
 
@@ -1102,7 +1106,7 @@
 
                     <h3 class="analysis-headline">نکته مهم بازی:</h3>
                     <p class="analysis-text" style="margin-bottom: 15px;">
-                        سبک برنتفورد دقیقاً می‌تواند برای دفاع فعلی چلسی دردسرساز شود؛ توپ‌های دوم، انتقال سریع و ضربات ایستگاهی. از طرف دیگر, چلسی از نظر کیفیت هجومی توانایی ایجاد موقعیت زیادی دارد و در مجموع بازی‌هایش تاکنون ۱۹ گل ردوبدل شده؛ بیشترین مجموع گل در بازی‌های یک تیم در لیگ تا این مقطع.
+                        سبک برنتفورد دقیقاً می‌تواند برای دفاع فعلی چلسی دردسرساز شود؛ توپ‌های دوم، انتقال سریع و ضربات ایستگاهی. از طرف دیگر، چلسی از نظر کیفیت هجومی توانایی ایجاد موقعیت زیادی دارد و در مجموع بازی‌هایش تاکنون ۱۹ گل ردوبدل شده؛ بیشترین مجموع گل در بازی‌های یک تیم در لیگ تا این مقطع.
                     </p>
 
                     <div style="background: rgba(245, 197, 24, 0.1); border: 1px solid var(--accent-yellow); padding: 15px; border-radius: 12px; margin-top: 15px;">
@@ -1551,7 +1555,7 @@
                 { q: "غذای «فتوچینی آلفردو» بیشتر با کدام شهر مرتبط است؟", options: ["رم", "میلان", "ونیز", "ناپل"], correct: 0 },
                 { q: "ماده اصلی «گواکاموله» چیست؟", options: ["آووکادو", "خیار", "نخود", "بادمجان"], correct: 0 },
                 { q: "«کیمچی» غذای سنتی کدام کشور است؟", options: ["ژاپن", "کره جنوبی", "ویتنام", "چین"], correct: 1 },
-                { q: "زعفران بیشتر در کدام بخش غذا استفاده می‌شود؟", options: ["طعم‌دهی و رنگ‌دهی", "افزایش نمک", "ششیرین کردن", "غلیظ کردن غذا"], correct: 0 },
+                { q: "زعفران بیشتر در کدام بخش غذا استفاده می‌شود؟", options: ["طعم‌دهی و رنگ‌دهی", "افزایش نمک", "شیرین کردن", "غلیظ کردن غذا"], correct: 0 },
                 { q: "غذای «موساکا» بیشتر با کدام کشور شناخته می‌شود؟", options: ["یونان", "اسپانیا", "مکزیک", "هند"], correct: 0 },
                 { q: "ماده اصلی «فلافل» معمولاً چیست؟", options: ["نخود یا باقلا", "گوشت", "برنج", "ذرت"], correct: 0 },
                 { q: "«تام یام» یک غذای معروف کدام کشور است؟", options: ["هند", "تایلند", "اندونزی", "فیلیپین"], correct: 1 },
