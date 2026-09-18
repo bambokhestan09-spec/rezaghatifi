@@ -254,7 +254,90 @@
             margin-top: 1px;
         }
 
-        /* --- پلیر استوری‌وز متحرک (اینستاگرامی) --- */
+        /* --- استایل بخش گیشه (اخبار ساختاریافته) --- */
+        .news-container {
+            max-width: 680px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .featured-news-card {
+            background: linear-gradient(145deg, #1c2536, #121824);
+            border: 2px solid var(--accent-yellow);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+        .featured-news-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid rgba(245, 197, 24, 0.3);
+        }
+
+        .featured-news-content {
+            padding: 20px;
+        }
+
+        .news-badge {
+            display: inline-block;
+            background: var(--accent-yellow);
+            color: #121824;
+            font-size: 11px;
+            font-weight: 900;
+            padding: 3px 10px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .featured-news-title {
+            font-size: 17px;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .featured-news-text {
+            font-size: 13px;
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+
+        .small-news-card {
+            background-color: var(--card-bg);
+            border-radius: 14px;
+            padding: 16px;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .small-news-category {
+            font-size: 11px;
+            color: var(--accent-yellow);
+            font-weight: 700;
+        }
+
+        .small-news-title {
+            font-size: 14px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.5;
+        }
+
+        .small-news-text {
+            font-size: 12px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* --- پلیر استوری‌وز متحرک --- */
         .story-section {
             max-width: 450px;
             margin: 0 auto;
@@ -265,7 +348,7 @@
             background: linear-gradient(145deg, #182232, #0b1017);
             border: 2px solid var(--accent-yellow);
             border-radius: 20px;
-            height: 420px;
+            height: 380px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -308,15 +391,13 @@
         }
 
         .story-main-content {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 700;
             line-height: 1.8;
             color: #fff;
-            padding: 10px 5px;
+            padding: 15px 5px;
             text-align: right;
             animation: fadeInStory 0.4s ease-in-out;
-            overflow-y: auto;
-            max-height: 260px;
         }
 
         @keyframes fadeInStory {
@@ -332,36 +413,6 @@
             margin-top: 5px;
             border-top: 1px solid rgba(255,255,255,0.05);
             padding-top: 8px;
-        }
-
-        /* --- استایل نتایج بارسلونا در استوری‌ها با لوگو --- */
-        .barca-results-list {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            margin-top: 8px;
-        }
-
-        .barca-match-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: rgba(0,0,0,0.3);
-            padding: 5px 10px;
-            border-radius: 8px;
-            font-size: 13px;
-        }
-
-        .barca-team {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .barca-team img {
-            width: 20px;
-            height: 20px;
-            object-fit: contain;
         }
 
         /* --- کادر شیک بالای جدول --- */
@@ -509,9 +560,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-size: 11px;
+            font-size: 10px;
             cursor: pointer;
-            gap: 3px;
+            gap: 2px;
         }
 
         .nav-item.active {
@@ -519,8 +570,8 @@
         }
 
         .nav-item svg {
-            width: 22px;
-            height: 22px;
+            width: 20px;
+            height: 20px;
             fill: currentColor;
         }
 
@@ -653,16 +704,58 @@
         </div>
     </div>
 
-    <!-- تب ۳: استوری‌وز گدا (متحرک و اینستاگرامی با ۴ خبر جدید) -->
+    <!-- تب ۳: گیشه (بخش اخبار ساختاریافته جدید) -->
+    <div id="tab-gisheh" class="tab-content">
+        <div class="news-container">
+            <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">📰 گیشه اخبار لیگ و حاشیه‌ها</h2>
+            <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 10px;">آخرین اخبار، گزارش‌ها و اتفاقات داغ</p>
+
+            <!-- خبر اصلی و بزرگ (زاهدان) -->
+            <div class="featured-news-card">
+                <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80" alt="News" class="featured-news-img">
+                <div class="featured-news-content">
+                    <span class="news-badge">گزارش ویژه و فوری</span>
+                    <h3 class="featured-news-title">وضعیت زاهدان پس از دو ساعت درگیری</h3>
+                    <p class="featured-news-text">
+                        - پس از حدود دو ساعت درگیری، فعلاً تیراندازی‌ها در سطح شهر زاهدان متوقف شده است.<br>
+                        - چندین آمبولانس به خیابان‌های دانشجو و دانشگاه شهر زاهدان اعزام شده‌اند.<br>
+                        - یک خودرو هدف اصلی حمله بوده است.<br>
+                        - در سطح شهر زاهدان ایست بازرسی‌های مختلف ایجاد شده است.<br>
+                        - تعداد تلفات و زخمی‌ها تاکنون توسط بیمارستان‌های شهر زاهدان اعلام نشده است.<br>
+                        <i style="color: var(--accent-yellow); display:block; margin-top:8px;">جزئیات درگیری متعاقباً اعلام خواهد شد.</i>
+                    </p>
+                </div>
+            </div>
+
+            <!-- سایر اخبار (کارت‌های کوچکتر) -->
+            <div class="small-news-card">
+                <span class="small-news-category">تجهیزات و نظامی</span>
+                <h4 class="small-news-title">رونمایی از موشک ناشناخته بدون بالک</h4>
+                <p class="small-news-text">
+                    در آخرین عملیات علیه ناوهای آمریکایی، در تصاویر منتشر شده موشک ناشناخته‌ای دیده شد که هیچ بالکی ندارد. آخرین بار نمونه مشابه آن در رزمایش پیامبر اعظم (ص) ۱۴ سپاه و در مزرعه موشکی دیده شده بود که آن هم فاقد بالک بود و مشخصات آن محرمانه بود.
+                </p>
+            </div>
+
+            <div class="small-news-card">
+                <span class="small-news-category">تحولات اقتصادی و منطقه‌ای</span>
+                <h4 class="small-news-title">عربستان پس از ۷۰ سال مجبور به واردات محصولات نفتی شد!</h4>
+                <p class="small-news-text">
+                    بعد از قطر، اکنون نوبت عربستان شده است. عربستان سعودی به دلیل آسیب‌های جدی وارد شده به خطوط لوله و پالایشگاه‌ها، پس از تقریباً ۷۰ سال، تصمیم به واردات گسترده محصولات نفتی گرفته است. آن‌ها در تلاش هستند تا سوخت، به‌ویژه گازوئیل، را از طریق دریای مدیترانه به این کشور وارد کنند. ارتش یمن به رهبری انصارالله به تنهایی، سبک زندگی پر زرق و برق و تجملاتی عربستان سعودی را برهم زده و با کمک خداوند، این روند را ادامه خواهد داد. اتهامات عربستان سعودی، سلاح‌های آمریکا و کینه‌تویی اسرائیل نمی‌توانند جلوی این روند را بگیرند.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- تب ۴: استوری‌وز (اخبار کوتاه و متحرک اینستاگرامی) -->
     <div id="tab-stories" class="tab-content">
         <div class="story-section">
-            <h2 style="color: var(--accent-yellow); margin-bottom: 5px;">⚡ استوری‌وز و اخبار لیگ</h2>
+            <h2 style="color: var(--accent-yellow); margin-bottom: 5px;">⚡ استوری‌وز لیگ</h2>
             <p style="color: var(--text-gray); font-size: 12px; margin-bottom: 15px;">برای رفتن به استوری بعدی روی صفحه ضربه بزنید</p>
 
             <div class="instagram-story-viewer" onclick="nextStory()">
                 <div class="story-bars" id="story-bars-container"></div>
                 <div class="story-header-info">
-                    <span id="story-tag">🔥 استارت هفته پیش‌بینی</span>
+                    <span id="story-tag">🔥 استارت هفته</span>
                     <span id="story-time">امروز</span>
                 </div>
                 <div class="story-main-content" id="story-text-box">بارگذاری استوری...</div>
@@ -675,7 +768,7 @@
         </div>
     </div>
 
-    <!-- تب ۴: کوئیزگدا (متصل به Formspree برای ارسال به جیمیل شما) -->
+    <!-- تب ۵: کوئیزگدا (متصل به Formspree برای ارسال به جیمیل شما) -->
     <div id="tab-banter" class="tab-content">
         <div class="quiz-container">
             <div class="quiz-card">
@@ -747,13 +840,16 @@
         </div>
     </div>
 
-    <!-- منوی پایین صفحه (۴ تب اصلی) -->
+    <!-- منوی پایین صفحه (۵ تب کامل) -->
     <nav class="bottom-nav">
         <button class="nav-item active" onclick="switchTab('home', this)">
             <svg viewBox="0 0 24 24"><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"/></svg>مسابقات
         </button>
         <button class="nav-item" onclick="switchTab('table', this)">
             <svg viewBox="0 0 24 24"><path d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z"/></svg>جدول
+        </button>
+        <button class="nav-item" onclick="switchTab('gisheh', this)">
+            <svg viewBox="0 0 24 24"><path d="M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3M19,5V7H5V5H19M5,19V9H19V19H5Z"/></svg>گیشه
         </button>
         <button class="nav-item" onclick="switchTab('stories', this)">
             <svg viewBox="0 0 24 24"><path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M11,16.5L6,11.5L7.41,10.09L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/></svg>استوری‌وز
@@ -764,79 +860,32 @@
     </nav>
 
     <script>
-        // آرایه ۴ خبر تنظیم‌شده شما با لوگوها و جزئیات کامل
         const storyList = [
             {
                 tag: "🔥 استارت هفته پیش‌بینی",
                 time: "امروز",
-                content: `
-                    هفته اول پیش‌بینی از روز جمعه با نبرد جذاب آغاز می‌شود!<br><br>
-                    <div style="display: flex; justify-content: center; align-items: center; gap: 15px; background: rgba(0,0,0,0.3); padding: 10px; border-radius: 10px; margin: 10px 0;">
-                        <div style="display: flex; align-items: center; gap: 6px;"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" style="width:24px;height:24px;"><span>برنتفورد</span></div>
-                        <span style="color:var(--accent-yellow); font-weight:bold;">VS</span>
-                        <div style="display: flex; align-items: center; gap: 6px;"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" style="width:24px;height:24px;"><span>چلسی</span></div>
-                    </div>
-                    همه گداهای استرسی در همین شروع هفته می‌خواهند اختلاف خودشان را با زویدات در صدر جدول کمتر کنند!
-                `
+                content: "هفته اول پیش‌بینی از روز جمعه با بازی چلسی و برنتفورد آغاز می‌شود و همه گداهای استرسی در همون شروع این هفته می‌خواهند اختلاف خودشون رو با زویدات در صدر جدول کمتر کنن!"
             },
             {
-                tag: "🚨 حاشیه و مصاحبه داغ",
+                tag: "🚨 حاشیه و مصاحبه",
                 time: "دیروز",
-                content: `
-                    آقای خلیلاوی در هفته گذشته با وجود ترکیدن کپسول آتش‌نشانی، طی مصاحبه با خبرنگار <b>فیره نیوز</b> گفت:<br><br>
-                    <i>«آقا چیزی نبود! فقط عین شاطر نونوایی پودر از سر تا پامون می‌ریخت...»</i><br><br>
-                    آخرش معلوم نشد کی ترکیدن کپسول رو گردن گرفت...؟ شاید <b>نیسی</b>! 😂
-                `
+                content: "آقای خلیلاوی در هفته گذشته با وجود ترکیدن کپسول آتش‌نشانی با مصاحبه با خبرنگار فیره نیوز گفت: آقا چیزی نبود فقط عین شاطر نونوایی پودر از سرتا پامون میریخت. آخرش معلوم نشد کی ترکیدن کپسول رو گردن گرفت...؟ شاید نیسی!"
             },
             {
-                tag: "⚽ بارسلونا فاز گلباران!",
+                tag: "⚽ طوفان بارسلونا",
                 time: "۲ روز پیش",
-                content: `
-                    بارسلونا رسماً وارد فاز «هر بازی ۵ تا به بالا» شده! کاتالان‌ها در بازی‌های اخیر آتش به پا کردند:<br>
-                    <div class="barca-results-list">
-                        <div class="barca-match-row">
-                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png"> بارسلونا</span>
-                            <span style="color:var(--accent-yellow); font-weight:bold;">۵ - ۰</span>
-                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/10281.png"> الچه</span>
-                        </div>
-                        <div class="barca-match-row">
-                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png"> بارسلونا</span>
-                            <span style="color:var(--accent-yellow); font-weight:bold;">۵ - ۰</span>
-                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8614.png"> والنسیا</span>
-                        </div>
-                        <div class="barca-match-row">
-                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png"> بارسلونا</span>
-                            <span style="color:var(--accent-yellow); font-weight:bold;">۵ - ۱</span>
-                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/10216.png"> فاینورد</span>
-                        </div>
-                        <div class="barca-match-row">
-                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png"> بارسلونا</span>
-                            <span style="color:var(--accent-yellow); font-weight:bold;">۴ - ۲</span>
-                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8370.png"> لوانته</span>
-                        </div>
-                        <div class="barca-match-row">
-                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png"> بارسلونا</span>
-                            <span style="color:var(--accent-yellow); font-weight:bold;">۷ - ۲</span>
-                            <span class="barca-team"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/10268.png"> ریسینگ سانتاندر</span>
-                        </div>
-                    </div>
-                    <span style="display:block; margin-top:8px; font-size:12px; color:var(--text-gray);">انگار بارسا با دروازه‌بان‌ها قهره؛ فقط فعلاً یادش رفته دروازه خودش هم وجود داره! 😅</span>
-                `
+                content: "بارسلونا رسماً وارد فاز «هر بازی ۵ تا به بالا» شده! کاتالان‌ها در بازی‌های اخیر: الچه ۰–۵، والنسیا ۰–۵، فاینورد ۱–۵، لوانته ۲–۴ و حالا ۷–۲ مقابل ریسینگ سانتاندر! انگار بارسا با دروازه‌بان‌ها قهره!"
             },
             {
-                tag: "🔍 پرونده ویژه و محرمانه",
+                tag: "🔍 پرونده ویژه",
                 time: "۳ روز پیش",
-                content: `
-                    <b>فوری | پرونده عکس جنجالی وارد مرحله تحقیقات شد!</b><br><br>
-                    بخشنده در کمیته بازرسی گروه، شخصاً در حال بررسی ماجرای ارسال سایت نامناسب است؛ اما نکته عجیب ماجرا اینجاست که وی به فرستنده اصلی هم شک کرده و حتی احتمال داده کار خودِ مدیر گروه بوده باشد!<br><br>
-                    منابع آگاه می‌گویند تحقیقات ادامه دارد و بخشنده فعلاً با جدیت مشغول پیدا کردن «مجرم ناشناس» است؛ در حالی که خودش هم یکی از مظنونان احتمالی پرونده محسوب می‌شود! 🕵️‍♂️😂
-                `
+                content: "فوری | پرونده عکس جنجالی وارد مرحله تحقیقات شد! بخشنده در کمیته بازرسی گروه، شخصاً در حال بررسی ماجرای ارسال سایت نامناسب است؛ اما نکته عجیب اینجاست که وی به فرستنده اصلی هم شک کرده و حتی احتمال داده کار خودِ مدیر گروه بوده باشد!"
             }
         ];
 
         let currentStoryIndex = 0;
         let storyTimer = null;
-        const storyDuration = 6000; // ۶ ثانیه برای هر استوری
+        const storyDuration = 5000;
 
         function initStories() {
             const barsContainer = document.getElementById('story-bars-container');
@@ -863,7 +912,7 @@
             const story = storyList[currentStoryIndex];
             document.getElementById('story-tag').innerText = story.tag;
             document.getElementById('story-time').innerText = story.time;
-            document.getElementById('story-text-box').innerHTML = story.content;
+            document.getElementById('story-text-box').innerText = story.content;
 
             storyList.forEach((_, i) => {
                 const fill = document.getElementById(`story-fill-${i}`);
@@ -891,7 +940,6 @@
             showStory(currentStoryIndex + 1);
         }
 
-        // --- بانک سوالات کوئیزگدا ---
         const allQuizData = {
             football: [
                 { q: "کدام تیم بیشترین قهرمانی در تاریخ لیگ قهرمانان اروپا را دارد؟", options: ["بارسلونا", "رئال مادرید", "بایرن مونیخ", "میلان"], correct: 1 },
