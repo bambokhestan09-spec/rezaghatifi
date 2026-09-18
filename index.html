@@ -254,7 +254,7 @@
             margin-top: 1px;
         }
 
-        /* --- استایل بخش گیشه (اخبار ساختاریافته حرفه‌ای با تاریخ شمسی و ساعت پویا) --- */
+        /* --- استایل بخش گیشه --- */
         .news-container {
             max-width: 680px;
             margin: 0 auto;
@@ -358,6 +358,159 @@
             font-size: 12px;
             color: var(--text-gray);
             line-height: 1.7;
+        }
+
+        /* --- استایل اختصاصی بخش سوت پایان (شبیه تصویر ارسالی) --- */
+        .match-analysis-container {
+            max-width: 680px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .analysis-card {
+            background: var(--card-bg);
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+        .match-banner-graphic {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #1b2838, #0d141f);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 3px solid var(--accent-yellow);
+        }
+
+        .match-banner-graphic img.bg-stadium {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.35;
+        }
+
+        .match-banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(18, 24, 36, 0.65);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 15px 20px;
+        }
+
+        .graphic-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .live-badge {
+            background: #e74c3c;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 900;
+            padding: 3px 8px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+        }
+
+        .brand-logo-text {
+            font-size: 11px;
+            color: var(--text-gray);
+            font-weight: 700;
+        }
+
+        .graphic-center-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* استایل فونت اختصاصی «سوت پایان» */
+        .sout-payan-title {
+            font-size: 32px;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 2px;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.8);
+            margin-bottom: 4px;
+            background: linear-gradient(to bottom, #ffffff, #dcdcdc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sout-payan-sub {
+            font-size: 12px;
+            color: var(--accent-yellow);
+            font-weight: 700;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 2px 12px;
+            border-radius: 6px;
+        }
+
+        .graphic-bottom-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .team-emblem-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .team-emblem-group img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+        }
+
+        .teams-versus-text {
+            font-size: 13px;
+            font-weight: 900;
+            color: #fff;
+        }
+
+        .match-score-badge {
+            background: var(--accent-yellow);
+            color: #121824;
+            font-weight: 900;
+            font-size: 14px;
+            padding: 2px 10px;
+            border-radius: 6px;
+        }
+
+        .analysis-body-content {
+            padding: 20px;
+        }
+
+        .analysis-headline {
+            font-size: 16px;
+            font-weight: 900;
+            color: var(--accent-yellow);
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .analysis-text {
+            font-size: 13px;
+            color: #cbd5e1;
+            line-height: 1.9;
         }
 
         /* --- پلیر استوری‌وز متحرک --- */
@@ -583,7 +736,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-size: 10px;
+            font-size: 9px;
             cursor: pointer;
             gap: 2px;
         }
@@ -593,8 +746,8 @@
         }
 
         .nav-item svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             fill: currentColor;
         }
 
@@ -608,6 +761,9 @@
             }
             .match-time {
                 font-size: 14px;
+            }
+            .sout-payan-title {
+                font-size: 26px;
             }
         }
     </style>
@@ -727,13 +883,56 @@
         </div>
     </div>
 
-    <!-- تب ۳: گیشه (اخبار جدید و مشروح با تاریخ شمسی و ساعت پویا) -->
+    <!-- تب ۳: سوت پایان (بخش جدید تحلیل و نتیجه بازی با گرافیک اختصاصی) -->
+    <div id="tab-soutpayan" class="tab-content">
+        <div class="match-analysis-container">
+            <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">🎙️ سوت پایان | تحلیل و بررسی مسابقات</h2>
+            <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 10px;">تحلیل موشکافانه و کارشناسی نتایج داغ هفته</p>
+
+            <div class="analysis-card">
+                <!-- بنر گرافیکی اختصاصی (مشابه تصویر ارسالی با فونت سوت پایان و لوگوی تیم‌ها) -->
+                <div class="match-banner-graphic">
+                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" alt="Stadium" class="bg-stadium">
+                    <div class="match-banner-overlay">
+                        <div class="graphic-top-row">
+                            <span class="live-badge">FULL TIME</span>
+                            <span class="brand-logo-text">CANBO FOOTBALL</span>
+                        </div>
+                        <div class="graphic-center-content">
+                            <div class="sout-payan-title">سوت پایان</div>
+                            <div class="sout-payan-sub">تحلیل ویژه هفته پیش‌بینی</div>
+                        </div>
+                        <div class="graphic-bottom-row">
+                            <div class="team-emblem-group">
+                                <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10260.png" alt="Man United">
+                                <span class="teams-versus-text">منچستریونایتد - برایتون</span>
+                            </div>
+                            <div class="match-score-badge">۳ - ۲</div>
+                            <div class="team-emblem-group" style="flex-direction: row-reverse;">
+                                <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10204.png" alt="Brighton">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- متن تحلیل و گزارش بازی -->
+                <div class="analysis-body-content">
+                    <h3 class="analysis-headline">پیروزی نفس‌گیر شیاطین سرخ در یک جدال پرگل و استرسی!</h3>
+                    <p class="analysis-text">
+                        در یکی از حساس‌ترین دیدارهای این هفته، منچستریونایتد در یک بازی سراسر هیجان و موقعیت توانست با نتیجه نزدیک ۳ بر ۲ از سد برایتون سرسخت عبور کند. بازی با حملات زودهنگام برایتون آغاز شد و این تیم توانست روی غفلت خط دفاعی یونایتد به گل برسد؛ اما در ادامه، تعویض‌ها و تغییر تاکتیک شیاطین سرخ کارساز شد.<br><br>
+                        در نیمه دوم، خط حمله منچستر جان تازه‌ای گرفت و با ثبت سه گل تماشایی، کامبک کاملی را رقم زد. گل دقایق پایانی برایتون فقط اختلاف را کمتر کرد تا در نهایت سه امتیاز ارزشمند به حساب منچستریونایتد واریز شود. این نتیجه تأثیر زیادی روی جدول پیش‌بینی گداهای استرسی داشت و مدعیان را به چالش کشید!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- تب ۴: گیشه (اخبار جدید و مشروح) -->
     <div id="tab-gisheh" class="tab-content">
         <div class="news-container">
             <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">📰 گیشه اخبار و رویدادها</h2>
             <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 10px;">اخبار لحظه‌ای، گزارش‌های ویژه و حاشیه‌ها</p>
 
-            <!-- خبر ویژه ۱: تنش دریایی و پاسخ موشکی به اردن -->
             <div class="featured-news-card">
                 <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=800&q=80" alt="Missile Attack" class="featured-news-img">
                 <div class="featured-news-content">
@@ -744,12 +943,11 @@
                     <h3 class="featured-news-title">پاسخ موشکی سنگین به پایگاه آمریکا در اردن پس از حمله به نفت‌کش ایرانی</h3>
                     <p class="featured-news-text">
                         آخرین حمله ایالات متحده به یک نفت‌کش ایرانی ۸ روز پیش، در تاریخ ۱۸ شهریور (۹ سپتامبر)، رخ داد.<br>
-                        اندکی پس از آن، ایران در اقدامی قاطع ۲۰ موشک بالستیک به سمت یک پایگاه ایالات متحده در اردن شلیک کرد. اردن و ایالات متحده بیش از ۷۰ رهگیر هوایی شلیک کردند، اما حداقل چند موشک ایرانی از دفاع هوایی عبور کرده و به ۹ هواپیمای نظامی ایالات متحده آسیب جدی وارد ساختند. از آن زمان تاکنون، هیچ‌گونه حمله دیگری از سوی ایالات متحده به نفت‌کش‌های ایرانی صورت نگرفته است.
+                        اندکی پس از آن، ایران در اقدامی قاطع ۲۰ موشک بالستیک به سمت یک پایگاه ایالات متحده در اردن شلیک کرد. اردن و ایالات متحده بیش از ۷۰ رهگیر هوایی شلیک کردند، اما حداقل چند موشک ایرانی از دفاع هوایی عبور کرده و به ۹ هواپیمای نظامی ایالات متحده آسیب جدی وارد ساختند.
                     </p>
                 </div>
             </div>
 
-            <!-- خبر ۲: بحران اقتصادی پاکستان -->
             <div class="small-news-card">
                 <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800&q=80" alt="Pakistan Crisis" class="small-news-img">
                 <div class="small-news-body">
@@ -759,59 +957,14 @@
                     </div>
                     <h4 class="small-news-title">پاکستان در حالت بحران مطلق: تعطیلی بازارها تا ساعت ۹ شب!</h4>
                     <p class="small-news-text">
-                        کشور پاکستان در پی بحران شدید انرژی و اقتصادی وارد شرایط فوق‌العاده شده است. طبق تصمیمات اضطراب‌آور دولت، بازارها و مراکز تجاری حداکثر تا ساعت ۹ شب باید تعطیل شوند، مصرف سوخت ملی ۵۰ درصد کاهش یافته و سفرهای خارجی مسئولان و شهروندان به شدت محدود شده است.
-                    </p>
-                </div>
-            </div>
-
-            <!-- خبر ۳: وضعیت زاهدان -->
-            <div class="small-news-card">
-                <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80" alt="Zahedan" class="small-news-img">
-                <div class="small-news-body">
-                    <div class="news-meta-header">
-                        <span class="small-news-category">گزارش منطقه‌ای</span>
-                        <span class="news-live-time">۱۸ شهریور ۱۴۰۵</span>
-                    </div>
-                    <h4 class="small-news-title">وضعیت زاهدان پس از دو ساعت درگیری</h4>
-                    <p class="small-news-text">
-                        پس از حدود دو ساعت درگیری، فعلاً تیراندازی‌ها در سطح شهر زاهدان متوقف شده است. چندین آمبولانس به خیابان‌های دانشجو و دانشگاه اعزام شده و ایست بازرسی‌های مختلفی در سطح شهر ایجاد شده است. جزئیات تکمیلی متعاقباً اعلام خواهد شد.
-                    </p>
-                </div>
-            </div>
-
-            <!-- خبر ۴: موشک بدون بالک -->
-            <div class="small-news-card">
-                <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=800&q=80" alt="Missile" class="small-news-img">
-                <div class="small-news-body">
-                    <div class="news-meta-header">
-                        <span class="small-news-category">تجهیزات و نظامی</span>
-                        <span class="news-live-time">۱۷ شهریور ۱۴۰۵</span>
-                    </div>
-                    <h4 class="small-news-title">رونمایی از موشک ناشناخته بدون بالک</h4>
-                    <p class="small-news-text">
-                        در آخرین عملیات علیه ناوهای آمریکایی، موشک ناشناخته‌ای بدون بالک مشاهده شد. نمونه مشابه این سلاح پیش‌تر در رزمایش پیامبر اعظم (ص) ۱۴ سپاه دیده شده بود و مشخصات آن کاملاً محرمانه باقی مانده است.
-                    </p>
-                </div>
-            </div>
-
-            <!-- خبر ۵: بحران سوخت عربستان -->
-            <div class="small-news-card">
-                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="Oil Crisis" class="small-news-img">
-                <div class="small-news-body">
-                    <div class="news-meta-header">
-                        <span class="small-news-category">تحولات انرژی</span>
-                        <span class="news-live-time">۱۶ شهریور ۱۴۰۵</span>
-                    </div>
-                    <h4 class="small-news-title">عربستان پس از ۷۰ سال مجبور به واردات محصولات نفتی شد!</h4>
-                    <p class="small-news-text">
-                        به دنبال آسیب‌های جدی به خطوط لوله و پالایشگاه‌ها، عربستان سعودی پس از تقریباً ۷۰ سال تصمیم به واردات گسترده محصولات نفتی و گازوئیل از طریق دریای مدیترانه گرفته است. ارتش یمن به رهبری انصارالله ساختار سنتی انرژی منطقه را به چالش کشیده است.
+                        کشور پاکستان در پی بحران شدید انرژی و اقتصادی وارد شرایط فوق‌العاده شده است. طبق تصمیمات اضطراب‌آور دولت، بازارها و مراکز تجاری حداکثر تا ساعت ۹ شب باید تعطیل شوند، مصرف سوخت ملی ۵۰ درصد کاهش یافته و سفرهای خارجی محدود شده است.
                     </p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- تب ۴: استوری‌وز (اخبار کوتاه و حاشیه‌های اصلی گروه با ساعت پویا) -->
+    <!-- تب ۵: استوری‌وز (اخبار کوتاه و حاشیه‌های اصلی گروه) -->
     <div id="tab-stories" class="tab-content">
         <div class="story-section">
             <h2 style="color: var(--accent-yellow); margin-bottom: 5px;">⚡ استوری‌وز لیگ</h2>
@@ -833,7 +986,7 @@
         </div>
     </div>
 
-    <!-- تب ۵: کوئیزگدا (متصل به Formspree برای ارسال به جیمیل شما) -->
+    <!-- تب ۶: کوئیزگدا (متصل به Formspree برای ارسال به جیمیل شما) -->
     <div id="tab-banter" class="tab-content">
         <div class="quiz-container">
             <div class="quiz-card">
@@ -905,13 +1058,16 @@
         </div>
     </div>
 
-    <!-- منوی پایین صفحه (۵ تب کامل) -->
+    <!-- منوی پایین صفحه (۶ تب کامل و مجزا) -->
     <nav class="bottom-nav">
         <button class="nav-item active" onclick="switchTab('home', this)">
             <svg viewBox="0 0 24 24"><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"/></svg>مسابقات
         </button>
         <button class="nav-item" onclick="switchTab('table', this)">
             <svg viewBox="0 0 24 24"><path d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z"/></svg>جدول
+        </button>
+        <button class="nav-item" onclick="switchTab('soutpayan', this)">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>سوت پایان
         </button>
         <button class="nav-item" onclick="switchTab('gisheh', this)">
             <svg viewBox="0 0 24 24"><path d="M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3M19,5V7H5V5H19M5,19V9H19V19H5Z"/></svg>گیشه
@@ -943,7 +1099,6 @@
         setInterval(updateLiveClock, 1000);
         window.onload = updateLiveClock;
 
-        // خبرهای اصلی استوری‌وز (شامل پرونده بخشنده و بارسلونا)
         const storyList = [
             {
                 tag: "🔍 پرونده ویژه",
@@ -1176,6 +1331,7 @@
 
         function switchTab(tabId, btnElement) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.nav-item').getElementById?.remove?.(); // Safe guard
             document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
 
             document.getElementById('tab-' + tabId).classList.add('active');
