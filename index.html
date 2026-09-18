@@ -254,7 +254,7 @@
             margin-top: 1px;
         }
 
-        /* --- استایل بخش سکو (با آیکون‌های وکتوری آدمک متحرک) --- */
+        /* --- استایل بخش سکو (مطابق تصویر با کاپ و فقط رتبه) --- */
         .podium-container {
             max-width: 680px;
             margin: 0 auto;
@@ -288,14 +288,14 @@
         .podium-graphic-box {
             background: var(--card-bg);
             border-radius: 18px;
-            padding: 25px 15px;
+            padding: 30px 15px 15px 15px;
             border: 1px solid rgba(255,255,255,0.08);
             box-shadow: 0 8px 25px rgba(0,0,0,0.5);
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            gap: 12px;
-            min-height: 350px;
+            gap: 15px;
+            min-height: 360px;
             position: relative;
             overflow: hidden;
         }
@@ -304,49 +304,38 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 30%;
+            width: 31%;
             text-align: center;
         }
 
-        /* استایل و انیمیشن آیکون آدمک وکتوری */
-        .avatar-icon-box {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #2a3649, #1a2332);
-            border: 2px solid var(--accent-yellow);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 6px;
-            animation: avatarFloat 3s ease-in-out infinite;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        .podium-cup-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
         }
 
-        .avatar-icon-box svg {
-            width: 28px;
-            height: 28px;
-            fill: var(--accent-yellow);
+        .podium-cup-icon.gold {
+            width: 72px;
+            height: 72px;
+            filter: drop-shadow(0 0 12px rgba(245, 197, 24, 0.6));
+            animation: cupFloat 3s ease-in-out infinite;
         }
 
-        @keyframes avatarFloat {
+        @keyframes cupFloat {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
+            50% { transform: translateY(-5px); }
         }
 
-        .podium-user-badge {
-            font-size: 12px;
+        .podium-user-name {
+            font-size: 13px;
             font-weight: 900;
             color: #fff;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 6px 10px;
-            border-radius: 8px;
-            margin-bottom: 8px;
-            border: 1px solid rgba(255,255,255,0.1);
-            width: 100%;
+            margin-bottom: 10px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            width: 100%;
         }
 
         .podium-block {
@@ -357,7 +346,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 900;
             color: var(--accent-yellow);
             box-shadow: inset 0 5px 10px rgba(0,0,0,0.3);
@@ -373,11 +362,11 @@
         }
 
         .podium-column.second .podium-block {
-            height: 110px;
+            height: 115px;
         }
 
         .podium-column.third .podium-block {
-            height: 80px;
+            height: 85px;
         }
 
         /* --- استایل بخش گیشه --- */
@@ -584,18 +573,6 @@
             background: linear-gradient(to bottom, #ffffff, #dcdcdc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-
-        .whistle-icon-badge {
-            font-size: 26px;
-            filter: drop-shadow(0 2px 6px rgba(245, 197, 24, 0.6));
-            animation: whistlePulse 2s infinite;
-        }
-
-        @keyframes whistlePulse {
-            0% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(-10deg) scale(1.1); }
-            100% { transform: rotate(0deg) scale(1); }
         }
 
         .sout-payan-sub {
@@ -1031,7 +1008,7 @@
         </div>
     </div>
 
-    <!-- تب ۳: سکو (با آدمک‌های متحرک وکتوری برای نعیمی، رضا قطیفی و زویدات) -->
+    <!-- تب ۳: سکو (فقط کاپ، اسم و رتبه بدون امتیاز) -->
     <div id="tab-podium" class="tab-content">
         <div class="podium-container">
             <div class="podium-header-box">
@@ -1040,30 +1017,30 @@
             </div>
 
             <div class="podium-graphic-box">
-                <!-- سکوی دوم: نعیمی (آدمک پسر) -->
+                <!-- سکوی دوم: نعیمی -->
                 <div class="podium-column second">
-                    <div class="avatar-icon-box">
-                        <svg viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/></svg>
-                    </div>
-                    <div class="podium-user-badge" style="color: #a0aec0;">نعیمی</div>
+                    <svg class="podium-cup-icon" viewBox="0 0 24 24" fill="#c0c0c0">
+                        <path d="M18,2H6A2,2 0 0,0 4,4V8A4,4 0 0,0 8,12H9.08C9.51,13.47 10.6,14.63 12,15V19H9V21H15V19H12V15C13.4,14.63 14.49,13.47 14.92,12H16A4,4 0 0,0 20,8V4A2,2 0 0,0 18,2M6,4H18V8A2,2 0 0,1 16,10H8A2,2 0 0,1 6,8V4Z"/>
+                    </svg>
+                    <div class="podium-user-name">نعیمی</div>
                     <div class="podium-block">۲</div>
                 </div>
 
-                <!-- سکوی اول: رضا قطیفی (آدمک پسر با تاج طلا) -->
+                <!-- سکوی اول: رضا قطیفی -->
                 <div class="podium-column first">
-                    <div class="avatar-icon-box" style="border-color: #ffd700;">
-                        <svg viewBox="0 0 24 24" fill="#ffd700"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/></svg>
-                    </div>
-                    <div class="podium-user-badge" style="color: var(--accent-yellow); background: rgba(245,197,24,0.15); border-color: var(--accent-yellow);">رضا قطیفی</div>
+                    <svg class="podium-cup-icon gold" viewBox="0 0 24 24" fill="#ffd700">
+                        <path d="M19,5H17V3A1,1 0 0,0 16,2H8A1,1 0 0,0 7,3V5H5A3,3 0 0,0 2,8V9A3,3 0 0,0 5,12H5.5A6,6 0 0,0 11,17.93V20H8V22H16V20H13V17.93A6,6 0 0,0 18.5,12H19A3,3 0 0,0 22,9V8A3,3 0 0,0 19,5M5,10A1,1 0 0,1 4,9V8A1,1 0 0,1 5,7H7V10H5M20,9A1,1 0 0,1 19,10H17V7H19A1,1 0 0,1 20,8Z"/>
+                    </svg>
+                    <div class="podium-user-name" style="color: var(--accent-yellow);">رضا قطیفی</div>
                     <div class="podium-block">۱</div>
                 </div>
 
-                <!-- سکوی سوم: زویدات (آدمک دختر با موی بلند/فرم متفاوت) -->
+                <!-- سکوی سوم: زویدات -->
                 <div class="podium-column third">
-                    <div class="avatar-icon-box" style="border-color: #ed64a6;">
-                        <svg viewBox="0 0 24 24" fill="#ed64a6"><path d="M12,2A3,3 0 0,1 15,5V6.14C17.86,6.93 20,9.58 20,12.72V14H4V12.72C4,9.58 6.14,6.93 9,6.14V5A3,3 0 0,1 12,2M12,16C15.31,16 18,17.34 18,19V21H6V19C6,17.34 8.69,16 12,16Z"/></svg>
-                    </div>
-                    <div class="podium-user-badge" style="color: #ed64a6;">زویدات</div>
+                    <svg class="podium-cup-icon" viewBox="0 0 24 24" fill="#cd7f32">
+                        <path d="M18,2H6A2,2 0 0,0 4,4V8A4,4 0 0,0 8,12H9.08C9.51,13.47 10.6,14.63 12,15V19H9V21H15V19H12V15C13.4,14.63 14.49,13.47 14.92,12H16A4,4 0 0,0 20,8V4A2,2 0 0,0 18,2M6,4H18V8A2,2 0 0,1 16,10H8A2,2 0 0,1 6,8V4Z"/>
+                    </svg>
+                    <div class="podium-user-name">زویدات</div>
                     <div class="podium-block">۳</div>
                 </div>
             </div>
