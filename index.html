@@ -849,47 +849,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
-        .quiz-category-btn {
-            background: #121824;
-            border: 1px solid #2a3649;
-            color: #fff;
-            padding: 14px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            width: 100%;
-            text-align: right;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: all 0.2s ease;
-        }
-
-        .quiz-category-btn:hover {
-            border-color: var(--accent-yellow);
-            background: #1a2332;
-        }
-
-        .quiz-option-btn {
-            background: #121824;
-            color: #fff;
-            border: 1px solid #2a3649;
-            padding: 12px 16px;
-            border-radius: 10px;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            text-align: right;
-            width: 100%;
-            transition: all 0.2s ease;
-        }
-
-        .quiz-option-btn:hover {
-            background: #1f2b45;
-            border-color: var(--accent-yellow);
-        }
-
         /* --- منوی پایین سفید --- */
         .bottom-nav {
             position: fixed;
@@ -1015,7 +974,7 @@
             <div class="match-row-card">
                 <div class="team-side left"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/9879.png"><span class="team-name">فولام</span></div>
                 <div class="match-center-info"><span class="match-time">۱۹:۰۰</span><span class="match-date-sub">۲۹ شهریور</span><span class="match-league-sub">Premier League</span></div>
-                <div class="team-side right"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/10260.png"><span class="team-name">منچستر یونایتد</span></div>
+                <div class="team-side right"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/10260.png"><span class="match-name">منچستر یونایتد</span></div>
             </div>
 
             <div style="margin: 25px 0; text-align: center;">
@@ -1026,7 +985,7 @@
         </div>
     </div>
 
-    <!-- تب ۲: جدول رده‌بندی (مجهز به نوارهای جدول کامل و هفته‌های ۱ تا ۵) -->
+    <!-- تب ۲: جدول رده‌بندی -->
     <div id="tab-table" class="tab-content">
         <div class="league-banner-card">
             <div>
@@ -1038,7 +997,6 @@
             </div>
         </div>
 
-        <!-- نوارهای انتخاب جدول هفته‌ها -->
         <div class="weeks-nav-container">
             <button class="week-nav-btn active" onclick="switchTable('complete', this)">جدول کامل</button>
             <button class="week-nav-btn" onclick="switchTable('week1', this)">هفته اول</button>
@@ -1048,7 +1006,6 @@
             <button class="week-nav-btn" onclick="switchTable('week5', this)">هفته پنجم</button>
         </div>
 
-        <!-- ۱. جدول کامل -->
         <div id="table-complete" class="table-container active">
             <div class="table-row"><span class="rank-col">1</span><span class="name-col">Asm A</span><span class="score-col">52</span></div>
             <div class="table-row highlight"><span class="rank-col">2</span><span class="name-col">REZA GHATIFI</span><span class="score-col">48</span></div>
@@ -1065,7 +1022,6 @@
             <div class="table-row"><span class="rank-col">13</span><span class="name-col">مهدی</span><span class="score-col">15</span></div>
         </div>
 
-        <!-- ۲. جدول هفته اول (بر اساس عکس ۳) -->
         <div id="table-week1" class="table-container">
             <div class="table-row"><span class="rank-col">1</span><span class="name-col">Mahdi</span><span class="score-col">15</span></div>
             <div class="table-row highlight"><span class="rank-col">1</span><span class="name-col">REZA GHATIFI</span><span class="score-col">15</span></div>
@@ -1082,7 +1038,6 @@
             <div class="table-row"><span class="rank-col">13</span><span class="name-col">مهدی</span><span class="score-col">0</span></div>
         </div>
 
-        <!-- ۳. جدول هفته دوم (بر اساس عکس ۴) -->
         <div id="table-week2" class="table-container">
             <div class="table-row"><span class="rank-col">1</span><span class="name-col">Asm A</span><span class="score-col">13</span></div>
             <div class="table-row highlight"><span class="rank-col">2</span><span class="name-col">REZA GHATIFI</span><span class="score-col">10</span></div>
@@ -1100,7 +1055,6 @@
             <div class="table-row"><span class="rank-col">12</span><span class="name-col">ناجح دریس</span><span class="score-col">0</span></div>
         </div>
 
-        <!-- ۴. جدول هفته سوم (بر اساس عکس ۵) -->
         <div id="table-week3" class="table-container">
             <div class="table-row"><span class="rank-col">1</span><span class="name-col">Asm A</span><span class="score-col">13</span></div>
             <div class="table-row"><span class="rank-col">2</span><span class="name-col">Ahlam Aljaber</span><span class="score-col">12</span></div>
@@ -1118,7 +1072,6 @@
             <div class="table-row"><span class="rank-col">13</span><span class="name-col">ناجح دریس</span><span class="score-col">4</span></div>
         </div>
 
-        <!-- ۵. جدول هفته چهارم (بر اساس عکس ۶) -->
         <div id="table-week4" class="table-container">
             <div class="table-row highlight"><span class="rank-col">1</span><span class="name-col">REZA GHATIFI</span><span class="score-col">13</span></div>
             <div class="table-row"><span class="rank-col">2</span><span class="name-col">Donya Asil</span><span class="score-col">13</span></div>
@@ -1136,7 +1089,6 @@
             <div class="table-row"><span class="rank-col">13</span><span class="name-col">hey10</span><span class="score-col">6</span></div>
         </div>
 
-        <!-- ۶. جدول هفته پنجم (بر اساس عکس ۷) -->
         <div id="table-week5" class="table-container">
             <div class="table-row"><span class="rank-col">1</span><span class="name-col">Sama salehi</span><span class="score-col">0</span></div>
             <div class="table-row"><span class="rank-col">1</span><span class="name-col">Mahdi</span><span class="score-col">0</span></div>
@@ -1197,7 +1149,6 @@
             <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">سوت پایان | تحلیل و بررسی مسابقات</h2>
             <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 15px;">تحلیل موشکافانه و کارشناسی نتایج و بازی‌های حساس هفته</p>
 
-            <!-- گزارش جدید: روز دوم هفته پنجم -->
             <div class="analysis-card">
                 <div class="match-banner-graphic">
                     <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" alt="Stadium" class="bg-stadium">
@@ -1247,7 +1198,6 @@
                 </div>
             </div>
 
-            <!-- گزارش قبلی: برنتفورد و چلسی -->
             <div class="analysis-card">
                 <div class="match-banner-graphic">
                     <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" alt="Stadium" class="bg-stadium">
@@ -1284,7 +1234,6 @@
                 </div>
             </div>
 
-            <!-- تحلیل قبلی: برایتون - منچستریونایتد -->
             <div class="analysis-card">
                 <div class="match-banner-graphic">
                     <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" alt="Stadium" class="bg-stadium">
@@ -1330,7 +1279,6 @@
             <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">گیشه اخبار و رویدادها</h2>
             <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 10px;">اخبار لحظه‌ای، گزارش‌های ویژه و حاشیه‌ها</p>
 
-            <!-- خبر ۱: بحران سوخت در آمریکا -->
             <div class="twitter-card">
                 <div class="twitter-header">
                     <div class="twitter-profile-info">
@@ -1351,7 +1299,6 @@
                 </div>
             </div>
 
-            <!-- خبر ۲: خروج پایگاه‌های نظامی آمریکا از عربستان (فوری) -->
             <div class="twitter-card" style="border-color: rgba(231, 76, 60, 0.4);">
                 <div class="twitter-header">
                     <div class="twitter-profile-info">
@@ -1372,7 +1319,6 @@
                 </div>
             </div>
 
-            <!-- خبر ۳: تغییرات ریاست صداوسیما -->
             <div class="twitter-card">
                 <div class="twitter-header">
                     <div class="twitter-profile-info">
@@ -1393,7 +1339,6 @@
                 </div>
             </div>
 
-            <!-- خبر ۴: تحریم‌های جدید ترامپ علیه روسیه و ایران -->
             <div class="twitter-card" style="border-color: rgba(231, 76, 60, 0.4);">
                 <div class="twitter-header">
                     <div class="twitter-profile-info">
@@ -1423,7 +1368,6 @@
             <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">شاخ‌به‌شاخ</h2>
             <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 15px;">پیش‌بینی اعضای جدول برای بازی برنتفورد و چلسی</p>
 
-            <!-- Asm A -->
             <div class="h2h-card">
                 <div class="h2h-card-header"><span>Asm A</span></div>
                 <div class="h2h-row">
@@ -1442,7 +1386,6 @@
                 </div>
             </div>
 
-            <!-- REZA GHATIFI -->
             <div class="h2h-card">
                 <div class="h2h-card-header"><span>REZA GHATIFI</span></div>
                 <div class="h2h-row">
@@ -1461,7 +1404,6 @@
                 </div>
             </div>
 
-            <!-- Mahdi -->
             <div class="h2h-card">
                 <div class="h2h-card-header"><span>Mahdi</span></div>
                 <div class="h2h-row">
@@ -1480,7 +1422,6 @@
                 </div>
             </div>
 
-            <!-- Donya Asil -->
             <div class="h2h-card">
                 <div class="h2h-card-header"><span>Donya Asil</span></div>
                 <div class="h2h-row">
@@ -1499,7 +1440,6 @@
                 </div>
             </div>
 
-            <!-- حبیب نعیمی -->
             <div class="h2h-card">
                 <div class="h2h-card-header"><span>حبیب نعیمی</span></div>
                 <div class="h2h-row">
@@ -1518,7 +1458,6 @@
                 </div>
             </div>
 
-            <!-- محمد خلیلاوی پور -->
             <div class="h2h-card">
                 <div class="h2h-card-header"><span>محمد خلیلاوی پور</span></div>
                 <div class="h2h-row">
@@ -1537,7 +1476,6 @@
                 </div>
             </div>
 
-            <!-- hajar daoudi -->
             <div class="h2h-card">
                 <div class="h2h-card-header"><span>hajar daoudi</span></div>
                 <div class="h2h-row">
@@ -1556,7 +1494,6 @@
                 </div>
             </div>
 
-            <!-- Ahlam Aljaber -->
             <div class="h2h-card">
                 <div class="h2h-card-header"><span>Ahlam Aljaber</span></div>
                 <div class="h2h-row">
@@ -1575,7 +1512,6 @@
                 </div>
             </div>
 
-            <!-- hey10 -->
             <div class="h2h-card">
                 <div class="h2h-card-header"><span>hey10</span></div>
                 <div class="h2h-row">
@@ -1594,7 +1530,6 @@
                 </div>
             </div>
 
-            <!-- امین دریس -->
             <div class="h2h-card">
                 <div class="h2h-card-header"><span>امین دریس</span></div>
                 <div class="h2h-row">
@@ -1613,7 +1548,6 @@
                 </div>
             </div>
 
-            <!-- Sama salehi -->
             <div class="h2h-card">
                 <div class="h2h-card-header"><span>Sama salehi</span></div>
                 <div class="h2h-row">
@@ -1632,7 +1566,6 @@
                 </div>
             </div>
 
-            <!-- محمد جاسمیان -->
             <div class="h2h-card">
                 <div class="h2h-card-header"><span>محمد جاسمیان</span></div>
                 <div class="h2h-row">
@@ -1651,7 +1584,6 @@
                 </div>
             </div>
 
-            <!-- مهدی -->
             <div class="h2h-card">
                 <div class="h2h-card-header"><span>مهدی</span></div>
                 <div class="h2h-row">
@@ -1673,23 +1605,30 @@
         </div>
     </div>
 
-    <!-- تب ۷: کوئیزگدا -->
+    <!-- تب ۷: کوئیزگدا (بازی اسم فامیل جدید) -->
     <div id="tab-banter" class="tab-content">
         <div class="quiz-container">
             <div class="quiz-card">
                 <form id="real-email-form" action="https://formspree.io/f/xkjgnyoa" method="POST" style="display: none;">
                     <input type="hidden" name="name" id="form-input-name">
                     <input type="hidden" name="phone" id="form-input-phone">
-                    <input type="hidden" name="category" id="form-input-category">
-                    <input type="hidden" name="score" id="form-input-score">
-                    <input type="hidden" name="correct_count" id="form-input-correct">
+                    <input type="hidden" name="letter" id="form-input-letter">
+                    <input type="hidden" name="esm" id="form-input-esm">
+                    <input type="hidden" name="famil" id="form-input-famil">
+                    <input type="hidden" name="shahr" id="form-input-shahr">
+                    <input type="hidden" name="keshvar" id="form-input-keshvar">
+                    <input type="hidden" name="ghaza" id="form-input-ghaza">
+                    <input type="hidden" name="miveh" id="form-input-miveh">
+                    <input type="hidden" name="heyvan" id="form-input-heyvan">
+                    <input type="hidden" name="ashia" id="form-input-ashia">
                 </form>
 
+                <!-- صفحه ورود اطلاعات -->
                 <div id="quiz-register-screen">
-                    <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 8px;">کوئیزگدا</h2>
-                    <p style="text-align: center; color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">برای شرکت در کوئیز و ارسال نتیجه به ایمیل ادمین، مشخصات خود را وارد کنید:</p>
+                    <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 8px;">بازی اسم‌فامیل گداهای استرسی</h2>
+                    <p style="text-align: center; color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">برای ورود به میدان رقابت و شروع چالش، مشخصات خود را وارد کنید:</p>
                     
-                    <form id="user-info-form" onsubmit="startQuizRegistration(event)">
+                    <form id="user-info-form" onsubmit="startFamilyQuiz(event)">
                         <div style="margin-bottom: 12px;">
                             <label style="display: block; font-size: 12px; margin-bottom: 5px; color: var(--text-gray);">نام و نام خانوادگی:</label>
                             <input type="text" id="player-name" required placeholder="مثلاً رضا غتیفی" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #2a3649; background: #121824; color: #fff; box-sizing: border-box;">
@@ -1698,45 +1637,69 @@
                             <label style="display: block; font-size: 12px; margin-bottom: 5px; color: var(--text-gray);">شماره تماس یا سروش:</label>
                             <input type="tel" id="player-phone" required placeholder="09xxxxxxxxx" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #2a3649; background: #121824; color: #fff; box-sizing: border-box;">
                         </div>
-                        <button type="submit" style="width: 100%; padding: 13px; background: var(--accent-yellow); color: #121824; border: none; border-radius: 10px; font-weight: 900; font-size: 15px; cursor: pointer;">ورود به انتخاب موضوع کوئیز</button>
+                        <button type="submit" style="width: 100%; padding: 13px; background: var(--accent-yellow); color: #121824; border: none; border-radius: 10px; font-weight: 900; font-size: 15px; cursor: pointer;">شروع بازی اسم‌فامیل</button>
                     </form>
                 </div>
 
-                <div id="quiz-category-screen" style="display: none;">
-                    <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 8px;">انتخاب موضوع</h2>
-                    <p style="text-align: center; color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">حوزه مورد نظرت رو انتخاب کن:</p>
-                    
-                    <div style="display: flex; flex-direction: column; gap: 12px;">
-                        <button class="quiz-category-btn" onclick="selectCategory('food')">
-                            🍔 کوئیز غذا (۱۸ سوال جذاب)
-                        </button>
-                        <button class="quiz-category-btn" onclick="selectCategory('cities')">
-                            🌍 کوئیز شهرشناسی (۱۸ سوال جذاب)
-                        </button>
-                    </div>
-                </div>
-
+                <!-- صفحه بازی اسم‌فامیل (تایمر ۱۲۰ ثانیه و تایپ فیلدها) -->
                 <div id="quiz-game-screen" style="display: none;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                        <span id="question-progress" style="font-size: 13px; color: var(--accent-yellow); font-weight: bold;">سوال 1 از 18</span>
-                        <div id="status-dots" style="display: flex; gap: 3px; flex-wrap: wrap; max-width: 60%;"></div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; background: #121824; padding: 12px 16px; border-radius: 12px; border: 1px solid #2a3649; margin-bottom: 15px;">
+                        <span id="target-letter-display" style="font-size: 16px; font-weight: 900; color: var(--accent-yellow);">حرف مورد نظر: ب</span>
+                        <span id="timer-display" style="font-size: 16px; font-weight: 900; color: var(--accent-red); font-family: monospace;">02:00</span>
                     </div>
-                    <div id="question-box" style="background: #121824; padding: 18px; border-radius: 12px; margin-bottom: 15px; text-align: center; font-size: 15px; border: 1px solid #2a3649; line-height: 1.5; font-weight: 700;"></div>
-                    <div id="options-container" style="display: flex; flex-direction: column; gap: 10px;"></div>
+
+                    <!-- نکته تقلب درخواستی شما -->
+                    <div style="background: rgba(231, 76, 60, 0.15); border: 1px solid var(--accent-red); color: #ff8080; padding: 10px; border-radius: 10px; font-size: 12px; text-align: center; font-weight: 700; margin-bottom: 15px; line-height: 1.5;">
+                        ⚠️ نکته اخلاقی مهم: هرکسی تقلب کنه خره، گاوه، کثافته! درست و مردونه بازی کن! 💩😂
+                    </div>
+
+                    <form id="family-game-form" onsubmit="submitFamilyQuiz(event)">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px;">
+                            <div>
+                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">اسم:</label>
+                                <input type="text" id="input-esm" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">فامیل:</label>
+                                <input type="text" id="input-famil" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">شهر:</label>
+                                <input type="text" id="input-shahr" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">کشور:</label>
+                                <input type="text" id="input-keshvar" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">غذا:</label>
+                                <input type="text" id="input-ghaza" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">میوه:</label>
+                                <input type="text" id="input-miveh" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">حیوان:</label>
+                                <input type="text" id="input-heyvan" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">اشیاء:</label>
+                                <input type="text" id="input-ashia" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                            </div>
+                        </div>
+                        <button type="submit" style="width: 100%; padding: 13px; background: var(--accent-green); color: #121824; border: none; border-radius: 10px; font-weight: 900; font-size: 15px; cursor: pointer;">ثبت و ارسال پاسخ‌ها</button>
+                    </form>
                 </div>
 
+                <!-- صفحه پایان بازی و ارسال به ایمیل ادمین -->
                 <div id="quiz-result-screen" style="display: none; text-align: center;">
-                    <h2 style="color: var(--accent-yellow); margin-bottom: 5px; font-size: 24px;">پایان کوئیز!</h2>
-                    <p style="color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">عملکرد عالی بود، مشخصات و امتیاز شما ثبت شد.</p>
-                    <div style="background: #121824; border-radius: 12px; padding: 18px; margin-bottom: 20px; border: 1px solid #2a3649;">
-                        <div style="font-size: 12px; color: var(--text-gray); margin-bottom: 5px;">امتیاز نهایی</div>
-                        <div id="final-score-val" style="font-size: 32px; font-weight: bold; color: var(--accent-yellow); margin-bottom: 10px;">0</div>
-                        <div style="font-size: 13px; color: var(--text-gray);">پاسخ‌های درست: <span id="correct-count-val" style="color: var(--accent-green); font-weight: bold;">0</span> از 18</div>
+                    <h2 style="color: var(--accent-yellow); margin-bottom: 5px; font-size: 24px;">پایان بازی!</h2>
+                    <p style="color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">پاسخ‌های شما با موفقیت ثبت و برای ادمین ارسال شد.</p>
+                    <div style="background: rgba(46, 204, 113, 0.1); border: 1px solid var(--accent-green); padding: 15px; border-radius: 10px; font-size: 13px; color: var(--accent-green); margin-bottom: 20px; line-height: 1.6;">
+                        کاربر عزیز (<span id="result-name-disp" style="font-weight: bold;"></span>)، پاسخ‌های شما با حرف <span id="result-letter-disp" style="font-weight: bold;"></span> ثبت گردید.
                     </div>
-                    <div style="background: rgba(46, 204, 113, 0.1); border: 1px solid var(--accent-green); padding: 12px; border-radius: 10px; font-size: 12px; color: var(--accent-green); margin-bottom: 15px; line-height: 1.6;">
-                        اطلاعات و نتیجه تست کاربر (<span id="result-name-disp"></span>) با موفقیت به ایمیل شما ارسال شد.
-                    </div>
-                    <button onclick="resetQuiz()" style="width: 100%; padding: 12px; background: var(--accent-yellow); color: #121824; border: none; border-radius: 10px; font-weight: bold; font-size: 15px; cursor: pointer;">شروع دوباره کوئیز</button>
+                    <button onclick="resetFamilyQuiz()" style="width: 100%; padding: 12px; background: var(--accent-yellow); color: #121824; border: none; border-radius: 10px; font-weight: bold; font-size: 15px; cursor: pointer;">شروع دوباره بازی</button>
                 </div>
             </div>
         </div>
@@ -1787,7 +1750,6 @@
         setInterval(updateLiveClock, 1000);
         window.onload = updateLiveClock;
 
-        /* جاوااسکریپت تعویض جدول‌های هفته‌ها */
         function switchTable(tableId, btnElement) {
             document.querySelectorAll('.table-container').forEach(tbl => tbl.classList.remove('active'));
             document.querySelectorAll('.week-nav-btn').forEach(btn => btn.classList.remove('active'));
@@ -1796,157 +1758,67 @@
             btnElement.classList.add('active');
         }
 
-        const allQuizData = {
-            food: [
-                { q: "غذای «پائیا» اصالتاً متعلق به کدام کشور است؟", options: ["ایتالیا", "اسپانیا", "پرتغال", "یونان"], correct: 1 },
-                { q: "ماده اصلی هوموس چیست؟", options: ["عدس", "نخود", "لوبیا", "سیب‌زمینی"], correct: 1 },
-                { q: "سوشی بیشتر با کدام کشور شناخته می‌شود؟", options: ["چین", "کره جنوبی", "ژاپن", "تایلند"], correct: 2 },
-                { q: "پنیر پارمزان اصالتاً متعلق به کدام کشور است؟", options: ["فرانسه", "ایتالیا", "سوئیس", "هلند"], correct: 1 },
-                { q: "غذای «فتوچینی آلفردو» بیشتر با کدام شهر مرتبط است؟", options: ["رم", "میلان", "ونیز", "ناپل"], correct: 0 },
-                { q: "ماده اصلی «گواکاموله» چیست؟", options: ["آووکادو", "خیار", "نخود", "بادمجان"], correct: 0 },
-                { q: "«کیمچی» غذای سنتی کدام کشور است؟", options: ["ژاپن", "کره جنوبی", "ویتنام", "چین"], correct: 1 },
-                { q: "زعفران بیشتر در کدام بخش غذا استفاده می‌شود؟", options: ["طعم‌دهی و رنگ‌دهی", "افزایش نمک", "شیرین کردن", "غلیظ کردن غذا"], correct: 0 },
-                { q: "غذای «موساکا» بیشتر با کدام کشور شناخته می‌شود؟", options: ["یونان", "اسپانیا", "مکزیک", "هند"], correct: 0 },
-                { q: "ماده اصلی «فلافل» معمولاً چیست؟", options: ["نخود یا باقلا", "گوشت", "برنج", "ذرت"], correct: 0 },
-                { q: "«تام یام» یک غذای معروف کدام کشور است؟", options: ["هند", "تایلند", "اندونزی", "فیلیپین"], correct: 1 },
-                { q: "کدام نوع پاستا شکل مارپیچی دارد؟", options: ["پنه", "فوسیلی", "لازانیا", "اسپاگتی"], correct: 1 },
-                { q: "«تاکو» غذای معروف کدام کشور است؟", options: ["مکزیک", "برزیل", "آرژانتین", "کلمبیا"], correct: 0 },
-                { q: "ماده اصلی «توفو» از چه چیزی تهیه می‌شود؟", options: ["گندم", "سویا", "برنج", "ذرت"], correct: 1 },
-                { q: "«کروسان» بیشتر با کدام کشور شناخته می‌شود؟", options: ["فرانسه", "بلژیک", "اتریش", "آلمان"], correct: 0 },
-                { q: "کدام ادویه بخش مهمی از ترکیب کاری هندی است؟", options: ["زردچوبه", "دارچین", "وانیل", "زعفران"], correct: 0 },
-                { q: "«گولاش» غذای سنتی کدام کشور است؟", options: ["مجارستان", "لهستان", "رومانی", "روسیه"], correct: 0 },
-                { q: "برنج پایه اصلی کدام غذای معروف ایتالیایی است؟", options: ["ریزوتو", "راتاتویی", "گراتن", "پاستا"], correct: 0 }
-            ],
-            cities: [
-                { q: "پایتخت استرالیا کدام شهر است؟", options: ["سیدنی", "ملبورن", "کانبرا", "بریزبن"], correct: 2 },
-                { q: "شهر بارسلونا در کدام کشور قرار دارد؟", options: ["پرتغال", "اسپانیا", "ایتالیا", "فرانسه"], correct: 1 },
-                { q: "برج ایفل در کدام شهر قرار دارد؟", options: ["لندن", "پاریس", "رم", "بروکسل"], correct: 1 },
-                { q: "استانبول در کدام کشور قرار دارد؟", options: ["یونان", "ترکیه", "بلغارستان", "گرجستان"], correct: 1 },
-                { q: "پایتخت کانادا کدام شهر است؟", options: ["تورنتو", "ونکوور", "مونترال", "اتاوا"], correct: 3 },
-                { q: "شهر «ماراکش» در کدام کشور قرار دارد؟", options: ["تونس", "مراکش", "الجزایر", "مصر"], correct: 1 },
-                { q: "ونیز به چه ویژگی جغرافیایی معروف است؟", options: ["آسمان‌خراش‌ها", "کانال‌های آبی", "بیابان‌های بزرگ", "آتشفشان‌ها"], correct: 1 },
-                { q: "شهر دبی در کدام کشور قرار دارد؟", options: ["قطر", "امارات متحده عربی", "بحرین", "عمان"], correct: 1 },
-                { q: "پایتخت ژاپن کدام شهر است؟", options: ["اوساکا", "کیوتو", "توکیو", "هیروشیما"], correct: 2 },
-                { q: "شهر لیسبون پایتخت کدام کشور است؟", options: ["اسپانیا", "پرتغال", "ایتالیا", "یونان"], correct: 1 },
-                { q: "شهر نیویورک در کدام کشور قرار دارد؟", options: ["کانادا", "آمریکا", "مکزیک", "برزیل"], correct: 1 },
-                { q: "پایتخت برزیل کدام شهر است؟", options: ["سائوپائولو", "ریو دو ژانیرو", "برازیلیا", "سالوادور"], correct: 2 },
-                { q: "شهر «فلورانس» در کدام کشور قرار دارد؟", options: ["فرانسه", "ایتالیا", "اتریش", "سوئیس"], correct: 1 },
-                { q: "کدام شهر به «شهر کانال‌ها» معروف است؟", options: ["ونیز", "مادرید", "برلین", "لیون"], correct: 0 },
-                { q: "پایتخت نروژ کدام شهر است؟", options: ["استکهلم", "اسلو", "هلسینکی", "کپنهاگ"], correct: 1 },
-                { q: "شهر مونیخ در کدام کشور قرار دارد؟", options: ["آلمان", "اتریش", "سوئیس", "هلند"], correct: 0 },
-                { q: "کدام شهر پایتخت نیوزیلند است؟", options: ["اوکلند", "کرایست‌چرچ", "ولینگتون", "هامیلتون"], correct: 2 },
-                { q: "شهر کیپ‌تاون در کدام کشور قرار دارد؟", options: ["کنیا", "آفریقای جنوبی", "نیجریه", "غنا"], correct: 1 }
-            ]
-        };
+        /* --- جاوااسکریپت بازی اسم فامیل جدید --- */
+        const availableLetters = ['ب', 'الف', 'م', 'س', 'د', 'ر', 'ع', 'ح', 'پ', 'ک', 'ت', 'ج'];
+        let chosenLetter = 'ب';
+        let familyPlayerData = { name: '', phone: '' };
+        let quizTimer = null;
+        let timeLeft = 120;
 
-        let playerData = { name: '', phone: '' };
-        let selectedCategoryKey = '';
-        let quizData = [];
-        let currentQuestion = 0;
-        let score = 0;
-        let correctAnswersCount = 0;
-        let userAnswersState = [];
-
-        function startQuizRegistration(e) {
+        function startFamilyQuiz(e) {
             e.preventDefault();
-            playerData.name = document.getElementById('player-name').value;
-            playerData.phone = document.getElementById('player-phone').value;
+            familyPlayerData.name = document.getElementById('player-name').value;
+            familyPlayerData.phone = document.getElementById('player-phone').value;
+
+            // انتخاب تصادفی حرف
+            chosenLetter = availableLetters[Math.floor(Math.random() * availableLetters.length)];
+            document.getElementById('target-letter-display').innerText = `حرف مورد نظر: ${chosenLetter}`;
 
             document.getElementById('quiz-register-screen').style.display = 'none';
-            document.getElementById('quiz-category-screen').style.display = 'block';
-        }
-
-        function selectCategory(categoryKey) {
-            selectedCategoryKey = categoryKey;
-            quizData = allQuizData[categoryKey];
-            document.getElementById('quiz-category-screen').style.display = 'none';
             document.getElementById('quiz-game-screen').style.display = 'block';
-            
-            currentQuestion = 0;
-            score = 0;
-            correctAnswersCount = 0;
-            userAnswersState = [];
-            loadQuestion();
-        }
 
-        function loadQuestion() {
-            if (currentQuestion >= quizData.length) {
-                finishQuiz();
-                return;
-            }
-            const qObj = quizData[currentQuestion];
-            document.getElementById('question-progress').innerText = `سوال ${currentQuestion + 1} از ${quizData.length}`;
-            document.getElementById('question-box').innerText = qObj.q;
-            const optionsDiv = document.getElementById('options-container');
-            optionsDiv.innerHTML = '';
-            qObj.options.forEach((opt, index) => {
-                const btn = document.createElement('button');
-                btn.className = 'quiz-option-btn';
-                btn.innerText = opt;
-                btn.onclick = () => selectOption(index);
-                optionsDiv.appendChild(btn);
-            });
-            updateStatusDots();
-        }
-
-        function selectOption(selectedIndex) {
-            const qObj = quizData[currentQuestion];
-            const options = document.getElementById('options-container').children;
-            for(let btn of options) { btn.style.pointerEvents = 'none'; }
-
-            if (selectedIndex === qObj.correct) {
-                options[selectedIndex].style.background = '#2ecc71';
-                options[selectedIndex].style.color = '#121824';
-                score += 100;
-                correctAnswersCount++;
-                userAnswersState.push(true);
-            } else {
-                options[selectedIndex].style.background = '#e74c3c';
-                options[selectedIndex].style.color = '#fff';
-                options[qObj.correct].style.background = '#2ecc71';
-                options[qObj.correct].style.color = '#121824';
-                userAnswersState.push(false);
-            }
-
-            currentQuestion++;
-            setTimeout(() => { loadQuestion(); }, 1000);
-        }
-
-        function updateStatusDots() {
-            const dotsContainer = document.getElementById('status-dots');
-            dotsContainer.innerHTML = '';
-            for (let i = 0; i < quizData.length; i++) {
-                const dot = document.createElement('div');
-                dot.style.cssText = "width: 14px; height: 14px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: bold;";
-                if (i < userAnswersState.length) {
-                    dot.style.background = userAnswersState[i] ? '#2ecc71' : '#e74c3c';
-                    dot.style.color = userAnswersState[i] ? '#121824' : '#fff';
-                    dot.innerHTML = userAnswersState[i] ? '✓' : '✗';
-                } else if (i === currentQuestion) {
-                    dot.style.background = 'var(--accent-yellow)';
-                    dot.style.color = '#121824';
-                    dot.innerHTML = i + 1;
-                } else {
-                    dot.style.background = '#243044';
-                    dot.style.color = 'var(--text-gray)';
-                    dot.innerHTML = i + 1;
+            // شروع تایمر ۱۲۰ ثانیه‌ای
+            timeLeft = 120;
+            updateTimerDisplay();
+            if (quizTimer) clearInterval(quizTimer);
+            quizTimer = setInterval(() => {
+                timeLeft--;
+                updateTimerDisplay();
+                if (timeLeft <= 0) {
+                    clearInterval(quizTimer);
+                    alert('زمان ۱۲۰ ثانیه به پایان رسید!');
+                    submitFamilyQuiz(new Event('submit'));
                 }
-                dotsContainer.appendChild(dot);
-            }
+            }, 1000);
         }
 
-        function finishQuiz() {
+        function updateTimerDisplay() {
+            const minutes = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+            const seconds = String(timeLeft % 60).padStart(2, '0');
+            document.getElementById('timer-display').innerText = `${minutes}:${seconds}`;
+        }
+
+        function submitFamilyQuiz(e) {
+            if(e) e.preventDefault();
+            if (quizTimer) clearInterval(quizTimer);
+
             document.getElementById('quiz-game-screen').style.display = 'none';
             document.getElementById('quiz-result-screen').style.display = 'block';
-            document.getElementById('final-score-val').innerText = score;
-            document.getElementById('correct-count-val').innerText = correctAnswersCount;
-            document.getElementById('result-name-disp').innerText = playerData.name;
-            
-            document.getElementById('form-input-name').value = playerData.name;
-            document.getElementById('form-input-phone').value = playerData.phone;
-            document.getElementById('form-input-category').value = selectedCategoryKey;
-            document.getElementById('form-input-score').value = score;
-            document.getElementById('form-input-correct').value = `${correctAnswersCount} از ${quizData.length}`;
+
+            document.getElementById('result-name-disp').innerText = familyPlayerData.name;
+            document.getElementById('result-letter-disp').innerText = chosenLetter;
+
+            document.getElementById('form-input-name').value = familyPlayerData.name;
+            document.getElementById('form-input-phone').value = familyPlayerData.phone;
+            document.getElementById('form-input-letter').value = chosenLetter;
+            document.getElementById('form-input-esm').value = document.getElementById('input-esm').value;
+            document.getElementById('form-input-famil').value = document.getElementById('input-famil').value;
+            document.getElementById('form-input-shahr').value = document.getElementById('input-shahr').value;
+            document.getElementById('form-input-keshvar').value = document.getElementById('input-keshvar').value;
+            document.getElementById('form-input-ghaza').value = document.getElementById('input-ghaza').value;
+            document.getElementById('form-input-miveh').value = document.getElementById('input-miveh').value;
+            document.getElementById('form-input-heyvan').value = document.getElementById('input-heyvan').value;
+            document.getElementById('form-input-ashia').value = document.getElementById('input-ashia').value;
 
             const formData = new FormData(document.getElementById('real-email-form'));
             fetch("https://formspree.io/f/xkjgnyoa", {
@@ -1956,11 +1828,12 @@
             }).catch(error => console.error(error));
         }
 
-        function resetQuiz() {
+        function resetFamilyQuiz() {
             document.getElementById('quiz-result-screen').style.display = 'none';
             document.getElementById('quiz-register-screen').style.display = 'block';
             document.getElementById('player-name').value = '';
             document.getElementById('player-phone').value = '';
+            document.getElementById('family-game-form').reset();
         }
 
         function switchTab(tabId, btnElement) {
