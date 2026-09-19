@@ -324,6 +324,209 @@
             margin-top: 1px;
         }
 
+        /* --- استایل بخش سکو (طراحی مدرن و ایزومتریک) --- */
+        .dsny-podium-container {
+            max-width: 680px;
+            margin: 0 auto;
+            background: #121824;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .dsny-top-stage {
+            background: radial-gradient(circle at center, #1b3a2b 0%, #0d141f 70%);
+            padding: 30px 20px 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 15px;
+            position: relative;
+            border-bottom-left-radius: 35px;
+            border-bottom-right-radius: 35px;
+            box-shadow: inset 0 -20px 30px rgba(0,0,0,0.6);
+        }
+
+        .dsny-podium-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 31%;
+            position: relative;
+        }
+
+        .dsny-avatar-wrapper {
+            position: relative;
+            margin-bottom: -15px;
+            z-index: 2;
+        }
+
+        .dsny-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            background: #2a3649;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .dsny-podium-col.first .dsny-avatar {
+            width: 80px;
+            height: 80px;
+            border-color: #2ecc71;
+            box-shadow: 0 0 25px rgba(46, 204, 113, 0.6);
+        }
+
+        .dsny-badge {
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 900;
+            color: #121824;
+            border: 2px solid #121824;
+            z-index: 3;
+        }
+
+        .dsny-badge.first { background-color: #2ecc71; }
+        .dsny-badge.second { background-color: #f5c518; }
+        .dsny-badge.third { background-color: #ff6b81; color: #fff; }
+
+        .dsny-cylinder {
+            width: 100%;
+            border-radius: 16px 16px 0 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 12px;
+            box-shadow: inset 0 10px 15px rgba(0,0,0,0.4);
+        }
+
+        .dsny-podium-col.second .dsny-cylinder {
+            height: 120px;
+            background: linear-gradient(180deg, #1f2d3d, #141c27);
+            border-top: 3px solid #f5c518;
+        }
+
+        .dsny-podium-col.first .dsny-cylinder {
+            height: 155px;
+            background: linear-gradient(180deg, #1e3d2f, #11241c);
+            border-top: 4px solid #2ecc71;
+        }
+
+        .dsny-podium-col.third .dsny-cylinder {
+            height: 105px;
+            background: linear-gradient(180deg, #35232d, #1f141a);
+            border-top: 3px solid #ff6b81;
+        }
+
+        .dsny-col-name {
+            font-size: 11px;
+            font-weight: 900;
+            color: #fff;
+            text-align: center;
+            padding: 0 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+
+        .dsny-col-score {
+            font-size: 13px;
+            font-weight: 900;
+            color: var(--accent-yellow);
+            margin-top: 2px;
+        }
+
+        .dsny-content-area {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 0 0 24px 24px;
+        }
+
+        .dsny-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .dsny-title {
+            font-size: 18px;
+            font-weight: 900;
+            color: #fff;
+        }
+
+        .dsny-date-range {
+            font-size: 12px;
+            color: var(--text-gray);
+            font-weight: 700;
+        }
+
+        .dsny-list-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #121824;
+            padding: 12px 16px;
+            border-radius: 14px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .dsny-item-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .dsny-item-badge {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 900;
+            color: #121824;
+        }
+
+        .dsny-item-badge.first { background-color: #2ecc71; }
+        .dsny-item-badge.second { background-color: #f5c518; }
+        .dsny-item-badge.third { background-color: #ff6b81; color: #fff; }
+
+        .dsny-item-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .dsny-item-score {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 16px;
+            font-weight: 900;
+            color: #fff;
+            font-family: monospace;
+        }
+
         /* --- استایل بخش گیشه --- */
         .news-container {
             max-width: 680px;
@@ -1032,7 +1235,90 @@
         </div>
     </div>
 
-    <!-- تب ۳: سوت پایان -->
+    <!-- تب ۳: سکو (تالار افتخارات هفته پنجم پیش بینی ها) -->
+    <div id="tab-podium" class="tab-content">
+        <div class="dsny-podium-container">
+            <div class="dsny-top-stage">
+                <!-- جایگاه دوم (چپ): پیرا -->
+                <div class="dsny-podium-col second">
+                    <div class="dsny-avatar-wrapper">
+                        <div class="dsny-avatar">🥈</div>
+                        <div class="dsny-badge second">2</div>
+                    </div>
+                    <div class="dsny-cylinder">
+                        <div class="dsny-col-name">پیرا</div>
+                        <div class="dsny-col-score">5 امتیاز</div>
+                    </div>
+                </div>
+
+                <!-- جایگاه اول (وسط): الجابر -->
+                <div class="dsny-podium-col first">
+                    <div class="dsny-avatar-wrapper">
+                        <div class="dsny-avatar">👑</div>
+                        <div class="dsny-badge first">1</div>
+                    </div>
+                    <div class="dsny-cylinder">
+                        <div class="dsny-col-name">الجابر</div>
+                        <div class="dsny-col-score">5 امتیاز</div>
+                    </div>
+                </div>
+
+                <!-- جایگاه سوم (راست): زویدات -->
+                <div class="dsny-podium-col third">
+                    <div class="dsny-avatar-wrapper">
+                        <div class="dsny-avatar">🥉</div>
+                        <div class="dsny-badge third">3</div>
+                    </div>
+                    <div class="dsny-cylinder">
+                        <div class="dsny-col-name">زویدات</div>
+                        <div class="dsny-col-score">4 امتیاز</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dsny-content-area">
+                <div class="dsny-header-row">
+                    <div class="dsny-title">تالار افتخارات هفته پنجم پیش‌بینی‌ها</div>
+                    <div class="dsny-date-range">لیگ گداهای استرسی</div>
+                </div>
+
+                <div class="dsny-list-item">
+                    <div class="dsny-item-left">
+                        <div class="dsny-item-badge first">1</div>
+                        <div class="dsny-item-name">الجابر</div>
+                    </div>
+                    <div class="dsny-item-score">
+                        <span>5</span>
+                        <span style="font-size: 14px;">⭐</span>
+                    </div>
+                </div>
+
+                <div class="dsny-list-item">
+                    <div class="dsny-item-left">
+                        <div class="dsny-item-badge second">2</div>
+                        <div class="dsny-item-name">پیرا</div>
+                    </div>
+                    <div class="dsny-item-score">
+                        <span>5</span>
+                        <span style="font-size: 14px;">⭐</span>
+                    </div>
+                </div>
+
+                <div class="dsny-list-item">
+                    <div class="dsny-item-left">
+                        <div class="dsny-item-badge third">3</div>
+                        <div class="dsny-item-name">زویدات</div>
+                    </div>
+                    <div class="dsny-item-score">
+                        <span>4</span>
+                        <span style="font-size: 14px;">⭐</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- تب ۴: سوت پایان -->
     <div id="tab-soutpayan" class="tab-content">
         <div class="match-analysis-container">
             <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">سوت پایان | تحلیل و بررسی مسابقات</h2>
@@ -1137,7 +1423,7 @@
                     <h3 class="analysis-headline">شامورتی‌بازیِ دوستانِ گداگشنه و سیلی آبدار برنتفورد به تیم پرپول چلسی!</h3>
                     <p class="analysis-text">
                         دیشب در شروع هفته پنجم پیش‌بینی‌ها، دوستان گداگشنه و فیره‌فروش فکر کردن خیلی زرنگن و برای برد چلسی شکمشون رو صابون زدن؛ اما دست از از اون غذا، این تیم برنتفورد بود که با ۳ گل خوشگل، تیم پرپول چلسی رو جر داد!<br><br>
-                        نتیجه؟ کل فیره‌فروشا صففر گرفتن و انگشت به دهن، منتظر پیش‌بینی بازی‌های بعدی موندن! اگه تیم‌هایی که بچه‌ها به عنوان برنده روشون حساب باز کرده بودن همین‌جوری پیش برن، از همین الان کاملاً معلومه کی قهرمان این فصل از استرس و بدبختی میشه!
+                        نتیجه؟ کل فیره‌فروشا صففر گرفتن و انگشت به دهن، منتظر پیش‌بینی بازی‌های بعدی موندن! اگه تیم‌هایی که بچه‌ها به عنوان برنده روشون حساب باز کردن همین‌جوری پیش برن، از همین الان کاملاً معلومه کی قهرمان این فصل از استرس و بدبختی میشه!
                     </p>
                 </div>
             </div>
@@ -1145,7 +1431,7 @@
         </div>
     </div>
 
-    <!-- تب ۴: گیشه -->
+    <!-- تب ۵: گیشه -->
     <div id="tab-gisheh" class="tab-content">
         <div class="news-container">
             <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">گیشه اخبار و رویدادها</h2>
@@ -1234,7 +1520,7 @@
         </div>
     </div>
 
-    <!-- تب ۵: کوئیزگدا (بازی اسم فامیل با زمان ۶۰ ثانیه) -->
+    <!-- تب ۶: کوئیزگدا (بازی اسم فامیل با زمان ۶۰ ثانیه) -->
     <div id="tab-banter" class="tab-content">
         <div class="quiz-container">
             <div class="quiz-card">
@@ -1341,6 +1627,9 @@
         </button>
         <button class="nav-item" onclick="switchTab('table', this)">
             <svg viewBox="0 0 24 24"><path d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z"/></svg>جدول
+        </button>
+        <button class="nav-item" onclick="switchTab('podium', this)">
+            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6Z"/></svg>سکو
         </button>
         <button class="nav-item" onclick="switchTab('soutpayan', this)">
             <svg viewBox="0 0 24 24"><path d="M15,3C13.89,3 13,3.89 13,5V6H6A2,2 0 0,0 4,8V16A2,2 0 0,0 6,18H13V19C13,20.1 13.89,21 15,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3M15,5H19V7H15V5M6,8H13V16H6V8M15,9H19V11H15V9M15,13H19V15H15V13Z"/></svg>سوت پایان
