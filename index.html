@@ -655,7 +655,7 @@
             line-height: 1.9;
         }
 
-        /* --- استایل بخش شاخ‌به‌شاخ (دقیقاً مشابه سبک تصویر ارسالی برای هر فرد جداگانه) --- */
+        /* --- استایل بخش شاخ‌به‌شاخ --- */
         .h2h-container {
             max-width: 680px;
             margin: 0 auto;
@@ -1159,7 +1159,28 @@
             <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">گیشه اخبار و رویدادها</h2>
             <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 10px;">اخبار لحظه‌ای، گزارش‌های ویژه و حاشیه‌ها</p>
 
-            <!-- توییت جدید: خبر فوری زاکانی -->
+            <!-- خبر جدید ۱: بحران سوخت در آمریکا -->
+            <div class="twitter-card">
+                <div class="twitter-header">
+                    <div class="twitter-profile-info">
+                        <div class="twitter-avatar">📰</div>
+                        <div class="twitter-name-box">
+                            <span class="twitter-display-name">گیشه اخبار <span class="twitter-badge">مهم</span></span>
+                            <span class="twitter-handle">@GishehNews</span>
+                        </div>
+                    </div>
+                    <span class="news-badge">اقتصادی</span>
+                </div>
+                <div class="twitter-tweet-text">
+                    در ایالت‌های مختلف آمریکا، به ویژه کالیفرنیا و تگزاس، کاهش قابل توجهی در میزان ذخیره بنزین و سوخت مشاهده شده است و نگرانی‌هایی در مورد بحران سوخت وجود دارد.
+                </div>
+                <div class="twitter-footer">
+                    <span>گیشه اخبار و رویدادها</span>
+                    <span class="twitter-live-timestamp" id="t-time-fuel">۲۷ شهریور ۱۴۰۵ - ۱۹:۲۰</span>
+                </div>
+            </div>
+
+            <!-- خبر جدید ۲: خروج پایگاه‌های نظامی آمریکا از عربستان (فوری) -->
             <div class="twitter-card" style="border-color: rgba(231, 76, 60, 0.4);">
                 <div class="twitter-header">
                     <div class="twitter-profile-info">
@@ -1169,19 +1190,60 @@
                             <span class="twitter-handle">@GishehNews</span>
                         </div>
                     </div>
-                    <span class="news-badge" style="background: var(--accent-red); color: #fff;">مهم</span>
+                    <span class="news-badge" style="background: var(--accent-red); color: #fff;">فوری</span>
                 </div>
                 <div class="twitter-tweet-text">
-                    <strong>هماهنگی دولت و شهرداری:</strong><br>
-                    دولت و شهرداری هماهنگ شدند تا از ۵ مهر قیمت برخی اقلام اساسی کاهش ‌یابد و تا ۶ ماه ثابت بماند.
+                    خبر فوری: ایالات متحده خروج پایگاه‌های نظامی خود از عربستان سعودی را اعلام کرد. به وضوح نشان می‌دهد که سربازان در حال ترک کشور خود با حمل تجهیزاتشان هستند. این بزرگ‌ترین پیروزی ایران است.
                 </div>
                 <div class="twitter-footer">
-                    <span>گیشه اخبار اقتصادی و شهری</span>
-                    <span class="twitter-live-timestamp" id="t-time-zakani">۲۷ شهریور ۱۴۰۵ - ۱۹:۲۰</span>
+                    <span>گیشه اخبار و رویدادها</span>
+                    <span class="twitter-live-timestamp" id="t-time-saudi">۲۷ شهریور ۱۴۰۵ - ۱۹:۲۰</span>
                 </div>
             </div>
 
-            <!-- توییت ۱: خبر فوری یمن و عربستان -->
+            <!-- خبر جدید ۳: تغییرات ریاست صداوسیما -->
+            <div class="twitter-card">
+                <div class="twitter-header">
+                    <div class="twitter-profile-info">
+                        <div class="twitter-avatar">📰</div>
+                        <div class="twitter-name-box">
+                            <span class="twitter-display-name">گیشه اخبار <span class="twitter-badge">سیاسی</span></span>
+                            <span class="twitter-handle">@GishehNews</span>
+                        </div>
+                    </div>
+                    <span class="news-badge">تحلیلی</span>
+                </div>
+                <div class="twitter-tweet-text">
+                    برخلاف ادعای #وحید_جلیلی مبنی بر تمدید حکم #پیمان_جبلی برای ریاست #صداوسیما به نظر میرسد در محافل تصمیم گیران نظام #ضرغامی به عنوان گزینه قطعی مشخص شده است.
+                </div>
+                <div class="twitter-footer">
+                    <span>گیشه اخبار و رویدادها</span>
+                    <span class="twitter-live-timestamp" id="t-time-seda">۲۷ شهریور ۱۴۰۵ - ۱۹:۲۰</span>
+                </div>
+            </div>
+
+            <!-- خبر جدید ۴: تحریم‌های جدید ترامپ علیه روسیه و ایران -->
+            <div class="twitter-card" style="border-color: rgba(231, 76, 60, 0.4);">
+                <div class="twitter-header">
+                    <div class="twitter-profile-info">
+                        <div class="twitter-avatar" style="background: var(--accent-red); color: #fff;">🚨</div>
+                        <div class="twitter-name-box">
+                            <span class="twitter-display-name">خبر ویژه <span class="twitter-badge urgent">مهم</span></span>
+                            <span class="twitter-handle">@GishehNews</span>
+                        </div>
+                    </div>
+                    <span class="news-badge" style="background: var(--accent-red); color: #fff;">بین‌الملل</span>
+                </div>
+                <div class="twitter-tweet-text">
+                    کاخ سفید: ترامپ پروژه قانون تحریم‌ها علیه روسیه و ایران را امضا کرد.
+                </div>
+                <div class="twitter-footer">
+                    <span>گیشه اخبار و رویدادها</span>
+                    <span class="twitter-live-timestamp" id="t-time-trump">۲۷ شهریور ۱۴۰۵ - ۱۹:۲۰</span>
+                </div>
+            </div>
+
+            <!-- توییت قبلی: خبر فوری یمن و عربستان -->
             <div class="twitter-card" style="border-color: rgba(231, 76, 60, 0.4);">
                 <div class="twitter-header">
                     <div class="twitter-profile-info">
@@ -1202,7 +1264,7 @@
                 </div>
             </div>
 
-            <!-- توییت ۲: موشک قاسم بصیر -->
+            <!-- توییت قبلی: موشک قاسم بصیر -->
             <div class="twitter-card">
                 <div class="twitter-header">
                     <div class="twitter-profile-info">
@@ -1227,7 +1289,7 @@
                 </div>
             </div>
 
-            <!-- توییت ۳: پاسخ موشکی به پایگاه آمریکا در اردن -->
+            <!-- توییت قبلی: پاسخ موشکی به پایگاه آمریکا در اردن -->
             <div class="twitter-card">
                 <div class="twitter-header">
                     <div class="twitter-profile-info">
@@ -1249,7 +1311,7 @@
                 </div>
             </div>
 
-            <!-- توییت ۴: پاکستان -->
+            <!-- توییت قبلی: پاکستان -->
             <div class="twitter-card">
                 <div class="twitter-header">
                     <div class="twitter-profile-info">
@@ -1271,7 +1333,7 @@
                 </div>
             </div>
 
-            <!-- توییت ۵: زاهدان -->
+            <!-- توییت قبلی: زاهدان -->
             <div class="twitter-card">
                 <div class="twitter-header">
                     <div class="twitter-profile-info">
@@ -1293,7 +1355,7 @@
                 </div>
             </div>
 
-            <!-- توییت ۶: موشک بدون بالک -->
+            <!-- توییت قبلی: موشک بدون بالک -->
             <div class="twitter-card">
                 <div class="twitter-header">
                     <div class="twitter-profile-info">
@@ -1315,7 +1377,7 @@
                 </div>
             </div>
 
-            <!-- توییت ۷: نفت عربستان -->
+            <!-- توییت قبلی: نفت عربستان -->
             <div class="twitter-card">
                 <div class="twitter-header">
                     <div class="twitter-profile-info">
@@ -1702,12 +1764,20 @@
             const tTime1 = document.getElementById('t-time-1');
             const tTime2 = document.getElementById('t-time-2');
             const tTimeZakani = document.getElementById('t-time-zakani');
+            const tTimeFuel = document.getElementById('t-time-fuel');
+            const tTimeSaudi = document.getElementById('t-time-saudi');
+            const tTimeSeda = document.getElementById('t-time-seda');
+            const tTimeTrump = document.getElementById('t-time-trump');
 
             if (timeEl1) timeEl1.innerText = `۲۷ شهریور ۱۴۰۵ - ${timeString}`;
             if (timeEl2) timeEl2.innerText = `۲۷ شهریور ۱۴۰۵ - ${timeString}`;
             if (tTime1) tTime1.innerText = `۲۷ شهریور ۱۴۰۵ - ${timeString}`;
             if (tTime2) tTime2.innerText = `۲۷ شهریور ۱۴۰۵ - ${timeString}`;
             if (tTimeZakani) tTimeZakani.innerText = `۲۷ شهریور ۱۴۰۵ - ${timeString}`;
+            if (tTimeFuel) tTimeFuel.innerText = `۲۷ شهریور ۱۴۰۵ - ${timeString}`;
+            if (tTimeSaudi) tTimeSaudi.innerText = `۲۷ شهریور ۱۴۰۵ - ${timeString}`;
+            if (tTimeSeda) tTimeSeda.innerText = `۲۷ شهریور ۱۴۰۵ - ${timeString}`;
+            if (tTimeTrump) tTimeTrump.innerText = `۲۷ شهریور ۱۴۰۵ - ${timeString}`;
         }
         setInterval(updateLiveClock, 1000);
         window.onload = updateLiveClock;
