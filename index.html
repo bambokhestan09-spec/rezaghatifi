@@ -49,13 +49,13 @@
         @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap');
 
         :root {
-            --bg-dark: #ffffff; /* تغییر کل پس‌زمینه به سفید */
+            --bg-light: #ffffff;
             --card-bg: #f8fafc;
-            --accent-yellow: #d97706;
+            --accent-amber: #d97706;
             --accent-green: #16a34a;
             --accent-blue: #2563eb;
             --accent-red: #dc2626;
-            --text-light: #0f172a; /* رنگ متن تیره برای خوانایی روی پس‌زمینه سفید */
+            --text-main: #0f172a;
             --text-gray: #64748b;
         }
 
@@ -67,8 +67,8 @@
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
+            background-color: var(--bg-light);
+            color: var(--text-main);
             min-height: 100vh;
             padding-bottom: 90px;
         }
@@ -138,7 +138,7 @@
             font-weight: 900;
             font-size: 18px;
             border-bottom: 1px solid #e2e8f0;
-            color: #0f172a;
+            color: var(--text-main);
         }
 
         .tab-content {
@@ -157,7 +157,7 @@
 
         .matchweek-banner {
             background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-            border: 2px solid var(--accent-yellow);
+            border: 2px solid var(--accent-amber);
             border-radius: 14px;
             padding: 15px;
             text-align: center;
@@ -166,7 +166,7 @@
         }
 
         .matchweek-banner h2 {
-            color: var(--accent-yellow);
+            color: var(--accent-amber);
             font-size: 20px;
             font-weight: 900;
             margin-bottom: 4px;
@@ -180,7 +180,7 @@
         .date-divider {
             font-size: 14px;
             font-weight: 900;
-            color: var(--accent-yellow);
+            color: var(--accent-amber);
             margin: 20px 0 10px 0;
             text-align: right;
             border-bottom: 1px solid #e2e8f0;
@@ -194,7 +194,7 @@
             padding: 20px;
             margin-bottom: 20px;
             border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
 
         .match-row-clean {
@@ -245,7 +245,7 @@
         .team-name {
             font-size: 13px;
             font-weight: 700;
-            color: #0f172a;
+            color: var(--text-main);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -264,7 +264,7 @@
         .match-time-text {
             font-size: 13px;
             font-weight: 900;
-            color: var(--accent-yellow);
+            color: var(--accent-amber);
             line-height: 1.2;
         }
 
@@ -277,7 +277,7 @@
 
         .match-league-badge {
             font-size: 9px;
-            color: #64748b;
+            color: var(--text-gray);
             background: #f1f5f9;
             padding: 1px 5px;
             border-radius: 4px;
@@ -298,14 +298,14 @@
             padding: 24px;
             text-align: center;
             border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             margin-bottom: 20px;
         }
 
         .countdown-title {
             font-size: 18px;
             font-weight: 900;
-            color: #0f172a;
+            color: var(--text-main);
             margin-bottom: 5px;
             display: flex;
             align-items: center;
@@ -340,7 +340,7 @@
         .countdown-number {
             font-size: 24px;
             font-weight: 900;
-            color: var(--accent-yellow);
+            color: var(--accent-amber);
             font-family: monospace;
             line-height: 1.2;
         }
@@ -377,14 +377,14 @@
         }
 
         .week-nav-btn:hover {
-            border-color: var(--accent-yellow);
-            color: #0f172a;
+            border-color: var(--accent-amber);
+            color: var(--text-main);
         }
 
         .week-nav-btn.active {
-            background: var(--accent-yellow);
+            background: var(--accent-amber);
             color: #ffffff;
-            border-color: var(--accent-yellow);
+            border-color: var(--accent-amber);
             font-weight: 900;
             box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
         }
@@ -393,11 +393,11 @@
         .dsny-podium-container {
             max-width: 680px;
             margin: 0 auto;
-            background: #f8fafc;
+            background: var(--card-bg);
             border-radius: 24px;
             overflow: hidden;
             border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
 
         .dsny-top-stage {
@@ -467,7 +467,7 @@
         }
 
         .dsny-badge.first { background-color: var(--accent-green); }
-        .dsny-badge.second { background-color: var(--accent-yellow); }
+        .dsny-badge.second { background-color: var(--accent-amber); }
         .dsny-badge.third { background-color: var(--accent-red); color: #fff; }
 
         .dsny-cylinder {
@@ -484,7 +484,7 @@
         .dsny-podium-col.second .dsny-cylinder {
             height: 120px;
             background: linear-gradient(180deg, #fef3c7, #fde68a);
-            border-top: 3px solid var(--accent-yellow);
+            border-top: 3px solid var(--accent-amber);
         }
 
         .dsny-podium-col.first .dsny-cylinder {
@@ -502,7 +502,7 @@
         .dsny-col-name {
             font-size: 11px;
             font-weight: 900;
-            color: #0f172a;
+            color: var(--text-main);
             text-align: center;
             padding: 0 4px;
             white-space: nowrap;
@@ -534,7 +534,7 @@
         .dsny-title {
             font-size: 18px;
             font-weight: 900;
-            color: #0f172a;
+            color: var(--text-main);
         }
 
         .dsny-date-range {
@@ -573,13 +573,13 @@
         }
 
         .dsny-item-badge.first { background-color: var(--accent-green); }
-        .dsny-item-badge.second { background-color: var(--accent-yellow); }
+        .dsny-item-badge.second { background-color: var(--accent-amber); }
         .dsny-item-badge.third { background-color: var(--accent-red); color: #fff; }
 
         .dsny-item-name {
             font-size: 14px;
             font-weight: 700;
-            color: #0f172a;
+            color: var(--text-main);
         }
 
         .dsny-item-score {
@@ -588,7 +588,7 @@
             gap: 6px;
             font-size: 16px;
             font-weight: 900;
-            color: #0f172a;
+            color: var(--text-main);
             font-family: monospace;
         }
 
@@ -628,7 +628,7 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-yellow), #f59e0b);
+            background: linear-gradient(135deg, var(--accent-amber), #f59e0b);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -646,7 +646,7 @@
         .twitter-display-name {
             font-size: 14px;
             font-weight: 900;
-            color: #0f172a;
+            color: var(--text-main);
             display: flex;
             align-items: center;
             gap: 5px;
@@ -659,7 +659,7 @@
 
         .twitter-badge {
             background: rgba(217, 119, 6, 0.1);
-            color: var(--accent-yellow);
+            color: var(--accent-amber);
             font-size: 10px;
             font-weight: 700;
             padding: 2px 8px;
@@ -693,7 +693,7 @@
         }
 
         .twitter-live-timestamp {
-            color: var(--accent-yellow);
+            color: var(--accent-amber);
             font-weight: 700;
             font-family: monospace;
             letter-spacing: 0.5px;
@@ -724,7 +724,7 @@
         .analysis-headline {
             font-size: 16px;
             font-weight: 900;
-            color: var(--accent-yellow);
+            color: var(--accent-amber);
             margin-bottom: 10px;
             line-height: 1.5;
         }
@@ -754,19 +754,19 @@
         .league-banner-title {
             font-size: 18px;
             font-weight: 900;
-            color: #0f172a;
+            color: var(--text-main);
             margin-bottom: 4px;
         }
 
         .league-banner-subtitle {
             font-size: 16px;
             font-weight: 900;
-            color: var(--accent-yellow);
+            color: var(--accent-amber);
         }
 
         .cup-hex-icon {
             background: rgba(217, 119, 6, 0.1);
-            border: 2px solid var(--accent-yellow);
+            border: 2px solid var(--accent-amber);
             width: 58px;
             height: 58px;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
@@ -795,7 +795,7 @@
             padding: 12px 20px;
             border-bottom: 1px solid #e2e8f0;
             align-items: center;
-            color: #0f172a;
+            color: var(--text-main);
         }
 
         .table-row:last-child {
@@ -838,7 +838,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: #0f172a; /* رنگ متمایز تیره برای نوار پایین */
+            background-color: #0f172a;
             display: flex;
             justify-content: space-around;
             padding: 10px 0;
@@ -850,7 +850,7 @@
         .nav-item {
             background: none;
             border: none;
-            color: #94a3b8; /* رنگ خاکستری روشن برای آیتم‌های غیرفعال */
+            color: #94a3b8;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -861,9 +861,8 @@
             transition: color 0.2s ease;
         }
 
-        /* رنگ متمایز و خاص برای آیکون active */
         .nav-item.active {
-            color: #f5c518; /* رنگ زرد طلایی کاملاً متمایز برای آیتم فعال */
+            color: #f5c518;
             font-weight: 900;
         }
 
@@ -915,7 +914,7 @@
                     <span>برنامه کامل مسابقات با تاریخ و ساعت</span>
                 </div>
 
-                <button onclick="requestNotification()" style="width: 100%; background: var(--accent-yellow); color: #ffffff; font-weight: 900; border: none; padding: 12px; border-radius: 12px; margin-bottom: 15px; cursor: pointer; font-size: 13px; box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);">
+                <button onclick="requestNotification()" style="width: 100%; background: var(--accent-amber); color: #ffffff; font-weight: 900; border: none; padding: 12px; border-radius: 12px; margin-bottom: 15px; cursor: pointer; font-size: 13px; box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);">
                     دریافت خبرها و یادآوری مسابقات (کلیک کنید)
                 </button>
 
@@ -1040,7 +1039,7 @@
                 </div>
 
                 <div style="margin: 20px 0; text-align: center;">
-                    <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" style="display: block; background-color: var(--accent-yellow); color: #ffffff; font-weight: 900; padding: 14px; border-radius: 12px; text-decoration: none; font-size: 15px; box-shadow: 0 4px 10px rgba(217, 119, 6, 0.3);">
+                    <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" style="display: block; background-color: var(--accent-amber); color: #ffffff; font-weight: 900; padding: 14px; border-radius: 12px; text-decoration: none; font-size: 15px; box-shadow: 0 4px 10px rgba(217, 119, 6, 0.3);">
                         ورود به لیگ پیش‌بینی در فوت‌موب
                     </a>
                 </div>
@@ -1070,7 +1069,7 @@
                 </div>
 
                 <div style="display: flex; align-items: center; justify-content: space-between; background: var(--card-bg); padding: 16px 20px; border-radius: 16px; border: 1px solid #e2e8f0;">
-                    <span style="font-weight: 700; font-size: 14px; color: #0f172a;">Weekly Reminders</span>
+                    <span style="font-weight: 700; font-size: 14px; color: var(--text-main);">Weekly Reminders</span>
                     <label style="position: relative; display: inline-block; width: 50px; height: 26px;">
                         <input type="checkbox" checked style="opacity: 0; width: 0; height: 0;">
                         <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--accent-green); transition: .4s; border-radius: 34px;"></span>
@@ -1184,18 +1183,20 @@
             <div class="table-row"><span class="rank-col">13</span><span class="name-col">hey10</span><span class="score-col">6</span></div>
         </div>
 
+        <!-- جدول هفته پنجم (کاملاً هماهنگ و بدون تمایز رنگی برای شما) -->
         <div id="table-week5" class="table-container">
-            <div class="table-row"><span class="rank-col">1</span><span class="name-col">Ahlam Aljaber</span><span class="score-col">5</span></div>
-            <div class="table-row"><span class="rank-col">1</span><span class="name-col">hey10</span><span class="score-col">5</span></div>
-            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Asm A</span><span class="score-col">4</span></div>
-            <div class="table-row"><span class="rank-col">4</span><span class="name-col">hajar daoudi</span><span class="score-col">3</span></div>
-            <div class="table-row"><span class="rank-col">4</span><span class="name-col">حبیب نعیمی</span><span class="score-col">3</span></div>
-            <div class="table-row highlight"><span class="rank-col">4</span><span class="name-col">REZA GHATIFI</span><span class="score-col">3</span></div>
-            <div class="table-row"><span class="rank-col">7</span><span class="name-col">Sama salehi</span><span class="score-col">2</span></div>
-            <div class="table-row"><span class="rank-col">7</span><span class="name-col">Mahdi</span><span class="score-col">2</span></div>
-            <div class="table-row"><span class="rank-col">7</span><span class="name-col">Donya Asil</span><span class="score-col">2</span></div>
-            <div class="table-row"><span class="rank-col">7</span><span class="name-col">امین دریس</span><span class="score-col">2</span></div>
-            <div class="table-row"><span class="rank-col">7</span><span class="name-col">محمد خلیلاوی پور</span><span class="score-col">2</span></div>
+            <div class="table-row"><span class="rank-col">1</span><span class="name-col">hajar daoudi</span><span class="score-col">6</span></div>
+            <div class="table-row"><span class="rank-col">1</span><span class="name-col">REZA GHATIFI</span><span class="score-col">6</span></div>
+            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Asm A</span><span class="score-col">6</span></div>
+            <div class="table-row"><span class="rank-col">4</span><span class="name-col">Ahlam Aljaber</span><span class="score-col">5</span></div>
+            <div class="table-row"><span class="rank-col">4</span><span class="name-col">hey10</span><span class="score-col">5</span></div>
+            <div class="table-row"><span class="rank-col">4</span><span class="name-col">محمد خلیلاوی پور</span><span class="score-col">5</span></div>
+            <div class="table-row"><span class="rank-col">4</span><span class="name-col">حبیب نعیمی</span><span class="score-col">5</span></div>
+            <div class="table-row"><span class="rank-col">8</span><span class="name-col">Mahdi</span><span class="score-col">4</span></div>
+            <div class="table-row"><span class="rank-col">8</span><span class="name-col">Donya Asil</span><span class="score-col">4</span></div>
+            <div class="table-row"><span class="rank-col">10</span><span class="name-col">Sama salehi</span><span class="score-col">2</span></div>
+            <div class="table-row"><span class="rank-col">10</span><span class="name-col">امین دریس</span><span class="score-col">2</span></div>
+            <div class="table-row"><span class="rank-col">10</span><span class="name-col">محمد جاسمیان</span><span class="score-col">2</span></div>
         </div>
     </div>
 
@@ -1282,7 +1283,7 @@
     <!-- تب ۴: سوت پایان -->
     <div id="tab-soutpayan" class="tab-content">
         <div class="match-analysis-container">
-            <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">سوت پایان | تحلیل و بررسی مسابقات</h2>
+            <h2 style="text-align: center; color: var(--accent-amber); margin-bottom: 5px;">سوت پایان | تحلیل و بررسی مسابقات</h2>
             <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 15px;">گزارش اختصاصی و تحلیل‌های شب گذشته</p>
 
             <div class="analysis-card">
@@ -1306,7 +1307,7 @@
     <!-- تب ۵: گیشه -->
     <div id="tab-gisheh" class="tab-content">
         <div class="news-container">
-            <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">گیشه اخبار و رویدادها</h2>
+            <h2 style="text-align: center; color: var(--accent-amber); margin-bottom: 5px;">گیشه اخبار و رویدادها</h2>
             <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 10px;">اخبار لحظه‌ای، گزارش‌های ویژه و حاشیه‌ها</p>
 
             <div class="twitter-card">
@@ -1418,17 +1419,17 @@
                     <div style="text-align: center; margin-bottom: 15px;">
                         <span style="background: var(--accent-green); color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 13px; font-weight: 900;">اسم فامیل آنلاین</span>
                     </div>
-                    <h2 style="text-align: center; color: #0f172a; margin-bottom: 6px; font-size: 20px; font-weight: 900;">سلام، رفیق! 👋</h2>
-                    <p style="text-align: center; color: #64748b; font-size: 13px; margin-bottom: 20px; font-weight: 700;">آماده‌ای بقیه رو به چالش بکشی و رکورد بزنی؟</p>
+                    <h2 style="text-align: center; color: var(--text-main); margin-bottom: 6px; font-size: 20px; font-weight: 900;">سلام، رفیق! 👋</h2>
+                    <p style="text-align: center; color: var(--text-gray); font-size: 13px; margin-bottom: 20px; font-weight: 700;">آماده‌ای بقیه رو به چالش بکشی و رکورد بزنی؟</p>
                     
                     <form id="user-info-form" onsubmit="spinWheelAndStart(event)">
                         <div style="margin-bottom: 12px;">
                             <label style="display: block; font-size: 12px; margin-bottom: 5px; color: #334155; font-weight: 700;">نام کاربری خود را وارد کنید:</label>
-                            <input type="text" id="player-name" required placeholder="مثلاً رضا غتیفی" style="width: 100%; padding: 12px; border-radius: 12px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-weight: 700; box-sizing: border-box; outline: none;">
+                            <input type="text" id="player-name" required placeholder="مثلاً رضا غتیفی" style="width: 100%; padding: 12px; border-radius: 12px; border: 1px solid #cbd5e1; background: #f8fafc; color: var(--text-main); font-weight: 700; box-sizing: border-box; outline: none;">
                         </div>
                         <div style="margin-bottom: 20px;">
                             <label style="display: block; font-size: 12px; margin-bottom: 5px; color: #334155; font-weight: 700;">شماره تماس یا سروش (برای ثبت امتیاز):</label>
-                            <input type="tel" id="player-phone" required placeholder="09xxxxxxxxx" style="width: 100%; padding: 12px; border-radius: 12px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-weight: 700; box-sizing: border-box; outline: none;">
+                            <input type="tel" id="player-phone" required placeholder="09xxxxxxxxx" style="width: 100%; padding: 12px; border-radius: 12px; border: 1px solid #cbd5e1; background: #f8fafc; color: var(--text-main); font-weight: 700; box-sizing: border-box; outline: none;">
                         </div>
 
                         <div style="background: #f1f5f9; padding: 14px; border-radius: 14px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
@@ -1447,9 +1448,9 @@
 
                     <!-- جدول امتیازات سراسری کاربران -->
                     <div id="esm-leaderboard-section" style="margin-top: 20px; display: none; background: #f8fafc; border-radius: 14px; padding: 15px; border: 1px solid #e2e8f0;">
-                        <div style="font-weight: 900; font-size: 14px; color: #0f172a; margin-bottom: 10px; text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 6px;">جدول امتیازات برتر اسم‌فامیل 🏆</div>
+                        <div style="font-weight: 900; font-size: 14px; color: var(--text-main); margin-bottom: 10px; text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 6px;">جدول امتیازات برتر اسم‌فامیل 🏆</div>
                         <div id="dynamic-esm-leaderboard">
-                            <div style="text-align: center; color: #64748b; font-size: 12px; padding: 10px;">هنوز بازیکنی ثبت نشده است</div>
+                            <div style="text-align: center; color: var(--text-gray); font-size: 12px; padding: 10px;">هنوز بازیکنی ثبت نشده است</div>
                         </div>
                     </div>
                 </div>
@@ -1469,43 +1470,43 @@
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px;">
                             <div>
                                 <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">اسم:</label>
-                                <input type="text" id="input-esm" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
+                                <input type="text" id="input-esm" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: var(--text-main); font-size: 13px; outline: none;">
                             </div>
                             <div>
                                 <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">فامیل:</label>
-                                <input type="text" id="input-famil" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
+                                <input type="text" id="input-famil" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: var(--text-main); font-size: 13px; outline: none;">
                             </div>
                             <div>
                                 <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">شهر:</label>
-                                <input type="text" id="input-shahr" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
+                                <input type="text" id="input-shahr" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: var(--text-main); font-size: 13px; outline: none;">
                             </div>
                             <div>
                                 <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">کشور:</label>
-                                <input type="text" id="input-keshvar" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
+                                <input type="text" id="input-keshvar" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: var(--text-main); font-size: 13px; outline: none;">
                             </div>
                             <div>
                                 <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">میوه:</label>
-                                <input type="text" id="input-miveh" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
+                                <input type="text" id="input-miveh" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: var(--text-main); font-size: 13px; outline: none;">
                             </div>
                             <div>
                                 <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">غذا:</label>
-                                <input type="text" id="input-ghaza" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
+                                <input type="text" id="input-ghaza" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: var(--text-main); font-size: 13px; outline: none;">
                             </div>
                             <div>
                                 <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">رنگ:</label>
-                                <input type="text" id="input-rang" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
+                                <input type="text" id="input-rang" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: var(--text-main); font-size: 13px; outline: none;">
                             </div>
                             <div>
                                 <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">حیوان:</label>
-                                <input type="text" id="input-heyvan" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
+                                <input type="text" id="input-heyvan" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: var(--text-main); font-size: 13px; outline: none;">
                             </div>
                             <div>
                                 <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">ماشین:</label>
-                                <input type="text" id="input-mashin" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
+                                <input type="text" id="input-mashin" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: var(--text-main); font-size: 13px; outline: none;">
                             </div>
                             <div>
                                 <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">اشیا:</label>
-                                <input type="text" id="input-ashia" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
+                                <input type="text" id="input-ashia" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: var(--text-main); font-size: 13px; outline: none;">
                             </div>
                         </div>
                         <button type="submit" style="width: 100%; padding: 14px; background: var(--accent-green); color: #fff; border: none; border-radius: 12px; font-weight: 900; font-size: 15px; cursor: pointer; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);">ثبت نهایی و مشاهده امتیاز</button>
@@ -1514,12 +1515,12 @@
 
                 <!-- صفحه نتیجه نهایی بازی -->
                 <div id="quiz-result-screen" style="display: none; text-align: center;">
-                    <h2 style="color: #0f172a; margin-bottom: 5px; font-size: 22px; font-weight: 900;">پایان بازی! 🏆</h2>
-                    <p style="color: #64748b; font-size: 13px; margin-bottom: 15px;">امتیاز شما در این مرحله با موفقیت محاسبه و ثبت شد.</p>
+                    <h2 style="color: var(--text-main); margin-bottom: 5px; font-size: 22px; font-weight: 900;">پایان بازی! 🏆</h2>
+                    <p style="color: var(--text-gray); font-size: 13px; margin-bottom: 15px;">امتیاز شما در این مرحله با موفقیت محاسبه و ثبت شد.</p>
                     <div style="background: rgba(22, 163, 74, 0.1); border: 1px solid var(--accent-green); padding: 15px; border-radius: 12px; font-size: 14px; color: var(--accent-green); margin-bottom: 20px; line-height: 1.6; font-weight: 700;">
                         کاربر عزیز (<span id="result-name-disp"></span>)، امتیاز کل شما: <span id="result-score-disp" style="font-size: 18px; font-weight: 900;"></span> 🪙
                     </div>
-                    <button onclick="resetFamilyQuiz()" style="width: 100%; padding: 13px; background: var(--accent-yellow); color: #ffffff; border: none; border-radius: 12px; font-weight: 900; font-size: 15px; cursor: pointer;">انجام مجدد بازی</button>
+                    <button onclick="resetFamilyQuiz()" style="width: 100%; padding: 13px; background: var(--accent-amber); color: #ffffff; border: none; border-radius: 12px; font-weight: 900; font-size: 15px; cursor: pointer;">انجام مجدد بازی</button>
                 </div>
             </div>
         </div>
