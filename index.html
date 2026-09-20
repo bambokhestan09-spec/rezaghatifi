@@ -364,7 +364,7 @@
             box-shadow: 0 4px 12px rgba(245, 197, 24, 0.3);
         }
 
-        /* --- استایل فانتزی بخش اسم فامیل (بر اساس تم تصاویر ارسالی) --- */
+        /* --- استایل فانتزی بخش اسم فامیل --- */
         .q26-container {
             max-width: 680px;
             margin: 0 auto;
@@ -501,7 +501,6 @@
         .q26-action-history { background: #6c5ce7; }
         .q26-action-guide { background: #27ae60; }
 
-        /* صفحه بازی اسم فامیل */
         .esm-fامیل-screen {
             display: none;
         }
@@ -546,7 +545,33 @@
             border-color: #27ae60;
         }
 
-        /* جدول رده‌بندی، سکو، سوت پایان و گیشه */
+        /* استایل جدول داخل کوئیز */
+        .esm-leaderboard-box {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            margin-top: 15px;
+            display: none;
+        }
+
+        .esm-table-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 14px;
+            border-bottom: 1px solid #f1f5f9;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: #334155;
+        }
+
+        .esm-table-row.highlight {
+            background-color: rgba(46, 204, 113, 0.12);
+            color: #27ae60;
+        }
+
+        /* --- جدول رده‌بندی لیگ اصلی، سکو، سوت پایان و گیشه --- */
         .league-banner-card {
             background: radial-gradient(circle at top right, rgba(245, 197, 24, 0.2), transparent 70%), #1c2536;
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -859,7 +884,7 @@
         </div>
     </div>
 
-    <!-- تب ۲: جدول رده‌بندی -->
+    <!-- تب ۲: جدول رده‌بندی لیگ اصلی -->
     <div id="tab-table" class="tab-content">
         <div class="league-banner-card">
             <div>
@@ -871,21 +896,11 @@
             </div>
         </div>
 
-        <div class="weeks-nav-container">
-            <button class="week-nav-btn active" onclick="switchTable('complete', this)">جدول کامل</button>
-            <button class="week-nav-btn" onclick="switchTable('asmfmil', this)">جدول اسم‌فامیل</button>
-        </div>
-
-        <div id="table-complete" class="table-container active">
+        <div class="table-container active">
             <div class="table-row"><span class="rank-col">1</span><span class="name-col">Asm A</span><span class="score-col">56</span></div>
             <div class="table-row highlight"><span class="rank-col">2</span><span class="name-col">REZA GHATIFI</span><span class="score-col">51</span></div>
-        </div>
-
-        <div id="table-asmfmil" class="table-container">
-            <div id="dynamic-leaderboard-list">
-                <!-- رتبه‌های اسم فامیل به صورت زنده اینجا قرار می‌گیرند -->
-                <div class="table-row"><span class="rank-col">1</span><span class="name-col">هنوز بازیکنی ثبت نشده</span><span class="score-col">0</span></div>
-            </div>
+            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Mahdi</span><span class="score-col">47</span></div>
+            <div class="table-row"><span class="rank-col">4</span><span class="name-col">Donya Asil</span><span class="score-col">46</span></div>
         </div>
     </div>
 
@@ -913,7 +928,7 @@
         </div>
     </div>
 
-    <!-- تب ۴: سوت پایان -->
+    <!-- تب ۴: سوت پایان (گزارش بدون تغییر کلمه به کلمه) -->
     <div id="tab-soutpayan" class="tab-content">
         <div class="match-analysis-container">
             <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">سوت پایان | تحلیل و بررسی مسابقات</h2>
@@ -954,7 +969,7 @@
         </div>
     </div>
 
-    <!-- تب ۶: کوئیز (بازی اسم فامیل آنلاین با گرافیک فانتزی) -->
+    <!-- تب ۶: کوئیز (بازی اسم فامیل آنلاین همراه با جدول رتبه‌بندی داخلی) -->
     <div id="tab-banter" class="tab-content">
         <!-- صفحه اصلی اسم فامیل -->
         <div class="q26-container" id="esm-home-screen">
@@ -964,7 +979,7 @@
                     <div class="q26-main-logo">اسم<span>فامیل</span></div>
                     <div class="q26-subtitle">چالش آنلاین گداهای استرسی</div>
                 </div>
-                <button class="q26-icon-btn" onclick="switchTab('table', document.querySelectorAll('.nav-item')[1])">🏆</button>
+                <button class="q26-icon-btn" onclick="toggleEsmLeaderboard()">🏆</button>
             </div>
 
             <div style="margin-bottom: 15px;">
@@ -994,12 +1009,20 @@
             <div style="text-align: center; font-size: 11px; color: #555; margin-bottom: 15px; font-weight: 700;">هر پاسخ درست ۱۰ امتیاز | خانه خالی یا اشتباه ۱ امتیاز منفی</div>
 
             <div class="q26-bottom-grid">
-                <button class="q26-action-btn q26-action-history" onclick="switchTab('table', document.querySelectorAll('.nav-item')[1])">
+                <button class="q26-action-btn q26-action-history" onclick="toggleEsmLeaderboard()">
                     <span>📋 جدول رتبه‌بندی</span>
                 </button>
                 <button class="q26-action-btn q26-action-guide" onclick="alert('راهنما: در مدت ۷۰ ثانیه ۱۰ فیلد (اسم، فامیل، شهر، کشور، میوه، غذا، رنگ، حیوان، ماشین، اشیا) را با حرف مشخص شده پر کنید!')">
                     <span>🎓 آموزش بازی</span>
                 </button>
+            </div>
+
+            <!-- جدول رتبه‌بندی درون خود کوئیز -->
+            <div class="esm-leaderboard-box" id="esm-leaderboard-section">
+                <div style="font-weight: 900; font-size: 15px; color: #0f172a; margin-bottom: 10px; text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 6px;">جدول امتیازات اسم‌فامیل 🏆</div>
+                <div id="dynamic-esm-leaderboard">
+                    <div class="esm-table-row"><span>-</span><span>هنوز بازیکنی ثبت نشده</span><span>0</span></div>
+                </div>
             </div>
         </div>
 
@@ -1042,7 +1065,6 @@
     </nav>
 
     <script>
-        // شمارش معکوس هفته ششم
         let totalSeconds = 45 * 3600 + 30 * 60 + 20;
         setInterval(() => {
             if (totalSeconds > 0) totalSeconds--;
@@ -1063,13 +1085,6 @@
             btn.classList.add('active');
         }
 
-        function switchTable(tableId, btn) {
-            document.querySelectorAll('.table-container').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('#tab-table .week-nav-btn').forEach(b => b.classList.remove('active'));
-            document.getElementById('table-' + tableId).classList.add('active');
-            if(btn) btn.classList.add('active');
-        }
-
         function switchTab(tabId, btn) {
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
             document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
@@ -1078,16 +1093,23 @@
             window.scrollTo(0, 0);
         }
 
-        // منطق بازی اسم فامیل
         const alphabet32 = ['آ', 'ا', 'ب', 'پ', 'ت', 'ث', 'ج', 'چ', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'ژ', 'س', 'ش', 'ص', 'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ک', 'گ', 'ل', 'م', 'ن', 'و', 'ه', 'ی'];
         let chosenLetter = 'ب';
         let esmTimer = null;
         let timeLeftEsm = 70;
         let currentUser = '';
 
-        // بارگذاری امتیازات ذخیره شده کاربران
         let esmLeaderboard = JSON.parse(localStorage.getItem('esm_leaderboard') || '[]');
-        updateLeaderboardUI();
+        updateEsmLeaderboardUI();
+
+        function toggleEsmLeaderboard() {
+            const section = document.getElementById('esm-leaderboard-section');
+            if (section.style.display === 'block') {
+                section.style.display = 'none';
+            } else {
+                section.style.display = 'block';
+            }
+        }
 
         function startEsmFamilGame() {
             currentUser = document.getElementById('username-input').value.trim();
@@ -1096,12 +1118,10 @@
                 return;
             }
 
-            // انتخاب حرف تصادفی از گردونه ۳۲ حرفی
             chosenLetter = alphabet32[Math.floor(Math.random() * alphabet32.length)];
             document.getElementById('wheel-letter-display').innerText = chosenLetter;
             document.getElementById('active-letter-badge').innerText = chosenLetter;
 
-            // پاک کردن فرم قبلی
             ['f-esm', 'f-famil', 'f-shahr', 'f-keshvar', 'f-miveh', 'f-ghaza', 'f-rang', 'f-heyvan', 'f-mashin', 'f-ashia'].forEach(id => {
                 document.getElementById(id).value = '';
             });
@@ -1138,15 +1158,14 @@
             fields.forEach(id => {
                 const val = document.getElementById(id).value.trim();
                 if (val !== '' && val.startsWith(chosenLetter)) {
-                    score += 10; // درست نوشته شده
+                    score += 10;
                 } else {
-                    score -= 1; // خالی یا اشتباه یا مغایر با حرف گردونه
+                    score -= 1;
                 }
             });
 
             document.getElementById('last-score-display').innerText = score;
 
-            // ثبت امتیاز کاربر در جدول زنده
             const existingIndex = esmLeaderboard.findIndex(u => u.name === currentUser);
             if (existingIndex >= 0) {
                 esmLeaderboard[existingIndex].score += score;
@@ -1154,33 +1173,29 @@
                 esmLeaderboard.push({ name: currentUser, score: score });
             }
 
-            // مرتب‌سازی جدول بر اساس امتیاز نزولی
             esmLeaderboard.sort((a, b) => b.score - a.score);
             localStorage.setItem('esm_leaderboard', JSON.stringify(esmLeaderboard));
-            updateLeaderboardUI();
+            updateEsmLeaderboardUI();
 
             alert(`بازی تمام شد! امتیاز کسب شده در این مرحله: ${score}`);
             document.getElementById('esm-game-screen').style.display = 'none';
             document.getElementById('esm-home-screen').style.display = 'block';
-
-            // هدایت خودکار به جدول رده‌بندی اسم‌فامیل
-            switchTab('table', document.querySelectorAll('.nav-item')[1]);
-            switchTable('asmfmil');
+            document.getElementById('esm-leaderboard-section').style.display = 'block';
         }
 
-        function updateLeaderboardUI() {
-            const listContainer = document.getElementById('dynamic-leaderboard-list');
+        function updateEsmLeaderboardUI() {
+            const listContainer = document.getElementById('dynamic-esm-leaderboard');
             if (!listContainer) return;
 
             if (esmLeaderboard.length === 0) {
-                listContainer.innerHTML = `<div class="table-row"><span class="rank-col">-</span><span class="name-col">هنوز بازیکنی ثبت نشده</span><span class="score-col">0</span></div>`;
+                listContainer.innerHTML = `<div class="esm-table-row"><span>-</span><span>هنوز بازیکنی ثبت نشده</span><span>0</span></div>`;
                 return;
             }
 
             let html = '';
             esmLeaderboard.forEach((item, index) => {
                 const isHighlight = item.name === currentUser ? 'highlight' : '';
-                html += `<div class="table-row ${isHighlight}"><span class="rank-col">${index + 1}</span><span class="name-col">${item.name}</span><span class="score-col">${item.score}</span></div>`;
+                html += `<div class="esm-table-row ${isHighlight}"><span>${index + 1}. ${item.name}</span><span>${item.score} امتیاز</span></div>`;
             });
             listContainer.innerHTML = html;
         }
