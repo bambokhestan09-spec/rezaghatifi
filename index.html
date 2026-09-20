@@ -351,7 +351,7 @@
             margin-top: 4px;
         }
 
-        /* --- تب‌های ناوبری مسابقات (مشابه جدول) --- */
+        /* --- تب‌های ناوبری مسابقات و جدول --- */
         .weeks-nav-container {
             max-width: 680px;
             margin: 0 auto 15px auto;
@@ -810,17 +810,23 @@
         .name-col { flex: 1; text-align: right; }
         .score-col { width: 50px; text-align: left; font-weight: bold; }
 
+        /* --- کوئیزگدا (اسم‌فامیل فانتزی مشابه تصاویر ارسالی) --- */
         .quiz-container {
             max-width: 680px;
             margin: 0 auto;
+            background: #eef4e8;
+            border-radius: 28px;
+            padding: 20px;
+            color: #1e293b;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .quiz-card {
-            background-color: var(--card-bg);
-            border-radius: 15px;
+            background-color: #ffffff;
+            border-radius: 20px;
             padding: 20px;
-            border: 1px solid rgba(255,255,255,0.05);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.04);
         }
 
         /* --- منوی پایین سفید --- */
@@ -1381,7 +1387,7 @@
         </div>
     </div>
 
-    <!-- تب ۶: کوئیزگدا -->
+    <!-- تب ۶: کوئیزگدا (اسم‌فامیل فانتزی با گردونه ۳۲ حرفی، تایمر ۷۰ ثانیه‌ای، جدول رتبه‌بندی داخلی و ذخیره امتیازات) -->
     <div id="tab-banter" class="tab-content">
         <div class="quiz-container">
             <div class="quiz-card">
@@ -1389,89 +1395,126 @@
                     <input type="hidden" name="name" id="form-input-name">
                     <input type="hidden" name="phone" id="form-input-phone">
                     <input type="hidden" name="letter" id="form-input-letter">
+                    <input type="hidden" name="score" id="form-input-score">
                     <input type="hidden" name="esm" id="form-input-esm">
                     <input type="hidden" name="famil" id="form-input-famil">
                     <input type="hidden" name="shahr" id="form-input-shahr">
                     <input type="hidden" name="keshvar" id="form-input-keshvar">
-                    <input type="hidden" name="ghaza" id="form-input-ghaza">
                     <input type="hidden" name="miveh" id="form-input-miveh">
+                    <input type="hidden" name="ghaza" id="form-input-ghaza">
+                    <input type="hidden" name="rang" id="form-input-rang">
                     <input type="hidden" name="heyvan" id="form-input-heyvan">
+                    <input type="hidden" name="mashin" id="form-input-mashin">
                     <input type="hidden" name="ashia" id="form-input-ashia">
                 </form>
 
+                <!-- صفحه ثبت نام و چرخش گردونه -->
                 <div id="quiz-register-screen">
-                    <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 8px;">بازی اسم‌فامیل گداهای استرسی</h2>
-                    <p style="text-align: center; color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">برای ورود به میدان رقابت و شروع چالش، مشخصات خود را وارد کنید:</p>
+                    <div style="text-align: center; margin-bottom: 15px;">
+                        <span style="background: #27ae60; color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 13px; font-weight: 900;">اسم فامیل آنلاین</span>
+                    </div>
+                    <h2 style="text-align: center; color: #0f172a; margin-bottom: 6px; font-size: 20px; font-weight: 900;">سلام، رفیق! 👋</h2>
+                    <p style="text-align: center; color: #64748b; font-size: 13px; margin-bottom: 20px; font-weight: 700;">آماده‌ای بقیه رو به چالش بکشی و رکورد بزنی؟</p>
                     
-                    <form id="user-info-form" onsubmit="startFamilyQuiz(event)">
+                    <form id="user-info-form" onsubmit="spinWheelAndStart(event)">
                         <div style="margin-bottom: 12px;">
-                            <label style="display: block; font-size: 12px; margin-bottom: 5px; color: var(--text-gray);">نام و نام خانوادگی:</label>
-                            <input type="text" id="player-name" required placeholder="مثلاً رضا غتیفی" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #2a3649; background: #121824; color: #fff; box-sizing: border-box;">
+                            <label style="display: block; font-size: 12px; margin-bottom: 5px; color: #334155; font-weight: 700;">نام کاربری خود را وارد کنید:</label>
+                            <input type="text" id="player-name" required placeholder="مثلاً رضا غتیفی" style="width: 100%; padding: 12px; border-radius: 12px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-weight: 700; box-sizing: border-box; outline: none;">
                         </div>
                         <div style="margin-bottom: 20px;">
-                            <label style="display: block; font-size: 12px; margin-bottom: 5px; color: var(--text-gray);">شماره تماس یا سروش:</label>
-                            <input type="tel" id="player-phone" required placeholder="09xxxxxxxxx" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #2a3649; background: #121824; color: #fff; box-sizing: border-box;">
+                            <label style="display: block; font-size: 12px; margin-bottom: 5px; color: #334155; font-weight: 700;">شماره تماس یا سروش (برای ثبت امتیاز):</label>
+                            <input type="tel" id="player-phone" required placeholder="09xxxxxxxxx" style="width: 100%; padding: 12px; border-radius: 12px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-weight: 700; box-sizing: border-box; outline: none;">
                         </div>
-                        <button type="submit" style="width: 100%; padding: 13px; background: var(--accent-yellow); color: #121824; border: none; border-radius: 10px; font-weight: 900; font-size: 15px; cursor: pointer;">شروع بازی اسم‌فامیل</button>
+
+                        <div style="background: #f1f5f9; padding: 14px; border-radius: 14px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 13px; font-weight: 900; color: #334155;">حرف تصادفی گردونه:</span>
+                            <span id="preview-letter" style="font-size: 22px; font-weight: 900; color: #e74c3c;">؟</span>
+                        </div>
+
+                        <button type="submit" style="width: 100%; padding: 15px; background: linear-gradient(135deg, #f5c518, #d49f00); color: #121824; border: none; border-radius: 14px; font-weight: 900; font-size: 16px; cursor: pointer; box-shadow: 0 4px 15px rgba(245, 197, 24, 0.4); margin-bottom: 12px;">
+                            چرخش گردونه و شروع بازی 🎡
+                        </button>
                     </form>
+
+                    <button onclick="toggleEsmLeaderboard()" style="width: 100%; padding: 13px; background: #6c5ce7; color: #fff; border: none; border-radius: 14px; font-weight: 900; font-size: 14px; cursor: pointer; box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);">
+                        📋 مشاهده جدول رتبه‌بندی و امتیازات دیگران
+                    </button>
+
+                    <!-- جدول امتیازات سراسری کاربران -->
+                    <div id="esm-leaderboard-section" style="margin-top: 20px; display: none; background: #f8fafc; border-radius: 14px; padding: 15px; border: 1px solid #e2e8f0;">
+                        <div style="font-weight: 900; font-size: 14px; color: #0f172a; margin-bottom: 10px; text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 6px;">جدول امتیازات برتر اسم‌فامیل 🏆</div>
+                        <div id="dynamic-esm-leaderboard">
+                            <div style="text-align: center; color: #64748b; font-size: 12px; padding: 10px;">هنوز بازیکنی ثبت نشده است</div>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- صفحه حین بازی اسم‌فامیل (۷۰ ثانیه) -->
                 <div id="quiz-game-screen" style="display: none;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; background: #121824; padding: 12px 16px; border-radius: 12px; border: 1px solid #2a3649; margin-bottom: 15px;">
-                        <span id="target-letter-display" style="font-size: 16px; font-weight: 900; color: var(--accent-yellow);">حرف مورد نظر: ب</span>
-                        <span id="timer-display" style="font-size: 16px; font-weight: 900; color: var(--accent-red); font-family: monospace;">01:00</span>
+                    <div style="display: flex; justify-content: space-between; align-items: center; background: #f8fafc; padding: 12px 16px; border-radius: 12px; border: 1px solid #cbd5e1; margin-bottom: 15px;">
+                        <span id="target-letter-display" style="font-size: 16px; font-weight: 900; color: #27ae60;">حرف: ب</span>
+                        <span id="timer-display" style="font-size: 18px; font-weight: 900; color: var(--accent-red); font-family: monospace;">01:10</span>
                     </div>
 
-                    <div style="background: rgba(231, 76, 60, 0.15); border: 1px solid var(--accent-red); color: #ff8080; padding: 10px; border-radius: 10px; font-size: 12px; text-align: center; font-weight: 700; margin-bottom: 15px; line-height: 1.5;">
-                        ⚠️ نکته اخلاقی مهم: هرکسی تقلب کنه خره، گاوه، کثافته! درست و مردونه بازی کن! 💩😂
+                    <div style="background: rgba(231, 76, 60, 0.1); border: 1px solid var(--accent-red); color: #c0392b; padding: 10px; border-radius: 10px; font-size: 12px; text-align: center; font-weight: 700; margin-bottom: 15px; line-height: 1.5;">
+                        ⚠️ هر فیلد درست ۱۰ امتیاز | فیلد خالی یا اشتباه ۱ امتیاز منفی!
                     </div>
 
                     <form id="family-game-form" onsubmit="submitFamilyQuiz(event)">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px;">
                             <div>
-                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">اسم:</label>
-                                <input type="text" id="input-esm" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                                <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">اسم:</label>
+                                <input type="text" id="input-esm" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
                             </div>
                             <div>
-                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">فامیل:</label>
-                                <input type="text" id="input-famil" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                                <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">فامیل:</label>
+                                <input type="text" id="input-famil" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
                             </div>
                             <div>
-                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">شهر:</label>
-                                <input type="text" id="input-shahr" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                                <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">شهر:</label>
+                                <input type="text" id="input-shahr" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
                             </div>
                             <div>
-                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">کشور:</label>
-                                <input type="text" id="input-keshvar" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                                <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">کشور:</label>
+                                <input type="text" id="input-keshvar" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
                             </div>
                             <div>
-                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">غذا:</label>
-                                <input type="text" id="input-ghaza" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                                <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">میوه:</label>
+                                <input type="text" id="input-miveh" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
                             </div>
                             <div>
-                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">میوه:</label>
-                                <input type="text" id="input-miveh" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                                <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">غذا:</label>
+                                <input type="text" id="input-ghaza" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
                             </div>
                             <div>
-                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">حیوان:</label>
-                                <input type="text" id="input-heyvan" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                                <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">رنگ:</label>
+                                <input type="text" id="input-rang" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
                             </div>
                             <div>
-                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">اشیاء:</label>
-                                <input type="text" id="input-ashia" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                                <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">حیوان:</label>
+                                <input type="text" id="input-heyvan" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">ماشین:</label>
+                                <input type="text" id="input-mashin" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 11px; color: #475569; font-weight: 700; margin-bottom: 4px;">اشیا:</label>
+                                <input type="text" id="input-ashia" placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; font-size: 13px; outline: none;">
                             </div>
                         </div>
-                        <button type="submit" style="width: 100%; padding: 13px; background: var(--accent-green); color: #121824; border: none; border-radius: 10px; font-weight: 900; font-size: 15px; cursor: pointer;">ثبت و ارسال پاسخ‌ها</button>
+                        <button type="submit" style="width: 100%; padding: 14px; background: #27ae60; color: #fff; border: none; border-radius: 12px; font-weight: 900; font-size: 15px; cursor: pointer; box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);">ثبت نهایی و مشاهده امتیاز</button>
                     </form>
                 </div>
 
+                <!-- صفحه نتیجه نهایی بازی -->
                 <div id="quiz-result-screen" style="display: none; text-align: center;">
-                    <h2 style="color: var(--accent-yellow); margin-bottom: 5px; font-size: 24px;">پایان بازی!</h2>
-                    <p style="color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">پاسخ‌های شما با موفقیت ثبت و برای ادمین ارسال شد.</p>
-                    <div style="background: rgba(46, 204, 113, 0.1); border: 1px solid var(--accent-green); padding: 15px; border-radius: 10px; font-size: 13px; color: var(--accent-green); margin-bottom: 20px; line-height: 1.6;">
-                        کاربر عزیز (<span id="result-name-disp" style="font-weight: bold;"></span>)، پاسخ‌های شما با حرف <span id="result-letter-disp" style="font-weight: bold;"></span> ثبت گردید.
+                    <h2 style="color: #0f172a; margin-bottom: 5px; font-size: 22px; font-weight: 900;">پایان بازی! 🏆</h2>
+                    <p style="color: #64748b; font-size: 13px; margin-bottom: 15px;">امتیاز شما در این مرحله با موفقیت محاسبه و ثبت شد.</p>
+                    <div style="background: rgba(46, 204, 113, 0.12); border: 1px solid #2ecc71; padding: 15px; border-radius: 12px; font-size: 14px; color: #27ae60; margin-bottom: 20px; line-height: 1.6; font-weight: 700;">
+                        کاربر عزیز (<span id="result-name-disp"></span>)، امتیاز کل شما: <span id="result-score-disp" style="font-size: 18px; font-weight: 900;"></span> 🪙
                     </div>
-                    <button onclick="resetFamilyQuiz()" style="width: 100%; padding: 12px; background: var(--accent-yellow); color: #121824; border: none; border-radius: 10px; font-weight: bold; font-size: 15px; cursor: pointer;">شروع دوباره بازی</button>
+                    <button onclick="resetFamilyQuiz()" style="width: 100%; padding: 13px; background: #f5c518; color: #121824; border: none; border-radius: 12px; font-weight: 900; font-size: 15px; cursor: pointer;">انجام مجدد بازی</button>
                 </div>
             </div>
         </div>
@@ -1506,7 +1549,7 @@
     </nav>
 
     <script>
-        // ساعت‌شمار واقعی برای هفته ششم (مثلاً ۴۵ ساعت و ۳۰ دقیقه دیگر)
+        // ساعت‌شمار واقعی برای هفته ششم
         let totalSeconds = 45 * 3600 + 30 * 60 + 20;
 
         function updateCountdown() {
@@ -1562,35 +1605,60 @@
             btnElement.classList.add('active');
         }
 
-        const availableLetters = ['ب', 'الف', 'م', 'س', 'د', 'ر', 'ع', 'ح', 'پ', 'ک', 'ت', 'ج'];
+        // گردونه ۳۲ حرفی اسم فامیل
+        const alphabet32 = ['آ', 'ا', 'ب', 'پ', 'ت', 'ث', 'ج', 'چ', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'ژ', 'س', 'ش', 'ص', 'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ک', 'گ', 'ل', 'م', 'ن', 'و', 'ه', 'ی'];
         let chosenLetter = 'ب';
         let familyPlayerData = { name: '', phone: '' };
         let quizTimer = null;
-        let timeLeft = 60;
+        let timeLeft = 70; // زمان ۷۰ ثانیه
 
-        function startFamilyQuiz(e) {
+        // بارگذاری جدول امتیازات اسم‌فامیل از حافظه مرورگر
+        let esmLeaderboard = JSON.parse(localStorage.getItem('esm_leaderboard') || '[]');
+        updateEsmLeaderboardUI();
+
+        function toggleEsmLeaderboard() {
+            const section = document.getElementById('esm-leaderboard-section');
+            section.style.display = (section.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function spinWheelAndStart(e) {
             e.preventDefault();
-            familyPlayerData.name = document.getElementById('player-name').value;
-            familyPlayerData.phone = document.getElementById('player-phone').value;
+            familyPlayerData.name = document.getElementById('player-name').value.trim();
+            familyPlayerData.phone = document.getElementById('player-phone').value.trim();
 
-            chosenLetter = availableLetters[Math.floor(Math.random() * availableLetters.length)];
-            document.getElementById('target-letter-display').innerText = `حرف مورد نظر: ${chosenLetter}`;
+            if (!familyPlayerData.name || !familyPlayerData.phone) {
+                alert('لطفاً نام و شماره تماس خود را وارد کنید!');
+                return;
+            }
 
-            document.getElementById('quiz-register-screen').style.display = 'none';
-            document.getElementById('quiz-game-screen').style.display = 'block';
+            // انتخاب حرف تصادفی از گردونه ۳۲ حرفی
+            chosenLetter = alphabet32[Math.floor(Math.random() * alphabet32.length)];
+            document.getElementById('preview-letter').innerText = chosenLetter;
+            document.getElementById('target-letter-display').innerText = `حرف گردونه: ${chosenLetter}`;
 
-            timeLeft = 60;
-            updateTimerDisplay();
-            if (quizTimer) clearInterval(quizTimer);
-            quizTimer = setInterval(() => {
-                timeLeft--;
+            setTimeout(() => {
+                document.getElementById('quiz-register-screen').style.display = 'none';
+                document.getElementById('quiz-game-screen').style.display = 'block';
+
+                // پاکسازی فرم بازی
+                ['input-esm', 'input-famil', 'input-shahr', 'input-keshvar', 'input-miveh', 'input-ghaza', 'input-rang', 'input-heyvan', 'input-mashin', 'input-ashia'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.value = '';
+                });
+
+                timeLeft = 70; // زمان ۷۰ ثانیه
                 updateTimerDisplay();
-                if (timeLeft <= 0) {
-                    clearInterval(quizTimer);
-                    alert('زمان ۶۰ ثانیه به پایان رسید!');
-                    submitFamilyQuiz(new Event('submit'));
-                }
-            }, 1000);
+                if (quizTimer) clearInterval(quizTimer);
+                quizTimer = setInterval(() => {
+                    timeLeft--;
+                    updateTimerDisplay();
+                    if (timeLeft <= 0) {
+                        clearInterval(quizTimer);
+                        alert('زمان ۷۰ ثانیه به پایان رسید!');
+                        submitFamilyQuiz(new Event('submit'));
+                    }
+                }, 1000);
+            }, 600);
         }
 
         function updateTimerDisplay() {
@@ -1603,22 +1671,52 @@
             if(e) e.preventDefault();
             if (quizTimer) clearInterval(quizTimer);
 
+            // محاسبه امتیاز: هر فیلد درست (شروع با حرف گردونه) ۱۰ امتیاز، فیلد خالی یا اشتباه ۱ امتیاز منفی
+            const fields = ['input-esm', 'input-famil', 'input-shahr', 'input-keshvar', 'input-miveh', 'input-ghaza', 'input-rang', 'input-heyvan', 'input-mashin', 'input-ashia'];
+            let score = 0;
+
+            fields.forEach(id => {
+                const val = document.getElementById(id).value.trim();
+                if (val !== '' && val.startsWith(chosenLetter)) {
+                    score += 10;
+                } else {
+                    score -= 1;
+                }
+            });
+
             document.getElementById('quiz-game-screen').style.display = 'none';
             document.getElementById('quiz-result-screen').style.display = 'block';
 
             document.getElementById('result-name-disp').innerText = familyPlayerData.name;
-            document.getElementById('result-letter-disp').innerText = chosenLetter;
+            document.getElementById('result-score-disp').innerText = score;
 
+            // ذخیره در جدول محلی و حافظه
+            const existingIndex = esmLeaderboard.findIndex(u => u.phone === familyPlayerData.phone);
+            if (existingIndex >= 0) {
+                esmLeaderboard[existingIndex].score += score;
+                esmLeaderboard[existingIndex].name = familyPlayerData.name;
+            } else {
+                esmLeaderboard.push({ name: familyPlayerData.name, phone: familyPlayerData.phone, score: score });
+            }
+
+            esmLeaderboard.sort((a, b) => b.score - a.score);
+            localStorage.setItem('esm_leaderboard', JSON.stringify(esmLeaderboard));
+            updateEsmLeaderboardUI();
+
+            // ارسال اطلاعات به فرم‌پری
             document.getElementById('form-input-name').value = familyPlayerData.name;
             document.getElementById('form-input-phone').value = familyPlayerData.phone;
             document.getElementById('form-input-letter').value = chosenLetter;
+            document.getElementById('form-input-score').value = score;
             document.getElementById('form-input-esm').value = document.getElementById('input-esm').value;
             document.getElementById('form-input-famil').value = document.getElementById('input-famil').value;
             document.getElementById('form-input-shahr').value = document.getElementById('input-shahr').value;
             document.getElementById('form-input-keshvar').value = document.getElementById('input-keshvar').value;
-            document.getElementById('form-input-ghaza').value = document.getElementById('input-ghaza').value;
             document.getElementById('form-input-miveh').value = document.getElementById('input-miveh').value;
+            document.getElementById('form-input-ghaza').value = document.getElementById('input-ghaza').value;
+            document.getElementById('form-input-rang').value = document.getElementById('input-rang').value;
             document.getElementById('form-input-heyvan').value = document.getElementById('input-heyvan').value;
+            document.getElementById('form-input-mashin').value = document.getElementById('input-mashin').value;
             document.getElementById('form-input-ashia').value = document.getElementById('input-ashia').value;
 
             const formData = new FormData(document.getElementById('real-email-form'));
@@ -1629,12 +1727,33 @@
             }).catch(error => console.error(error));
         }
 
+        function updateEsmLeaderboardUI() {
+            const container = document.getElementById('dynamic-esm-leaderboard');
+            if (!container) return;
+
+            if (esmLeaderboard.length === 0) {
+                container.innerHTML = `<div style="text-align: center; color: #64748b; font-size: 12px; padding: 10px;">هنوز بازیکنی ثبت نشده است</div>`;
+                return;
+            }
+
+            let html = '';
+            esmLeaderboard.forEach((item, index) => {
+                html += `
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 10px; border-bottom: 1px solid #e2e8f0; font-size: 13px; font-weight: 700; color: #334155;">
+                        <span>${index + 1}. ${item.name}</span>
+                        <span style="color: #27ae60; font-family: monospace;">${item.score} امتیاز</span>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
         function resetFamilyQuiz() {
             document.getElementById('quiz-result-screen').style.display = 'none';
             document.getElementById('quiz-register-screen').style.display = 'block';
             document.getElementById('player-name').value = '';
             document.getElementById('player-phone').value = '';
-            document.getElementById('family-game-form').reset();
+            document.getElementById('preview-letter').innerText = '؟';
         }
 
         function switchTab(tabId, btnElement) {
