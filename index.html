@@ -11,7 +11,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-WRVGQQQYZ2');
     </script>
 
@@ -57,9 +56,6 @@
             --accent-red: #e74c3c;
             --text-light: #ffffff;
             --text-gray: #9aa4b2;
-            --quiz-bg: #f4f8f0;
-            --quiz-card: #ffffff;
-            --quiz-text: #1e293b;
         }
 
         * {
@@ -368,14 +364,14 @@
             box-shadow: 0 4px 12px rgba(245, 197, 24, 0.3);
         }
 
-        /* --- استایل جدید بخش کوئیز (مشابه تصاویر فانتزی و جذاب Q26) --- */
+        /* --- استایل فانتزی بخش اسم فامیل (بر اساس تم تصاویر ارسالی) --- */
         .q26-container {
             max-width: 680px;
             margin: 0 auto;
             background: #eef4e8;
             border-radius: 28px;
             padding: 20px;
-            color: var(--quiz-text);
+            color: #1e293b;
             position: relative;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -406,7 +402,7 @@
         }
 
         .q26-main-logo {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 900;
             color: #111;
             letter-spacing: -1px;
@@ -420,6 +416,7 @@
             color: #fff;
             padding: 2px 10px;
             border-radius: 12px;
+            font-size: 20px;
         }
 
         .q26-subtitle {
@@ -427,18 +424,6 @@
             font-weight: 700;
             color: #555;
             margin-top: 2px;
-        }
-
-        .q26-hero-character {
-            text-align: center;
-            position: relative;
-            margin: 10px 0;
-        }
-
-        .q26-hero-character img {
-            max-width: 220px;
-            height: auto;
-            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.15));
         }
 
         .q26-stats-row {
@@ -449,7 +434,7 @@
         }
 
         .q26-stat-card {
-            background: var(--quiz-card);
+            background: #ffffff;
             border-radius: 16px;
             padding: 14px 16px;
             display: flex;
@@ -474,13 +459,6 @@
             color: #0f172a;
         }
 
-        .q26-stat-sub {
-            font-size: 10px;
-            color: #94a3b8;
-            margin-top: 4px;
-            font-weight: 700;
-        }
-
         .q26-start-btn {
             width: 100%;
             background: linear-gradient(135deg, #f5c518, #d49f00);
@@ -497,11 +475,6 @@
             gap: 10px;
             box-shadow: 0 6px 20px rgba(245, 197, 24, 0.4);
             margin-bottom: 12px;
-            transition: transform 0.1s ease;
-        }
-
-        .q26-start-btn:active {
-            transform: scale(0.98);
         }
 
         .q26-bottom-grid {
@@ -522,134 +495,58 @@
             justify-content: center;
             gap: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-        }
-
-        .q26-action-history {
-            background: #6c5ce7;
             color: #fff;
         }
 
-        .q26-action-guide {
-            background: #27ae60;
-            color: #fff;
-        }
+        .q26-action-history { background: #6c5ce7; }
+        .q26-action-guide { background: #27ae60; }
 
-        /* صفحه بازی پرسش و پاسخ */
-        .q26-gameplay-screen {
+        /* صفحه بازی اسم فامیل */
+        .esm-fامیل-screen {
             display: none;
         }
 
-        .q26-game-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #ffffff;
-            padding: 12px 18px;
-            border-radius: 16px;
-            margin-bottom: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        .q26-player-avatar {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 900;
-            font-size: 13px;
-        }
-
-        .q26-score-board {
-            font-size: 20px;
-            font-weight: 900;
-            letter-spacing: 1px;
-        }
-
-        .q26-question-card {
+        .esm-game-box {
             background: #ffffff;
             border-radius: 20px;
-            padding: 22px;
+            padding: 20px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-            margin-bottom: 15px;
         }
 
-        .q26-q-top-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
+        .esm-inputs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
         }
 
-        .q26-q-counter {
-            font-size: 13px;
-            font-weight: 900;
-            color: #27ae60;
-            background: rgba(39, 174, 96, 0.1);
-            padding: 4px 12px;
-            border-radius: 8px;
-        }
-
-        .q26-timer-circle {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            border: 3px solid #27ae60;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            font-size: 14px;
-            color: #27ae60;
-        }
-
-        .q26-question-text {
-            font-size: 16px;
-            font-weight: 900;
-            color: #0f172a;
-            line-height: 1.8;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .q26-options-list {
+        .esm-input-group {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 4px;
         }
 
-        .q26-option-item {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 14px;
-            padding: 14px 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .esm-input-group label {
+            font-size: 11px;
             font-weight: 700;
-            font-size: 14px;
-            color: #334155;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .q26-option-item:hover {
-            border-color: #27ae60;
-            background: #f0fdf4;
-        }
-
-        .q26-option-number {
-            width: 26px;
-            height: 26px;
-            background: #e2e8f0;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: 900;
             color: #475569;
         }
 
-        /* --- جدول رده‌بندی، سکو، سوت پایان و گیشه --- */
+        .esm-input-group input {
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #cbd5e1;
+            font-size: 13px;
+            background: #f8fafc;
+            color: #0f172a;
+            outline: none;
+        }
+
+        .esm-input-group input:focus {
+            border-color: #27ae60;
+        }
+
+        /* جدول رده‌بندی، سکو، سوت پایان و گیشه */
         .league-banner-card {
             background: radial-gradient(circle at top right, rgba(245, 197, 24, 0.2), transparent 70%), #1c2536;
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -741,9 +638,6 @@
             justify-content: center;
             align-items: flex-end;
             gap: 15px;
-            position: relative;
-            border-bottom-left-radius: 35px;
-            border-bottom-right-radius: 35px;
         }
 
         .dsny-podium-col {
@@ -821,7 +715,6 @@
         .dsny-content-area { background-color: var(--card-bg); padding: 20px; border-radius: 0 0 24px 24px; }
         .dsny-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         .dsny-title { font-size: 18px; font-weight: 900; color: #fff; }
-        .dsny-date-range { font-size: 12px; color: var(--text-gray); font-weight: 700; }
 
         .dsny-list-item {
             display: flex;
@@ -850,7 +743,6 @@
         .twitter-display-name { font-size: 14px; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 5px; }
         .twitter-handle { font-size: 12px; color: var(--text-gray); }
         .twitter-badge { background: rgba(245, 197, 24, 0.15); color: var(--accent-yellow); font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; }
-        .twitter-badge.urgent { background: rgba(231, 76, 60, 0.15); color: var(--accent-red); }
         .twitter-tweet-text { font-size: 14px; color: #e2e8f0; line-height: 1.8; text-align: right; }
         .twitter-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 10px; font-size: 12px; color: var(--text-gray); }
         .twitter-live-timestamp { color: var(--accent-yellow); font-weight: 700; font-family: monospace; }
@@ -933,10 +825,6 @@
                     <span>برنامه کامل مسابقات با تاریخ و ساعت</span>
                 </div>
 
-                <button onclick="requestNotification()" style="width: 100%; background: #f5c518; color: #121824; font-weight: 900; border: none; padding: 12px; border-radius: 12px; margin-bottom: 15px; cursor: pointer; font-size: 13px;">
-                    دریافت خبرها و یادآوری مسابقات (کلیک کنید)
-                </button>
-
                 <div class="unified-matches-card">
                     <div class="date-divider" style="margin-top: 0;">جمعه ۲۷ شهریور ۱۴۰۵</div>
                     <div class="match-row-clean">
@@ -954,29 +842,6 @@
                             <span class="team-name">چلسی</span>
                         </div>
                     </div>
-
-                    <div class="date-divider">شنبه ۲۸ شهریور ۱۴۰۵</div>
-                    <div class="match-row-clean">
-                        <div class="team-side home">
-                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8586.png" alt="Tottenham">
-                            <span class="team-name">تاتنهام</span>
-                        </div>
-                        <div class="match-center-info">
-                            <span class="match-time-text">۱۵:۰۰</span>
-                            <span class="match-date-text">۲۸ شهریور</span>
-                            <span class="match-league-badge">Premier League</span>
-                        </div>
-                        <div class="team-side away">
-                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10252.png" alt="Aston Villa">
-                            <span class="team-name">استون ویلا</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="margin: 20px 0; text-align: center;">
-                    <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" style="display: block; background-color: var(--accent-yellow); color: #121824; font-weight: 900; padding: 14px; border-radius: 12px; text-decoration: none; font-size: 15px;">
-                        ورود به لیگ پیش‌بینی در فوت‌موب
-                    </a>
                 </div>
             </div>
 
@@ -1008,18 +873,19 @@
 
         <div class="weeks-nav-container">
             <button class="week-nav-btn active" onclick="switchTable('complete', this)">جدول کامل</button>
-            <button class="week-nav-btn" onclick="switchTable('week5', this)">هفته پنجم</button>
+            <button class="week-nav-btn" onclick="switchTable('asmfmil', this)">جدول اسم‌فامیل</button>
         </div>
 
         <div id="table-complete" class="table-container active">
             <div class="table-row"><span class="rank-col">1</span><span class="name-col">Asm A</span><span class="score-col">56</span></div>
             <div class="table-row highlight"><span class="rank-col">2</span><span class="name-col">REZA GHATIFI</span><span class="score-col">51</span></div>
-            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Mahdi</span><span class="score-col">47</span></div>
         </div>
 
-        <div id="table-week5" class="table-container">
-            <div class="table-row"><span class="rank-col">1</span><span class="name-col">Ahlam Aljaber</span><span class="score-col">5</span></div>
-            <div class="table-row highlight"><span class="rank-col">2</span><span class="name-col">REZA GHATIFI</span><span class="score-col">3</span></div>
+        <div id="table-asmfmil" class="table-container">
+            <div id="dynamic-leaderboard-list">
+                <!-- رتبه‌های اسم فامیل به صورت زنده اینجا قرار می‌گیرند -->
+                <div class="table-row"><span class="rank-col">1</span><span class="name-col">هنوز بازیکنی ثبت نشده</span><span class="score-col">0</span></div>
+            </div>
         </div>
     </div>
 
@@ -1088,80 +954,77 @@
         </div>
     </div>
 
-    <!-- تب ۶: کوئیزگدا (بر اساس گرافیک جدید Q26) -->
+    <!-- تب ۶: کوئیز (بازی اسم فامیل آنلاین با گرافیک فانتزی) -->
     <div id="tab-banter" class="tab-content">
-        <div class="q26-container" id="q26-home-screen">
+        <!-- صفحه اصلی اسم فامیل -->
+        <div class="q26-container" id="esm-home-screen">
             <div class="q26-top-bar">
-                <button class="q26-icon-btn">🏠</button>
+                <button class="q26-icon-btn" onclick="switchTab('home', document.querySelector('.nav-item'))">🏠</button>
                 <div class="q26-logo-box">
-                    <div class="q26-main-logo">Q<span>26</span></div>
-                    <div class="q26-subtitle">مسابقه فوتبال کوییز ۲۶</div>
+                    <div class="q26-main-logo">اسم<span>فامیل</span></div>
+                    <div class="q26-subtitle">چالش آنلاین گداهای استرسی</div>
                 </div>
-                <button class="q26-icon-btn">🏆</button>
+                <button class="q26-icon-btn" onclick="switchTab('table', document.querySelectorAll('.nav-item')[1])">🏆</button>
             </div>
 
-            <div class="q26-hero-character">
-                <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8633.png" alt="Quiz Hero" style="width: 90px; height: 90px; object-fit: contain;">
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 5px;">نام کاربری خود را وارد کنید:</label>
+                <input type="text" id="username-input" placeholder="مثلاً رضا غتیفی" style="width: 100%; padding: 12px; border-radius: 12px; border: 1px solid #cbd5e1; background: #fff; font-size: 14px; font-weight: 700; outline: none;">
             </div>
 
             <div class="q26-stats-row">
                 <div class="q26-stat-card">
-                    <span class="q26-stat-title">انرژی</span>
+                    <span class="q26-stat-title">حرف رندوم گردونه</span>
                     <div class="q26-stat-value-box">
-                        <span>⚡</span> <span id="user-energy">۴</span>
+                        <span>🎡</span> <span id="wheel-letter-display" style="color: #27ae60;">؟</span>
                     </div>
-                    <span class="q26-stat-sub">⏱️ هر انرژی = یک مسابقه</span>
                 </div>
                 <div class="q26-stat-card">
-                    <span class="q26-stat-title">امتیاز</span>
+                    <span class="q26-stat-title">آخرین امتیاز شما</span>
                     <div class="q26-stat-value-box">
-                        <span>🪙</span> <span id="user-total-score">۰</span>
+                        <span>🪙</span> <span id="last-score-display">۰</span>
                     </div>
-                    <span class="q26-stat-sub">🤖 هر امتیاز = یک سکه در کلاب</span>
                 </div>
             </div>
 
-            <button class="q26-start-btn" onclick="startQ26Game()">
-                <span>شروع بازی</span>
+            <button class="q26-start-btn" onclick="startEsmFamilGame()">
+                <span>چرخش گردونه و شروع بازی</span>
                 <span style="font-size: 22px;">▶</span>
             </button>
-            <div style="text-align: center; font-size: 11px; color: #555; margin-bottom: 15px; font-weight: 700;">۵ سوال، ۴ گزینه، تا ۱۰ امتیاز</div>
+            <div style="text-align: center; font-size: 11px; color: #555; margin-bottom: 15px; font-weight: 700;">هر پاسخ درست ۱۰ امتیاز | خانه خالی یا اشتباه ۱ امتیاز منفی</div>
 
             <div class="q26-bottom-grid">
-                <button class="q26-action-btn q26-action-history" onclick="alert('تاریخچه بازی‌ها: رکورد شما ثبت و ذخیره شده است!')">
-                    <span>📋 تاریخچه بازی‌ها</span>
+                <button class="q26-action-btn q26-action-history" onclick="switchTab('table', document.querySelectorAll('.nav-item')[1])">
+                    <span>📋 جدول رتبه‌بندی</span>
                 </button>
-                <button class="q26-action-btn q26-action-guide" onclick="alert('آموزش بازی: هر پاسخ درست ۱۰ امتیاز مثبت و هر خانه خالی ۲ امتیاز منفی دارد!')">
+                <button class="q26-action-btn q26-action-guide" onclick="alert('راهنما: در مدت ۷۰ ثانیه ۱۰ فیلد (اسم، فامیل، شهر، کشور، میوه، غذا، رنگ، حیوان، ماشین، اشیا) را با حرف مشخص شده پر کنید!')">
                     <span>🎓 آموزش بازی</span>
                 </button>
             </div>
         </div>
 
-        <!-- صفحه سوالات کوئیز (گیم‌پلی) -->
-        <div class="q26-container q26-gameplay-screen" id="q26-gameplay-screen">
-            <div class="q26-game-header">
-                <div class="q26-player-avatar">
-                    <span>👤</span> <span id="active-player-name">شما</span>
-                </div>
-                <div class="q26-score-board">
-                    <span id="current-match-score">۱ - ۰</span>
-                </div>
+        <!-- صفحه حین بازی اسم فامیل -->
+        <div class="q26-container esm-fامیل-screen" id="esm-game-screen">
+            <div style="display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 12px 18px; border-radius: 14px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <div style="font-weight: 900; font-size: 15px; color: #27ae60;">حرف: <span id="active-letter-badge" style="font-size: 20px; color: #e74c3c;">ب</span></div>
+                <div style="font-weight: 900; font-size: 18px; color: #e74c3c; font-family: monospace;" id="esm-timer-display">01:10</div>
             </div>
 
-            <div class="q26-question-card">
-                <div class="q26-q-top-row">
-                    <span class="q26-q-counter" id="question-progress-badge">سوال ۱/۵</span>
-                    <div class="q26-timer-circle" id="q-timer-display">10</div>
+            <div class="esm-game-box">
+                <div style="font-size: 13px; font-weight: 900; color: #0f172a; margin-bottom: 5px;">کلمات خود را با دقت وارد کنید:</div>
+                <div class="esm-inputs-grid">
+                    <div class="esm-input-group"><label>اسم</label><input type="text" id="f-esm" placeholder="تایپ کنید..."></div>
+                    <div class="esm-input-group"><label>فامیل</label><input type="text" id="f-famil" placeholder="تایپ کنید..."></div>
+                    <div class="esm-input-group"><label>شهر</label><input type="text" id="f-shahr" placeholder="تایپ کنید..."></div>
+                    <div class="esm-input-group"><label>کشور</label><input type="text" id="f-keshvar" placeholder="تایپ کنید..."></div>
+                    <div class="esm-input-group"><label>میوه</label><input type="text" id="f-miveh" placeholder="تایپ کنید..."></div>
+                    <div class="esm-input-group"><label>غذا</label><input type="text" id="f-ghaza" placeholder="تایپ کنید..."></div>
+                    <div class="esm-input-group"><label>رنگ</label><input type="text" id="f-rang" placeholder="تایپ کنید..."></div>
+                    <div class="esm-input-group"><label>حیوان</label><input type="text" id="f-heyvan" placeholder="تایپ کنید..."></div>
+                    <div class="esm-input-group"><label>ماشین</label><input type="text" id="f-mashin" placeholder="تایپ کنید..."></div>
+                    <div class="esm-input-group"><label>اشیا</label><input type="text" id="f-ashia" placeholder="تایپ کنید..."></div>
                 </div>
-                <div class="q26-question-text" id="question-text-box">
-                    هافبک هجومی اسپانیایی که از ویارئال راهی آرسنال شد؟
-                </div>
-                <div class="q26-options-list" id="options-container">
-                    <div class="q26-option-item" onclick="answerQuestion(0)"><span id="opt-text-0">داوید سیلوا</span><span class="q26-option-number">۱</span></div>
-                    <div class="q26-option-item" onclick="answerQuestion(1)"><span id="opt-text-1">سانتی کازورلا</span><span class="q26-option-number">۲</span></div>
-                    <div class="q26-option-item" onclick="answerQuestion(2)"><span id="opt-text-2">مارتین زوبیمندی</span><span class="q26-option-number">۳</span></div>
-                    <div class="q26-option-item" onclick="answerQuestion(3)"><span id="opt-text-3">میکل مرینو</span><span class="q26-option-number">۴</span></div>
-                </div>
+                <button onclick="submitEsmFamilGame()" style="width: 100%; margin-top: 15px; background: #27ae60; color: #fff; border: none; padding: 14px; border-radius: 12px; font-weight: 900; font-size: 15px; cursor: pointer;">پایان بازی و ثبت امتیاز</button>
             </div>
         </div>
     </div>
@@ -1204,87 +1067,122 @@
             document.querySelectorAll('.table-container').forEach(t => t.classList.remove('active'));
             document.querySelectorAll('#tab-table .week-nav-btn').forEach(b => b.classList.remove('active'));
             document.getElementById('table-' + tableId).classList.add('active');
-            btn.classList.add('active');
+            if(btn) btn.classList.add('active');
         }
 
         function switchTab(tabId, btn) {
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
             document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
             document.getElementById('tab-' + tabId).classList.add('active');
-            btn.classList.add('active');
+            if(btn) btn.classList.add('active');
             window.scrollTo(0, 0);
         }
 
-        // منطق بازی کوییز Q26
-        const quizQuestions = [
-            { q: "هافبک هجومی اسپانیایی که از ویارئال راهی آرسنال شد؟", options: ["داوید سیلوا", "سانتی کازورلا", "مارتین زوبیمندی", "میکل مرینو"], correct: 1 },
-            { q: "کدام تیم قهرمان جام جهانی ۲۰۲۲ شد؟", options: ["فرانسه", "آژانتین", "برزیل", "آلمان"], correct: 1 },
-            { q: "بیشترین تعداد توپ طلا متعلق به چه کسی است؟", options: ["کریستیانو رونالدو", "لیونل مسی", "پله", "مارادونا"], correct: 1 },
-            { q: "لقب باشگاه لیورپول چیست؟", options: ["توپچی‌ها", "شیاطین سرخ", "قرمزها", "کهکشانی‌ها"], correct: 2 },
-            { q: "ورزشگاه خانگی باشگاه رئال مادرید چه نام دارد؟", options: ["کمپ نو", "سن السیرو", "سنتیاگو برنابئو", "آنفیلد"], correct: 2 }
-        ];
+        // منطق بازی اسم فامیل
+        const alphabet32 = ['آ', 'ا', 'ب', 'پ', 'ت', 'ث', 'ج', 'چ', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'ژ', 'س', 'ش', 'ص', 'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ک', 'گ', 'ل', 'م', 'ن', 'و', 'ه', 'ی'];
+        let chosenLetter = 'ب';
+        let esmTimer = null;
+        let timeLeftEsm = 70;
+        let currentUser = '';
 
-        let currentQIndex = 0;
-        let userQuizScore = 0;
-        let questionTimer = null;
-        let timeLeftQ = 10;
-        let storedTotalScore = parseInt(localStorage.getItem('q26_score') || '0');
-        document.getElementById('user-total-score').innerText = storedTotalScore;
+        // بارگذاری امتیازات ذخیره شده کاربران
+        let esmLeaderboard = JSON.parse(localStorage.getItem('esm_leaderboard') || '[]');
+        updateLeaderboardUI();
 
-        function startQ26Game() {
-            currentQIndex = 0;
-            userQuizScore = 0;
-            document.getElementById('q26-home-screen').style.display = 'none';
-            document.getElementById('q26-gameplay-screen').style.display = 'block';
-            loadQuestion();
-        }
-
-        function loadQuestion() {
-            if (currentQIndex >= quizQuestions.length) {
-                endQuizGame();
+        function startEsmFamilGame() {
+            currentUser = document.getElementById('username-input').value.trim();
+            if (!currentUser) {
+                alert('لطفاً ابتدا نام کاربری خود را وارد کنید!');
                 return;
             }
-            const qData = quizQuestions[currentQIndex];
-            document.getElementById('question-progress-badge').innerText = `سوال ${currentQIndex + 1}/۵`;
-            document.getElementById('question-text-box').innerText = qData.q;
-            
-            for (let i = 0; i < 4; i++) {
-                document.getElementById(`opt-text-${i}`).innerText = qData.options[i];
-            }
 
-            timeLeftQ = 10;
-            document.getElementById('q-timer-display').innerText = timeLeftQ;
-            if (questionTimer) clearInterval(questionTimer);
-            questionTimer = setInterval(() => {
-                timeLeftQ--;
-                document.getElementById('q-timer-display').innerText = timeLeftQ;
-                if (timeLeftQ <= 0) {
-                    clearInterval(questionTimer);
-                    currentQIndex++;
-                    loadQuestion();
+            // انتخاب حرف تصادفی از گردونه ۳۲ حرفی
+            chosenLetter = alphabet32[Math.floor(Math.random() * alphabet32.length)];
+            document.getElementById('wheel-letter-display').innerText = chosenLetter;
+            document.getElementById('active-letter-badge').innerText = chosenLetter;
+
+            // پاک کردن فرم قبلی
+            ['f-esm', 'f-famil', 'f-shahr', 'f-keshvar', 'f-miveh', 'f-ghaza', 'f-rang', 'f-heyvan', 'f-mashin', 'f-ashia'].forEach(id => {
+                document.getElementById(id).value = '';
+            });
+
+            document.getElementById('esm-home-screen').style.display = 'none';
+            document.getElementById('esm-game-screen').style.display = 'block';
+
+            timeLeftEsm = 70;
+            updateEsmTimerUI();
+            if (esmTimer) clearInterval(esmTimer);
+            esmTimer = setInterval(() => {
+                timeLeftEsm--;
+                updateEsmTimerUI();
+                if (timeLeftEsm <= 0) {
+                    clearInterval(esmTimer);
+                    alert('زمان ۷۰ ثانیه به پایان رسید!');
+                    submitEsmFamilGame();
                 }
             }, 1000);
         }
 
-        function answerQuestion(selectedIndex) {
-            if (questionTimer) clearInterval(questionTimer);
-            const qData = quizQuestions[currentQIndex];
-            if (selectedIndex === qData.correct) {
-                userQuizScore += 10;
-            }
-            currentQIndex++;
-            document.getElementById('current-match-score').innerText = `${userQuizScore} - ۰`;
-            loadQuestion();
+        function updateEsmTimerUI() {
+            const m = String(Math.floor(timeLeftEsm / 60)).padStart(2, '0');
+            const s = String(timeLeftEsm % 60).padStart(2, '0');
+            document.getElementById('esm-timer-display').innerText = `${m}:${s}`;
         }
 
-        function endQuizGame() {
-            storedTotalScore += userQuizScore;
-            localStorage.setItem('q26_score', storedTotalScore);
-            document.getElementById('user-total-score').innerText = storedTotalScore;
+        function submitEsmFamilGame() {
+            if (esmTimer) clearInterval(esmTimer);
 
-            alert(`بازی به پایان رسید! امتیاز کسب شده در این مسابقه: ${userQuizScore}`);
-            document.getElementById('q26-gameplay-screen').style.display = 'none';
-            document.getElementById('q26-home-screen').style.display = 'block';
+            const fields = ['f-esm', 'f-famil', 'f-shahr', 'f-keshvar', 'f-miveh', 'f-ghaza', 'f-rang', 'f-heyvan', 'f-mashin', 'f-ashia'];
+            let score = 0;
+
+            fields.forEach(id => {
+                const val = document.getElementById(id).value.trim();
+                if (val !== '' && val.startsWith(chosenLetter)) {
+                    score += 10; // درست نوشته شده
+                } else {
+                    score -= 1; // خالی یا اشتباه یا مغایر با حرف گردونه
+                }
+            });
+
+            document.getElementById('last-score-display').innerText = score;
+
+            // ثبت امتیاز کاربر در جدول زنده
+            const existingIndex = esmLeaderboard.findIndex(u => u.name === currentUser);
+            if (existingIndex >= 0) {
+                esmLeaderboard[existingIndex].score += score;
+            } else {
+                esmLeaderboard.push({ name: currentUser, score: score });
+            }
+
+            // مرتب‌سازی جدول بر اساس امتیاز نزولی
+            esmLeaderboard.sort((a, b) => b.score - a.score);
+            localStorage.setItem('esm_leaderboard', JSON.stringify(esmLeaderboard));
+            updateLeaderboardUI();
+
+            alert(`بازی تمام شد! امتیاز کسب شده در این مرحله: ${score}`);
+            document.getElementById('esm-game-screen').style.display = 'none';
+            document.getElementById('esm-home-screen').style.display = 'block';
+
+            // هدایت خودکار به جدول رده‌بندی اسم‌فامیل
+            switchTab('table', document.querySelectorAll('.nav-item')[1]);
+            switchTable('asmfmil');
+        }
+
+        function updateLeaderboardUI() {
+            const listContainer = document.getElementById('dynamic-leaderboard-list');
+            if (!listContainer) return;
+
+            if (esmLeaderboard.length === 0) {
+                listContainer.innerHTML = `<div class="table-row"><span class="rank-col">-</span><span class="name-col">هنوز بازیکنی ثبت نشده</span><span class="score-col">0</span></div>`;
+                return;
+            }
+
+            let html = '';
+            esmLeaderboard.forEach((item, index) => {
+                const isHighlight = item.name === currentUser ? 'highlight' : '';
+                html += `<div class="table-row ${isHighlight}"><span class="rank-col">${index + 1}</span><span class="name-col">${item.name}</span><span class="score-col">${item.score}</span></div>`;
+            });
+            listContainer.innerHTML = html;
         }
 
         window.addEventListener('load', function() {
