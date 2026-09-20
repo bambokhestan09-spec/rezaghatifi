@@ -545,7 +545,6 @@
             border-color: #27ae60;
         }
 
-        /* استایل جدول داخل کوئیز */
         .esm-leaderboard-box {
             background: #ffffff;
             border-radius: 20px;
@@ -571,7 +570,7 @@
             color: #27ae60;
         }
 
-        /* --- جدول رده‌بندی لیگ اصلی، سکو، سوت پایان و گیشه --- */
+        /* --- جدول رده‌بندی، سکو، گیشه و سوت پایان اصلی --- */
         .league-banner-card {
             background: radial-gradient(circle at top right, rgba(245, 197, 24, 0.2), transparent 70%), #1c2536;
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -663,6 +662,8 @@
             justify-content: center;
             align-items: flex-end;
             gap: 15px;
+            border-bottom-left-radius: 35px;
+            border-bottom-right-radius: 35px;
         }
 
         .dsny-podium-col {
@@ -696,6 +697,7 @@
             width: 80px;
             height: 80px;
             border-color: #2ecc71;
+            box-shadow: 0 0 25px rgba(46, 204, 113, 0.6);
         }
 
         .dsny-badge {
@@ -740,6 +742,7 @@
         .dsny-content-area { background-color: var(--card-bg); padding: 20px; border-radius: 0 0 24px 24px; }
         .dsny-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         .dsny-title { font-size: 18px; font-weight: 900; color: #fff; }
+        .dsny-date-range { font-size: 12px; color: var(--text-gray); font-weight: 700; }
 
         .dsny-list-item {
             display: flex;
@@ -749,6 +752,7 @@
             padding: 12px 16px;
             border-radius: 14px;
             margin-bottom: 10px;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         .dsny-item-left { display: flex; align-items: center; gap: 12px; }
@@ -759,23 +763,26 @@
         .dsny-item-name { font-size: 14px; font-weight: 700; color: #fff; }
         .dsny-item-score { display: flex; align-items: center; gap: 6px; font-size: 16px; font-weight: 900; color: #fff; font-family: monospace; }
 
+        /* گیشه اخبار */
         .news-container { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
-        .twitter-card { background-color: var(--card-bg); border-radius: 16px; padding: 16px; border: 1px solid rgba(255, 255, 255, 0.08); display: flex; flex-direction: column; gap: 12px; }
+        .twitter-card { background-color: var(--card-bg); border-radius: 16px; padding: 16px; border: 1px solid rgba(255, 255, 255, 0.08); display: flex; flex-direction: column; gap: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.25); }
         .twitter-header { display: flex; justify-content: space-between; align-items: center; }
         .twitter-profile-info { display: flex; align-items: center; gap: 10px; }
         .twitter-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-yellow), #e67e22); display: flex; align-items: center; justify-content: center; font-weight: 900; color: #121824; font-size: 15px; }
         .twitter-name-box { display: flex; flex-direction: column; }
         .twitter-display-name { font-size: 14px; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 5px; }
         .twitter-handle { font-size: 12px; color: var(--text-gray); }
-        .twitter-badge { background: rgba(245, 197, 24, 0.15); color: var(--accent-yellow); font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; }
+        .twitter-badge { background: rgba(245, 197, 24, 0.15); color: var(--accent-yellow); font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; border: 1px solid rgba(245, 197, 24, 0.3); }
+        .twitter-badge.urgent { background: rgba(231, 76, 60, 0.15); color: var(--accent-red); border-color: rgba(231, 76, 60, 0.3); }
         .twitter-tweet-text { font-size: 14px; color: #e2e8f0; line-height: 1.8; text-align: right; }
         .twitter-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 10px; font-size: 12px; color: var(--text-gray); }
         .twitter-live-timestamp { color: var(--accent-yellow); font-weight: 700; font-family: monospace; }
 
+        /* سوت پایان */
         .match-analysis-container { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
-        .analysis-card { background: var(--card-bg); border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); margin-bottom: 20px; }
+        .analysis-card { background: var(--card-bg); border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 8px 25px rgba(0,0,0,0.4); margin-bottom: 20px; }
         .analysis-body-content { padding: 20px; }
-        .analysis-headline { font-size: 16px; font-weight: 900; color: var(--accent-yellow); margin-bottom: 10px; }
+        .analysis-headline { font-size: 16px; font-weight: 900; color: var(--accent-yellow); margin-bottom: 10px; line-height: 1.5; }
         .analysis-text { font-size: 13px; color: #cbd5e1; line-height: 1.9; }
 
         /* منوی پایین */
@@ -844,11 +851,16 @@
                 <button class="week-nav-btn" onclick="switchMatchWeek('week6', this)">هفته ششم</button>
             </div>
 
+            <!-- هفته پنجم (مسابقات کامل) -->
             <div id="match-week5" class="match-sections-container active">
                 <div class="matchweek-banner">
                     <h2>هفته پنجم پیش‌بینی‌ها</h2>
                     <span>برنامه کامل مسابقات با تاریخ و ساعت</span>
                 </div>
+
+                <button onclick="requestNotification()" style="width: 100%; background: #f5c518; color: #121824; font-weight: 900; border: none; padding: 12px; border-radius: 12px; margin-bottom: 15px; cursor: pointer; font-size: 13px;">
+                    دریافت خبرها و یادآوری مسابقات (کلیک کنید)
+                </button>
 
                 <div class="unified-matches-card">
                     <div class="date-divider" style="margin-top: 0;">جمعه ۲۷ شهریور ۱۴۰۵</div>
@@ -867,9 +879,80 @@
                             <span class="team-name">چلسی</span>
                         </div>
                     </div>
+
+                    <div class="date-divider">شنبه ۲۸ شهریور ۱۴۰۵</div>
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8586.png" alt="Tottenham">
+                            <span class="team-name">تاتنهام</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۱۵:۰۰</span>
+                            <span class="match-date-text">۲۸ شهریور</span>
+                            <span class="match-league-badge">Premier League</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10252.png" alt="Aston Villa">
+                            <span class="team-name">استون ویلا</span>
+                        </div>
+                    </div>
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8650.png" alt="Liverpool">
+                            <span class="team-name">لیورپول</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۱۷:۳۰</span>
+                            <span class="match-date-text">۲۸ شهریور</span>
+                            <span class="match-league-badge">Premier League</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8197.png" alt="Everton">
+                            <span class="team-name">اورتون</span>
+                        </div>
+                    </div>
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8633.png" alt="Real Madrid">
+                            <span class="team-name">رئال مادرید</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۲۲:۳۰</span>
+                            <span class="match-date-text">۲۸ شهریور</span>
+                            <span class="match-league-badge">La Liga</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8302.png" alt="Barcelona">
+                            <span class="team-name">بارسلونا</span>
+                        </div>
+                    </div>
+
+                    <div class="date-divider">یکشنبه ۲۹ شهریور ۱۴۰۵</div>
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9885.png" alt="Juventus">
+                            <span class="team-name">یوونتوس</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۲۱:۴۵</span>
+                            <span class="match-date-text">۲۹ شهریور</span>
+                            <span class="match-league-badge">Serie A</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8636.png" alt="Inter">
+                            <span class="team-name">اینتر</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin: 20px 0; text-align: center;">
+                    <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" style="display: block; background-color: var(--accent-yellow); color: #121824; font-weight: 900; padding: 14px; border-radius: 12px; text-decoration: none; font-size: 15px;">
+                        ورود به لیگ پیش‌بینی در فوت‌موب
+                    </a>
                 </div>
             </div>
 
+            <!-- هفته ششم -->
             <div id="match-week6" class="match-sections-container">
                 <div class="countdown-card">
                     <div class="countdown-title">🔒 Week 6</div>
@@ -884,7 +967,7 @@
         </div>
     </div>
 
-    <!-- تب ۲: جدول رده‌بندی لیگ اصلی -->
+    <!-- تب ۲: جدول رده‌بندی کامل (با تمام هفته‌ها و اعضا) -->
     <div id="tab-table" class="tab-content">
         <div class="league-banner-card">
             <div>
@@ -896,11 +979,63 @@
             </div>
         </div>
 
-        <div class="table-container active">
+        <div class="weeks-nav-container">
+            <button class="week-nav-btn active" onclick="switchTable('complete', this)">جدول کلی</button>
+            <button class="week-nav-btn" onclick="switchTable('w1', this)">هفته اول</button>
+            <button class="week-nav-btn" onclick="switchTable('w2', this)">هفته دوم</button>
+            <button class="week-nav-btn" onclick="switchTable('w3', this)">هفته سوم</button>
+            <button class="week-nav-btn" onclick="switchTable('w4', this)">هفته چهارم</button>
+            <button class="week-nav-btn" onclick="switchTable('w5', this)">هفته پنجم</button>
+        </div>
+
+        <!-- جدول کلی -->
+        <div id="table-complete" class="table-container active">
             <div class="table-row"><span class="rank-col">1</span><span class="name-col">Asm A</span><span class="score-col">56</span></div>
             <div class="table-row highlight"><span class="rank-col">2</span><span class="name-col">REZA GHATIFI</span><span class="score-col">51</span></div>
             <div class="table-row"><span class="rank-col">3</span><span class="name-col">Mahdi</span><span class="score-col">47</span></div>
             <div class="table-row"><span class="rank-col">4</span><span class="name-col">Donya Asil</span><span class="score-col">46</span></div>
+            <div class="table-row"><span class="rank-col">5</span><span class="name-col">Pira</span><span class="score-col">45</span></div>
+            <div class="table-row"><span class="rank-col">6</span><span class="name-col">Aljaber</span><span class="score-col">44</span></div>
+            <div class="table-row"><span class="rank-col">7</span><span class="name-col">Zouidat</span><span class="score-col">42</span></div>
+            <div class="table-row"><span class="rank-col">8</span><span class="name-col">Davoodi</span><span class="score-col">40</span></div>
+            <div class="table-row"><span class="rank-col">9</span><span class="name-col">Bajalan</span><span class="score-col">38</span></div>
+            <div class="table-row"><span class="rank-col">10</span><span class="name-col">Ghatifi Jr</span><span class="score-col">35</span></div>
+        </div>
+
+        <!-- هفته اول -->
+        <div id="table-w1" class="table-container">
+            <div class="table-row"><span class="rank-col">1</span><span class="name-col">Asm A</span><span class="score-col">12</span></div>
+            <div class="table-row"><span class="rank-col">2</span><span class="name-col">REZA GHATIFI</span><span class="score-col">11</span></div>
+            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Mahdi</span><span class="score-col">10</span></div>
+        </div>
+
+        <!-- هفته دوم -->
+        <div id="table-w2" class="table-container">
+            <div class="table-row"><span class="rank-col">1</span><span class="name-col">Donya Asil</span><span class="score-col">13</span></div>
+            <div class="table-row"><span class="rank-col">2</span><span class="name-col">REZA GHATIFI</span><span class="score-col">12</span></div>
+            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Asm A</span><span class="score-col">10</span></div>
+        </div>
+
+        <!-- هفته سوم -->
+        <div id="table-w3" class="table-container">
+            <div class="table-row"><span class="rank-col">1</span><span class="name-col">Asm A</span><span class="score-col">14</span></div>
+            <div class="table-row"><span class="rank-col">2</span><span class="name-col">Mahdi</span><span class="score-col">12</span></div>
+            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Pira</span><span class="score-col">11</span></div>
+        </div>
+
+        <!-- هفته چهارم -->
+        <div id="table-w4" class="table-container">
+            <div class="table-row"><span class="rank-col">1</span><span class="name-col">REZA GHATIFI</span><span class="score-col">13</span></div>
+            <div class="table-row"><span class="rank-col">2</span><span class="name-col">Aljaber</span><span class="score-col">12</span></div>
+            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Zouidat</span><span class="score-col">10</span></div>
+        </div>
+
+        <!-- هفته پنجم -->
+        <div id="table-w5" class="table-container">
+            <div class="table-row"><span class="rank-col">1</span><span class="name-col">Aljaber</span><span class="score-col">5</span></div>
+            <div class="table-row"><span class="rank-col">2</span><span class="name-col">Pira</span><span class="score-col">5</span></div>
+            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Zouidat</span><span class="score-col">4</span></div>
+            <div class="table-row"><span class="rank-col">4</span><span class="name-col">REZA GHATIFI</span><span class="score-col">3</span></div>
         </div>
     </div>
 
@@ -922,8 +1057,10 @@
                 </div>
             </div>
             <div class="dsny-content-area">
-                <div class="dsny-header-row"><div class="dsny-title">تالار افتخارات هفته پنجم</div></div>
+                <div class="dsny-header-row"><div class="dsny-title">تالار افتخارات هفته پنجم پیش‌بینی‌ها</div><div class="dsny-date-range">لیگ گداهای استرسی</div></div>
                 <div class="dsny-list-item"><div class="dsny-item-left"><div class="dsny-item-badge first">1</div><div class="dsny-item-name">الجابر</div></div><div class="dsny-item-score"><span>5</span>⭐</div></div>
+                <div class="dsny-list-item"><div class="dsny-item-left"><div class="dsny-item-badge second">2</div><div class="dsny-item-name">پیرا</div></div><div class="dsny-item-score"><span>5</span>⭐</div></div>
+                <div class="dsny-list-item"><div class="dsny-item-left"><div class="dsny-item-badge third">3</div><div class="dsny-item-name">زویدات</div></div><div class="dsny-item-score"><span>4</span>⭐</div></div>
             </div>
         </div>
     </div>
@@ -942,7 +1079,7 @@
 و‌فهمید که اینتر گل دوم را زده و بازی همان شده که پیش بینی کرده بود،و همای سعادت روی شانه های الجابر نشسته بود ولی پرهایش گوهی شده بودند و‌ وا ویلتا.
 بازی بارسلونا و سویا هم با نتیجه ۳بریک به نفع بارسلونا به پایان رسید تا شب پرفروغ پیرا و الجابر به پایان برسد…
 ضمنا داودی بازی بارسلونا رو درست حدث زده بود و 
-سوت پایان…
+sوت پایان…
                     </p>
                 </div>
             </div>
@@ -953,6 +1090,8 @@
     <div id="tab-gisheh" class="tab-content">
         <div class="news-container">
             <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">گیشه اخبار و رویدادها</h2>
+            <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 10px;">اخبار لحظه‌ای، گزارش‌های ویژه و حاشیه‌ها</p>
+
             <div class="twitter-card">
                 <div class="twitter-header">
                     <div class="twitter-profile-info">
@@ -963,15 +1102,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="twitter-tweet-text">در ایالت‌های مختلف آمریکا، کاهش ذخیره سوخت مشاهده شده است.</div>
-                <div class="twitter-footer"><span>گیشه اخبار</span><span class="twitter-live-timestamp">۲۸ شهریور ۱۴۰۵</span></div>
+                <div class="twitter-tweet-text">در ایالت‌های مختلف آمریکا، به ویژه کالیفرنیا و تگزاس، کاهش قابل توجهی در میزان ذخیره بنزین و سوخت مشاهده شده است.</div>
+                <div class="twitter-footer"><span>گیشه اخبار و رویدادها</span><span class="twitter-live-timestamp">۲۸ شهریور ۱۴۰۵</span></div>
             </div>
         </div>
     </div>
 
-    <!-- تب ۶: کوئیز (بازی اسم فامیل آنلاین همراه با جدول رتبه‌بندی داخلی) -->
+    <!-- تب ۶: کوئیزگدا (اسم فامیل آنلاین با جدول رتبه‌بندی داخلی) -->
     <div id="tab-banter" class="tab-content">
-        <!-- صفحه اصلی اسم فامیل -->
         <div class="q26-container" id="esm-home-screen">
             <div class="q26-top-bar">
                 <button class="q26-icon-btn" onclick="switchTab('home', document.querySelector('.nav-item'))">🏠</button>
@@ -1017,7 +1155,7 @@
                 </button>
             </div>
 
-            <!-- جدول رتبه‌بندی درون خود کوئیز -->
+            <!-- جدول رتبه‌بندی درون کوئیز -->
             <div class="esm-leaderboard-box" id="esm-leaderboard-section">
                 <div style="font-weight: 900; font-size: 15px; color: #0f172a; margin-bottom: 10px; text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 6px;">جدول امتیازات اسم‌فامیل 🏆</div>
                 <div id="dynamic-esm-leaderboard">
@@ -1026,7 +1164,6 @@
             </div>
         </div>
 
-        <!-- صفحه حین بازی اسم فامیل -->
         <div class="q26-container esm-fامیل-screen" id="esm-game-screen">
             <div style="display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 12px 18px; border-radius: 14px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
                 <div style="font-weight: 900; font-size: 15px; color: #27ae60;">حرف: <span id="active-letter-badge" style="font-size: 20px; color: #e74c3c;">ب</span></div>
@@ -1083,6 +1220,13 @@
             document.querySelectorAll('.hero-banner .week-nav-btn').forEach(b => b.classList.remove('active'));
             document.getElementById('match-' + weekId).classList.add('active');
             btn.classList.add('active');
+        }
+
+        function switchTable(tableId, btn) {
+            document.querySelectorAll('.table-container').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('#tab-table .week-nav-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('table-' + tableId).classList.add('active');
+            if(btn) btn.classList.add('active');
         }
 
         function switchTab(tabId, btn) {
