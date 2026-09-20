@@ -176,17 +176,7 @@
             font-size: 13px;
         }
 
-        .date-divider {
-            font-size: 15px;
-            font-weight: 900;
-            color: var(--accent-yellow);
-            margin: 25px 0 12px 0;
-            text-align: right;
-            border-bottom: 1px solid #2a3649;
-            padding-bottom: 6px;
-        }
-
-        /* --- استایل کارت واحد و منظم مسابقات (سازگار با موبایل و دسکتاپ) --- */
+        /* --- استایل کارت واحد و منظم مسابقات --- */
         .unified-matches-card {
             background-color: var(--card-bg);
             border-radius: 20px;
@@ -256,35 +246,21 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-width: 110px;
+            min-width: 90px;
             padding: 0 8px;
             text-align: center;
         }
 
-        .match-time-text {
-            font-size: 15px;
-            font-weight: 900;
+        .match-league-badge {
+            font-size: 10px;
             color: var(--accent-yellow);
-            line-height: 1.2;
-        }
-
-        .match-date-text {
-            font-size: 11px;
-            color: var(--text-gray);
-            margin-top: 3px;
+            background: rgba(245, 197, 24, 0.1);
+            padding: 2px 8px;
+            border-radius: 6px;
             font-weight: 700;
         }
 
-        .match-league-badge {
-            font-size: 9px;
-            color: #7b8898;
-            background: rgba(255,255,255,0.05);
-            padding: 1px 6px;
-            border-radius: 4px;
-            margin-top: 2px;
-        }
-
-        /* --- بنر افقی ژله‌ای شاد (یکدست آبی) --- */
+        /* --- بنر افقی ژله‌ای شاد (یکدست آبی مشابه اسنپ) --- */
         .snapp-banner-unified {
             background: linear-gradient(135deg, #2980b9, #1b4f72);
             border-radius: 16px;
@@ -672,133 +648,6 @@
             margin-bottom: 20px;
         }
 
-        .match-banner-graphic {
-            position: relative;
-            width: 100%;
-            height: 230px;
-            background: linear-gradient(135deg, #1b2838, #0d141f);
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 3px solid var(--accent-yellow);
-        }
-
-        .match-banner-graphic img.bg-stadium {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.35;
-        }
-
-        .match-banner-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(18, 24, 36, 0.7);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 15px 20px;
-        }
-
-        .graphic-top-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .live-badge {
-            background: #e74c3c;
-            color: #fff;
-            font-size: 10px;
-            font-weight: 900;
-            padding: 3px 8px;
-            border-radius: 4px;
-            letter-spacing: 1px;
-        }
-
-        .brand-logo-text {
-            font-size: 11px;
-            color: var(--text-gray);
-            font-weight: 700;
-        }
-
-        .graphic-center-content {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .sout-payan-title-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 4px;
-        }
-
-        .sout-payan-title {
-            font-size: 34px;
-            font-weight: 900;
-            color: #ffffff;
-            letter-spacing: 3px;
-            text-shadow: 0 4px 12px rgba(0,0,0,0.9);
-            background: linear-gradient(to bottom, #ffffff, #dcdcdc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .sout-payan-sub {
-            font-size: 11px;
-            color: var(--accent-yellow);
-            font-weight: 700;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 2px 14px;
-            border-radius: 6px;
-            letter-spacing: 1px;
-        }
-
-        .graphic-bottom-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 8px;
-        }
-
-        .team-emblem-group {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .team-emblem-group img {
-            width: 26px;
-            height: 26px;
-            object-fit: contain;
-        }
-
-        .teams-versus-text {
-            font-size: 12px;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .match-score-badge {
-            background: var(--accent-yellow);
-            color: #121824;
-            font-weight: 900;
-            font-size: 14px;
-            padding: 2px 12px;
-            border-radius: 6px;
-        }
-
         .analysis-body-content {
             padding: 20px;
         }
@@ -980,12 +829,6 @@
             height: 20px;
             fill: currentColor;
         }
-
-        @media (max-width: 480px) {
-            .sout-payan-title {
-                font-size: 26px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -1003,11 +846,11 @@
 
     <header>لیگ گداهای استرسی</header>
 
-    <!-- تب ۱: مسابقات (در یک کارت واحد و منظم بدون ضرایب و دکمه‌های اضافه) -->
+    <!-- تب ۱: مسابقات -->
     <div id="tab-home" class="tab-content active">
         <div class="hero-banner">
 
-            <!-- بنر افقی ژله‌ای شاد (یکدست آبی) -->
+            <!-- بنر افقی ژله‌ای شاد (یکدست آبی مشابه اسنپ) ۱ -->
             <div class="snapp-banner-unified">
                 <div class="snapp-banner-content">
                     <div class="snapp-logos-group">
@@ -1019,12 +862,10 @@
                         <p>لیورپول - بورنموث</p>
                     </div>
                 </div>
-                <div class="snapp-icons-element">
-                    ⚽🏆
-                </div>
+                <div class="snapp-icons-element">⚽🏆</div>
             </div>
 
-            <!-- بنر افقی دوم -->
+            <!-- بنر افقی ژله‌ای شاد ۲ -->
             <div class="snapp-banner-unified">
                 <div class="snapp-banner-content">
                     <div class="snapp-logos-group">
@@ -1036,12 +877,10 @@
                         <p>رئال مادرید - اتلتیکو مادرید</p>
                     </div>
                 </div>
-                <div class="snapp-icons-element">
-                    ⚽🏆
-                </div>
+                <div class="snapp-icons-element">⚽🏆</div>
             </div>
 
-            <!-- بنر افقی سوم -->
+            <!-- بنر افقی ژله‌ای شاد ۳ -->
             <div class="snapp-banner-unified">
                 <div class="snapp-banner-content">
                     <div class="snapp-logos-group">
@@ -1053,9 +892,7 @@
                         <p>منچستریونایتد - فولام</p>
                     </div>
                 </div>
-                <div class="snapp-icons-element">
-                    ⚽🏆
-                </div>
+                <div class="snapp-icons-element">⚽🏆</div>
             </div>
 
             <button onclick="requestNotification()" style="width: 100%; background: #f5c518; color: #121824; font-weight: 900; border: none; padding: 12px; border-radius: 12px; margin-bottom: 15px; cursor: pointer; font-size: 13px; box-shadow: 0 4px 10px rgba(245, 197, 24, 0.25);">
@@ -1069,17 +906,12 @@
 
             <!-- کارت واحد حاوی تمامی مسابقات -->
             <div class="unified-matches-card">
-                
-                <div class="date-divider" style="margin-top: 0;">جمعه ۲۷ شهریور ۱۴۰۵</div>
-                
                 <div class="match-row-clean">
                     <div class="team-side home">
                         <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
                         <span class="team-name">برنتفورد</span>
                     </div>
                     <div class="match-center-info">
-                        <span class="match-time-text">۲۲:۳۰</span>
-                        <span class="match-date-text">۲۷ شهریور</span>
                         <span class="match-league-badge">Premier League</span>
                     </div>
                     <div class="team-side away">
@@ -1088,16 +920,12 @@
                     </div>
                 </div>
 
-                <div class="date-divider">شنبه ۲۸ شهریور ۱۴۰۵</div>
-
                 <div class="match-row-clean">
                     <div class="team-side home">
                         <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8586.png" alt="Tottenham">
                         <span class="team-name">تاتنهام</span>
                     </div>
                     <div class="match-center-info">
-                        <span class="match-time-text">۱۵:۰۰</span>
-                        <span class="match-date-text">۲۸ شهریور</span>
                         <span class="match-league-badge">Premier League</span>
                     </div>
                     <div class="team-side away">
@@ -1112,8 +940,6 @@
                         <span class="team-name">برایتون</span>
                     </div>
                     <div class="match-center-info">
-                        <span class="match-time-text">۱۷:۳۰</span>
-                        <span class="match-date-text">۲۸ شهریور</span>
                         <span class="match-league-badge">Premier League</span>
                     </div>
                     <div class="team-side away">
@@ -1128,8 +954,6 @@
                         <span class="team-name">سویا</span>
                     </div>
                     <div class="match-center-info">
-                        <span class="match-time-text">۲۲:۳۰</span>
-                        <span class="match-date-text">۲۸ شهریور</span>
                         <span class="match-league-badge">LaLiga</span>
                     </div>
                     <div class="team-side away">
@@ -1138,16 +962,12 @@
                     </div>
                 </div>
 
-                <div class="date-divider">یکشنبه ۲۹ شهریور ۱۴۰۵</div>
-
                 <div class="match-row-clean">
                     <div class="team-side home">
                         <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8678.png" alt="Bournemouth">
                         <span class="team-name">بورنموث</span>
                     </div>
                     <div class="match-center-info">
-                        <span class="match-time-text">۱۶:۳۰</span>
-                        <span class="match-date-text">۲۹ شهریور</span>
                         <span class="match-league-badge">Premier League</span>
                     </div>
                     <div class="team-side away">
@@ -1162,8 +982,6 @@
                         <span class="team-name">اتلتیکو مادرید</span>
                     </div>
                     <div class="match-center-info">
-                        <span class="match-time-text">۱۷:۴۵</span>
-                        <span class="match-date-text">۲۹ شهریور</span>
                         <span class="match-league-badge">LaLiga</span>
                     </div>
                     <div class="team-side away">
@@ -1178,8 +996,6 @@
                         <span class="team-name">فولام</span>
                     </div>
                     <div class="match-center-info">
-                        <span class="match-time-text">۱۹:۰۰</span>
-                        <span class="match-date-text">۲۹ شهریور</span>
                         <span class="match-league-badge">Premier League</span>
                     </div>
                     <div class="team-side away">
@@ -1187,7 +1003,6 @@
                         <span class="team-name">منچستریونایتد</span>
                     </div>
                 </div>
-
             </div>
 
             <div style="margin: 25px 0; text-align: center;">
@@ -1395,112 +1210,23 @@
         </div>
     </div>
 
-    <!-- تب ۴: سوت پایان -->
+    <!-- تب ۴: سوت پایان (گزارش بدون تغییر کلمه به کلمه) -->
     <div id="tab-soutpayan" class="tab-content">
         <div class="match-analysis-container">
             <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">سوت پایان | تحلیل و بررسی مسابقات</h2>
-            <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 15px;">تحلیل موشکافانه و کارشناسی نتایج و بازی‌های حساس هفته</p>
+            <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 15px;">گزارش اختصاصی و تحلیل‌های شب گذشته</p>
 
             <div class="analysis-card">
-                <div class="match-banner-graphic">
-                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" alt="Stadium" class="bg-stadium">
-                    <div class="match-banner-overlay">
-                        <div class="graphic-top-row">
-                            <span class="live-badge">FULL TIME</span>
-                            <span class="brand-logo-text">CANBO FOOTBALL</span>
-                        </div>
-                        <div class="graphic-center-content">
-                            <div class="sout-payan-title-wrapper">
-                                <span class="sout-payan-title" style="font-size: 24px;">سویا ۱ - بارسلونا ۳</span>
-                            </div>
-                            <div class="sout-payan-sub">گزارش ویژه پیش‌بینی هفته پنجم</div>
-                        </div>
-                        <div class="graphic-bottom-row">
-                            <div class="team-emblem-group">
-                                <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8302.png" alt="Sev">
-                                <span class="teams-versus-text">سویا - بارسلونا</span>
-                            </div>
-                            <div class="match-score-badge">۱ - ۳</div>
-                            <div class="team-emblem-group" style="flex-direction: row-reverse;">
-                                <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png" alt="Bar">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="analysis-body-content">
-                    <h3 class="analysis-headline">بارسلونا ۳ - ۱ پیروز شد تا قطیفی بخت سیاه بالاخره در این هفته امتیاز کسب کند!</h3>
-                    <p class="analysis-text">
-                        بارسلونا با هتریک مهاجم خود رافینیا توانست با ۳ گل تیم میزبان خودش را بدرقه کند. قطیفی، پیرا و داودی توانستند درست بازی رو پیش‌بینی کنن. تا اینجای کار تا پایان شب دوم پیش‌بینی هفته پنجم، در عین خوش‌شانسی الجابر و پیرا همه چیز به‌نفع آنها پیش رفت تا هردو با ۵ امتیاز بروند به صدر جدول که ان‌شاءالله به حق ۵ تن با کله بیان تا تهه جدول! <br><br>
-                        محمدیاش صلوات
-                    </p>
-                </div>
-            </div>
-
-            <div class="analysis-card">
-                <div class="match-banner-graphic">
-                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" alt="Stadium" class="bg-stadium">
-                    <div class="match-banner-overlay">
-                        <div class="graphic-top-row">
-                            <span class="live-badge">FULL TIME</span>
-                            <span class="brand-logo-text">CANBO FOOTBALL</span>
-                        </div>
-                        <div class="graphic-center-content">
-                            <div class="sout-payan-title-wrapper">
-                                <span class="sout-payan-title" style="font-size: 24px;">رم ۲ - اینتر ۲</span>
-                            </div>
-                            <div class="sout-payan-sub">تحلیل ویژه بازی جذاب لیگ ایتالیا</div>
-                        </div>
-                        <div class="graphic-bottom-row">
-                            <div class="team-emblem-group">
-                                <span class="teams-versus-text">رم - اینتر</span>
-                            </div>
-                            <div class="match-score-badge">۲ - ۲</div>
-                            <div class="team-emblem-group"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="analysis-body-content">
-                    <h3 class="analysis-headline">رم۲-اینتر فلان فلان شده۲</h3>
-                    <p class="analysis-text">
-                        بازی مهیج در لیگ ایتالیا وقتی مهیج تر شد که الجابر تنها شرکت کننده ایی بود مه بازی رو درست پیش بینی کرده بود.از اونجایی که هفته پیش بینی ها به ایستگاه پنجم رسیده بود و هفته بشدت مهمی برای همه بود ولی توی همون بازی های اول پیش بینی همه برعکس از آب در‌اومد تا رسیدیم به بازی رم و اینتر که اول بازی رم با ۲”گل از حریف خودش جلو افتاد اما بعد در نیمه دوم اینتر دوگل خورده رو جبران کرد.به غیر از الجابر(ایشالله کوفته بشه این ۳امتیاز)زویدات(مرض زده)و پیرای(مصطفی الحجی ابولنسلباس)هم بازی رو مساوی پیش بینی کردن
-                    </p>
-                </div>
-            </div>
-
-            <div class="analysis-card">
-                <div class="match-banner-graphic">
-                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" alt="Stadium" class="bg-stadium">
-                    <div class="match-banner-overlay">
-                        <div class="graphic-top-row">
-                            <span class="live-badge">FULL TIME</span>
-                            <span class="brand-logo-text">CANBO FOOTBALL</span>
-                        </div>
-                        <div class="graphic-center-content">
-                            <div class="sout-payan-title-wrapper">
-                                <span class="sout-payan-title" style="font-size: 26px;">برنتفورد – چلسی</span>
-                            </div>
-                            <div class="sout-payan-sub">آغاز هفته پنجم پرمیرلیگ (۲۷ شهریور ۱۴۰۵)</div>
-                        </div>
-                        <div class="graphic-bottom-row">
-                            <div class="team-emblem-group">
-                                <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
-                                <span class="teams-versus-text">برنتفورد - چلسی</span>
-                            </div>
-                            <div class="match-score-badge">۳ - ۰</div>
-                            <div class="team-emblem-group" style="flex-direction: row-reverse;">
-                                <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" alt="Chelsea">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="analysis-body-content">
-                    <h3 class="analysis-headline">شامورتی‌بازیِ دوستانِ گداگشنه و سیلی آبدار برنتفورد به تیم پرپول چلسی!</h3>
-                    <p class="analysis-text">
-                        دیشب در شروع هفته پنجم پیش‌بینی‌ها، دوستان گداگشنه و فیره‌فروش فکر کردن خیلی زرنگن و برای برد چلسی شکمشون رو صابون زدن؛ اما دست از از اون غذا، این تیم برنتفورد بود که با ۳ گل خوشگل، تیم پرپول چلسی رو جر داد!<br><br>
-                        نتیجه؟ کل فیره‌فروشا صففر گرفتن و انگشت به دهن، منتظر پیش‌بینی بازی‌های بعدی موندن! اگه تیم‌هایی که بچه‌ها به عنوان برنده روشون حساب باز کردن همین‌جوری پیش برن، از همین الان کاملاً معلومه کی قهرمان این فصل از استرس و بدبختی میشه!
+                    <h3 class="analysis-headline">در شب گذشته لیگ گداهای استرسی چه گذشت</h3>
+                    <p class="analysis-text" style="white-space: pre-line;">
+تساوی اینتر و رم
+در شب خوشانسی الجابر و زویدات
+شب گذشته با وجود چرخکرده های زیاد داخل یخچال و فیره های ۲۶۴۳و غمگینی باجلان شاهکار الجابر رو‌نمیشه فراموش کرد،الجابر با ورد به مضطراب جهت انجام امور شخصی ناگهان با فریادهای قطیفی مواجه شد که(الجابر،الجابر)الجابر که در درون مضطراب بود با سوال چی شده چی شده جویای ماجرا شد
+و‌فهمید که اینتر گل دوم را زده و بازی همان شده که پیش بینی کرده بود،و همای سعادت روی شانه های الجابر نشسته بود ولی پرهایش گوهی شده بودند و‌ وا ویلتا.
+بازی بارسلونا و سویا هم با نتیجه ۳بریک به نفع بارسلونا به پایان رسید تا شب پرفروغ پیرا و الجابر به پایان برسد…
+ضمنا داودی بازی بارسلونا رو درست حدث زده بود و 
+سوت پایان…
                     </p>
                 </div>
             </div>
