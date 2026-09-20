@@ -160,7 +160,7 @@
             border-radius: 14px;
             padding: 15px;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             box-shadow: 0 4px 15px rgba(245, 197, 24, 0.2);
         }
 
@@ -174,6 +174,16 @@
         .matchweek-banner span {
             color: var(--text-gray);
             font-size: 13px;
+        }
+
+        .date-divider {
+            font-size: 14px;
+            font-weight: 900;
+            color: var(--accent-yellow);
+            margin: 20px 0 10px 0;
+            text-align: right;
+            border-bottom: 1px solid #2a3649;
+            padding-bottom: 6px;
         }
 
         /* --- استایل کارت واحد و منظم مسابقات --- */
@@ -191,9 +201,9 @@
             align-items: center;
             justify-content: space-between;
             background: #121824;
-            padding: 14px 16px;
+            padding: 12px 14px;
             border-radius: 14px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: border-color 0.2s ease;
         }
@@ -210,7 +220,7 @@
             flex: 1;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .team-side.home {
@@ -225,15 +235,15 @@
         }
 
         .team-side img {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             object-fit: contain;
             filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
             flex-shrink: 0;
         }
 
         .team-name {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
             color: #fff;
             white-space: nowrap;
@@ -246,78 +256,137 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-width: 90px;
-            padding: 0 8px;
+            min-width: 85px;
+            padding: 0 6px;
             text-align: center;
         }
 
-        .match-league-badge {
-            font-size: 10px;
+        .match-time-text {
+            font-size: 13px;
+            font-weight: 900;
             color: var(--accent-yellow);
-            background: rgba(245, 197, 24, 0.1);
-            padding: 2px 8px;
-            border-radius: 6px;
+            line-height: 1.2;
+        }
+
+        .match-date-text {
+            font-size: 10px;
+            color: var(--text-gray);
+            margin-top: 2px;
             font-weight: 700;
         }
 
-        /* --- بنر افقی ژله‌ای شاد (یکدست آبی مشابه اسنپ) --- */
-        .snapp-banner-unified {
-            background: linear-gradient(135deg, #2980b9, #1b4f72);
-            border-radius: 16px;
-            padding: 14px 18px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 6px 20px rgba(41, 128, 185, 0.4);
-            position: relative;
-            overflow: hidden;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+        .match-league-badge {
+            font-size: 9px;
+            color: #7b8898;
+            background: rgba(255,255,255,0.05);
+            padding: 1px 5px;
+            border-radius: 4px;
+            margin-top: 2px;
         }
 
-        .snapp-banner-content {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            z-index: 1;
+        /* --- استایل بخش هفته ششم و ساعت‌شمار --- */
+        .match-sections-container {
+            display: none;
+        }
+        .match-sections-container.active {
+            display: block;
         }
 
-        .snapp-logos-group {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(0, 0, 0, 0.25);
-            padding: 6px 10px;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.2);
+        .countdown-card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 24px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            margin-bottom: 20px;
         }
 
-        .snapp-logos-group img {
-            width: 28px;
-            height: 28px;
-            object-fit: contain;
-        }
-
-        .snapp-text-box h4 {
-            font-size: 14px;
+        .countdown-title {
+            font-size: 18px;
             font-weight: 900;
             color: #fff;
-            margin-bottom: 2px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .snapp-text-box p {
-            font-size: 11px;
-            color: #e0f2fe;
-            font-weight: 700;
-        }
-
-        .snapp-icons-element {
+            margin-bottom: 5px;
             display: flex;
             align-items: center;
-            gap: 4px;
-            z-index: 1;
-            font-size: 22px;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .countdown-subtitle {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .countdown-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .countdown-box {
+            background: #121824;
+            border: 1px solid #2a3649;
+            border-radius: 14px;
+            padding: 12px 16px;
+            min-width: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .countdown-number {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--accent-yellow);
+            font-family: monospace;
+            line-height: 1.2;
+        }
+
+        .countdown-label {
+            font-size: 11px;
+            color: var(--text-gray);
+            margin-top: 4px;
+        }
+
+        /* --- تب‌های ناوبری مسابقات (مشابه جدول) --- */
+        .weeks-nav-container {
+            max-width: 680px;
+            margin: 0 auto 15px auto;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+            scrollbar-width: thin;
+        }
+
+        .week-nav-btn {
+            background: #1c2536;
+            color: var(--text-gray);
+            border: 1px solid #2a3649;
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .week-nav-btn:hover {
+            border-color: var(--accent-yellow);
+            color: #fff;
+        }
+
+        .week-nav-btn.active {
+            background: var(--accent-yellow);
+            color: #121824;
+            border-color: var(--accent-yellow);
+            font-weight: 900;
+            box-shadow: 0 4px 12px rgba(245, 197, 24, 0.3);
         }
 
         /* --- استایل بخش سکو (تالار افتخارات) --- */
@@ -706,43 +775,6 @@
             justify-content: center;
         }
 
-        .weeks-nav-container {
-            max-width: 680px;
-            margin: 0 auto 15px auto;
-            display: flex;
-            gap: 8px;
-            overflow-x: auto;
-            padding-bottom: 5px;
-            scrollbar-width: thin;
-        }
-
-        .week-nav-btn {
-            background: #1c2536;
-            color: var(--text-gray);
-            border: 1px solid #2a3649;
-            padding: 10px 14px;
-            border-radius: 12px;
-            font-size: 13px;
-            font-weight: 700;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: all 0.2s ease;
-            flex-shrink: 0;
-        }
-
-        .week-nav-btn:hover {
-            border-color: var(--accent-yellow);
-            color: #fff;
-        }
-
-        .week-nav-btn.active {
-            background: var(--accent-yellow);
-            color: #121824;
-            border-color: var(--accent-yellow);
-            font-weight: 900;
-            box-shadow: 0 4px 12px rgba(245, 197, 24, 0.3);
-        }
-
         .table-container {
             background-color: var(--card-bg);
             border-radius: 15px;
@@ -846,170 +878,196 @@
 
     <header>لیگ گداهای استرسی</header>
 
-    <!-- تب ۱: مسابقات -->
+    <!-- تب ۱: مسابقات پیش‌بینی -->
     <div id="tab-home" class="tab-content active">
         <div class="hero-banner">
 
-            <!-- بنر افقی ژله‌ای شاد (یکدست آبی مشابه اسنپ) ۱ -->
-            <div class="snapp-banner-unified">
-                <div class="snapp-banner-content">
-                    <div class="snapp-logos-group">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8650.png" alt="Liv">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8678.png" alt="Bou">
-                    </div>
-                    <div class="snapp-text-box">
-                        <h4>پیش‌بینی کن یادتون نره</h4>
-                        <p>لیورپول - بورنموث</p>
-                    </div>
+            <div class="league-banner-card" style="margin-bottom: 15px;">
+                <div>
+                    <div class="league-banner-title">مسابقات پیش‌بینی</div>
+                    <div class="league-banner-subtitle">لیگ گداهای استرسی</div>
                 </div>
-                <div class="snapp-icons-element">⚽🏆</div>
-            </div>
-
-            <!-- بنر افقی ژله‌ای شاد ۲ -->
-            <div class="snapp-banner-unified">
-                <div class="snapp-banner-content">
-                    <div class="snapp-logos-group">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8633.png" alt="RMA">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9906.png" alt="ATM">
-                    </div>
-                    <div class="snapp-text-box">
-                        <h4>پیش‌بینی کن یادتون نره</h4>
-                        <p>رئال مادرید - اتلتیکو مادرید</p>
-                    </div>
-                </div>
-                <div class="snapp-icons-element">⚽🏆</div>
-            </div>
-
-            <!-- بنر افقی ژله‌ای شاد ۳ -->
-            <div class="snapp-banner-unified">
-                <div class="snapp-banner-content">
-                    <div class="snapp-logos-group">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10260.png" alt="MUN">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9879.png" alt="FUL">
-                    </div>
-                    <div class="snapp-text-box">
-                        <h4>پیش‌بینی کن یادتون نره</h4>
-                        <p>منچستریونایتد - فولام</p>
-                    </div>
-                </div>
-                <div class="snapp-icons-element">⚽🏆</div>
-            </div>
-
-            <button onclick="requestNotification()" style="width: 100%; background: #f5c518; color: #121824; font-weight: 900; border: none; padding: 12px; border-radius: 12px; margin-bottom: 15px; cursor: pointer; font-size: 13px; box-shadow: 0 4px 10px rgba(245, 197, 24, 0.25);">
-                دریافت خبرها و یادآوری مسابقات (کلیک کنید)
-            </button>
-
-            <div class="matchweek-banner">
-                <h2>هفته پنجم پیش‌بینی‌ها</h2>
-                <span>لیگ گداهای استرسی فصل دوم</span>
-            </div>
-
-            <!-- کارت واحد حاوی تمامی مسابقات -->
-            <div class="unified-matches-card">
-                <div class="match-row-clean">
-                    <div class="team-side home">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
-                        <span class="team-name">برنتفورد</span>
-                    </div>
-                    <div class="match-center-info">
-                        <span class="match-league-badge">Premier League</span>
-                    </div>
-                    <div class="team-side away">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" alt="Chelsea">
-                        <span class="team-name">چلسی</span>
-                    </div>
-                </div>
-
-                <div class="match-row-clean">
-                    <div class="team-side home">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8586.png" alt="Tottenham">
-                        <span class="team-name">تاتنهام</span>
-                    </div>
-                    <div class="match-center-info">
-                        <span class="match-league-badge">Premier League</span>
-                    </div>
-                    <div class="team-side away">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10252.png" alt="Aston Villa">
-                        <span class="team-name">استون ویلا</span>
-                    </div>
-                </div>
-
-                <div class="match-row-clean">
-                    <div class="team-side home">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10204.png" alt="Brighton">
-                        <span class="team-name">برایتون</span>
-                    </div>
-                    <div class="match-center-info">
-                        <span class="match-league-badge">Premier League</span>
-                    </div>
-                    <div class="team-side away">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9825.png" alt="Arsenal">
-                        <span class="team-name">آرسنال</span>
-                    </div>
-                </div>
-
-                <div class="match-row-clean">
-                    <div class="team-side home">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8302.png" alt="Sevilla">
-                        <span class="team-name">سویا</span>
-                    </div>
-                    <div class="match-center-info">
-                        <span class="match-league-badge">LaLiga</span>
-                    </div>
-                    <div class="team-side away">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png" alt="Barcelona">
-                        <span class="team-name">بارسلونا</span>
-                    </div>
-                </div>
-
-                <div class="match-row-clean">
-                    <div class="team-side home">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8678.png" alt="Bournemouth">
-                        <span class="team-name">بورنموث</span>
-                    </div>
-                    <div class="match-center-info">
-                        <span class="match-league-badge">Premier League</span>
-                    </div>
-                    <div class="team-side away">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8650.png" alt="Liverpool">
-                        <span class="team-name">لیورپول</span>
-                    </div>
-                </div>
-
-                <div class="match-row-clean">
-                    <div class="team-side home">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9906.png" alt="Atletico Madrid">
-                        <span class="team-name">اتلتیکو مادرید</span>
-                    </div>
-                    <div class="match-center-info">
-                        <span class="match-league-badge">LaLiga</span>
-                    </div>
-                    <div class="team-side away">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8633.png" alt="Real Madrid">
-                        <span class="team-name">رئال مادرید</span>
-                    </div>
-                </div>
-
-                <div class="match-row-clean">
-                    <div class="team-side home">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9879.png" alt="Fulham">
-                        <span class="team-name">فولام</span>
-                    </div>
-                    <div class="match-center-info">
-                        <span class="match-league-badge">Premier League</span>
-                    </div>
-                    <div class="team-side away">
-                        <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10260.png" alt="Man United">
-                        <span class="team-name">منچستریونایتد</span>
-                    </div>
+                <div class="cup-hex-icon">
+                    <svg viewBox="0 0 24 24" width="30" height="30" fill="#f5c518"><path d="M19,5H17V3A1,1 0 0,0 16,2H8A1,1 0 0,0 7,3V5H5A3,3 0 0,0 2,8V9A3,3 0 0,0 5,12H5.5A6,6 0 0,0 11,17.93V20H8V22H16V20H13V17.93A6,6 0 0,0 18.5,12H19A3,3 0 0,0 22,9V8A3,3 0 0,0 19,5M5,10A1,1 0 0,1 4,9V8A1,1 0 0,1 5,7H7V10H5M20,9A1,1 0 0,1 19,10H17V7H19A1,1 0 0,1 20,8Z"/></svg>
                 </div>
             </div>
 
-            <div style="margin: 25px 0; text-align: center;">
-                <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" style="display: block; background-color: var(--accent-yellow); color: #121824; font-weight: 900; padding: 14px; border-radius: 12px; text-decoration: none; font-size: 15px; box-shadow: 0 4px 10px rgba(245, 197, 24, 0.3);">
-                    ورود به لیگ پیش‌بینی در فوت‌موب
-                </a>
+            <div class="weeks-nav-container">
+                <button class="week-nav-btn active" onclick="switchMatchWeek('week5', this)">هفته پنجم</button>
+                <button class="week-nav-btn" onclick="switchMatchWeek('week6', this)">هفته ششم</button>
             </div>
+
+            <!-- بخش هفته پنجم -->
+            <div id="match-week5" class="match-sections-container active">
+                <div class="matchweek-banner">
+                    <h2>هفته پنجم پیش‌بینی‌ها</h2>
+                    <span>برنامه کامل مسابقات با تاریخ و ساعت</span>
+                </div>
+
+                <button onclick="requestNotification()" style="width: 100%; background: #f5c518; color: #121824; font-weight: 900; border: none; padding: 12px; border-radius: 12px; margin-bottom: 15px; cursor: pointer; font-size: 13px; box-shadow: 0 4px 10px rgba(245, 197, 24, 0.25);">
+                    دریافت خبرها و یادآوری مسابقات (کلیک کنید)
+                </button>
+
+                <div class="unified-matches-card">
+                    <div class="date-divider" style="margin-top: 0;">جمعه ۲۷ شهریور ۱۴۰۵</div>
+                    
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
+                            <span class="team-name">برنتفورد</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۲۲:۳۰</span>
+                            <span class="match-date-text">۲۷ شهریور</span>
+                            <span class="match-league-badge">Premier League</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8455.png" alt="Chelsea">
+                            <span class="team-name">چلسی</span>
+                        </div>
+                    </div>
+
+                    <div class="date-divider">شنبه ۲۸ شهریور ۱۴۰۵</div>
+
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8586.png" alt="Tottenham">
+                            <span class="team-name">تاتنهام</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۱۵:۰۰</span>
+                            <span class="match-date-text">۲۸ شهریور</span>
+                            <span class="match-league-badge">Premier League</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10252.png" alt="Aston Villa">
+                            <span class="team-name">استون ویلا</span>
+                        </div>
+                    </div>
+
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10204.png" alt="Brighton">
+                            <span class="team-name">برایتون</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۱۷:۳۰</span>
+                            <span class="match-date-text">۲۸ شهریور</span>
+                            <span class="match-league-badge">Premier League</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9825.png" alt="Arsenal">
+                            <span class="team-name">آرسنال</span>
+                        </div>
+                    </div>
+
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8302.png" alt="Sevilla">
+                            <span class="team-name">سویا</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۲۲:۳۰</span>
+                            <span class="match-date-text">۲۸ شهریور</span>
+                            <span class="match-league-badge">LaLiga</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png" alt="Barcelona">
+                            <span class="team-name">بارسلونا</span>
+                        </div>
+                    </div>
+
+                    <div class="date-divider">یکشنبه ۲۹ شهریور ۱۴۰۵</div>
+
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8678.png" alt="Bournemouth">
+                            <span class="team-name">بورنموث</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۱۶:۳۰</span>
+                            <span class="match-date-text">۲۹ شهریور</span>
+                            <span class="match-league-badge">Premier League</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8650.png" alt="Liverpool">
+                            <span class="team-name">لیورپول</span>
+                        </div>
+                    </div>
+
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9906.png" alt="Atletico Madrid">
+                            <span class="team-name">اتلتیکو مادرید</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۱۷:۴۵</span>
+                            <span class="match-date-text">۲۹ شهریور</span>
+                            <span class="match-league-badge">LaLiga</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8633.png" alt="Real Madrid">
+                            <span class="team-name">رئال مادرید</span>
+                        </div>
+                    </div>
+
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9879.png" alt="Fulham">
+                            <span class="team-name">فولام</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۱۹:۰۰</span>
+                            <span class="match-date-text">۲۹ شهریور</span>
+                            <span class="match-league-badge">Premier League</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10260.png" alt="Man United">
+                            <span class="team-name">منچستریونایتد</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin: 20px 0; text-align: center;">
+                    <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" style="display: block; background-color: var(--accent-yellow); color: #121824; font-weight: 900; padding: 14px; border-radius: 12px; text-decoration: none; font-size: 15px; box-shadow: 0 4px 10px rgba(245, 197, 24, 0.3);">
+                        ورود به لیگ پیش‌بینی در فوت‌موب
+                    </a>
+                </div>
+            </div>
+
+            <!-- بخش هفته ششم (با ساعت‌شمار واقعی) -->
+            <div id="match-week6" class="match-sections-container">
+                <div class="countdown-card">
+                    <div class="countdown-title">
+                        <span>🔒 Week 6</span>
+                    </div>
+                    <div class="countdown-subtitle">Available in</div>
+                    <div class="countdown-boxes">
+                        <div class="countdown-box">
+                            <span id="cd-hours" class="countdown-number">12</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span id="cd-minutes" class="countdown-number">03</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span id="cd-seconds" class="countdown-number">20</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; background: var(--card-bg); padding: 16px 20px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08);">
+                    <span style="font-weight: 700; font-size: 14px;">Weekly Reminders</span>
+                    <label style="position: relative; display: inline-block; width: 50px; height: 26px;">
+                        <input type="checkbox" checked style="opacity: 0; width: 0; height: 0;">
+                        <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #2ecc71; transition: .4s; border-radius: 34px;"></span>
+                        <span style="position: absolute; content: ''; height: 20px; width: 20px; left: 26px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%;"></span>
+                    </label>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -1210,7 +1268,7 @@
         </div>
     </div>
 
-    <!-- تب ۴: سوت پایان (گزارش بدون تغییر کلمه به کلمه) -->
+    <!-- تب ۴: سوت پایان -->
     <div id="tab-soutpayan" class="tab-content">
         <div class="match-analysis-container">
             <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">سوت پایان | تحلیل و بررسی مسابقات</h2>
@@ -1419,7 +1477,7 @@
         </div>
     </div>
 
-    <!-- منوی پایین صفحه (با آیکون زمین فوتبال دقیق طبق عکس ۵ برای مسابقات) -->
+    <!-- منوی پایین صفحه -->
     <nav class="bottom-nav">
         <button class="nav-item active" onclick="switchTab('home', this)">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
@@ -1448,6 +1506,27 @@
     </nav>
 
     <script>
+        // ساعت‌شمار واقعی برای هفته ششم (مثلاً ۴۵ ساعت و ۳۰ دقیقه دیگر)
+        let totalSeconds = 45 * 3600 + 30 * 60 + 20;
+
+        function updateCountdown() {
+            if (totalSeconds > 0) {
+                totalSeconds--;
+            }
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+
+            const hEl = document.getElementById('cd-hours');
+            const mEl = document.getElementById('cd-minutes');
+            const sEl = document.getElementById('cd-seconds');
+
+            if (hEl) hEl.innerText = String(hours).padStart(2, '0');
+            if (mEl) mEl.innerText = String(minutes).padStart(2, '0');
+            if (sEl) sEl.innerText = String(seconds).padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+
         function updateLiveClock() {
             const now = new Date();
             const hours = String(now.getHours()).padStart(2, '0');
@@ -1467,9 +1546,17 @@
         setInterval(updateLiveClock, 1000);
         window.onload = updateLiveClock;
 
+        function switchMatchWeek(weekId, btnElement) {
+            document.querySelectorAll('.match-sections-container').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('.hero-banner .week-nav-btn').forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById('match-' + weekId).classList.add('active');
+            btnElement.classList.add('active');
+        }
+
         function switchTable(tableId, btnElement) {
             document.querySelectorAll('.table-container').forEach(tbl => tbl.classList.remove('active'));
-            document.querySelectorAll('.week-nav-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('#tab-table .week-nav-btn').forEach(btn => btn.classList.remove('active'));
 
             document.getElementById('table-' + tableId).classList.add('active');
             btnElement.classList.add('active');
