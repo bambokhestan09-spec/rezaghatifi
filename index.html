@@ -11,6 +11,7 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+
       gtag('config', 'G-WRVGQQQYZ2');
     </script>
 
@@ -185,7 +186,7 @@
             padding-bottom: 6px;
         }
 
-        /* --- مسابقات --- */
+        /* --- استایل کارت واحد و منظم مسابقات --- */
         .unified-matches-card {
             background-color: var(--card-bg);
             border-radius: 20px;
@@ -204,6 +205,15 @@
             border-radius: 14px;
             margin-bottom: 10px;
             border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: border-color 0.2s ease;
+        }
+
+        .match-row-clean:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+
+        .match-row-clean:last-child {
+            margin-bottom: 0;
         }
 
         .team-side {
@@ -228,6 +238,7 @@
             width: 28px;
             height: 28px;
             object-fit: contain;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
             flex-shrink: 0;
         }
 
@@ -254,6 +265,7 @@
             font-size: 13px;
             font-weight: 900;
             color: var(--accent-yellow);
+            line-height: 1.2;
         }
 
         .match-date-text {
@@ -272,6 +284,7 @@
             margin-top: 2px;
         }
 
+        /* --- استایل بخش هفته ششم و ساعت‌شمار --- */
         .match-sections-container {
             display: none;
         }
@@ -294,6 +307,10 @@
             font-weight: 900;
             color: #fff;
             margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
         }
 
         .countdown-subtitle {
@@ -325,6 +342,7 @@
             font-weight: 900;
             color: var(--accent-yellow);
             font-family: monospace;
+            line-height: 1.2;
         }
 
         .countdown-label {
@@ -333,6 +351,7 @@
             margin-top: 4px;
         }
 
+        /* --- تب‌های ناوبری مسابقات (مشابه جدول) --- */
         .weeks-nav-container {
             max-width: 680px;
             margin: 0 auto 15px auto;
@@ -340,6 +359,7 @@
             gap: 8px;
             overflow-x: auto;
             padding-bottom: 5px;
+            scrollbar-width: thin;
         }
 
         .week-nav-btn {
@@ -356,6 +376,11 @@
             flex-shrink: 0;
         }
 
+        .week-nav-btn:hover {
+            border-color: var(--accent-yellow);
+            color: #fff;
+        }
+
         .week-nav-btn.active {
             background: var(--accent-yellow);
             color: #121824;
@@ -364,213 +389,353 @@
             box-shadow: 0 4px 12px rgba(245, 197, 24, 0.3);
         }
 
-        /* --- استایل فانتزی بخش اسم فامیل --- */
-        .q26-container {
+        /* --- استایل بخش سکو (تالار افتخارات) --- */
+        .dsny-podium-container {
             max-width: 680px;
             margin: 0 auto;
-            background: #eef4e8;
-            border-radius: 28px;
-            padding: 20px;
-            color: #1e293b;
-            position: relative;
+            background: #121824;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .q26-top-bar {
+        .dsny-top-stage {
+            background: radial-gradient(circle at center, #1b3a2b 0%, #0d141f 70%);
+            padding: 30px 20px 10px 20px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 15px;
+            position: relative;
+            border-bottom-left-radius: 35px;
+            border-bottom-right-radius: 35px;
+            box-shadow: inset 0 -20px 30px rgba(0,0,0,0.6);
         }
 
-        .q26-icon-btn {
-            width: 44px;
-            height: 44px;
-            background: #d4e8c2;
+        .dsny-podium-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 31%;
+            position: relative;
+        }
+
+        .dsny-avatar-wrapper {
+            position: relative;
+            margin-bottom: -15px;
+            z-index: 2;
+        }
+
+        .dsny-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            background: #2a3649;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .dsny-podium-col.first .dsny-avatar {
+            width: 80px;
+            height: 80px;
+            border-color: #2ecc71;
+            box-shadow: 0 0 25px rgba(46, 204, 113, 0.6);
+        }
+
+        .dsny-badge {
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: none;
-            cursor: pointer;
-            font-size: 20px;
-        }
-
-        .q26-logo-box {
-            text-align: center;
-        }
-
-        .q26-main-logo {
-            font-size: 28px;
-            font-weight: 900;
-            color: #111;
-            letter-spacing: -1px;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .q26-main-logo span {
-            background: #27ae60;
-            color: #fff;
-            padding: 2px 10px;
-            border-radius: 12px;
-            font-size: 20px;
-        }
-
-        .q26-subtitle {
             font-size: 12px;
-            font-weight: 700;
-            color: #555;
+            font-weight: 900;
+            color: #121824;
+            border: 2px solid #121824;
+            z-index: 3;
+        }
+
+        .dsny-badge.first { background-color: #2ecc71; }
+        .dsny-badge.second { background-color: #f5c518; }
+        .dsny-badge.third { background-color: #ff6b81; color: #fff; }
+
+        .dsny-cylinder {
+            width: 100%;
+            border-radius: 16px 16px 0 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 12px;
+            box-shadow: inset 0 10px 15px rgba(0,0,0,0.4);
+        }
+
+        .dsny-podium-col.second .dsny-cylinder {
+            height: 120px;
+            background: linear-gradient(180deg, #1f2d3d, #141c27);
+            border-top: 3px solid #f5c518;
+        }
+
+        .dsny-podium-col.first .dsny-cylinder {
+            height: 155px;
+            background: linear-gradient(180deg, #1e3d2f, #11241c);
+            border-top: 4px solid #2ecc71;
+        }
+
+        .dsny-podium-col.third .dsny-cylinder {
+            height: 105px;
+            background: linear-gradient(180deg, #35232d, #1f141a);
+            border-top: 3px solid #ff6b81;
+        }
+
+        .dsny-col-name {
+            font-size: 11px;
+            font-weight: 900;
+            color: #fff;
+            text-align: center;
+            padding: 0 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+
+        .dsny-col-score {
+            font-size: 13px;
+            font-weight: 900;
+            color: var(--accent-yellow);
             margin-top: 2px;
         }
 
-        .q26-stats-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 15px;
+        .dsny-content-area {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 0 0 24px 24px;
         }
 
-        .q26-stat-card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 14px 16px;
+        .dsny-header-row {
             display: flex;
-            flex-direction: column;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-            border: 1px solid rgba(0,0,0,0.04);
-        }
-
-        .q26-stat-title {
-            font-size: 12px;
-            color: #64748b;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .q26-stat-value-box {
-            display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .dsny-title {
             font-size: 18px;
             font-weight: 900;
-            color: #0f172a;
-        }
-
-        .q26-start-btn {
-            width: 100%;
-            background: linear-gradient(135deg, #f5c518, #d49f00);
-            color: #121824;
-            border: none;
-            border-radius: 18px;
-            padding: 16px;
-            font-size: 18px;
-            font-weight: 900;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            box-shadow: 0 6px 20px rgba(245, 197, 24, 0.4);
-            margin-bottom: 12px;
-        }
-
-        .q26-bottom-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-
-        .q26-action-btn {
-            border: none;
-            border-radius: 16px;
-            padding: 14px;
-            font-size: 13px;
-            font-weight: 900;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
             color: #fff;
         }
 
-        .q26-action-history { background: #6c5ce7; }
-        .q26-action-guide { background: #27ae60; }
-
-        .esm-fامیل-screen {
-            display: none;
+        .dsny-date-range {
+            font-size: 12px;
+            color: var(--text-gray);
+            font-weight: 700;
         }
 
-        .esm-game-box {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        .dsny-list-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #121824;
+            padding: 12px 16px;
+            border-radius: 14px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .esm-inputs-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 15px;
+        .dsny-item-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .esm-input-group {
+        .dsny-item-badge {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 900;
+            color: #121824;
+        }
+
+        .dsny-item-badge.first { background-color: #2ecc71; }
+        .dsny-item-badge.second { background-color: #f5c518; }
+        .dsny-item-badge.third { background-color: #ff6b81; color: #fff; }
+
+        .dsny-item-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .dsny-item-score {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 16px;
+            font-weight: 900;
+            color: #fff;
+            font-family: monospace;
+        }
+
+        /* --- استایل بخش گیشه --- */
+        .news-container {
+            max-width: 680px;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 12px;
         }
 
-        .esm-input-group label {
-            font-size: 11px;
-            font-weight: 700;
-            color: #475569;
+        .twitter-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        .esm-input-group input {
-            padding: 10px;
-            border-radius: 10px;
-            border: 1px solid #cbd5e1;
-            font-size: 13px;
-            background: #f8fafc;
-            color: #0f172a;
-            outline: none;
-        }
-
-        .esm-input-group input:focus {
-            border-color: #27ae60;
-        }
-
-        .esm-leaderboard-box {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-            margin-top: 15px;
-            display: none;
-        }
-
-        .esm-table-row {
+        .twitter-header {
             display: flex;
             justify-content: space-between;
-            padding: 10px 14px;
-            border-bottom: 1px solid #f1f5f9;
             align-items: center;
-            font-size: 13px;
+        }
+
+        .twitter-profile-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .twitter-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-yellow), #e67e22);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: #121824;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+
+        .twitter-name-box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .twitter-display-name {
+            font-size: 14px;
+            font-weight: 900;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .twitter-handle {
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        .twitter-badge {
+            background: rgba(245, 197, 24, 0.15);
+            color: var(--accent-yellow);
+            font-size: 10px;
             font-weight: 700;
-            color: #334155;
+            padding: 2px 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(245, 197, 24, 0.3);
         }
 
-        .esm-table-row.highlight {
-            background-color: rgba(46, 204, 113, 0.12);
-            color: #27ae60;
+        .twitter-badge.urgent {
+            background: rgba(231, 76, 60, 0.15);
+            color: var(--accent-red);
+            border-color: rgba(231, 76, 60, 0.3);
         }
 
-        /* --- جدول رده‌بندی، سکو، گیشه و سوت پایان اصلی --- */
+        .twitter-tweet-text {
+            font-size: 14px;
+            color: #e2e8f0;
+            line-height: 1.8;
+            text-align: right;
+            word-break: break-word;
+        }
+
+        .twitter-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 10px;
+            margin-top: 2px;
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        .twitter-live-timestamp {
+            color: var(--accent-yellow);
+            font-weight: 700;
+            font-family: monospace;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- استایل بخش سوت پایان --- */
+        .match-analysis-container {
+            max-width: 680px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .analysis-card {
+            background: var(--card-bg);
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            margin-bottom: 20px;
+        }
+
+        .analysis-body-content {
+            padding: 20px;
+        }
+
+        .analysis-headline {
+            font-size: 16px;
+            font-weight: 900;
+            color: var(--accent-yellow);
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .analysis-text {
+            font-size: 13px;
+            color: #cbd5e1;
+            line-height: 1.9;
+        }
+
+        /* --- جدول رده‌بندی --- */
         .league-banner-card {
             background: radial-gradient(circle at top right, rgba(245, 197, 24, 0.2), transparent 70%), #1c2536;
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -645,147 +810,20 @@
         .name-col { flex: 1; text-align: right; }
         .score-col { width: 50px; text-align: left; font-weight: bold; }
 
-        .dsny-podium-container {
+        .quiz-container {
             max-width: 680px;
             margin: 0 auto;
-            background: #121824;
-            border-radius: 24px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .dsny-top-stage {
-            background: radial-gradient(circle at center, #1b3a2b 0%, #0d141f 70%);
-            padding: 30px 20px 10px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            gap: 15px;
-            border-bottom-left-radius: 35px;
-            border-bottom-right-radius: 35px;
-        }
-
-        .dsny-podium-col {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 31%;
-            position: relative;
-        }
-
-        .dsny-avatar-wrapper {
-            position: relative;
-            margin-bottom: -15px;
-            z-index: 2;
-        }
-
-        .dsny-avatar {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #fff;
-            background: #2a3649;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-        }
-
-        .dsny-podium-col.first .dsny-avatar {
-            width: 80px;
-            height: 80px;
-            border-color: #2ecc71;
-            box-shadow: 0 0 25px rgba(46, 204, 113, 0.6);
-        }
-
-        .dsny-badge {
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: 900;
-            color: #121824;
-            border: 2px solid #121824;
-            z-index: 3;
-        }
-
-        .dsny-badge.first { background-color: #2ecc71; }
-        .dsny-badge.second { background-color: #f5c518; }
-        .dsny-badge.third { background-color: #ff6b81; color: #fff; }
-
-        .dsny-cylinder {
-            width: 100%;
-            border-radius: 16px 16px 0 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding-top: 12px;
-        }
-
-        .dsny-podium-col.second .dsny-cylinder { height: 120px; background: linear-gradient(180deg, #1f2d3d, #141c27); border-top: 3px solid #f5c518; }
-        .dsny-podium-col.first .dsny-cylinder { height: 155px; background: linear-gradient(180deg, #1e3d2f, #11241c); border-top: 4px solid #2ecc71; }
-        .dsny-podium-col.third .dsny-cylinder { height: 105px; background: linear-gradient(180deg, #35232d, #1f141a); border-top: 3px solid #ff6b81; }
-
-        .dsny-col-name { font-size: 11px; font-weight: 900; color: #fff; text-align: center; }
-        .dsny-col-score { font-size: 13px; font-weight: 900; color: var(--accent-yellow); margin-top: 2px; }
-
-        .dsny-content-area { background-color: var(--card-bg); padding: 20px; border-radius: 0 0 24px 24px; }
-        .dsny-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .dsny-title { font-size: 18px; font-weight: 900; color: #fff; }
-        .dsny-date-range { font-size: 12px; color: var(--text-gray); font-weight: 700; }
-
-        .dsny-list-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #121824;
-            padding: 12px 16px;
-            border-radius: 14px;
-            margin-bottom: 10px;
+        .quiz-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 20px;
             border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
-        .dsny-item-left { display: flex; align-items: center; gap: 12px; }
-        .dsny-item-badge { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900; color: #121824; }
-        .dsny-item-badge.first { background-color: #2ecc71; }
-        .dsny-item-badge.second { background-color: #f5c518; }
-        .dsny-item-badge.third { background-color: #ff6b81; color: #fff; }
-        .dsny-item-name { font-size: 14px; font-weight: 700; color: #fff; }
-        .dsny-item-score { display: flex; align-items: center; gap: 6px; font-size: 16px; font-weight: 900; color: #fff; font-family: monospace; }
-
-        /* گیشه اخبار */
-        .news-container { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
-        .twitter-card { background-color: var(--card-bg); border-radius: 16px; padding: 16px; border: 1px solid rgba(255, 255, 255, 0.08); display: flex; flex-direction: column; gap: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.25); }
-        .twitter-header { display: flex; justify-content: space-between; align-items: center; }
-        .twitter-profile-info { display: flex; align-items: center; gap: 10px; }
-        .twitter-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-yellow), #e67e22); display: flex; align-items: center; justify-content: center; font-weight: 900; color: #121824; font-size: 15px; }
-        .twitter-name-box { display: flex; flex-direction: column; }
-        .twitter-display-name { font-size: 14px; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 5px; }
-        .twitter-handle { font-size: 12px; color: var(--text-gray); }
-        .twitter-badge { background: rgba(245, 197, 24, 0.15); color: var(--accent-yellow); font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; border: 1px solid rgba(245, 197, 24, 0.3); }
-        .twitter-badge.urgent { background: rgba(231, 76, 60, 0.15); color: var(--accent-red); border-color: rgba(231, 76, 60, 0.3); }
-        .twitter-tweet-text { font-size: 14px; color: #e2e8f0; line-height: 1.8; text-align: right; }
-        .twitter-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 10px; font-size: 12px; color: var(--text-gray); }
-        .twitter-live-timestamp { color: var(--accent-yellow); font-weight: 700; font-family: monospace; }
-
-        /* سوت پایان */
-        .match-analysis-container { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
-        .analysis-card { background: var(--card-bg); border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 8px 25px rgba(0,0,0,0.4); margin-bottom: 20px; }
-        .analysis-body-content { padding: 20px; }
-        .analysis-headline { font-size: 16px; font-weight: 900; color: var(--accent-yellow); margin-bottom: 10px; line-height: 1.5; }
-        .analysis-text { font-size: 13px; color: #cbd5e1; line-height: 1.9; }
-
-        /* منوی پایین */
+        /* --- منوی پایین سفید --- */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -814,8 +852,15 @@
             transition: color 0.2s ease;
         }
 
-        .nav-item.active { color: var(--accent-green); }
-        .nav-item svg { width: 20px; height: 20px; fill: currentColor; }
+        .nav-item.active {
+            color: var(--accent-green);
+        }
+
+        .nav-item svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
     </style>
 </head>
 <body>
@@ -836,6 +881,7 @@
     <!-- تب ۱: مسابقات پیش‌بینی -->
     <div id="tab-home" class="tab-content active">
         <div class="hero-banner">
+
             <div class="league-banner-card" style="margin-bottom: 15px;">
                 <div>
                     <div class="league-banner-title">مسابقات پیش‌بینی</div>
@@ -851,19 +897,20 @@
                 <button class="week-nav-btn" onclick="switchMatchWeek('week6', this)">هفته ششم</button>
             </div>
 
-            <!-- هفته پنجم (مسابقات کامل) -->
+            <!-- بخش هفته پنجم -->
             <div id="match-week5" class="match-sections-container active">
                 <div class="matchweek-banner">
                     <h2>هفته پنجم پیش‌بینی‌ها</h2>
                     <span>برنامه کامل مسابقات با تاریخ و ساعت</span>
                 </div>
 
-                <button onclick="requestNotification()" style="width: 100%; background: #f5c518; color: #121824; font-weight: 900; border: none; padding: 12px; border-radius: 12px; margin-bottom: 15px; cursor: pointer; font-size: 13px;">
+                <button onclick="requestNotification()" style="width: 100%; background: #f5c518; color: #121824; font-weight: 900; border: none; padding: 12px; border-radius: 12px; margin-bottom: 15px; cursor: pointer; font-size: 13px; box-shadow: 0 4px 10px rgba(245, 197, 24, 0.25);">
                     دریافت خبرها و یادآوری مسابقات (کلیک کنید)
                 </button>
 
                 <div class="unified-matches-card">
                     <div class="date-divider" style="margin-top: 0;">جمعه ۲۷ شهریور ۱۴۰۵</div>
+                    
                     <div class="match-row-clean">
                         <div class="team-side home">
                             <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9937.png" alt="Brentford">
@@ -881,6 +928,7 @@
                     </div>
 
                     <div class="date-divider">شنبه ۲۸ شهریور ۱۴۰۵</div>
+
                     <div class="match-row-clean">
                         <div class="team-side home">
                             <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8586.png" alt="Tottenham">
@@ -896,10 +944,11 @@
                             <span class="team-name">استون ویلا</span>
                         </div>
                     </div>
+
                     <div class="match-row-clean">
                         <div class="team-side home">
-                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8650.png" alt="Liverpool">
-                            <span class="team-name">لیورپول</span>
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10204.png" alt="Brighton">
+                            <span class="team-name">برایتون</span>
                         </div>
                         <div class="match-center-info">
                             <span class="match-time-text">۱۷:۳۰</span>
@@ -907,67 +956,122 @@
                             <span class="match-league-badge">Premier League</span>
                         </div>
                         <div class="team-side away">
-                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8197.png" alt="Everton">
-                            <span class="team-name">اورتون</span>
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9825.png" alt="Arsenal">
+                            <span class="team-name">آرسنال</span>
                         </div>
                     </div>
+
                     <div class="match-row-clean">
                         <div class="team-side home">
-                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8633.png" alt="Real Madrid">
-                            <span class="team-name">رئال مادرید</span>
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8302.png" alt="Sevilla">
+                            <span class="team-name">سویا</span>
                         </div>
                         <div class="match-center-info">
                             <span class="match-time-text">۲۲:۳۰</span>
                             <span class="match-date-text">۲۸ شهریور</span>
-                            <span class="match-league-badge">La Liga</span>
+                            <span class="match-league-badge">LaLiga</span>
                         </div>
                         <div class="team-side away">
-                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8302.png" alt="Barcelona">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8634.png" alt="Barcelona">
                             <span class="team-name">بارسلونا</span>
                         </div>
                     </div>
 
                     <div class="date-divider">یکشنبه ۲۹ شهریور ۱۴۰۵</div>
+
                     <div class="match-row-clean">
                         <div class="team-side home">
-                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9885.png" alt="Juventus">
-                            <span class="team-name">یوونتوس</span>
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8678.png" alt="Bournemouth">
+                            <span class="team-name">بورنموث</span>
                         </div>
                         <div class="match-center-info">
-                            <span class="match-time-text">۲۱:۴۵</span>
+                            <span class="match-time-text">۱۶:۳۰</span>
                             <span class="match-date-text">۲۹ شهریور</span>
-                            <span class="match-league-badge">Serie A</span>
+                            <span class="match-league-badge">Premier League</span>
                         </div>
                         <div class="team-side away">
-                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8636.png" alt="Inter">
-                            <span class="team-name">اینتر</span>
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8650.png" alt="Liverpool">
+                            <span class="team-name">لیورپول</span>
+                        </div>
+                    </div>
+
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9906.png" alt="Atletico Madrid">
+                            <span class="team-name">اتلتیکو مادرید</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۱۷:۴۵</span>
+                            <span class="match-date-text">۲۹ شهریور</span>
+                            <span class="match-league-badge">LaLiga</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8633.png" alt="Real Madrid">
+                            <span class="team-name">رئال مادرید</span>
+                        </div>
+                    </div>
+
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9879.png" alt="Fulham">
+                            <span class="team-name">فولام</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۱۹:۰۰</span>
+                            <span class="match-date-text">۲۹ شهریور</span>
+                            <span class="match-league-badge">Premier League</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/10260.png" alt="Man United">
+                            <span class="team-name">منچستریونایتد</span>
                         </div>
                     </div>
                 </div>
 
                 <div style="margin: 20px 0; text-align: center;">
-                    <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" style="display: block; background-color: var(--accent-yellow); color: #121824; font-weight: 900; padding: 14px; border-radius: 12px; text-decoration: none; font-size: 15px;">
+                    <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" style="display: block; background-color: var(--accent-yellow); color: #121824; font-weight: 900; padding: 14px; border-radius: 12px; text-decoration: none; font-size: 15px; box-shadow: 0 4px 10px rgba(245, 197, 24, 0.3);">
                         ورود به لیگ پیش‌بینی در فوت‌موب
                     </a>
                 </div>
             </div>
 
-            <!-- هفته ششم -->
+            <!-- بخش هفته ششم (با ساعت‌شمار واقعی) -->
             <div id="match-week6" class="match-sections-container">
                 <div class="countdown-card">
-                    <div class="countdown-title">🔒 Week 6</div>
+                    <div class="countdown-title">
+                        <span>🔒 Week 6</span>
+                    </div>
                     <div class="countdown-subtitle">Available in</div>
                     <div class="countdown-boxes">
-                        <div class="countdown-box"><span id="cd-hours" class="countdown-number">12</span><span class="countdown-label">Hours</span></div>
-                        <div class="countdown-box"><span id="cd-minutes" class="countdown-number">03</span><span class="countdown-label">Minutes</span></div>
-                        <div class="countdown-box"><span id="cd-seconds" class="countdown-number">20</span><span class="countdown-label">Seconds</span></div>
+                        <div class="countdown-box">
+                            <span id="cd-hours" class="countdown-number">12</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span id="cd-minutes" class="countdown-number">03</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span id="cd-seconds" class="countdown-number">20</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
                     </div>
                 </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; background: var(--card-bg); padding: 16px 20px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08);">
+                    <span style="font-weight: 700; font-size: 14px;">Weekly Reminders</span>
+                    <label style="position: relative; display: inline-block; width: 50px; height: 26px;">
+                        <input type="checkbox" checked style="opacity: 0; width: 0; height: 0;">
+                        <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #2ecc71; transition: .4s; border-radius: 34px;"></span>
+                        <span style="position: absolute; content: ''; height: 20px; width: 20px; left: 26px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%;"></span>
+                    </label>
+                </div>
             </div>
+
         </div>
     </div>
 
-    <!-- تب ۲: جدول رده‌بندی کامل (با تمام هفته‌ها و اعضا) -->
+    <!-- تب ۲: جدول رده‌بندی -->
     <div id="tab-table" class="tab-content">
         <div class="league-banner-card">
             <div>
@@ -980,62 +1084,107 @@
         </div>
 
         <div class="weeks-nav-container">
-            <button class="week-nav-btn active" onclick="switchTable('complete', this)">جدول کلی</button>
-            <button class="week-nav-btn" onclick="switchTable('w1', this)">هفته اول</button>
-            <button class="week-nav-btn" onclick="switchTable('w2', this)">هفته دوم</button>
-            <button class="week-nav-btn" onclick="switchTable('w3', this)">هفته سوم</button>
-            <button class="week-nav-btn" onclick="switchTable('w4', this)">هفته چهارم</button>
-            <button class="week-nav-btn" onclick="switchTable('w5', this)">هفته پنجم</button>
+            <button class="week-nav-btn active" onclick="switchTable('complete', this)">جدول کامل</button>
+            <button class="week-nav-btn" onclick="switchTable('week1', this)">هفته اول</button>
+            <button class="week-nav-btn" onclick="switchTable('week2', this)">هفته دوم</button>
+            <button class="week-nav-btn" onclick="switchTable('week3', this)">هفته سوم</button>
+            <button class="week-nav-btn" onclick="switchTable('week4', this)">هفته چهارم</button>
+            <button class="week-nav-btn" onclick="switchTable('week5', this)">هفته پنجم</button>
         </div>
 
-        <!-- جدول کلی -->
         <div id="table-complete" class="table-container active">
             <div class="table-row"><span class="rank-col">1</span><span class="name-col">Asm A</span><span class="score-col">56</span></div>
             <div class="table-row highlight"><span class="rank-col">2</span><span class="name-col">REZA GHATIFI</span><span class="score-col">51</span></div>
             <div class="table-row"><span class="rank-col">3</span><span class="name-col">Mahdi</span><span class="score-col">47</span></div>
             <div class="table-row"><span class="rank-col">4</span><span class="name-col">Donya Asil</span><span class="score-col">46</span></div>
-            <div class="table-row"><span class="rank-col">5</span><span class="name-col">Pira</span><span class="score-col">45</span></div>
-            <div class="table-row"><span class="rank-col">6</span><span class="name-col">Aljaber</span><span class="score-col">44</span></div>
-            <div class="table-row"><span class="rank-col">7</span><span class="name-col">Zouidat</span><span class="score-col">42</span></div>
-            <div class="table-row"><span class="rank-col">8</span><span class="name-col">Davoodi</span><span class="score-col">40</span></div>
-            <div class="table-row"><span class="rank-col">9</span><span class="name-col">Bajalan</span><span class="score-col">38</span></div>
-            <div class="table-row"><span class="rank-col">10</span><span class="name-col">Ghatifi Jr</span><span class="score-col">35</span></div>
+            <div class="table-row"><span class="rank-col">4</span><span class="name-col">حبیب نعیمی</span><span class="score-col">46</span></div>
+            <div class="table-row"><span class="rank-col">6</span><span class="name-col">Ahlam Aljaber</span><span class="score-col">42</span></div>
+            <div class="table-row"><span class="rank-col">6</span><span class="name-col">محمد خلیلاوی پور</span><span class="score-col">42</span></div>
+            <div class="table-row"><span class="rank-col">8</span><span class="name-col">hajar daoudi</span><span class="score-col">41</span></div>
+            <div class="table-row"><span class="rank-col">9</span><span class="name-col">hey10</span><span class="score-col">39</span></div>
+            <div class="table-row"><span class="rank-col">10</span><span class="name-col">امین دریس</span><span class="score-col">35</span></div>
+            <div class="table-row"><span class="rank-col">11</span><span class="name-col">Sama salehi</span><span class="score-col">32</span></div>
         </div>
 
-        <!-- هفته اول -->
-        <div id="table-w1" class="table-container">
-            <div class="table-row"><span class="rank-col">1</span><span class="name-col">Asm A</span><span class="score-col">12</span></div>
-            <div class="table-row"><span class="rank-col">2</span><span class="name-col">REZA GHATIFI</span><span class="score-col">11</span></div>
-            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Mahdi</span><span class="score-col">10</span></div>
+        <div id="table-week1" class="table-container">
+            <div class="table-row"><span class="rank-col">1</span><span class="name-col">Mahdi</span><span class="score-col">15</span></div>
+            <div class="table-row highlight"><span class="rank-col">1</span><span class="name-col">REZA GHATIFI</span><span class="score-col">15</span></div>
+            <div class="table-row"><span class="rank-col">3</span><span class="name-col">حبیب نعیمی</span><span class="score-col">14</span></div>
+            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Asm A</span><span class="score-col">14</span></div>
+            <div class="table-row"><span class="rank-col">5</span><span class="name-col">Donya Asil</span><span class="score-col">13</span></div>
+            <div class="table-row"><span class="rank-col">5</span><span class="name-col">امین دریس</span><span class="score-col">13</span></div>
+            <div class="table-row"><span class="rank-col">5</span><span class="name-col">hey10</span><span class="score-col">13</span></div>
+            <div class="table-row"><span class="rank-col">8</span><span class="name-col">hajar daoudi</span><span class="score-col">11</span></div>
+            <div class="table-row"><span class="rank-col">9</span><span class="name-col">محمد خلیلاوی پور</span><span class="score-col">11</span></div>
+            <div class="table-row"><span class="rank-col">10</span><span class="name-col">Ahlam Aljaber</span><span class="score-col">9</span></div>
+            <div class="table-row"><span class="rank-col">11</span><span class="name-col">Sama salehi</span><span class="score-col">2</span></div>
+            <div class="table-row"><span class="rank-col">11</span><span class="name-col">محمد جاسمیان</span><span class="score-col">2</span></div>
+            <div class="table-row"><span class="rank-col">13</span><span class="name-col">مهدی</span><span class="score-col">0</span></div>
         </div>
 
-        <!-- هفته دوم -->
-        <div id="table-w2" class="table-container">
-            <div class="table-row"><span class="rank-col">1</span><span class="name-col">Donya Asil</span><span class="score-col">13</span></div>
-            <div class="table-row"><span class="rank-col">2</span><span class="name-col">REZA GHATIFI</span><span class="score-col">12</span></div>
-            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Asm A</span><span class="score-col">10</span></div>
+        <div id="table-week2" class="table-container">
+            <div class="table-row"><span class="rank-col">1</span><span class="name-col">Asm A</span><span class="score-col">13</span></div>
+            <div class="table-row highlight"><span class="rank-col">2</span><span class="name-col">REZA GHATIFI</span><span class="score-col">10</span></div>
+            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Mahdi</span><span class="score-col">9</span></div>
+            <div class="table-row"><span class="rank-col">4</span><span class="name-col">Ahlam Aljaber</span><span class="score-col">8</span></div>
+            <div class="table-row"><span class="rank-col">4</span><span class="name-col">محمد خلیلاوی پور</span><span class="score-col">8</span></div>
+            <div class="table-row"><span class="rank-col">6</span><span class="name-col">Donya Asil</span><span class="score-col">7</span></div>
+            <div class="table-row"><span class="rank-col">6</span><span class="name-col">hey10</span><span class="score-col">7</span></div>
+            <div class="table-row"><span class="rank-col">8</span><span class="name-col">Sama salehi</span><span class="score-col">6</span></div>
+            <div class="table-row"><span class="rank-col">8</span><span class="name-col">حبیب نعیمی</span><span class="score-col">6</span></div>
+            <div class="table-row"><span class="rank-col">10</span><span class="name-col">امین دریس</span><span class="score-col">5</span></div>
+            <div class="table-row"><span class="rank-col">10</span><span class="name-col">hajar daoudi</span><span class="score-col">5</span></div>
+            <div class="table-row"><span class="rank-col">12</span><span class="name-col">مهدی</span><span class="score-col">0</span></div>
+            <div class="table-row"><span class="rank-col">12</span><span class="name-col">محمد جاسمیان</span><span class="score-col">0</span></div>
+            <div class="table-row"><span class="rank-col">12</span><span class="name-col">ناجح دریس</span><span class="score-col">0</span></div>
         </div>
 
-        <!-- هفته سوم -->
-        <div id="table-w3" class="table-container">
-            <div class="table-row"><span class="rank-col">1</span><span class="name-col">Asm A</span><span class="score-col">14</span></div>
-            <div class="table-row"><span class="rank-col">2</span><span class="name-col">Mahdi</span><span class="score-col">12</span></div>
-            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Pira</span><span class="score-col">11</span></div>
+        <div id="table-week3" class="table-container">
+            <div class="table-row"><span class="rank-col">1</span><span class="name-col">Asm A</span><span class="score-col">13</span></div>
+            <div class="table-row"><span class="rank-col">2</span><span class="name-col">Ahlam Aljaber</span><span class="score-col">12</span></div>
+            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Sama salehi</span><span class="score-col">11</span></div>
+            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Mahdi</span><span class="score-col">11</span></div>
+            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Donya Asil</span><span class="score-col">11</span></div>
+            <div class="table-row"><span class="rank-col">3</span><span class="name-col">محمد جاسمیان</span><span class="score-col">11</span></div>
+            <div class="table-row"><span class="rank-col">3</span><span class="name-col">محمد خلیلاوی پور</span><span class="score-col">11</span></div>
+            <div class="table-row"><span class="rank-col">8</span><span class="name-col">hajar daoudi</span><span class="score-col">10</span></div>
+            <div class="table-row"><span class="rank-col">8</span><span class="name-col">حبیب نعیمی</span><span class="score-col">10</span></div>
+            <div class="table-row highlight"><span class="rank-col">8</span><span class="name-col">REZA GHATIFI</span><span class="score-col">10</span></div>
+            <div class="table-row"><span class="rank-col">11</span><span class="name-col">امین دریس</span><span class="score-col">9</span></div>
+            <div class="table-row"><span class="rank-col">12</span><span class="name-col">hey10</span><span class="score-col">8</span></div>
+            <div class="table-row"><span class="rank-col">13</span><span class="name-col">مهدی</span><span class="score-col">4</span></div>
+            <div class="table-row"><span class="rank-col">13</span><span class="name-col">ناجح دریس</span><span class="score-col">4</span></div>
         </div>
 
-        <!-- هفته چهارم -->
-        <div id="table-w4" class="table-container">
-            <div class="table-row"><span class="rank-col">1</span><span class="name-col">REZA GHATIFI</span><span class="score-col">13</span></div>
-            <div class="table-row"><span class="rank-col">2</span><span class="name-col">Aljaber</span><span class="score-col">12</span></div>
-            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Zouidat</span><span class="score-col">10</span></div>
+        <div id="table-week4" class="table-container">
+            <div class="table-row highlight"><span class="rank-col">1</span><span class="name-col">REZA GHATIFI</span><span class="score-col">13</span></div>
+            <div class="table-row"><span class="rank-col">2</span><span class="name-col">Donya Asil</span><span class="score-col">13</span></div>
+            <div class="table-row"><span class="rank-col">2</span><span class="name-col">حبیب نعیمی</span><span class="score-col">13</span></div>
+            <div class="table-row"><span class="rank-col">4</span><span class="name-col">hajar daoudi</span><span class="score-col">12</span></div>
+            <div class="table-row"><span class="rank-col">4</span><span class="name-col">Asm A</span><span class="score-col">12</span></div>
+            <div class="table-row"><span class="rank-col">6</span><span class="name-col">Sama salehi</span><span class="score-col">11</span></div>
+            <div class="table-row"><span class="rank-col">6</span><span class="name-col">مهدی</span><span class="score-col">11</span></div>
+            <div class="table-row"><span class="rank-col">6</span><span class="name-col">محمد جاسمیان</span><span class="score-col">11</span></div>
+            <div class="table-row"><span class="rank-col">9</span><span class="name-col">Mahdi</span><span class="score-col">10</span></div>
+            <div class="table-row"><span class="rank-col">9</span><span class="name-col">محمد خلیلاوی پور</span><span class="score-col">10</span></div>
+            <div class="table-row"><span class="rank-col">11</span><span class="name-col">Ahlam Aljaber</span><span class="score-col">8</span></div>
+            <div class="table-row"><span class="rank-col">11</span><span class="name-col">ناجح دریس</span><span class="score-col">8</span></div>
+            <div class="table-row"><span class="rank-col">13</span><span class="name-col">امین دریس</span><span class="score-col">6</span></div>
+            <div class="table-row"><span class="rank-col">13</span><span class="name-col">hey10</span><span class="score-col">6</span></div>
         </div>
 
-        <!-- هفته پنجم -->
-        <div id="table-w5" class="table-container">
-            <div class="table-row"><span class="rank-col">1</span><span class="name-col">Aljaber</span><span class="score-col">5</span></div>
-            <div class="table-row"><span class="rank-col">2</span><span class="name-col">Pira</span><span class="score-col">5</span></div>
-            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Zouidat</span><span class="score-col">4</span></div>
-            <div class="table-row"><span class="rank-col">4</span><span class="name-col">REZA GHATIFI</span><span class="score-col">3</span></div>
+        <div id="table-week5" class="table-container">
+            <div class="table-row"><span class="rank-col">1</span><span class="name-col">Ahlam Aljaber</span><span class="score-col">5</span></div>
+            <div class="table-row"><span class="rank-col">1</span><span class="name-col">hey10</span><span class="score-col">5</span></div>
+            <div class="table-row"><span class="rank-col">3</span><span class="name-col">Asm A</span><span class="score-col">4</span></div>
+            <div class="table-row"><span class="rank-col">4</span><span class="name-col">hajar daoudi</span><span class="score-col">3</span></div>
+            <div class="table-row"><span class="rank-col">4</span><span class="name-col">حبیب نعیمی</span><span class="score-col">3</span></div>
+            <div class="table-row highlight"><span class="rank-col">4</span><span class="name-col">REZA GHATIFI</span><span class="score-col">3</span></div>
+            <div class="table-row"><span class="rank-col">7</span><span class="name-col">Sama salehi</span><span class="score-col">2</span></div>
+            <div class="table-row"><span class="rank-col">7</span><span class="name-col">Mahdi</span><span class="score-col">2</span></div>
+            <div class="table-row"><span class="rank-col">7</span><span class="name-col">Donya Asil</span><span class="score-col">2</span></div>
+            <div class="table-row"><span class="rank-col">7</span><span class="name-col">امین دریس</span><span class="score-col">2</span></div>
+            <div class="table-row"><span class="rank-col">7</span><span class="name-col">محمد خلیلاوی پور</span><span class="score-col">2</span></div>
         </div>
     </div>
 
@@ -1044,31 +1193,87 @@
         <div class="dsny-podium-container">
             <div class="dsny-top-stage">
                 <div class="dsny-podium-col second">
-                    <div class="dsny-avatar-wrapper"><div class="dsny-avatar">🥈</div><div class="dsny-badge second">2</div></div>
-                    <div class="dsny-cylinder"><div class="dsny-col-name">پیرا</div><div class="dsny-col-score">5 امتیاز</div></div>
+                    <div class="dsny-avatar-wrapper">
+                        <div class="dsny-avatar">🥈</div>
+                        <div class="dsny-badge second">2</div>
+                    </div>
+                    <div class="dsny-cylinder">
+                        <div class="dsny-col-name">پیرا</div>
+                        <div class="dsny-col-score">5 امتیاز</div>
+                    </div>
                 </div>
+
                 <div class="dsny-podium-col first">
-                    <div class="dsny-avatar-wrapper"><div class="dsny-avatar">👑</div><div class="dsny-badge first">1</div></div>
-                    <div class="dsny-cylinder"><div class="dsny-col-name">الجابر</div><div class="dsny-col-score">5 امتیاز</div></div>
+                    <div class="dsny-avatar-wrapper">
+                        <div class="dsny-avatar">👑</div>
+                        <div class="dsny-badge first">1</div>
+                    </div>
+                    <div class="dsny-cylinder">
+                        <div class="dsny-col-name">الجابر</div>
+                        <div class="dsny-col-score">5 امتیاز</div>
+                    </div>
                 </div>
+
                 <div class="dsny-podium-col third">
-                    <div class="dsny-avatar-wrapper"><div class="dsny-avatar">🥉</div><div class="dsny-badge third">3</div></div>
-                    <div class="dsny-cylinder"><div class="dsny-col-name">زویدات</div><div class="dsny-col-score">4 امتیاز</div></div>
+                    <div class="dsny-avatar-wrapper">
+                        <div class="dsny-avatar">🥉</div>
+                        <div class="dsny-badge third">3</div>
+                    </div>
+                    <div class="dsny-cylinder">
+                        <div class="dsny-col-name">زویدات</div>
+                        <div class="dsny-col-score">4 امتیاز</div>
+                    </div>
                 </div>
             </div>
+
             <div class="dsny-content-area">
-                <div class="dsny-header-row"><div class="dsny-title">تالار افتخارات هفته پنجم پیش‌بینی‌ها</div><div class="dsny-date-range">لیگ گداهای استرسی</div></div>
-                <div class="dsny-list-item"><div class="dsny-item-left"><div class="dsny-item-badge first">1</div><div class="dsny-item-name">الجابر</div></div><div class="dsny-item-score"><span>5</span>⭐</div></div>
-                <div class="dsny-list-item"><div class="dsny-item-left"><div class="dsny-item-badge second">2</div><div class="dsny-item-name">پیرا</div></div><div class="dsny-item-score"><span>5</span>⭐</div></div>
-                <div class="dsny-list-item"><div class="dsny-item-left"><div class="dsny-item-badge third">3</div><div class="dsny-item-name">زویدات</div></div><div class="dsny-item-score"><span>4</span>⭐</div></div>
+                <div class="dsny-header-row">
+                    <div class="dsny-title">تالار افتخارات هفته پنجم پیش‌بینی‌ها</div>
+                    <div class="dsny-date-range">لیگ گداهای استرسی</div>
+                </div>
+
+                <div class="dsny-list-item">
+                    <div class="dsny-item-left">
+                        <div class="dsny-item-badge first">1</div>
+                        <div class="dsny-item-name">الجابر</div>
+                    </div>
+                    <div class="dsny-item-score">
+                        <span>5</span>
+                        <span style="font-size: 14px;">⭐</span>
+                    </div>
+                </div>
+
+                <div class="dsny-list-item">
+                    <div class="dsny-item-left">
+                        <div class="dsny-item-badge second">2</div>
+                        <div class="dsny-item-name">پیرا</div>
+                    </div>
+                    <div class="dsny-item-score">
+                        <span>5</span>
+                        <span style="font-size: 14px;">⭐</span>
+                    </div>
+                </div>
+
+                <div class="dsny-list-item">
+                    <div class="dsny-item-left">
+                        <div class="dsny-item-badge third">3</div>
+                        <div class="dsny-item-name">زویدات</div>
+                    </div>
+                    <div class="dsny-item-score">
+                        <span>4</span>
+                        <span style="font-size: 14px;">⭐</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- تب ۴: سوت پایان (گزارش بدون تغییر کلمه به کلمه) -->
+    <!-- تب ۴: سوت پایان -->
     <div id="tab-soutpayan" class="tab-content">
         <div class="match-analysis-container">
             <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 5px;">سوت پایان | تحلیل و بررسی مسابقات</h2>
+            <p style="text-align: center; color: var(--text-gray); font-size: 12px; margin-bottom: 15px;">گزارش اختصاصی و تحلیل‌های شب گذشته</p>
+
             <div class="analysis-card">
                 <div class="analysis-body-content">
                     <h3 class="analysis-headline">در شب گذشته لیگ گداهای استرسی چه گذشت</h3>
@@ -1079,10 +1284,11 @@
 و‌فهمید که اینتر گل دوم را زده و بازی همان شده که پیش بینی کرده بود،و همای سعادت روی شانه های الجابر نشسته بود ولی پرهایش گوهی شده بودند و‌ وا ویلتا.
 بازی بارسلونا و سویا هم با نتیجه ۳بریک به نفع بارسلونا به پایان رسید تا شب پرفروغ پیرا و الجابر به پایان برسد…
 ضمنا داودی بازی بارسلونا رو درست حدث زده بود و 
-sوت پایان…
+سوت پایان…
                     </p>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -1101,251 +1307,347 @@ sوت پایان…
                             <span class="twitter-handle">@GishehNews</span>
                         </div>
                     </div>
+                    <span class="news-badge">اقتصادی</span>
                 </div>
-                <div class="twitter-tweet-text">در ایالت‌های مختلف آمریکا، به ویژه کالیفرنیا و تگزاس، کاهش قابل توجهی در میزان ذخیره بنزین و سوخت مشاهده شده است.</div>
-                <div class="twitter-footer"><span>گیشه اخبار و رویدادها</span><span class="twitter-live-timestamp">۲۸ شهریور ۱۴۰۵</span></div>
+                <div class="twitter-tweet-text">
+                    در ایالت‌های مختلف آمریکا، به ویژه کالیفرنیا و تگزاس، کاهش قابل توجهی در میزان ذخیره بنزین و سوخت مشاهده شده است و نگرانی‌هایی در مورد بحران سوخت وجود دارد.
+                </div>
+                <div class="twitter-footer">
+                    <span>گیشه اخبار و رویدادها</span>
+                    <span class="twitter-live-timestamp" id="t-time-fuel">۲۸ شهریور ۱۴۰۵ - ۱۲:۰۰</span>
+                </div>
             </div>
+
+            <div class="twitter-card" style="border-color: rgba(231, 76, 60, 0.4);">
+                <div class="twitter-header">
+                    <div class="twitter-profile-info">
+                        <div class="twitter-avatar" style="background: var(--accent-red); color: #fff;">🚨</div>
+                        <div class="twitter-name-box">
+                            <span class="twitter-display-name">خبر فوری <span class="twitter-badge urgent">فوری</span></span>
+                            <span class="twitter-handle">@GishehNews</span>
+                        </div>
+                    </div>
+                    <span class="news-badge" style="background: var(--accent-red); color: #fff;">فوری</span>
+                </div>
+                <div class="twitter-tweet-text">
+                    خبر فوری: ایالات متحده خروج پایگاه‌های نظامی خود از عربستان سعودی را اعلام کرد. به وضوح نشان می‌دهد که سربازان در حال ترک کشور خود با حمل تجهیزاتشان هستند. این بزرگ‌ترین پیروزی ایران است.
+                </div>
+                <div class="twitter-footer">
+                    <span>گیشه اخبار و رویدادها</span>
+                    <span class="twitter-live-timestamp" id="t-time-saudi">۲۸ شهریور ۱۴۰۵ - ۱۲:۰۰</span>
+                </div>
+            </div>
+
+            <div class="twitter-card">
+                <div class="twitter-header">
+                    <div class="twitter-profile-info">
+                        <div class="twitter-avatar">📰</div>
+                        <div class="twitter-name-box">
+                            <span class="twitter-display-name">گیشه اخبار <span class="twitter-badge">سیاسی</span></span>
+                            <span class="twitter-handle">@GishehNews</span>
+                        </div>
+                    </div>
+                    <span class="news-badge">تحلیلی</span>
+                </div>
+                <div class="twitter-tweet-text">
+                    برخلاف ادعای #وحید_جلیلی مبنی بر تمدید حکم #پیمان_جبلی برای ریاست #صداوسیما به نظر میرسد در محافل تصمیم گیران نظام #ضرغامی به عنوان گزینه قطعی مشخص شده است.
+                </div>
+                <div class="twitter-footer">
+                    <span>گیشه اخبار و رویدادها</span>
+                    <span class="twitter-live-timestamp" id="t-time-seda">۲۸ شهریور ۱۴۰۵ - ۱۲:۰۰</span>
+                </div>
+            </div>
+
+            <div class="twitter-card" style="border-color: rgba(231, 76, 60, 0.4);">
+                <div class="twitter-header">
+                    <div class="twitter-profile-info">
+                        <div class="twitter-avatar" style="background: var(--accent-red); color: #fff;">🚨</div>
+                        <div class="twitter-name-box">
+                            <span class="twitter-display-name">خبر ویژه <span class="twitter-badge urgent">مهم</span></span>
+                            <span class="twitter-handle">@GishehNews</span>
+                        </div>
+                    </div>
+                    <span class="news-badge" style="background: var(--accent-red); color: #fff;">بین‌الملل</span>
+                </div>
+                <div class="twitter-tweet-text">
+                    کاخ سفید: ترامپ پروژه قانون تحریم‌ها علیه روسیه و ایران را امضا کرد.
+                </div>
+                <div class="twitter-footer">
+                    <span>گیشه اخبار و رویدادها</span>
+                    <span class="twitter-live-timestamp" id="t-time-trump">۲۸ شهریور ۱۴۰۵ - ۱۲:۰۰</span>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <!-- تب ۶: کوئیزگدا (اسم فامیل آنلاین با جدول رتبه‌بندی داخلی) -->
+    <!-- تب ۶: کوئیزگدا -->
     <div id="tab-banter" class="tab-content">
-        <div class="q26-container" id="esm-home-screen">
-            <div class="q26-top-bar">
-                <button class="q26-icon-btn" onclick="switchTab('home', document.querySelector('.nav-item'))">🏠</button>
-                <div class="q26-logo-box">
-                    <div class="q26-main-logo">اسم<span>فامیل</span></div>
-                    <div class="q26-subtitle">چالش آنلاین گداهای استرسی</div>
+        <div class="quiz-container">
+            <div class="quiz-card">
+                <form id="real-email-form" action="https://formspree.io/f/xkjgnyoa" method="POST" style="display: none;">
+                    <input type="hidden" name="name" id="form-input-name">
+                    <input type="hidden" name="phone" id="form-input-phone">
+                    <input type="hidden" name="letter" id="form-input-letter">
+                    <input type="hidden" name="esm" id="form-input-esm">
+                    <input type="hidden" name="famil" id="form-input-famil">
+                    <input type="hidden" name="shahr" id="form-input-shahr">
+                    <input type="hidden" name="keshvar" id="form-input-keshvar">
+                    <input type="hidden" name="ghaza" id="form-input-ghaza">
+                    <input type="hidden" name="miveh" id="form-input-miveh">
+                    <input type="hidden" name="heyvan" id="form-input-heyvan">
+                    <input type="hidden" name="ashia" id="form-input-ashia">
+                </form>
+
+                <div id="quiz-register-screen">
+                    <h2 style="text-align: center; color: var(--accent-yellow); margin-bottom: 8px;">بازی اسم‌فامیل گداهای استرسی</h2>
+                    <p style="text-align: center; color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">برای ورود به میدان رقابت و شروع چالش، مشخصات خود را وارد کنید:</p>
+                    
+                    <form id="user-info-form" onsubmit="startFamilyQuiz(event)">
+                        <div style="margin-bottom: 12px;">
+                            <label style="display: block; font-size: 12px; margin-bottom: 5px; color: var(--text-gray);">نام و نام خانوادگی:</label>
+                            <input type="text" id="player-name" required placeholder="مثلاً رضا غتیفی" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #2a3649; background: #121824; color: #fff; box-sizing: border-box;">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; font-size: 12px; margin-bottom: 5px; color: var(--text-gray);">شماره تماس یا سروش:</label>
+                            <input type="tel" id="player-phone" required placeholder="09xxxxxxxxx" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #2a3649; background: #121824; color: #fff; box-sizing: border-box;">
+                        </div>
+                        <button type="submit" style="width: 100%; padding: 13px; background: var(--accent-yellow); color: #121824; border: none; border-radius: 10px; font-weight: 900; font-size: 15px; cursor: pointer;">شروع بازی اسم‌فامیل</button>
+                    </form>
                 </div>
-                <button class="q26-icon-btn" onclick="toggleEsmLeaderboard()">🏆</button>
-            </div>
 
-            <div style="margin-bottom: 15px;">
-                <label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 5px;">نام کاربری خود را وارد کنید:</label>
-                <input type="text" id="username-input" placeholder="مثلاً رضا غتیفی" style="width: 100%; padding: 12px; border-radius: 12px; border: 1px solid #cbd5e1; background: #fff; font-size: 14px; font-weight: 700; outline: none;">
-            </div>
-
-            <div class="q26-stats-row">
-                <div class="q26-stat-card">
-                    <span class="q26-stat-title">حرف رندوم گردونه</span>
-                    <div class="q26-stat-value-box">
-                        <span>🎡</span> <span id="wheel-letter-display" style="color: #27ae60;">؟</span>
+                <div id="quiz-game-screen" style="display: none;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; background: #121824; padding: 12px 16px; border-radius: 12px; border: 1px solid #2a3649; margin-bottom: 15px;">
+                        <span id="target-letter-display" style="font-size: 16px; font-weight: 900; color: var(--accent-yellow);">حرف مورد نظر: ب</span>
+                        <span id="timer-display" style="font-size: 16px; font-weight: 900; color: var(--accent-red); font-family: monospace;">01:00</span>
                     </div>
-                </div>
-                <div class="q26-stat-card">
-                    <span class="q26-stat-title">آخرین امتیاز شما</span>
-                    <div class="q26-stat-value-box">
-                        <span>🪙</span> <span id="last-score-display">۰</span>
+
+                    <div style="background: rgba(231, 76, 60, 0.15); border: 1px solid var(--accent-red); color: #ff8080; padding: 10px; border-radius: 10px; font-size: 12px; text-align: center; font-weight: 700; margin-bottom: 15px; line-height: 1.5;">
+                        ⚠️ نکته اخلاقی مهم: هرکسی تقلب کنه خره، گاوه، کثافته! درست و مردونه بازی کن! 💩😂
                     </div>
+
+                    <form id="family-game-form" onsubmit="submitFamilyQuiz(event)">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px;">
+                            <div>
+                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">اسم:</label>
+                                <input type="text" id="input-esm" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">فامیل:</label>
+                                <input type="text" id="input-famil" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">شهر:</label>
+                                <input type="text" id="input-shahr" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">کشور:</label>
+                                <input type="text" id="input-keshvar" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">غذا:</label>
+                                <input type="text" id="input-ghaza" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">میوه:</label>
+                                <input type="text" id="input-miveh" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">حیوان:</label>
+                                <input type="text" id="input-heyvan" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 11px; color: var(--text-gray); margin-bottom: 4px;">اشیاء:</label>
+                                <input type="text" id="input-ashia" required placeholder="تایپ کنید..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a3649; background: #121824; color: #fff; font-size: 13px;">
+                            </div>
+                        </div>
+                        <button type="submit" style="width: 100%; padding: 13px; background: var(--accent-green); color: #121824; border: none; border-radius: 10px; font-weight: 900; font-size: 15px; cursor: pointer;">ثبت و ارسال پاسخ‌ها</button>
+                    </form>
                 </div>
-            </div>
 
-            <button class="q26-start-btn" onclick="startEsmFamilGame()">
-                <span>چرخش گردونه و شروع بازی</span>
-                <span style="font-size: 22px;">▶</span>
-            </button>
-            <div style="text-align: center; font-size: 11px; color: #555; margin-bottom: 15px; font-weight: 700;">هر پاسخ درست ۱۰ امتیاز | خانه خالی یا اشتباه ۱ امتیاز منفی</div>
-
-            <div class="q26-bottom-grid">
-                <button class="q26-action-btn q26-action-history" onclick="toggleEsmLeaderboard()">
-                    <span>📋 جدول رتبه‌بندی</span>
-                </button>
-                <button class="q26-action-btn q26-action-guide" onclick="alert('راهنما: در مدت ۷۰ ثانیه ۱۰ فیلد (اسم، فامیل، شهر، کشور، میوه، غذا، رنگ، حیوان، ماشین، اشیا) را با حرف مشخص شده پر کنید!')">
-                    <span>🎓 آموزش بازی</span>
-                </button>
-            </div>
-
-            <!-- جدول رتبه‌بندی درون کوئیز -->
-            <div class="esm-leaderboard-box" id="esm-leaderboard-section">
-                <div style="font-weight: 900; font-size: 15px; color: #0f172a; margin-bottom: 10px; text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 6px;">جدول امتیازات اسم‌فامیل 🏆</div>
-                <div id="dynamic-esm-leaderboard">
-                    <div class="esm-table-row"><span>-</span><span>هنوز بازیکنی ثبت نشده</span><span>0</span></div>
+                <div id="quiz-result-screen" style="display: none; text-align: center;">
+                    <h2 style="color: var(--accent-yellow); margin-bottom: 5px; font-size: 24px;">پایان بازی!</h2>
+                    <p style="color: var(--text-gray); font-size: 13px; margin-bottom: 20px;">پاسخ‌های شما با موفقیت ثبت و برای ادمین ارسال شد.</p>
+                    <div style="background: rgba(46, 204, 113, 0.1); border: 1px solid var(--accent-green); padding: 15px; border-radius: 10px; font-size: 13px; color: var(--accent-green); margin-bottom: 20px; line-height: 1.6;">
+                        کاربر عزیز (<span id="result-name-disp" style="font-weight: bold;"></span>)، پاسخ‌های شما با حرف <span id="result-letter-disp" style="font-weight: bold;"></span> ثبت گردید.
+                    </div>
+                    <button onclick="resetFamilyQuiz()" style="width: 100%; padding: 12px; background: var(--accent-yellow); color: #121824; border: none; border-radius: 10px; font-weight: bold; font-size: 15px; cursor: pointer;">شروع دوباره بازی</button>
                 </div>
-            </div>
-        </div>
-
-        <div class="q26-container esm-fامیل-screen" id="esm-game-screen">
-            <div style="display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 12px 18px; border-radius: 14px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                <div style="font-weight: 900; font-size: 15px; color: #27ae60;">حرف: <span id="active-letter-badge" style="font-size: 20px; color: #e74c3c;">ب</span></div>
-                <div style="font-weight: 900; font-size: 18px; color: #e74c3c; font-family: monospace;" id="esm-timer-display">01:10</div>
-            </div>
-
-            <div class="esm-game-box">
-                <div style="font-size: 13px; font-weight: 900; color: #0f172a; margin-bottom: 5px;">کلمات خود را با دقت وارد کنید:</div>
-                <div class="esm-inputs-grid">
-                    <div class="esm-input-group"><label>اسم</label><input type="text" id="f-esm" placeholder="تایپ کنید..."></div>
-                    <div class="esm-input-group"><label>فامیل</label><input type="text" id="f-famil" placeholder="تایپ کنید..."></div>
-                    <div class="esm-input-group"><label>شهر</label><input type="text" id="f-shahr" placeholder="تایپ کنید..."></div>
-                    <div class="esm-input-group"><label>کشور</label><input type="text" id="f-keshvar" placeholder="تایپ کنید..."></div>
-                    <div class="esm-input-group"><label>میوه</label><input type="text" id="f-miveh" placeholder="تایپ کنید..."></div>
-                    <div class="esm-input-group"><label>غذا</label><input type="text" id="f-ghaza" placeholder="تایپ کنید..."></div>
-                    <div class="esm-input-group"><label>رنگ</label><input type="text" id="f-rang" placeholder="تایپ کنید..."></div>
-                    <div class="esm-input-group"><label>حیوان</label><input type="text" id="f-heyvan" placeholder="تایپ کنید..."></div>
-                    <div class="esm-input-group"><label>ماشین</label><input type="text" id="f-mashin" placeholder="تایپ کنید..."></div>
-                    <div class="esm-input-group"><label>اشیا</label><input type="text" id="f-ashia" placeholder="تایپ کنید..."></div>
-                </div>
-                <button onclick="submitEsmFamilGame()" style="width: 100%; margin-top: 15px; background: #27ae60; color: #fff; border: none; padding: 14px; border-radius: 12px; font-weight: 900; font-size: 15px; cursor: pointer;">پایان بازی و ثبت امتیاز</button>
             </div>
         </div>
     </div>
 
-    <!-- منوی پایین -->
+    <!-- منوی پایین صفحه -->
     <nav class="bottom-nav">
         <button class="nav-item active" onclick="switchTab('home', this)">
-            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><line x1="12" y1="4" x2="12" y2="20" stroke="currentColor" stroke-width="2"/></svg>مسابقات
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                <rect x="2" y="4" width="20" height="16" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                <line x1="12" y1="4" x2="12" y2="20" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M2 8H5V16H2Z" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M22 8H19V16H22Z" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>مسابقات
         </button>
-        <button class="nav-item" onclick="switchTab('table', this)"><svg viewBox="0 0 24 24"><path d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13Z"/></svg>جدول</button>
-        <button class="nav-item" onclick="switchTab('podium', this)"><svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4Z"/></svg>سکو</button>
-        <button class="nav-item" onclick="switchTab('soutpayan', this)"><svg viewBox="0 0 24 24"><path d="M15,3C13.89,3 13,3.89 13,5V6H6A2,2 0 0,0 4,8V16A2,2 0 0,0 6,18H13V19C13,20.1 13.89,21 15,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3M15,5H19V7H15V5M6,8H13V16H6V8M15,9H19V11H15V9M15,13H19V15H15V13Z"/></svg>سوت پایان</button>
-        <button class="nav-item" onclick="switchTab('gisheh', this)"><svg viewBox="0 0 24 24"><path d="M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3M19,5V7H5V5H19M5,19V9H19V19H5Z"/></svg>گیشه</button>
-        <button class="nav-item" onclick="switchTab('banter', this)"><svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V12H17V10H13V6H11Z"/></svg>کوئیزگدا</button>
+        <button class="nav-item" onclick="switchTab('table', this)">
+            <svg viewBox="0 0 24 24"><path d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z"/></svg>جدول
+        </button>
+        <button class="nav-item" onclick="switchTab('podium', this)">
+            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6Z"/></svg>سکو
+        </button>
+        <button class="nav-item" onclick="switchTab('soutpayan', this)">
+            <svg viewBox="0 0 24 24"><path d="M15,3C13.89,3 13,3.89 13,5V6H6A2,2 0 0,0 4,8V16A2,2 0 0,0 6,18H13V19C13,20.1 13.89,21 15,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3M15,5H19V7H15V5M6,8H13V16H6V8M15,9H19V11H15V9M15,13H19V15H15V13Z"/></svg>سوت پایان
+        </button>
+        <button class="nav-item" onclick="switchTab('gisheh', this)">
+            <svg viewBox="0 0 24 24"><path d="M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3M19,5V7H5V5H19M5,19V9H19V19H5Z"/></svg>گیشه
+        </button>
+        <button class="nav-item" onclick="switchTab('banter', this)">
+            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,6V12H17V10H13V6H11Z"/></svg>کوئیزگدا
+        </button>
     </nav>
 
     <script>
+        // ساعت‌شمار واقعی برای هفته ششم (مثلاً ۴۵ ساعت و ۳۰ دقیقه دیگر)
         let totalSeconds = 45 * 3600 + 30 * 60 + 20;
-        setInterval(() => {
-            if (totalSeconds > 0) totalSeconds--;
-            const h = Math.floor(totalSeconds / 3600);
-            const m = Math.floor((totalSeconds % 3600) / 60);
-            const s = totalSeconds % 60;
-            if (document.getElementById('cd-hours')) {
-                document.getElementById('cd-hours').innerText = String(h).padStart(2, '0');
-                document.getElementById('cd-minutes').innerText = String(m).padStart(2, '0');
-                document.getElementById('cd-seconds').innerText = String(s).padStart(2, '0');
-            }
-        }, 1000);
 
-        function switchMatchWeek(weekId, btn) {
-            document.querySelectorAll('.match-sections-container').forEach(s => s.classList.remove('active'));
-            document.querySelectorAll('.hero-banner .week-nav-btn').forEach(b => b.classList.remove('active'));
+        function updateCountdown() {
+            if (totalSeconds > 0) {
+                totalSeconds--;
+            }
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+
+            const hEl = document.getElementById('cd-hours');
+            const mEl = document.getElementById('cd-minutes');
+            const sEl = document.getElementById('cd-seconds');
+
+            if (hEl) hEl.innerText = String(hours).padStart(2, '0');
+            if (mEl) mEl.innerText = String(minutes).padStart(2, '0');
+            if (sEl) sEl.innerText = String(seconds).padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+
+        function updateLiveClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const timeString = `${hours}:${minutes}`;
+            
+            const tTimeFuel = document.getElementById('t-time-fuel');
+            const tTimeSaudi = document.getElementById('t-time-saudi');
+            const tTimeSeda = document.getElementById('t-time-seda');
+            const tTimeTrump = document.getElementById('t-time-trump');
+
+            if (tTimeFuel) tTimeFuel.innerText = `۲۸ شهریور ۱۴۰۵ - ${timeString}`;
+            if (tTimeSaudi) tTimeSaudi.innerText = `۲۸ شهریور ۱۴۰۵ - ${timeString}`;
+            if (tTimeSeda) tTimeSeda.innerText = `۲۸ شهریور ۱۴۰۵ - ${timeString}`;
+            if (tTimeTrump) tTimeTrump.innerText = `۲۸ شهریور ۱۴۰۵ - ${timeString}`;
+        }
+        setInterval(updateLiveClock, 1000);
+        window.onload = updateLiveClock;
+
+        function switchMatchWeek(weekId, btnElement) {
+            document.querySelectorAll('.match-sections-container').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('.hero-banner .week-nav-btn').forEach(btn => btn.classList.remove('active'));
+
             document.getElementById('match-' + weekId).classList.add('active');
-            btn.classList.add('active');
+            btnElement.classList.add('active');
         }
 
-        function switchTable(tableId, btn) {
-            document.querySelectorAll('.table-container').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('#tab-table .week-nav-btn').forEach(b => b.classList.remove('active'));
+        function switchTable(tableId, btnElement) {
+            document.querySelectorAll('.table-container').forEach(tbl => tbl.classList.remove('active'));
+            document.querySelectorAll('#tab-table .week-nav-btn').forEach(btn => btn.classList.remove('active'));
+
             document.getElementById('table-' + tableId).classList.add('active');
-            if(btn) btn.classList.add('active');
+            btnElement.classList.add('active');
         }
 
-        function switchTab(tabId, btn) {
-            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
-            document.getElementById('tab-' + tabId).classList.add('active');
-            if(btn) btn.classList.add('active');
-            window.scrollTo(0, 0);
-        }
-
-        const alphabet32 = ['آ', 'ا', 'ب', 'پ', 'ت', 'ث', 'ج', 'چ', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'ژ', 'س', 'ش', 'ص', 'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ک', 'گ', 'ل', 'م', 'ن', 'و', 'ه', 'ی'];
+        const availableLetters = ['ب', 'الف', 'م', 'س', 'د', 'ر', 'ع', 'ح', 'پ', 'ک', 'ت', 'ج'];
         let chosenLetter = 'ب';
-        let esmTimer = null;
-        let timeLeftEsm = 70;
-        let currentUser = '';
+        let familyPlayerData = { name: '', phone: '' };
+        let quizTimer = null;
+        let timeLeft = 60;
 
-        let esmLeaderboard = JSON.parse(localStorage.getItem('esm_leaderboard') || '[]');
-        updateEsmLeaderboardUI();
+        function startFamilyQuiz(e) {
+            e.preventDefault();
+            familyPlayerData.name = document.getElementById('player-name').value;
+            familyPlayerData.phone = document.getElementById('player-phone').value;
 
-        function toggleEsmLeaderboard() {
-            const section = document.getElementById('esm-leaderboard-section');
-            if (section.style.display === 'block') {
-                section.style.display = 'none';
-            } else {
-                section.style.display = 'block';
-            }
-        }
+            chosenLetter = availableLetters[Math.floor(Math.random() * availableLetters.length)];
+            document.getElementById('target-letter-display').innerText = `حرف مورد نظر: ${chosenLetter}`;
 
-        function startEsmFamilGame() {
-            currentUser = document.getElementById('username-input').value.trim();
-            if (!currentUser) {
-                alert('لطفاً ابتدا نام کاربری خود را وارد کنید!');
-                return;
-            }
+            document.getElementById('quiz-register-screen').style.display = 'none';
+            document.getElementById('quiz-game-screen').style.display = 'block';
 
-            chosenLetter = alphabet32[Math.floor(Math.random() * alphabet32.length)];
-            document.getElementById('wheel-letter-display').innerText = chosenLetter;
-            document.getElementById('active-letter-badge').innerText = chosenLetter;
-
-            ['f-esm', 'f-famil', 'f-shahr', 'f-keshvar', 'f-miveh', 'f-ghaza', 'f-rang', 'f-heyvan', 'f-mashin', 'f-ashia'].forEach(id => {
-                document.getElementById(id).value = '';
-            });
-
-            document.getElementById('esm-home-screen').style.display = 'none';
-            document.getElementById('esm-game-screen').style.display = 'block';
-
-            timeLeftEsm = 70;
-            updateEsmTimerUI();
-            if (esmTimer) clearInterval(esmTimer);
-            esmTimer = setInterval(() => {
-                timeLeftEsm--;
-                updateEsmTimerUI();
-                if (timeLeftEsm <= 0) {
-                    clearInterval(esmTimer);
-                    alert('زمان ۷۰ ثانیه به پایان رسید!');
-                    submitEsmFamilGame();
+            timeLeft = 60;
+            updateTimerDisplay();
+            if (quizTimer) clearInterval(quizTimer);
+            quizTimer = setInterval(() => {
+                timeLeft--;
+                updateTimerDisplay();
+                if (timeLeft <= 0) {
+                    clearInterval(quizTimer);
+                    alert('زمان ۶۰ ثانیه به پایان رسید!');
+                    submitFamilyQuiz(new Event('submit'));
                 }
             }, 1000);
         }
 
-        function updateEsmTimerUI() {
-            const m = String(Math.floor(timeLeftEsm / 60)).padStart(2, '0');
-            const s = String(timeLeftEsm % 60).padStart(2, '0');
-            document.getElementById('esm-timer-display').innerText = `${m}:${s}`;
+        function updateTimerDisplay() {
+            const minutes = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+            const seconds = String(timeLeft % 60).padStart(2, '0');
+            document.getElementById('timer-display').innerText = `${minutes}:${seconds}`;
         }
 
-        function submitEsmFamilGame() {
-            if (esmTimer) clearInterval(esmTimer);
+        function submitFamilyQuiz(e) {
+            if(e) e.preventDefault();
+            if (quizTimer) clearInterval(quizTimer);
 
-            const fields = ['f-esm', 'f-famil', 'f-shahr', 'f-keshvar', 'f-miveh', 'f-ghaza', 'f-rang', 'f-heyvan', 'f-mashin', 'f-ashia'];
-            let score = 0;
+            document.getElementById('quiz-game-screen').style.display = 'none';
+            document.getElementById('quiz-result-screen').style.display = 'block';
 
-            fields.forEach(id => {
-                const val = document.getElementById(id).value.trim();
-                if (val !== '' && val.startsWith(chosenLetter)) {
-                    score += 10;
-                } else {
-                    score -= 1;
-                }
-            });
+            document.getElementById('result-name-disp').innerText = familyPlayerData.name;
+            document.getElementById('result-letter-disp').innerText = chosenLetter;
 
-            document.getElementById('last-score-display').innerText = score;
+            document.getElementById('form-input-name').value = familyPlayerData.name;
+            document.getElementById('form-input-phone').value = familyPlayerData.phone;
+            document.getElementById('form-input-letter').value = chosenLetter;
+            document.getElementById('form-input-esm').value = document.getElementById('input-esm').value;
+            document.getElementById('form-input-famil').value = document.getElementById('input-famil').value;
+            document.getElementById('form-input-shahr').value = document.getElementById('input-shahr').value;
+            document.getElementById('form-input-keshvar').value = document.getElementById('input-keshvar').value;
+            document.getElementById('form-input-ghaza').value = document.getElementById('input-ghaza').value;
+            document.getElementById('form-input-miveh').value = document.getElementById('input-miveh').value;
+            document.getElementById('form-input-heyvan').value = document.getElementById('input-heyvan').value;
+            document.getElementById('form-input-ashia').value = document.getElementById('input-ashia').value;
 
-            const existingIndex = esmLeaderboard.findIndex(u => u.name === currentUser);
-            if (existingIndex >= 0) {
-                esmLeaderboard[existingIndex].score += score;
-            } else {
-                esmLeaderboard.push({ name: currentUser, score: score });
-            }
-
-            esmLeaderboard.sort((a, b) => b.score - a.score);
-            localStorage.setItem('esm_leaderboard', JSON.stringify(esmLeaderboard));
-            updateEsmLeaderboardUI();
-
-            alert(`بازی تمام شد! امتیاز کسب شده در این مرحله: ${score}`);
-            document.getElementById('esm-game-screen').style.display = 'none';
-            document.getElementById('esm-home-screen').style.display = 'block';
-            document.getElementById('esm-leaderboard-section').style.display = 'block';
+            const formData = new FormData(document.getElementById('real-email-form'));
+            fetch("https://formspree.io/f/xkjgnyoa", {
+                method: "POST",
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).catch(error => console.error(error));
         }
 
-        function updateEsmLeaderboardUI() {
-            const listContainer = document.getElementById('dynamic-esm-leaderboard');
-            if (!listContainer) return;
+        function resetFamilyQuiz() {
+            document.getElementById('quiz-result-screen').style.display = 'none';
+            document.getElementById('quiz-register-screen').style.display = 'block';
+            document.getElementById('player-name').value = '';
+            document.getElementById('player-phone').value = '';
+            document.getElementById('family-game-form').reset();
+        }
 
-            if (esmLeaderboard.length === 0) {
-                listContainer.innerHTML = `<div class="esm-table-row"><span>-</span><span>هنوز بازیکنی ثبت نشده</span><span>0</span></div>`;
-                return;
-            }
+        function switchTab(tabId, btnElement) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
 
-            let html = '';
-            esmLeaderboard.forEach((item, index) => {
-                const isHighlight = item.name === currentUser ? 'highlight' : '';
-                html += `<div class="esm-table-row ${isHighlight}"><span>${index + 1}. ${item.name}</span><span>${item.score} امتیاز</span></div>`;
-            });
-            listContainer.innerHTML = html;
+            document.getElementById('tab-' + tabId).classList.add('active');
+            btnElement.classList.add('active');
+            window.scrollTo(0, 0);
         }
 
         window.addEventListener('load', function() {
-            setTimeout(() => {
+            setTimeout(function() {
                 const splash = document.getElementById('splash-screen');
                 splash.style.opacity = '0';
                 setTimeout(() => splash.style.display = 'none', 500);
