@@ -292,65 +292,6 @@
             display: block;
         }
 
-        .countdown-card {
-            background-color: var(--card-bg);
-            border-radius: 20px;
-            padding: 24px;
-            text-align: center;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            margin-bottom: 20px;
-        }
-
-        .countdown-title {
-            font-size: 18px;
-            font-weight: 900;
-            color: var(--text-main);
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
-
-        .countdown-subtitle {
-            font-size: 13px;
-            color: var(--text-gray);
-            margin-bottom: 20px;
-        }
-
-        .countdown-boxes {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .countdown-box {
-            background: #ffffff;
-            border: 1px solid #cbd5e1;
-            border-radius: 14px;
-            padding: 12px 16px;
-            min-width: 80px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .countdown-number {
-            font-size: 24px;
-            font-weight: 900;
-            color: var(--accent-amber);
-            font-family: monospace;
-            line-height: 1.2;
-        }
-
-        .countdown-label {
-            font-size: 11px;
-            color: var(--text-gray);
-            margin-top: 4px;
-        }
-
         /* --- تب‌های ناوبری مسابقات و جدول --- */
         .weeks-nav-container {
             max-width: 680px;
@@ -1045,36 +986,133 @@
                 </div>
             </div>
 
-            <!-- بخش هفته ششم (با ساعت‌شمار واقعی) -->
+            <!-- بخش هفته ششم (برنامه جدید و دقیق شما) -->
             <div id="match-week6" class="match-sections-container">
-                <div class="countdown-card">
-                    <div class="countdown-title">
-                        <span>🔒 Week 6</span>
-                    </div>
-                    <div class="countdown-subtitle">Available in</div>
-                    <div class="countdown-boxes">
-                        <div class="countdown-box">
-                            <span id="cd-hours" class="countdown-number">12</span>
-                            <span class="countdown-label">Hours</span>
-                        </div>
-                        <div class="countdown-box">
-                            <span id="cd-minutes" class="countdown-number">03</span>
-                            <span class="countdown-label">Minutes</span>
-                        </div>
-                        <div class="countdown-box">
-                            <span id="cd-seconds" class="countdown-number">20</span>
-                            <span class="countdown-label">Seconds</span>
-                        </div>
-                    </div>
+                <div class="matchweek-banner">
+                    <h2>هفته ششم پیش‌بینی‌ها</h2>
+                    <span>برنامه رسمی مسابقات جدید</span>
                 </div>
 
-                <div style="display: flex; align-items: center; justify-content: space-between; background: var(--card-bg); padding: 16px 20px; border-radius: 16px; border: 1px solid #e2e8f0;">
-                    <span style="font-weight: 700; font-size: 14px; color: var(--text-main);">Weekly Reminders</span>
-                    <label style="position: relative; display: inline-block; width: 50px; height: 26px;">
-                        <input type="checkbox" checked style="opacity: 0; width: 0; height: 0;">
-                        <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--accent-green); transition: .4s; border-radius: 34px;"></span>
-                        <span style="position: absolute; content: ''; height: 20px; width: 20px; left: 26px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%;"></span>
-                    </label>
+                <div class="unified-matches-card">
+                    <div class="date-divider" style="margin-top: 0;">پنجشنبه ۲ مهر ۱۴۰۵</div>
+
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <span class="team-name">هلند</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۲۲:۱۵</span>
+                            <span class="match-date-text">۲ مهر</span>
+                            <span class="match-league-badge">UEFA Nations</span>
+                        </div>
+                        <div class="team-side away">
+                            <span class="team-name">آلمان</span>
+                        </div>
+                    </div>
+
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <span class="team-name">ساحل عاج</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۲۲:۳۰</span>
+                            <span class="match-date-text">۲ مهر</span>
+                            <span class="match-league-badge">Friendly / Int</span>
+                        </div>
+                        <div class="team-side away">
+                            <span class="team-name">غنا</span>
+                        </div>
+                    </div>
+
+                    <div class="date-divider">جمعه ۳ مهر ۱۴۰۵</div>
+
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <span class="team-name">ایتالیا</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۲۲:۱۵</span>
+                            <span class="match-date-text">۳ مهر</span>
+                            <span class="match-league-badge">UEFA Nations</span>
+                        </div>
+                        <div class="team-side away">
+                            <span class="team-name">بلژیک</span>
+                        </div>
+                    </div>
+
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <span class="team-name">ترکیه</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۲۲:۱۵</span>
+                            <span class="match-date-text">۳ مهر</span>
+                            <span class="match-league-badge">UEFA Nations</span>
+                        </div>
+                        <div class="team-side away">
+                            <span class="team-name">فرانسه</span>
+                        </div>
+                    </div>
+
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <span class="team-name">استرالیا</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۱۳:۳۰</span>
+                            <span class="match-date-text">۳ مهر</span>
+                            <span class="match-league-badge">Friendly / Int</span>
+                        </div>
+                        <div class="team-side away">
+                            <span class="team-name">برزیل</span>
+                        </div>
+                    </div>
+
+                    <div class="date-divider">شنبه ۴ مهر ۱۴۰۵</div>
+
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <span class="team-name">جمهوری چک</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۲۲:۱۵</span>
+                            <span class="match-date-text">۴ مهر</span>
+                            <span class="match-league-badge">UEFA Nations</span>
+                        </div>
+                        <div class="team-side away">
+                            <span class="team-name">کرواسی</span>
+                        </div>
+                    </div>
+
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <span class="team-name">انگلیس</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۲۲:۱۵</span>
+                            <span class="match-date-text">۴ مهر</span>
+                            <span class="match-league-badge">UEFA Nations</span>
+                        </div>
+                        <div class="team-side away">
+                            <span class="team-name">اسپانیا</span>
+                        </div>
+                    </div>
+
+                    <div class="date-divider">یکشنبه ۵ مهر ۱۴۰۵</div>
+
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <span class="team-name">نروژ</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۲۲:۱۵</span>
+                            <span class="match-date-text">۵ مهر</span>
+                            <span class="match-league-badge">UEFA Nations</span>
+                        </div>
+                        <div class="team-side away">
+                            <span class="team-name">پرتغال</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1100,7 +1138,6 @@
             <button class="week-nav-btn" onclick="switchTable('week3', this)">هفته سوم</button>
             <button class="week-nav-btn" onclick="switchTable('week4', this)">هفته چهارم</button>
             <button class="week-nav-btn" onclick="switchTable('week5', this)">هفته پنجم</button>
-            <button class="week-nav-btn" onclick="switchTable('week5', this)">هفته ششم</button>
         </div>
 
         <div id="table-complete" class="table-container active">
@@ -1210,8 +1247,8 @@
                         <div class="dsny-badge second">2</div>
                     </div>
                     <div class="dsny-cylinder">
-                        <div class="dsny-col-name">قطیفی</div>
-                        <div class="dsny-col-score">6 امتیاز</div>
+                        <div class="dsny-col-name">پیرا</div>
+                        <div class="dsny-col-score">5 امتیاز</div>
                     </div>
                 </div>
 
@@ -1221,8 +1258,8 @@
                         <div class="dsny-badge first">1</div>
                     </div>
                     <div class="dsny-cylinder">
-                        <div class="dsny-col-name">داودی</div>
-                        <div class="dsny-col-score">6 امتیاز</div>
+                        <div class="dsny-col-name">الجابر</div>
+                        <div class="dsny-col-score">5 امتیاز</div>
                     </div>
                 </div>
 
@@ -1233,7 +1270,7 @@
                     </div>
                     <div class="dsny-cylinder">
                         <div class="dsny-col-name">زویدات</div>
-                        <div class="dsny-col-score">6 امتیاز</div>
+                        <div class="dsny-col-score">4 امتیاز</div>
                     </div>
                 </div>
             </div>
@@ -1247,7 +1284,7 @@
                 <div class="dsny-list-item">
                     <div class="dsny-item-left">
                         <div class="dsny-item-badge first">1</div>
-                        <div class="dsny-item-name">داودی</div>
+                        <div class="dsny-item-name">الجابر</div>
                     </div>
                     <div class="dsny-item-score">
                         <span>5</span>
@@ -1258,7 +1295,7 @@
                 <div class="dsny-list-item">
                     <div class="dsny-item-left">
                         <div class="dsny-item-badge second">2</div>
-                        <div class="dsny-item-name">قطیفی</div>
+                        <div class="dsny-item-name">پیرا</div>
                     </div>
                     <div class="dsny-item-score">
                         <span>5</span>
@@ -1280,7 +1317,7 @@
         </div>
     </div>
 
-    <!-- تب ۴: سوت پایان (گزارش جدید شما کاملاً جایگذاری شد) -->
+    <!-- تب ۴: سوت پایان -->
     <div id="tab-soutpayan" class="tab-content">
         <div class="match-analysis-container">
             <h2 style="text-align: center; color: var(--accent-amber); margin-bottom: 5px;">سوت پایان | تحلیل و بررسی مسابقات</h2>
@@ -1290,39 +1327,11 @@
                 <div class="analysis-body-content">
                     <h3 class="analysis-headline">در شب گذشته لیگ گداهای استرسی چه گذشت</h3>
                     <p class="analysis-text" style="white-space: pre-line;">تساوی اینتر و رم
-این متن را می‌شود برای گزارش پایان هفته پنجم سایت گداهای استرسی کمی تیزتر، روان‌تر و خبری‌تر کرد:
-
-🏁 پایان هفته پنجم؛ از صعود پروازی الجابر تا تعطیلات زجرآور فیفادی!
-
-سوت پایان هفته پنجم هم به صدا درآمد و پرونده این هفته، با کلی آه و افسوس بسته شد؛ هفته‌ای که رسماً باید اسمش را گذاشت: «هفته هیچی!» 😐
-
-🔸 داودی مثل همیشه بار خودش را بست و اول شد؛ بقیه دوستان هم ظاهراً فقط زحمت کشیدند و بوق زدند! 😂
-
-🔸 در دو بازی اول، تقریباً همه صفر مطلق بودند؛ هرچه رشته بودند، همان‌جا پنبه شد و رفت هوا!
-
-📝 حاشیه‌نگاری مدعیان هفته پنجم
-
-🔥 شاهکار الجابر
-بازی رم و اینتر همان جایی بود که داستان عوض شد. الجابر، با وجود تمام مخ‌زنی‌های قطیفی و لابی‌های پشت پرده، روی پیش‌بینی خودش ایستاد و با شکار ۳ امتیاز کامل، یک پرواز تمام‌عیار به سمت صدر جدول داشت! 🚀
-
-😶 سبک همیشگی زویدات
-مثل همیشه خاکستری و بی‌حاشیه؛ نه آن‌قدر خوب که بشود ستایشش کرد، نه آن‌قدر بد که بشود حسابی کوبیدش! ظاهراً خودش هم هنوز دقیقاً نمی‌داند چه برنامه‌ای دارد! 😂
-
-🎯 تاکتیک پیرا
-همان سبک سنتی و آشنا؛ یکی در میان بازی‌ها را اصلاً پیش‌بینی نمی‌کند و نشسته تا شاید یک روز شانس در خانه‌اش را بزند و کار را یک‌جا جمع کند!
-
-👨‍💻 سوپرپلان مهندس ابوخلیل
-استراتژی صلح‌طلبانه و کاملاً کارمندی: همه‌چیز ۱–۰! نه سیخ بسوزد، نه کباب؛ محافظه‌کاری در پیش‌بینی را رسماً وارد مرحله جدیدی کرده است! 😅
-
-⚠️ تلخی بزرگ قصه…
-
-اما درد اصلی تازه شروع شده…
-
-۲۰ روز لعنتی و بی‌پایان فوتبال باشگاهی تعطیل است!
-حالا معلوم نیست این جماعت چطور قرار است این فراق دردناک با مستطیل سبز را تحمل کنند! 😭⚽
-
-پایان گزارش؛ تا اطلاع ثانوی و بازگشت فوتبال باشگاهی، آه و ناله آزاد! 🥲
-
+در شب خوشانسی الجابر و زویدات
+شب گذشته با وجود چرخکرده های زیاد داخل یخچال و فیره های ۲۶۴۳و غمگینی باجلان شاهکار الجابر رو‌نمیشه فراموش کرد،الجابر با ورد به مضطراب جهت انجام امور شخصی ناگهان با فریادهای قطیفی مواجه شد که(الجابر،الجابر)الجابر که در درون مضطراب بود با سوال چی شده چی شده جویای ماجرا شد
+و‌فهمید که اینتر گل دوم را زده و بازی همان شده که پیش بینی کرده بود،و همای سعادت روی شانه های الجابر نشسته بود ولی پرهایش گوهی شده بودند و‌ وا ویلتا.
+بازی بارسلونا و سویا هم با نتیجه ۳بریک به نفع بارسلونا به پایان رسید تا شب پرفروغ پیرا و الجابر به پایان برسد…
+ضمنا داودی بازی بارسلونا رو درست حدث زده بود و 
 سوت پایان…</p>
                 </div>
             </div>
@@ -1368,13 +1377,7 @@
                     <span class="news-badge" style="background: var(--accent-red); color: #fff;">فوری</span>
                 </div>
                 <div class="twitter-tweet-text">
-         ‏ایران از آمادگی موشک‌های با سرعت ۱۰ ماخ خبر داد و آمریکا را به حمله نظامی به چالش کشید
-
-‏سرلشکر محسن رضایی از فرماندهان سپاه پاسداران اعلام کرد که ایران سرعت موشک‌های مافوق‌صوت خود را از ۶ ماخ به ۱۰ ماخ ارتقا داده و ضمن توسعه توانمندی‌های جنگ الکترونیک و پدافند هوایی، اکنون قادر است شناورهای آمریکایی را در هر نقطه‌ای از اقیانوس هند تهدید کند.
-
-‏«اگر آمریکا جنگی را آغاز کند، ما با نیرویی به‌مراتب قوی‌تر، حملات بیشتر و ضرباتی سنگین‌تر با آن‌ها مقابله خواهیم کرد.»
-
-‏او سپس آمریکا را به اعزام نیروهای زمینی و هوابرد به داخل خاک ایران به چالش کشید و گفت: «چرا نیروهای زمینی آمریکا وارد ایران نمی‌شوند؟ چرا آن‌ها تنها به حملات هوایی بسنده کرده و سپس منطقه را ترک می‌کنند؟»»
+                    خبر فوری: ایالات متحده خروج پایگاه‌های نظامی خود از عربستان سعودی را اعلام کرد. به وضوح نشان می‌دهد که سربازان در حال ترک کشور خود با حمل تجهیزاتشان هستند. این بزرگ‌ترین پیروزی ایران است.
                 </div>
                 <div class="twitter-footer">
                     <span>گیشه اخبار و رویدادها</span>
@@ -1414,9 +1417,7 @@
                     <span class="news-badge" style="background: var(--accent-red); color: #fff;">بین‌الملل</span>
                 </div>
                 <div class="twitter-tweet-text">
-                    ‏ویدیوهای تلفنی از نورهای درخشان و چندرنگ بالای تهران، ایران، یک‌شبه وایرال شد.
-
-‏مقامات ایرانی هیچ بیانیه رسمی صادر نکرده‌اند که این شیء را تهدیدآمیز تلقی کند.
+                    کاخ سفید: ترامپ پروژه قانون تحریم‌ها علیه روسیه و ایران را امضا کرد.
                 </div>
                 <div class="twitter-footer">
                     <span>گیشه اخبار و رویدادها</span>
@@ -1590,26 +1591,6 @@
     </nav>
 
     <script>
-        let totalSeconds = 45 * 3600 + 30 * 60 + 20;
-
-        function updateCountdown() {
-            if (totalSeconds > 0) {
-                totalSeconds--;
-            }
-            const hours = Math.floor(totalSeconds / 3600);
-            const minutes = Math.floor((totalSeconds % 3600) / 60);
-            const seconds = totalSeconds % 60;
-
-            const hEl = document.getElementById('cd-hours');
-            const mEl = document.getElementById('cd-minutes');
-            const sEl = document.getElementById('cd-seconds');
-
-            if (hEl) hEl.innerText = String(hours).padStart(2, '0');
-            if (mEl) mEl.innerText = String(minutes).padStart(2, '0');
-            if (sEl) sEl.innerText = String(seconds).padStart(2, '0');
-        }
-        setInterval(updateCountdown, 1000);
-
         function updateLiveClock() {
             const now = new Date();
             const hours = String(now.getHours()).padStart(2, '0');
