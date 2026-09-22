@@ -436,46 +436,54 @@
             background: #0d9668;
         }
 
-        .news-card {
+        /* استایل جدید خبرها مشابه فوتموب (تصویر کوچک راست، متن کنار آن) */
+        .fotmob-news-card {
             background: var(--card-bartar);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            gap: 14px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+            transition: border-color 0.2s ease;
         }
-        .news-img {
-            width: 100%;
-            height: 220px;
+        .fotmob-news-card:hover {
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+        .fotmob-news-thumb {
+            width: 85px;
+            height: 85px;
+            border-radius: 10px;
             object-fit: cover;
-            border-bottom: 2px solid var(--accent-bartar);
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .news-content {
-            padding: 18px;
+        .fotmob-news-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
-        .news-title {
-            font-size: 17px;
+        .fotmob-news-tag {
+            font-size: 10px;
             font-weight: 900;
             color: var(--accent-bartar);
-            margin-bottom: 10px;
-            line-height: 1.6;
+            margin-bottom: 4px;
+            text-transform: uppercase;
         }
-        .news-text {
+        .fotmob-news-title {
             font-size: 13.5px;
-            color: #cbd5e1;
-            line-height: 1.9;
-            text-align: justify;
-        }
-        .opta-tag {
-            display: inline-block;
-            background: rgba(16, 185, 129, 0.15);
-            color: var(--accent-bartar);
-            font-size: 11px;
             font-weight: 900;
-            padding: 3px 10px;
-            border-radius: 6px;
-            margin-bottom: 10px;
-            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #fff;
+            line-height: 1.5;
+            margin-bottom: 4px;
+        }
+        .fotmob-news-desc {
+            font-size: 11.5px;
+            color: var(--text-sub);
+            line-height: 1.6;
         }
 
         .bottom-nav {
@@ -536,7 +544,7 @@
         </div>
     </div>
 
-    <header>CANBO FOOTBALL | لیگ گداهای استرسی ۲</header>
+    <header>لیگ گداهای استرسی ۲</header>
 
     <!-- تب ۱: مسابقات پیش‌بینی -->
     <div id="tab-matches" class="tab-content active">
@@ -873,27 +881,46 @@
         </div>
     </div>
 
-    <!-- تب ۴: گیشه -->
+    <!-- تب ۴: گیشه (طراحی شده با استایل کارت‌های فوتموب و خبر سفر مسعود پزشکیان) -->
     <div id="tab-news" class="tab-content">
         <div class="hero-banner">
             <div class="league-banner-card">
                 <div>
                     <div class="league-banner-title">گیشه</div>
-                    <div class="league-banner-subtitle">اخبار، توییت‌ها و آنالیز تخصصی Opta</div>
+                    <div class="league-banner-subtitle">اخبار سیاسی، بین‌الملل و رویدادها</div>
                 </div>
                 <div class="cup-hex-icon">
                     <svg viewBox="0 0 24 24" width="28" height="28" fill="#10b981"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-2v2z"/></svg>
                 </div>
             </div>
 
-            <div class="news-card">
-                <img src="https://images.fotmob.com/image_resources/news/atletico-real-madrid-derby.jpg" alt="اتلتیکو مادرید و رئال مادرید" class="news-img" onerror="this.src='https://images.fotmob.com/image_resources/logo/teamlogo/9906.png'">
-                <div class="news-content">
-                    <span class="opta-tag">OPTA STATS & ANALYSIS</span>
-                    <h2 class="news-title">پیروزی بزرگ اتلتیکو در دربی مادرید؛ تحلیل آماری شکست رئال مقابل شاگردان سیمئونه</h2>
-                    <p class="news-text">
-                        در پیکار جذاب و پراتفاق دربی مادرید که روز گذشته برگزار شد، اتلتیکو مادرید موفق شد در یک نبرد تماشایی با نتیجه ۲ بر ۱ رئال مادرید را شکست دهد. بر اساس داده‌های آماری و تحلیل پیشرفته اپتا (Opta)، اتلتیکو با اتکا به خط دفاعی متراکم و برتری در دوئل‌های تن‌به‌تن توانست کنترل بازی را در دست بگیرد. رئالی‌ها در دقایق پایانی فشار زیادی روی دروازه حریف ایجاد کردند و حتی موفق شدند یکی از گل‌های خورده را جبران کنند، اما در نهایت شاگردان دیگو سیمئونه با ارائه یک نمایش حساب‌شده سه امتیاز ارزشمند این مسابقه را به دست آوردند تا معادلات جدول لالیگا جذاب‌تر از همیشه دنبال شود.
-                    </p>
+            <!-- کارت خبر اول: سفر پزشکیان به نیویورک -->
+            <div class="fotmob-news-card">
+                <img src="https://images.fotmob.com/image_resources/news/un-general-assembly.jpg" alt="سفر پزشکیان" class="fotmob-news-thumb" onerror="this.src='https://images.fotmob.com/image_resources/logo/teamlogo/8618.png'">
+                <div class="fotmob-news-body">
+                    <div class="fotmob-news-tag">سیاسی • بین‌الملل</div>
+                    <div class="fotmob-news-title">پزشکیان عازم نیویورک شد؛ تبیین مواضع ایران در مجمع عمومی سازمان ملل</div>
+                    <div class="fotmob-news-desc">مسعود پزشکیان، رئیس‌جمهور، برای شرکت و سخنرانی در هشتادویکمین مجمع عمومی سازمان ملل متحد با هیئتی حداقلی عازم نیویورک شد و بر دفاع قدرتمندانه از منافع ملی تأکید کرد.</div>
+                </div>
+            </div>
+
+            <!-- کارت خبر دوم -->
+            <div class="fotmob-news-card">
+                <img src="https://images.fotmob.com/image_resources/news/diplomacy.jpg" alt="دیپلماسی" class="fotmob-news-thumb" onerror="this.src='https://images.fotmob.com/image_resources/logo/teamlogo/8618.png'">
+                <div class="fotmob-news-body">
+                    <div class="fotmob-news-tag">دیپلماسی</div>
+                    <div class="fotmob-news-title">انتقاد از محدودیت‌های ایجاد شده برای تیم رسانه‌ای همراه رئیس‌جمهور</div>
+                    <div class="fotmob-news-desc">مقام مسئول پیش از پرواز به کارشکنی‌ها و محدودیت‌های اعمال‌شده از سوی آمریکا در صدور ویزای خبرنگاران و تیم رسانه‌ای همراه هیئت ایرانی واکنش نشان داد.</div>
+                </div>
+            </div>
+
+            <!-- کارت خبر سوم -->
+            <div class="fotmob-news-card">
+                <img src="https://images.fotmob.com/image_resources/news/gaza-crisis.jpg" alt="منطقه و غزه" class="fotmob-news-thumb" onerror="this.src='https://images.fotmob.com/image_resources/logo/teamlogo/8618.png'">
+                <div class="fotmob-news-body">
+                    <div class="fotmob-news-tag">خاورمیانه</div>
+                    <div class="fotmob-news-title">بررسی بحران غزه و تحولات منطقه‌ای در دیدارهای فشرده نیویورک</div>
+                    <div class="fotmob-news-desc">تشریح واقعیت‌های میدانی منطقه، وضعیت بحرانی غزه و تاکید بر صلح و ثبات منطقه‌ای از محورهای اصلی دیدارهای دوطرفه رئیس‌جمهور در حاشیه سازمان ملل اعلام شد.</div>
                 </div>
             </div>
 
