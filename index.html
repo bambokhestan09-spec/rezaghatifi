@@ -48,13 +48,14 @@
         @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;900&display=swap');
 
         :root {
-            --bg-360: #0b0f15;
-            --card-360: #141b24;
+            --bg-bartar: #0e1621;
+            --card-bartar: #162232;
+            --accent-bartar: #10b981; /* سبز استودیویی فوتبال برتر */
+            --accent-gold: #f59e0b;
             --orange-360: #ff5722;
-            --orange-hover: #f4511e;
             --text-main: #ffffff;
             --text-sub: #94a3b8;
-            --border-color: #222b38;
+            --border-color: #23354a;
         }
 
         * {
@@ -65,7 +66,7 @@
         }
 
         body {
-            background-color: var(--bg-360);
+            background-color: var(--bg-bartar);
             color: var(--text-main);
             min-height: 100vh;
             padding-bottom: 95px;
@@ -78,7 +79,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #070a0f;
+            background-color: #090e16;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -91,7 +92,7 @@
             width: 120px;
             height: 120px;
             margin-bottom: 20px;
-            filter: drop-shadow(0 0 15px rgba(255, 87, 34, 0.4));
+            filter: drop-shadow(0 0 15px rgba(16, 185, 129, 0.4));
         }
 
         .splash-title {
@@ -103,13 +104,13 @@
         }
 
         .splash-title span {
-            color: var(--orange-360);
+            color: var(--accent-bartar);
         }
 
         .loading-bar {
             width: 200px;
             height: 6px;
-            background-color: #1a2332;
+            background-color: #1a2738;
             border-radius: 3px;
             overflow: hidden;
             position: relative;
@@ -118,7 +119,7 @@
         .loading-progress {
             width: 50%;
             height: 100%;
-            background-color: var(--orange-360);
+            background-color: var(--accent-bartar);
             border-radius: 3px;
             animation: loadAnim 1.5s infinite alternate;
         }
@@ -128,15 +129,15 @@
             100% { transform: translateX(100%); }
         }
 
-        /* --- هدر سایت سبک ۳۶۰ --- */
+        /* --- هدر سایت سبک فوتبال برتر --- */
         header {
-            background-color: #111721;
+            background-color: #121d2b;
             padding: 16px 20px;
             text-align: center;
             font-weight: 900;
             font-size: 18px;
             color: #fff;
-            border-bottom: 3px solid var(--orange-360);
+            border-bottom: 3px solid var(--accent-bartar);
             box-shadow: 0 4px 12px rgba(0,0,0,0.4);
             letter-spacing: -0.5px;
         }
@@ -156,17 +157,17 @@
         }
 
         .matchweek-banner {
-            background: linear-gradient(135deg, #182232, #111721);
-            border: 1px solid var(--orange-360);
+            background: linear-gradient(135deg, #1c2b40, #121d2b);
+            border: 1px solid var(--accent-bartar);
             border-radius: 14px;
             padding: 16px;
             text-align: center;
             margin-bottom: 15px;
-            box-shadow: 0 4px 15px rgba(255, 87, 34, 0.15);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.15);
         }
 
         .matchweek-banner h2 {
-            color: var(--orange-360);
+            color: var(--accent-bartar);
             font-size: 19px;
             font-weight: 900;
             margin-bottom: 4px;
@@ -180,7 +181,7 @@
         .date-divider {
             font-size: 13px;
             font-weight: 900;
-            color: var(--orange-360);
+            color: var(--accent-bartar);
             margin: 20px 0 10px 0;
             text-align: right;
             border-bottom: 1px solid var(--border-color);
@@ -189,7 +190,7 @@
 
         /* --- کارت مسابقات --- */
         .unified-matches-card {
-            background-color: var(--card-360);
+            background-color: var(--card-bartar);
             border-radius: 16px;
             padding: 18px;
             margin-bottom: 20px;
@@ -201,7 +202,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #0b0f15;
+            background: #0e1621;
             padding: 12px 14px;
             border-radius: 12px;
             margin-bottom: 10px;
@@ -210,7 +211,7 @@
         }
 
         .match-row-clean:hover {
-            border-color: rgba(255, 87, 34, 0.4);
+            border-color: rgba(16, 185, 129, 0.4);
         }
 
         .match-row-clean:last-child {
@@ -264,7 +265,7 @@
         .match-time-text {
             font-size: 13px;
             font-weight: 900;
-            color: var(--orange-360);
+            color: var(--accent-bartar);
             line-height: 1.2;
         }
 
@@ -303,7 +304,7 @@
         }
 
         .week-nav-btn {
-            background: var(--card-360);
+            background: var(--card-bartar);
             color: var(--text-sub);
             border: 1px solid var(--border-color);
             padding: 10px 18px;
@@ -317,21 +318,21 @@
         }
 
         .week-nav-btn:hover {
-            border-color: var(--orange-360);
+            border-color: var(--accent-bartar);
             color: #fff;
         }
 
         .week-nav-btn.active {
-            background: var(--orange-360);
+            background: var(--accent-bartar);
             color: #ffffff;
-            border-color: var(--orange-360);
+            border-color: var(--accent-bartar);
             font-weight: 900;
-            box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
         }
 
         /* --- بنرها و کارت‌ها --- */
         .league-banner-card {
-            background: radial-gradient(circle at top right, rgba(255, 87, 34, 0.15), transparent 70%), var(--card-360);
+            background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.15), transparent 70%), var(--card-bartar);
             border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 18px 22px;
@@ -355,12 +356,12 @@
         .league-banner-subtitle {
             font-size: 14px;
             font-weight: 700;
-            color: var(--orange-360);
+            color: var(--accent-bartar);
         }
 
         .cup-hex-icon {
             background: rgba(0, 0, 0, 0.3);
-            border: 2px solid var(--orange-360);
+            border: 2px solid var(--accent-bartar);
             width: 52px;
             height: 52px;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
@@ -370,7 +371,7 @@
         }
 
         .table-container {
-            background-color: var(--card-360);
+            background-color: var(--card-bartar);
             border-radius: 16px;
             overflow: hidden;
             max-width: 680px;
@@ -396,12 +397,12 @@
             border-bottom: none;
         }
 
-        .rank-col { width: 45px; font-weight: 900; color: var(--orange-360); }
+        .rank-col { width: 45px; font-weight: 900; color: var(--accent-bartar); }
         .name-col { flex: 1; text-align: right; color: #fff; }
 
         /* --- استایل بخش پروفایل --- */
         .profile-box {
-            background: var(--card-360);
+            background: var(--card-bartar);
             border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 24px;
@@ -413,7 +414,7 @@
         .profile-input {
             width: 100%;
             padding: 12px 16px;
-            background: #0b0f15;
+            background: #0e1621;
             border: 1px solid var(--border-color);
             border-radius: 10px;
             color: #fff;
@@ -424,10 +425,10 @@
             outline: none;
         }
         .profile-input:focus {
-            border-color: var(--orange-360);
+            border-color: var(--accent-bartar);
         }
         .profile-btn {
-            background: var(--orange-360);
+            background: var(--accent-bartar);
             color: #fff;
             border: none;
             padding: 12px 24px;
@@ -439,12 +440,12 @@
             transition: background 0.2s;
         }
         .profile-btn:hover {
-            background: var(--orange-hover);
+            background: #0d9668;
         }
 
         /* --- استایل کارت‌های بخش گیشه (اخبار و آنالیز آپتا) --- */
         .news-card {
-            background: var(--card-360);
+            background: var(--card-bartar);
             border: 1px solid var(--border-color);
             border-radius: 16px;
             overflow: hidden;
@@ -455,7 +456,7 @@
             width: 100%;
             height: 220px;
             object-fit: cover;
-            border-bottom: 2px solid var(--orange-360);
+            border-bottom: 2px solid var(--accent-bartar);
         }
         .news-content {
             padding: 18px;
@@ -463,7 +464,7 @@
         .news-title {
             font-size: 17px;
             font-weight: 900;
-            color: var(--orange-360);
+            color: var(--accent-bartar);
             margin-bottom: 10px;
             line-height: 1.6;
         }
@@ -475,23 +476,23 @@
         }
         .opta-tag {
             display: inline-block;
-            background: rgba(255, 87, 34, 0.15);
-            color: var(--orange-360);
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-bartar);
             font-size: 11px;
             font-weight: 900;
             padding: 3px 10px;
             border-radius: 6px;
             margin-bottom: 10px;
-            border: 1px solid rgba(255, 87, 34, 0.3);
+            border: 1px solid rgba(16, 185, 129, 0.3);
         }
 
-        /* --- نوار پایین (Bottom Navigation) متمایز و حرفه‌ای سبک ۳۶۰ --- */
+        /* --- نوار پایین (Bottom Navigation) متمایز و حرفه‌ای سبک فوتبال برتر --- */
         .bottom-nav {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: #111721;
+            background-color: #121d2b;
             display: flex;
             justify-content: space-around;
             padding: 10px 0;
@@ -523,7 +524,7 @@
         }
 
         .nav-item.active {
-            color: var(--orange-360);
+            color: var(--accent-bartar);
             font-weight: 900;
         }
 
@@ -536,7 +537,7 @@
 
     <!-- صفحه لودینگ اولیه -->
     <div id="splash-screen">
-        <svg class="splash-cup" viewBox="0 0 24 24" fill="#ff5722">
+        <svg class="splash-cup" viewBox="0 0 24 24" fill="#10b981">
             <path d="M19,5H17V3A1,1 0 0,0 16,2H8A1,1 0 0,0 7,3V5H5A3,3 0 0,0 2,8V9A3,3 0 0,0 5,12H5.5A6,6 0 0,0 11,17.93V20H8V22H16V20H13V17.93A6,6 0 0,0 18.5,12H19A3,3 0 0,0 22,9V8A3,3 0 0,0 19,5M5,10A1,1 0 0,1 4,9V8A1,1 0 0,1 5,7H7V10H5M20,9A1,1 0 0,1 19,10H17V7H19A1,1 0 0,1 20,8Z"/>
         </svg>
         <div class="splash-title">لیگ گداهای استرسی <span>فصل دوم</span></div>
@@ -557,25 +558,21 @@
                     <div class="league-banner-subtitle">لیگ گداهای استرسی</div>
                 </div>
                 <div class="cup-hex-icon">
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#ff5722"><path d="M19,5H17V3A1,1 0 0,0 16,2H8A1,1 0 0,0 7,3V5H5A3,3 0 0,0 2,8V9A3,3 0 0,0 5,12H5.5A6,6 0 0,0 11,17.93V20H8V22H16V20H13V17.93A6,6 0 0,0 18.5,12H19A3,3 0 0,0 22,9V8A3,3 0 0,0 19,5M5,10A1,1 0 0,1 4,9V8A1,1 0 0,1 5,7H7V10H5M20,9A1,1 0 0,1 19,10H17V7H19A1,1 0 0,1 20,8Z"/></svg>
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#10b981"><path d="M19,5H17V3A1,1 0 0,0 16,2H8A1,1 0 0,0 7,3V5H5A3,3 0 0,0 2,8V9A3,3 0 0,0 5,12H5.5A6,6 0 0,0 11,17.93V20H8V22H16V20H13V17.93A6,6 0 0,0 18.5,12H19A3,3 0 0,0 22,9V8A3,3 0 0,0 19,5M5,10A1,1 0 0,1 4,9V8A1,1 0 0,1 5,7H7V10H5M20,9A1,1 0 0,1 19,10H17V7H19A1,1 0 0,1 20,8Z"/></svg>
                 </div>
             </div>
 
             <div class="weeks-nav-container">
-                <button class="week-nav-btn active" onclick="switchMatchWeek('week5', this)">هفته پنجم</button>
-                <button class="week-nav-btn" onclick="switchMatchWeek('week6', this)">هفته ششم</button>
+                <button class="week-nav-btn" onclick="switchMatchWeek('week5', this)">هفته پنجم</button>
+                <button class="week-nav-btn active" onclick="switchMatchWeek('week6', this)">هفته ششم</button>
             </div>
 
             <!-- بخش هفته پنجم -->
-            <div id="match-week5" class="match-sections-container active">
+            <div id="match-week5" class="match-sections-container">
                 <div class="matchweek-banner">
                     <h2>هفته پنجم پیش‌بینی‌ها</h2>
                     <span>برنامه کامل مسابقات با تاریخ و ساعت</span>
                 </div>
-
-                <button onclick="requestNotification()" style="width: 100%; background: var(--orange-360); color: #ffffff; font-weight: 900; border: none; padding: 12px; border-radius: 12px; margin-bottom: 15px; cursor: pointer; font-size: 13px; box-shadow: 0 4px 10px rgba(255, 87, 34, 0.25);">
-                    دریافت خبرها و یادآوری مسابقات (کلیک کنید)
-                </button>
 
                 <div class="unified-matches-card">
                     <div class="date-divider" style="margin-top: 0;">جمعه ۲۷ شهریور ۱۴۰۵</div>
@@ -682,11 +679,141 @@
                 </div>
             </div>
 
-            <!-- بخش هفته ششم -->
-            <div id="match-week6" class="match-sections-container">
+            <!-- بخش هفته ششم (شامل مسابقات درخواست شده از تصاویر) -->
+            <div id="match-week6" class="match-sections-container active">
                 <div class="matchweek-banner">
                     <h2>هفته ششم پیش‌بینی‌ها</h2>
-                    <span>برنامه مسابقات به زودی اعلام خواهد شد</span>
+                    <span>برنامه مسابقات ملی و مهم (برگرفته از تصاویر)</span>
+                </div>
+
+                <button onclick="requestNotification()" style="width: 100%; background: var(--accent-bartar); color: #ffffff; font-weight: 900; border: none; padding: 12px; border-radius: 12px; margin-bottom: 15px; cursor: pointer; font-size: 13px; box-shadow: 0 4px 10px rgba(16, 185, 129, 0.25);">
+                    دریافت خبرها و یادآوری مسابقات (کلیک کنید)
+                </button>
+
+                <div class="unified-matches-card">
+                    <div class="date-divider" style="margin-top: 0;">چهارشنبه ۳۱ شهریور ۱۴۰۵</div>
+                    
+                    <!-- بازی استرالیا - برزیل -->
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/6545.png" alt="Australia">
+                            <span class="team-name">استرالیا</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۰۱:۳۰</span>
+                            <span class="match-date-text">۳۱ شهریور</span>
+                            <span class="match-league-badge">Friendlies</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/6504.png" alt="Brazil">
+                            <span class="team-name">برزیل</span>
+                        </div>
+                    </div>
+
+                    <div class="date-divider">پنج‌شنبه ۱ مهر ۱۴۰۵</div>
+
+                    <!-- بازی هلند - آلمان -->
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8603.png" alt="Netherlands">
+                            <span class="team-name">هلند</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۲۲:۱۵</span>
+                            <span class="match-date-text">۱ مهر</span>
+                            <span class="match-league-badge">UEFA Nations League</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8633.png" alt="Germany">
+                            <span class="team-name">آلمان</span>
+                        </div>
+                    </div>
+
+                    <!-- بازی انگلیس - اسپانیا -->
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8652.png" alt="England">
+                            <span class="team-name">انگلیس</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۲۲:۱۵</span>
+                            <span class="match-date-text">۱ مهر</span>
+                            <span class="match-league-badge">UEFA Nations League</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8603.png" alt="Spain">
+                            <span class="team-name">اسپانیا</span>
+                        </div>
+                    </div>
+
+                    <!-- بازی چک - کرواسی -->
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8593.png" alt="Czechia">
+                            <span class="team-name">چک</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۲۲:۱۵</span>
+                            <span class="match-date-text">۱ مهر</span>
+                            <span class="match-league-badge">UEFA Nations League</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8601.png" alt="Croatia">
+                            <span class="team-name">کرواسی</span>
+                        </div>
+                    </div>
+
+                    <!-- بازی ایتالیا - بلژیک -->
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8636.png" alt="Italy">
+                            <span class="team-name">ایتالیا</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۲۲:۱۵</span>
+                            <span class="match-date-text">۱ مهر</span>
+                            <span class="match-league-badge">UEFA Nations League</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8609.png" alt="Belgium">
+                            <span class="team-name">بلژیک</span>
+                        </div>
+                    </div>
+
+                    <!-- بازی ترکیه - فرانسه -->
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8604.png" alt="Turkiye">
+                            <span class="team-name">ترکیه</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۲۲:۱۵</span>
+                            <span class="match-date-text">۱ مهر</span>
+                            <span class="match-league-badge">UEFA Nations League</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8521.png" alt="France">
+                            <span class="team-name">فرانسه</span>
+                        </div>
+                    </div>
+
+                    <!-- بازی ساحل عاج - غنا -->
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/9898.png" alt="Ivory Coast">
+                            <span class="team-name">ساحل عاج</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۲۲:۳۰</span>
+                            <span class="match-date-text">۱ مهر</span>
+                            <span class="match-league-badge">Africa Cup Qual.</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://images.fotmob.com/image_resources/logo/teamlogo/8664.png" alt="Ghana">
+                            <span class="team-name">غنا</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -702,7 +829,7 @@
                     <div class="league-banner-subtitle">رتبه‌بندی اعضای گروه</div>
                 </div>
                 <div class="cup-hex-icon">
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#ff5722"><path d="M4 9h4v11H4zm12 4h4v7h-4zm-6-9h4v16h-4z"/></svg>
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#10b981"><path d="M4 9h4v11H4zm12 4h4v7h-4zm-6-9h4v16h-4z"/></svg>
                 </div>
             </div>
             <div class="table-container active">
@@ -731,18 +858,18 @@
                     <div class="league-banner-subtitle">برترین‌های لیگ گداهای استرسی</div>
                 </div>
                 <div class="cup-hex-icon">
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#ff5722"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.66 4.4 5.03C8.86 14.24 10 15.85 10 18v3h4v-3c0-2.15 1.14-3.76 2.6-3.97C19.08 12.66 21 10.55 21 8V7c0-1.1-.9-2-2-2z"/></svg>
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#10b981"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.66 4.4 5.03C8.86 14.24 10 15.85 10 18v3h4v-3c0-2.15 1.14-3.76 2.6-3.97C19.08 12.66 21 10.55 21 8V7c0-1.1-.9-2-2-2z"/></svg>
                 </div>
             </div>
             <div class="unified-matches-card" style="text-align: center; padding: 30px;">
-                <p style="font-size: 16px; font-weight: 900; color: var(--orange-360);">🥇 جایگاه اول: به زودی...</p>
+                <p style="font-size: 16px; font-weight: 900; color: var(--accent-bartar);">🥇 جایگاه اول: به زودی...</p>
                 <p style="font-size: 15px; font-weight: 700; color: #fff; margin-top: 12px;">🥈 جایگاه دوم: به زودی...</p>
                 <p style="font-size: 14px; font-weight: 700; color: var(--text-sub); margin-top: 12px;">🥉 جایگاه سوم: به زودی...</p>
             </div>
         </div>
     </div>
 
-    <!-- تب ۴: گیشه (به همراه خبر آنالیز آپتا از بازی رئال و اتلتیکو با عکس واقعی) -->
+    <!-- تب ۴: گیشه -->
     <div id="tab-news" class="tab-content">
         <div class="hero-banner">
             <div class="league-banner-card">
@@ -751,7 +878,7 @@
                     <div class="league-banner-subtitle">اخبار، توییت‌ها و آنالیز تخصصی Opta</div>
                 </div>
                 <div class="cup-hex-icon">
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#ff5722"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-2v2z"/></svg>
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#10b981"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-2v2z"/></svg>
                 </div>
             </div>
 
@@ -779,7 +906,7 @@
                     <div class="league-banner-subtitle">تحلیل و نتایج نهایی هفته</div>
                 </div>
                 <div class="cup-hex-icon">
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#ff5722">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#10b981">
                         <path d="M12 3C8.13 3 5 6.13 5 10c0 2.38 1.19 4.47 3 5.74V18c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7zm0 2c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5zm-1 3v4h2V8h-2zM9 1v2h6V1H9z"/>
                     </svg>
                 </div>
@@ -799,7 +926,7 @@
                     <div class="league-banner-subtitle">مدیریت پروفایل شرکت‌کننده</div>
                 </div>
                 <div class="cup-hex-icon">
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#ff5722"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#10b981"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                 </div>
             </div>
             <div class="profile-box">
@@ -810,14 +937,14 @@
                 </div>
                 <div id="profile-logged-in" style="display: none;">
                     <p style="font-size: 16px; color: var(--text-sub);">سلام، خوش آمدی دوست عزیز:</p>
-                    <h2 id="display-username" style="font-size: 22px; color: var(--orange-360); margin: 10px 0 20px 0; font-weight: 900;"></h2>
-                    <button class="profile-btn" style="background: #222b38; color: #ff5722; border: 1px solid var(--orange-360);" onclick="logoutProfile()">خروج از حساب</button>
+                    <h2 id="display-username" style="font-size: 22px; color: var(--accent-bartar); margin: 10px 0 20px 0; font-weight: 900;"></h2>
+                    <button class="profile-btn" style="background: #1c2b40; color: var(--accent-bartar); border: 1px solid var(--accent-bartar);" onclick="logoutProfile()">خروج از حساب</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- نوار ناوبری پایین (Bottom Nav) کامل، متمایز و حرفه‌ای -->
+    <!-- نوار ناوبری پایین (Bottom Nav) کامل، متمایز و حرفه‌ای سبک فوتبال برتر -->
     <nav class="bottom-nav">
         <button class="nav-item active" onclick="switchTab('tab-matches', this)">
             <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
