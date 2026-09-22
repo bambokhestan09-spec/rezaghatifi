@@ -50,7 +50,7 @@
         :root {
             --bg-bartar: #0e1621;
             --card-bartar: #162232;
-            --accent-bartar: #10b981; /* سبز استودیویی فوتبال برتر */
+            --accent-bartar: #10b981;
             --accent-gold: #f59e0b;
             --text-main: #ffffff;
             --text-sub: #94a3b8;
@@ -71,7 +71,6 @@
             padding-bottom: 95px;
         }
 
-        /* --- صفحه لودینگ (Splash Screen) --- */
         #splash-screen {
             position: fixed;
             top: 0;
@@ -128,7 +127,6 @@
             100% { transform: translateX(100%); }
         }
 
-        /* --- هدر سایت سبک فوتبال برتر --- */
         header {
             background-color: #121d2b;
             padding: 16px 20px;
@@ -187,7 +185,6 @@
             padding-bottom: 6px;
         }
 
-        /* --- کارت مسابقات --- */
         .unified-matches-card {
             background-color: var(--card-bartar);
             border-radius: 16px;
@@ -291,7 +288,6 @@
             display: block;
         }
 
-        /* --- تب‌های ناوبری هفته‌ها --- */
         .weeks-nav-container {
             max-width: 680px;
             margin: 0 auto 15px auto;
@@ -329,7 +325,6 @@
             box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
         }
 
-        /* --- بنرها و کارت‌ها --- */
         .league-banner-card {
             background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.15), transparent 70%), var(--card-bartar);
             border: 1px solid var(--border-color);
@@ -399,7 +394,6 @@
         .rank-col { width: 45px; font-weight: 900; color: var(--accent-bartar); }
         .name-col { flex: 1; text-align: right; color: #fff; }
 
-        /* --- استایل بخش پروفایل --- */
         .profile-box {
             background: var(--card-bartar);
             border: 1px solid var(--border-color);
@@ -442,7 +436,6 @@
             background: #0d9668;
         }
 
-        /* --- استایل کارت‌های بخش گیشه (اخبار و آنالیز آپتا) --- */
         .news-card {
             background: var(--card-bartar);
             border: 1px solid var(--border-color);
@@ -485,7 +478,6 @@
             border: 1px solid rgba(16, 185, 129, 0.3);
         }
 
-        /* --- نوار پایین (Bottom Navigation) متمایز و حرفه‌ای سبک فوتبال برتر --- */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -534,7 +526,6 @@
 </head>
 <body>
 
-    <!-- صفحه لودینگ اولیه -->
     <div id="splash-screen">
         <svg class="splash-cup" viewBox="0 0 24 24" fill="#10b981">
             <path d="M19,5H17V3A1,1 0 0,0 16,2H8A1,1 0 0,0 7,3V5H5A3,3 0 0,0 2,8V9A3,3 0 0,0 5,12H5.5A6,6 0 0,0 11,17.93V20H8V22H16V20H13V17.93A6,6 0 0,0 18.5,12H19A3,3 0 0,0 22,9V8A3,3 0 0,0 19,5M5,10A1,1 0 0,1 4,9V8A1,1 0 0,1 5,7H7V10H5M20,9A1,1 0 0,1 19,10H17V7H19A1,1 0 0,1 20,8Z"/>
@@ -566,7 +557,7 @@
                 <button class="week-nav-btn" onclick="switchMatchWeek('week6', this)">هفته ششم</button>
             </div>
 
-            <!-- بخش هفته پنجم (تیم‌های باشگاهی با لوگوهای اصلاح‌شده از جمله رئال مادرید) -->
+            <!-- بخش هفته پنجم -->
             <div id="match-week5" class="match-sections-container active">
                 <div class="matchweek-banner">
                     <h2>هفته پنجم پیش‌بینی‌ها</h2>
@@ -678,11 +669,11 @@
                 </div>
             </div>
 
-            <!-- بخش هفته ششم (مسابقات ملی با تاریخ و روزهای دقیق اصلاح‌شده مطابق تصاویر) -->
+            <!-- بخش هفته ششم (دقیقاً مطابق درخواست شما) -->
             <div id="match-week6" class="match-sections-container">
                 <div class="matchweek-banner">
                     <h2>هفته ششم پیش‌بینی‌ها</h2>
-                    <span>برنامه مسابقات ملی با تاریخ و ساعات دقیق (برگرفته از تصاویر)</span>
+                    <span>برنامه مسابقات ملی با تاریخ و روزهای دقیق</span>
                 </div>
 
                 <button onclick="requestNotification()" style="width: 100%; background: var(--accent-bartar); color: #ffffff; font-weight: 900; border: none; padding: 12px; border-radius: 12px; margin-bottom: 15px; cursor: pointer; font-size: 13px; box-shadow: 0 4px 10px rgba(16, 185, 129, 0.25);">
@@ -690,30 +681,9 @@
                 </button>
 
                 <div class="unified-matches-card">
-                    <!-- سه‌شنبه ۳۰ شهریور ۱۴۰۵ -->
-                    <div class="date-divider" style="margin-top: 0;">سه‌شنبه ۳۰ شهریور ۱۴۰۵</div>
+                    <!-- پنج‌شنبه ۲ مهر ۱۴۰۵ -->
+                    <div class="date-divider" style="margin-top: 0;">پنج‌شنبه ۲ مهر ۱۴۰۵</div>
                     
-                    <!-- استرالیا - برزیل (ساعت 01:30 بامداد سه شنبه) -->
-                    <div class="match-row-clean">
-                        <div class="team-side home">
-                            <img src="https://flagcdn.com/w80/au.png" alt="Australia">
-                            <span class="team-name">استرالیا</span>
-                        </div>
-                        <div class="match-center-info">
-                            <span class="match-time-text">۰۱:۳۰</span>
-                            <span class="match-date-text">۳۰ شهریور</span>
-                            <span class="match-league-badge">Friendlies</span>
-                        </div>
-                        <div class="team-side away">
-                            <img src="https://flagcdn.com/w80/br.png" alt="Brazil">
-                            <span class="team-name">برزیل</span>
-                        </div>
-                    </div>
-
-                    <!-- چهارشنبه ۳۱ شهریور ۱۴۰۵ -->
-                    <div class="date-divider">چهارشنبه ۳۱ شهریور ۱۴۰۵</div>
-
-                    <!-- هلند - آلمان -->
                     <div class="match-row-clean">
                         <div class="team-side home">
                             <img src="https://flagcdn.com/w80/nl.png" alt="Netherlands">
@@ -721,7 +691,7 @@
                         </div>
                         <div class="match-center-info">
                             <span class="match-time-text">۲۲:۱۵</span>
-                            <span class="match-date-text">۳۱ شهریور</span>
+                            <span class="match-date-text">۲ مهر</span>
                             <span class="match-league-badge">UEFA Nations League</span>
                         </div>
                         <div class="team-side away">
@@ -730,41 +700,57 @@
                         </div>
                     </div>
 
-                    <!-- انگلیس - اسپانیا -->
                     <div class="match-row-clean">
                         <div class="team-side home">
-                            <img src="https://flagcdn.com/w80/gb-eng.png" alt="England">
-                            <span class="team-name">انگلیس</span>
+                            <img src="https://flagcdn.com/w80/no.png" alt="Norway">
+                            <span class="team-name">نروژ</span>
                         </div>
                         <div class="match-center-info">
                             <span class="match-time-text">۲۲:۱۵</span>
-                            <span class="match-date-text">۳۱ شهریور</span>
+                            <span class="match-date-text">۲ مهر</span>
                             <span class="match-league-badge">UEFA Nations League</span>
                         </div>
                         <div class="team-side away">
-                            <img src="https://flagcdn.com/w80/es.png" alt="Spain">
-                            <span class="team-name">اسپانیا</span>
+                            <img src="https://flagcdn.com/w80/pt.png" alt="Portugal">
+                            <span class="team-name">پرتغال</span>
                         </div>
                     </div>
 
-                    <!-- چک - کرواسی -->
                     <div class="match-row-clean">
                         <div class="team-side home">
-                            <img src="https://flagcdn.com/w80/cz.png" alt="Czechia">
-                            <span class="team-name">چک</span>
+                            <img src="https://flagcdn.com/w80/ci.png" alt="Ivory Coast">
+                            <span class="team-name">ساحل عاج</span>
                         </div>
                         <div class="match-center-info">
-                            <span class="match-time-text">۲۲:۱۵</span>
-                            <span class="match-date-text">۳۱ شهریور</span>
-                            <span class="match-league-badge">UEFA Nations League</span>
+                            <span class="match-time-text">۲۳:۳۰</span>
+                            <span class="match-date-text">۲ مهر</span>
+                            <span class="match-league-badge">Africa Cup Qual.</span>
                         </div>
                         <div class="team-side away">
-                            <img src="https://flagcdn.com/w80/hr.png" alt="Croatia">
-                            <span class="team-name">کرواسی</span>
+                            <img src="https://flagcdn.com/w80/gh.png" alt="Ghana">
+                            <span class="team-name">غنا</span>
                         </div>
                     </div>
 
-                    <!-- ایتالیا - بلژیک -->
+                    <!-- جمعه ۳ مهر ۱۴۰۵ -->
+                    <div class="date-divider">جمعه ۳ مهر ۱۴۰۵</div>
+
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://flagcdn.com/w80/au.png" alt="Australia">
+                            <span class="team-name">استرالیا</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۱۳:۳۰</span>
+                            <span class="match-date-text">۳ مهر</span>
+                            <span class="match-league-badge">Friendlies</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://flagcdn.com/w80/br.png" alt="Brazil">
+                            <span class="team-name">برزیل</span>
+                        </div>
+                    </div>
+
                     <div class="match-row-clean">
                         <div class="team-side home">
                             <img src="https://flagcdn.com/w80/it.png" alt="Italy">
@@ -772,7 +758,7 @@
                         </div>
                         <div class="match-center-info">
                             <span class="match-time-text">۲۲:۱۵</span>
-                            <span class="match-date-text">۳۱ شهریور</span>
+                            <span class="match-date-text">۳ مهر</span>
                             <span class="match-league-badge">UEFA Nations League</span>
                         </div>
                         <div class="team-side away">
@@ -781,7 +767,6 @@
                         </div>
                     </div>
 
-                    <!-- ترکیه - فرانسه -->
                     <div class="match-row-clean">
                         <div class="team-side home">
                             <img src="https://flagcdn.com/w80/tr.png" alt="Turkiye">
@@ -789,7 +774,7 @@
                         </div>
                         <div class="match-center-info">
                             <span class="match-time-text">۲۲:۱۵</span>
-                            <span class="match-date-text">۳۱ شهریور</span>
+                            <span class="match-date-text">۳ مهر</span>
                             <span class="match-league-badge">UEFA Nations League</span>
                         </div>
                         <div class="team-side away">
@@ -798,20 +783,38 @@
                         </div>
                     </div>
 
-                    <!-- ساحل عاج - غنا -->
+                    <!-- شنبه ۴ مهر ۱۴۰۵ -->
+                    <div class="date-divider">شنبه ۴ مهر ۱۴۰۵</div>
+
                     <div class="match-row-clean">
                         <div class="team-side home">
-                            <img src="https://flagcdn.com/w80/ci.png" alt="Ivory Coast">
-                            <span class="team-name">ساحل عاج</span>
+                            <img src="https://flagcdn.com/w80/cz.png" alt="Czechia">
+                            <span class="team-name">جمهوری چک</span>
                         </div>
                         <div class="match-center-info">
-                            <span class="match-time-text">۲۲:۳۰</span>
-                            <span class="match-date-text">۳۱ شهریور</span>
-                            <span class="match-league-badge">Africa Cup Qual.</span>
+                            <span class="match-time-text">۲۲:۱۵</span>
+                            <span class="match-date-text">۴ مهر</span>
+                            <span class="match-league-badge">UEFA Nations League</span>
                         </div>
                         <div class="team-side away">
-                            <img src="https://flagcdn.com/w80/gh.png" alt="Ghana">
-                            <span class="team-name">غنا</span>
+                            <img src="https://flagcdn.com/w80/hr.png" alt="Croatia">
+                            <span class="team-name">کرواسی</span>
+                        </div>
+                    </div>
+
+                    <div class="match-row-clean">
+                        <div class="team-side home">
+                            <img src="https://flagcdn.com/w80/gb-eng.png" alt="England">
+                            <span class="team-name">انگلیس</span>
+                        </div>
+                        <div class="match-center-info">
+                            <span class="match-time-text">۲۲:۱۵</span>
+                            <span class="match-date-text">۴ مهر</span>
+                            <span class="match-league-badge">UEFA Nations League</span>
+                        </div>
+                        <div class="team-side away">
+                            <img src="https://flagcdn.com/w80/es.png" alt="Spain">
+                            <span class="team-name">اسپانیا</span>
                         </div>
                     </div>
 
@@ -821,7 +824,7 @@
         </div>
     </div>
 
-    <!-- تب ۲: جدول رده‌بندی (فقط رتبه بدون امتیاز) -->
+    <!-- تب ۲: جدول رده‌بندی -->
     <div id="tab-table" class="tab-content">
         <div class="hero-banner">
             <div class="league-banner-card">
@@ -883,7 +886,6 @@
                 </div>
             </div>
 
-            <!-- خبر ویژه آنالیز اپتا - دربی مادرید -->
             <div class="news-card">
                 <img src="https://images.fotmob.com/image_resources/news/atletico-real-madrid-derby.jpg" alt="اتلتیکو مادرید و رئال مادرید" class="news-img" onerror="this.src='https://images.fotmob.com/image_resources/logo/teamlogo/9906.png'">
                 <div class="news-content">
@@ -945,7 +947,7 @@
         </div>
     </div>
 
-    <!-- نوار ناوبری پایین (Bottom Nav) کامل، متمایز و حرفه‌ای سبک فوتبال برتر -->
+    <!-- نوار ناوبری پایین -->
     <nav class="bottom-nav">
         <button class="nav-item active" onclick="switchTab('tab-matches', this)">
             <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
@@ -976,7 +978,6 @@
     </nav>
 
     <script>
-        // اسکریپت حذف صفحه لودینگ اولیه
         window.addEventListener('load', function() {
             setTimeout(function() {
                 const splash = document.getElementById('splash-screen');
@@ -988,7 +989,6 @@
             checkProfile();
         });
 
-        // مدیریت پروفایل کاربر با localStorage
         function saveProfile() {
             const input = document.getElementById('username-input');
             const username = input.value.trim();
@@ -1022,7 +1022,6 @@
             }
         }
 
-        // تابع تعویض تب‌های هفته مسابقات
         function switchMatchWeek(weekId, btn) {
             document.querySelectorAll('.match-sections-container').forEach(container => {
                 container.classList.remove('active');
@@ -1035,7 +1034,6 @@
             btn.classList.add('active');
         }
 
-        // تابع تعویض تب‌های اصلی صفحه
         function switchTab(tabId, btn) {
             document.querySelectorAll('.tab-content').forEach(tab => {
                 tab.classList.remove('active');
