@@ -432,7 +432,7 @@
             background: #0d9668;
         }
 
-        /* استایل‌های بخش کاپ حذفی فانتزی */
+        /* استایل‌های بخش کل‌کل (دوئل‌ها و شمارش معکوس بازی روز اول) */
         .fantasy-cup-card {
             background: var(--card-bartar);
             border: 1px solid var(--border-color);
@@ -445,6 +445,17 @@
             margin-left: auto;
             margin-right: auto;
         }
+        .countdown-box {
+            background: #0e1621;
+            border: 1px solid var(--accent-gold);
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 16px;
+            font-size: 13px;
+            font-weight: 900;
+            color: var(--accent-gold);
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);
+        }
         .cup-matchup {
             display: flex;
             align-items: center;
@@ -452,26 +463,26 @@
             background: #0e1621;
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 14px;
-            margin-bottom: 12px;
+            padding: 12px 14px;
+            margin-bottom: 10px;
         }
         .cup-team {
             flex: 1;
             font-weight: 900;
-            font-size: 14px;
+            font-size: 13.5px;
             color: #fff;
         }
         .cup-team.home { text-align: right; }
         .cup-team.away { text-align: left; }
         .cup-vs {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 900;
             color: var(--accent-gold);
             background: rgba(245, 158, 11, 0.1);
-            padding: 6px 12px;
+            padding: 5px 10px;
             border-radius: 8px;
             border: 1px solid rgba(245, 158, 11, 0.3);
-            margin: 0 10px;
+            margin: 0 8px;
         }
         .cup-info-text {
             font-size: 12px;
@@ -986,21 +997,25 @@
         </div>
     </div>
 
-    <!-- تب ۴: کاپ حذفی فانتزی -->
+    <!-- تب ۴: کل‌کل (دوئل‌های مستقیم تمام شرکت‌کنندگان و شمارش معکوس بازی روز اول هفته ۶) -->
     <div id="tab-news" class="tab-content">
         <div class="hero-banner">
             <div class="league-banner-card">
                 <div>
-                    <div class="league-banner-title">کاپ حذفی فانتزی (کل‌کل)</div>
-                    <div class="league-banner-subtitle">مبارزات مستقیم نفر به نفر (Head-to-Head)</div>
+                    <div class="league-banner-title">کل‌کل (دوئل‌های رودررو)</div>
+                    <div class="league-banner-subtitle">مبارزه مستقیم تمامی شرکت‌کنندگان</div>
                 </div>
                 <div class="cup-hex-icon">
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#f59e0b"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.66 4.4 5.03C8.86 14.24 10 15.85 10 18v3h4v-3c0-2.15 1.14-3.76 2.6-3.97C19.08 12.66 21 10.55 21 8V7c0-1.1-.9-2-2-2z"/></svg>
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#f59e0b"><path d="M18.4 10.6C16.5 8.7 13.5 8.5 11.4 10.1L6.8 5.5L8.2 4.1L6.8 2.7L4 5.5L5.4 6.9L4 8.3L5.4 9.7L10 5.1C11.6 7.2 11.4 10.2 9.5 12.1L12.7 15.3L15.3 12.7L18.4 15.8L19.8 14.4L16.7 11.3L18.4 9.6L18.4 10.6Z"/></svg>
                 </div>
             </div>
 
             <div class="fantasy-cup-card">
-                <div style="font-size: 14px; font-weight: 900; color: var(--accent-gold); margin-bottom: 15px;">🔥 مرحله حذفی هفته (کل‌کل مستقیم) 🔥</div>
+                <div style="font-size: 14px; font-weight: 900; color: var(--accent-gold); margin-bottom: 8px;">⏳ شمارش معکوس تا بازی‌های روز اول هفته ششم</div>
+                <div style="font-size: 11px; color: var(--text-sub); margin-bottom: 12px;">پنج‌شنبه ۲ مهر ۱۴۰۵ • ساعت ۲۲:۱۵ (هلند - آلمان و نروژ - پرتغال)</div>
+                <div id="countdown-timer" class="countdown-box">در حال محاسبه زمان مانده...</div>
+
+                <div style="font-size: 14px; font-weight: 900; color: var(--accent-bartar); margin: 15px 0 12px 0;">⚔️ دوئل‌های کل‌کل تمام اعضا (هفته جاری) ⚔️</div>
                 
                 <div class="cup-matchup">
                     <div class="cup-team home">REZA GHATIFI</div>
@@ -1026,8 +1041,24 @@
                     <div class="cup-team away">Ahlam Aljaber</div>
                 </div>
 
+                <div class="cup-matchup">
+                    <div class="cup-team home">hey10</div>
+                    <div class="cup-vs">VS</div>
+                    <div class="cup-team away">امین دریس</div>
+                </div>
+
+                <div class="cup-matchup">
+                    <div class="cup-team home">Sama salehi</div>
+                    <div class="cup-vs">VS</div>
+                    <div class="cup-team away">محمد جاسمیان</div>
+                </div>
+
+                <div class="cup-matchup" style="justify-content: center;">
+                    <div class="cup-team home" style="text-align: center; flex: none;">مهدی (استراحت / تعقیب‌کننده ویژه)</div>
+                </div>
+
                 <div class="cup-info-text">
-                    در بخش کاپ فانتزی، هر شرکت‌کننده در این هفته مستقیماً با رقیب روبروی خود می‌جنگد. بازنده از دور کاپ حذف شده و برنده به مرحله بعد صعود می‌کند تا تندیس قهرمانی کاپ استرسی را بالای سر ببرد!
+                    در بخش کل‌کل، تمام اعضای لیگ به صورت مستقیم به مصاف رقیب خود می‌روند. هرکس در مسابقات پیش‌بینی امتیاز بیشتری کسب کند، برنده این نبرد تن‌به‌تن خواهد بود!
                 </div>
             </div>
         </div>
@@ -1095,8 +1126,8 @@
             سکو
         </button>
         <button class="nav-item" onclick="switchTab('tab-news', this)">
-            <svg viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.66 4.4 5.03C8.86 14.24 10 15.85 10 18v3h4v-3c0-2.15 1.14-3.76 2.6-3.97C19.08 12.66 21 10.55 21 8V7c0-1.1-.9-2-2-2z"/></svg>
-            کاپ
+            <svg viewBox="0 0 24 24"><path d="M18.4 10.6C16.5 8.7 13.5 8.5 11.4 10.1L6.8 5.5L8.2 4.1L6.8 2.7L4 5.5L5.4 6.9L4 8.3L5.4 9.7L10 5.1C11.6 7.2 11.4 10.2 9.5 12.1L12.7 15.3L15.3 12.7L18.4 15.8L19.8 14.4L16.7 11.3L18.4 9.6L18.4 10.6Z"/></svg>
+            کل‌کل
         </button>
         <button class="nav-item" onclick="switchTab('tab-final', this)">
             <svg viewBox="0 0 24 24">
@@ -1120,7 +1151,34 @@
                 }
             }, 800);
             checkProfile();
+            startCountdown();
         });
+
+        function startCountdown() {
+            // تاریخ شروع بازی‌های روز اول هفته ششم: پنج‌شنبه ۲ مهر ۱۴۰۵ ساعت ۲۲:۱۵ به وقت محلی
+            // تنظیم تایمر بر اساس تاریخ هدف (2026-09-24T22:15:00)
+            const targetDate = new Date('2026-09-24T22:15:00').getTime();
+
+            setInterval(() => {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                const countdownEl = document.getElementById('countdown-timer');
+                if(!countdownEl) return;
+
+                if (distance < 0) {
+                    countdownEl.textContent = "🔥 بازی‌های روز اول آغاز شد!";
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                countdownEl.textContent = `${days} روز و ${hours} ساعت و ${minutes} دقیقه و ${seconds} ثانیه تا شروع بازی`;
+            }, 1000);
+        }
 
         function saveProfile() {
             const input = document.getElementById('username-input');
