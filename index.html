@@ -281,10 +281,10 @@
             margin-top: 2px;
         }
 
-        .match-sections-container {
+        .match-sections-container, .table-sections-container {
             display: none;
         }
-        .match-sections-container.active {
+        .match-sections-container.active, .table-sections-container.active {
             display: block;
         }
 
@@ -355,7 +355,7 @@
 
         .cup-hex-icon {
             background: rgba(0, 0, 0, 0.3);
-            border: 2px solid var(--accent-bartar);
+            border: 2px solid var(--accent-gold);
             width: 52px;
             height: 52px;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
@@ -370,12 +370,7 @@
             overflow: hidden;
             max-width: 680px;
             margin: 0 auto;
-            display: none;
             border: 1px solid var(--border-color);
-        }
-
-        .table-container.active {
-            display: block;
         }
 
         .table-row {
@@ -393,6 +388,7 @@
 
         .rank-col { width: 45px; font-weight: 900; color: var(--accent-bartar); }
         .name-col { flex: 1; text-align: right; color: #fff; }
+        .score-col { font-weight: 900; color: var(--accent-gold); min-width: 45px; text-align: left; }
 
         .profile-box {
             background: var(--card-bartar);
@@ -436,7 +432,6 @@
             background: #0d9668;
         }
 
-        /* استایل جدید خبرها مشابه فوتموب (تصویر کوچک راست، متن کنار آن) */
         .fotmob-news-card {
             background: var(--card-bartar);
             border: 1px solid var(--border-color);
@@ -556,7 +551,7 @@
                     <div class="league-banner-subtitle">لیگ گداهای استرسی</div>
                 </div>
                 <div class="cup-hex-icon">
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#10b981"><path d="M19,5H17V3A1,1 0 0,0 16,2H8A1,1 0 0,0 7,3V5H5A3,3 0 0,0 2,8V9A3,3 0 0,0 5,12H5.5A6,6 0 0,0 11,17.93V20H8V22H16V20H13V17.93A6,6 0 0,0 18.5,12H19A3,3 0 0,0 22,9V8A3,3 0 0,0 19,5M5,10A1,1 0 0,1 4,9V8A1,1 0 0,1 5,7H7V10H5M20,9A1,1 0 0,1 19,10H17V7H19A1,1 0 0,1 20,8Z"/></svg>
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#f59e0b"><path d="M19,5H17V3A1,1 0 0,0 16,2H8A1,1 0 0,0 7,3V5H5A3,3 0 0,0 2,8V9A3,3 0 0,0 5,12H5.5A6,6 0 0,0 11,17.93V20H8V22H16V20H13V17.93A6,6 0 0,0 18.5,12H19A3,3 0 0,0 22,9V8A3,3 0 0,0 19,5M5,10A1,1 0 0,1 4,9V8A1,1 0 0,1 5,7H7V10H5M20,9A1,1 0 0,1 19,10H17V7H19A1,1 0 0,1 20,8Z"/></svg>
                 </div>
             </div>
 
@@ -677,7 +672,7 @@
                 </div>
             </div>
 
-            <!-- بخش هفته ششم (دقیقاً مطابق درخواست شما) -->
+            <!-- بخش هفته ششم -->
             <div id="match-week6" class="match-sections-container">
                 <div class="matchweek-banner">
                     <h2>هفته ششم پیش‌بینی‌ها</h2>
@@ -832,32 +827,144 @@
         </div>
     </div>
 
-    <!-- تب ۲: جدول رده‌بندی -->
+    <!-- تب ۲: جدول رده‌بندی (تفکیک‌شده از کلی تا هفته پنجم از راست به چپ) -->
     <div id="tab-table" class="tab-content">
         <div class="hero-banner">
             <div class="league-banner-card">
                 <div>
-                    <div class="league-banner-title">جدول رده‌بندی لیگ</div>
-                    <div class="league-banner-subtitle">رتبه‌بندی اعضای گروه</div>
+                    <div class="league-banner-title">جدول رتبه‌بندی مسابقات پیش‌بینی</div>
+                    <div class="league-banner-subtitle">نمایش جدول کلی و تفکیک‌شده هفته‌ها</div>
                 </div>
                 <div class="cup-hex-icon">
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#10b981"><path d="M4 9h4v11H4zm12 4h4v7h-4zm-6-9h4v16h-4z"/></svg>
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#f59e0b"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.66 4.4 5.03C8.86 14.24 10 15.85 10 18v3h4v-3c0-2.15 1.14-3.76 2.6-3.97C19.08 12.66 21 10.55 21 8V7c0-1.1-.9-2-2-2z"/></svg>
                 </div>
             </div>
-            <div class="table-container active">
-                <div class="table-row">
-                    <span class="rank-col">#۱</span>
-                    <span class="name-col">شرکت‌کننده اول (مشخص‌نشده)</span>
-                </div>
-                <div class="table-row">
-                    <span class="rank-col">#۲</span>
-                    <span class="name-col">شرکت‌کننده دوم (مشخص‌نشده)</span>
-                </div>
-                <div class="table-row">
-                    <span class="rank-col">#۳</span>
-                    <span class="name-col">شرکت‌کننده سوم (مشخص‌نشده)</span>
+
+            <!-- منوی انتخاب جدول‌ها (از راست به چپ: کلی، هفته اول، دوم، سوم، چهارم، پنجم) -->
+            <div class="weeks-nav-container">
+                <button class="week-nav-btn active" onclick="switchTable('table-overall', this)">جدول کلی</button>
+                <button class="week-nav-btn" onclick="switchTable('table-w1', this)">هفته اول</button>
+                <button class="week-nav-btn" onclick="switchTable('table-w2', this)">هفته دوم</button>
+                <button class="week-nav-btn" onclick="switchTable('table-w3', this)">هفته سوم</button>
+                <button class="week-nav-btn" onclick="switchTable('table-w4', this)">هفته چهارم</button>
+                <button class="week-nav-btn" onclick="switchTable('table-w5', this)">هفته پنجم</button>
+            </div>
+
+            <!-- ۱. جدول کلی -->
+            <div id="table-overall" class="table-sections-container active">
+                <div class="table-container">
+                    <div class="table-row"><span class="rank-col">#۱</span><span class="name-col">Asm A</span><span class="score-col">58</span></div>
+                    <div class="table-row"><span class="rank-col">#۲</span><span class="name-col">REZA GHATIFI</span><span class="score-col">54</span></div>
+                    <div class="table-row"><span class="rank-col">#۳</span><span class="name-col">Mahdi</span><span class="score-col">49</span></div>
+                    <div class="table-row"><span class="rank-col">#۴</span><span class="name-col">Donya Asil</span><span class="score-col">48</span></div>
+                    <div class="table-row"><span class="rank-col">#۴</span><span class="name-col">حبیب نعیمی</span><span class="score-col">48</span></div>
+                    <div class="table-row"><span class="rank-col">#۶</span><span class="name-col">محمد خلیلاوی پور</span><span class="score-col">45</span></div>
+                    <div class="table-row"><span class="rank-col">#۷</span><span class="name-col">hajar daoudi</span><span class="score-col">44</span></div>
+                    <div class="table-row"><span class="rank-col">#۸</span><span class="name-col">Ahlam Aljaber</span><span class="score-col">42</span></div>
+                    <div class="table-row"><span class="rank-col">#۹</span><span class="name-col">hey10</span><span class="score-col">39</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۰</span><span class="name-col">امین دریس</span><span class="score-col">35</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۱</span><span class="name-col">Sama salehi</span><span class="score-col">32</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۲</span><span class="name-col">محمد جاسمیان</span><span class="score-col">26</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۳</span><span class="name-col">مهدی</span><span class="score-col">15</span></div>
                 </div>
             </div>
+
+            <!-- ۲. جدول هفته اول (برگرفته از تصویر 294) -->
+            <div id="table-w1" class="table-sections-container">
+                <div class="table-container">
+                    <div class="table-row"><span class="rank-col">#۱</span><span class="name-col">REZA GHATIFI</span><span class="score-col">13</span></div>
+                    <div class="table-row"><span class="rank-col">#۲</span><span class="name-col">Donya Asil</span><span class="score-col">13</span></div>
+                    <div class="table-row"><span class="rank-col">#۲</span><span class="name-col">حبیب نعیمی</span><span class="score-col">13</span></div>
+                    <div class="table-row"><span class="rank-col">#۴</span><span class="name-col">hajar daoudi</span><span class="score-col">12</span></div>
+                    <div class="table-row"><span class="rank-col">#۴</span><span class="name-col">Asm A</span><span class="score-col">12</span></div>
+                    <div class="table-row"><span class="rank-col">#۶</span><span class="name-col">Sama salehi</span><span class="score-col">11</span></div>
+                    <div class="table-row"><span class="rank-col">#۶</span><span class="name-col">مهدی</span><span class="score-col">11</span></div>
+                    <div class="table-row"><span class="rank-col">#۶</span><span class="name-col">محمد جاسمیان</span><span class="score-col">11</span></div>
+                    <div class="table-row"><span class="rank-col">#۹</span><span class="name-col">Mahdi</span><span class="score-col">10</span></div>
+                    <div class="table-row"><span class="rank-col">#۹</span><span class="name-col">محمد خلیلاوی پور</span><span class="score-col">10</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۱</span><span class="name-col">Ahlam Aljaber</span><span class="score-col">8</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۱</span><span class="name-col">ناجح دریس</span><span class="score-col">8</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۳</span><span class="name-col">امین دریس</span><span class="score-col">6</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۳</span><span class="name-col">hey10</span><span class="score-col">6</span></div>
+                </div>
+            </div>
+
+            <!-- ۳. جدول هفته دوم (برگرفته از تصویر 297) -->
+            <div id="table-w2" class="table-sections-container">
+                <div class="table-container">
+                    <div class="table-row"><span class="rank-col">#۱</span><span class="name-col">Mahdi</span><span class="score-col">15</span></div>
+                    <div class="table-row"><span class="rank-col">#۱</span><span class="name-col">REZA GHATIFI</span><span class="score-col">15</span></div>
+                    <div class="table-row"><span class="rank-col">#۳</span><span class="name-col">حبیب نعیمی</span><span class="score-col">14</span></div>
+                    <div class="table-row"><span class="rank-col">#۳</span><span class="name-col">Asm A</span><span class="score-col">14</span></div>
+                    <div class="table-row"><span class="rank-col">#۵</span><span class="name-col">Donya Asil</span><span class="score-col">13</span></div>
+                    <div class="table-row"><span class="rank-col">#۵</span><span class="name-col">امین دریس</span><span class="score-col">13</span></div>
+                    <div class="table-row"><span class="rank-col">#۵</span><span class="name-col">hey10</span><span class="score-col">13</span></div>
+                    <div class="table-row"><span class="rank-col">#۸</span><span class="name-col">hajar daoudi</span><span class="score-col">11</span></div>
+                    <div class="table-row"><span class="rank-col">#۹</span><span class="name-col">محمد خلیلاوی پور</span><span class="score-col">11</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۰</span><span class="name-col">Ahlam Aljaber</span><span class="score-col">9</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۱</span><span class="name-col">Sama salehi</span><span class="score-col">2</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۱</span><span class="name-col">محمد جاسمیان</span><span class="score-col">2</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۳</span><span class="name-col">مهدی</span><span class="score-col">0</span></div>
+                </div>
+            </div>
+
+            <!-- ۴. جدول هفته سوم (برگرفته از تصویر 295) -->
+            <div id="table-w3" class="table-sections-container">
+                <div class="table-container">
+                    <div class="table-row"><span class="rank-col">#۱</span><span class="name-col">Asm A</span><span class="score-col">13</span></div>
+                    <div class="table-row"><span class="rank-col">#۲</span><span class="name-col">Ahlam Aljaber</span><span class="score-col">12</span></div>
+                    <div class="table-row"><span class="rank-col">#۳</span><span class="name-col">Sama salehi</span><span class="score-col">11</span></div>
+                    <div class="table-row"><span class="rank-col">#۳</span><span class="name-col">Mahdi</span><span class="score-col">11</span></div>
+                    <div class="table-row"><span class="rank-col">#۳</span><span class="name-col">Donya Asil</span><span class="score-col">11</span></div>
+                    <div class="table-row"><span class="rank-col">#۳</span><span class="name-col">محمد جاسمیان</span><span class="score-col">11</span></div>
+                    <div class="table-row"><span class="rank-col">#۳</span><span class="name-col">محمد خلیلاوی پور</span><span class="score-col">11</span></div>
+                    <div class="table-row"><span class="rank-col">#۸</span><span class="name-col">hajar daoudi</span><span class="score-col">10</span></div>
+                    <div class="table-row"><span class="rank-col">#۸</span><span class="name-col">حبیب نعیمی</span><span class="score-col">10</span></div>
+                    <div class="table-row"><span class="rank-col">#۸</span><span class="name-col">REZA GHATIFI</span><span class="score-col">10</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۱</span><span class="name-col">امین دریس</span><span class="score-col">9</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۲</span><span class="name-col">hey10</span><span class="score-col">8</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۳</span><span class="name-col">مهدی</span><span class="score-col">4</span></div>
+                </div>
+            </div>
+
+            <!-- ۵. جدول هفته چهارم (برگرفته از تصویر 296) -->
+            <div id="table-w4" class="table-sections-container">
+                <div class="table-container">
+                    <div class="table-row"><span class="rank-col">#۱</span><span class="name-col">Asm A</span><span class="score-col">13</span></div>
+                    <div class="table-row"><span class="rank-col">#۲</span><span class="name-col">REZA GHATIFI</span><span class="score-col">10</span></div>
+                    <div class="table-row"><span class="rank-col">#۳</span><span class="name-col">Mahdi</span><span class="score-col">9</span></div>
+                    <div class="table-row"><span class="rank-col">#۴</span><span class="name-col">Ahlam Aljaber</span><span class="score-col">8</span></div>
+                    <div class="table-row"><span class="rank-col">#۴</span><span class="name-col">محمد خلیلاوی پور</span><span class="score-col">8</span></div>
+                    <div class="table-row"><span class="rank-col">#۶</span><span class="name-col">Donya Asil</span><span class="score-col">7</span></div>
+                    <div class="table-row"><span class="rank-col">#۶</span><span class="name-col">hey10</span><span class="score-col">7</span></div>
+                    <div class="table-row"><span class="rank-col">#۸</span><span class="name-col">Sama salehi</span><span class="score-col">6</span></div>
+                    <div class="table-row"><span class="rank-col">#۸</span><span class="name-col">حبیب نعیمی</span><span class="score-col">6</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۰</span><span class="name-col">امین دریس</span><span class="score-col">5</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۰</span><span class="name-col">hajar daoudi</span><span class="score-col">5</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۲</span><span class="name-col">مهدی</span><span class="score-col">0</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۲</span><span class="name-col">محمد جاسمیان</span><span class="score-col">0</span></div>
+                </div>
+            </div>
+
+            <!-- ۶. جدول هفته پنجم (برگرفته از تصویر 298) -->
+            <div id="table-w5" class="table-sections-container">
+                <div class="table-container">
+                    <div class="table-row"><span class="rank-col">#۱</span><span class="name-col">hajar daoudi</span><span class="score-col">6</span></div>
+                    <div class="table-row"><span class="rank-col">#۱</span><span class="name-col">REZA GHATIFI</span><span class="score-col">6</span></div>
+                    <div class="table-row"><span class="rank-col">#۳</span><span class="name-col">Asm A</span><span class="score-col">6</span></div>
+                    <div class="table-row"><span class="rank-col">#۴</span><span class="name-col">Ahlam Aljaber</span><span class="score-col">5</span></div>
+                    <div class="table-row"><span class="rank-col">#۴</span><span class="name-col">hey10</span><span class="score-col">5</span></div>
+                    <div class="table-row"><span class="rank-col">#۴</span><span class="name-col">محمد خلیلاوی پور</span><span class="score-col">5</span></div>
+                    <div class="table-row"><span class="rank-col">#۴</span><span class="name-col">حبیب نعیمی</span><span class="score-col">5</span></div>
+                    <div class="table-row"><span class="rank-col">#۸</span><span class="name-col">Mahdi</span><span class="score-col">4</span></div>
+                    <div class="table-row"><span class="rank-col">#۸</span><span class="name-col">Donya Asil</span><span class="score-col">4</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۰</span><span class="name-col">Sama salehi</span><span class="score-col">2</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۰</span><span class="name-col">امین دریس</span><span class="score-col">2</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۰</span><span class="name-col">محمد جاسمیان</span><span class="score-col">2</span></div>
+                    <div class="table-row"><span class="rank-col">#۱۳</span><span class="name-col">مهدی</span><span class="score-col">0</span></div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -870,18 +977,18 @@
                     <div class="league-banner-subtitle">برترین‌های لیگ گداهای استرسی</div>
                 </div>
                 <div class="cup-hex-icon">
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#10b981"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.66 4.4 5.03C8.86 14.24 10 15.85 10 18v3h4v-3c0-2.15 1.14-3.76 2.6-3.97C19.08 12.66 21 10.55 21 8V7c0-1.1-.9-2-2-2z"/></svg>
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#f59e0b"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.66 4.4 5.03C8.86 14.24 10 15.85 10 18v3h4v-3c0-2.15 1.14-3.76 2.6-3.97C19.08 12.66 21 10.55 21 8V7c0-1.1-.9-2-2-2z"/></svg>
                 </div>
             </div>
             <div class="unified-matches-card" style="text-align: center; padding: 30px;">
-                <p style="font-size: 16px; font-weight: 900; color: var(--accent-bartar);">🥇 جایگاه اول: به زودی...</p>
-                <p style="font-size: 15px; font-weight: 700; color: #fff; margin-top: 12px;">🥈 جایگاه دوم: به زودی...</p>
-                <p style="font-size: 14px; font-weight: 700; color: var(--text-sub); margin-top: 12px;">🥉 جایگاه سوم: به زودی...</p>
+                <p style="font-size: 16px; font-weight: 900; color: var(--accent-gold);">🥇 جایگاه اول: Asm A (۵۸ امتیاز)</p>
+                <p style="font-size: 15px; font-weight: 700; color: #fff; margin-top: 12px;">🥈 جایگاه دوم: REZA GHATIFI (۵۴ امتیاز)</p>
+                <p style="font-size: 14px; font-weight: 700; color: var(--text-sub); margin-top: 12px;">🥉 جایگاه سوم: Mahdi (۴۹ امتیاز)</p>
             </div>
         </div>
     </div>
 
-    <!-- تب ۴: گیشه (طراحی شده با استایل کارت‌های فوتموب و خبر سفر مسعود پزشکیان) -->
+    <!-- تب ۴: گیشه -->
     <div id="tab-news" class="tab-content">
         <div class="hero-banner">
             <div class="league-banner-card">
@@ -894,7 +1001,6 @@
                 </div>
             </div>
 
-            <!-- کارت خبر اول: سفر پزشکیان به نیویورک -->
             <div class="fotmob-news-card">
                 <img src="https://images.fotmob.com/image_resources/news/un-general-assembly.jpg" alt="سفر پزشکیان" class="fotmob-news-thumb" onerror="this.src='https://images.fotmob.com/image_resources/logo/teamlogo/8618.png'">
                 <div class="fotmob-news-body">
@@ -904,7 +1010,6 @@
                 </div>
             </div>
 
-            <!-- کارت خبر دوم -->
             <div class="fotmob-news-card">
                 <img src="https://images.fotmob.com/image_resources/news/diplomacy.jpg" alt="دیپلماسی" class="fotmob-news-thumb" onerror="this.src='https://images.fotmob.com/image_resources/logo/teamlogo/8618.png'">
                 <div class="fotmob-news-body">
@@ -914,7 +1019,6 @@
                 </div>
             </div>
 
-            <!-- کارت خبر سوم -->
             <div class="fotmob-news-card">
                 <img src="https://images.fotmob.com/image_resources/news/gaza-crisis.jpg" alt="منطقه و غزه" class="fotmob-news-thumb" onerror="this.src='https://images.fotmob.com/image_resources/logo/teamlogo/8618.png'">
                 <div class="fotmob-news-body">
@@ -1058,6 +1162,19 @@
             });
             
             document.getElementById('match-' + weekId).classList.add('active');
+            btn.classList.add('active');
+        }
+
+        function switchTable(tableId, btn) {
+            document.querySelectorAll('.table-sections-container').forEach(container => {
+                container.classList.remove('active');
+            });
+            // پیدا کردن دکمه‌های مربوط به جدول‌ها و غیرفعال کردنشان
+            btn.parentElement.querySelectorAll('.week-nav-btn').forEach(b => {
+                b.classList.remove('active');
+            });
+
+            document.getElementById(tableId).classList.add('active');
             btn.classList.add('active');
         }
 
