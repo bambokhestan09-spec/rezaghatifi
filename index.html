@@ -432,7 +432,7 @@
             background: #0d9668;
         }
 
-        /* استایل‌های بخش کل‌کل (دوئل‌ها و شمارش معکوس بازی روز اول) */
+        /* استایل‌های بخش کل‌کل و قوانین دوئل */
         .fantasy-cup-card {
             background: var(--card-bartar);
             border: 1px solid var(--border-color);
@@ -455,6 +455,23 @@
             font-weight: 900;
             color: var(--accent-gold);
             box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .cup-rules-box {
+            background: #0e1621;
+            border: 1px solid var(--accent-bartar);
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 16px;
+            text-align: right;
+            font-size: 12px;
+            color: var(--text-sub);
+            line-height: 1.8;
+        }
+        .cup-rules-box strong {
+            color: var(--accent-bartar);
+            display: block;
+            margin-bottom: 4px;
+            font-size: 13px;
         }
         .cup-matchup {
             display: flex;
@@ -483,12 +500,6 @@
             border-radius: 8px;
             border: 1px solid rgba(245, 158, 11, 0.3);
             margin: 0 8px;
-        }
-        .cup-info-text {
-            font-size: 12px;
-            color: var(--text-sub);
-            margin-top: 12px;
-            line-height: 1.6;
         }
 
         .bottom-nav {
@@ -997,7 +1008,7 @@
         </div>
     </div>
 
-    <!-- تب ۴: کل‌کل (دوئل‌های مستقیم تمام شرکت‌کنندگان و شمارش معکوس بازی روز اول هفته ۶) -->
+    <!-- تب ۴: کل‌کل (همراه با قوانین دوئل، شمارش معکوس و دوئل تمامی اعضا) -->
     <div id="tab-news" class="tab-content">
         <div class="hero-banner">
             <div class="league-banner-card">
@@ -1014,6 +1025,12 @@
                 <div style="font-size: 14px; font-weight: 900; color: var(--accent-gold); margin-bottom: 8px;">⏳ شمارش معکوس تا بازی‌های روز اول هفته ششم</div>
                 <div style="font-size: 11px; color: var(--text-sub); margin-bottom: 12px;">پنج‌شنبه ۲ مهر ۱۴۰۵ • ساعت ۲۲:۱۵ (هلند - آلمان و نروژ - پرتغال)</div>
                 <div id="countdown-timer" class="countdown-box">در حال محاسبه زمان مانده...</div>
+
+                <!-- باکس قوانین دوئل -->
+                <div class="cup-rules-box">
+                    <strong>📜 قانون اصلی دوئل‌های کل‌کل:</strong>
+                    هر هفته اعضا به صورت دو به دو به مصاف هم می‌روند. معیار برنده شدن در دوئل بسیار ساده است: <strong>هرکس در آن هفته امتیاز بیشتری از پیش‌بینی مسابقات کسب کند، برنده دوئل است و حریف را شکست داده است!</strong>
+                </div>
 
                 <div style="font-size: 14px; font-weight: 900; color: var(--accent-bartar); margin: 15px 0 12px 0;">⚔️ دوئل‌های کل‌کل تمام اعضا (هفته جاری) ⚔️</div>
                 
@@ -1055,10 +1072,6 @@
 
                 <div class="cup-matchup" style="justify-content: center;">
                     <div class="cup-team home" style="text-align: center; flex: none;">مهدی (استراحت / تعقیب‌کننده ویژه)</div>
-                </div>
-
-                <div class="cup-info-text">
-                    در بخش کل‌کل، تمام اعضای لیگ به صورت مستقیم به مصاف رقیب خود می‌روند. هرکس در مسابقات پیش‌بینی امتیاز بیشتری کسب کند، برنده این نبرد تن‌به‌تن خواهد بود!
                 </div>
             </div>
         </div>
@@ -1155,8 +1168,6 @@
         });
 
         function startCountdown() {
-            // تاریخ شروع بازی‌های روز اول هفته ششم: پنج‌شنبه ۲ مهر ۱۴۰۵ ساعت ۲۲:۱۵ به وقت محلی
-            // تنظیم تایمر بر اساس تاریخ هدف (2026-09-24T22:15:00)
             const targetDate = new Date('2026-09-24T22:15:00').getTime();
 
             setInterval(() => {
