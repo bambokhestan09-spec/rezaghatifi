@@ -432,52 +432,51 @@
             background: #0d9668;
         }
 
-        .fotmob-news-card {
+        /* استایل‌های بخش کاپ حذفی فانتزی */
+        .fantasy-cup-card {
             background: var(--card-bartar);
             border: 1px solid var(--border-color);
-            border-radius: 14px;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cup-matchup {
             display: flex;
             align-items: center;
-            padding: 12px;
-            gap: 14px;
+            justify-content: space-between;
+            background: #0e1621;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 14px;
             margin-bottom: 12px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-            transition: border-color 0.2s ease;
         }
-        .fotmob-news-card:hover {
-            border-color: rgba(16, 185, 129, 0.4);
-        }
-        .fotmob-news-thumb {
-            width: 85px;
-            height: 85px;
-            border-radius: 10px;
-            object-fit: cover;
-            flex-shrink: 0;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .fotmob-news-body {
+        .cup-team {
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .fotmob-news-tag {
-            font-size: 10px;
             font-weight: 900;
-            color: var(--accent-bartar);
-            margin-bottom: 4px;
-            text-transform: uppercase;
-        }
-        .fotmob-news-title {
-            font-size: 13.5px;
-            font-weight: 900;
+            font-size: 14px;
             color: #fff;
-            line-height: 1.5;
-            margin-bottom: 4px;
         }
-        .fotmob-news-desc {
-            font-size: 11.5px;
+        .cup-team.home { text-align: right; }
+        .cup-team.away { text-align: left; }
+        .cup-vs {
+            font-size: 12px;
+            font-weight: 900;
+            color: var(--accent-gold);
+            background: rgba(245, 158, 11, 0.1);
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            margin: 0 10px;
+        }
+        .cup-info-text {
+            font-size: 12px;
             color: var(--text-sub);
+            margin-top: 12px;
             line-height: 1.6;
         }
 
@@ -827,7 +826,7 @@
         </div>
     </div>
 
-    <!-- تب ۲: جدول رده‌بندی (تفکیک‌شده از کلی تا هفته پنجم از راست به چپ) -->
+    <!-- تب ۲: جدول رده‌بندی -->
     <div id="tab-table" class="tab-content">
         <div class="hero-banner">
             <div class="league-banner-card">
@@ -840,7 +839,6 @@
                 </div>
             </div>
 
-            <!-- منوی انتخاب جدول‌ها (از راست به چپ: کلی، هفته اول، دوم، سوم، چهارم، پنجم) -->
             <div class="weeks-nav-container">
                 <button class="week-nav-btn active" onclick="switchTable('table-overall', this)">جدول کلی</button>
                 <button class="week-nav-btn" onclick="switchTable('table-w1', this)">هفته اول</button>
@@ -869,7 +867,7 @@
                 </div>
             </div>
 
-            <!-- ۲. جدول هفته اول (برگرفته از تصویر 294) -->
+            <!-- ۲. جدول هفته اول -->
             <div id="table-w1" class="table-sections-container">
                 <div class="table-container">
                     <div class="table-row"><span class="rank-col">#۱</span><span class="name-col">REZA GHATIFI</span><span class="score-col">13</span></div>
@@ -889,7 +887,7 @@
                 </div>
             </div>
 
-            <!-- ۳. جدول هفته دوم (برگرفته از تصویر 297) -->
+            <!-- ۳. جدول هفته دوم -->
             <div id="table-w2" class="table-sections-container">
                 <div class="table-container">
                     <div class="table-row"><span class="rank-col">#۱</span><span class="name-col">Mahdi</span><span class="score-col">15</span></div>
@@ -908,7 +906,7 @@
                 </div>
             </div>
 
-            <!-- ۴. جدول هفته سوم (برگرفته از تصویر 295) -->
+            <!-- ۴. جدول هفته سوم -->
             <div id="table-w3" class="table-sections-container">
                 <div class="table-container">
                     <div class="table-row"><span class="rank-col">#۱</span><span class="name-col">Asm A</span><span class="score-col">13</span></div>
@@ -927,7 +925,7 @@
                 </div>
             </div>
 
-            <!-- ۵. جدول هفته چهارم (برگرفته از تصویر 296) -->
+            <!-- ۵. جدول هفته چهارم -->
             <div id="table-w4" class="table-sections-container">
                 <div class="table-container">
                     <div class="table-row"><span class="rank-col">#۱</span><span class="name-col">Asm A</span><span class="score-col">13</span></div>
@@ -946,7 +944,7 @@
                 </div>
             </div>
 
-            <!-- ۶. جدول هفته پنجم (برگرفته از تصویر 298) -->
+            <!-- ۶. جدول هفته پنجم -->
             <div id="table-w5" class="table-sections-container">
                 <div class="table-container">
                     <div class="table-row"><span class="rank-col">#۱</span><span class="name-col">hajar daoudi</span><span class="score-col">6</span></div>
@@ -988,46 +986,50 @@
         </div>
     </div>
 
-    <!-- تب ۴: گیشه -->
+    <!-- تب ۴: کاپ حذفی فانتزی -->
     <div id="tab-news" class="tab-content">
         <div class="hero-banner">
             <div class="league-banner-card">
                 <div>
-                    <div class="league-banner-title">گیشه</div>
-                    <div class="league-banner-subtitle">اخبار سیاسی، بین‌الملل و رویدادها</div>
+                    <div class="league-banner-title">کاپ حذفی فانتزی (کل‌کل)</div>
+                    <div class="league-banner-subtitle">مبارزات مستقیم نفر به نفر (Head-to-Head)</div>
                 </div>
                 <div class="cup-hex-icon">
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#10b981"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-2v2z"/></svg>
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#f59e0b"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.66 4.4 5.03C8.86 14.24 10 15.85 10 18v3h4v-3c0-2.15 1.14-3.76 2.6-3.97C19.08 12.66 21 10.55 21 8V7c0-1.1-.9-2-2-2z"/></svg>
                 </div>
             </div>
 
-            <div class="fotmob-news-card">
-                <img src="https://images.fotmob.com/image_resources/news/un-general-assembly.jpg" alt="سفر پزشکیان" class="fotmob-news-thumb" onerror="this.src='https://images.fotmob.com/image_resources/logo/teamlogo/8618.png'">
-                <div class="fotmob-news-body">
-                    <div class="fotmob-news-tag">سیاسی • بین‌الملل</div>
-                    <div class="fotmob-news-title">پزشکیان عازم نیویورک شد؛ تبیین مواضع ایران در مجمع عمومی سازمان ملل</div>
-                    <div class="fotmob-news-desc">مسعود پزشکیان، رئیس‌جمهور، برای شرکت و سخنرانی در هشتادویکمین مجمع عمومی سازمان ملل متحد با هیئتی حداقلی عازم نیویورک شد و بر دفاع قدرتمندانه از منافع ملی تأکید کرد.</div>
+            <div class="fantasy-cup-card">
+                <div style="font-size: 14px; font-weight: 900; color: var(--accent-gold); margin-bottom: 15px;">🔥 مرحله حذفی هفته (کل‌کل مستقیم) 🔥</div>
+                
+                <div class="cup-matchup">
+                    <div class="cup-team home">REZA GHATIFI</div>
+                    <div class="cup-vs">VS</div>
+                    <div class="cup-team away">Donya Asil</div>
+                </div>
+
+                <div class="cup-matchup">
+                    <div class="cup-team home">Mahdi</div>
+                    <div class="cup-vs">VS</div>
+                    <div class="cup-team away">حبیب نعیمی</div>
+                </div>
+
+                <div class="cup-matchup">
+                    <div class="cup-team home">Asm A</div>
+                    <div class="cup-vs">VS</div>
+                    <div class="cup-team away">محمد خلیلاوی پور</div>
+                </div>
+
+                <div class="cup-matchup">
+                    <div class="cup-team home">hajar daoudi</div>
+                    <div class="cup-vs">VS</div>
+                    <div class="cup-team away">Ahlam Aljaber</div>
+                </div>
+
+                <div class="cup-info-text">
+                    در بخش کاپ فانتزی، هر شرکت‌کننده در این هفته مستقیماً با رقیب روبروی خود می‌جنگد. بازنده از دور کاپ حذف شده و برنده به مرحله بعد صعود می‌کند تا تندیس قهرمانی کاپ استرسی را بالای سر ببرد!
                 </div>
             </div>
-
-            <div class="fotmob-news-card">
-                <img src="https://images.fotmob.com/image_resources/news/diplomacy.jpg" alt="دیپلماسی" class="fotmob-news-thumb" onerror="this.src='https://images.fotmob.com/image_resources/logo/teamlogo/8618.png'">
-                <div class="fotmob-news-body">
-                    <div class="fotmob-news-tag">دیپلماسی</div>
-                    <div class="fotmob-news-title">انتقاد از محدودیت‌های ایجاد شده برای تیم رسانه‌ای همراه رئیس‌جمهور</div>
-                    <div class="fotmob-news-desc">مقام مسئول پیش از پرواز به کارشکنی‌ها و محدودیت‌های اعمال‌شده از سوی آمریکا در صدور ویزای خبرنگاران و تیم رسانه‌ای همراه هیئت ایرانی واکنش نشان داد.</div>
-                </div>
-            </div>
-
-            <div class="fotmob-news-card">
-                <img src="https://images.fotmob.com/image_resources/news/gaza-crisis.jpg" alt="منطقه و غزه" class="fotmob-news-thumb" onerror="this.src='https://images.fotmob.com/image_resources/logo/teamlogo/8618.png'">
-                <div class="fotmob-news-body">
-                    <div class="fotmob-news-tag">خاورمیانه</div>
-                    <div class="fotmob-news-title">بررسی بحران غزه و تحولات منطقه‌ای در دیدارهای فشرده نیویورک</div>
-                    <div class="fotmob-news-desc">تشریح واقعیت‌های میدانی منطقه، وضعیت بحرانی غزه و تاکید بر صلح و ثبات منطقه‌ای از محورهای اصلی دیدارهای دوطرفه رئیس‌جمهور در حاشیه سازمان ملل اعلام شد.</div>
-                </div>
-            </div>
-
         </div>
     </div>
 
@@ -1093,8 +1095,8 @@
             سکو
         </button>
         <button class="nav-item" onclick="switchTab('tab-news', this)">
-            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-2v2z"/></svg>
-            گیشه
+            <svg viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.66 4.4 5.03C8.86 14.24 10 15.85 10 18v3h4v-3c0-2.15 1.14-3.76 2.6-3.97C19.08 12.66 21 10.55 21 8V7c0-1.1-.9-2-2-2z"/></svg>
+            کاپ
         </button>
         <button class="nav-item" onclick="switchTab('tab-final', this)">
             <svg viewBox="0 0 24 24">
@@ -1169,7 +1171,6 @@
             document.querySelectorAll('.table-sections-container').forEach(container => {
                 container.classList.remove('active');
             });
-            // پیدا کردن دکمه‌های مربوط به جدول‌ها و غیرفعال کردنشان
             btn.parentElement.querySelectorAll('.week-nav-btn').forEach(b => {
                 b.classList.remove('active');
             });
