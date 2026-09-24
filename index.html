@@ -198,6 +198,31 @@
             box-shadow: 0 8px 24px rgba(0,0,0,0.4);
         }
 
+        /* استایل دکمه ورود به پیش‌بینی فوت‌ماب */
+        .predict-join-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 20px;
+            border-radius: 14px;
+            font-weight: 900;
+            font-size: 14px;
+            margin-top: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .predict-join-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+        }
+
         .match-row-clean {
             display: flex;
             align-items: center;
@@ -399,7 +424,7 @@
         .name-col { flex: 1; text-align: right; color: #fff; }
         .score-col { font-weight: 900; color: var(--accent-gold); min-width: 45px; text-align: left; }
 
-        /* 3. پس‌زمینه بخش پروفایل: حال و هوای رختکن تیم (تفسیر حرفه‌ای رختکن) */
+        /* 3. پس‌زمینه بخش پروفایل: حال و هوای رختکن تیم */
         .profile-box {
             background: linear-gradient(rgba(14, 22, 33, 0.92), rgba(14, 22, 33, 0.96)), 
                         url('https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=1000&auto=format&fit=crop') no-repeat center center;
@@ -705,6 +730,12 @@
                             <span class="team-name">رئال مادرید</span>
                         </div>
                     </div>
+
+                    <!-- لینک ورود به پیش‌بینی هفته پنجم -->
+                    <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" class="predict-join-btn">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                        ورود به صفحه پیش‌بینی هفته پنجم (FotMob)
+                    </a>
                 </div>
             </div>
 
@@ -857,6 +888,11 @@
                         </div>
                     </div>
 
+                    <!-- لینک ورود به پیش‌بینی هفته ششم -->
+                    <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" class="predict-join-btn">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                        ورود به صفحه پیش‌بینی هفته ششم (FotMob)
+                    </a>
                 </div>
             </div>
 
@@ -1023,7 +1059,7 @@
         </div>
     </div>
 
-    <!-- تب ۴: کل‌کل (همراه با قوانین دوئل، شمارش معکوس و دوئل تمامی اعضا) -->
+    <!-- تب ۴: کل‌کل -->
     <div id="tab-news" class="tab-content">
         <div class="hero-banner">
             <div class="league-banner-card">
