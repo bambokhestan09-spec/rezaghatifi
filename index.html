@@ -62,7 +62,6 @@
         }
 
         body {
-            /* پس‌زمینه کلی سایت: حال و هوای شب‌های استادیوم فوتبال و نورافکن‌ها */
             background: linear-gradient(rgba(10, 15, 24, 0.9), rgba(10, 15, 24, 0.94)), 
                         url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
             background-size: cover;
@@ -186,7 +185,6 @@
             padding-bottom: 6px;
         }
 
-        /* 1. پس‌زمینه بخش مسابقات: حال و هوای زمین چمن فوتبال با خط‌کشی‌های سفید */
         .unified-matches-card {
             background: linear-gradient(rgba(14, 22, 33, 0.92), rgba(14, 22, 33, 0.95)), 
                         url('https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=1000&auto=format&fit=crop') no-repeat center center;
@@ -198,7 +196,38 @@
             box-shadow: 0 8px 24px rgba(0,0,0,0.4);
         }
 
-        /* استایل دکمه ورود به پیش‌بینی فوت‌ماب */
+        /* استایل کادر سبز بر اساس عکس نمونه */
+        .green-badge-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #ffffff;
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-weight: 900;
+            font-size: 14px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .report-text-content {
+            font-size: 13.5px;
+            color: var(--text-sub);
+            line-height: 2.2;
+            text-align: right;
+        }
+
+        .report-text-content p {
+            margin-bottom: 14px;
+        }
+
+        .report-text-content strong {
+            color: #fff;
+            font-weight: 900;
+        }
+
         .predict-join-btn {
             display: flex;
             align-items: center;
@@ -393,7 +422,6 @@
             justify-content: center;
         }
 
-        /* 2. پس‌زمینه بخش جدول رده‌بندی: حال و هوای خط‌کشی‌های زمین چمن و استادیوم پرنور */
         .table-container {
             background: linear-gradient(rgba(15, 23, 42, 0.93), rgba(15, 23, 42, 0.96)), 
                         url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1000&auto=format&fit=crop') no-repeat center center;
@@ -424,7 +452,6 @@
         .name-col { flex: 1; text-align: right; color: #fff; }
         .score-col { font-weight: 900; color: var(--accent-gold); min-width: 45px; text-align: left; }
 
-        /* 3. پس‌زمینه بخش پروفایل: حال و هوای رختکن تیم */
         .profile-box {
             background: linear-gradient(rgba(14, 22, 33, 0.92), rgba(14, 22, 33, 0.96)), 
                         url('https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=1000&auto=format&fit=crop') no-repeat center center;
@@ -469,7 +496,6 @@
             background: #0d9668;
         }
 
-        /* 4. پس‌زمینه بخش کل‌کل و سکو: حال و هوای تونل ورزشگاه و سکوهای قهرمانی */
         .fantasy-cup-card {
             background: linear-gradient(rgba(14, 22, 33, 0.92), rgba(14, 22, 33, 0.96)), 
                         url('https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?q=80&w=1000&auto=format&fit=crop') no-repeat center center;
@@ -731,7 +757,6 @@
                         </div>
                     </div>
 
-                    <!-- لینک ورود به پیش‌بینی هفته پنجم -->
                     <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" class="predict-join-btn">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
                         ورود به صفحه پیش‌بینی هفته پنجم (FotMob)
@@ -751,7 +776,6 @@
                 </button>
 
                 <div class="unified-matches-card">
-                    <!-- پنج‌شنبه ۲ مهر ۱۴۰۵ -->
                     <div class="date-divider" style="margin-top: 0;">پنج‌شنبه ۲ مهر ۱۴۰۵</div>
                     
                     <div class="match-row-clean">
@@ -802,7 +826,6 @@
                         </div>
                     </div>
 
-                    <!-- جمعه ۳ مهر ۱۴۰۵ -->
                     <div class="date-divider">جمعه ۳ مهر ۱۴۰۵</div>
 
                     <div class="match-row-clean">
@@ -853,7 +876,6 @@
                         </div>
                     </div>
 
-                    <!-- شنبه ۴ مهر ۱۴۰۵ -->
                     <div class="date-divider">شنبه ۴ مهر ۱۴۰۵</div>
 
                     <div class="match-row-clean">
@@ -888,7 +910,6 @@
                         </div>
                     </div>
 
-                    <!-- لینک ورود به پیش‌بینی هفته ششم -->
                     <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" class="predict-join-btn">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
                         ورود به صفحه پیش‌بینی هفته ششم (FotMob)
@@ -921,7 +942,6 @@
                 <button class="week-nav-btn" onclick="switchTable('table-w5', this)">هفته پنجم</button>
             </div>
 
-            <!-- ۱. جدول کلی -->
             <div id="table-overall" class="table-sections-container active">
                 <div class="table-container">
                     <div class="table-row"><span class="rank-col">#۱</span><span class="name-col">Asm A</span><span class="score-col">58</span></div>
@@ -940,7 +960,6 @@
                 </div>
             </div>
 
-            <!-- ۲. جدول هفته اول -->
             <div id="table-w1" class="table-sections-container">
                 <div class="table-container">
                     <div class="table-row"><span class="rank-col">#۱</span><span class="name-col">REZA GHATIFI</span><span class="score-col">13</span></div>
@@ -960,7 +979,6 @@
                 </div>
             </div>
 
-            <!-- ۳. جدول هفته دوم -->
             <div id="table-w2" class="table-sections-container">
                 <div class="table-container">
                     <div class="table-row"><span class="rank-col">#۱</span><span class="name-col">Mahdi</span><span class="score-col">15</span></div>
@@ -979,7 +997,6 @@
                 </div>
             </div>
 
-            <!-- ۴. جدول هفته سوم -->
             <div id="table-w3" class="table-sections-container">
                 <div class="table-container">
                     <div class="table-row"><span class="rank-col">#۱</span><span class="name-col">Asm A</span><span class="score-col">13</span></div>
@@ -998,7 +1015,6 @@
                 </div>
             </div>
 
-            <!-- ۵. جدول هفته چهارم -->
             <div id="table-w4" class="table-sections-container">
                 <div class="table-container">
                     <div class="table-row"><span class="rank-col">#۱</span><span class="name-col">Asm A</span><span class="score-col">13</span></div>
@@ -1017,7 +1033,6 @@
                 </div>
             </div>
 
-            <!-- ۶. جدول هفته پنجم -->
             <div id="table-w5" class="table-sections-container">
                 <div class="table-container">
                     <div class="table-row"><span class="rank-col">#۱</span><span class="name-col">hajar daoudi</span><span class="score-col">6</span></div>
@@ -1077,7 +1092,6 @@
                 <div style="font-size: 11px; color: var(--text-sub); margin-bottom: 12px;">پنج‌شنبه ۲ مهر ۱۴۰۵ • ساعت ۲۲:۱۵ (هلند - آلمان و نروژ - پرتغال)</div>
                 <div id="countdown-timer" class="countdown-box">در حال محاسبه زمان مانده...</div>
 
-                <!-- باکس قوانین دوئل -->
                 <div class="cup-rules-box">
                     <strong>📜 قانون اصلی دوئل‌های کل‌کل:</strong>
                     هر هفته اعضا به صورت دو به دو به مصاف هم می‌روند. معیار برنده شدن در دوئل بسیار ساده است: <strong>هرکس در آن هفته امتیاز بیشتری از پیش‌بینی مسابقات کسب کند، برنده دوئل است و حریف را شکست داده است!</strong>
@@ -1128,7 +1142,7 @@
         </div>
     </div>
 
-    <!-- تب ۵: سوت پایان -->
+    <!-- تب ۵: سوت پایان (به‌روزرسانی شده با گزارش طنز هفته ششم) -->
     <div id="tab-final" class="tab-content">
         <div class="hero-banner">
             <div class="league-banner-card">
@@ -1142,8 +1156,27 @@
                     </svg>
                 </div>
             </div>
-            <div class="unified-matches-card">
-                <p style="color: var(--text-sub); text-align: center; padding: 15px;">تحلیل عملکرد و نتایج ثبت‌شده پس از پایان مسابقات در این بخش منتشر می‌شود.</p>
+
+            <div class="unified-matches-card" style="text-align: right;">
+                <!-- کادر سبز با متن درخواست‌شده -->
+                <div class="green-badge-box">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    شروع هفته ششم… گزارش اول
+                </div>
+
+                <div class="report-text-content">
+                    <p>🔥 <strong>گزارش طنز | شروع رقابت هفته ششم لیگ گداهای استرسی</strong></p>
+                    <p>سوت پایان هفته پنجم که به صدا درآمد، یک عده جشن گرفتند، یک عده به سقف خیره شدند و یک عده هم هنوز دارن دنبال این می‌گردن که اصلاً کِی امتیاز گرفتند! 😂</p>
+                    <p>🏆 <strong>قهرمانی داودی در هفته پنجم</strong><br>داودی هفته پنجم را با قدرت جمع کرد و جام را بالای سر برد؛ بقیه هم طبق معمول مشغول تحلیل بودند که «هفته بعد جبران می‌کنیم!» 😎</p>
+                    <p>🥈 <strong>قطیفی؛ نایب‌قهرمان بدبخت!</strong><br>قطیفی تا یک قدمی قهرمانی رفت، اما در نهایت سهمش شد مقام دوم و یک عالمه آه و افسوس!<br>حالا باید دید هفته ششم بالاخره طلسم شکسته می‌شود یا دوباره همان داستان همیشگی تکرار خواهد شد! 😂</p>
+                    <p>🫥 <strong>بازگشت جاسمیان؛ آقای بی‌خاصیت پیش‌بینی!</strong><br>جاسمیان مجدداً به صحنه رقابت‌ها برگشته؛ بازیکنی که ظاهراً مأموریت اصلی‌اش در لیگ این است که باشد، پیش‌بینی کند و هیچ‌کس نفهمد دقیقاً چه اتفاقی افتاد! 🤣</p>
+                    <p>🚀 <strong>پیرا در تعقیب صدر جدول</strong><br>پیرا آرام و بی‌سروصدا خودش را به بالای جدول نزدیک می‌کند.<br>فعلاً خبری از سر و صدا نیست، اما اگر همین‌طور ادامه دهد، ممکن است یک روز بقیه بیدار شوند و ببینند پیرا بالای سرشان ایستاده! 👀</p>
+                    <p>🚿 <strong>الجابر و نسخه عجیب موفقیت!</strong><br>الجابر برای رسیدن به پیش‌بینی درست، ظاهراً به این نتیجه رسیده که تنها راه باقی‌مانده این است که موقع بازی رم و اینتر برود دوش! 😂<br>حالا معلوم نیست این استراتژی فوتبالی است یا روش جدیدی برای فرار از فشار پیش‌بینی!</p>
+                    <p>🇩🇪🇳🇱 <strong>هفته ششم کلید خورد!</strong><br>و حالا بدون فرصت برای استراحت، هفته ششم لیگ گداهای استرسی آغاز می‌شود:</p>
+                    <p>🇩🇪 <strong>آلمان 🆚 هلند</strong> 🇳🇱<br>🇬🇭 <strong>غنا 🆚 ساحل عاج</strong> 🇨🇮</p>
+                    <p>⚽️ بازی‌های ملی، پیش‌بینی‌های جدید و فرصتی دوباره برای همه؛<br>از صدرنشین‌ها گرفته تا کسانی که هنوز دنبال اولین پیش‌بینی درست هفته‌شان می‌گردند! 😂</p>
+                    <p>🔥 <strong>هفته ششم شروع شد؛ ببینیم این بار چه کسی گداچول را به هم می‌ریزد!</strong><br>سوت پایان…</p>
+                </div>
             </div>
         </div>
     </div>
