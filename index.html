@@ -48,31 +48,24 @@
         @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;900&display=swap');
 
         :root {
-            --bg-bartar: #0e1621;
-            --card-bartar: #162232;
             --accent-bartar: #10b981;
             --accent-gold: #f59e0b;
             --text-main: #ffffff;
-            --text-sub: #94a3b8;
-            --border-color: #23354a;
+            --text-sub: #cbd5e1;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Vazirmatn', sans-serif;
+            font-family: 'Vazirmatn', sans-serif !important;
         }
 
         body {
-            background-color: var(--bg-bartar);
-            /* پس‌زمینه کل سایت با حال و هوای خط‌کشی و زمین چمن فوتبال */
-            background-image: 
-                linear-gradient(rgba(14, 22, 33, 0.92), rgba(14, 22, 33, 0.92)),
-                repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(16, 185, 129, 0.04) 40px, rgba(16, 185, 129, 0.04) 42px),
-                repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(16, 185, 129, 0.04) 40px, rgba(16, 185, 129, 0.04) 42px);
+            /* پس‌زمینه کلی سایت: حال و هوای شب‌های استادیوم فوتبال و نورافکن‌ها */
+            background: linear-gradient(rgba(10, 15, 24, 0.9), rgba(10, 15, 24, 0.94)), 
+                        url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
             background-size: cover;
-            background-attachment: fixed;
             color: var(--text-main);
             min-height: 100vh;
             padding-bottom: 95px;
@@ -135,7 +128,8 @@
         }
 
         header {
-            background-color: #121d2b;
+            background-color: rgba(18, 29, 43, 0.95);
+            backdrop-filter: blur(10px);
             padding: 16px 20px;
             text-align: center;
             font-weight: 900;
@@ -161,7 +155,7 @@
         }
 
         .matchweek-banner {
-            background: linear-gradient(135deg, #1c2b40, #121d2b);
+            background: linear-gradient(135deg, rgba(28, 43, 64, 0.9), rgba(18, 29, 43, 0.95));
             border: 1px solid var(--accent-bartar);
             border-radius: 14px;
             padding: 16px;
@@ -188,37 +182,36 @@
             color: var(--accent-bartar);
             margin: 20px 0 10px 0;
             text-align: right;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 6px;
         }
 
+        /* 1. پس‌زمینه بخش مسابقات: حال و هوای زمین چمن فوتبال با خط‌کشی‌های سفید */
         .unified-matches-card {
-            background-color: var(--card-bartar);
-            /* پس‌زمینه تب مسابقات: حال و هوای استادیوم فوتبال و نورافکن‌ها */
-            background-image: 
-                radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12) 0%, transparent 70%),
-                linear-gradient(180deg, rgba(22, 34, 50, 0.95), rgba(14, 22, 33, 0.95));
+            background: linear-gradient(rgba(14, 22, 33, 0.92), rgba(14, 22, 33, 0.95)), 
+                        url('https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=1000&auto=format&fit=crop') no-repeat center center;
+            background-size: cover;
             border-radius: 16px;
             padding: 18px;
             margin-bottom: 20px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
         }
 
         .match-row-clean {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #0e1621;
+            background: rgba(14, 22, 33, 0.85);
             padding: 12px 14px;
             border-radius: 12px;
             margin-bottom: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: border-color 0.2s ease;
         }
 
         .match-row-clean:hover {
-            border-color: rgba(16, 185, 129, 0.4);
+            border-color: rgba(16, 185, 129, 0.6);
         }
 
         .match-row-clean:last-child {
@@ -285,8 +278,8 @@
 
         .match-league-badge {
             font-size: 9px;
-            color: #8a99ad;
-            background: rgba(255,255,255,0.05);
+            color: #cbd5e1;
+            background: rgba(255,255,255,0.08);
             padding: 1px 6px;
             border-radius: 4px;
             margin-top: 2px;
@@ -310,9 +303,9 @@
         }
 
         .week-nav-btn {
-            background: var(--card-bartar);
+            background: rgba(22, 34, 50, 0.9);
             color: var(--text-sub);
-            border: 1px solid var(--border-color);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 10px 18px;
             border-radius: 12px;
             font-size: 13px;
@@ -337,8 +330,8 @@
         }
 
         .league-banner-card {
-            background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.15), transparent 70%), var(--card-bartar);
-            border: 1px solid var(--border-color);
+            background: linear-gradient(135deg, rgba(22, 34, 50, 0.9), rgba(14, 22, 33, 0.95));
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
             padding: 18px 22px;
             margin-bottom: 15px;
@@ -365,7 +358,7 @@
         }
 
         .cup-hex-icon {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.4);
             border: 2px solid var(--accent-gold);
             width: 52px;
             height: 52px;
@@ -375,28 +368,27 @@
             justify-content: center;
         }
 
+        /* 2. پس‌زمینه بخش جدول رده‌بندی: حال و هوای خط‌کشی‌های زمین چمن و استادیوم پرنور */
         .table-container {
-            background-color: var(--card-bartar);
-            /* پس‌زمینه تب جدول: تداعی‌کننده خط‌کشی‌های زمین چمن و محوطه جریمه */
-            background-image: 
-                linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px),
-                linear-gradient(0deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
-            background-size: 20px 20px;
+            background: linear-gradient(rgba(15, 23, 42, 0.93), rgba(15, 23, 42, 0.96)), 
+                        url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1000&auto=format&fit=crop') no-repeat center center;
+            background-size: cover;
             border-radius: 16px;
             overflow: hidden;
             max-width: 680px;
             margin: 0 auto;
-            border: 1px solid var(--border-color);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
         }
 
         .table-row {
             display: flex;
             justify-content: space-between;
             padding: 14px 20px;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             align-items: center;
             font-weight: 700;
-            background: rgba(22, 34, 50, 0.85);
+            background: rgba(22, 34, 50, 0.75);
         }
 
         .table-row:last-child {
@@ -407,25 +399,24 @@
         .name-col { flex: 1; text-align: right; color: #fff; }
         .score-col { font-weight: 900; color: var(--accent-gold); min-width: 45px; text-align: left; }
 
+        /* 3. پس‌زمینه بخش پروفایل: حال و هوای رختکن تیم (تفسیر حرفه‌ای رختکن) */
         .profile-box {
-            background: var(--card-bartar);
-            /* پس‌زمینه تب پروفایل: حال و هوای رختکن تیم و لایه‌های مدرن */
-            background-image: 
-                linear-gradient(135deg, rgba(28, 43, 64, 0.9), rgba(14, 22, 33, 0.95)),
-                repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0, rgba(255,255,255,0.01) 2px, transparent 0, transparent 4px);
-            border: 1px solid var(--border-color);
+            background: linear-gradient(rgba(14, 22, 33, 0.92), rgba(14, 22, 33, 0.96)), 
+                        url('https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=1000&auto=format&fit=crop') no-repeat center center;
+            background-size: cover;
+            border: 1px solid rgba(245, 158, 11, 0.3);
             border-radius: 16px;
             padding: 24px;
             text-align: center;
             max-width: 680px;
             margin: 0 auto;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
         }
         .profile-input {
             width: 100%;
             padding: 12px 16px;
             background: #0e1621;
-            border: 1px solid var(--border-color);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             color: #fff;
             font-size: 14px;
@@ -453,25 +444,23 @@
             background: #0d9668;
         }
 
-        /* استایل‌های بخش کل‌کل و قوانین دوئل */
+        /* 4. پس‌زمینه بخش کل‌کل و سکو: حال و هوای تونل ورزشگاه و سکوهای قهرمانی */
         .fantasy-cup-card {
-            background: var(--card-bartar);
-            /* پس‌زمینه تب کل‌کل و سکو: حال و هوای تونل ورزشگاه و چمن پر از هیجان */
-            background-image: 
-                radial-gradient(circle at 50% 100%, rgba(245, 158, 11, 0.1), transparent 60%),
-                linear-gradient(180deg, rgba(22, 34, 50, 0.95), rgba(14, 22, 33, 0.98));
-            border: 1px solid var(--border-color);
+            background: linear-gradient(rgba(14, 22, 33, 0.92), rgba(14, 22, 33, 0.96)), 
+                        url('https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?q=80&w=1000&auto=format&fit=crop') no-repeat center center;
+            background-size: cover;
+            border: 1px solid rgba(245, 158, 11, 0.3);
             border-radius: 16px;
             padding: 20px;
             margin-bottom: 16px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
             text-align: center;
             max-width: 680px;
             margin-left: auto;
             margin-right: auto;
         }
         .countdown-box {
-            background: #0e1621;
+            background: rgba(14, 22, 33, 0.9);
             border: 1px solid var(--accent-gold);
             border-radius: 12px;
             padding: 12px;
@@ -482,7 +471,7 @@
             box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);
         }
         .cup-rules-box {
-            background: #0e1621;
+            background: rgba(14, 22, 33, 0.9);
             border: 1px solid var(--accent-bartar);
             border-radius: 12px;
             padding: 14px;
@@ -502,8 +491,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #0e1621;
-            border: 1px solid var(--border-color);
+            background: rgba(14, 22, 33, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 12px;
             padding: 12px 14px;
             margin-bottom: 10px;
@@ -520,7 +509,7 @@
             font-size: 11px;
             font-weight: 900;
             color: var(--accent-gold);
-            background: rgba(245, 158, 11, 0.1);
+            background: rgba(245, 158, 11, 0.15);
             padding: 5px 10px;
             border-radius: 8px;
             border: 1px solid rgba(245, 158, 11, 0.3);
@@ -532,11 +521,12 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: #121d2b;
+            background-color: rgba(18, 29, 43, 0.95);
+            backdrop-filter: blur(10px);
             display: flex;
             justify-content: space-around;
             padding: 10px 0;
-            border-top: 1px solid var(--border-color);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             z-index: 1000;
             box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
         }
