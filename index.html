@@ -66,6 +66,13 @@
 
         body {
             background-color: var(--bg-bartar);
+            /* پس‌زمینه کل سایت با حال و هوای خط‌کشی و زمین چمن فوتبال */
+            background-image: 
+                linear-gradient(rgba(14, 22, 33, 0.92), rgba(14, 22, 33, 0.92)),
+                repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(16, 185, 129, 0.04) 40px, rgba(16, 185, 129, 0.04) 42px),
+                repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(16, 185, 129, 0.04) 40px, rgba(16, 185, 129, 0.04) 42px);
+            background-size: cover;
+            background-attachment: fixed;
             color: var(--text-main);
             min-height: 100vh;
             padding-bottom: 95px;
@@ -187,6 +194,10 @@
 
         .unified-matches-card {
             background-color: var(--card-bartar);
+            /* پس‌زمینه تب مسابقات: حال و هوای استادیوم فوتبال و نورافکن‌ها */
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12) 0%, transparent 70%),
+                linear-gradient(180deg, rgba(22, 34, 50, 0.95), rgba(14, 22, 33, 0.95));
             border-radius: 16px;
             padding: 18px;
             margin-bottom: 20px;
@@ -366,6 +377,11 @@
 
         .table-container {
             background-color: var(--card-bartar);
+            /* پس‌زمینه تب جدول: تداعی‌کننده خط‌کشی‌های زمین چمن و محوطه جریمه */
+            background-image: 
+                linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
             border-radius: 16px;
             overflow: hidden;
             max-width: 680px;
@@ -380,6 +396,7 @@
             border-bottom: 1px solid var(--border-color);
             align-items: center;
             font-weight: 700;
+            background: rgba(22, 34, 50, 0.85);
         }
 
         .table-row:last-child {
@@ -392,6 +409,10 @@
 
         .profile-box {
             background: var(--card-bartar);
+            /* پس‌زمینه تب پروفایل: حال و هوای رختکن تیم و لایه‌های مدرن */
+            background-image: 
+                linear-gradient(135deg, rgba(28, 43, 64, 0.9), rgba(14, 22, 33, 0.95)),
+                repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0, rgba(255,255,255,0.01) 2px, transparent 0, transparent 4px);
             border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 24px;
@@ -435,6 +456,10 @@
         /* استایل‌های بخش کل‌کل و قوانین دوئل */
         .fantasy-cup-card {
             background: var(--card-bartar);
+            /* پس‌زمینه تب کل‌کل و سکو: حال و هوای تونل ورزشگاه و چمن پر از هیجان */
+            background-image: 
+                radial-gradient(circle at 50% 100%, rgba(245, 158, 11, 0.1), transparent 60%),
+                linear-gradient(180deg, rgba(22, 34, 50, 0.95), rgba(14, 22, 33, 0.98));
             border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 20px;
@@ -1000,7 +1025,7 @@
                     <svg viewBox="0 0 24 24" width="28" height="28" fill="#f59e0b"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.66 4.4 5.03C8.86 14.24 10 15.85 10 18v3h4v-3c0-2.15 1.14-3.76 2.6-3.97C19.08 12.66 21 10.55 21 8V7c0-1.1-.9-2-2-2z"/></svg>
                 </div>
             </div>
-            <div class="unified-matches-card" style="text-align: center; padding: 30px;">
+            <div class="fantasy-cup-card" style="text-align: center; padding: 30px;">
                 <p style="font-size: 16px; font-weight: 900; color: var(--accent-gold);">🥇 جایگاه اول: Asm A (۵۸ امتیاز)</p>
                 <p style="font-size: 15px; font-weight: 700; color: #fff; margin-top: 12px;">🥈 جایگاه دوم: REZA GHATIFI (۵۴ امتیاز)</p>
                 <p style="font-size: 14px; font-weight: 700; color: var(--text-sub); margin-top: 12px;">🥉 جایگاه سوم: Mahdi (۴۹ امتیاز)</p>
