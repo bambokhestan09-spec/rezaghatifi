@@ -169,6 +169,8 @@
             justify-content: center;
             align-items: center;
             box-shadow: 0 6px 18px rgba(0, 204, 96, 0.25);
+            flex-direction: column;
+            gap: 8px;
         }
 
         .fotmob-btn {
@@ -187,6 +189,56 @@
         .fotmob-btn:hover {
             transform: scale(1.03);
             color: #ffe600;
+        }
+
+        /* استایل بخش نتایج زنده (Live Score) حرفه‌ای */
+        .live-score-container {
+            background: rgba(4, 26, 12, 0.85);
+            border: 1px solid rgba(0, 255, 150, 0.4);
+            border-radius: 12px;
+            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            justify-content: center;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.8);
+        }
+
+        .live-indicator {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 11px;
+            font-weight: 900;
+            color: #ff3333;
+            background: rgba(255, 51, 51, 0.15);
+            padding: 2px 6px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 51, 51, 0.4);
+        }
+
+        .live-dot {
+            width: 7px;
+            height: 7px;
+            background-color: #ff3333;
+            border-radius: 50%;
+            animation: liveBlink 1s infinite alternate;
+        }
+
+        @keyframes liveBlink {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .live-score-board {
+            font-family: monospace;
+            font-size: 15px;
+            font-weight: 900;
+            color: #ffd700;
+            letter-spacing: 3px;
+            direction: ltr;
+            text-shadow: 0 0 6px rgba(255, 215, 0, 0.5);
         }
 
         .team {
@@ -545,7 +597,15 @@
                         <img src="https://flagcdn.com/w80/gb-eng.png" class="flag" alt="England">
                     </div>
                 </div>
+                <!-- تب پیش‌بینی فوت‌موب همراه با بخش نتایج لحظه‌ای زنده -->
                 <div class="fotmob-tab">
+                    <div class="live-score-container">
+                        <div class="live-indicator">
+                            <div class="live-dot"></div>
+                            <span>زنده</span>
+                        </div>
+                        <div class="live-score-board" id="live-score-1">0 - 0</div>
+                    </div>
                     <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" class="fotmob-btn">
                         <span>🔴</span> کلیک کن و پیش بینی کن و برو تو فوت موب
                     </a>
@@ -578,7 +638,15 @@
                         <img src="https://flagcdn.com/w80/hr.png" class="flag" alt="Croatia">
                     </div>
                 </div>
+                <!-- تب پیش‌بینی فوت‌موب همراه با بخش نتایج لحظه‌ای زنده -->
                 <div class="fotmob-tab">
+                    <div class="live-score-container">
+                        <div class="live-indicator">
+                            <div class="live-dot"></div>
+                            <span>زنده</span>
+                        </div>
+                        <div class="live-score-board" id="live-score-2">0 - 0</div>
+                    </div>
                     <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" class="fotmob-btn">
                         <span>🔴</span> کلیک کن و پیش بینی کن و برو تو فوت موب
                     </a>
@@ -771,6 +839,16 @@
                 document.getElementById('gishah-tab').classList.add('active-tab');
             }
         }
+
+        // بخش اتصال به نتایج زنده لحظه‌ای (جهت به‌روزرسانی نتایج مسابقات)
+        function updateLiveScores() {
+            // در صورت تمایل می‌توانید در اینجا کدهای API نتایج زنده یا درخواست‌های Fetch را برای به‌روزرسانی مقادیر #live-score-1 و #live-score-2 قرار دهید.
+            // مثال:
+            // document.getElementById('live-score-1').innerText = "1 - 0";
+        }
+        
+        // فراخوانی تابع آپدیت زنده در صورت نیاز
+        // setInterval(updateLiveScores, 30000);
     </script>
 </body>
 </html>
