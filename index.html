@@ -23,60 +23,111 @@
             align-items: center;
         }
 
-        /* صفحه ورود (Splash Screen) */
+        /* صفحه ورود (Splash Screen) دقیقاً مطابق تصویر ارسالی با پس‌زمینه مشکی و نوار متحرک */
         #splash-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: #0c3b1e;
+            background-color: #11151c; /* پس‌زمینه مشکی تیره مشابه تصویر */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             z-index: 9999;
             transition: opacity 0.8s ease, visibility 0.8s ease;
+            padding: 20px;
         }
 
-        .jelly-cup {
-            width: 130px;
-            height: 130px;
-            background: radial-gradient(circle at 30% 30%, #fff7cc 0%, #ffd700 40%, #ff8c00 80%);
-            border-radius: 50%;
+        .splash-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 320px;
+            position: relative;
+        }
+
+        /* ساختار کاپ طلایی دقیقاً مطابق مدل عکس */
+        .splash-trophy-box {
+            position: relative;
+            margin-bottom: 25px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 65px;
-            box-shadow: inset 0 8px 15px rgba(255, 255, 255, 0.8),
-                        inset 0 -8px 15px rgba(180, 80, 0, 0.8),
-                        0 10px 30px rgba(255, 215, 0, 0.5);
-            animation: jellyBounce 2s infinite ease-in-out;
-            border: 3px solid rgba(255, 255, 255, 0.6);
-            margin-bottom: 25px;
         }
 
-        @keyframes jellyBounce {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            30% { transform: scale(1.1, 0.95) rotate(-5deg); }
-            50% { transform: scale(0.95, 1.1) rotate(5deg); }
-            70% { transform: scale(1.05, 0.98) rotate(-2deg); }
+        .splash-trophy-img {
+            width: 110px;
+            height: auto;
+            filter: drop-shadow(0 10px 15px rgba(255, 215, 0, 0.3));
+            animation: floatTrophy 2s infinite ease-in-out;
         }
 
-        .splash-title-box {
-            background: linear-gradient(135deg, #00cc60, #009440);
-            border: 2px solid rgba(0, 255, 140, 0.7);
-            padding: 14px 28px;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0, 204, 96, 0.5),
-                        inset 0 2px 5px rgba(255, 255, 255, 0.4);
-            font-size: 20px;
+        @keyframes floatTrophy {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        /* عدد سال ۱۴۰۵ در بالای متن */
+        .splash-year {
+            color: #00ffaa;
+            font-size: 18px;
             font-weight: 900;
-            color: #fff;
-            text-align: center;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            margin-bottom: 5px;
+            text-shadow: 0 0 10px rgba(0, 255, 170, 0.4);
         }
 
+        /* عنوان اصلی صفحه لودینگ */
+        .splash-title {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        /* زیرنویس انگلیسی / متنی */
+        .splash-subtitle {
+            color: #7d8b99;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+        }
+
+        /* نوار لودینگ متحرک دقیقاً مشابه تصویر */
+        .loader-track {
+            width: 100%;
+            height: 12px;
+            background-color: #212835;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .loader-thumb {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 35%;
+            background: linear-gradient(90deg, #ffcc00, #ff9900);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
+            animation: moveLoader 1.8s infinite ease-in-out;
+        }
+
+        @keyframes moveLoader {
+            0% { left: -35%; }
+            50% { left: 65%; width: 40%; }
+            100% { left: 100%; }
+        }
+
+        /* محتوای اصلی سایت */
         #main-content {
             opacity: 0;
             visibility: hidden;
@@ -143,7 +194,6 @@
             position: relative;
         }
 
-        /* تب پیش‌بینی فوت‌موب در زیر هر بازی */
         .fotmob-tab {
             background: linear-gradient(135deg, #00cc60, #009440);
             border: 2px solid rgba(0, 255, 140, 0.5);
@@ -201,7 +251,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
 
-        /* قالب دقیقاً مشابه تصویر انتخابی شما برای نتایج زنده */
+        /* بورد دیجیتال نقطه‌ای نتایج زنده */
         .pixel-scoreboard {
             background: #08110b;
             border: 3px solid rgba(0, 255, 130, 0.4);
@@ -224,7 +274,7 @@
         }
 
         .pixel-left-val {
-            color: #ff5533; /* عدد نارنجی/قرمز سمت چپ (شبیه تصویر) */
+            color: #ff5533;
             text-shadow: 0 0 8px rgba(255, 85, 51, 0.8);
         }
 
@@ -233,7 +283,7 @@
         }
 
         .pixel-right-val {
-            color: #00ff88; /* عدد سبز سمت راست (شبیه تصویر) */
+            color: #00ff88;
             text-shadow: 0 0 8px rgba(0, 255, 136, 0.8);
         }
 
@@ -441,11 +491,21 @@
 </head>
 <body>
 
-    <!-- صفحه ورود -->
+    <!-- صفحه ورود (Splash Screen) دقیقاً شبیه تصویر ارسالی شما -->
     <div id="splash-screen">
-        <div class="jelly-cup">🏆</div>
-        <div class="splash-title-box">
-            لیگ گداهای استرسی ۲
+        <div class="splash-container">
+            <div class="splash-trophy-box">
+                <!-- استفاده از کاپ دقیقاً مشابه تصویر شما -->
+                <img src="https://i.ibb.co/3ykX1k1/gold-trophy.png" alt="Cup" class="splash-trophy-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏆</text></svg>';">
+            </div>
+            <div class="splash-year">۱۴۰۵</div>
+            <div class="splash-title">لیگ گداهای استرسی ۲</div>
+            <div class="splash-subtitle">Stressed Beggars League</div>
+            
+            <!-- نوار لودینگ متحرک -->
+            <div class="loader-track">
+                <div class="loader-thumb"></div>
+            </div>
         </div>
     </div>
 
@@ -469,14 +529,13 @@
                         <span>اسپانیا</span>
                     </div>
                     
-                    <!-- بورد دیجیتال نقطه‌ای برای نتیجه زنده -->
                     <div class="pixel-scoreboard">
                         <div class="pixel-display">
-                            <span class="pixel-left-val" id="score1-home">2</span>
+                            <span class="pixel-left-val" id="score1-home">1</span>
                             <span class="pixel-separator">-</span>
-                            <span class="pixel-right-val" id="score1-away">1</span>
+                            <span class="pixel-right-val" id="score1-away">0</span>
                         </div>
-                        <div class="pixel-subtext" id="status1-label">نیمه دوم</div>
+                        <div class="pixel-subtext" id="status1-label">دقیقه ۷۵ (زنده)</div>
                     </div>
 
                     <div class="team left">
@@ -503,14 +562,13 @@
                         <span>چک</span>
                     </div>
                     
-                    <!-- بورد دیجیتال نقطه‌ای برای نتیجه زنده -->
                     <div class="pixel-scoreboard">
                         <div class="pixel-display">
-                            <span class="pixel-left-val" id="score2-home">0</span>
+                            <span class="pixel-left-val" id="score2-home">2</span>
                             <span class="pixel-separator">-</span>
-                            <span class="pixel-right-val" id="score2-away">0</span>
+                            <span class="pixel-right-val" id="score2-away">1</span>
                         </div>
-                        <div class="pixel-subtext" id="status2-label">نیمه دوم</div>
+                        <div class="pixel-subtext" id="status2-label">دقیقه ۶۰ (زنده)</div>
                     </div>
 
                     <div class="team left">
@@ -642,7 +700,7 @@
     </div>
 
     <script>
-        // اسپلش اسکرین
+        // اسپلش اسکرین و محو شدن آن بعد از لود
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const splash = document.getElementById('splash-screen');
@@ -650,7 +708,7 @@
                 splash.style.opacity = '0';
                 splash.style.visibility = 'hidden';
                 main.classList.add('visible');
-            }, 2200);
+            }, 2500);
         });
 
         // مدیریت تب‌ها
@@ -666,17 +724,6 @@
                 document.getElementById('gishah-tab').classList.add('active-tab');
             }
         }
-
-        // تابع تغییر زنده نتایج (آماده برای اتصال به داده‌های لایو)
-        function updateLiveScoreBoard(homeScore, awayScore, matchMinute, matchId) {
-            document.getElementById(`score${matchId}-home`).innerText = homeScore;
-            document.getElementById(`score${matchId}-away`).innerText = awayScore;
-            document.getElementById(`status${matchId}-label`).innerText = `دقیقه ${matchMinute} (زنده)`;
-        }
-
-        // مثال نحوه آپدیت کردن نتایج به‌صورت زنده (می‌توانید مقادیر را به دلخواه خود تغییر دهید یا به API وصل کنید):
-        // updateLiveScoreBoard(2, 1, '82', 1); // برای بازی اول
-        // updateLiveScoreBoard(0, 0, '15', 2); // برای بازی دوم
     </script>
 </body>
 </html>
