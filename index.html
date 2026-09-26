@@ -67,18 +67,18 @@
             text-align: center;
         }
 
-        /* کاپ لوکس و بسیار زیباتر */
+        /* کاپ جدید و زیبا (مدل ژله‌ای و درخشان) */
         .splash-trophy-container {
-            width: 130px;
-            height: 145px;
+            width: 140px;
+            height: 160px;
             margin-bottom: 20px;
-            filter: drop-shadow(0 15px 30px rgba(255, 215, 0, 0.4));
+            filter: drop-shadow(0 0 25px rgba(0, 255, 200, 0.6));
             animation: trophyFloatAnim 3s infinite ease-in-out;
         }
 
         @keyframes trophyFloatAnim {
             0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-8px) scale(1.02); }
+            50% { transform: translateY(-8px) scale(1.03); }
         }
 
         .splash-text-box {
@@ -115,7 +115,7 @@
         }
 
         .splash-main-title span {
-            color: #ffcc00;
+            color: #00ffcc;
         }
 
         .splash-progress-track {
@@ -131,9 +131,9 @@
         .splash-progress-fill {
             height: 100%;
             width: 0%;
-            background: #ffcc00;
+            background: #00ffcc;
             border-radius: 20px;
-            box-shadow: 0 0 12px rgba(255, 204, 0, 0.7);
+            box-shadow: 0 0 12px rgba(0, 255, 204, 0.7);
             animation: fillProgressSmooth 2.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
 
@@ -325,7 +325,7 @@
             width: 100%;
         }
 
-        /* جدول رده‌بندی اصلی در تب بازی‌ها */
+        /* جدول رده‌بندی اصلی در تب بازی‌ها (بر اساس تصویر اول) */
         .table-card {
             background: rgba(14, 48, 25, 0.95);
             border: 2px solid rgba(255, 215, 0, 0.4);
@@ -370,6 +370,16 @@
             border-radius: 10px;
         }
 
+        .highlight-row {
+            background: rgba(0, 255, 130, 0.15);
+            border-radius: 10px;
+        }
+
+        .highlight-score {
+            color: #00ff88 !important;
+            background: rgba(0, 255, 136, 0.25) !important;
+        }
+
         /* گیشه */
         .gishah-card {
             background: linear-gradient(145deg, #17375e 0%, #0d223c 100%);
@@ -411,28 +421,29 @@
             margin-bottom: 15px;
         }
 
-        /* جدول دوم: کلاسیک، بسیار جمع‌وجور با خط‌کشی ساده برای گیشه */
+        /* جدول دوم برای بخش گیشه (بر اساس تصویر دوم) با خط‌کشی کلاسیک و دقیق */
         .classic-mini-table {
             width: 100%;
             border-collapse: collapse;
-            background: rgba(10, 25, 45, 0.85);
+            background: rgba(10, 25, 45, 0.9);
             border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
             margin-top: 15px;
             font-size: 13px;
         }
 
         .classic-mini-table th, .classic-mini-table td {
-            padding: 8px 12px;
+            padding: 9px 12px;
             text-align: right;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .classic-mini-table th {
-            background: rgba(255, 215, 0, 0.15);
+            background: rgba(255, 215, 0, 0.2);
             color: #ffcc00;
             font-weight: 700;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.4);
         }
 
         .classic-mini-table tr:last-child td {
@@ -536,21 +547,30 @@
     <!-- صفحه ورود (Splash Screen) -->
     <div id="splash-screen">
         <div class="splash-inner">
-            <!-- کاپ طلاکوب شکیل‌تر -->
+            <!-- کاپ جدید ژله‌ای و زیبا -->
             <div class="splash-trophy-container">
-                <svg width="130" height="145" viewBox="0 0 120 130" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="45" y="105" width="30" height="15" fill="#997a00" rx="3"/>
-                    <rect x="35" y="120" width="50" height="7" fill="#665200" rx="2"/>
-                    <path d="M50 85 L70 85 L72 105 L48 105 Z" fill="#ffcc00"/>
-                    <path d="M30 28 C30 12, 90 12, 90 28 C90 55, 75 75, 70 85 L50 85 C45 75, 30 55, 30 28 Z" fill="url(#goldGrad)" stroke="#ffffff" stroke-width="2"/>
-                    <path d="M32 33 C10 33, 10 58, 32 63" fill="none" stroke="#ffdf00" stroke-width="5" stroke-linecap="round"/>
-                    <path d="M88 33 C110 33, 110 58, 88 63" fill="none" stroke="#ffdf00" stroke-width="5" stroke-linecap="round"/>
-                    <circle cx="60" cy="22" r="15" fill="#fff" stroke="#333" stroke-width="1.5"/>
+                <svg width="140" height="160" viewBox="0 0 130 140" xmlns="http://www.w3.org/2000/svg">
+                    <!-- پایه کاپ -->
+                    <rect x="45" y="115" width="40" height="15" fill="#1b4d3e" rx="4" stroke="#00ffcc" stroke-width="1.5"/>
+                    <rect x="35" y="130" width="60" height="8" fill="#0d2b22" rx="3" stroke="#00ffcc" stroke-width="1"/>
+                    <path d="M52 95 L78 95 L80 115 L50 115 Z" fill="url(#gelGrad)"/>
+                    
+                    <!-- بدنه ژله‌ای و درخشان کاپ -->
+                    <path d="M35 30 C35 15, 95 15, 95 30 C95 60, 80 80, 75 95 L55 95 C50 80, 35 60, 35 30 Z" fill="url(#gelGrad)" stroke="#ffffff" stroke-width="2.5" filter="drop-shadow(0 0 8px rgba(0,255,204,0.8))"/>
+                    
+                    <!-- دسته‌های کاپ -->
+                    <path d="M37 35 C15 35, 15 62, 37 68" fill="none" stroke="#00ffcc" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M93 35 C115 35, 115 62, 93 68" fill="none" stroke="#00ffcc" stroke-width="5" stroke-linecap="round"/>
+                    
+                    <!-- ستاره روی کاپ -->
+                    <circle cx="65" cy="45" r="14" fill="#ffffff" opacity="0.9"/>
+                    <polygon points="65,34 68,42 76,43 70,48 72,56 65,51 58,56 60,48 54,43 62,42" fill="#0d2b22"/>
+                    
                     <defs>
-                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#fff59d"/>
-                            <stop offset="50%" stop-color="#ffb300"/>
-                            <stop offset="100%" stop-color="#ff6f00"/>
+                        <linearGradient id="gelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#79fae4"/>
+                            <stop offset="50%" stop-color="#00bfa5"/>
+                            <stop offset="100%" stop-color="#004d40"/>
                         </linearGradient>
                     </defs>
                 </svg>
@@ -644,7 +664,7 @@
                 </div>
             </div>
 
-            <!-- جدول رده‌بندی اصلی -->
+            <!-- جدول رده‌بندی اصلی (مطابق تصویر اول) -->
             <div class="section-title">
                 <span>📊</span> جدول رده‌بندی پیش‌بینی‌ها
             </div>
@@ -652,43 +672,43 @@
             <div class="table-card">
                 <div class="table-row">
                     <div class="player-info"><span class="rank">1</span><span>Asm A</span></div>
-                    <div class="score">61</div>
+                    <div class="score">65</div>
                 </div>
-                <div class="table-row">
-                    <div class="player-info"><span class="rank">2</span><span>REZA GHATIFI</span></div>
-                    <div class="score">56</div>
+                <div class="table-row highlight-row">
+                    <div class="player-info"><span class="rank">2</span><span style="color: #00ff88; font-weight: 700;">REZA GHATIFI</span></div>
+                    <div class="score highlight-score">62</div>
                 </div>
                 <div class="table-row">
                     <div class="player-info"><span class="rank">3</span><span>حبیب نعیمی</span></div>
-                    <div class="score">52</div>
+                    <div class="score">57</div>
                 </div>
                 <div class="table-row">
                     <div class="player-info"><span class="rank">4</span><span>Donya Asil</span></div>
-                    <div class="score">50</div>
+                    <div class="score">56</div>
                 </div>
                 <div class="table-row">
                     <div class="player-info"><span class="rank">5</span><span>Mahdi</span></div>
-                    <div class="score">49</div>
+                    <div class="score">55</div>
                 </div>
                 <div class="table-row">
-                    <div class="player-info"><span class="rank">6</span><span>hajar daoudi</span></div>
-                    <div class="score">46</div>
+                    <div class="player-info"><span class="rank">6</span><span>محمد خلیلاوی پور</span></div>
+                    <div class="score">52</div>
                 </div>
                 <div class="table-row">
-                    <div class="player-info"><span class="rank">7</span><span>محمد خلیلاوی پور</span></div>
-                    <div class="score">45</div>
+                    <div class="player-info"><span class="rank">7</span><span>hey10</span></div>
+                    <div class="score">51</div>
                 </div>
                 <div class="table-row">
-                    <div class="player-info"><span class="rank">8</span><span>hey10</span></div>
-                    <div class="score">43</div>
+                    <div class="player-info"><span class="rank">8</span><span>hajar daoudi</span></div>
+                    <div class="score">50</div>
                 </div>
                 <div class="table-row">
                     <div class="player-info"><span class="rank">9</span><span>Ahlam Aljaber</span></div>
-                    <div class="score">42</div>
+                    <div class="score">44</div>
                 </div>
                 <div class="table-row">
                     <div class="player-info"><span class="rank">10</span><span>امین دریس</span></div>
-                    <div class="score">35</div>
+                    <div class="score">39</div>
                 </div>
                 <div class="table-row">
                     <div class="player-info"><span class="rank">11</span><span>Sama salehi</span></div>
@@ -711,6 +731,7 @@
                 <span>📰</span> گیشه اختصاصی لیگ گداهای استرسی ۲
             </div>
 
+            <!-- خبر اول -->
             <div class="gishah-card">
                 <div class="gishah-title-box">
                     <div class="gishah-icon-badge">🏆</div>
@@ -728,45 +749,90 @@
                 </div>
             </div>
 
-            <!-- تحلیل و جدول دوم برای بخش گیشه: جدول هفته ششم -->
+            <!-- خبر دوم با جدول دوم (مطابق تصویر دوم) و عنوان درخواستی -->
             <div class="gishah-card">
                 <div class="gishah-title-box">
                     <div class="gishah-icon-badge">📊</div>
-                    <span>آیا پیرا قهرمان زود هنگام هفته ششم…؟</span>
+                    <span>پیرا ترکوند…<br>قهرمانی پیرا شایددددد؟</span>
                 </div>
                 <div class="gishah-text">
-                    نگاهی به عملکرد فوق‌العاده و رکوردهای ثبت شده در جدول کلاسیک هفته ششم پیش‌بینی‌ها:
+                    جدول نتایج و رکوردهایث ثبت شده جدید که طوفان به پا کرده است:
                 </div>
 
-                <!-- جدول دوم ساده، کلاسیک و بسیار جمع‌وجور -->
+                <!-- جدول دوم (مطابق تصویر دوم) با خط‌کشی کلاسیک و دقیق -->
                 <table class="classic-mini-table">
                     <thead>
                         <tr>
                             <th>رتبه</th>
                             <th>نام کاربر</th>
-                            <th>امتیاز هفته ۶</th>
+                            <th>امتیاز</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>۱</td>
-                            <td>Asm A (پیرا)</td>
-                            <td>۱۸</td>
+                            <td>hey10</td>
+                            <td>۱۲</td>
                         </tr>
                         <tr>
                             <td>۲</td>
                             <td>حبیب نعیمی</td>
-                            <td>۱۶</td>
+                            <td>۹</td>
+                        </tr>
+                        <tr>
+                            <td>۳</td>
+                            <td>Donya Asil</td>
+                            <td>۸</td>
                         </tr>
                         <tr>
                             <td>۳</td>
                             <td>REZA GHATIFI</td>
-                            <td>۱۴</td>
+                            <td>۸</td>
                         </tr>
                         <tr>
+                            <td>۵</td>
+                            <td>محمد خلیلاوی پور</td>
+                            <td>۷</td>
+                        </tr>
+                        <tr>
+                            <td>۵</td>
+                            <td>Asm A</td>
+                            <td>۷</td>
+                        </tr>
+                        <tr>
+                            <td>۷</td>
+                            <td>Mahdi</td>
+                            <td>۶</td>
+                        </tr>
+                        <tr>
+                            <td>۷</td>
+                            <td>hajar daoudi</td>
+                            <td>۶</td>
+                        </tr>
+                        <tr>
+                            <td>۹</td>
+                            <td>امین دریس</td>
                             <td>۴</td>
-                            <td>Donya Asil</td>
-                            <td>۱۲</td>
+                        </tr>
+                        <tr>
+                            <td>۱۰</td>
+                            <td>Ahlam Aljaber</td>
+                            <td>۲</td>
+                        </tr>
+                        <tr>
+                            <td>۱۱</td>
+                            <td>Sama salehi</td>
+                            <td>۰</td>
+                        </tr>
+                        <tr>
+                            <td>۱۱</td>
+                            <td>مهدی</td>
+                            <td>۰</td>
+                        </tr>
+                        <tr>
+                            <td>۱۱</td>
+                            <td>محمد جاسميان</td>
+                            <td>۰</td>
                         </tr>
                     </tbody>
                 </table>
@@ -778,6 +844,7 @@
                 </div>
             </div>
 
+            <!-- خبر سوم -->
             <div class="gishah-card">
                 <div class="gishah-title-box">
                     <div class="gishah-icon-badge">⚽️</div>
