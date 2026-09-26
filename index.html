@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>لیگ گداهای استرسی ۲</title>
-    <!-- استفاده از فونت استاندارد و ضخیم مشابه تصویر -->
+    <!-- فونت استاندارد و ضخیم -->
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -24,7 +24,7 @@
             align-items: center;
         }
 
-        /* صفحه ورود شبیه به استایل تصویر مرجع با پس‌زمینه خط‌کشی کج زمین */
+        /* صفحه ورود با پس‌زمینه خط‌کشی کج زمین */
         #splash-screen {
             position: fixed;
             top: 0;
@@ -42,7 +42,6 @@
             padding: 20px;
         }
 
-        /* خطوط کج و مایل زمین فوتبال در پس‌زمینه اسپلش */
         #splash-screen::before {
             content: '';
             position: absolute;
@@ -68,12 +67,12 @@
             text-align: center;
         }
 
-        /* کاپ بزرگ سه‌بعدی و لوکس مشابه تصویر */
+        /* کاپ لوکس و بسیار زیباتر */
         .splash-trophy-container {
-            width: 140px;
-            height: 150px;
+            width: 130px;
+            height: 145px;
             margin-bottom: 20px;
-            filter: drop-shadow(0 15px 30px rgba(255, 215, 0, 0.35));
+            filter: drop-shadow(0 15px 30px rgba(255, 215, 0, 0.4));
             animation: trophyFloatAnim 3s infinite ease-in-out;
         }
 
@@ -82,7 +81,6 @@
             50% { transform: translateY(-8px) scale(1.02); }
         }
 
-        /* بخش متن‌ها و عناوین مطابق تصویر */
         .splash-text-box {
             display: flex;
             flex-direction: column;
@@ -98,7 +96,6 @@
             transform: translateY(0);
         }
 
-        /* عدد ۱۴۰۵ سبز کوچک بالای عنوان[span_4](start_span)[span_4](end_span) */
         .splash-year-green {
             color: #00ffaa;
             font-size: 18px;
@@ -108,7 +105,6 @@
             text-shadow: 0 0 10px rgba(0,255,170,0.4);
         }
 
-        /* عنوان اصلی درشت و ضخیم[span_5](start_span)[span_5](end_span) */
         .splash-main-title {
             color: #ffffff;
             font-size: 26px;
@@ -122,7 +118,6 @@
             color: #ffcc00;
         }
 
-        /* نوار لودینگ پرشونده دقیقاً مانند تصویر[span_6](start_span)[span_6](end_span) */
         .splash-progress-track {
             width: 300px;
             height: 14px;
@@ -271,7 +266,6 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
 
-        /* بورد دیجیتال نقطه‌ای نتایج زنده */
         .pixel-scoreboard {
             background: #08110b;
             border: 3px solid rgba(0, 255, 130, 0.4);
@@ -331,7 +325,7 @@
             width: 100%;
         }
 
-        /* جدول رده‌بندی */
+        /* جدول رده‌بندی اصلی در تب بازی‌ها */
         .table-card {
             background: rgba(14, 48, 25, 0.95);
             border: 2px solid rgba(255, 215, 0, 0.4);
@@ -415,6 +409,34 @@
             color: #e2ecf5;
             font-weight: 600;
             margin-bottom: 15px;
+        }
+
+        /* جدول دوم: کلاسیک، بسیار جمع‌وجور با خط‌کشی ساده برای گیشه */
+        .classic-mini-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(10, 25, 45, 0.85);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 15px;
+            font-size: 13px;
+        }
+
+        .classic-mini-table th, .classic-mini-table td {
+            padding: 8px 12px;
+            text-align: right;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .classic-mini-table th {
+            background: rgba(255, 215, 0, 0.15);
+            color: #ffcc00;
+            font-weight: 700;
+        }
+
+        .classic-mini-table tr:last-child td {
+            border-bottom: none;
         }
 
         .gishah-footer-pattern {
@@ -511,43 +533,35 @@
 </head>
 <body>
 
-    <!-- صفحه ورود (Splash Screen) با کاپ بزرگ، سال ۱۴۰۵ سبز، فونت ضخیم و نوار لودینگ -->
+    <!-- صفحه ورود (Splash Screen) -->
     <div id="splash-screen">
         <div class="splash-inner">
-            <!-- کاپ بزرگ سه‌بعدی و لوکس -->
+            <!-- کاپ طلاکوب شکیل‌تر -->
             <div class="splash-trophy-container">
-                <svg width="140" height="150" viewBox="0 0 120 130" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="45" y="105" width="30" height="15" fill="#b38f00" rx="3"/>
-                    <rect x="35" y="120" width="50" height="7" fill="#806400" rx="2"/>
-                    <path d="M50 85 L70 85 L72 105 L48 105 Z" fill="#ffd700"/>
-                    <path d="M30 30 C30 15, 90 15, 90 30 C90 55, 75 75, 70 85 L50 85 C45 75, 30 55, 30 30 Z" fill="url(#goldGrad)" stroke="#fff" stroke-width="1.5"/>
-                    <path d="M32 35 C12 35, 12 60, 32 65" fill="none" stroke="#ffd700" stroke-width="6" stroke-linecap="round"/>
-                    <path d="M88 35 C108 35, 108 60, 88 65" fill="none" stroke="#ffd700" stroke-width="6" stroke-linecap="round"/>
-                    <circle cx="60" cy="22" r="18" fill="url(#ballGrad)" stroke="#fff" stroke-width="1.5"/>
-                    <path d="M55 12 L60 18 L65 12 Z" fill="#111"/>
-                    <path d="M48 20 L55 22 L52 28 Z" fill="#111"/>
-                    <path d="M72 20 L65 22 L68 28 Z" fill="#111"/>
+                <svg width="130" height="145" viewBox="0 0 120 130" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="45" y="105" width="30" height="15" fill="#997a00" rx="3"/>
+                    <rect x="35" y="120" width="50" height="7" fill="#665200" rx="2"/>
+                    <path d="M50 85 L70 85 L72 105 L48 105 Z" fill="#ffcc00"/>
+                    <path d="M30 28 C30 12, 90 12, 90 28 C90 55, 75 75, 70 85 L50 85 C45 75, 30 55, 30 28 Z" fill="url(#goldGrad)" stroke="#ffffff" stroke-width="2"/>
+                    <path d="M32 33 C10 33, 10 58, 32 63" fill="none" stroke="#ffdf00" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M88 33 C110 33, 110 58, 88 63" fill="none" stroke="#ffdf00" stroke-width="5" stroke-linecap="round"/>
+                    <circle cx="60" cy="22" r="15" fill="#fff" stroke="#333" stroke-width="1.5"/>
                     <defs>
                         <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#fff176"/>
-                            <stop offset="50%" stop-color="#ffca28"/>
-                            <stop offset="100%" stop-color="#ff8f00"/>
+                            <stop offset="0%" stop-color="#fff59d"/>
+                            <stop offset="50%" stop-color="#ffb300"/>
+                            <stop offset="100%" stop-color="#ff6f00"/>
                         </linearGradient>
-                        <radialGradient id="ballGrad" cx="35%" cy="35%" r="65%">
-                            <stop offset="0%" stop-color="#ffffff"/>
-                            <stop offset="70%" stop-color="#cfd8dc"/>
-                            <stop offset="100%" stop-color="#455a64"/>
-                        </radialGradient>
                     </defs>
                 </svg>
             </div>
 
-            <!-- نوار لودینگ پرشونده -->
+            <!-- نوار لودینگ -->
             <div class="splash-progress-track">
                 <div class="splash-progress-fill"></div>
             </div>
 
-            <!-- متن نهایی که با پر شدن نوار ظاهر می‌شود -->
+            <!-- متن نهایی -->
             <div class="splash-text-box" id="splashTextBox">
                 <div class="splash-year-green">۱۴۰۵</div>
                 <div class="splash-main-title">لیگ گداهای استرسی <span>فصل دوم</span></div>
@@ -630,7 +644,7 @@
                 </div>
             </div>
 
-            <!-- جدول رده‌بندی -->
+            <!-- جدول رده‌بندی اصلی -->
             <div class="section-title">
                 <span>📊</span> جدول رده‌بندی پیش‌بینی‌ها
             </div>
@@ -707,6 +721,56 @@
                     <br><br>
                     باتوجه به اینکه پیرا و‌نعیمی هردو در یک هفته فقط 3روز در کنار هم هستن باید دید ایا از روی دست هم تقلب کردن یا خیر؟
                 </div>
+                <div class="gishah-footer-pattern">
+                    <div class="gishah-pattern-box"></div>
+                    <div class="gishah-pattern-box"></div>
+                    <div class="gishah-pattern-box"></div>
+                </div>
+            </div>
+
+            <!-- تحلیل و جدول دوم برای بخش گیشه: جدول هفته ششم -->
+            <div class="gishah-card">
+                <div class="gishah-title-box">
+                    <div class="gishah-icon-badge">📊</div>
+                    <span>آیا پیرا قهرمان زود هنگام هفته ششم…؟</span>
+                </div>
+                <div class="gishah-text">
+                    نگاهی به عملکرد فوق‌العاده و رکوردهای ثبت شده در جدول کلاسیک هفته ششم پیش‌بینی‌ها:
+                </div>
+
+                <!-- جدول دوم ساده، کلاسیک و بسیار جمع‌وجور -->
+                <table class="classic-mini-table">
+                    <thead>
+                        <tr>
+                            <th>رتبه</th>
+                            <th>نام کاربر</th>
+                            <th>امتیاز هفته ۶</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>۱</td>
+                            <td>Asm A (پیرا)</td>
+                            <td>۱۸</td>
+                        </tr>
+                        <tr>
+                            <td>۲</td>
+                            <td>حبیب نعیمی</td>
+                            <td>۱۶</td>
+                        </tr>
+                        <tr>
+                            <td>۳</td>
+                            <td>REZA GHATIFI</td>
+                            <td>۱۴</td>
+                        </tr>
+                        <tr>
+                            <td>۴</td>
+                            <td>Donya Asil</td>
+                            <td>۱۲</td>
+                        </tr>
+                    </tbody>
+                </table>
+
                 <div class="gishah-footer-pattern">
                     <div class="gishah-pattern-box"></div>
                     <div class="gishah-pattern-box"></div>
