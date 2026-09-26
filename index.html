@@ -24,7 +24,7 @@
             align-items: center;
         }
 
-        /* صفحه ورود با پس‌زمینه خط‌کشی کج زمین */
+        /* صفحه لودینگ اولیه (Splash Screen) */
         #splash-screen {
             position: fixed;
             top: 0;
@@ -67,7 +67,6 @@
             text-align: center;
         }
 
-        /* کاپ جدید و زیبا (مدل ژله‌ای و درخشان) */
         .splash-trophy-container {
             width: 140px;
             height: 160px;
@@ -140,6 +139,150 @@
         @keyframes fillProgressSmooth {
             0% { width: 0%; }
             100% { width: 100%; }
+        }
+
+        /* پاپ‌آپ خوش‌آمدگویی (پیغام پیش‌بینی امروز) */
+        #welcome-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 998;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        #welcome-popup.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup-card {
+            background: linear-gradient(145deg, #134e27, #092c16);
+            border: 3px solid #ffcc00;
+            border-radius: 25px;
+            width: 100%;
+            max-width: 420px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.8), inset 0 2px 10px rgba(255,255,255,0.2);
+            animation: popupScale 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes popupScale {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .popup-badge {
+            background: #ffcc00;
+            color: #111;
+            font-weight: 900;
+            font-size: 14px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 10px rgba(255,204,0,0.4);
+        }
+
+        .popup-title {
+            font-size: 18px;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .popup-match-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(0, 255, 130, 0.4);
+            border-radius: 18px;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .popup-team {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            width: 38%;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .popup-flag {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .popup-vs-time {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .popup-vs {
+            font-size: 14px;
+            font-weight: 900;
+            color: #ffcc00;
+        }
+
+        .popup-time {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13px;
+            font-weight: 900;
+            background: #08110b;
+            color: #00ff88;
+            padding: 3px 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(0,255,136,0.3);
+        }
+
+        .popup-subtitle {
+            font-size: 13px;
+            color: #ffea75;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            background: rgba(255, 215, 0, 0.1);
+            padding: 10px;
+            border-radius: 12px;
+            border: 1px dashed rgba(255, 215, 0, 0.4);
+        }
+
+        .popup-close-btn {
+            background: linear-gradient(135deg, #00cc60, #009440);
+            color: #fff;
+            border: 2px solid #00ffbb;
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-size: 15px;
+            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,204,96,0.4);
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+
+        .popup-close-btn:hover {
+            transform: scale(1.02);
+            background: linear-gradient(135deg, #00e66b, #00ab4b);
         }
 
         /* محتوای اصلی سایت */
@@ -325,7 +468,7 @@
             width: 100%;
         }
 
-        /* جدول رده‌بندی اصلی در تب بازی‌ها (بر اساس تصویر اول) */
+        /* جدول رده‌بندی اصلی در تب بازی‌ها */
         .table-card {
             background: rgba(14, 48, 25, 0.95);
             border: 2px solid rgba(255, 215, 0, 0.4);
@@ -421,7 +564,7 @@
             margin-bottom: 15px;
         }
 
-        /* جدول دوم برای بخش گیشه (بر اساس تصویر دوم) با خط‌کشی کلاسیک و دقیق */
+        /* جدول دوم برای بخش گیشه */
         .classic-mini-table {
             width: 100%;
             border-collapse: collapse;
@@ -544,28 +687,19 @@
 </head>
 <body>
 
-    <!-- صفحه ورود (Splash Screen) -->
+    <!-- صفحه ورود اولیه (Splash Screen) -->
     <div id="splash-screen">
         <div class="splash-inner">
-            <!-- کاپ جدید ژله‌ای و زیبا -->
             <div class="splash-trophy-container">
                 <svg width="140" height="160" viewBox="0 0 130 140" xmlns="http://www.w3.org/2000/svg">
-                    <!-- پایه کاپ -->
                     <rect x="45" y="115" width="40" height="15" fill="#1b4d3e" rx="4" stroke="#00ffcc" stroke-width="1.5"/>
                     <rect x="35" y="130" width="60" height="8" fill="#0d2b22" rx="3" stroke="#00ffcc" stroke-width="1"/>
                     <path d="M52 95 L78 95 L80 115 L50 115 Z" fill="url(#gelGrad)"/>
-                    
-                    <!-- بدنه ژله‌ای و درخشان کاپ -->
                     <path d="M35 30 C35 15, 95 15, 95 30 C95 60, 80 80, 75 95 L55 95 C50 80, 35 60, 35 30 Z" fill="url(#gelGrad)" stroke="#ffffff" stroke-width="2.5" filter="drop-shadow(0 0 8px rgba(0,255,204,0.8))"/>
-                    
-                    <!-- دسته‌های کاپ -->
                     <path d="M37 35 C15 35, 15 62, 37 68" fill="none" stroke="#00ffcc" stroke-width="5" stroke-linecap="round"/>
                     <path d="M93 35 C115 35, 115 62, 93 68" fill="none" stroke="#00ffcc" stroke-width="5" stroke-linecap="round"/>
-                    
-                    <!-- ستاره روی کاپ -->
                     <circle cx="65" cy="45" r="14" fill="#ffffff" opacity="0.9"/>
                     <polygon points="65,34 68,42 76,43 70,48 72,56 65,51 58,56 60,48 54,43 62,42" fill="#0d2b22"/>
-                    
                     <defs>
                         <linearGradient id="gelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" stop-color="#79fae4"/>
@@ -575,17 +709,42 @@
                     </defs>
                 </svg>
             </div>
-
-            <!-- نوار لودینگ -->
             <div class="splash-progress-track">
                 <div class="splash-progress-fill"></div>
             </div>
-
-            <!-- متن نهایی -->
             <div class="splash-text-box" id="splashTextBox">
                 <div class="splash-year-green">۱۴۰۵</div>
                 <div class="splash-main-title">لیگ گداهای استرسی <span>فصل دوم</span></div>
             </div>
+        </div>
+    </div>
+
+    <!-- پاپ‌آپ پیغام پیش‌بینی امروز (پرتغال و نروژ) -->
+    <div id="welcome-popup">
+        <div class="popup-card">
+            <div class="popup-badge">🔥 پیش‌بینی امروز</div>
+            <div class="popup-title">بازی مهم امروز را پیش‌بینی کنید!</div>
+            
+            <div class="popup-match-box">
+                <div class="popup-team">
+                    <img src="https://flagcdn.com/w80/pt.png" class="popup-flag" alt="Portugal">
+                    <span>پرتغال</span>
+                </div>
+                <div class="popup-vs-time">
+                    <span class="popup-vs">VS</span>
+                    <span class="popup-time">۲۲:۱۵</span>
+                </div>
+                <div class="popup-team">
+                    <img src="https://flagcdn.com/w80/no.png" class="popup-flag" alt="Norway">
+                    <span>نروژ</span>
+                </div>
+            </div>
+
+            <div class="popup-subtitle">
+                بیا نزاریم پیرا قهرمان هفته ششم بشه!
+            </div>
+
+            <button class="popup-close-btn" onclick="closePopup()">بستن و ورود به سایت</button>
         </div>
     </div>
 
@@ -615,7 +774,7 @@
                             <span class="pixel-separator">-</span>
                             <span class="pixel-right-val">3</span>
                         </div>
-                        <div class="pixel-subtext">پایان بازی)</div>
+                        <div class="pixel-subtext">پایان بازی</div>
                     </div>
 
                     <div class="team left">
@@ -648,7 +807,7 @@
                             <span class="pixel-separator">-</span>
                             <span class="pixel-right-val">1</span>
                         </div>
-                        <div class="pixel-subtext"> پایان بازی</div>
+                        <div class="pixel-subtext">پایان بازی</div>
                     </div>
 
                     <div class="team left">
@@ -664,7 +823,7 @@
                 </div>
             </div>
 
-            <!-- جدول رده‌بندی اصلی (مطابق تصویر اول) -->
+            <!-- جدول رده‌بندی اصلی -->
             <div class="section-title">
                 <span>📊</span> جدول رده‌بندی پیش‌بینی‌ها
             </div>
@@ -749,7 +908,7 @@
                 </div>
             </div>
 
-            <!-- خبر دوم با جدول دوم (مطابق تصویر دوم) و عنوان درخواستی -->
+            <!-- خبر دوم با جدول دوم -->
             <div class="gishah-card">
                 <div class="gishah-title-box">
                     <div class="gishah-icon-badge">📊</div>
@@ -759,7 +918,6 @@
                     جدول نتایج و رکوردهایث ثبت شده جدید که طوفان به پا کرده است:
                 </div>
 
-                <!-- جدول دوم (مطابق تصویر دوم) با خط‌کشی کلاسیک و دقیق -->
                 <table class="classic-mini-table">
                     <thead>
                         <tr>
@@ -877,21 +1035,31 @@
     </div>
 
     <script>
-        // مدیریت ظاهر شدن متن بعد از پر شدن نوار لودینگ
+        // مدیریت لودینگ اولیه
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('splashTextBox').classList.add('show');
             }, 2100);
 
-            // محو کردن صفحه ورود و باز شدن سایت اصلی
             setTimeout(() => {
                 const splash = document.getElementById('splash-screen');
-                const main = document.getElementById('main-content');
                 splash.style.opacity = '0';
                 splash.style.visibility = 'hidden';
-                main.classList.add('visible');
+                
+                // نمایش پاپ‌آپ پیغام پیش‌بینی بازی امروز (پرتغال و نروژ) پس از محو شدن لودینگ
+                setTimeout(() => {
+                    document.getElementById('welcome-popup').classList.add('active');
+                }, 400);
             }, 3600);
         });
+
+        // تابع بستن پاپ‌آپ پیغام و ورود به سایت اصلی
+        function closePopup() {
+            const popup = document.getElementById('welcome-popup');
+            const main = document.getElementById('main-content');
+            popup.classList.remove('active');
+            main.classList.add('visible');
+        }
 
         // سیستم تعویض تب‌ها
         function switchTab(tabName, element) {
