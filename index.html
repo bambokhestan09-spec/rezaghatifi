@@ -23,14 +23,14 @@
             align-items: center;
         }
 
-        /* صفحه ورود (Splash Screen) دقیقاً مطابق تصویر ارسالی با پس‌زمینه مشکی و نوار متحرک */
+        /* صفحه ورود (Splash Screen) دقیقا مشابه ترکیب تصویر ارسالی شما */
         #splash-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: #11151c; /* پس‌زمینه مشکی تیره مشابه تصویر */
+            background-color: #11151c; /* پس‌زمینه مشکی تیره مشابه عکس */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -40,65 +40,74 @@
             padding: 20px;
         }
 
-        .splash-container {
+        .splash-wrapper-content {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
-            max-width: 320px;
-            position: relative;
+            max-width: 360px;
         }
 
-        /* ساختار کاپ طلایی دقیقاً مطابق مدل عکس */
+        /* بخش بالایی: متون در سمت چپ و کاپ در سمت راست دقیقاً مثل نمونه */
+        .splash-top-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 35px;
+            direction: rtl;
+        }
+
+        .splash-texts {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: right;
+        }
+
+        .splash-year {
+            color: #79f298; /* رنگ سبز مایل به زرد مشابه تصویر */
+            font-size: 19px;
+            font-weight: 900;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+        }
+
+        .splash-title {
+            color: #ffffff;
+            font-size: 26px;
+            font-weight: 900;
+            margin-bottom: 2px;
+            white-space: nowrap;
+        }
+
+        .splash-subtitle {
+            color: #7d8b99;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* کاپ طلایی دقیقاً در سمت راست متون */
         .splash-trophy-box {
-            position: relative;
-            margin-bottom: 25px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .splash-trophy-img {
-            width: 110px;
+        .splash-trophy-svg {
+            width: 95px;
             height: auto;
-            filter: drop-shadow(0 10px 15px rgba(255, 215, 0, 0.3));
+            filter: drop-shadow(0 8px 12px rgba(255, 215, 0, 0.25));
             animation: floatTrophy 2s infinite ease-in-out;
         }
 
         @keyframes floatTrophy {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
+            50% { transform: translateY(-5px); }
         }
 
-        /* عدد سال ۱۴۰۵ در بالای متن */
-        .splash-year {
-            color: #00ffaa;
-            font-size: 18px;
-            font-weight: 900;
-            margin-bottom: 5px;
-            text-shadow: 0 0 10px rgba(0, 255, 170, 0.4);
-        }
-
-        /* عنوان اصلی صفحه لودینگ */
-        .splash-title {
-            color: #ffffff;
-            font-size: 24px;
-            font-weight: 900;
-            text-align: center;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-        }
-
-        /* زیرنویس انگلیسی / متنی */
-        .splash-subtitle {
-            color: #7d8b99;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 40px;
-        }
-
-        /* نوار لودینگ متحرک دقیقاً مشابه تصویر */
+        /* نوار لودینگ متحرک در پایین بخش ورودی */
         .loader-track {
             width: 100%;
             height: 12px;
@@ -491,16 +500,54 @@
 </head>
 <body>
 
-    <!-- صفحه ورود (Splash Screen) دقیقاً شبیه تصویر ارسالی شما -->
+    <!-- صفحه ورود (Splash Screen) دقیقاً مطابق چیدمان عکس ارسالی شما -->
     <div id="splash-screen">
-        <div class="splash-container">
-            <div class="splash-trophy-box">
-                <!-- استفاده از کاپ دقیقاً مشابه تصویر شما -->
-                <img src="https://i.ibb.co/3ykX1k1/gold-trophy.png" alt="Cup" class="splash-trophy-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏆</text></svg>';">
+        <div class="splash-wrapper-content">
+            <!-- ردیف بالا: متون در سمت چپ و کاپ در سمت راست -->
+            <div class="splash-top-row">
+                <div class="splash-texts">
+                    <div class="splash-year">۱۴۰۵</div>
+                    <div class="splash-title">لیگ گداهای استرسی ۲</div>
+                    <div class="splash-subtitle">Stressed Beggars League</div>
+                </div>
+                
+                <div class="splash-trophy-box">
+                    <!-- کاپ طلایی طراحی‌شده با وکتور دقیق (بدون وابستگی به عکس خارجی) -->
+                    <svg class="splash-trophy-svg" viewBox="0 0 120 130" xmlns="http://www.w3.org/2000/svg">
+                        <!-- پایه‌ها -->
+                        <rect x="45" y="105" width="30" height="15" fill="#b38f00" rx="3"/>
+                        <rect x="35" y="120" width="50" height="7" fill="#806400" rx="2"/>
+                        <path d="M50 85 L70 85 L72 105 L48 105 Z" fill="#ffd700"/>
+                        
+                        <!-- بدنه اصلی کاپ -->
+                        <path d="M30 30 C30 15, 90 15, 90 30 C90 55, 75 75, 70 85 L50 85 C45 75, 30 55, 30 30 Z" fill="url(#goldGrad)" stroke="#fff" stroke-width="1.5"/>
+                        
+                        <!-- دسته‌های کاپ -->
+                        <path d="M32 35 C15 35, 15 60, 32 65" fill="none" stroke="#ffd700" stroke-width="6" stroke-linecap="round"/>
+                        <path d="M88 35 C105 35, 105 60, 88 65" fill="none" stroke="#ffd700" stroke-width="6" stroke-linecap="round"/>
+
+                        <!-- توپ فوتبال روی کاپ (دقیقاً مشابه عکس) -->
+                        <circle cx="60" cy="22" r="18" fill="url(#ballGrad)" stroke="#fff" stroke-width="1.5"/>
+                        <path d="M55 12 L60 18 L65 12 Z" fill="#222"/>
+                        <path d="M48 20 L55 22 L52 28 Z" fill="#222"/>
+                        <path d="M72 20 L65 22 L68 28 Z" fill="#222"/>
+
+                        <!-- گرادیانت‌های طلایی -->
+                        <defs>
+                            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#fff176"/>
+                                <stop offset="50%" stop-color="#ffd700"/>
+                                <stop offset="100%" stop-color="#ff8f00"/>
+                            </linearGradient>
+                            <radialGradient id="ballGrad" cx="35%" cy="35%" r="65%">
+                                <stop offset="0%" stop-color="#ffffff"/>
+                                <stop offset="70%" stop-color="#e0e0e0"/>
+                                <stop offset="100%" stop-color="#9e9e9e"/>
+                            </radialGradient>
+                        </defs>
+                    </svg>
+                </div>
             </div>
-            <div class="splash-year">۱۴۰۵</div>
-            <div class="splash-title">لیگ گداهای استرسی ۲</div>
-            <div class="splash-subtitle">Stressed Beggars League</div>
             
             <!-- نوار لودینگ متحرک -->
             <div class="loader-track">
