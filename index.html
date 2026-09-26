@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>لیگ گداهای استرسی ۲</title>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- استفاده از فونت استاندارد و ضخیم مشابه تصویر -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -23,14 +24,14 @@
             align-items: center;
         }
 
-        /* صفحه ورود با پس‌زمینه خط‌کشی کج زمین چمن */
+        /* صفحه ورود شبیه به استایل تصویر مرجع با پس‌زمینه خط‌کشی کج زمین */
         #splash-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: linear-gradient(135deg, #062610 0%, #093c19 50%, #031407 100%);
+            background: #0f131a;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -50,8 +51,7 @@
             width: 200%;
             height: 200%;
             background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(255, 255, 255, 0.04) 60px, rgba(255, 255, 255, 0.04) 120px),
-                radial-gradient(circle, transparent 30%, rgba(0, 0, 0, 0.6) 90%);
+                repeating-linear-gradient(45deg, transparent, transparent 50px, rgba(255, 255, 255, 0.03) 50px, rgba(255, 255, 255, 0.03) 100px);
             transform: rotate(-15deg);
             z-index: 1;
             pointer-events: none;
@@ -63,90 +63,88 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            max-width: 340px;
+            max-width: 380px;
             width: 100%;
             text-align: center;
         }
 
-        /* توپ بزرگ و ژله‌ای (متحرک و چرخان با هاور اسکویش) */
-        .jelly-ball-container {
-            width: 110px;
-            height: 110px;
-            margin-bottom: 25px;
-            position: relative;
-            animation: ballFlyIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, ballJellyLoop 2.5s infinite ease-in-out 1.2s;
-            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.6));
-        }
-
-        @keyframes ballFlyIn {
-            0% { transform: scale(0) rotate(-180deg); opacity: 0; }
-            80% { transform: scale(1.15) rotate(15deg); opacity: 1; }
-            100% { transform: scale(1) rotate(0deg); opacity: 1; }
-        }
-
-        @keyframes ballJellyLoop {
-            0%, 100% { transform: scale(1, 1) rotate(0deg); }
-            25% { transform: scale(1.12, 0.88) rotate(45deg); }
-            50% { transform: scale(0.92, 1.08) rotate(90deg); }
-            75% { transform: scale(1.06, 0.94) rotate(135deg); }
-        }
-
-        .soccer-ball-svg {
-            width: 100%;
-            height: 100%;
-            animation: ballSpinOnly 8s infinite linear;
-        }
-
-        @keyframes ballSpinOnly {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* نوار لودینگ پرشونده */
-        .splash-progress-track {
-            width: 100%;
-            height: 8px;
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+        /* کاپ بزرگ سه‌بعدی و لوکس مشابه تصویر */
+        .splash-trophy-container {
+            width: 140px;
+            height: 150px;
             margin-bottom: 20px;
+            filter: drop-shadow(0 15px 30px rgba(255, 215, 0, 0.35));
+            animation: trophyFloatAnim 3s infinite ease-in-out;
+        }
+
+        @keyframes trophyFloatAnim {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-8px) scale(1.02); }
+        }
+
+        /* بخش متن‌ها و عناوین مطابق تصویر */
+        .splash-text-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.6s ease;
+        }
+
+        .splash-text-box.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* عدد ۱۴۰۵ سبز کوچک بالای عنوان[span_4](start_span)[span_4](end_span) */
+        .splash-year-green {
+            color: #00ffaa;
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+            text-shadow: 0 0 10px rgba(0,255,170,0.4);
+        }
+
+        /* عنوان اصلی درشت و ضخیم[span_5](start_span)[span_5](end_span) */
+        .splash-main-title {
+            color: #ffffff;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+            line-height: 1.3;
+        }
+
+        .splash-main-title span {
+            color: #ffcc00;
+        }
+
+        /* نوار لودینگ پرشونده دقیقاً مانند تصویر[span_6](start_span)[span_6](end_span) */
+        .splash-progress-track {
+            width: 300px;
+            height: 14px;
+            background: #1c2331;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.8);
         }
 
         .splash-progress-fill {
             height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, #ffcc00, #00ff88);
-            border-radius: 10px;
-            box-shadow: 0 0 12px rgba(0, 255, 136, 0.8);
-            animation: fillProgress 2.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            background: #ffcc00;
+            border-radius: 20px;
+            box-shadow: 0 0 12px rgba(255, 204, 0, 0.7);
+            animation: fillProgressSmooth 2.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
 
-        @keyframes fillProgress {
+        @keyframes fillProgressSmooth {
             0% { width: 0%; }
             100% { width: 100%; }
-        }
-
-        /* متن نهایی بعد از پر شدن نوار */
-        .splash-reveal-text {
-            font-size: 20px;
-            font-weight: 900;
-            color: #fff;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.8);
-            opacity: 0;
-            transform: translateY(15px);
-            transition: all 0.6s ease;
-            letter-spacing: -0.5px;
-        }
-
-        .splash-reveal-text.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .splash-reveal-text span {
-            color: #ffcc00;
         }
 
         /* محتوای اصلی سایت */
@@ -513,39 +511,46 @@
 </head>
 <body>
 
-    <!-- صفحه ورود پویا با پس‌زمینه خط‌کشی کج زمین و توپ ژله‌ای چرخان -->
+    <!-- صفحه ورود (Splash Screen) با کاپ بزرگ، سال ۱۴۰۵ سبز، فونت ضخیم و نوار لودینگ -->
     <div id="splash-screen">
         <div class="splash-inner">
-            <!-- توپ بزرگ و ژله‌ای سه‌بعدی -->
-            <div class="jelly-ball-container">
-                <svg class="soccer-ball-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="46" fill="url(#ballGrad)" stroke="#ffffff" stroke-width="3"/>
-                    <!-- پنج ضلعی مرکزی -->
-                    <polygon points="50,35 62,43 58,57 42,57 38,43" fill="#111111"/>
-                    <!-- خطوط پنل‌ها -->
-                    <line x1="50" y1="35" x2="50" y2="4" stroke="#111111" stroke-width="3"/>
-                    <line x1="62" y1="43" x2="90" y2="30" stroke="#111111" stroke-width="3"/>
-                    <line x1="58" y1="57" x2="82" y2="82" stroke="#111111" stroke-width="3"/>
-                    <line x1="42" y1="57" x2="18" y2="82" stroke="#111111" stroke-width="3"/>
-                    <line x1="38" y1="43" x2="10" y2="30" stroke="#111111" stroke-width="3"/>
+            <!-- کاپ بزرگ سه‌بعدی و لوکس -->
+            <div class="splash-trophy-container">
+                <svg width="140" height="150" viewBox="0 0 120 130" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="45" y="105" width="30" height="15" fill="#b38f00" rx="3"/>
+                    <rect x="35" y="120" width="50" height="7" fill="#806400" rx="2"/>
+                    <path d="M50 85 L70 85 L72 105 L48 105 Z" fill="#ffd700"/>
+                    <path d="M30 30 C30 15, 90 15, 90 30 C90 55, 75 75, 70 85 L50 85 C45 75, 30 55, 30 30 Z" fill="url(#goldGrad)" stroke="#fff" stroke-width="1.5"/>
+                    <path d="M32 35 C12 35, 12 60, 32 65" fill="none" stroke="#ffd700" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M88 35 C108 35, 108 60, 88 65" fill="none" stroke="#ffd700" stroke-width="6" stroke-linecap="round"/>
+                    <circle cx="60" cy="22" r="18" fill="url(#ballGrad)" stroke="#fff" stroke-width="1.5"/>
+                    <path d="M55 12 L60 18 L65 12 Z" fill="#111"/>
+                    <path d="M48 20 L55 22 L52 28 Z" fill="#111"/>
+                    <path d="M72 20 L65 22 L68 28 Z" fill="#111"/>
                     <defs>
+                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#fff176"/>
+                            <stop offset="50%" stop-color="#ffca28"/>
+                            <stop offset="100%" stop-color="#ff8f00"/>
+                        </linearGradient>
                         <radialGradient id="ballGrad" cx="35%" cy="35%" r="65%">
                             <stop offset="0%" stop-color="#ffffff"/>
-                            <stop offset="60%" stop-color="#d1d8e0"/>
-                            <stop offset="100%" stop-color="#2f3640"/>
+                            <stop offset="70%" stop-color="#cfd8dc"/>
+                            <stop offset="100%" stop-color="#455a64"/>
                         </radialGradient>
                     </defs>
                 </svg>
             </div>
 
-            <!-- نوار لودینگ -->
+            <!-- نوار لودینگ پرشونده -->
             <div class="splash-progress-track">
                 <div class="splash-progress-fill"></div>
             </div>
 
-            <!-- جمله درخواستی که بعد از پر شدن نوار ظاهر می‌شود -->
-            <div class="splash-reveal-text" id="revealText">
-                لیگ گداهای استرسی <span>فصل دوم</span>
+            <!-- متن نهایی که با پر شدن نوار ظاهر می‌شود -->
+            <div class="splash-text-box" id="splashTextBox">
+                <div class="splash-year-green">۱۴۰۵</div>
+                <div class="splash-main-title">لیگ گداهای استرسی <span>فصل دوم</span></div>
             </div>
         </div>
     </div>
@@ -741,14 +746,13 @@
     </div>
 
     <script>
-        // کنترل انیمیشن ورود و ظاهر شدن متن نهایی
+        // مدیریت ظاهر شدن متن بعد از پر شدن نوار لودینگ
         window.addEventListener('load', () => {
-            // نمایش متن بعد از پر شدن نوار لودینگ (تقریباً ثانیه ۲.۱)
             setTimeout(() => {
-                document.getElementById('revealText').classList.add('show');
+                document.getElementById('splashTextBox').classList.add('show');
             }, 2100);
 
-            // محو کردن اسپلش اسکرین و باز کردن سایت بعد از ۳.۳ ثانیه
+            // محو کردن صفحه ورود و باز شدن سایت اصلی
             setTimeout(() => {
                 const splash = document.getElementById('splash-screen');
                 const main = document.getElementById('main-content');
