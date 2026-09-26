@@ -14,7 +14,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #062612 0%, #0c3b1e 50%, #021408 100%);
+            background: linear-gradient(135deg, #0a3d1c 0%, #12542a 50%, #052410 100%);
             color: #fff;
             min-height: 100vh;
             overflow-x: hidden;
@@ -23,14 +23,14 @@
             align-items: center;
         }
 
-        /* صفحه ورود (Splash Screen) با کاپ ژله‌ای براق و کادر سبز یکپارچه */
+        /* صفحه ورود (Splash Screen) با کاپ ژله‌ای براق و کادر سبز روشن‌تر */
         #splash-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: #081c0f;
+            background-color: #0c3b1e;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -66,11 +66,11 @@
 
         /* کادر سبز یکپارچه برای متن کامل */
         .splash-title-box {
-            background: linear-gradient(135deg, #00b050, #007a35);
-            border: 2px solid rgba(0, 255, 120, 0.6);
+            background: linear-gradient(135deg, #00cc60, #009440);
+            border: 2px solid rgba(0, 255, 140, 0.7);
             padding: 14px 28px;
             border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0, 176, 80, 0.4),
+            box-shadow: 0 8px 25px rgba(0, 204, 96, 0.5),
                         inset 0 2px 5px rgba(255, 255, 255, 0.4);
             font-size: 20px;
             font-weight: 900;
@@ -141,16 +141,16 @@
             margin-bottom: 20px;
         }
 
-        /* کارت‌های ژله‌ای مسابقات */
+        /* کارت‌های ژله‌ای مسابقات با رنگ روشن‌تر و جذاب‌تر */
         .match-card {
-            background: linear-gradient(145deg, rgba(0, 80, 30, 0.85), rgba(0, 40, 15, 0.95));
-            border: 2px solid rgba(0, 255, 100, 0.4);
-            border-radius: 40px 40px 15px 15px;
+            background: linear-gradient(145deg, rgba(10, 110, 45, 0.9), rgba(5, 60, 22, 0.95));
+            border: 2px solid rgba(0, 255, 130, 0.5);
+            border-radius: 30px 30px 15px 15px;
             width: 100%;
-            padding: 15px 20px;
-            box-shadow: inset 0 3px 6px rgba(255, 255, 255, 0.3), 
-                        inset 0 -3px 6px rgba(0, 0, 0, 0.6),
-                        0 8px 20px rgba(0, 0, 0, 0.5);
+            padding: 18px 20px;
+            box-shadow: inset 0 3px 8px rgba(255, 255, 255, 0.35), 
+                        inset 0 -3px 8px rgba(0, 0, 0, 0.4),
+                        0 8px 20px rgba(0, 0, 0, 0.4);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -158,17 +158,17 @@
             backdrop-filter: blur(5px);
         }
 
-        /* تب پیش‌بینی فوت‌موب در زیر هر بازی */
+        /* تب حرفه‌ای و جدید پیش‌بینی فوت‌موب در زیر هر بازی */
         .fotmob-tab {
-            background: linear-gradient(135deg, #00b050, #008037);
-            border: 1px solid rgba(0, 255, 120, 0.5);
+            background: linear-gradient(135deg, #00cc60, #009440);
+            border: 2px solid rgba(0, 255, 140, 0.5);
             border-top: none;
             border-radius: 0 0 20px 20px;
-            padding: 8px 15px;
+            padding: 10px 15px;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 18px rgba(0, 204, 96, 0.25);
         }
 
         .fotmob-btn {
@@ -178,14 +178,15 @@
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 6px;
-            transition: transform 0.2s ease;
+            gap: 8px;
+            transition: transform 0.2s ease, color 0.2s ease;
             text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            text-align: center;
         }
 
         .fotmob-btn:hover {
-            transform: scale(1.05);
-            color: #ffd700;
+            transform: scale(1.03);
+            color: #ffe600;
         }
 
         .team {
@@ -226,17 +227,17 @@
             text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
 
-        /* ساعت دیجیتال یکدست و جذاب (ساعت ۲۲:۳۰) */
+        /* ساعت دیجیتال یکدست و جذاب (ساعت ۲۲:۳۰) با اصلاح چیدمان ارقام */
         .digital-clock-badge {
-            background: #050d08;
-            border: 2px solid rgba(0, 255, 100, 0.5);
+            background: #081c0f;
+            border: 2px solid rgba(0, 255, 130, 0.6);
             border-radius: 12px;
-            padding: 4px 10px;
+            padding: 5px 12px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.9), 0 3px 8px rgba(0,0,0,0.5);
-            margin-top: 5px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.9), 0 3px 8px rgba(0,0,0,0.4);
+            margin-top: 6px;
         }
 
         .clock-numbers {
@@ -246,6 +247,7 @@
             letter-spacing: 2px;
             display: flex;
             gap: 2px;
+            direction: ltr; /* جهت نمایش صحیح ساعت ۲۲:۳۰ */
         }
 
         .clock-hour {
@@ -270,17 +272,17 @@
 
         .clock-label {
             font-size: 9px;
-            color: #88c090;
+            color: #9fe6b8;
             font-weight: 700;
-            border-top: 1px dashed rgba(255,255,255,0.15);
+            border-top: 1px dashed rgba(255,255,255,0.2);
             width: 100%;
             text-align: center;
-            margin-top: 2px;
+            margin-top: 3px;
             padding-top: 1px;
         }
 
         .section-title {
-            color: #ffcc00;
+            color: #ffdd33;
             font-size: 16px;
             font-weight: 700;
             margin: 15px 0 10px 0;
@@ -291,14 +293,14 @@
             width: 100%;
         }
 
-        /* جدول رده‌بندی */
+        /* جدول رده‌بندی روشن‌تر و زیباتر */
         .table-card {
-            background: rgba(10, 30, 15, 0.9);
-            border: 2px solid rgba(255, 215, 0, 0.3);
+            background: rgba(14, 48, 25, 0.95);
+            border: 2px solid rgba(255, 215, 0, 0.4);
             border-radius: 25px;
             width: 100%;
             padding: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             margin-top: 10px;
         }
 
@@ -307,7 +309,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 12px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
             font-size: 14px;
         }
 
@@ -316,10 +318,10 @@
         }
 
         .table-row.highlight {
-            background: rgba(0, 200, 80, 0.2);
+            background: rgba(0, 230, 100, 0.25);
             border-radius: 12px;
-            border: 1px solid rgba(0, 255, 100, 0.5);
-            color: #00ffaa;
+            border: 1px solid rgba(0, 255, 140, 0.6);
+            color: #00ffbb;
             font-weight: 700;
         }
 
@@ -333,30 +335,30 @@
             width: 24px;
             text-align: center;
             font-weight: 700;
-            color: #ffd700;
+            color: #ffea75;
         }
 
         .score {
             font-weight: 900;
-            color: #ffd700;
-            background: rgba(255, 215, 0, 0.15);
+            color: #ffea75;
+            background: rgba(255, 215, 0, 0.2);
             padding: 3px 10px;
             border-radius: 10px;
         }
 
         .highlight .score {
-            color: #00ffaa;
-            background: rgba(0, 255, 170, 0.2);
+            color: #00ffbb;
+            background: rgba(0, 255, 187, 0.25);
         }
 
-        /* استایل کارت خبر گیشه (برگرفته از تصویر هفتم با فونت و سبک همگن) */
+        /* استایل کارت خبر گیشه (روشن‌تر و جذاب‌تر با حفظ دقیق متن) */
         .gishah-card {
-            background: linear-gradient(145deg, #10233b 0%, #0a1624 100%);
-            border: 2px solid rgba(255, 215, 0, 0.4);
+            background: linear-gradient(145deg, #17375e 0%, #0d223c 100%);
+            border: 2px solid rgba(255, 215, 0, 0.5);
             border-radius: 25px;
             width: 100%;
             padding: 22px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.7), inset 0 2px 5px rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 2px 6px rgba(255,255,255,0.15);
             margin-top: 15px;
             position: relative;
             overflow: hidden;
@@ -389,13 +391,13 @@
         .gishah-text {
             font-size: 14px;
             line-height: 1.8;
-            color: #d1dce5;
+            color: #e2ecf5;
             font-weight: 600;
             margin-bottom: 15px;
         }
 
         .gishah-text span {
-            color: #00ffaa;
+            color: #00ffbb;
             font-weight: 700;
         }
 
@@ -417,26 +419,26 @@
             background: #fff;
         }
 
-        /* نوار پایین اختصاصی با قابلیت کلیک و فعال‌سازی تب‌ها */
+        /* نوار پایین روشن‌تر و مدرن‌تر با قابلیت کلیک و فعال‌سازی تب‌ها */
         .bottom-nav {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background: linear-gradient(180deg, rgba(6, 26, 12, 0.96), rgba(2, 14, 6, 0.99));
-            border-top: 2px solid rgba(0, 255, 100, 0.3);
+            background: linear-gradient(180deg, rgba(10, 48, 22, 0.96), rgba(5, 24, 11, 0.99));
+            border-top: 2px solid rgba(0, 255, 130, 0.4);
             padding: 10px 20px;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            box-shadow: 0 -5px 25px rgba(0,0,0,0.8);
+            box-shadow: 0 -5px 25px rgba(0,0,0,0.7);
             z-index: 1000;
             backdrop-filter: blur(10px);
         }
 
         .nav-item {
-            background: #112619;
-            border: 2px solid rgba(0, 255, 100, 0.4);
+            background: #154527;
+            border: 2px solid rgba(0, 255, 130, 0.5);
             border-radius: 35px;
             padding: 6px 25px;
             display: flex;
@@ -446,27 +448,27 @@
             text-decoration: none;
             color: #fff;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .nav-item.active {
-            background: linear-gradient(135deg, rgba(0,176,80,0.4), rgba(0,122,53,0.5));
-            border-color: #00ffaa;
-            box-shadow: 0 0 15px rgba(0,255,170,0.4);
+            background: linear-gradient(135deg, rgba(0,204,96,0.5), rgba(0,148,64,0.6));
+            border-color: #00ffbb;
+            box-shadow: 0 0 15px rgba(0,255,187,0.4);
             transform: scale(1.03);
         }
 
-        /* آیکون بخش بازی‌ها (زمین فوتبال سبز) */
+        /* آیکون بخش بازی‌ها (زمین فوتبال سبز روشن) */
         .nav-icon-match {
             width: 28px;
             height: 22px;
-            background: #52e891;
+            background: #62f29e;
             border-radius: 5px;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid #113821;
+            border: 1px solid #0c3b1e;
         }
 
         .nav-icon-match::before {
@@ -474,7 +476,7 @@
             position: absolute;
             width: 7px;
             height: 7px;
-            border: 1px solid #113821;
+            border: 1px solid #0c3b1e;
             border-radius: 50%;
         }
 
@@ -483,13 +485,13 @@
             position: absolute;
             width: 100%;
             height: 1px;
-            background: #113821;
+            background: #0c3b1e;
         }
 
         .nav-text {
             font-size: 14px;
             font-weight: 700;
-            color: #00ffaa;
+            color: #00ffbb;
         }
 
         /* آیکون بخش گیشه (کاپ طلایی) */
@@ -509,7 +511,7 @@
         .nav-text-cup {
             font-size: 14px;
             font-weight: 700;
-            color: #ffd700;
+            color: #ffea75;
         }
     </style>
 </head>
@@ -546,9 +548,9 @@
                         <div class="vs-badge">VS</div>
                         <div class="digital-clock-badge">
                             <div class="clock-numbers">
-                                <span class="clock-hour">30</span>
+                                <span class="clock-hour">22</span>
                                 <span class="clock-colon">:</span>
-                                <span class="clock-min">22</span>
+                                <span class="clock-min">30</span>
                             </div>
                             <div class="clock-label">ساعت بازی</div>
                         </div>
@@ -559,7 +561,7 @@
                     </div>
                 </div>
                 <div class="fotmob-tab">
-                    <a href=https://predict.fotmob.com/1000086/join/CUHVAFMQ">
+                    <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" class="fotmob-btn">
                         <span>🔴</span> کلیک کن و پیش بینی کن و برو تو فوت موب
                     </a>
                 </div>
@@ -579,9 +581,9 @@
                         <div class="vs-badge">VS</div>
                         <div class="digital-clock-badge">
                             <div class="clock-numbers">
-                                <span class="clock-hour">30</span>
+                                <span class="clock-hour">22</span>
                                 <span class="clock-colon">:</span>
-                                <span class="clock-min">22</span>
+                                <span class="clock-min">30</span>
                             </div>
                             <div class="clock-label">ساعت بازی</div>
                         </div>
@@ -592,7 +594,7 @@
                     </div>
                 </div>
                 <div class="fotmob-tab">
-                    <a href=https://predict.fotmob.com/1000086/join/CUHVAFMQ>
+                    <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" class="fotmob-btn">
                         <span>🔴</span> کلیک کن و پیش بینی کن و برو تو فوت موب
                     </a>
                 </div>
