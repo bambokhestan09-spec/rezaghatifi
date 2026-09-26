@@ -23,126 +23,130 @@
             align-items: center;
         }
 
-        /* صفحه ورود مدرن و جهانی (World-Class Splash Screen) */
+        /* صفحه ورود با پس‌زمینه خط‌کشی کج زمین چمن */
         #splash-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: #06090f;
+            background: linear-gradient(135deg, #062610 0%, #093c19 50%, #031407 100%);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
             overflow: hidden;
             padding: 20px;
         }
 
-        /* نورپردازی استادیومی در پس‌زمینه */
+        /* خطوط کج و مایل زمین فوتبال در پس‌زمینه اسپلش */
         #splash-screen::before {
             content: '';
             position: absolute;
-            width: 450px;
-            height: 450px;
-            background: radial-gradient(circle, rgba(0, 255, 136, 0.12) 0%, rgba(255, 215, 0, 0.08) 40%, transparent 70%);
-            border-radius: 50%;
-            animation: stadiumPulse 3.5s infinite ease-in-out;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(255, 255, 255, 0.04) 60px, rgba(255, 255, 255, 0.04) 120px),
+                radial-gradient(circle, transparent 30%, rgba(0, 0, 0, 0.6) 90%);
+            transform: rotate(-15deg);
             z-index: 1;
+            pointer-events: none;
         }
 
-        @keyframes stadiumPulse {
-            0%, 100% { transform: scale(0.85); opacity: 0.5; }
-            50% { transform: scale(1.25); opacity: 1; }
-        }
-
-        .world-splash-wrapper {
+        .splash-inner {
             position: relative;
             z-index: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
-            max-width: 360px;
+            max-width: 340px;
             width: 100%;
             text-align: center;
         }
 
-        /* هاله درخشان پشت کاپ */
-        .trophy-glow-box {
-            position: relative;
+        /* توپ بزرگ و ژله‌ای (متحرک و چرخان با هاور اسکویش) */
+        .jelly-ball-container {
+            width: 110px;
+            height: 110px;
             margin-bottom: 25px;
-            animation: trophyFloat 3s infinite ease-in-out;
-            filter: drop-shadow(0 20px 30px rgba(255, 215, 0, 0.4));
+            position: relative;
+            animation: ballFlyIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, ballJellyLoop 2.5s infinite ease-in-out 1.2s;
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.6));
         }
 
-        @keyframes trophyFloat {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-12px) scale(1.03); }
+        @keyframes ballFlyIn {
+            0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+            80% { transform: scale(1.15) rotate(15deg); opacity: 1; }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
         }
 
-        /* بج سال ۱۴۰۵ با افکت سایبرپانک ورزشی */
-        .season-badge {
-            background: linear-gradient(135deg, rgba(0, 255, 150, 0.2), rgba(0, 180, 100, 0.1));
-            border: 1px solid rgba(0, 255, 150, 0.4);
-            color: #00ffaa;
-            font-size: 13px;
-            font-weight: 900;
-            padding: 5px 20px;
-            border-radius: 30px;
-            margin-bottom: 14px;
-            letter-spacing: 2.5px;
-            box-shadow: 0 0 20px rgba(0, 255, 150, 0.25);
-            text-transform: uppercase;
+        @keyframes ballJellyLoop {
+            0%, 100% { transform: scale(1, 1) rotate(0deg); }
+            25% { transform: scale(1.12, 0.88) rotate(45deg); }
+            50% { transform: scale(0.92, 1.08) rotate(90deg); }
+            75% { transform: scale(1.06, 0.94) rotate(135deg); }
         }
 
-        /* عنوان شکیل */
-        .league-title {
-            font-size: 27px;
-            font-weight: 900;
-            color: #ffffff;
-            margin-bottom: 6px;
-            letter-spacing: -0.5px;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.9);
-        }
-
-        .league-subtitle {
-            font-size: 12px;
-            color: #8da2c0;
-            font-weight: 600;
-            letter-spacing: 2px;
-            margin-bottom: 35px;
-            text-transform: uppercase;
-        }
-
-        /* نوار لودینگ پیشرفته مدرن */
-        .loading-progress-track {
+        .soccer-ball-svg {
             width: 100%;
-            height: 7px;
-            background: rgba(255, 255, 255, 0.08);
+            height: 100%;
+            animation: ballSpinOnly 8s infinite linear;
+        }
+
+        @keyframes ballSpinOnly {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* نوار لودینگ پرشونده */
+        .splash-progress-track {
+            width: 100%;
+            height: 8px;
+            background: rgba(0, 0, 0, 0.4);
             border-radius: 10px;
             overflow: hidden;
-            position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
         }
 
-        .loading-progress-bar {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .splash-progress-fill {
             height: 100%;
-            width: 35%;
-            background: linear-gradient(90deg, #00ff88, #ffcc00, #ff6600);
+            width: 0%;
+            background: linear-gradient(90deg, #ffcc00, #00ff88);
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 255, 136, 0.7);
-            animation: barLoadingMotion 1.8s infinite ease-in-out;
+            box-shadow: 0 0 12px rgba(0, 255, 136, 0.8);
+            animation: fillProgress 2.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
 
-        @keyframes barLoadingMotion {
-            0% { left: -35%; width: 35%; }
-            50% { left: 55%; width: 45%; }
-            100% { left: 100%; width: 35%; }
+        @keyframes fillProgress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        /* متن نهایی بعد از پر شدن نوار */
+        .splash-reveal-text {
+            font-size: 20px;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.6s ease;
+            letter-spacing: -0.5px;
+        }
+
+        .splash-reveal-text.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .splash-reveal-text span {
+            color: #ffcc00;
         }
 
         /* محتوای اصلی سایت */
@@ -509,42 +513,39 @@
 </head>
 <body>
 
-    <!-- صفحه ورود استودیویی و مدرن جهانی -->
+    <!-- صفحه ورود پویا با پس‌زمینه خط‌کشی کج زمین و توپ ژله‌ای چرخان -->
     <div id="splash-screen">
-        <div class="world-splash-wrapper">
-            <div class="trophy-glow-box">
-                <svg width="125" height="135" viewBox="0 0 120 130" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="45" y="105" width="30" height="15" fill="#b38f00" rx="3"/>
-                    <rect x="35" y="120" width="50" height="7" fill="#806400" rx="2"/>
-                    <path d="M50 85 L70 85 L72 105 L48 105 Z" fill="#ffd700"/>
-                    <path d="M30 30 C30 15, 90 15, 90 30 C90 55, 75 75, 70 85 L50 85 C45 75, 30 55, 30 30 Z" fill="url(#goldGradientMain)" stroke="#fff" stroke-width="1.5"/>
-                    <path d="M32 35 C12 35, 12 60, 32 65" fill="none" stroke="#ffd700" stroke-width="6" stroke-linecap="round"/>
-                    <path d="M88 35 C108 35, 108 60, 88 65" fill="none" stroke="#ffd700" stroke-width="6" stroke-linecap="round"/>
-                    <circle cx="60" cy="22" r="18" fill="url(#ballGradientMain)" stroke="#fff" stroke-width="1.5"/>
-                    <path d="M55 12 L60 18 L65 12 Z" fill="#111"/>
-                    <path d="M48 20 L55 22 L52 28 Z" fill="#111"/>
-                    <path d="M72 20 L65 22 L68 28 Z" fill="#111"/>
+        <div class="splash-inner">
+            <!-- توپ بزرگ و ژله‌ای سه‌بعدی -->
+            <div class="jelly-ball-container">
+                <svg class="soccer-ball-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" fill="url(#ballGrad)" stroke="#ffffff" stroke-width="3"/>
+                    <!-- پنج ضلعی مرکزی -->
+                    <polygon points="50,35 62,43 58,57 42,57 38,43" fill="#111111"/>
+                    <!-- خطوط پنل‌ها -->
+                    <line x1="50" y1="35" x2="50" y2="4" stroke="#111111" stroke-width="3"/>
+                    <line x1="62" y1="43" x2="90" y2="30" stroke="#111111" stroke-width="3"/>
+                    <line x1="58" y1="57" x2="82" y2="82" stroke="#111111" stroke-width="3"/>
+                    <line x1="42" y1="57" x2="18" y2="82" stroke="#111111" stroke-width="3"/>
+                    <line x1="38" y1="43" x2="10" y2="30" stroke="#111111" stroke-width="3"/>
                     <defs>
-                        <linearGradient id="goldGradientMain" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#fff176"/>
-                            <stop offset="50%" stop-color="#ffca28"/>
-                            <stop offset="100%" stop-color="#ff8f00"/>
-                        </linearGradient>
-                        <radialGradient id="ballGradientMain" cx="35%" cy="35%" r="65%">
+                        <radialGradient id="ballGrad" cx="35%" cy="35%" r="65%">
                             <stop offset="0%" stop-color="#ffffff"/>
-                            <stop offset="70%" stop-color="#cfd8dc"/>
-                            <stop offset="100%" stop-color="#37474f"/>
+                            <stop offset="60%" stop-color="#d1d8e0"/>
+                            <stop offset="100%" stop-color="#2f3640"/>
                         </radialGradient>
                     </defs>
                 </svg>
             </div>
 
-            <div class="season-badge">۱۴۰۵ فصل</div>
-            <div class="league-title">لیگ گداهای استرسی ۲</div>
-            <div class="league-subtitle">Ultimate Football Predictions</div>
+            <!-- نوار لودینگ -->
+            <div class="splash-progress-track">
+                <div class="splash-progress-fill"></div>
+            </div>
 
-            <div class="loading-progress-track">
-                <div class="loading-progress-bar"></div>
+            <!-- جمله درخواستی که بعد از پر شدن نوار ظاهر می‌شود -->
+            <div class="splash-reveal-text" id="revealText">
+                لیگ گداهای استرسی <span>فصل دوم</span>
             </div>
         </div>
     </div>
@@ -571,11 +572,11 @@
                     
                     <div class="pixel-scoreboard">
                         <div class="pixel-display">
-                            <span class="pixel-left-val" id="score1-home">1</span>
+                            <span class="pixel-left-val">1</span>
                             <span class="pixel-separator">-</span>
-                            <span class="pixel-right-val" id="score1-away">0</span>
+                            <span class="pixel-right-val">0</span>
                         </div>
-                        <div class="pixel-subtext" id="status1-label">دقیقه ۷۵ (زنده)</div>
+                        <div class="pixel-subtext">دقیقه ۷۵ (زنده)</div>
                     </div>
 
                     <div class="team left">
@@ -604,11 +605,11 @@
                     
                     <div class="pixel-scoreboard">
                         <div class="pixel-display">
-                            <span class="pixel-left-val" id="score2-home">2</span>
+                            <span class="pixel-left-val">2</span>
                             <span class="pixel-separator">-</span>
-                            <span class="pixel-right-val" id="score2-away">1</span>
+                            <span class="pixel-right-val">1</span>
                         </div>
-                        <div class="pixel-subtext" id="status2-label">دقیقه ۶۰ (زنده)</div>
+                        <div class="pixel-subtext">دقیقه ۶۰ (زنده)</div>
                     </div>
 
                     <div class="team left">
@@ -740,15 +741,21 @@
     </div>
 
     <script>
-        // مدیریت لودینگ اسپلش اسکرین
+        // کنترل انیمیشن ورود و ظاهر شدن متن نهایی
         window.addEventListener('load', () => {
+            // نمایش متن بعد از پر شدن نوار لودینگ (تقریباً ثانیه ۲.۱)
+            setTimeout(() => {
+                document.getElementById('revealText').classList.add('show');
+            }, 2100);
+
+            // محو کردن اسپلش اسکرین و باز کردن سایت بعد از ۳.۳ ثانیه
             setTimeout(() => {
                 const splash = document.getElementById('splash-screen');
                 const main = document.getElementById('main-content');
                 splash.style.opacity = '0';
                 splash.style.visibility = 'hidden';
                 main.classList.add('visible');
-            }, 2700);
+            }, 3600);
         });
 
         // سیستم تعویض تب‌ها
