@@ -180,7 +180,7 @@
             100% { transform: scale(1); opacity: 1; }
         }
 
-        /* ستاره پس‌زمینه فضانورد */
+        /* ستاره پس‌زمینه */
         .space-star-bg {
             font-size: 110px;
             color: #ffd700;
@@ -196,17 +196,18 @@
             100% { transform: scale(1.05); opacity: 1; }
         }
 
-        /* عکس یا آیکون فضانورد */
+        /* گرافیک کاراکتر پیرای بارسلونیایی با ریش و موی مشابه عکس اول */
         .space-astronaut-graphic {
             width: 160px;
             height: 160px;
             position: relative;
             z-index: 2;
+            margin-top: 10px;
             margin-bottom: -15px;
             filter: drop-shadow(0 10px 15px rgba(0,0,0,0.6));
         }
 
-        /* کارت شیشه‌ای متن الهام‌گرفته از طرح */
+        /* کارت شیشه‌ای متن */
         .space-glass-card {
             background: rgba(22, 27, 46, 0.75);
             backdrop-filter: blur(12px);
@@ -683,31 +684,52 @@
         </div>
     </div>
 
-    <!-- پاپ‌آپ جدید خوش‌آمدگویی دقیقاً مشابه استایل عکسی که فرستادی -->
+    <!-- پاپ‌آپ خوش‌آمدگویی با کاراکتر پیرای بارسلونیایی (طراحی شده بر اساس ویژگی‌های چهره عکس اول) -->
     <div id="welcome-popup">
         <div class="space-popup-container">
             <!-- ستاره زرد پس‌زمینه -->
             <div class="space-star-bg">★</div>
             
-            <!-- کاراکتر فضانورد (مشابه تصویر ارسالی) -->
+            <!-- گرافیک کاراکتر پیرای بارسلونیایی (موی کوتاه مرتب، ریش مشکی پرپشت و لباس بارسلونا) -->
             <svg class="space-astronaut-graphic" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <!-- شنل زرد -->
-                <path d="M60 110 Q100 130 140 110 L160 170 Q100 190 40 170 Z" fill="#ffd700"/>
-                <!-- بدنه لباس فضانوردی -->
-                <rect x="70" y="70" width="60" height="80" rx="20" fill="#f0f2f5" stroke="#d0d5dd" stroke-width="3"/>
-                <!-- کلاه ایمنی و شیشه تیره -->
-                <circle cx="100" cy="55" r="28" fill="#f0f2f5" stroke="#d0d5dd" stroke-width="3"/>
-                <path d="M78 50 Q100 35 122 50 Q125 65 100 70 Q75 65 78 50 Z" fill="#111827"/>
-                <circle cx="92" cy="52" r="3" fill="#00ffcc"/>
-                <circle cx="108" cy="52" r="3" fill="#00ffcc"/>
+                <!-- لباس بارسلونا (راه راه اناری و آبی) -->
+                <g>
+                    <!-- پس‌زمینه کلی پیراهن -->
+                    <path d="M60 110 Q100 120 140 110 L155 170 Q100 185 45 170 Z" fill="#004d98"/>
+                    <!-- نوارهای اناری بارسلونا -->
+                    <path d="M82 113 L86 173 L100 176 L96 115 Z" fill="#a50044"/>
+                    <path d="M112 115 L116 176 L130 173 L126 113 Z" fill="#a50044"/>
+                    <!-- یقه پیراهن -->
+                    <path d="M80 100 Q100 115 120 100 L115 90 Q100 98 85 90 Z" fill="#edbb00"/>
+                </g>
+                
+                <!-- گردن و سر -->
+                <rect x="88" y="85" width="24" height="25" fill="#e0ac69"/>
+                <!-- سر و صورت -->
+                <circle cx="100" cy="65" r="24" fill="#e0ac69"/>
+                
+                <!-- مدل موی سر (کوتاه و مرتب شبیه عکس اول) -->
+                <path d="M76 65 Q78 43 100 42 Q122 43 124 65 Q120 48 100 47 Q80 48 76 65 Z" fill="#1b1b1b"/>
+                
+                <!-- ابروها و چشم‌ها -->
+                <path d="M86 58 Q92 55 96 59" fill="none" stroke="#1b1b1b" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M104 59 Q108 55 114 58" fill="none" stroke="#1b1b1b" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="91" cy="63" r="2.5" fill="#1b1b1b"/>
+                <circle cx="109" cy="63" r="2.5" fill="#1b1b1b"/>
+                
+                <!-- ریش پرپشت و سبیل (دقیقاً مشابه ویژگی‌های عکس اول) -->
+                <!-- سبیل -->
+                <path d="M90 71 Q100 74 110 71 Q105 77 100 75 Q95 77 90 71 Z" fill="#111111"/>
+                <!-- ریش کامل و دور فک -->
+                <path d="M78 63 Q76 85 100 88 Q124 85 122 63 Q120 82 100 84 Q80 82 78 63 Z" fill="#1b1b1b"/>
             </svg>
 
             <!-- کارت شیشه‌ای متن -->
             <div class="space-glass-card">
                 <div class="space-card-text">
-                    🏆 <span>قهرمانی پیرا در هفته ششم</span><br>
-                    فصل دوم لیگ گداهای پیش بینی<br><br>
-                    مأموریت‌های پیش‌بینی انجام شد؛ طوفان امتیازات و ثبت یک رکورد جدید!
+                    🏆 <span>پیرا قهرمان هفته ششم</span><br>
+                    لیگ گداهای استرسی فصل دوم<br><br>
+                    طوفان امتیازات و ثبت یک رکورد جدید با درخشش در پیش‌بینی‌ها!
                 </div>
                 <button class="space-action-btn" onclick="closePopup()">ورود به دنیای لیگ و مسابقات</button>
             </div>
@@ -1005,7 +1027,7 @@
                 splash.style.opacity = '0';
                 splash.style.visibility = 'hidden';
                 
-                // نمایش پاپ‌آپ خوش‌آمدگویی فضایی و قهرمانی پیرا پس از محو شدن لودینگ
+                // نمایش پاپ‌آپ خوش‌آمدگویی پس از محو شدن لودینگ
                 setTimeout(() => {
                     document.getElementById('welcome-popup').classList.add('active');
                 }, 400);
