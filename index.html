@@ -141,14 +141,14 @@
             100% { width: 100%; }
         }
 
-        /* پاپ‌آپ خوش‌آمدگویی با افکت جشن و نورافشانی */
+        /* پاپ‌آپ خوش‌آمدگویی مدرن الهام‌گرفته از استایل عکسی که فرستادی */
         #welcome-popup {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(0, 0, 0, 0.9);
+            background: radial-gradient(circle at center, #181d30 0%, #080b11 100%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -156,7 +156,7 @@
             padding: 20px;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.4s ease, visibility 0.4s ease;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
         }
 
         #welcome-popup.active {
@@ -164,18 +164,15 @@
             visibility: visible;
         }
 
-        .popup-card {
-            background: linear-gradient(145deg, #165b33, #082914);
-            border: 3px solid #ffcc00;
-            border-radius: 25px;
-            width: 100%;
-            max-width: 420px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 0 40px rgba(255, 204, 0, 0.4), inset 0 2px 10px rgba(255,255,255,0.3);
-            animation: popupScale 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        .space-popup-container {
             position: relative;
-            overflow: hidden;
+            width: 100%;
+            max-width: 380px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            animation: popupScale 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
 
         @keyframes popupScale {
@@ -183,86 +180,78 @@
             100% { transform: scale(1); opacity: 1; }
         }
 
-        /* افکت نورافشانی و جشن (نورهای متحرک پس‌زمینه کارت) */
-        .popup-card::before {
-            content: '✨ 🎉 🎊 🎆 🎇 ✨ 🎊';
+        /* ستاره پس‌زمینه فضانورد */
+        .space-star-bg {
+            font-size: 110px;
+            color: #ffd700;
             position: absolute;
-            top: -10px;
-            left: 0;
+            top: -20px;
+            filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.6));
+            z-index: 1;
+            animation: starPulse 3s infinite alternate;
+        }
+
+        @keyframes starPulse {
+            0% { transform: scale(0.95); opacity: 0.85; }
+            100% { transform: scale(1.05); opacity: 1; }
+        }
+
+        /* عکس یا آیکون فضانورد */
+        .space-astronaut-graphic {
+            width: 160px;
+            height: 160px;
+            position: relative;
+            z-index: 2;
+            margin-bottom: -15px;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.6));
+        }
+
+        /* کارت شیشه‌ای متن الهام‌گرفته از طرح */
+        .space-glass-card {
+            background: rgba(22, 27, 46, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            padding: 24px 20px;
             width: 100%;
-            font-size: 20px;
-            letter-spacing: 10px;
-            animation: fireworksAnim 2s infinite alternate;
-            opacity: 0.8;
+            position: relative;
+            z-index: 3;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.2);
         }
 
-        @keyframes fireworksAnim {
-            0% { transform: translateY(0) scale(1); text-shadow: 0 0 5px #ffcc00; }
-            100% { transform: translateY(5px) scale(1.1); text-shadow: 0 0 15px #00ffcc, 0 0 25px #ff0055; }
-        }
-
-        .popup-badge {
-            background: linear-gradient(135deg, #ffcc00, #ff8800);
-            color: #111;
-            font-weight: 900;
-            font-size: 14px;
-            padding: 6px 18px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 15px;
-            margin-top: 10px;
-            box-shadow: 0 0 15px rgba(255,204,0,0.6);
-            animation: badgeGlow 1.5s infinite alternate;
-        }
-
-        @keyframes badgeGlow {
-            0% { box-shadow: 0 0 5px rgba(255,204,0,0.4); }
-            100% { box-shadow: 0 0 20px rgba(255,204,0,0.9); }
-        }
-
-        .popup-title {
-            font-size: 21px;
-            font-weight: 900;
+        .space-card-text {
             color: #ffffff;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
-            line-height: 1.4;
-        }
-
-        .popup-title span {
-            color: #00ffcc;
-            text-shadow: 0 0 10px rgba(0,255,204,0.6);
-        }
-
-        .popup-subtitle {
-            font-size: 14px;
-            color: #ffea75;
+            font-size: 15px;
             font-weight: 700;
+            line-height: 1.8;
             margin-bottom: 20px;
-            line-height: 1.6;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 12px;
-            border-radius: 12px;
-            border: 1px dashed rgba(255, 215, 0, 0.5);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
-        .popup-close-btn {
-            background: linear-gradient(135deg, #00cc60, #009440);
-            color: #fff;
-            border: 2px solid #00ffbb;
+        .space-card-text span {
+            color: #ffd700;
+            font-size: 17px;
+            font-weight: 900;
+        }
+
+        .space-action-btn {
+            background: linear-gradient(135deg, #00ffaa, #00b377);
+            color: #08110b;
+            border: none;
             border-radius: 30px;
-            padding: 12px 30px;
+            padding: 12px 25px;
             font-size: 15px;
             font-weight: 900;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,204,96,0.4);
-            transition: all 0.2s ease;
             width: 100%;
+            box-shadow: 0 5px 15px rgba(0,255,170,0.4);
+            transition: all 0.2s ease;
         }
 
-        .popup-close-btn:hover {
+        .space-action-btn:hover {
             transform: scale(1.02);
-            background: linear-gradient(135deg, #00e66b, #00ab4b);
+            background: linear-gradient(135deg, #1affb8, #00cc88);
         }
 
         /* محتوای اصلی سایت */
@@ -414,7 +403,7 @@
         }
 
         @keyframes blinkMatchText {
-            0% { opacity: 0.4; }
+            0% { opacity: 0.3; }
             100% { opacity: 1; }
         }
 
@@ -442,7 +431,7 @@
             width: 100%;
         }
 
-        /* جدول رده‌بندی اصلی در تب بازی‌ها (فشرده و زیبا شده) */
+        /* جدول رده‌بندی اصلی در تب بازی‌ها */
         .table-card {
             background: rgba(14, 48, 25, 0.95);
             border: 2px solid rgba(255, 215, 0, 0.4);
@@ -540,7 +529,6 @@
             margin-bottom: 15px;
         }
 
-        /* جدول دوم برای بخش گیشه */
         .classic-mini-table {
             width: 100%;
             border-collapse: collapse;
@@ -695,17 +683,34 @@
         </div>
     </div>
 
-    <!-- پاپ‌آپ خوش‌آمدگویی با افکت جشن و نورافشانی -->
+    <!-- پاپ‌آپ جدید خوش‌آمدگویی دقیقاً مشابه استایل عکسی که فرستادی -->
     <div id="welcome-popup">
-        <div class="popup-card">
-            <div class="popup-badge">✨ جشن و نورافشانی ویژه ✨</div>
-            <div class="popup-title">پیرا قهرمان هفته ششم لیگ پیش بینی گداهای استرسی <span>فصل دوم</span></div>
+        <div class="space-popup-container">
+            <!-- ستاره زرد پس‌زمینه -->
+            <div class="space-star-bg">★</div>
             
-            <div class="popup-subtitle">
-                🎊 سکوی اول، جشن کاغذ و برف و افتخاری دیگر برای قهرمان این هفته! 🏆
-            </div>
+            <!-- کاراکتر فضانورد (مشابه تصویر ارسالی) -->
+            <svg class="space-astronaut-graphic" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- شنل زرد -->
+                <path d="M60 110 Q100 130 140 110 L160 170 Q100 190 40 170 Z" fill="#ffd700"/>
+                <!-- بدنه لباس فضانوردی -->
+                <rect x="70" y="70" width="60" height="80" rx="20" fill="#f0f2f5" stroke="#d0d5dd" stroke-width="3"/>
+                <!-- کلاه ایمنی و شیشه تیره -->
+                <circle cx="100" cy="55" r="28" fill="#f0f2f5" stroke="#d0d5dd" stroke-width="3"/>
+                <path d="M78 50 Q100 35 122 50 Q125 65 100 70 Q75 65 78 50 Z" fill="#111827"/>
+                <circle cx="92" cy="52" r="3" fill="#00ffcc"/>
+                <circle cx="108" cy="52" r="3" fill="#00ffcc"/>
+            </svg>
 
-            <button class="popup-close-btn" onclick="closePopup()">ورود به مسابقات</button>
+            <!-- کارت شیشه‌ای متن -->
+            <div class="space-glass-card">
+                <div class="space-card-text">
+                    🏆 <span>قهرمانی پیرا در هفته ششم</span><br>
+                    فصل دوم لیگ گداهای پیش بینی<br><br>
+                    مأموریت‌های پیش‌بینی انجام شد؛ طوفان امتیازات و ثبت یک رکورد جدید!
+                </div>
+                <button class="space-action-btn" onclick="closePopup()">ورود به دنیای لیگ و مسابقات</button>
+            </div>
         </div>
     </div>
 
@@ -718,7 +723,7 @@
                 <span>⚽</span> نتایج زنده و وضعیت مسابقات
             </div>
 
-            <!-- بازی پرتغال و نروژ (مسابقه جدید در صدر) -->
+            <!-- بازی پرتغال و نروژ -->
             <div class="section-title">
                 <span>🔥</span> مسابقه مهم امروز
             </div>
@@ -811,7 +816,7 @@
                 </div>
             </div>
 
-            <!-- جدول رده‌بندی اصلی (فشرده و زیبا شده) -->
+            <!-- جدول رده‌بندی اصلی -->
             <div class="section-title">
                 <span>📊</span> جدول رده‌بندی پیش‌بینی‌ها
             </div>
@@ -1000,14 +1005,14 @@
                 splash.style.opacity = '0';
                 splash.style.visibility = 'hidden';
                 
-                // نمایش پاپ‌آپ جشن قهرمانی پس از محو شدن لودینگ
+                // نمایش پاپ‌آپ خوش‌آمدگویی فضایی و قهرمانی پیرا پس از محو شدن لودینگ
                 setTimeout(() => {
                     document.getElementById('welcome-popup').classList.add('active');
                 }, 400);
             }, 3600);
         });
 
-        // تابع بستن پاپ‌آپ جشن و ورود به سایت اصلی
+        // تابع بستن پاپ‌آپ و ورود به سایت اصلی
         function closePopup() {
             const popup = document.getElementById('welcome-popup');
             const main = document.getElementById('main-content');
