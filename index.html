@@ -141,7 +141,7 @@
             100% { width: 100%; }
         }
 
-        /* پاپ‌آپ خوش‌آمدگویی مدرن الهام‌گرفته از استایل عکسی که فرستادی */
+        /* پاپ‌آپ خوش‌آمدگویی با کاراکتر پیرای بارسلونیایی */
         #welcome-popup {
             position: fixed;
             top: 0;
@@ -180,7 +180,6 @@
             100% { transform: scale(1); opacity: 1; }
         }
 
-        /* ستاره پس‌زمینه */
         .space-star-bg {
             font-size: 110px;
             color: #ffd700;
@@ -196,7 +195,6 @@
             100% { transform: scale(1.05); opacity: 1; }
         }
 
-        /* گرافیک کاراکتر پیرای بارسلونیایی با ریش و موی مشابه عکس اول */
         .space-astronaut-graphic {
             width: 160px;
             height: 160px;
@@ -207,7 +205,6 @@
             filter: drop-shadow(0 10px 15px rgba(0,0,0,0.6));
         }
 
-        /* کارت شیشه‌ای متن */
         .space-glass-card {
             background: rgba(22, 27, 46, 0.75);
             backdrop-filter: blur(12px);
@@ -432,7 +429,7 @@
             width: 100%;
         }
 
-        /* جدول رده‌بندی اصلی در تب بازی‌ها */
+        /* جدول رده‌بندی اصلی */
         .table-card {
             background: rgba(14, 48, 25, 0.95);
             border: 2px solid rgba(255, 215, 0, 0.4);
@@ -576,7 +573,7 @@
             background: #fff;
         }
 
-        /* نوار پایین */
+        /* نوار پایین (سه تب: بازی‌ها، جدول، گیشه) */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -584,7 +581,7 @@
             width: 100%;
             background: linear-gradient(180deg, rgba(10, 48, 22, 0.96), rgba(5, 24, 11, 0.99));
             border-top: 2px solid rgba(0, 255, 130, 0.4);
-            padding: 10px 20px;
+            padding: 10px 15px;
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -596,10 +593,10 @@
             background: #154527;
             border: 2px solid rgba(0, 255, 130, 0.5);
             border-radius: 35px;
-            padding: 6px 25px;
+            padding: 6px 18px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             cursor: pointer;
             text-decoration: none;
             color: #fff;
@@ -614,10 +611,10 @@
         }
 
         .nav-icon-match {
-            width: 28px;
-            height: 22px;
+            width: 24px;
+            height: 18px;
             background: #62f29e;
-            border-radius: 5px;
+            border-radius: 4px;
             position: relative;
             display: flex;
             justify-content: center;
@@ -626,25 +623,58 @@
         }
 
         .nav-text {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
             color: #00ffbb;
         }
 
+        /* آیکون تب جدول الهام‌گرفته از تصویر ارسالی (پس‌زمینه آبی با استایل مسابقات و خطوط گرافیکی) */
+        .nav-icon-table-wrapper {
+            width: 26px;
+            height: 26px;
+            background: linear-gradient(135deg, #0044cc, #002277);
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            border: 1.5px solid #00ffcc;
+            box-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-icon-table-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            background: #ffcc00;
+            clip-path: polygon(100% 0, 0 100%, 100% 100%);
+        }
+
+        .nav-text-table {
+            font-size: 13px;
+            font-weight: 700;
+            color: #ffea75;
+        }
+
         .nav-icon-cup-wrapper {
-            width: 28px;
-            height: 28px;
+            width: 26px;
+            height: 26px;
             background: #ffd700;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 14px;
+            font-size: 13px;
             border: 1px solid #fff;
         }
 
         .nav-text-cup {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
             color: #ffea75;
         }
@@ -684,47 +714,29 @@
         </div>
     </div>
 
-    <!-- پاپ‌آپ خوش‌آمدگویی با کاراکتر پیرای بارسلونیایی (طراحی شده بر اساس ویژگی‌های چهره عکس اول) -->
+    <!-- پاپ‌آپ خوش‌آمدگویی با کاراکتر پیرای بارسلونیایی -->
     <div id="welcome-popup">
         <div class="space-popup-container">
-            <!-- ستاره زرد پس‌زمینه -->
             <div class="space-star-bg">★</div>
             
-            <!-- گرافیک کاراکتر پیرای بارسلونیایی (موی کوتاه مرتب، ریش مشکی پرپشت و لباس بارسلونا) -->
             <svg class="space-astronaut-graphic" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <!-- لباس بارسلونا (راه راه اناری و آبی) -->
                 <g>
-                    <!-- پس‌زمینه کلی پیراهن -->
                     <path d="M60 110 Q100 120 140 110 L155 170 Q100 185 45 170 Z" fill="#004d98"/>
-                    <!-- نوارهای اناری بارسلونا -->
                     <path d="M82 113 L86 173 L100 176 L96 115 Z" fill="#a50044"/>
                     <path d="M112 115 L116 176 L130 173 L126 113 Z" fill="#a50044"/>
-                    <!-- یقه پیراهن -->
                     <path d="M80 100 Q100 115 120 100 L115 90 Q100 98 85 90 Z" fill="#edbb00"/>
                 </g>
-                
-                <!-- گردن و سر -->
                 <rect x="88" y="85" width="24" height="25" fill="#e0ac69"/>
-                <!-- سر و صورت -->
                 <circle cx="100" cy="65" r="24" fill="#e0ac69"/>
-                
-                <!-- مدل موی سر (کوتاه و مرتب شبیه عکس اول) -->
                 <path d="M76 65 Q78 43 100 42 Q122 43 124 65 Q120 48 100 47 Q80 48 76 65 Z" fill="#1b1b1b"/>
-                
-                <!-- ابروها و چشم‌ها -->
                 <path d="M86 58 Q92 55 96 59" fill="none" stroke="#1b1b1b" stroke-width="2.5" stroke-linecap="round"/>
                 <path d="M104 59 Q108 55 114 58" fill="none" stroke="#1b1b1b" stroke-width="2.5" stroke-linecap="round"/>
                 <circle cx="91" cy="63" r="2.5" fill="#1b1b1b"/>
                 <circle cx="109" cy="63" r="2.5" fill="#1b1b1b"/>
-                
-                <!-- ریش پرپشت و سبیل (دقیقاً مشابه ویژگی‌های عکس اول) -->
-                <!-- سبیل -->
                 <path d="M90 71 Q100 74 110 71 Q105 77 100 75 Q95 77 90 71 Z" fill="#111111"/>
-                <!-- ریش کامل و دور فک -->
                 <path d="M78 63 Q76 85 100 88 Q124 85 122 63 Q120 82 100 84 Q80 82 78 63 Z" fill="#1b1b1b"/>
             </svg>
 
-            <!-- کارت شیشه‌ای متن -->
             <div class="space-glass-card">
                 <div class="space-card-text">
                     🏆 <span>پیرا قهرمان هفته ششم</span><br>
@@ -740,7 +752,7 @@
     <div id="main-content">
         
         <!-- تب بازی‌ها -->
-        <div id="matches-tab" class="tab-content active-tab">
+        <div id="matches-tab" class="tab-content">
             <div class="header-banner">
                 <span>⚽</span> نتایج زنده و وضعیت مسابقات
             </div>
@@ -837,9 +849,11 @@
                     </a>
                 </div>
             </div>
+        </div>
 
-            <!-- جدول رده‌بندی اصلی -->
-            <div class="section-title">
+        <!-- تب جدول (به عنوان تب پیش‌فرض و اکتیو) -->
+        <div id="table-tab" class="tab-content active-tab">
+            <div class="header-banner">
                 <span>📊</span> جدول رده‌بندی پیش‌بینی‌ها
             </div>
 
@@ -1003,11 +1017,15 @@
 
     </div>
 
-    <!-- نوار پایین -->
+    <!-- نوار پایین (سه تب: بازی‌ها، جدول، گیشه) -->
     <div class="bottom-nav">
-        <div class="nav-item active" onclick="switchTab('matches', this)">
+        <div class="nav-item" onclick="switchTab('matches', this)">
             <div class="nav-icon-match"></div>
             <span class="nav-text">بازی‌ها</span>
+        </div>
+        <div class="nav-item active" onclick="switchTab('table', this)">
+            <div class="nav-icon-table-wrapper">📊</div>
+            <span class="nav-text-table">جدول</span>
         </div>
         <div class="nav-item" onclick="switchTab('gishah', this)">
             <div class="nav-icon-cup-wrapper">🏆</div>
@@ -1051,6 +1069,8 @@
 
             if (tabName === 'matches') {
                 document.getElementById('matches-tab').classList.add('active-tab');
+            } else if (tabName === 'table') {
+                document.getElementById('table-tab').classList.add('active-tab');
             } else if (tabName === 'gishah') {
                 document.getElementById('gishah-tab').classList.add('active-tab');
             }
