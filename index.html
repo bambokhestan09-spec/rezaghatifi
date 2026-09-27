@@ -141,14 +141,14 @@
             100% { width: 100%; }
         }
 
-        /* پاپ‌آپ خوش‌آمدگویی (با محوریت جشن و قهرمانی پیرا) */
+        /* پاپ‌آپ خوش‌آمدگویی با افکت جشن و نورافشانی */
         #welcome-popup {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(0, 0, 0, 0.88);
+            background: rgba(0, 0, 0, 0.9);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -165,14 +165,14 @@
         }
 
         .popup-card {
-            background: linear-gradient(145deg, #134e27, #092c16);
+            background: linear-gradient(145deg, #165b33, #082914);
             border: 3px solid #ffcc00;
             border-radius: 25px;
             width: 100%;
             max-width: 420px;
             padding: 25px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.8), inset 0 2px 10px rgba(255,255,255,0.2);
+            box-shadow: 0 0 40px rgba(255, 204, 0, 0.4), inset 0 2px 10px rgba(255,255,255,0.3);
             animation: popupScale 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
             position: relative;
             overflow: hidden;
@@ -183,90 +183,67 @@
             100% { transform: scale(1); opacity: 1; }
         }
 
+        /* افکت نورافشانی و جشن (نورهای متحرک پس‌زمینه کارت) */
+        .popup-card::before {
+            content: '✨ 🎉 🎊 🎆 🎇 ✨ 🎊';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            width: 100%;
+            font-size: 20px;
+            letter-spacing: 10px;
+            animation: fireworksAnim 2s infinite alternate;
+            opacity: 0.8;
+        }
+
+        @keyframes fireworksAnim {
+            0% { transform: translateY(0) scale(1); text-shadow: 0 0 5px #ffcc00; }
+            100% { transform: translateY(5px) scale(1.1); text-shadow: 0 0 15px #00ffcc, 0 0 25px #ff0055; }
+        }
+
         .popup-badge {
-            background: #ffcc00;
+            background: linear-gradient(135deg, #ffcc00, #ff8800);
             color: #111;
             font-weight: 900;
-            font-size: 13px;
-            padding: 5px 15px;
+            font-size: 14px;
+            padding: 6px 18px;
             border-radius: 20px;
             display: inline-block;
-            margin-bottom: 12px;
-            box-shadow: 0 4px 10px rgba(255,204,0,0.4);
+            margin-bottom: 15px;
+            margin-top: 10px;
+            box-shadow: 0 0 15px rgba(255,204,0,0.6);
+            animation: badgeGlow 1.5s infinite alternate;
+        }
+
+        @keyframes badgeGlow {
+            0% { box-shadow: 0 0 5px rgba(255,204,0,0.4); }
+            100% { box-shadow: 0 0 20px rgba(255,204,0,0.9); }
         }
 
         .popup-title {
-            font-size: 19px;
+            font-size: 21px;
             font-weight: 900;
-            color: #ffea75;
+            color: #ffffff;
             margin-bottom: 15px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            line-height: 1.4;
         }
 
-        .popup-match-box {
-            background: rgba(0, 0, 0, 0.4);
-            border: 2px solid rgba(0, 255, 130, 0.4);
-            border-radius: 18px;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .popup-team {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            width: 38%;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        .popup-flag {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-        }
-
-        .popup-vs-time {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .popup-vs {
-            font-size: 14px;
-            font-weight: 900;
-            color: #ffcc00;
-        }
-
-        .popup-time {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 13px;
-            font-weight: 900;
-            background: #08110b;
-            color: #00ff88;
-            padding: 3px 8px;
-            border-radius: 6px;
-            border: 1px solid rgba(0,255,136,0.3);
+        .popup-title span {
+            color: #00ffcc;
+            text-shadow: 0 0 10px rgba(0,255,204,0.6);
         }
 
         .popup-subtitle {
-            font-size: 13px;
-            color: #fff;
+            font-size: 14px;
+            color: #ffea75;
             font-weight: 700;
             margin-bottom: 20px;
             line-height: 1.6;
-            background: rgba(255, 215, 0, 0.15);
+            background: rgba(0, 0, 0, 0.4);
             padding: 12px;
             border-radius: 12px;
-            border: 1px dashed rgba(255, 215, 0, 0.6);
+            border: 1px dashed rgba(255, 215, 0, 0.5);
         }
 
         .popup-close-btn {
@@ -425,19 +402,25 @@
 
         .pixel-display {
             font-family: 'Courier New', Courier, monospace;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 900;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             display: flex;
             gap: 4px;
             direction: ltr;
-            color: #00ff88;
-            text-shadow: 0 0 8px rgba(0, 255, 136, 0.8);
+            color: #ffcc00;
+            text-shadow: 0 0 8px rgba(255, 204, 0, 0.8);
+            animation: blinkMatchText 1s infinite alternate;
+        }
+
+        @keyframes blinkMatchText {
+            0% { opacity: 0.4; }
+            100% { opacity: 1; }
         }
 
         .pixel-subtext {
             font-size: 9px;
-            color: #ffcc00;
+            color: #00ff88;
             font-weight: 700;
             border-top: 1px dashed rgba(255,255,255,0.2);
             width: 100%;
@@ -712,32 +695,17 @@
         </div>
     </div>
 
-    <!-- پاپ‌آپ خوش‌آمدگویی (با محوریت قهرمانی پیرا و جشن کاغذ و برف) -->
+    <!-- پاپ‌آپ خوش‌آمدگویی با افکت جشن و نورافشانی -->
     <div id="welcome-popup">
         <div class="popup-card">
-            <div class="popup-badge">🎉 جشن قهرمانی هفته ششم</div>
-            <div class="popup-title">پیرا قهرمان هفته ششم فصل دوم</div>
+            <div class="popup-badge">✨ جشن و نورافشانی ویژه ✨</div>
+            <div class="popup-title">پیرا قهرمان هفته ششم لیگ پیش بینی گداهای استرسی <span>فصل دوم</span></div>
             
-            <div class="popup-match-box">
-                <div class="popup-team">
-                    <img src="https://flagcdn.com/w80/pt.png" class="popup-flag" alt="Portugal">
-                    <span>پرتغال</span>
-                </div>
-                <div class="popup-vs-time">
-                    <span class="popup-vs">VS</span>
-                    <span class="popup-time">۲۲:۱۵</span>
-                </div>
-                <div class="popup-team">
-                    <img src="https://flagcdn.com/w80/no.png" class="popup-flag" alt="Norway">
-                    <span>نروژ</span>
-                </div>
-            </div>
-
             <div class="popup-subtitle">
-                🎊 سکوی اول و جشن کاغذ و برف برای پیرا قهرمان هفته ششم فصل دوم لیگ پیش بینی گداهای استرسی! 🏆✨
+                🎊 سکوی اول، جشن کاغذ و برف و افتخاری دیگر برای قهرمان این هفته! 🏆
             </div>
 
-            <button class="popup-close-btn" onclick="closePopup()">ورود به سایت و مسابقات</button>
+            <button class="popup-close-btn" onclick="closePopup()">ورود به مسابقات</button>
         </div>
     </div>
 
@@ -762,10 +730,10 @@
                     </div>
                     
                     <div class="pixel-scoreboard">
-                        <div class="pixel-display" id="countdown-timer">
-                            --:--:--
+                        <div class="pixel-display">
+                            شروع مسابقه
                         </div>
-                        <div class="pixel-subtext">تا شروع بازی (۲۲:۱۵)</div>
+                        <div class="pixel-subtext">امروز ۲۲:۱۵</div>
                     </div>
 
                     <div class="team left">
@@ -793,7 +761,7 @@
                     </div>
                     
                     <div class="pixel-scoreboard">
-                        <div class="pixel-display">
+                        <div class="pixel-display" style="animation: none; color:#00ff88;">
                             <span style="color:#ff5533;">2</span>-<span style="color:#00ff88;">3</span>
                         </div>
                         <div class="pixel-subtext">پایان بازی</div>
@@ -824,7 +792,7 @@
                     </div>
                     
                     <div class="pixel-scoreboard">
-                        <div class="pixel-display">
+                        <div class="pixel-display" style="animation: none; color:#00ff88;">
                             <span style="color:#ff5533;">2</span>-<span style="color:#00ff88;">1</span>
                         </div>
                         <div class="pixel-subtext">پایان بازی</div>
@@ -1032,14 +1000,14 @@
                 splash.style.opacity = '0';
                 splash.style.visibility = 'hidden';
                 
-                // نمایش پاپ‌آپ پیغام پیش‌بینی بازی امروز پس از محو شدن لودینگ
+                // نمایش پاپ‌آپ جشن قهرمانی پس از محو شدن لودینگ
                 setTimeout(() => {
                     document.getElementById('welcome-popup').classList.add('active');
                 }, 400);
             }, 3600);
         });
 
-        // تابع بستن پاپ‌آپ پیغام و ورود به سایت اصلی
+        // تابع بستن پاپ‌آپ جشن و ورود به سایت اصلی
         function closePopup() {
             const popup = document.getElementById('welcome-popup');
             const main = document.getElementById('main-content');
@@ -1060,30 +1028,6 @@
                 document.getElementById('gishah-tab').classList.add('active-tab');
             }
         }
-
-        // شمارش معکوس تا ساعت ۲۲:۱۵ برای بازی پرتغال و نروژ
-        function updateCountdown() {
-            const now = new Date();
-            const target = new Date();
-            target.setHours(22, 15, 0, 0);
-
-            if (now > target) {
-                target.setDate(target.getDate() + 1);
-            }
-
-            const diff = target - now;
-            const hours = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-            const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-            const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
-
-            const timerElement = document.getElementById('countdown-timer');
-            if (timerElement) {
-                timerElement.innerText = `${hours}:${minutes}:${seconds}`;
-            }
-        }
-
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
     </script>
 </body>
 </html>
