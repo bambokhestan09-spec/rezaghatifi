@@ -422,31 +422,19 @@
 
         .pixel-display {
             font-family: 'Courier New', Courier, monospace;
-            font-size: 22px;
+            font-size: 16px;
             font-weight: 900;
-            letter-spacing: 4px;
+            letter-spacing: 2px;
             display: flex;
-            gap: 6px;
+            gap: 4px;
             direction: ltr;
-        }
-
-        .pixel-left-val {
-            color: #ff5533;
-            text-shadow: 0 0 8px rgba(255, 85, 51, 0.8);
-        }
-
-        .pixel-separator {
-            color: #fff;
-        }
-
-        .pixel-right-val {
             color: #00ff88;
             text-shadow: 0 0 8px rgba(0, 255, 136, 0.8);
         }
 
         .pixel-subtext {
             font-size: 9px;
-            color: #8cebb3;
+            color: #ffcc00;
             font-weight: 700;
             border-top: 1px dashed rgba(255,255,255,0.2);
             width: 100%;
@@ -468,13 +456,13 @@
             width: 100%;
         }
 
-        /* جدول رده‌بندی اصلی در تب بازی‌ها */
+        /* جدول رده‌بندی اصلی در تب بازی‌ها (فشرده و زیبا شده) */
         .table-card {
             background: rgba(14, 48, 25, 0.95);
             border: 2px solid rgba(255, 215, 0, 0.4);
-            border-radius: 25px;
+            border-radius: 20px;
             width: 100%;
-            padding: 15px;
+            padding: 10px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             margin-top: 10px;
         }
@@ -483,9 +471,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 12px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-            font-size: 14px;
+            padding: 6px 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 13px;
+            font-family: Tahoma, sans-serif; /* فونت منظم‌تر و جمع‌تر برای جدول */
         }
 
         .table-row:last-child {
@@ -495,11 +484,11 @@
         .player-info {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .rank {
-            width: 24px;
+            width: 22px;
             text-align: center;
             font-weight: 700;
             color: #ffea75;
@@ -509,13 +498,14 @@
             font-weight: 900;
             color: #ffea75;
             background: rgba(255, 215, 0, 0.2);
-            padding: 3px 10px;
-            border-radius: 10px;
+            padding: 2px 8px;
+            border-radius: 8px;
+            font-size: 12px;
         }
 
         .highlight-row {
             background: rgba(0, 255, 130, 0.15);
-            border-radius: 10px;
+            border-radius: 8px;
         }
 
         .highlight-score {
@@ -719,7 +709,7 @@
         </div>
     </div>
 
-    <!-- پاپ‌آپ پیغام پیش‌بینی امروز -->
+    <!-- پاپ‌آپ خوش‌آمدگویی (پیغام پیش‌بینی امروز) -->
     <div id="welcome-popup">
         <div class="popup-card">
             <div class="popup-badge">🔥 پیش‌بینی امروز</div>
@@ -757,9 +747,40 @@
                 <span>⚽</span> نتایج زنده و وضعیت مسابقات
             </div>
 
-            <!-- بازی اول -->
+            <!-- بازی پرتغال و نروژ (مسابقه جدید در صدر) -->
             <div class="section-title">
-                <span>⚡</span> مسابقه اول
+                <span>🔥</span> مسابقه مهم امروز
+            </div>
+            <div class="match-wrapper">
+                <div class="match-card">
+                    <div class="team right">
+                        <img src="https://flagcdn.com/w80/pt.png" class="flag" alt="Portugal">
+                        <span>پرتغال</span>
+                    </div>
+                    
+                    <div class="pixel-scoreboard">
+                        <div class="pixel-display" id="countdown-timer">
+                            --:--:--
+                        </div>
+                        <div class="pixel-subtext">تا شروع بازی (۲۲:۱۵)</div>
+                    </div>
+
+                    <div class="team left">
+                        <span>نروژ</span>
+                        <img src="https://flagcdn.com/w80/no.png" class="flag" alt="Norway">
+                    </div>
+                </div>
+                
+                <div class="fotmob-tab">
+                    <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" class="fotmob-btn">
+                        <span>🔴</span> کلیک کن و پیش بینی کن و برو تو فوت موب
+                    </a>
+                </div>
+            </div>
+
+            <!-- بازی اول قبلی -->
+            <div class="section-title">
+                <span>⚡</span> مسابقه قبلی ۱
             </div>
             <div class="match-wrapper">
                 <div class="match-card">
@@ -770,9 +791,7 @@
                     
                     <div class="pixel-scoreboard">
                         <div class="pixel-display">
-                            <span class="pixel-left-val">2</span>
-                            <span class="pixel-separator">-</span>
-                            <span class="pixel-right-val">3</span>
+                            <span style="color:#ff5533;">2</span>-<span style="color:#00ff88;">3</span>
                         </div>
                         <div class="pixel-subtext">پایان بازی</div>
                     </div>
@@ -790,9 +809,9 @@
                 </div>
             </div>
 
-            <!-- بازی دوم -->
+            <!-- بازی دوم قبلی -->
             <div class="section-title">
-                <span>⚡</span> مسابقه دوم
+                <span>⚡</span> مسابقه قبلی ۲
             </div>
             <div class="match-wrapper">
                 <div class="match-card">
@@ -803,9 +822,7 @@
                     
                     <div class="pixel-scoreboard">
                         <div class="pixel-display">
-                            <span class="pixel-left-val">2</span>
-                            <span class="pixel-separator">-</span>
-                            <span class="pixel-right-val">1</span>
+                            <span style="color:#ff5533;">2</span>-<span style="color:#00ff88;">1</span>
                         </div>
                         <div class="pixel-subtext">پایان بازی</div>
                     </div>
@@ -823,7 +840,7 @@
                 </div>
             </div>
 
-            <!-- جدول رده‌بندی اصلی -->
+            <!-- جدول رده‌بندی اصلی (فشرده و زیبا شده) -->
             <div class="section-title">
                 <span>📊</span> جدول رده‌بندی پیش‌بینی‌ها
             </div>
@@ -890,7 +907,7 @@
                 <span>📰</span> گیشه اختصاصی لیگ گداهای استرسی ۲
             </div>
 
-            <!-- خبر اول (گزارش پیرا و نعیمی) -->
+            <!-- خبر اول -->
             <div class="gishah-card">
                 <div class="gishah-title-box">
                     <div class="gishah-icon-badge">⚽️</div>
@@ -1040,6 +1057,31 @@
                 document.getElementById('gishah-tab').classList.add('active-tab');
             }
         }
+
+        // شمارش معکوس تا ساعت ۲۲:۱۵ برای بازی پرتغال و نروژ
+        function updateCountdown() {
+            const now = new Date();
+            const target = new Date();
+            target.setHours(22, 15, 0, 0);
+
+            // اگر از ساعت ۲۲:۱۵ گذشته باشد، برای روز بعد محاسبه می‌شود
+            if (now > target) {
+                target.setDate(target.getDate() + 1);
+            }
+
+            const diff = target - now;
+            const hours = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+            const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+
+            const timerElement = document.getElementById('countdown-timer');
+            if (timerElement) {
+                timerElement.innerText = `${hours}:${minutes}:${seconds}`;
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
     </script>
 </body>
 </html>
