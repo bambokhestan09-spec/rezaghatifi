@@ -27,12 +27,52 @@ html{
 
 body{
     font-family:'Vazirmatn',sans-serif;
-    background:
-        radial-gradient(circle at 50% -10%,rgba(25,230,184,.16),transparent 35%),
-        linear-gradient(180deg,#ffffff 0%,#f7fffc 55%,#edfff9 100%);
-    color:#10151d;
+    color:#11151b;
     min-height:100vh;
     overflow-x:hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 8%,
+            rgba(50,205,126,.16),
+            transparent 22%
+        ),
+        radial-gradient(
+            circle at 90% 18%,
+            rgba(255,210,75,.13),
+            transparent 20%
+        ),
+        linear-gradient(
+            145deg,
+            #eefcf4 0%,
+            #f8fff9 42%,
+            #e4f6eb 100%
+        );
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+    opacity:.35;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            #fff 0 2px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle at 70% 75%,
+            #fff 0 2px,
+            transparent 3px
+        );
+
+    background-size:
+        90px 90px,
+        130px 130px;
 }
 
 button,
@@ -40,20 +80,42 @@ a{
     font-family:inherit;
 }
 
+button{
+    border:0;
+}
+
+a{
+    text-decoration:none;
+}
+
 
 /* =========================================================
-   ORIGINAL SPLASH SCREEN
+   SPLASH
 ========================================================= */
 
 #splash-screen{
     position:fixed;
     inset:0;
     z-index:99999;
-    background:#fff;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(25,181,86,.14),
+            transparent 32%
+        ),
+        linear-gradient(
+            145deg,
+            #eaf9f0,
+            #fffdf2
+        );
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     overflow:hidden;
+
     transition:
         opacity .9s ease,
         visibility .9s ease;
@@ -73,116 +135,219 @@ a{
 
 .confetti{
     position:absolute;
-    width:8px;
-    height:22px;
-    border-radius:4px;
-    background:#d7aa24;
+
+    width:9px;
+    height:25px;
+
+    border-radius:6px;
+
+    background:#d9ad24;
+
     opacity:.75;
-    animation:confettiFall 4s infinite ease-in-out;
+
+    animation:
+        confettiFall
+        4s
+        infinite
+        ease-in-out;
 }
 
-.confetti:nth-child(1){left:12%;top:10%;transform:rotate(25deg);}
-.confetti:nth-child(2){left:24%;top:28%;transform:rotate(-40deg);}
-.confetti:nth-child(3){left:75%;top:12%;transform:rotate(60deg);}
-.confetti:nth-child(4){left:86%;top:31%;transform:rotate(-20deg);}
-.confetti:nth-child(5){left:8%;top:65%;transform:rotate(45deg);}
-.confetti:nth-child(6){left:90%;top:70%;transform:rotate(-50deg);}
-.confetti:nth-child(7){left:18%;top:82%;transform:rotate(30deg);}
-.confetti:nth-child(8){left:78%;top:82%;transform:rotate(-30deg);}
+.confetti:nth-child(1){
+    left:12%;
+    top:10%;
+    transform:rotate(25deg);
+}
+
+.confetti:nth-child(2){
+    left:24%;
+    top:28%;
+    transform:rotate(-40deg);
+}
+
+.confetti:nth-child(3){
+    left:75%;
+    top:12%;
+    transform:rotate(60deg);
+}
+
+.confetti:nth-child(4){
+    left:86%;
+    top:31%;
+    transform:rotate(-20deg);
+}
+
+.confetti:nth-child(5){
+    left:8%;
+    top:65%;
+    transform:rotate(45deg);
+}
+
+.confetti:nth-child(6){
+    left:90%;
+    top:70%;
+    transform:rotate(-50deg);
+}
+
+.confetti:nth-child(7){
+    left:18%;
+    top:82%;
+    transform:rotate(30deg);
+}
+
+.confetti:nth-child(8){
+    left:78%;
+    top:82%;
+    transform:rotate(-30deg);
+}
 
 @keyframes confettiFall{
-    0%,100%{
-        transform:translateY(0) rotate(20deg);
+
+    0%,
+    100%{
+        transform:
+            translateY(0)
+            rotate(20deg);
     }
 
     50%{
-        transform:translateY(15px) rotate(120deg);
+        transform:
+            translateY(15px)
+            rotate(120deg);
     }
 }
 
 .splash-content{
     width:min(92%,430px);
+
     text-align:center;
+
     position:relative;
     z-index:2;
 }
 
 .splash-brand{
     font-family:'Montserrat',sans-serif;
+
     font-size:25px;
+
     font-weight:900;
+
     letter-spacing:-1px;
-    color:#151b28;
-    margin-bottom:2px;
+
+    color:#101a14;
 }
 
 .splash-script{
     font-family:cursive;
+
     font-size:30px;
+
     font-weight:700;
+
     font-style:italic;
-    color:#16dcb0;
+
+    color:#11a956;
+
     margin-bottom:20px;
 }
 
 .splash-trophy{
     position:relative;
+
     width:190px;
     height:235px;
+
     margin:0 auto 15px;
+
+    filter:
+        drop-shadow(
+            0 18px 22px
+            rgba(18,116,54,.18)
+        );
 }
 
 .trophy-cup{
     position:absolute;
+
     width:118px;
     height:105px;
+
     top:18px;
     left:36px;
+
     background:
         linear-gradient(
             100deg,
-            #fff4a5 0%,
+            #fff4a5,
             #e3b83e 18%,
             #fff3a1 38%,
             #a87416 65%,
             #ffd967 88%
         );
-    border-radius:16px 16px 42px 42px;
-    box-shadow:
-        inset -8px 0 12px rgba(86,48,0,.3),
-        0 15px 30px rgba(136,96,10,.25);
+
+    border-radius:
+        16px
+        16px
+        42px
+        42px;
+
     z-index:3;
 }
 
 .trophy-cup:before{
     content:"";
+
     position:absolute;
+
     width:82px;
     height:13px;
+
     left:18px;
     top:-6px;
+
     border-radius:50%;
-    background:linear-gradient(90deg,#b57d14,#fff0a0,#b37b12);
+
+    background:
+        linear-gradient(
+            90deg,
+            #b57d14,
+            #fff0a0,
+            #b37b12
+        );
 }
 
 .trophy-cup:after{
     content:"";
+
     position:absolute;
+
     width:64px;
     height:65px;
+
     left:27px;
     top:20px;
-    border:5px solid rgba(255,247,185,.55);
+
+    border:
+        5px solid
+        rgba(255,247,185,.55);
+
     border-radius:50%;
 }
 
 .trophy-handle{
     position:absolute;
+
     width:45px;
     height:65px;
+
     top:27px;
-    border:10px solid #d8a92f;
+
+    border:
+        10px solid
+        #d8a92f;
+
     border-radius:50%;
+
     z-index:2;
 }
 
@@ -196,101 +361,157 @@ a{
 
 .trophy-neck{
     position:absolute;
+
     width:45px;
     height:38px;
+
     top:110px;
     left:72px;
-    background:linear-gradient(90deg,#9a6810,#ffe37b,#b67b13);
+
+    background:
+        linear-gradient(
+            90deg,
+            #9a6810,
+            #ffe37b,
+            #b67b13
+        );
 }
 
 .trophy-base{
     position:absolute;
+
     width:105px;
     height:32px;
+
     bottom:35px;
     left:43px;
-    background:linear-gradient(90deg,#16191e,#52565b,#090b0d);
-    clip-path:polygon(12% 0,88% 0,100% 100%,0 100%);
+
+    background:
+        linear-gradient(
+            90deg,
+            #16191e,
+            #52565b,
+            #090b0d
+        );
+
+    clip-path:
+        polygon(
+            12% 0,
+            88% 0,
+            100% 100%,
+            0 100%
+        );
+
     z-index:4;
 }
 
 .trophy-pedestal{
     position:absolute;
+
     width:72px;
     height:25px;
+
     bottom:10px;
     left:59px;
+
     background:#17191d;
+
     border-radius:5px;
 }
 
 .splash-title{
     font-family:'Montserrat',sans-serif;
+
     font-size:25px;
+
     font-weight:900;
+
     color:#121722;
-    letter-spacing:.3px;
 }
 
 .splash-season{
     margin-top:4px;
-    color:#13cfa5;
+
+    color:#10a652;
+
     font-weight:900;
+
     font-size:14px;
+
     letter-spacing:2px;
 }
 
 .splash-loading{
     width:180px;
     height:5px;
-    background:#e9eeee;
+
+    background:#e0ece5;
+
     border-radius:20px;
+
     overflow:hidden;
+
     margin:22px auto 0;
 }
 
 .splash-loading span{
     display:block;
+
     width:0;
     height:100%;
-    background:linear-gradient(90deg,#12d8ad,#d5a927);
-    animation:loading 2.2s ease forwards;
+
+    background:
+        linear-gradient(
+            90deg,
+            #16bd61,
+            #d5a927
+        );
+
+    animation:
+        loading
+        2.2s
+        ease
+        forwards;
 }
 
 @keyframes loading{
+
     to{
         width:100%;
     }
+
 }
 
 
 /* =========================================================
-   WINNER POPUP
-   سبک پوستر ارسالی: سفید + سبز فیروزه‌ای + طلایی
+   WINNER MODAL
 ========================================================= */
 
 #winner-modal{
     position:fixed;
+
     inset:0;
+
     z-index:99998;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     padding:18px;
 
     background:
-        radial-gradient(
-            circle at 50% 20%,
-            rgba(24,220,178,.14),
-            transparent 35%
-        ),
-        rgba(9,16,20,.78);
+        rgba(5,20,11,.78);
 
-    backdrop-filter:blur(9px);
-    -webkit-backdrop-filter:blur(9px);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
 
     opacity:0;
+
     visibility:hidden;
+
     pointer-events:none;
 
     transition:
@@ -310,30 +531,33 @@ a{
     pointer-events:none;
 }
 
-
-/* کارت */
-
 .winner-box{
     width:min(100%,390px);
+
     max-height:92vh;
+
     overflow:hidden;
 
     background:#fff;
 
-    border-radius:28px;
+    border-radius:30px;
 
-    border:1px solid rgba(25,215,174,.35);
+    border:
+        1px solid
+        rgba(30,175,83,.28);
 
     box-shadow:
         0 35px 80px rgba(0,0,0,.35),
-        0 0 50px rgba(24,215,174,.13);
+        0 0 55px rgba(28,179,86,.14);
 
     transform:
         translateY(25px)
         scale(.92);
 
     transition:
-        transform .55s cubic-bezier(.2,.8,.2,1);
+        transform
+        .55s
+        cubic-bezier(.2,.8,.2,1);
 
     position:relative;
 }
@@ -344,133 +568,228 @@ a{
         scale(1);
 }
 
-
-/* عنوان بالای پوستر */
-
 .winner-top-title{
     text-align:center;
-    padding:14px 14px 5px;
+
+    padding:
+        14px
+        14px
+        5px;
 
     background:#fff;
 
     position:relative;
+
     z-index:3;
 }
 
 .winner-brand{
     font-family:'Montserrat',sans-serif;
+
     font-size:15px;
+
     font-weight:900;
+
     color:#18174a;
 }
 
 .winner-achievement{
     font-family:cursive;
+
     font-style:italic;
+
     font-size:29px;
+
     font-weight:700;
+
     line-height:1;
 
-    color:#16dcb1;
+    color:#12a952;
 
     margin-top:1px;
 }
 
 
-/* تصویر اصلی */
+/* =========================================================
+   WINNER GRAPHIC
+   بدون عکس
+========================================================= */
 
 .winner-image-wrap{
+
     width:100%;
+
+    height:215px;
+
     position:relative;
+
     overflow:hidden;
 
-    background:#fff;
+    background:
+        radial-gradient(
+            circle at 50% 52%,
+            rgba(255,255,255,.5),
+            transparent 17%
+        ),
+        linear-gradient(
+            145deg,
+            #dff7e8,
+            #f5fff7
+        );
 }
 
-.winner-image{
-    width:100%;
-    height:auto;
-    display:block;
+.winner-image-wrap:before{
 
-    object-fit:contain;
+    content:"1";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    width:104px;
+    height:104px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #20bd61,
+            #087d38
+        );
+
+    color:#ffd947;
+
+    font:
+        900
+        65px
+        'Montserrat',
+        sans-serif;
+
+    box-shadow:
+        0 18px 35px
+        rgba(11,119,55,.24),
+
+        inset
+        0 3px 12px
+        rgba(255,255,255,.3);
+
+    border:
+        7px solid
+        rgba(255,255,255,.78);
+}
+
+.winner-image-wrap:after{
+
+    content:"🏆";
+
+    position:absolute;
+
+    left:50%;
+    top:52%;
+
+    transform:
+        translate(-50%,-50%);
+
+    font-size:42px;
+
+    filter:
+        drop-shadow(
+            0 5px 5px
+            rgba(0,0,0,.2)
+        );
+
+    margin-top:-2px;
 }
 
 
-/* اگر عکس کمی بزرگ بود */
-
-@media(max-height:700px){
-
-    .winner-box{
-        max-height:90vh;
-    }
-
-    .winner-image{
-        max-height:54vh;
-        object-fit:cover;
-        object-position:center;
-    }
-
-}
-
-
-/* پیام روی پوستر */
+/* =========================================================
+   WINNER MESSAGE
+   متن قهرمانی پیرا حفظ شده
+========================================================= */
 
 .winner-message{
-    padding:17px 18px 18px;
+
+    padding:
+        17px
+        18px
+        18px;
+
     text-align:center;
 
     background:
         linear-gradient(
             180deg,
-            #ffffff 0%,
-            #f5fffc 100%
+            #fff,
+            #f5fff8
         );
 
-    border-top:1px solid #e6f5f0;
+    border-top:
+        1px solid
+        #e1f0e5;
 }
 
 .winner-kicker{
+
     display:inline-flex;
 
-    padding:5px 12px;
+    padding:
+        5px
+        12px;
 
     border-radius:30px;
 
-    background:#e3faf4;
+    background:#e2f7e8;
 
-    color:#0eb890;
+    color:#0b9747;
 
     font-size:9px;
+
     font-weight:900;
 
     margin-bottom:8px;
 }
 
 .winner-title{
+
     color:#111722;
 
     font-size:21px;
+
     line-height:1.5;
 
     font-weight:900;
 }
 
 .winner-title span{
-    color:#13cfa5;
+    color:#0caa4e;
 }
 
 .winner-description{
+
     margin-top:5px;
 
     color:#68746f;
 
     font-size:11px;
+
     line-height:1.9;
 
     font-weight:700;
 }
 
 .winner-season{
+
     color:#bd8d17;
 
     font-size:10px;
@@ -480,15 +799,11 @@ a{
     margin-top:4px;
 }
 
-
-/* دکمه ورود */
-
 .winner-enter{
+
     width:100%;
 
     margin-top:13px;
-
-    border:none;
 
     padding:12px 15px;
 
@@ -499,17 +814,19 @@ a{
     cursor:pointer;
 
     font-size:11px;
+
     font-weight:900;
 
     background:
         linear-gradient(
             135deg,
-            #16dbb0,
-            #0eaf88
+            #16bd60,
+            #07833b
         );
 
     box-shadow:
-        0 9px 22px rgba(13,190,148,.24);
+        0 9px 22px
+        rgba(13,160,72,.24);
 
     transition:.25s;
 }
@@ -522,10 +839,8 @@ a{
     transform:scale(.97);
 }
 
-
-/* کنفتی پنجره */
-
 .winner-confetti{
+
     position:absolute;
 
     width:7px;
@@ -539,7 +854,11 @@ a{
 
     opacity:.8;
 
-    animation:winnerFloat 3s infinite ease-in-out;
+    animation:
+        winnerFloat
+        3s
+        infinite
+        ease-in-out;
 }
 
 .winner-confetti.c1{
@@ -568,12 +887,17 @@ a{
 
 @keyframes winnerFloat{
 
-    0%,100%{
-        transform:translateY(0) rotate(25deg);
+    0%,
+    100%{
+        transform:
+            translateY(0)
+            rotate(25deg);
     }
 
     50%{
-        transform:translateY(12px) rotate(75deg);
+        transform:
+            translateY(12px)
+            rotate(75deg);
     }
 
 }
@@ -584,6 +908,7 @@ a{
 ========================================================= */
 
 #main-content{
+
     width:min(100%,480px);
 
     padding:
@@ -591,10 +916,16 @@ a{
         15px
         115px;
 
+    margin:auto;
+
     opacity:0;
+
     visibility:hidden;
 
-    transition:opacity .7s ease;
+    transition:
+        opacity
+        .7s
+        ease;
 }
 
 #main-content.visible{
@@ -608,27 +939,75 @@ a{
 ========================================================= */
 
 .hero{
+
     position:relative;
 
-    background:#fff;
+    background:
+        linear-gradient(
+            150deg,
+            #f6fff9,
+            #fff
+        );
 
-    border-radius:30px;
+    border-radius:34px;
 
-    min-height:340px;
+    min-height:365px;
 
     overflow:hidden;
 
     margin-bottom:18px;
 
-    border:1px solid #e8eeec;
+    border:
+        1px solid
+        rgba(35,153,76,.13);
 
     box-shadow:
-        0 20px 50px rgba(15,35,30,.10),
-        0 5px 15px rgba(15,35,30,.06);
+        0 22px 55px
+        rgba(18,75,39,.13);
+}
+
+.hero:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:240px;
+    height:240px;
+
+    border-radius:50%;
+
+    background:
+        rgba(20,172,76,.08);
+
+    left:-105px;
+    top:-105px;
+}
+
+.hero:after{
+
+    content:"";
+
+    position:absolute;
+
+    width:170px;
+    height:170px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,209,61,.09);
+
+    right:-70px;
+    top:35px;
 }
 
 .hero-top{
-    padding:25px 20px 0;
+
+    padding:
+        27px
+        20px
+        0;
 
     text-align:center;
 
@@ -638,35 +1017,40 @@ a{
 }
 
 .hero-small{
+
     font-family:'Montserrat',sans-serif;
 
-    font-size:11px;
+    font-size:10px;
 
     font-weight:900;
 
     color:#121722;
 
-    letter-spacing:1.5px;
+    letter-spacing:1.4px;
 }
 
 .hero-title{
-    font-size:25px;
+
+    font-size:27px;
 
     font-weight:900;
 
     color:#101722;
 
     margin-top:7px;
+
+    letter-spacing:-.7px;
 }
 
 .hero-title span{
-    color:#16cda5;
+    color:#0ca64a;
 }
 
 .hero-sub{
-    margin-top:4px;
 
-    color:#7c8790;
+    margin-top:5px;
+
+    color:#68756d;
 
     font-size:11px;
 
@@ -674,28 +1058,29 @@ a{
 }
 
 .hero-art{
+
     position:absolute;
 
     left:0;
     right:0;
     bottom:-4px;
 
-    height:195px;
+    height:205px;
 
     background:
         linear-gradient(
             145deg,
-            #1ce0b4,
-            #0fb68f
+            #1bb85c,
+            #07853b
         );
 
     clip-path:
         polygon(
-            0 37%,
-            28% 15%,
-            50% 28%,
-            73% 8%,
-            100% 31%,
+            0 34%,
+            26% 13%,
+            50% 27%,
+            73% 7%,
+            100% 28%,
             100% 100%,
             0 100%
         );
@@ -703,55 +1088,66 @@ a{
 
 .hero-art:before,
 .hero-art:after{
+
     content:"";
 
     position:absolute;
 
-    width:12px;
-    height:250px;
+    width:13px;
+    height:270px;
 
-    background:rgba(255,255,255,.85);
+    background:
+        rgba(255,255,255,.82);
 
     transform:rotate(29deg);
 }
 
 .hero-art:before{
     left:22%;
-    top:-35px;
+    top:-40px;
 }
 
 .hero-art:after{
     right:23%;
-    top:-35px;
+    top:-40px;
 }
 
 .hero-trophy{
+
     position:absolute;
 
-    width:110px;
-    height:145px;
+    width:125px;
+    height:155px;
 
     left:50%;
 
-    transform:translateX(-50%);
+    transform:
+        translateX(-50%);
 
-    bottom:42px;
+    bottom:43px;
 
     z-index:4;
+
+    filter:
+        drop-shadow(
+            0 14px 15px
+            rgba(0,0,0,.2)
+        );
 }
 
 .hero-trophy .cup{
+
     position:absolute;
 
-    width:72px;
-    height:72px;
+    width:78px;
+    height:76px;
 
-    left:19px;
+    left:23px;
     top:0;
 
     border-radius:
-        10px
-        10px
+        11px
+        11px
         28px
         28px;
 
@@ -766,18 +1162,20 @@ a{
         );
 
     box-shadow:
-        0 12px 25px rgba(81,58,7,.25);
+        0 12px 25px
+        rgba(81,58,7,.25);
 }
 
 .hero-trophy .cup:before{
+
     content:"";
 
     position:absolute;
 
-    width:49px;
+    width:54px;
     height:8px;
 
-    left:11px;
+    left:12px;
     top:-4px;
 
     background:#e6bd43;
@@ -786,14 +1184,17 @@ a{
 }
 
 .hero-trophy .handle{
+
     position:absolute;
 
-    width:31px;
-    height:48px;
+    width:33px;
+    height:49px;
 
     top:12px;
 
-    border:7px solid #d1a025;
+    border:
+        7px solid
+        #d1a025;
 
     border-radius:50%;
 }
@@ -807,25 +1208,27 @@ a{
 }
 
 .hero-trophy .stem{
+
     position:absolute;
 
-    width:25px;
-    height:36px;
+    width:27px;
+    height:38px;
 
     background:#d5a72d;
 
-    left:43px;
-    top:65px;
+    left:49px;
+    top:66px;
 }
 
 .hero-trophy .base{
+
     position:absolute;
 
     bottom:0;
-    left:12px;
+    left:13px;
 
-    width:86px;
-    height:40px;
+    width:99px;
+    height:42px;
 
     background:
         linear-gradient(
@@ -850,6 +1253,7 @@ a{
 ========================================================= */
 
 .section-head{
+
     width:100%;
 
     display:flex;
@@ -858,21 +1262,28 @@ a{
 
     align-items:center;
 
-    margin:18px 0 10px;
+    margin:
+        18px
+        0
+        10px;
 }
 
 .section-head h2{
+
     font-size:16px;
+
     font-weight:900;
 }
 
 .section-head span{
+
     font-size:10px;
+
     font-weight:800;
 
-    color:#10bd98;
+    color:#0ca64a;
 
-    background:#e5faf4;
+    background:#e5f8eb;
 
     padding:5px 9px;
 
@@ -885,28 +1296,38 @@ a{
 ========================================================= */
 
 .match-card-wrapper{
+
     width:100%;
+
     margin-bottom:14px;
 }
 
 .match-card{
+
     position:relative;
 
     background:#fff;
 
-    border:1px solid #e6ece9;
+    border:
+        1px solid
+        #e4ece7;
 
     border-radius:24px;
 
-    padding:15px 10px 13px;
+    padding:
+        15px
+        10px
+        13px;
 
     box-shadow:
-        0 12px 28px rgba(25,50,42,.08);
+        0 12px 28px
+        rgba(25,50,42,.08);
 
     overflow:hidden;
 }
 
 .match-card:before{
+
     content:"MATCHDAY";
 
     position:absolute;
@@ -924,6 +1345,7 @@ a{
 }
 
 .match-meta{
+
     text-align:center;
 
     font-size:10px;
@@ -936,6 +1358,7 @@ a{
 }
 
 .match-main{
+
     display:flex;
 
     justify-content:space-between;
@@ -946,6 +1369,7 @@ a{
 }
 
 .team{
+
     width:34%;
 
     display:flex;
@@ -962,6 +1386,7 @@ a{
 }
 
 .team img{
+
     width:36px;
     height:36px;
 
@@ -972,10 +1397,12 @@ a{
     border:2px solid #fff;
 
     box-shadow:
-        0 4px 10px rgba(0,0,0,.12);
+        0 4px 10px
+        rgba(0,0,0,.12);
 }
 
 .match-center{
+
     width:28%;
 
     display:flex;
@@ -986,6 +1413,7 @@ a{
 }
 
 .match-time{
+
     font-family:'Montserrat',sans-serif;
 
     font-size:18px;
@@ -996,9 +1424,10 @@ a{
 }
 
 .match-countdown{
+
     font-size:8px;
 
-    color:#11bd96;
+    color:#0ca64a;
 
     font-weight:800;
 
@@ -1008,11 +1437,12 @@ a{
 }
 
 .match-status{
+
     margin-top:7px;
 
-    background:#effbf7;
+    background:#effaf2;
 
-    color:#11ad88;
+    color:#0aa04a;
 
     padding:4px 8px;
 
@@ -1024,6 +1454,7 @@ a{
 }
 
 .predict-btn{
+
     display:flex;
 
     justify-content:center;
@@ -1041,8 +1472,8 @@ a{
     background:
         linear-gradient(
             135deg,
-            #12d9aa,
-            #0db88f
+            #12c65d,
+            #078e40
         );
 
     color:#fff;
@@ -1056,7 +1487,8 @@ a{
     font-weight:900;
 
     box-shadow:
-        0 7px 18px rgba(10,190,145,.22);
+        0 7px 18px
+        rgba(10,170,75,.22);
 
     transition:.25s;
 }
@@ -1071,13 +1503,16 @@ a{
 ========================================================= */
 
 .achievement-card{
+
     position:relative;
 
     width:100%;
 
     background:#fff;
 
-    border:1px solid #e7ecea;
+    border:
+        1px solid
+        #e4ebe7;
 
     border-radius:28px;
 
@@ -1086,16 +1521,22 @@ a{
     margin-bottom:15px;
 
     box-shadow:
-        0 15px 35px rgba(15,40,33,.09);
+        0 15px 35px
+        rgba(15,40,33,.09);
 }
 
 .achievement-top{
+
     text-align:center;
 
-    padding:22px 18px 10px;
+    padding:
+        22px
+        18px
+        10px;
 }
 
 .achievement-label{
+
     font-family:'Montserrat',sans-serif;
 
     color:#1c2430;
@@ -1108,9 +1549,10 @@ a{
 }
 
 .achievement-script{
+
     font-family:cursive;
 
-    color:#18cfa6;
+    color:#13aa50;
 
     font-size:28px;
 
@@ -1120,6 +1562,7 @@ a{
 }
 
 .news-trophy-zone{
+
     height:125px;
 
     position:relative;
@@ -1127,8 +1570,8 @@ a{
     background:
         linear-gradient(
             145deg,
-            #23dfb5,
-            #0bb88e
+            #20bd61,
+            #07883e
         );
 
     clip-path:
@@ -1144,6 +1587,7 @@ a{
 }
 
 .mini-trophy{
+
     position:absolute;
 
     width:75px;
@@ -1152,10 +1596,12 @@ a{
     left:50%;
     bottom:15px;
 
-    transform:translateX(-50%);
+    transform:
+        translateX(-50%);
 }
 
 .mini-trophy .cup{
+
     position:absolute;
 
     width:50px;
@@ -1180,6 +1626,7 @@ a{
 }
 
 .mini-trophy .handle{
+
     position:absolute;
 
     width:22px;
@@ -1187,7 +1634,9 @@ a{
 
     top:8px;
 
-    border:5px solid #d2a127;
+    border:
+        5px solid
+        #d2a127;
 
     border-radius:50%;
 }
@@ -1201,6 +1650,7 @@ a{
 }
 
 .mini-trophy .base{
+
     position:absolute;
 
     width:62px;
@@ -1221,10 +1671,12 @@ a{
 }
 
 .news-body{
+
     padding:17px;
 }
 
 .news-title{
+
     font-size:15px;
 
     font-weight:900;
@@ -1233,6 +1685,7 @@ a{
 }
 
 .news-text{
+
     color:#59646c;
 
     font-size:12px;
@@ -1243,13 +1696,14 @@ a{
 }
 
 .news-badge{
+
     display:inline-flex;
 
     margin-top:10px;
 
-    background:#e9faf5;
+    background:#e9f8ee;
 
-    color:#0db78d;
+    color:#0c9e49;
 
     padding:5px 9px;
 
@@ -1266,21 +1720,26 @@ a{
 ========================================================= */
 
 .table-card{
+
     width:100%;
 
     background:#fff;
 
-    border:1px solid #e5ece9;
+    border:
+        1px solid
+        #e5ece9;
 
     border-radius:25px;
 
     padding:8px;
 
     box-shadow:
-        0 14px 32px rgba(20,40,35,.08);
+        0 14px 32px
+        rgba(20,40,35,.08);
 }
 
 .table-header{
+
     display:grid;
 
     grid-template-columns:
@@ -1288,7 +1747,9 @@ a{
         1fr
         70px;
 
-    padding:9px 10px;
+    padding:
+        9px
+        10px;
 
     color:#8a9490;
 
@@ -1298,6 +1759,7 @@ a{
 }
 
 .table-row{
+
     display:grid;
 
     grid-template-columns:
@@ -1309,9 +1771,13 @@ a{
 
     min-height:48px;
 
-    padding:6px 10px;
+    padding:
+        6px
+        10px;
 
-    border-top:1px solid #edf1ef;
+    border-top:
+        1px solid
+        #edf1ef;
 
     font-size:11px;
 
@@ -1319,6 +1785,7 @@ a{
 }
 
 .table-row.first{
+
     background:
         linear-gradient(
             90deg,
@@ -1326,7 +1793,9 @@ a{
             #fff
         );
 
-    border:1px solid #f0d77b;
+    border:
+        1px solid
+        #f0d77b;
 
     border-radius:16px;
 
@@ -1334,14 +1803,18 @@ a{
 }
 
 .table-row.reza{
-    background:#ecfff8;
 
-    border:1px solid #b8efde;
+    background:#edfff6;
+
+    border:
+        1px solid
+        #b8efde;
 
     border-radius:16px;
 }
 
 .rank{
+
     font-family:'Montserrat',sans-serif;
 
     font-size:12px;
@@ -1356,6 +1829,7 @@ a{
 }
 
 .player{
+
     display:flex;
 
     align-items:center;
@@ -1364,6 +1838,7 @@ a{
 }
 
 .player-dot{
+
     width:7px;
     height:7px;
 
@@ -1373,13 +1848,16 @@ a{
 }
 
 .reza .player-dot{
-    background:#12cda0;
+
+    background:#12b95c;
 
     box-shadow:
-        0 0 8px rgba(18,205,160,.5);
+        0 0 8px
+        rgba(18,185,92,.5);
 }
 
 .score{
+
     justify-self:end;
 
     font-family:'Montserrat',sans-serif;
@@ -1392,15 +1870,18 @@ a{
 
     background:#fff8dd;
 
-    padding:5px 9px;
+    padding:
+        5px
+        9px;
 
     border-radius:9px;
 }
 
 .reza .score{
-    color:#09ae85;
 
-    background:#d9f9ef;
+    color:#09a34b;
+
+    background:#d9f7e8;
 }
 
 
@@ -1409,13 +1890,16 @@ a{
 ========================================================= */
 
 .countdown-card{
+
     width:100%;
 
     background:#10151d;
 
     border-radius:27px;
 
-    padding:20px 15px;
+    padding:
+        20px
+        15px;
 
     color:#fff;
 
@@ -1426,10 +1910,12 @@ a{
     margin-bottom:15px;
 
     box-shadow:
-        0 18px 35px rgba(20,30,35,.18);
+        0 18px 35px
+        rgba(20,30,35,.18);
 }
 
 .countdown-card:after{
+
     content:"";
 
     position:absolute;
@@ -1437,7 +1923,8 @@ a{
     width:180px;
     height:180px;
 
-    background:rgba(18,216,171,.12);
+    background:
+        rgba(18,190,85,.12);
 
     border-radius:50%;
 
@@ -1446,6 +1933,7 @@ a{
 }
 
 .countdown-title{
+
     text-align:center;
 
     font-size:12px;
@@ -1456,10 +1944,11 @@ a{
 }
 
 .countdown-title strong{
-    color:#19d7ae;
+    color:#1bd15e;
 }
 
 .clock{
+
     direction:ltr;
 
     display:flex;
@@ -1470,7 +1959,10 @@ a{
 
     gap:6px;
 
-    margin:17px 0 9px;
+    margin:
+        17px
+        0
+        9px;
 
     position:relative;
 
@@ -1478,20 +1970,26 @@ a{
 }
 
 .clock-box{
+
     min-width:58px;
 
     background:#181f27;
 
-    border:1px solid #2e3b3e;
+    border:
+        1px solid
+        #2e3b3e;
 
     border-radius:13px;
 
-    padding:8px 5px;
+    padding:
+        8px
+        5px;
 
     text-align:center;
 }
 
 .clock-number{
+
     font-family:'Montserrat',sans-serif;
 
     font-size:22px;
@@ -1502,17 +2000,19 @@ a{
 }
 
 .clock-label{
+
     font-size:7px;
 
-    color:#7ee6cf;
+    color:#83e89e;
 
     margin-top:2px;
 }
 
 .clock-separator{
+
     font-family:'Montserrat',sans-serif;
 
-    color:#17d7ad;
+    color:#18ce5b;
 
     font-size:18px;
 
@@ -1520,6 +2020,7 @@ a{
 }
 
 .countdown-status{
+
     text-align:center;
 
     font-size:9px;
@@ -1533,11 +2034,14 @@ a{
 ========================================================= */
 
 .team-battle{
+
     width:100%;
 
     background:#fff;
 
-    border:1px solid #e4ebe8;
+    border:
+        1px solid
+        #e4ebe8;
 
     border-radius:26px;
 
@@ -1546,33 +2050,40 @@ a{
     margin-bottom:15px;
 
     box-shadow:
-        0 12px 28px rgba(20,45,38,.07);
+        0 12px 28px
+        rgba(20,45,38,.07);
 }
 
 .team-battle-header{
+
     display:flex;
 
     justify-content:space-between;
 
     align-items:center;
 
-    padding:10px 12px;
+    padding:
+        10px
+        12px;
 
     border-radius:16px;
 
     background:
         linear-gradient(
             135deg,
-            #ecfff9,
+            #ecfff3,
             #fff
         );
 
-    border:1px solid #ccefe4;
+    border:
+        1px solid
+        #ccefdc;
 
     margin-bottom:8px;
 }
 
 .team-name{
+
     font-size:13px;
 
     font-weight:900;
@@ -1581,13 +2092,16 @@ a{
 }
 
 .team-total{
+
     font-size:10px;
 
-    color:#10b88f;
+    color:#10a94e;
 
-    background:#e1faf3;
+    background:#e1f8e9;
 
-    padding:5px 8px;
+    padding:
+        5px
+        8px;
 
     border-radius:10px;
 
@@ -1595,15 +2109,20 @@ a{
 }
 
 .team-player{
+
     display:flex;
 
     justify-content:space-between;
 
     align-items:center;
 
-    padding:9px 8px;
+    padding:
+        9px
+        8px;
 
-    border-bottom:1px solid #f0f2f1;
+    border-bottom:
+        1px solid
+        #f0f2f1;
 
     font-size:11px;
 
@@ -1615,6 +2134,7 @@ a{
 }
 
 .player-rank{
+
     display:inline-flex;
 
     width:23px;
@@ -1637,11 +2157,14 @@ a{
 }
 
 .player-score{
+
     color:#b5860c;
 
     background:#fff8de;
 
-    padding:4px 8px;
+    padding:
+        4px
+        8px;
 
     border-radius:8px;
 
@@ -1656,6 +2179,7 @@ a{
 ========================================================= */
 
 .bottom-nav{
+
     position:fixed;
 
     z-index:9000;
@@ -1664,21 +2188,25 @@ a{
 
     left:50%;
 
-    transform:translateX(-50%);
+    transform:
+        translateX(-50%);
 
-    width:calc(100% - 24px);
+    width:
+        calc(100% - 24px);
 
     max-width:455px;
 
     padding:7px;
 
-    background:rgba(255,255,255,.91);
+    background:
+        rgba(255,255,255,.91);
 
     backdrop-filter:blur(20px);
-
     -webkit-backdrop-filter:blur(20px);
 
-    border:1px solid #dfe9e5;
+    border:
+        1px solid
+        #dfe9e5;
 
     border-radius:24px;
 
@@ -1690,17 +2218,21 @@ a{
     gap:5px;
 
     box-shadow:
-        0 15px 40px rgba(20,40,35,.14);
+        0 15px 40px
+        rgba(20,40,35,.14);
 }
 
 .nav-item{
+
     border:none;
 
     background:transparent;
 
     color:#7b8581;
 
-    padding:9px 4px;
+    padding:
+        9px
+        4px;
 
     border-radius:17px;
 
@@ -1720,29 +2252,33 @@ a{
 }
 
 .nav-icon{
+
     font-size:17px;
 
     line-height:1;
 }
 
 .nav-text{
+
     font-size:9px;
 
     font-weight:800;
 }
 
 .nav-item.active{
+
     background:
         linear-gradient(
             135deg,
-            #16d7ad,
-            #0db98f
+            #16c65e,
+            #079040
         );
 
     color:#fff;
 
     box-shadow:
-        0 7px 17px rgba(14,190,148,.24);
+        0 7px 17px
+        rgba(14,174,76,.24);
 }
 
 
@@ -1751,16 +2287,20 @@ a{
 ========================================================= */
 
 .tab-content{
+
     display:none;
 
     width:100%;
 }
 
 .tab-content.active{
+
     display:block;
 
     animation:
-        tabIn .35s ease;
+        tabIn
+        .35s
+        ease;
 }
 
 @keyframes tabIn{
@@ -1824,7 +2364,6 @@ a{
 
 <!-- =========================================================
      SPLASH SCREEN
-     مرحله اول: لوگو و جام
 ========================================================= -->
 
 <div id="splash-screen">
@@ -1892,7 +2431,6 @@ a{
 
 <!-- =========================================================
      WINNER MODAL
-     مرحله دوم: بعد از Splash
 ========================================================= -->
 
 <div id="winner-modal">
@@ -1905,8 +2443,6 @@ a{
 
     <div class="winner-box">
 
-
-        <!-- عنوان شبیه پوستر -->
 
         <div class="winner-top-title">
 
@@ -1921,22 +2457,15 @@ a{
         </div>
 
 
-        <!-- =================================================
-             پوستر اصلی ارسالی
-        ================================================== -->
+        <!--
+        عکس قبلی حذف شده.
+        به‌جایش گرافیک CSS استفاده شده.
+        -->
 
-        <div class="winner-image-wrap">
-
-            <img
-                class="winner-image"
-                src="winner-poster.jpg"
-                alt="پوستر قهرمانی پیرا"
-            >
-
-        </div>
+        <div class="winner-image-wrap"></div>
 
 
-        <!-- پیام قهرمانی -->
+        <!-- پیام قهرمانی پیرا -->
 
         <div class="winner-message">
 
@@ -1988,7 +2517,7 @@ a{
 
 
 <!-- =========================================================
-     MAIN CONTENT
+     MAIN
 ========================================================= -->
 
 <main id="main-content">
@@ -2922,7 +3451,6 @@ a{
 
 <nav class="bottom-nav">
 
-
     <button
         class="nav-item active"
         onclick="switchTab('matches',this)"
@@ -2993,61 +3521,67 @@ a{
 <script>
 
 /* =========================================================
-   STARTUP SEQUENCE
+   STARTUP
 ========================================================= */
 
-window.addEventListener("load",function(){
+window.addEventListener(
+    "load",
+    function(){
 
-    /*
-       مرحله ۱:
-       Splash قبلی حدود ۲.۳ ثانیه نمایش داده می‌شود.
-    */
+        setTimeout(
+            function(){
 
-    setTimeout(function(){
+                const splash =
+                    document.getElementById(
+                        "splash-screen"
+                    );
 
-        const splash =
-            document.getElementById("splash-screen");
-
-        const main =
-            document.getElementById("main-content");
-
-
-        splash.classList.add("hide");
-
-        main.classList.add("visible");
+                const main =
+                    document.getElementById(
+                        "main-content"
+                    );
 
 
-        /*
-           مرحله ۲:
-           بعد از محو شدن Splash
-           پنجره قهرمانی باز می‌شود.
-        */
+                splash.classList.add("hide");
 
-        setTimeout(function(){
-
-            const winner =
-                document.getElementById("winner-modal");
-
-            winner.classList.add("show");
-
-            document.body.style.overflow="hidden";
-
-        },700);
+                main.classList.add("visible");
 
 
-    },2300);
+                setTimeout(
+                    function(){
 
-});
+                        const winner =
+                            document.getElementById(
+                                "winner-modal"
+                            );
+
+                        winner.classList.add("show");
+
+                        document.body.style.overflow =
+                            "hidden";
+
+                    },
+                    700
+                );
+
+            },
+            2300
+        );
+
+    }
+);
 
 
 /* =========================================================
-   CLOSE WINNER MODAL
+   CLOSE WINNER
 ========================================================= */
 
 function closeWinnerModal(){
 
     const winner =
-        document.getElementById("winner-modal");
+        document.getElementById(
+            "winner-modal"
+        );
 
 
     winner.classList.remove("show");
@@ -3055,14 +3589,19 @@ function closeWinnerModal(){
     winner.classList.add("hide");
 
 
-    document.body.style.overflow="";
+    document.body.style.overflow =
+        "";
 
 
-    setTimeout(function(){
+    setTimeout(
+        function(){
 
-        winner.style.display="none";
+            winner.style.display =
+                "none";
 
-    },500);
+        },
+        500
+    );
 
 }
 
@@ -3071,40 +3610,61 @@ function closeWinnerModal(){
    TAB SYSTEM
 ========================================================= */
 
-function switchTab(tabName,element){
+function switchTab(
+    tabName,
+    element
+){
 
     document
         .querySelectorAll(".nav-item")
-        .forEach(function(item){
+        .forEach(
+            function(item){
 
-            item.classList.remove("active");
+                item.classList.remove(
+                    "active"
+                );
 
-        });
+            }
+        );
 
 
-    element.classList.add("active");
+    element.classList.add(
+        "active"
+    );
 
 
     document
         .querySelectorAll(".tab-content")
-        .forEach(function(tab){
+        .forEach(
+            function(tab){
 
-            tab.classList.remove("active");
+                tab.classList.remove(
+                    "active"
+                );
 
-        });
+            }
+        );
 
 
     const target =
         document.getElementById(
-            tabName+"-tab"
+            tabName + "-tab"
         );
 
 
     if(target){
 
-        target.classList.add("active");
+        target.classList.add(
+            "active"
+        );
 
     }
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 }
 
@@ -3132,7 +3692,7 @@ function updateCountdown(){
 
 
     const difference =
-        targetDate-now;
+        targetDate - now;
 
 
     const clockHours =
@@ -3178,48 +3738,51 @@ function updateCountdown(){
         );
 
 
-    /* ==============================
-       بازی شروع شده
-    ============================== */
+    /* بازی شروع شده */
 
-    if(difference<=0){
+    if(
+        difference <= 0
+    ){
 
-        clockHours.textContent="00";
+        clockHours.textContent =
+            "00";
 
-        clockMinutes.textContent="00";
+        clockMinutes.textContent =
+            "00";
 
-        clockSeconds.textContent="00";
+        clockSeconds.textContent =
+            "00";
 
 
-        clockLabel.textContent=
+        clockLabel.textContent =
             "سوت آغازین زده شد!";
 
 
-        match1.textContent=
+        match1.textContent =
             "شروع شد";
 
-        match2.textContent=
+        match2.textContent =
             "شروع شد";
 
 
-        status1.textContent=
+        status1.textContent =
             "در حال برگزاری";
 
-        status2.textContent=
+        status2.textContent =
             "در حال برگزاری";
 
 
-        status1.style.background=
+        status1.style.background =
             "#fff1ed";
 
-        status1.style.color=
+        status1.style.color =
             "#e05b36";
 
 
-        status2.style.background=
+        status2.style.background =
             "#fff1ed";
 
-        status2.style.color=
+        status2.style.color =
             "#e05b36";
 
 
@@ -3228,30 +3791,28 @@ function updateCountdown(){
     }
 
 
-    /* ==============================
-       محاسبه زمان
-    ============================== */
+    /* محاسبه زمان */
 
     const totalSeconds =
         Math.floor(
-            difference/1000
+            difference / 1000
         );
 
 
     const hours =
         Math.floor(
-            totalSeconds/3600
+            totalSeconds / 3600
         );
 
 
     const minutes =
         Math.floor(
-            (totalSeconds%3600)/60
+            (totalSeconds % 3600) / 60
         );
 
 
     const seconds =
-        totalSeconds%60;
+        totalSeconds % 60;
 
 
     const format =
@@ -3266,10 +3827,8 @@ function updateCountdown(){
     clockHours.textContent =
         format(hours);
 
-
     clockMinutes.textContent =
         format(minutes);
-
 
     clockSeconds.textContent =
         format(seconds);
@@ -3278,7 +3837,7 @@ function updateCountdown(){
     let countdownText;
 
 
-    if(hours>0){
+    if(hours > 0){
 
         countdownText =
             `${hours} ساعت و ${minutes} دقیقه تا شروع`;
@@ -3318,4 +3877,4 @@ setInterval(
 
 
 </body>
-</html>کد کلی رو‌بررسی کن و بدون عکس درست کن اون پیام قهرمانی پیرارو به چیزی دست نزن
+</html>
