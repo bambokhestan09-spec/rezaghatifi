@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>لیگ گداهای استرسی ۲</title>
-    <!-- فونت استاندارد و ضخیم -->
+    <!-- فونت استاندارد وزیرمتن -->
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -24,7 +24,7 @@
             align-items: center;
         }
 
-        /* صفحه لودینگ اولیه با پیام رقابتی و دکمه ورود */
+        /* صفحه لودینگ اولیه (Splash Screen) */
         #splash-screen {
             position: fixed;
             top: 0;
@@ -122,7 +122,6 @@
             border: 1px dashed rgba(255, 136, 68, 0.4);
         }
 
-        /* دکمه ورود به سایت در صفحه لودینگ */
         .enter-site-btn {
             background: linear-gradient(135deg, #00ff88, #00aa55);
             color: #031207;
@@ -188,58 +187,43 @@
             justify-content: center;
             gap: 10px;
             width: 100%;
-            letter-spacing: -0.5px;
         }
 
         .match-wrapper {
             width: 100%;
-            margin-bottom: 22px;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
+            margin-bottom: 16px;
         }
 
         .match-card {
             background: linear-gradient(145deg, rgba(12, 95, 40, 0.85), rgba(5, 45, 18, 0.95));
-            backdrop-filter: blur(10px);
             border: 1.5px solid rgba(0, 255, 150, 0.35);
-            border-radius: 24px 24px 12px 12px;
+            border-radius: 20px 20px 10px 10px;
             width: 100%;
-            padding: 18px 16px;
-            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 
-                        0 8px 25px rgba(0, 0, 0, 0.5);
+            padding: 14px 16px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
         }
 
         .fotmob-tab {
             background: linear-gradient(135deg, #00b359, #007a3c);
             border: 1.5px solid rgba(0, 255, 150, 0.35);
             border-top: none;
-            border-radius: 0 0 18px 18px;
-            padding: 10px 15px;
+            border-radius: 0 0 16px 16px;
+            padding: 8px 15px;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 6px 15px rgba(0, 150, 70, 0.2);
         }
 
         .fotmob-btn {
             color: #fff;
             text-decoration: none;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 8px;
-            transition: transform 0.2s ease, color 0.2s ease;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-            text-align: center;
-        }
-
-        .fotmob-btn:hover {
-            transform: scale(1.03);
-            color: #ffe600;
+            gap: 6px;
         }
 
         .team {
@@ -247,61 +231,51 @@
             align-items: center;
             gap: 10px;
             font-weight: 700;
-            font-size: 15px;
+            font-size: 14px;
             width: 35%;
         }
 
-        .team.right {
-            justify-content: flex-start;
-        }
-
-        .team.left {
-            justify-content: flex-end;
-            text-align: left;
-        }
+        .team.right { justify-content: flex-start; }
+        .team.left { justify-content: flex-end; text-align: left; }
 
         .flag {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #fff;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.4);
         }
 
         .pixel-scoreboard {
             background: #040a07;
             border: 2px solid rgba(0, 255, 130, 0.3);
-            border-radius: 12px;
-            padding: 6px 12px;
+            border-radius: 10px;
+            padding: 4px 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.9), 0 4px 10px rgba(0,0,0,0.4);
         }
 
         .pixel-display {
             font-family: 'Courier New', Courier, monospace;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 900;
             letter-spacing: 1px;
             display: flex;
             gap: 4px;
             direction: ltr;
             color: #ffcc00;
-            text-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
         }
 
         .pixel-subtext {
-            font-size: 9px;
+            font-size: 8px;
             color: #00ff88;
             font-weight: 700;
             border-top: 1px dashed rgba(255,255,255,0.15);
             width: 100%;
             text-align: center;
-            margin-top: 3px;
+            margin-top: 2px;
             padding-top: 1px;
-            letter-spacing: 0;
         }
 
         .section-title {
@@ -309,23 +283,18 @@
             font-size: 15px;
             font-weight: 700;
             margin: 14px 0 10px 4px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
             display: flex;
             align-items: center;
             gap: 8px;
             width: 100%;
         }
 
-        /* جدول رده‌بندی اصلی */
         .table-card {
             background: rgba(10, 38, 20, 0.9);
-            backdrop-filter: blur(12px);
             border: 1.5px solid rgba(255, 215, 0, 0.35);
             border-radius: 22px;
             width: 100%;
             padding: 8px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.5);
-            margin-top: 5px;
         }
 
         .table-row {
@@ -335,18 +304,9 @@
             padding: 8px 12px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             font-size: 13px;
-            font-family: Tahoma, sans-serif;
-            transition: background 0.2s ease;
-            border-radius: 10px;
         }
 
-        .table-row:hover {
-            background: rgba(255, 255, 255, 0.04);
-        }
-
-        .table-row:last-child {
-            border-bottom: none;
-        }
+        .table-row:last-child { border-bottom: none; }
 
         .player-info {
             display: flex;
@@ -383,12 +343,10 @@
         /* گیشه */
         .gishah-card {
             background: linear-gradient(145deg, rgba(20, 48, 80, 0.9), rgba(10, 28, 50, 0.95));
-            backdrop-filter: blur(12px);
             border: 1.5px solid rgba(255, 215, 0, 0.35);
             border-radius: 24px;
             width: 100%;
             padding: 20px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.6), inset 0 1px 1px rgba(255,255,255,0.15);
             margin-top: 15px;
         }
 
@@ -412,8 +370,6 @@
             align-items: center;
             font-size: 17px;
             border: 2px solid rgba(255,255,255,0.8);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            flex-shrink: 0;
         }
 
         .gishah-text {
@@ -422,34 +378,6 @@
             color: #e2ecf5;
             font-weight: 600;
             margin-bottom: 15px;
-        }
-
-        .classic-mini-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: rgba(8, 20, 36, 0.9);
-            border: 1px solid rgba(255, 215, 0, 0.25);
-            border-radius: 12px;
-            overflow: hidden;
-            margin-top: 15px;
-            font-size: 13px;
-        }
-
-        .classic-mini-table th, .classic-mini-table td {
-            padding: 9px 12px;
-            text-align: right;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .classic-mini-table th {
-            background: rgba(255, 215, 0, 0.15);
-            color: #ffcc00;
-            font-weight: 700;
-            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
-        }
-
-        .classic-mini-table tr:last-child td {
-            border-bottom: none;
         }
 
         .gishah-footer-pattern {
@@ -467,49 +395,77 @@
             border-radius: 2px;
         }
 
-        .gishah-pattern-box:nth-child(2) {
-            background: #fff;
-        }
+        .gishah-pattern-box:nth-child(2) { background: #fff; }
 
-        /* بخش کل‌کل و ساعت دیجیتال داوری */
+        /* بخش کل‌کل و ساعت ماتریکسی */
         .countdown-box {
-            background: #030805;
-            border: 2px solid #00ff88;
-            border-radius: 16px;
-            padding: 12px 16px;
+            background: #021208;
+            border: 2.5px solid #00ff88;
+            border-radius: 18px;
+            padding: 15px;
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             margin-bottom: 20px;
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.25), inset 0 0 10px rgba(0,255,136,0.1);
+            box-shadow: 0 0 25px rgba(0, 255, 136, 0.3), inset 0 0 15px rgba(0,255,136,0.1);
         }
 
         .countdown-title {
             font-size: 13px;
             color: #00ff88;
             font-weight: 700;
-            margin-bottom: 6px;
+            margin-bottom: 10px;
+            text-align: center;
         }
 
-        .digital-clock {
+        .matrix-clock-container {
+            background: #040906;
+            border: 2px solid rgba(0, 255, 130, 0.5);
+            border-radius: 12px;
+            padding: 10px 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0 0 12px rgba(0,0,0,0.9);
+            margin-bottom: 8px;
+        }
+
+        .matrix-digits {
             font-family: 'Courier New', Courier, monospace;
-            font-size: 26px;
+            font-size: 30px;
             font-weight: 900;
-            color: #ffcc00;
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+            letter-spacing: 3px;
+            display: flex;
+            gap: 8px;
             direction: ltr;
+        }
+
+        .matrix-hours {
+            color: #ff5533; 
+            text-shadow: 0 0 10px rgba(255, 85, 51, 0.7);
+        }
+
+        .matrix-minutes {
+            color: #00ff88; 
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.7);
+        }
+
+        .matrix-label {
+            font-size: 11px;
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-top: 4px;
+            opacity: 0.9;
         }
 
         .kalal-team-card {
             background: rgba(10, 38, 20, 0.9);
-            backdrop-filter: blur(12px);
             border: 1.5px solid rgba(255, 215, 0, 0.35);
             border-radius: 22px;
             width: 100%;
             padding: 14px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.5);
             margin-bottom: 18px;
         }
 
@@ -539,7 +495,7 @@
             border-radius: 8px;
         }
 
-        /* نوار پایین شناور و مدرن (Floating Glass Navbar) */
+        /* نوار پایین شناور */
         .bottom-nav {
             position: fixed;
             bottom: 15px;
@@ -549,15 +505,14 @@
             max-width: 440px;
             background: rgba(8, 32, 16, 0.85);
             backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
             border: 1.5px solid rgba(0, 255, 130, 0.4);
             border-radius: 35px;
             padding: 8px 12px;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
             z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
         }
 
         .nav-item {
@@ -571,97 +526,22 @@
             cursor: pointer;
             text-decoration: none;
             color: #fff;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.3s ease;
         }
 
         .nav-item.active {
             background: linear-gradient(135deg, rgba(0,204,96,0.6), rgba(0,148,64,0.7));
             border-color: #00ffbb;
-            box-shadow: 0 0 15px rgba(0,255,187,0.4);
             transform: scale(1.05);
         }
 
-        .nav-icon-match {
-            width: 20px;
-            height: 14px;
-            background: #62f29e;
-            border-radius: 3px;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #0c3b1e;
-        }
-
-        .nav-text {
-            font-size: 12px;
-            font-weight: 700;
-            color: #00ffbb;
-        }
-
-        .nav-icon-table-wrapper {
-            width: 22px;
-            height: 22px;
-            background: linear-gradient(135deg, #0044cc, #002277);
-            border-radius: 6px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 10px;
-            border: 1px solid #00ffcc;
-            box-shadow: 0 0 6px rgba(0, 255, 204, 0.5);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-text-table {
-            font-size: 12px;
-            font-weight: 700;
-            color: #ffea75;
-        }
-
-        .nav-icon-cup-wrapper {
-            width: 22px;
-            height: 22px;
-            background: #ffd700;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 11px;
-            border: 1px solid #fff;
-            box-shadow: 0 0 6px rgba(255, 215, 0, 0.5);
-        }
-
-        .nav-text-cup {
-            font-size: 12px;
-            font-weight: 700;
-            color: #ffea75;
-        }
-
-        .nav-icon-ball-wrapper {
-            width: 22px;
-            height: 22px;
-            background: linear-gradient(135deg, #ff4444, #990000);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 12px;
-            border: 1px solid #ffcc00;
-            box-shadow: 0 0 6px rgba(255, 68, 68, 0.6);
-        }
-
-        .nav-text-kalal {
-            font-size: 12px;
-            font-weight: 700;
-            color: #ff8888;
-        }
+        .nav-icon-match { width: 20px; height: 14px; background: #62f29e; border-radius: 3px; }
+        .nav-text, .nav-text-table, .nav-text-cup, .nav-text-kalal { font-size: 12px; font-weight: 700; color: #00ffbb; }
     </style>
 </head>
 <body>
 
-    <!-- صفحه ورود اولیه (Splash Screen) با پیام رقابتی و دکمه ورود -->
+    <!-- صفحه ورود اولیه (Splash Screen) -->
     <div id="splash-screen">
         <div class="splash-inner">
             <div class="splash-trophy-container">
@@ -669,7 +549,7 @@
                     <rect x="45" y="115" width="40" height="15" fill="#1b4d3e" rx="4" stroke="#00ffcc" stroke-width="1.5"/>
                     <rect x="35" y="130" width="60" height="8" fill="#0d2b22" rx="3" stroke="#00ffcc" stroke-width="1"/>
                     <path d="M52 95 L78 95 L80 115 L50 115 Z" fill="url(#gelGrad)"/>
-                    <path d="M35 30 C35 15, 95 15, 95 30 C95 60, 80 80, 75 95 L55 95 C50 80, 35 60, 35 30 Z" fill="url(#gelGrad)" stroke="#ffffff" stroke-width="2.5" filter="drop-shadow(0 0 8px rgba(0,255,204,0.8))"/>
+                    <path d="M35 30 C35 15, 95 15, 95 30 C95 60, 80 80, 75 95 L55 95 C50 80, 35 60, 35 30 Z" fill="url(#gelGrad)" stroke="#ffffff" stroke-width="2.5"/>
                     <path d="M37 35 C15 35, 15 62, 37 68" fill="none" stroke="#00ffcc" stroke-width="5" stroke-linecap="round"/>
                     <path d="M93 35 C115 35, 115 62, 93 68" fill="none" stroke="#00ffcc" stroke-width="5" stroke-linecap="round"/>
                     <circle cx="65" cy="45" r="14" fill="#ffffff" opacity="0.9"/>
@@ -687,14 +567,14 @@
             <div class="splash-welcome-box">
                 <div class="splash-league-title">🏆 لیگ پیش‌بینی‌های گداهای استرسی (فصل دوم)</div>
                 <div class="splash-matchup-text">
-                    نبرد قرن:<br>
+                    سرزمین استرس و پیش‌بینی:<br>
                     <span>تیم جماعت بی‌پولا 💸</span> 🆚 <span>اتحاد بدبختا 🩴</span>
                 </div>
-                <div class="splash-start-time">⚡️ سوت آغاز رقابت: روز سه‌شنبه</div>
+                <div class="splash-start-time">⚡️ سوت آغاز رقابت جذاب: روز سه‌شنبه</div>
             </div>
 
             <button class="enter-site-btn" onclick="enterSite()">
-                <span>🚀</span> ورود به میدان مسابقه
+                <span>🚀</span> ورود به عرصه رقابت و کل‌کل
             </button>
         </div>
     </div>
@@ -702,165 +582,87 @@
     <!-- محتوای اصلی سایت -->
     <div id="main-content">
         
-        <!-- تب بازی‌ها -->
-        <div id="matches-tab" class="tab-content">
+        <!-- تب بازی‌ها (شامل پرتغال و مابقی بازی‌های مهم) -->
+        <div id="matches-tab" class="tab-content active-tab">
             <div class="header-banner">
-                <span>⚽</span> نتایج زنده و وضعیت مسابقات
+                <span>⚽</span> نتایج زنده و مابقی مسابقات
             </div>
 
-            <!-- بازی پرتغال و نروژ -->
-            <div class="section-title">
-                <span>🔥</span> مسابقه مهم امروز
-            </div>
+            <div class="section-title"><span>🔥</span> مسابقه ویژه</div>
             <div class="match-wrapper">
                 <div class="match-card">
-                    <div class="team right">
-                        <img src="https://flagcdn.com/w80/pt.png" class="flag" alt="Portugal">
-                        <span>پرتغال</span>
-                    </div>
-                    
+                    <div class="team right"><img src="https://flagcdn.com/w80/pt.png" class="flag" alt="Portugal"><span>پرتغال</span></div>
                     <div class="pixel-scoreboard">
-                        <div class="pixel-display" style="animation: none; color:#00ff88;">
-                            <span style="color:#ff5533;">2</span>-<span style="color:#00ff88;">1</span>
-                        </div>
+                        <div class="pixel-display"><span style="color:#ff5533;">2</span>-<span style="color:#00ff88;">1</span></div>
                         <div class="pixel-subtext">پایان بازی</div>
                     </div>
-
-                    <div class="team left">
-                        <span>نروژ</span>
-                        <img src="https://flagcdn.com/w80/no.png" class="flag" alt="Norway">
-                    </div>
+                    <div class="team left"><span>نروژ</span><img src="https://flagcdn.com/w80/no.png" class="flag" alt="Norway"></div>
                 </div>
-                
                 <div class="fotmob-tab">
                     <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" class="fotmob-btn">
-                        <span>🔴</span> کلیک کن و پیش بینی کن و برو تو فوت موب
+                        <span>🔴</span> پیش‌بینی و پیگیری در فوت‌موب (FotMob)
                     </a>
                 </div>
             </div>
 
-            <!-- بازی اول قبلی -->
-            <div class="section-title">
-                <span>⚡</span> مسابقه قبلی ۱
-            </div>
+            <div class="section-title"><span>📅</span> مابقی بازی‌های مهم هفته</div>
+            
+            <!-- بازی دوم -->
             <div class="match-wrapper">
                 <div class="match-card">
-                    <div class="team right">
-                        <img src="https://flagcdn.com/w80/es.png" class="flag" alt="Spain">
-                        <span>اسپانیا</span>
-                    </div>
-                    
+                    <div class="team right"><img src="https://flagcdn.com/w80/es.png" class="flag" alt="Spain"><span>اسپانیا</span></div>
                     <div class="pixel-scoreboard">
-                        <div class="pixel-display" style="animation: none; color:#00ff88;">
-                            <span style="color:#ff5533;">2</span>-<span style="color:#00ff88;">3</span>
-                        </div>
+                        <div class="pixel-display"><span style="color:#ffcc00;">3</span>-<span style="color:#ffcc00;">0</span></div>
                         <div class="pixel-subtext">پایان بازی</div>
                     </div>
-
-                    <div class="team left">
-                        <span>انگلیس</span>
-                        <img src="https://flagcdn.com/w80/gb-eng.png" class="flag" alt="England">
-                    </div>
-                </div>
-                
-                <div class="fotmob-tab">
-                    <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" class="fotmob-btn">
-                        <span>🔴</span> کلیک کن و پیش بینی کن و برو تو فوت موب
-                    </a>
+                    <div class="team left"><span>آلمان</span><img src="https://flagcdn.com/w80/de.png" class="flag" alt="Germany"></div>
                 </div>
             </div>
 
-            <!-- بازی دوم قبلی -->
-            <div class="section-title">
-                <span>⚡</span> مسابقه قبلی ۲
-            </div>
+            <!-- بازی سوم -->
             <div class="match-wrapper">
                 <div class="match-card">
-                    <div class="team right">
-                        <img src="https://flagcdn.com/w80/cz.png" class="flag" alt="Czech Republic">
-                        <span>چک</span>
-                    </div>
-                    
+                    <div class="team right"><img src="https://flagcdn.com/w80/fr.png" class="flag" alt="France"><span>فرانسه</span></div>
                     <div class="pixel-scoreboard">
-                        <div class="pixel-display" style="animation: none; color:#00ff88;">
-                            <span style="color:#ff5533;">2</span>-<span style="color:#00ff88;">1</span>
-                        </div>
-                        <div class="pixel-subtext">پایان بازی</div>
+                        <div class="pixel-display"><span style="color:#00ff88;">1</span>-<span style="color:#00ff88;">1</span></div>
+                        <div class="pixel-subtext">زنده (دقیقه ۸۵)</div>
                     </div>
-
-                    <div class="team left">
-                        <span>کرواسی</span>
-                        <img src="https://flagcdn.com/w80/hr.png" class="flag" alt="Croatia">
-                    </div>
+                    <div class="team left"><span>ایتالیا</span><img src="https://flagcdn.com/w80/it.png" class="flag" alt="Italy"></div>
                 </div>
-                
-                <div class="fotmob-tab">
-                    <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" class="fotmob-btn">
-                        <span>🔴</span> کلیک کن و پیش بینی کن و برو تو فوت موب
-                    </a>
+            </div>
+
+            <!-- بازی چهارم -->
+            <div class="match-wrapper">
+                <div class="match-card">
+                    <div class="team right"><img src="https://flagcdn.com/w80/gb-eng.png" class="flag" alt="England"><span>انگلیس</span></div>
+                    <div class="pixel-scoreboard">
+                        <div class="pixel-display"><span style="color:#ffcc00;">--</span>:<span style="color:#ffcc00;">--</span></div>
+                        <div class="pixel-subtext">امشب ساعت ۲۳:۳۰</div>
+                    </div>
+                    <div class="team left"><span>برزیل</span><img src="https://flagcdn.com/w80/br.png" class="flag" alt="Brazil"></div>
                 </div>
             </div>
         </div>
 
-        <!-- تب جدول -->
-        <div id="table-tab" class="tab-content active-tab">
+        <!-- تب جدول کل -->
+        <div id="table-tab" class="tab-content">
             <div class="header-banner">
                 <span>📊</span> جدول رده‌بندی پیش‌بینی‌ها
             </div>
-
             <div class="table-card">
-                <div class="table-row">
-                    <div class="player-info"><span class="rank">1</span><span>Asm A</span></div>
-                    <div class="score">65</div>
-                </div>
-                <div class="table-row highlight-row">
-                    <div class="player-info"><span class="rank">2</span><span style="color: #00ff88; font-weight: 700;">REZA GHATIFI</span></div>
-                    <div class="score highlight-score">62</div>
-                </div>
-                <div class="table-row">
-                    <div class="player-info"><span class="rank">3</span><span>حبیب نعیمی</span></div>
-                    <div class="score">57</div>
-                </div>
-                <div class="table-row">
-                    <div class="player-info"><span class="rank">4</span><span>Donya Asil</span></div>
-                    <div class="score">56</div>
-                </div>
-                <div class="table-row">
-                    <div class="player-info"><span class="rank">5</span><span>Mahdi</span></div>
-                    <div class="score">55</div>
-                </div>
-                <div class="table-row">
-                    <div class="player-info"><span class="rank">6</span><span>محمد خلیلاوی پور</span></div>
-                    <div class="score">52</div>
-                </div>
-                <div class="table-row">
-                    <div class="player-info"><span class="rank">7</span><span>hey10</span></div>
-                    <div class="score">51</div>
-                </div>
-                <div class="table-row">
-                    <div class="player-info"><span class="rank">8</span><span>hajar daoudi</span></div>
-                    <div class="score">50</div>
-                </div>
-                <div class="table-row">
-                    <div class="player-info"><span class="rank">9</span><span>Ahlam Aljaber</span></div>
-                    <div class="score">44</div>
-                </div>
-                <div class="table-row">
-                    <div class="player-info"><span class="rank">10</span><span>امین دریس</span></div>
-                    <div class="score">39</div>
-                </div>
-                <div class="table-row">
-                    <div class="player-info"><span class="rank">11</span><span>Sama salehi</span></div>
-                    <div class="score">32</div>
-                </div>
-                <div class="table-row">
-                    <div class="player-info"><span class="rank">12</span><span>محمد جاسميان</span></div>
-                    <div class="score">26</div>
-                </div>
-                <div class="table-row">
-                    <div class="player-info"><span class="rank">13</span><span>مهدی</span></div>
-                    <div class="score">15</div>
-                </div>
+                <div class="table-row"><div class="player-info"><span class="rank">1</span><span>Asm A</span></div><div class="score">65</div></div>
+                <div class="table-row highlight-row"><div class="player-info"><span class="rank">2</span><span style="color: #00ff88;">REZA GHATIFI</span></div><div class="score highlight-score">62</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">3</span><span>حبیب نعیمی</span></div><div class="score">57</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">4</span><span>Donya Asil</span></div><div class="score">56</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">5</span><span>Mahdi</span></div><div class="score">55</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">6</span><span>محمد خلیلاوی پور</span></div><div class="score">52</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">7</span><span>hey10</span></div><div class="score">51</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">8</span><span>hajar daoudi</span></div><div class="score">50</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">9</span><span>Ahlam Aljaber</span></div><div class="score">44</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">10</span><span>امین دریس</span></div><div class="score">39</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">11</span><span>Sama salehi</span></div><div class="score">32</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">12</span><span>محمد جاسميان</span></div><div class="score">26</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">13</span><span>مهدی</span></div><div class="score">15</div></div>
             </div>
         </div>
 
@@ -869,208 +671,124 @@
             <div class="header-banner">
                 <span>📰</span> گیشه اختصاصی لیگ گداهای استرسی ۲
             </div>
-
-            <!-- خبر اول -->
             <div class="gishah-card">
                 <div class="gishah-title-box">
                     <div class="gishah-icon-badge">⚽️</div>
                     <span>پیرا و نعیمی هم‌شیفت کنارهم در جدول</span>
                 </div>
                 <div class="gishah-text">
-                    ایستگاه هفته ششم با قهرمانی زودهنگام پیرا…<br>
-                    پیرا که بعد از ازدواج و مراسم باشکوه تولدی که جز تعریف و تمجید از خودش دیگه چیزی دیده نمیشد، فهمید نمیشه با غرور و پیش بینی لحظه آخری امتیاز جمع کرد. پیرا بعد از شروع بازی های ملی خیلی شروع خوبی داشت درحالی که پنج شنبه قبل به علت جشنواره روز آفشو از دست داد و حالا این هفته باید کلا فول بیاد با تاکتیک ناشناخته حبیب نعیمی وارد چاه شد که حالا با ۱۲ امتیاز، صدرنشین و قهرمان زودهنگام هفته ششم پیش بینی لیگ گداهای استرسی در فصل دوم لقب گرفته.
+                    ایستگاه هفته ششم با قهرمانی زودهنگام پیرا… پیرا بعد از ازدواج و مراسم باشکوه تولد حالا با ۱۲ امتیاز، صدرنشین و قهرمان زودهنگام هفته ششم پیش بینی لیگ گداهای استرسی در فصل دوم لقب گرفته.
                 </div>
-                <div class="gishah-footer-pattern">
-                    <div class="gishah-pattern-box"></div>
-                    <div class="gishah-pattern-box"></div>
-                    <div class="gishah-pattern-box"></div>
-                </div>
+                <div class="gishah-footer-pattern"><div class="gishah-pattern-box"></div><div class="gishah-pattern-box"></div><div class="gishah-pattern-box"></div></div>
             </div>
-
-            <!-- خبر دوم -->
-            <div class="gishah-card">
-                <div class="gishah-title-box">
-                    <div class="gishah-icon-badge">🏆</div>
-                    <span>تحلیل ویژه امشب: آیا پیرا شروع کرده؟</span>
-                </div>
-                <div class="gishah-text">
-                    پیرا بعد از اینکه در جام جهانی به غرور خودش باخت ولی حالا با شروع هفته ششم داره امتیازات رو جمع میکنه و‌کنار نعیمی رفیق خودش که هر روز فول میاد داره امتیازات رو با فاصله از دیگر رقبا درو‌ میکنن.
-                    <br><br>
-                    باتوجه به اینکه پیرا و‌ نعیمی هر دو در یک هفته فقط ۳ روز در کنار هم هستن باید دید آیا از روی دست هم تقلب کردن یا خیر؟
-                </div>
-                <div class="gishah-footer-pattern">
-                    <div class="gishah-pattern-box"></div>
-                    <div class="gishah-pattern-box"></div>
-                    <div class="gishah-pattern-box"></div>
-                </div>
-            </div>
-
-            <!-- خبر سوم با جدول دوم -->
-            <div class="gishah-card">
-                <div class="gishah-title-box">
-                    <div class="gishah-icon-badge">📊</div>
-                    <span>پیرا ترکوند…<br>قهرمانی پیرا شایددددد؟</span>
-                </div>
-                <div class="gishah-text">
-                    جدول نتایج و رکوردهای ثبت شده جدید که طوفان به پا کرده است:
-                </div>
-
-                <table class="classic-mini-table">
-                    <thead>
-                        <tr>
-                            <th>رتبه</th>
-                            <th>نام کاربر</th>
-                            <th>امتیاز</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>۱</td><td>hey10</td><td>۱۲</td></tr>
-                        <tr><td>۲</td><td>حبیب نعیمی</td><td>۹</td></tr>
-                        <tr><td>۳</td><td>Donya Asil</td><td>۸</td></tr>
-                        <tr><td>۳</td><td>REZA GHATIFI</td><td>۸</td></tr>
-                        <tr><td>۵</td><td>محمد خلیلاوی پور</td><td>۷</td></tr>
-                        <tr><td>۵</td><td>Asm A</td><td>۷</td></tr>
-                        <tr><td>۷</td><td>Mahdi</td><td>۶</td></tr>
-                        <tr><td>۷</td><td>hajar daoudi</td><td>۶</td></tr>
-                        <tr><td>۹</td><td>امین دریس</td><td>۴</td></tr>
-                        <tr><td>۱۰</td><td>Ahlam Aljaber</td><td>۲</td></tr>
-                        <tr><td>۱۱</td><td>Sama salehi</td><td>۰</td></tr>
-                        <tr><td>۱۱</td><td>مهدی</td><td>۰</td></tr>
-                        <tr><td>۱۱</td><td>محمد جاسميان</td><td>۰</td></tr>
-                    </tbody>
-                </table>
-
-                <div class="gishah-footer-pattern">
-                    <div class="gishah-pattern-box"></div>
-                    <div class="gishah-pattern-box"></div>
-                    <div class="gishah-pattern-box"></div>
-                </div>
-            </div>
-
-            <!-- خبر چهارم -->
-            <div class="gishah-card">
-                <div class="gishah-title-box">
-                    <div class="gishah-icon-badge">⚽️</div>
-                    <span>شب مهم از نظر امتیازات و جبران روزهای گذشته</span>
-                </div>
-                <div class="gishah-text">
-                    زویدات بعد از چند بازی اول شدن در هفته های گذشته حالا جایگاه خودش رو داره از دست میده آیا به روزهای بد زویدات نزدیک میشیم.
-                    زویدات و داودی و عصیر بانوان قصر گداهای استرسی که همچنان در رویای اول شدن البته اگه الجابر روی تخت پادشاهی میخ نزاشته باشه.
-                </div>
-                <div class="gishah-footer-pattern">
-                    <div class="gishah-pattern-box"></div>
-                    <div class="gishah-pattern-box"></div>
-                    <div class="gishah-pattern-box"></div>
-                </div>
-            </div>
-
         </div>
 
-        <!-- تب کل‌کل (با آیکون‌های خنده‌دار در جدول تیم‌ها) -->
+        <!-- تب کل‌کل -->
         <div id="kalal-tab" class="tab-content">
             <div class="header-banner">
                 <span>⚡</span> نبرد تیم‌ها (کل‌کل اختصاصی)
             </div>
 
-            <!-- ساعت شمارش معکوس دقیق تا 22:15 فردا -->
+            <!-- ساعت شمارش معکوس الگوبرداری شده از عکس -->
             <div class="countdown-box">
-                <div class="countdown-title">⏰ شمارش معکوس تا سوت آغاز رقابت (ساعت ۲۲:۱۵ فردا)</div>
-                <div class="digital-clock" id="countdownTimer">00:00:00</div>
+                <div class="countdown-title">⏰ شمارش معکوس دقیق تا ساعت ۲۲:۱۵ فردا</div>
+                <div class="matrix-clock-container">
+                    <div class="matrix-digits">
+                        <span class="matrix-hours" id="clockHours">--</span>
+                        <span style="color: #fff;">:</span>
+                        <span class="matrix-minutes" id="clockMinutes">--</span>
+                    </div>
+                </div>
+                <div class="matrix-label" id="clockSecondsLabel">مانده تا سوت آغاز رقابت</div>
             </div>
 
-            <!-- تیم اول: اتحاد بدبختا با آیکون خنده‌دار 🩴 -->
+            <!-- تیم اتحاد بدبختا -->
             <div class="kalal-team-card">
                 <div class="kalal-team-header">
                     <span class="kalal-team-name">🩴 اتحاد بدبختا</span>
                     <span class="kalal-team-total-score">امتیاز کل: ۰</span>
                 </div>
-                <div class="table-row"><div class="player-info"><span class="rank">1</span><span>پیرا 🤡</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">2</span><span>بخشنده 🥶</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">3</span><span>قطیفی 🐒</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">4</span><span>جاسمیان 🐢</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">5</span><span>قطیفی 🤥</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">6</span><span>داودی 🐥</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">1</span><span>پیرا</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">2</span><span>بخشنده</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">3</span><span>قطیفی</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">4</span><span>جاسمیان</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">5</span><span>داودی</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">6</span><span>الجابر</span></div><div class="score">0</div></div>
             </div>
 
-            <!-- تیم دوم: جماعت بی پولا با آیکون خنده‌دار 💸 -->
+            <!-- تیم جماعت بی پولا -->
             <div class="kalal-team-card">
                 <div class="kalal-team-header">
                     <span class="kalal-team-name">💸 جماعت بی‌پولا</span>
                     <span class="kalal-team-total-score">امتیاز کل: ۰</span>
                 </div>
-                <div class="table-row"><div class="player-info"><span class="rank">1</span><span>عصیر 🕳️</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">2</span><span>زویدات 🥖</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">3</span><span>دریس 🛵</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">4</span><span>خلیلاوی پور 🐈</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">5</span><span>مهدی 🔋</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">6</span><span>نعیمی 🦉</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">1</span><span>عصیر</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">2</span><span>زویدات</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">3</span><span>دریس</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">4</span><span>خلیلاوی پور</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">5</span><span>مهدی</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">6</span><span>نعیمی</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">7</span><span>سما صالحی</span></div><div class="score">0</div></div>
             </div>
         </div>
 
     </div>
 
-    <!-- نوار پایین شناور و مدرن (Floating Glass Navbar) -->
+    <!-- نوار پایین شناور -->
     <div class="bottom-nav">
-        <div class="nav-item" onclick="switchTab('matches', this)">
+        <div class="nav-item active" onclick="switchTab('matches', this)">
             <div class="nav-icon-match"></div>
             <span class="nav-text">بازی‌ها</span>
         </div>
-        <div class="nav-item active" onclick="switchTab('table', this)">
-            <div class="nav-icon-table-wrapper">📊</div>
+        <div class="nav-item" onclick="switchTab('table', this)">
+            <div style="font-size:12px;">📊</div>
             <span class="nav-text-table">جدول</span>
         </div>
         <div class="nav-item" onclick="switchTab('gishah', this)">
-            <div class="nav-icon-cup-wrapper">🏆</div>
+            <div style="font-size:12px;">🏆</div>
             <span class="nav-text-cup">گیشه</span>
         </div>
         <div class="nav-item" onclick="switchTab('kalal', this)">
-            <div class="nav-icon-ball-wrapper">⚽</div>
+            <div style="font-size:12px;">⚽</div>
             <span class="nav-text-kalal">کل‌کل</span>
         </div>
     </div>
 
     <script>
-        // دکمه ورود به سایت از صفحه لودینگ اولیه
         function enterSite() {
             const splash = document.getElementById('splash-screen');
             splash.style.opacity = '0';
             splash.style.visibility = 'hidden';
-            
             setTimeout(() => {
                 document.getElementById('main-content').classList.add('visible');
             }, 300);
         }
 
-        // سیستم تعویض تب‌ها
         function switchTab(tabName, element) {
             document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
             element.classList.add('active');
 
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active-tab'));
 
-            if (tabName === 'matches') {
-                document.getElementById('matches-tab').classList.add('active-tab');
-            } else if (tabName === 'table') {
-                document.getElementById('table-tab').classList.add('active-tab');
-            } else if (tabName === 'gishah') {
-                document.getElementById('gishah-tab').classList.add('active-tab');
-            } else if (tabName === 'kalal') {
-                document.getElementById('kalal-tab').classList.add('active-tab');
-            }
+            if (tabName === 'matches') document.getElementById('matches-tab').classList.add('active-tab');
+            else if (tabName === 'table') document.getElementById('table-tab').classList.add('active-tab');
+            else if (tabName === 'gishah') document.getElementById('gishah-tab').classList.add('active-tab');
+            else if (tabName === 'kalal') document.getElementById('kalal-tab').classList.add('active-tab');
         }
 
-        // ساعت دیجیتال شمارش معکوس دقیقاً تا ساعت 22:15 روز بعد (فردا) از زمان فعلی کاربر
-        function updateCountdown() {
+        // تنظیم ساعت دیجیتال ماتریکسی دقیق تا ساعت 22:15 فردا
+        function updateMatrixCountdown() {
             const now = new Date();
             let target = new Date();
             
-            // تنظیم ساعت هدف روی 22:15 روز بعد (فردا)
             target.setDate(now.getDate() + 1);
             target.setHours(22, 15, 0, 0);
 
             const diff = target - now;
             if (diff <= 0) {
-                document.getElementById("countdownTimer").innerText = "00:00:00 (شروع شد!)";
+                document.getElementById("clockHours").innerText = "00";
+                document.getElementById("clockMinutes").innerText = "00";
+                document.getElementById("clockSecondsLabel").innerText = "سوت آغاز به صدا درآمد!";
                 return;
             }
 
@@ -1079,11 +797,13 @@
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
             const format = (n) => String(n).padStart(2, '0');
-            document.getElementById("countdownTimer").innerText = `${format(hours)}:${format(minutes)}:${format(seconds)}`;
+            document.getElementById("clockHours").innerText = format(hours);
+            document.getElementById("clockMinutes").innerText = format(minutes);
+            document.getElementById("clockSecondsLabel").innerText = `ثانیه: ${format(seconds)} | تا ۲۲:۱۵ فردا`;
         }
 
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
+        setInterval(updateMatrixCountdown, 1000);
+        updateMatrixCountdown();
     </script>
 </body>
 </html>
