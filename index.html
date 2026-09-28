@@ -24,7 +24,7 @@
             align-items: center;
         }
 
-        /* صفحه لودینگ اولیه (Splash Screen) */
+        /* صفحه لودینگ اولیه با کاپ و عنوان درخواست شده */
         #splash-screen {
             position: fixed;
             top: 0;
@@ -93,7 +93,7 @@
 
         .splash-league-title {
             color: #00ffaa;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 900;
             margin-bottom: 10px;
             text-shadow: 0 0 10px rgba(0,255,170,0.4);
@@ -101,25 +101,14 @@
 
         .splash-matchup-text {
             color: #ffffff;
-            font-size: 18px;
-            font-weight: 900;
+            font-size: 16px;
+            font-weight: 700;
             line-height: 1.6;
             margin-bottom: 12px;
         }
 
         .splash-matchup-text span {
             color: #ffcc00;
-        }
-
-        .splash-start-time {
-            color: #ff8844;
-            font-size: 13px;
-            font-weight: 700;
-            background: rgba(255, 136, 68, 0.15);
-            padding: 6px 12px;
-            border-radius: 10px;
-            display: inline-block;
-            border: 1px dashed rgba(255, 136, 68, 0.4);
         }
 
         .enter-site-btn {
@@ -181,7 +170,7 @@
             padding: 12px 20px;
             border-radius: 20px;
             box-shadow: 0 8px 20px rgba(255, 140, 0, 0.35);
-            margin-bottom: 22px;
+            margin-bottom: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -189,15 +178,32 @@
             width: 100%;
         }
 
+        /* پیام خوش‌آمدگویی داخل سایت */
+        .welcome-msg-box {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 16px;
+            padding: 12px 16px;
+            width: 100%;
+            margin-bottom: 18px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: #00ffbb;
+        }
+
         .match-wrapper {
             width: 100%;
             margin-bottom: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
         }
 
         .match-card {
             background: linear-gradient(145deg, rgba(12, 95, 40, 0.85), rgba(5, 45, 18, 0.95));
             border: 1.5px solid rgba(0, 255, 150, 0.35);
-            border-radius: 20px 20px 10px 10px;
+            border-radius: 18px 18px 6px 6px;
             width: 100%;
             padding: 14px 16px;
             display: flex;
@@ -205,25 +211,30 @@
             align-items: center;
         }
 
-        .fotmob-tab {
-            background: linear-gradient(135deg, #00b359, #007a3c);
-            border: 1.5px solid rgba(0, 255, 150, 0.35);
-            border-top: none;
-            border-radius: 0 0 16px 16px;
-            padding: 8px 15px;
+        /* دکمه پیش‌بینی فوت‌موب زیر هر بازی */
+        .fotmob-predict-btn {
+            background: linear-gradient(135deg, #00ff88, #00b359);
+            color: #031207;
+            font-size: 12px;
+            font-weight: 900;
+            padding: 8px 12px;
+            border-radius: 6px 6px 14px 14px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+            transition: all 0.2s ease;
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: 6px;
         }
 
-        .fotmob-btn {
-            color: #fff;
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 6px;
+        .fotmob-predict-btn:hover {
+            background: linear-gradient(135deg, #33ff99, #00cc66);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 255, 136, 0.5);
         }
 
         .team {
@@ -250,7 +261,7 @@
             background: #040a07;
             border: 2px solid rgba(0, 255, 130, 0.3);
             border-radius: 10px;
-            padding: 4px 10px;
+            padding: 6px 12px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -260,29 +271,21 @@
             font-family: 'Courier New', Courier, monospace;
             font-size: 12px;
             font-weight: 900;
-            letter-spacing: 1px;
-            display: flex;
-            gap: 4px;
-            direction: ltr;
             color: #ffcc00;
         }
 
         .pixel-subtext {
-            font-size: 8px;
+            font-size: 9px;
             color: #00ff88;
             font-weight: 700;
-            border-top: 1px dashed rgba(255,255,255,0.15);
-            width: 100%;
-            text-align: center;
             margin-top: 2px;
-            padding-top: 1px;
         }
 
         .section-title {
             color: #ffea75;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
-            margin: 14px 0 10px 4px;
+            margin: 12px 0 8px 4px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -347,55 +350,37 @@
             border-radius: 24px;
             width: 100%;
             padding: 20px;
-            margin-top: 15px;
+            margin-bottom: 15px;
         }
 
         .gishah-title-box {
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 900;
             color: #fff;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
 
         .gishah-icon-badge {
             background: linear-gradient(135deg, #ffcc00, #ff8800);
-            width: 38px;
-            height: 38px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 17px;
+            font-size: 16px;
             border: 2px solid rgba(255,255,255,0.8);
         }
 
         .gishah-text {
-            font-size: 14px;
+            font-size: 13px;
             line-height: 1.85;
             color: #e2ecf5;
             font-weight: 600;
-            margin-bottom: 15px;
         }
-
-        .gishah-footer-pattern {
-            display: flex;
-            gap: 6px;
-            margin-top: 15px;
-            justify-content: flex-end;
-        }
-
-        .gishah-pattern-box {
-            width: 36px;
-            height: 10px;
-            background: #ffcc00;
-            clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
-            border-radius: 2px;
-        }
-
-        .gishah-pattern-box:nth-child(2) { background: #fff; }
 
         /* بخش کل‌کل و ساعت ماتریکسی */
         .countdown-box {
@@ -408,7 +393,7 @@
             flex-direction: column;
             align-items: center;
             margin-bottom: 20px;
-            box-shadow: 0 0 25px rgba(0, 255, 136, 0.3), inset 0 0 15px rgba(0,255,136,0.1);
+            box-shadow: 0 0 25px rgba(0, 255, 136, 0.3);
         }
 
         .countdown-title {
@@ -427,38 +412,21 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: inset 0 0 12px rgba(0,0,0,0.9);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .matrix-digits {
             font-family: 'Courier New', Courier, monospace;
-            font-size: 30px;
+            font-size: 28px;
             font-weight: 900;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             display: flex;
-            gap: 8px;
+            gap: 6px;
             direction: ltr;
         }
 
-        .matrix-hours {
-            color: #ff5533; 
-            text-shadow: 0 0 10px rgba(255, 85, 51, 0.7);
-        }
-
-        .matrix-minutes {
-            color: #00ff88; 
-            text-shadow: 0 0 10px rgba(0, 255, 136, 0.7);
-        }
-
-        .matrix-label {
-            font-size: 11px;
-            color: #ffffff;
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-top: 4px;
-            opacity: 0.9;
-        }
+        .matrix-hours { color: #ff5533; }
+        .matrix-minutes { color: #00ff88; }
 
         .kalal-team-card {
             background: rgba(10, 38, 20, 0.9);
@@ -570,11 +538,10 @@
                     سرزمین استرس و پیش‌بینی:<br>
                     <span>تیم جماعت بی‌پولا 💸</span> 🆚 <span>اتحاد بدبختا 🩴</span>
                 </div>
-                <div class="splash-start-time">⚡️ سوت آغاز رقابت جذاب: روز سه‌شنبه</div>
             </div>
 
             <button class="enter-site-btn" onclick="enterSite()">
-                <span>🚀</span> ورود به عرصه رقابت و کل‌کل
+                <span>🚀</span> ورود به سایت
             </button>
         </div>
     </div>
@@ -582,65 +549,46 @@
     <!-- محتوای اصلی سایت -->
     <div id="main-content">
         
-        <!-- تب بازی‌ها (شامل پرتغال و مابقی بازی‌های مهم) -->
+        <!-- تب بازی‌ها -->
         <div id="matches-tab" class="tab-content active-tab">
             <div class="header-banner">
-                <span>⚽</span> نتایج زنده و مابقی مسابقات
+                <span>⚽</span> مسابقات پیش‌رو
             </div>
 
-            <div class="section-title"><span>🔥</span> مسابقه ویژه</div>
+            <div class="welcome-msg-box">
+                👋 خوش‌آمدید! به لیگ پیش‌بینی‌های گداهای استرسی (فصل دوم) خوش آمدید.
+            </div>
+
+            <div class="section-title"><span>📅</span> روز سه‌شنبه ۷ مهر ۱۴۰۵</div>
+
+            <!-- بازی اول -->
             <div class="match-wrapper">
                 <div class="match-card">
-                    <div class="team right"><img src="https://flagcdn.com/w80/pt.png" class="flag" alt="Portugal"><span>پرتغال</span></div>
+                    <div class="team right"><img src="https://flagcdn.com/w80/hr.png" class="flag" alt="Croatia"><span>کرواسی</span></div>
                     <div class="pixel-scoreboard">
-                        <div class="pixel-display"><span style="color:#ff5533;">2</span>-<span style="color:#00ff88;">1</span></div>
-                        <div class="pixel-subtext">پایان بازی</div>
+                        <div class="pixel-display">22:15</div>
+                        <div class="pixel-subtext" id="countdown-1">محاسبه...</div>
                     </div>
-                    <div class="team left"><span>نروژ</span><img src="https://flagcdn.com/w80/no.png" class="flag" alt="Norway"></div>
+                    <div class="team left"><span>چک</span><img src="https://flagcdn.com/w80/cz.png" class="flag" alt="Czech"></div>
                 </div>
-                <div class="fotmob-tab">
-                    <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" class="fotmob-btn">
-                        <span>🔴</span> پیش‌بینی و پیگیری در فوت‌موب (FotMob)
-                    </a>
-                </div>
+                <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" class="fotmob-predict-btn">
+                    <span>⚡</span> برای پیش‌بینی در فوت‌موب کلیک کن
+                </a>
             </div>
 
-            <div class="section-title"><span>📅</span> مابقی بازی‌های مهم هفته</div>
-            
             <!-- بازی دوم -->
             <div class="match-wrapper">
                 <div class="match-card">
                     <div class="team right"><img src="https://flagcdn.com/w80/es.png" class="flag" alt="Spain"><span>اسپانیا</span></div>
                     <div class="pixel-scoreboard">
-                        <div class="pixel-display"><span style="color:#ffcc00;">3</span>-<span style="color:#ffcc00;">0</span></div>
-                        <div class="pixel-subtext">پایان بازی</div>
+                        <div class="pixel-display">22:15</div>
+                        <div class="pixel-subtext" id="countdown-2">محاسبه...</div>
                     </div>
-                    <div class="team left"><span>آلمان</span><img src="https://flagcdn.com/w80/de.png" class="flag" alt="Germany"></div>
+                    <div class="team left"><span>کرواسی</span><img src="https://flagcdn.com/w80/hr.png" class="flag" alt="Croatia"></div>
                 </div>
-            </div>
-
-            <!-- بازی سوم -->
-            <div class="match-wrapper">
-                <div class="match-card">
-                    <div class="team right"><img src="https://flagcdn.com/w80/fr.png" class="flag" alt="France"><span>فرانسه</span></div>
-                    <div class="pixel-scoreboard">
-                        <div class="pixel-display"><span style="color:#00ff88;">1</span>-<span style="color:#00ff88;">1</span></div>
-                        <div class="pixel-subtext">زنده (دقیقه ۸۵)</div>
-                    </div>
-                    <div class="team left"><span>ایتالیا</span><img src="https://flagcdn.com/w80/it.png" class="flag" alt="Italy"></div>
-                </div>
-            </div>
-
-            <!-- بازی چهارم -->
-            <div class="match-wrapper">
-                <div class="match-card">
-                    <div class="team right"><img src="https://flagcdn.com/w80/gb-eng.png" class="flag" alt="England"><span>انگلیس</span></div>
-                    <div class="pixel-scoreboard">
-                        <div class="pixel-display"><span style="color:#ffcc00;">--</span>:<span style="color:#ffcc00;">--</span></div>
-                        <div class="pixel-subtext">امشب ساعت ۲۳:۳۰</div>
-                    </div>
-                    <div class="team left"><span>برزیل</span><img src="https://flagcdn.com/w80/br.png" class="flag" alt="Brazil"></div>
-                </div>
+                <a href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" class="fotmob-predict-btn">
+                    <span>⚡</span> برای پیش‌بینی در فوت‌موب کلیک کن
+                </a>
             </div>
         </div>
 
@@ -679,7 +627,6 @@
                 <div class="gishah-text">
                     ایستگاه هفته ششم با قهرمانی زودهنگام پیرا… پیرا بعد از ازدواج و مراسم باشکوه تولد حالا با ۱۲ امتیاز، صدرنشین و قهرمان زودهنگام هفته ششم پیش بینی لیگ گداهای استرسی در فصل دوم لقب گرفته.
                 </div>
-                <div class="gishah-footer-pattern"><div class="gishah-pattern-box"></div><div class="gishah-pattern-box"></div><div class="gishah-pattern-box"></div></div>
             </div>
         </div>
 
@@ -689,9 +636,9 @@
                 <span>⚡</span> نبرد تیم‌ها (کل‌کل اختصاصی)
             </div>
 
-            <!-- ساعت شمارش معکوس الگوبرداری شده از عکس -->
+            <!-- ساعت شمارش معکوس -->
             <div class="countdown-box">
-                <div class="countdown-title">⏰ شمارش معکوس دقیق تا ساعت ۲۲:۱۵ فردا</div>
+                <div class="countdown-title">⏰ شمارش معکوس تا اولین پیش‌بینی (ساعت ۲۲:۱۵)</div>
                 <div class="matrix-clock-container">
                     <div class="matrix-digits">
                         <span class="matrix-hours" id="clockHours">--</span>
@@ -699,7 +646,7 @@
                         <span class="matrix-minutes" id="clockMinutes">--</span>
                     </div>
                 </div>
-                <div class="matrix-label" id="clockSecondsLabel">مانده تا سوت آغاز رقابت</div>
+                <div class="pixel-subtext" id="clockSecondsLabel" style="font-size: 11px;">در حال بارگذاری زمان...</div>
             </div>
 
             <!-- تیم اتحاد بدبختا -->
@@ -776,34 +723,39 @@
             else if (tabName === 'kalal') document.getElementById('kalal-tab').classList.add('active-tab');
         }
 
-        // تنظیم ساعت دیجیتال ماتریکسی دقیق تا ساعت 22:15 فردا
-        function updateMatrixCountdown() {
+        function updateTimers() {
             const now = new Date();
-            let target = new Date();
-            
-            target.setDate(now.getDate() + 1);
-            target.setHours(22, 15, 0, 0);
+            const targetDate = new Date(2026, 8, 29, 22, 15, 0); // ۷ مهر ۱۴۰۵ ساعت ۲۲:۱۵
 
-            const diff = target - now;
+            const diff = targetDate - now;
+
             if (diff <= 0) {
                 document.getElementById("clockHours").innerText = "00";
                 document.getElementById("clockMinutes").innerText = "00";
-                document.getElementById("clockSecondsLabel").innerText = "سوت آغاز به صدا درآمد!";
+                document.getElementById("clockSecondsLabel").innerText = "مسابقه آغاز شد!";
+                document.getElementById("countdown-1").innerText = "سوت آغازین!";
+                document.getElementById("countdown-2").innerText = "سوت آغازین!";
                 return;
             }
 
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
             const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
             const format = (n) => String(n).padStart(2, '0');
-            document.getElementById("clockHours").innerText = format(hours);
+            
+            document.getElementById("clockHours").innerText = format(days * 24 + hours);
             document.getElementById("clockMinutes").innerText = format(minutes);
-            document.getElementById("clockSecondsLabel").innerText = `ثانیه: ${format(seconds)} | تا ۲۲:۱۵ فردا`;
+            document.getElementById("clockSecondsLabel").innerText = `ثانیه: ${format(seconds)} | مانده تا شروع بازی`;
+
+            const matchTimeText = `${days} روز و ${format(hours)} ساعت و ${format(minutes)} دقیقه`;
+            document.getElementById("countdown-1").innerText = matchTimeText;
+            document.getElementById("countdown-2").innerText = matchTimeText;
         }
 
-        setInterval(updateMatrixCountdown, 1000);
-        updateMatrixCountdown();
+        setInterval(updateTimers, 1000);
+        updateTimers();
     </script>
 </body>
 </html>
