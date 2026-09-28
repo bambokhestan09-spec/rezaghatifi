@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>لیگ گداهای استرسی ۲</title>
-    <!-- فونت استاندارد وزیرمتن -->
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- فونت وزیرمتن برای متن‌های فارسی و فونت هندسی برای بخش انگلیسی -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -24,7 +24,7 @@
             align-items: center;
         }
 
-        /* صفحه لودینگ اولیه (Splash Screen) با کاپ طلایی شش‌ضلعی مشابه تصویر */
+        /* صفحه ورود اولیه (Splash Screen) با آیکون زمین فوتبال و متن انگلیسی */
         #splash-screen {
             position: fixed;
             top: 0;
@@ -52,50 +52,68 @@
             width: 100%;
             text-align: center;
             background: #161b22;
-            border: 2px solid rgba(255, 215, 0, 0.3);
+            border: 2px solid rgba(0, 255, 136, 0.4);
             border-radius: 24px;
             padding: 30px 20px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.7);
         }
 
-        /* باکس شش‌ضلعی کاپ طلایی مشابه تصویر */
-        .splash-trophy-box {
-            width: 85px;
-            height: 85px;
-            background: linear-gradient(145deg, #1c242c, #11161d);
-            border: 2.5px solid #d4af37;
-            border-radius: 20px;
+        /* آیکون زمین فوتبال هشت‌ضلعی مشابه تصویر ارسالی */
+        .splash-field-icon {
+            width: 80px;
+            height: 80px;
+            background: #00ff55;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
             display: flex;
             justify-content: center;
             align-items: center;
             margin-bottom: 20px;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
-            animation: floatTrophy 3s infinite ease-in-out;
+            box-shadow: 0 0 25px rgba(0, 255, 85, 0.5);
+            animation: floatIcon 3s infinite ease-in-out;
+            position: relative;
         }
 
-        @keyframes floatTrophy {
+        .splash-field-icon::after {
+            content: '';
+            width: 36px;
+            height: 36px;
+            border: 3px solid #ffffff;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        @keyframes floatIcon {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+            50% { transform: translateY(-6px); }
         }
 
         .splash-league-title {
-            color: #ffea75;
-            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff;
+            font-size: 18px;
             font-weight: 900;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            text-shadow: 0 0 10px rgba(0,255,136,0.4);
+        }
+
+        .splash-league-sub {
+            color: #00ff88;
+            font-size: 13px;
+            font-weight: 700;
             margin-bottom: 25px;
-            text-shadow: 0 0 10px rgba(255, 234, 117, 0.3);
         }
 
         .enter-site-btn {
-            background: linear-gradient(135deg, #d4af37, #aa820a);
-            color: #0c1015;
+            background: linear-gradient(135deg, #00ff88, #00aa55);
+            color: #031207;
             font-size: 15px;
             font-weight: 900;
             padding: 12px 32px;
             border-radius: 30px;
             border: none;
             cursor: pointer;
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.4);
             transition: all 0.2s ease;
             display: flex;
             align-items: center;
@@ -104,7 +122,7 @@
 
         .enter-site-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+            box-shadow: 0 8px 25px rgba(0, 255, 136, 0.6);
         }
 
         /* محتوای اصلی سایت */
@@ -153,7 +171,7 @@
             width: 100%;
         }
 
-        /* پیام خوش‌آمدگویی مشابه سبک تصویر با متن درخواستی */
+        /* پیام خوش‌آمدگویی داخل سایت */
         .welcome-msg-box {
             background: #161b22;
             border: 2px solid #d4af37;
@@ -503,15 +521,12 @@
 </head>
 <body>
 
-    <!-- صفحه ورود اولیه با کاپ طلایی شش‌ضلعی مشابه تصویر -->
+    <!-- صفحه ورود اولیه با آیکون زمین فوتبال و متن انگلیسی -->
     <div id="splash-screen">
         <div class="splash-inner">
-            <div class="splash-trophy-box">
-                <svg width="45" height="45" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L15 8H21L16 12L18 18L12 14.5L6 18L8 12L3 8H9L12 2Z" fill="#ffea75" stroke="#d4af37" stroke-width="1.5" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <div class="splash-league-title">لیگ گداهای استرسی فصل دوم</div>
+            <div class="splash-field-icon"></div>
+            <div class="splash-league-title">GEDAHAYE ESTERESI</div>
+            <div class="splash-league-sub">SEASON 2</div>
             <button class="enter-site-btn" onclick="enterSite()">
                 ورود به سایت 🚀
             </button>
