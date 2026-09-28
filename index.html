@@ -94,7 +94,6 @@ a{
     0%,100%{
         transform:translateY(0) rotate(20deg);
     }
-
     50%{
         transform:translateY(15px) rotate(120deg);
     }
@@ -265,8 +264,7 @@ a{
 
 
 /* =========================================================
-   WINNER POPUP
-   سبک پوستر ارسالی: سفید + سبز فیروزه‌ای + طلایی
+   WINNER MODAL (بدون نیاز به عکس - طراحی گرافیکی خالص)
 ========================================================= */
 
 #winner-modal{
@@ -277,7 +275,6 @@ a{
     align-items:center;
     justify-content:center;
     padding:18px;
-
     background:
         radial-gradient(
             circle at 50% 20%,
@@ -285,14 +282,11 @@ a{
             transparent 35%
         ),
         rgba(9,16,20,.78);
-
     backdrop-filter:blur(9px);
     -webkit-backdrop-filter:blur(9px);
-
     opacity:0;
     visibility:hidden;
     pointer-events:none;
-
     transition:
         opacity .45s ease,
         visibility .45s ease;
@@ -310,31 +304,21 @@ a{
     pointer-events:none;
 }
 
-
-/* کارت */
-
 .winner-box{
     width:min(100%,390px);
     max-height:92vh;
     overflow:hidden;
-
     background:#fff;
-
     border-radius:28px;
-
     border:1px solid rgba(25,215,174,.35);
-
     box-shadow:
         0 35px 80px rgba(0,0,0,.35),
         0 0 50px rgba(24,215,174,.13);
-
     transform:
         translateY(25px)
         scale(.92);
-
     transition:
         transform .55s cubic-bezier(.2,.8,.2,1);
-
     position:relative;
 }
 
@@ -344,15 +328,10 @@ a{
         scale(1);
 }
 
-
-/* عنوان بالای پوستر */
-
 .winner-top-title{
     text-align:center;
-    padding:14px 14px 5px;
-
+    padding:18px 14px 10px;
     background:#fff;
-
     position:relative;
     z-index:3;
 }
@@ -370,88 +349,61 @@ a{
     font-size:29px;
     font-weight:700;
     line-height:1;
-
     color:#16dcb1;
-
     margin-top:1px;
 }
 
-
-/* تصویر اصلی */
-
-.winner-image-wrap{
-    width:100%;
-    position:relative;
-    overflow:hidden;
-
-    background:#fff;
+/* جایگزین گرافیکی پوستر بدون عکس */
+.winner-graphic-badge {
+    background: linear-gradient(135deg, #10cf9b, #0da87f);
+    padding: 35px 20px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
 }
 
-.winner-image{
-    width:100%;
-    height:auto;
-    display:block;
-
-    object-fit:contain;
+.winner-graphic-badge::after {
+    content: "🏆";
+    font-size: 75px;
+    display: block;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
 }
 
-
-/* اگر عکس کمی بزرگ بود */
-
-@media(max-height:700px){
-
-    .winner-box{
-        max-height:90vh;
-    }
-
-    .winner-image{
-        max-height:54vh;
-        object-fit:cover;
-        object-position:center;
-    }
-
+.winner-graphic-badge h3 {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: .5px;
 }
-
-
-/* پیام روی پوستر */
 
 .winner-message{
     padding:17px 18px 18px;
     text-align:center;
-
     background:
         linear-gradient(
             180deg,
             #ffffff 0%,
             #f5fffc 100%
         );
-
     border-top:1px solid #e6f5f0;
 }
 
 .winner-kicker{
     display:inline-flex;
-
     padding:5px 12px;
-
     border-radius:30px;
-
     background:#e3faf4;
-
     color:#0eb890;
-
     font-size:9px;
     font-weight:900;
-
     margin-bottom:8px;
 }
 
 .winner-title{
     color:#111722;
-
     font-size:21px;
     line-height:1.5;
-
     font-weight:900;
 }
 
@@ -461,56 +413,37 @@ a{
 
 .winner-description{
     margin-top:5px;
-
     color:#68746f;
-
     font-size:11px;
     line-height:1.9;
-
     font-weight:700;
 }
 
 .winner-season{
     color:#bd8d17;
-
     font-size:10px;
-
     font-weight:900;
-
     margin-top:4px;
 }
 
-
-/* دکمه ورود */
-
 .winner-enter{
     width:100%;
-
     margin-top:13px;
-
     border:none;
-
     padding:12px 15px;
-
     border-radius:14px;
-
     color:#fff;
-
     cursor:pointer;
-
     font-size:11px;
     font-weight:900;
-
     background:
         linear-gradient(
             135deg,
             #16dbb0,
             #0eaf88
         );
-
     box-shadow:
         0 9px 22px rgba(13,190,148,.24);
-
     transition:.25s;
 }
 
@@ -522,60 +455,25 @@ a{
     transform:scale(.97);
 }
 
-
-/* کنفتی پنجره */
-
 .winner-confetti{
     position:absolute;
-
     width:7px;
     height:17px;
-
     border-radius:5px;
-
     background:#d6a927;
-
     z-index:5;
-
     opacity:.8;
-
     animation:winnerFloat 3s infinite ease-in-out;
 }
 
-.winner-confetti.c1{
-    top:45px;
-    left:13%;
-    transform:rotate(25deg);
-}
-
-.winner-confetti.c2{
-    top:85px;
-    right:11%;
-    transform:rotate(-30deg);
-}
-
-.winner-confetti.c3{
-    top:180px;
-    left:7%;
-    transform:rotate(45deg);
-}
-
-.winner-confetti.c4{
-    top:235px;
-    right:6%;
-    transform:rotate(-45deg);
-}
+.winner-confetti.c1{top:45px;left:13%;transform:rotate(25deg);}
+.winner-confetti.c2{top:85px;right:11%;transform:rotate(-30deg);}
+.winner-confetti.c3{top:180px;left:7%;transform:rotate(45deg);}
+.winner-confetti.c4{top:235px;right:6%;transform:rotate(-45deg);}
 
 @keyframes winnerFloat{
-
-    0%,100%{
-        transform:translateY(0) rotate(25deg);
-    }
-
-    50%{
-        transform:translateY(12px) rotate(75deg);
-    }
-
+    0%,100%{transform:translateY(0) rotate(25deg);}
+    50%{transform:translateY(12px) rotate(75deg);}
 }
 
 
@@ -585,15 +483,9 @@ a{
 
 #main-content{
     width:min(100%,480px);
-
-    padding:
-        18px
-        15px
-        115px;
-
+    padding:18px 15px 115px;
     opacity:0;
     visibility:hidden;
-
     transition:opacity .7s ease;
 }
 
@@ -609,19 +501,12 @@ a{
 
 .hero{
     position:relative;
-
     background:#fff;
-
     border-radius:30px;
-
     min-height:340px;
-
     overflow:hidden;
-
     margin-bottom:18px;
-
     border:1px solid #e8eeec;
-
     box-shadow:
         0 20px 50px rgba(15,35,30,.10),
         0 5px 15px rgba(15,35,30,.06);
@@ -629,33 +514,23 @@ a{
 
 .hero-top{
     padding:25px 20px 0;
-
     text-align:center;
-
     position:relative;
-
     z-index:3;
 }
 
 .hero-small{
     font-family:'Montserrat',sans-serif;
-
     font-size:11px;
-
     font-weight:900;
-
     color:#121722;
-
     letter-spacing:1.5px;
 }
 
 .hero-title{
     font-size:25px;
-
     font-weight:900;
-
     color:#101722;
-
     margin-top:7px;
 }
 
@@ -665,30 +540,23 @@ a{
 
 .hero-sub{
     margin-top:4px;
-
     color:#7c8790;
-
     font-size:11px;
-
     font-weight:700;
 }
 
 .hero-art{
     position:absolute;
-
     left:0;
     right:0;
     bottom:-4px;
-
     height:195px;
-
     background:
         linear-gradient(
             145deg,
             #1ce0b4,
             #0fb68f
         );
-
     clip-path:
         polygon(
             0 37%,
@@ -704,57 +572,33 @@ a{
 .hero-art:before,
 .hero-art:after{
     content:"";
-
     position:absolute;
-
     width:12px;
     height:250px;
-
     background:rgba(255,255,255,.85);
-
     transform:rotate(29deg);
 }
 
-.hero-art:before{
-    left:22%;
-    top:-35px;
-}
-
-.hero-art:after{
-    right:23%;
-    top:-35px;
-}
+.hero-art:before{left:22%;top:-35px;}
+.hero-art:after{right:23%;top:-35px;}
 
 .hero-trophy{
     position:absolute;
-
     width:110px;
     height:145px;
-
     left:50%;
-
     transform:translateX(-50%);
-
     bottom:42px;
-
     z-index:4;
 }
 
 .hero-trophy .cup{
     position:absolute;
-
     width:72px;
     height:72px;
-
     left:19px;
     top:0;
-
-    border-radius:
-        10px
-        10px
-        28px
-        28px;
-
+    border-radius:10px 10px 28px 28px;
     background:
         linear-gradient(
             100deg,
@@ -764,69 +608,47 @@ a{
             #9c6810 80%,
             #ffd65d
         );
-
-    box-shadow:
-        0 12px 25px rgba(81,58,7,.25);
+    box-shadow:0 12px 25px rgba(81,58,7,.25);
 }
 
 .hero-trophy .cup:before{
     content:"";
-
     position:absolute;
-
     width:49px;
     height:8px;
-
     left:11px;
     top:-4px;
-
     background:#e6bd43;
-
     border-radius:50%;
 }
 
 .hero-trophy .handle{
     position:absolute;
-
     width:31px;
     height:48px;
-
     top:12px;
-
     border:7px solid #d1a025;
-
     border-radius:50%;
 }
 
-.hero-trophy .handle.left{
-    left:0;
-}
-
-.hero-trophy .handle.right{
-    right:0;
-}
+.hero-trophy .handle.left{left:0;}
+.hero-trophy .handle.right{right:0;}
 
 .hero-trophy .stem{
     position:absolute;
-
     width:25px;
     height:36px;
-
     background:#d5a72d;
-
     left:43px;
     top:65px;
 }
 
 .hero-trophy .base{
     position:absolute;
-
     bottom:0;
     left:12px;
-
     width:86px;
     height:40px;
-
     background:
         linear-gradient(
             90deg,
@@ -834,14 +656,7 @@ a{
             #4b4e52,
             #111214
         );
-
-    clip-path:
-        polygon(
-            10% 0,
-            90% 0,
-            100% 100%,
-            0 100%
-        );
+    clip-path:polygon(10% 0,90% 0,100% 100%,0 100%);
 }
 
 
@@ -851,13 +666,9 @@ a{
 
 .section-head{
     width:100%;
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     margin:18px 0 10px;
 }
 
@@ -869,13 +680,9 @@ a{
 .section-head span{
     font-size:10px;
     font-weight:800;
-
     color:#10bd98;
-
     background:#e5faf4;
-
     padding:5px 9px;
-
     border-radius:20px;
 }
 
@@ -891,173 +698,106 @@ a{
 
 .match-card{
     position:relative;
-
     background:#fff;
-
     border:1px solid #e6ece9;
-
     border-radius:24px;
-
     padding:15px 10px 13px;
-
-    box-shadow:
-        0 12px 28px rgba(25,50,42,.08);
-
+    box-shadow:0 12px 28px rgba(25,50,42,.08);
     overflow:hidden;
 }
 
 .match-card:before{
     content:"MATCHDAY";
-
     position:absolute;
-
     top:8px;
     left:12px;
-
     font-family:'Montserrat',sans-serif;
-
     font-size:8px;
-
     color:#b5bfbc;
-
     letter-spacing:1px;
 }
 
 .match-meta{
     text-align:center;
-
     font-size:10px;
-
     color:#8a9590;
-
     font-weight:700;
-
     margin-bottom:13px;
 }
 
 .match-main{
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     gap:6px;
 }
 
 .team{
     width:34%;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     gap:7px;
-
     font-size:13px;
-
     font-weight:900;
 }
 
-.team img{
-    width:36px;
-    height:36px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-
-    border:2px solid #fff;
-
-    box-shadow:
-        0 4px 10px rgba(0,0,0,.12);
+.team-flag {
+    font-size: 22px;
 }
 
 .match-center{
     width:28%;
-
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
 }
 
 .match-time{
     font-family:'Montserrat',sans-serif;
-
     font-size:18px;
-
     font-weight:900;
-
     color:#101722;
 }
 
 .match-countdown{
     font-size:8px;
-
     color:#11bd96;
-
     font-weight:800;
-
     margin-top:3px;
-
     text-align:center;
 }
 
 .match-status{
     margin-top:7px;
-
     background:#effbf7;
-
     color:#11ad88;
-
     padding:4px 8px;
-
     border-radius:20px;
-
     font-size:8px;
-
     font-weight:900;
 }
 
 .predict-btn{
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     gap:7px;
-
     width:100%;
-
     margin-top:7px;
-
     padding:10px;
-
     background:
         linear-gradient(
             135deg,
             #12d9aa,
             #0db88f
         );
-
     color:#fff;
-
     border-radius:12px;
-
     text-decoration:none;
-
     font-size:11px;
-
     font-weight:900;
-
-    box-shadow:
-        0 7px 18px rgba(10,190,145,.22);
-
+    box-shadow:0 7px 18px rgba(10,190,145,.22);
     transition:.25s;
 }
 
@@ -1072,65 +812,45 @@ a{
 
 .achievement-card{
     position:relative;
-
     width:100%;
-
     background:#fff;
-
     border:1px solid #e7ecea;
-
     border-radius:28px;
-
     overflow:hidden;
-
     margin-bottom:15px;
-
-    box-shadow:
-        0 15px 35px rgba(15,40,33,.09);
+    box-shadow:0 15px 35px rgba(15,40,33,.09);
 }
 
 .achievement-top{
     text-align:center;
-
     padding:22px 18px 10px;
 }
 
 .achievement-label{
     font-family:'Montserrat',sans-serif;
-
     color:#1c2430;
-
     font-size:11px;
-
     font-weight:900;
-
     letter-spacing:1px;
 }
 
 .achievement-script{
     font-family:cursive;
-
     color:#18cfa6;
-
     font-size:28px;
-
     font-style:italic;
-
     font-weight:700;
 }
 
 .news-trophy-zone{
     height:125px;
-
     position:relative;
-
     background:
         linear-gradient(
             145deg,
             #23dfb5,
             #0bb88e
         );
-
     clip-path:
         polygon(
             0 28%,
@@ -1145,25 +865,19 @@ a{
 
 .mini-trophy{
     position:absolute;
-
     width:75px;
     height:90px;
-
     left:50%;
     bottom:15px;
-
     transform:translateX(-50%);
 }
 
 .mini-trophy .cup{
     position:absolute;
-
     width:50px;
     height:48px;
-
     left:13px;
     top:0;
-
     background:
         linear-gradient(
             90deg,
@@ -1171,53 +885,29 @@ a{
             #ffe77d,
             #ad7312
         );
-
-    border-radius:
-        7px
-        7px
-        20px
-        20px;
+    border-radius:7px 7px 20px 20px;
 }
 
 .mini-trophy .handle{
     position:absolute;
-
     width:22px;
     height:34px;
-
     top:8px;
-
     border:5px solid #d2a127;
-
     border-radius:50%;
 }
 
-.mini-trophy .handle.left{
-    left:0;
-}
-
-.mini-trophy .handle.right{
-    right:0;
-}
+.mini-trophy .handle.left{left:0;}
+.mini-trophy .handle.right{right:0;}
 
 .mini-trophy .base{
     position:absolute;
-
     width:62px;
     height:24px;
-
     bottom:0;
     left:6px;
-
     background:#17191c;
-
-    clip-path:
-        polygon(
-            10% 0,
-            90% 0,
-            100% 100%,
-            0 100%
-        );
+    clip-path:polygon(10% 0,90% 0,100% 100%,0 100%);
 }
 
 .news-body{
@@ -1226,37 +916,25 @@ a{
 
 .news-title{
     font-size:15px;
-
     font-weight:900;
-
     margin-bottom:8px;
 }
 
 .news-text{
     color:#59646c;
-
     font-size:12px;
-
     line-height:2;
-
     font-weight:600;
 }
 
 .news-badge{
     display:inline-flex;
-
     margin-top:10px;
-
     background:#e9faf5;
-
     color:#0db78d;
-
     padding:5px 9px;
-
     border-radius:15px;
-
     font-size:9px;
-
     font-weight:900;
 }
 
@@ -1267,87 +945,50 @@ a{
 
 .table-card{
     width:100%;
-
     background:#fff;
-
     border:1px solid #e5ece9;
-
     border-radius:25px;
-
     padding:8px;
-
-    box-shadow:
-        0 14px 32px rgba(20,40,35,.08);
+    box-shadow:0 14px 32px rgba(20,40,35,.08);
 }
 
 .table-header{
     display:grid;
-
-    grid-template-columns:
-        42px
-        1fr
-        70px;
-
+    grid-template-columns:42px 1fr 70px;
     padding:9px 10px;
-
     color:#8a9490;
-
     font-size:9px;
-
     font-weight:900;
 }
 
 .table-row{
     display:grid;
-
-    grid-template-columns:
-        42px
-        1fr
-        70px;
-
+    grid-template-columns:42px 1fr 70px;
     align-items:center;
-
     min-height:48px;
-
     padding:6px 10px;
-
     border-top:1px solid #edf1ef;
-
     font-size:11px;
-
     font-weight:700;
 }
 
 .table-row.first{
-    background:
-        linear-gradient(
-            90deg,
-            #fff9df,
-            #fff
-        );
-
+    background:linear-gradient(90deg,#fff9df,#fff);
     border:1px solid #f0d77b;
-
     border-radius:16px;
-
     margin-bottom:3px;
 }
 
 .table-row.reza{
     background:#ecfff8;
-
     border:1px solid #b8efde;
-
     border-radius:16px;
 }
 
 .rank{
     font-family:'Montserrat',sans-serif;
-
     font-size:12px;
-
     font-weight:900;
-
     color:#9ca5a1;
 }
 
@@ -1357,49 +998,35 @@ a{
 
 .player{
     display:flex;
-
     align-items:center;
-
     gap:7px;
 }
 
 .player-dot{
     width:7px;
     height:7px;
-
     border-radius:50%;
-
     background:#d5dcd9;
 }
 
 .reza .player-dot{
     background:#12cda0;
-
-    box-shadow:
-        0 0 8px rgba(18,205,160,.5);
+    box-shadow:0 0 8px rgba(18,205,160,.5);
 }
 
 .score{
     justify-self:end;
-
     font-family:'Montserrat',sans-serif;
-
     font-size:12px;
-
     font-weight:900;
-
     color:#bd8b0e;
-
     background:#fff8dd;
-
     padding:5px 9px;
-
     border-radius:9px;
 }
 
 .reza .score{
     color:#09ae85;
-
     background:#d9f9ef;
 }
 
@@ -1410,48 +1037,31 @@ a{
 
 .countdown-card{
     width:100%;
-
     background:#10151d;
-
     border-radius:27px;
-
     padding:20px 15px;
-
     color:#fff;
-
     position:relative;
-
     overflow:hidden;
-
     margin-bottom:15px;
-
-    box-shadow:
-        0 18px 35px rgba(20,30,35,.18);
+    box-shadow:0 18px 35px rgba(20,30,35,.18);
 }
 
 .countdown-card:after{
     content:"";
-
     position:absolute;
-
     width:180px;
     height:180px;
-
     background:rgba(18,216,171,.12);
-
     border-radius:50%;
-
     left:-80px;
     bottom:-90px;
 }
 
 .countdown-title{
     text-align:center;
-
     font-size:12px;
-
     font-weight:800;
-
     color:#cbd5d1;
 }
 
@@ -1461,69 +1071,47 @@ a{
 
 .clock{
     direction:ltr;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     gap:6px;
-
     margin:17px 0 9px;
-
     position:relative;
-
     z-index:2;
 }
 
 .clock-box{
     min-width:58px;
-
     background:#181f27;
-
     border:1px solid #2e3b3e;
-
     border-radius:13px;
-
     padding:8px 5px;
-
     text-align:center;
 }
 
 .clock-number{
     font-family:'Montserrat',sans-serif;
-
     font-size:22px;
-
     font-weight:900;
-
     color:#fff;
 }
 
 .clock-label{
     font-size:7px;
-
     color:#7ee6cf;
-
     margin-top:2px;
 }
 
 .clock-separator{
     font-family:'Montserrat',sans-serif;
-
     color:#17d7ad;
-
     font-size:18px;
-
     font-weight:900;
 }
 
 .countdown-status{
     text-align:center;
-
     font-size:9px;
-
     color:#a8b5b0;
 }
 
@@ -1534,79 +1122,47 @@ a{
 
 .team-battle{
     width:100%;
-
     background:#fff;
-
     border:1px solid #e4ebe8;
-
     border-radius:26px;
-
     padding:13px;
-
     margin-bottom:15px;
-
-    box-shadow:
-        0 12px 28px rgba(20,45,38,.07);
+    box-shadow:0 12px 28px rgba(20,45,38,.07);
 }
 
 .team-battle-header{
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     padding:10px 12px;
-
     border-radius:16px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ecfff9,
-            #fff
-        );
-
+    background:linear-gradient(135deg,#ecfff9,#fff);
     border:1px solid #ccefe4;
-
     margin-bottom:8px;
 }
 
 .team-name{
     font-size:13px;
-
     font-weight:900;
-
     color:#111820;
 }
 
 .team-total{
     font-size:10px;
-
     color:#10b88f;
-
     background:#e1faf3;
-
     padding:5px 8px;
-
     border-radius:10px;
-
     font-weight:900;
 }
 
 .team-player{
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     padding:9px 8px;
-
     border-bottom:1px solid #f0f2f1;
-
     font-size:11px;
-
     font-weight:700;
 }
 
@@ -1616,37 +1172,24 @@ a{
 
 .player-rank{
     display:inline-flex;
-
     width:23px;
     height:23px;
-
     justify-content:center;
     align-items:center;
-
     background:#f1f4f2;
-
     border-radius:50%;
-
     color:#89928f;
-
     margin-left:6px;
-
     font-family:'Montserrat',sans-serif;
-
     font-size:9px;
 }
 
 .player-score{
     color:#b5860c;
-
     background:#fff8de;
-
     padding:4px 8px;
-
     border-radius:8px;
-
     font-size:9px;
-
     font-weight:900;
 }
 
@@ -1657,92 +1200,53 @@ a{
 
 .bottom-nav{
     position:fixed;
-
     z-index:9000;
-
     bottom:13px;
-
     left:50%;
-
     transform:translateX(-50%);
-
     width:calc(100% - 24px);
-
     max-width:455px;
-
     padding:7px;
-
     background:rgba(255,255,255,.91);
-
     backdrop-filter:blur(20px);
-
     -webkit-backdrop-filter:blur(20px);
-
     border:1px solid #dfe9e5;
-
     border-radius:24px;
-
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:5px;
-
-    box-shadow:
-        0 15px 40px rgba(20,40,35,.14);
+    box-shadow:0 15px 40px rgba(20,40,35,.14);
 }
 
 .nav-item{
     border:none;
-
     background:transparent;
-
     color:#7b8581;
-
     padding:9px 4px;
-
     border-radius:17px;
-
     cursor:pointer;
-
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
-
     justify-content:center;
-
     gap:3px;
-
     transition:.25s;
 }
 
 .nav-icon{
     font-size:17px;
-
     line-height:1;
 }
 
 .nav-text{
     font-size:9px;
-
     font-weight:800;
 }
 
 .nav-item.active{
-    background:
-        linear-gradient(
-            135deg,
-            #16d7ad,
-            #0db98f
-        );
-
+    background:linear-gradient(135deg,#16d7ad,#0db98f);
     color:#fff;
-
-    box-shadow:
-        0 7px 17px rgba(14,190,148,.24);
+    box-shadow:0 7px 17px rgba(14,190,148,.24);
 }
 
 
@@ -1752,29 +1256,17 @@ a{
 
 .tab-content{
     display:none;
-
     width:100%;
 }
 
 .tab-content.active{
     display:block;
-
-    animation:
-        tabIn .35s ease;
+    animation:tabIn .35s ease;
 }
 
 @keyframes tabIn{
-
-    from{
-        opacity:0;
-        transform:translateY(8px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
+    from{opacity:0;transform:translateY(8px);}
+    to{opacity:1;transform:translateY(0);}
 }
 
 
@@ -1783,36 +1275,12 @@ a{
 ========================================================= */
 
 @media(max-width:370px){
-
-    .hero{
-        min-height:315px;
-    }
-
-    .team{
-        font-size:11px;
-    }
-
-    .team img{
-        width:31px;
-        height:31px;
-    }
-
-    .clock-box{
-        min-width:50px;
-    }
-
-    .clock-number{
-        font-size:19px;
-    }
-
-    .winner-title{
-        font-size:18px;
-    }
-
-    .winner-achievement{
-        font-size:25px;
-    }
-
+    .hero{min-height:315px;}
+    .team{font-size:11px;}
+    .clock-box{min-width:50px;}
+    .clock-number{font-size:19px;}
+    .winner-title{font-size:18px;}
+    .winner-achievement{font-size:25px;}
 }
 
 </style>
@@ -1824,13 +1292,10 @@ a{
 
 <!-- =========================================================
      SPLASH SCREEN
-     مرحله اول: لوگو و جام
-========================================================= -->
+========================================================= */
 
 <div id="splash-screen">
-
     <div class="splash-confetti">
-
         <span class="confetti"></span>
         <span class="confetti"></span>
         <span class="confetti"></span>
@@ -1839,1077 +1304,416 @@ a{
         <span class="confetti"></span>
         <span class="confetti"></span>
         <span class="confetti"></span>
-
     </div>
 
-
     <div class="splash-content">
-
-        <div class="splash-brand">
-            GEDAHAYE ESTERESI
-        </div>
-
-        <div class="splash-script">
-            Achievement
-        </div>
-
+        <div class="splash-brand">GEDAHAYE ESTERESI</div>
+        <div class="splash-script">Achievement</div>
 
         <div class="splash-trophy">
-
             <div class="trophy-cup"></div>
-
             <div class="trophy-handle handle-left"></div>
-
             <div class="trophy-handle handle-right"></div>
-
             <div class="trophy-neck"></div>
-
             <div class="trophy-base"></div>
-
             <div class="trophy-pedestal"></div>
-
         </div>
 
-
-        <div class="splash-title">
-            GEDAHAYE ESTERESI 2
-        </div>
-
-        <div class="splash-season">
-            SEASON TWO
-        </div>
-
+        <div class="splash-title">GEDAHAYE ESTERESI 2</div>
+        <div class="splash-season">SEASON TWO</div>
 
         <div class="splash-loading">
             <span></span>
         </div>
-
     </div>
-
 </div>
 
 
 
 <!-- =========================================================
-     WINNER MODAL
-     مرحله دوم: بعد از Splash
-========================================================= -->
+     WINNER MODAL (بدون نیاز به عکس - طراحی گرافیکی خالص)
+========================================================= */
 
 <div id="winner-modal">
-
     <span class="winner-confetti c1"></span>
     <span class="winner-confetti c2"></span>
     <span class="winner-confetti c3"></span>
     <span class="winner-confetti c4"></span>
 
-
     <div class="winner-box">
 
-
-        <!-- عنوان شبیه پوستر -->
-
         <div class="winner-top-title">
-
-            <div class="winner-brand">
-                گداهای استرسی
-            </div>
-
-            <div class="winner-achievement">
-                Achievement
-            </div>
-
+            <div class="winner-brand">گداهای استرسی</div>
+            <div class="winner-achievement">Achievement</div>
         </div>
 
-
-        <!-- =================================================
-             پوستر اصلی ارسالی
-        ================================================== -->
-
-        <div class="winner-image-wrap">
-
-            <img
-                class="winner-image"
-                src="winner-poster.jpg"
-                alt="پوستر قهرمانی پیرا"
-            >
-
+        <!-- بخش گرافیکی جایگزین عکس پوستر -->
+        <div class="winner-graphic-badge">
+            <h3>قهرمان هفته ششم</h3>
         </div>
-
-
-        <!-- پیام قهرمانی -->
 
         <div class="winner-message">
-
-            <div class="winner-kicker">
-                🏆 ACHIEVEMENT UNLOCKED
-            </div>
-
+            <div class="winner-kicker">🏆 ACHIEVEMENT UNLOCKED</div>
 
             <div class="winner-title">
-
                 پیرا
-                <span>
-                    قهرمان هفته ششم
-                </span>
-
+                <span>قهرمان هفته ششم</span>
             </div>
-
 
             <div class="winner-description">
-
                 لیگ پیش‌بینی مسابقات اروپایی و ملی
-
             </div>
-
 
             <div class="winner-season">
-
                 فصل دوم لیگ گداهای استرسی
-
             </div>
-
 
             <button
                 class="winner-enter"
                 type="button"
                 onclick="closeWinnerModal()"
             >
-
                 ورود به لیگ ⚡
-
             </button>
-
         </div>
 
     </div>
-
 </div>
 
 
 
 <!-- =========================================================
      MAIN CONTENT
-========================================================= -->
+========================================================= */
 
 <main id="main-content">
 
-
-<!-- =========================================================
-     HERO
-========================================================= -->
-
+<!-- HERO -->
 <section class="hero">
-
     <div class="hero-top">
-
-        <div class="hero-small">
-            GEDAHAYE ESTERESI • SEASON 02
-        </div>
-
-        <div class="hero-title">
-            گداهای استرسی <span>فصل دوم</span>
-        </div>
-
-        <div class="hero-sub">
-            لیگ پیش‌بینی فوتبال • رقابت برای جام
-        </div>
-
+        <div class="hero-small">GEDAHAYE ESTERESI • SEASON 02</div>
+        <div class="hero-title">گداهای استرسی <span>فصل دوم</span></div>
+        <div class="hero-sub">لیگ پیش‌بینی فوتبال • رقابت برای جام</div>
     </div>
-
 
     <div class="hero-trophy">
-
         <div class="cup"></div>
-
         <div class="handle left"></div>
-
         <div class="handle right"></div>
-
         <div class="stem"></div>
-
         <div class="base"></div>
-
     </div>
-
 
     <div class="hero-art"></div>
-
 </section>
 
 
 
-<!-- =========================================================
-     MATCHES TAB
-========================================================= -->
-
-<section
-    id="matches-tab"
-    class="tab-content active"
->
-
+<!-- MATCHES TAB -->
+<section id="matches-tab" class="tab-content active">
     <div class="section-head">
-
-        <h2>
-            ⚽ مسابقات پیش‌رو
-        </h2>
-
-        <span>
-            WEEK 06
-        </span>
-
+        <h2>⚽ مسابقات پیش‌رو</h2>
+        <span>WEEK 06</span>
     </div>
-
 
     <!-- MATCH 1 -->
-
     <div class="match-card-wrapper">
-
         <div class="match-card">
-
-            <div class="match-meta">
-                سه‌شنبه ۷ مهر ۱۴۰۵
-            </div>
-
-
+            <div class="match-meta">سه‌شنبه ۷ مهر ۱۴۰۵</div>
             <div class="match-main">
-
                 <div class="team">
-
-                    <img
-                        src="https://flagcdn.com/w80/hr.png"
-                        alt="Croatia"
-                    >
-
-                    <span>
-                        کرواسی
-                    </span>
-
+                    <span class="team-flag">🇭🇷</span>
+                    <span>کرواسی</span>
                 </div>
-
-
                 <div class="match-center">
-
-                    <div class="match-time">
-                        22:15
-                    </div>
-
-                    <div
-                        class="match-countdown"
-                        id="matchCountdown1"
-                    >
-                        محاسبه...
-                    </div>
-
-                    <div
-                        class="match-status"
-                        id="matchStatus1"
-                    >
-                        پیش‌رو
-                    </div>
-
+                    <div class="match-time">22:15</div>
+                    <div class="match-countdown" id="matchCountdown1">محاسبه...</div>
+                    <div class="match-status" id="matchStatus1">پیش‌رو</div>
                 </div>
-
-
                 <div class="team">
-
-                    <span>
-                        چک
-                    </span>
-
-                    <img
-                        src="https://flagcdn.com/w80/cz.png"
-                        alt="Czech"
-                    >
-
+                    <span>چک</span>
+                    <span class="team-flag">🇨🇿</span>
                 </div>
-
             </div>
-
         </div>
-
-
-        <a
-            class="predict-btn"
-            href="https://predict.fotmob.com/1000086/join/CUHVAFMQ"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-
+        <a class="predict-btn" href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" rel="noopener noreferrer">
             ⚡ برای پیش‌بینی کلیک کن
-
         </a>
-
     </div>
-
-
 
     <!-- MATCH 2 -->
-
     <div class="match-card-wrapper">
-
         <div class="match-card">
-
-            <div class="match-meta">
-                سه‌شنبه ۷ مهر ۱۴۰۵
-            </div>
-
-
+            <div class="match-meta">سه‌شنبه ۷ مهر ۱۴۰۵</div>
             <div class="match-main">
-
                 <div class="team">
-
-                    <img
-                        src="https://flagcdn.com/w80/es.png"
-                        alt="Spain"
-                    >
-
-                    <span>
-                        اسپانیا
-                    </span>
-
+                    <span class="team-flag">🇪🇸</span>
+                    <span>اسپانیا</span>
                 </div>
-
-
                 <div class="match-center">
-
-                    <div class="match-time">
-                        22:15
-                    </div>
-
-                    <div
-                        class="match-countdown"
-                        id="matchCountdown2"
-                    >
-                        محاسبه...
-                    </div>
-
-                    <div
-                        class="match-status"
-                        id="matchStatus2"
-                    >
-                        پیش‌رو
-                    </div>
-
+                    <div class="match-time">22:15</div>
+                    <div class="match-countdown" id="matchCountdown2">محاسبه...</div>
+                    <div class="match-status" id="matchStatus2">پیش‌رو</div>
                 </div>
-
-
                 <div class="team">
-
-                    <span>
-                        کرواسی
-                    </span>
-
-                    <img
-                        src="https://flagcdn.com/w80/hr.png"
-                        alt="Croatia"
-                    >
-
+                    <span>کرواسی</span>
+                    <span class="team-flag">🇭🇷</span>
                 </div>
-
             </div>
-
         </div>
-
-
-        <a
-            class="predict-btn"
-            href="https://predict.fotmob.com/1000086/join/CUHVAFMQ"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-
+        <a class="predict-btn" href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank" rel="noopener noreferrer">
             ⚡ برای پیش‌بینی کلیک کن
-
         </a>
-
     </div>
-
 </section>
 
 
 
-<!-- =========================================================
-     TABLE TAB
-========================================================= -->
-
-<section
-    id="table-tab"
-    class="tab-content"
->
-
+<!-- TABLE TAB -->
+<section id="table-tab" class="tab-content">
     <div class="section-head">
-
-        <h2>
-            📊 جدول رده‌بندی
-        </h2>
-
-        <span>
-            SEASON 02
-        </span>
-
+        <h2>📊 جدول رده‌بندی</h2>
+        <span>SEASON 02</span>
     </div>
 
-
     <div class="table-card">
-
-
         <div class="table-header">
-
             <span>رتبه</span>
             <span>بازیکن</span>
             <span>امتیاز</span>
-
         </div>
-
 
         <div class="table-row first">
-
             <span class="rank">01</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                Asm A
-            </span>
-
-            <span class="score">
-                65
-            </span>
-
+            <span class="player"><span class="player-dot"></span>Asm A</span>
+            <span class="score">65</span>
         </div>
-
 
         <div class="table-row reza">
-
             <span class="rank">02</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                REZA GHATIFI
-            </span>
-
-            <span class="score">
-                62
-            </span>
-
+            <span class="player"><span class="player-dot"></span>REZA GHATIFI</span>
+            <span class="score">62</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">03</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                حبیب نعیمی
-            </span>
-
-            <span class="score">
-                57
-            </span>
-
+            <span class="player"><span class="player-dot"></span>حبیب نعیمی</span>
+            <span class="score">57</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">04</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                Donya Asil
-            </span>
-
-            <span class="score">
-                56
-            </span>
-
+            <span class="player"><span class="player-dot"></span>Donya Asil</span>
+            <span class="score">56</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">05</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                Mahdi
-            </span>
-
-            <span class="score">
-                55
-            </span>
-
+            <span class="player"><span class="player-dot"></span>Mahdi</span>
+            <span class="score">55</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">06</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                محمد خلیلاوی پور
-            </span>
-
-            <span class="score">
-                52
-            </span>
-
+            <span class="player"><span class="player-dot"></span>محمد خلیلاوی پور</span>
+            <span class="score">52</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">07</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                hey10
-            </span>
-
-            <span class="score">
-                51
-            </span>
-
+            <span class="player"><span class="player-dot"></span>hey10</span>
+            <span class="score">51</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">08</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                hajar daoudi
-            </span>
-
-            <span class="score">
-                50
-            </span>
-
+            <span class="player"><span class="player-dot"></span>hajar daoudi</span>
+            <span class="score">50</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">09</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                Ahlam Aljaber
-            </span>
-
-            <span class="score">
-                44
-            </span>
-
+            <span class="player"><span class="player-dot"></span>Ahlam Aljaber</span>
+            <span class="score">44</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">10</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                امین دریس
-            </span>
-
-            <span class="score">
-                39
-            </span>
-
+            <span class="player"><span class="player-dot"></span>امین دریس</span>
+            <span class="score">39</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">11</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                Sama salehi
-            </span>
-
-            <span class="score">
-                32
-            </span>
-
+            <span class="player"><span class="player-dot"></span>Sama salehi</span>
+            <span class="score">32</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">12</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                محمد جاسميان
-            </span>
-
-            <span class="score">
-                26
-            </span>
-
+            <span class="player"><span class="player-dot"></span>محمد جاسميان</span>
+            <span class="score">26</span>
         </div>
-
 
         <div class="table-row">
-
             <span class="rank">13</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                مهدی
-            </span>
-
-            <span class="score">
-                15
-            </span>
-
+            <span class="player"><span class="player-dot"></span>مهدی</span>
+            <span class="score">15</span>
         </div>
-
     </div>
-
 </section>
 
 
 
-<!-- =========================================================
-     GISHAH TAB
-========================================================= -->
-
-<section
-    id="gishah-tab"
-    class="tab-content"
->
-
+<!-- GISHAH TAB -->
+<section id="gishah-tab" class="tab-content">
     <div class="section-head">
-
-        <h2>
-            📰 گیشه لیگ
-        </h2>
-
-        <span>
-            EXTRA TIME
-        </span>
-
+        <h2>📰 گیشه لیگ</h2>
+        <span>EXTRA TIME</span>
     </div>
 
-
     <div class="achievement-card">
-
         <div class="achievement-top">
-
-            <div class="achievement-label">
-                GEDAHAYE ESTERESI
-            </div>
-
-            <div class="achievement-script">
-                Achievement
-            </div>
-
+            <div class="achievement-label">GEDAHAYE ESTERESI</div>
+            <div class="achievement-script">Achievement</div>
         </div>
-
 
         <div class="news-trophy-zone">
-
             <div class="mini-trophy">
-
                 <div class="cup"></div>
-
                 <div class="handle left"></div>
-
                 <div class="handle right"></div>
-
                 <div class="base"></div>
-
             </div>
-
         </div>
 
-
         <div class="news-body">
-
-            <div class="news-title">
-                پیرا و نعیمی هم‌شیفت کنار هم در جدول
-            </div>
-
+            <div class="news-title">پیرا و نعیمی هم‌شیفت کنار هم در جدول</div>
             <div class="news-text">
-
                 ایستگاه هفته ششم با قهرمانی زودهنگام پیرا...
                 پیرا بعد از ازدواج و مراسم باشکوه تولد، حالا با
                 ۱۲ امتیاز صدرنشین و قهرمان زودهنگام هفته ششم
                 پیش‌بینی لیگ گداهای استرسی در فصل دوم لقب گرفته.
-
             </div>
-
-            <span class="news-badge">
-                🏆 EXTRA TIME
-            </span>
-
+            <span class="news-badge">🏆 EXTRA TIME</span>
         </div>
-
     </div>
-
 
     <div class="achievement-card">
-
         <div class="news-body">
-
-            <div class="news-title">
-                🔥 گداها دوباره برگشتن
-            </div>
-
+            <div class="news-title">🔥 گداها دوباره برگشتن</div>
             <div class="news-text">
-
                 رقابت فصل دوم همچنان ادامه دارد و فاصله‌ها
                 در جدول می‌تواند با چند پیش‌بینی درست تغییر کند.
-
             </div>
-
-            <span class="news-badge">
-                MATCHDAY
-            </span>
-
+            <span class="news-badge">MATCHDAY</span>
         </div>
-
     </div>
-
 </section>
 
 
 
-<!-- =========================================================
-     KALAL TAB
-========================================================= -->
-
-<section
-    id="kalal-tab"
-    class="tab-content"
->
-
+<!-- KALAL TAB -->
+<section id="kalal-tab" class="tab-content">
     <div class="section-head">
-
-        <h2>
-            🥊 کل‌کل تیم‌ها
-        </h2>
-
-        <span>
-            TEAM BATTLE
-        </span>
-
+        <h2>🥊 کل‌کل تیم‌ها</h2>
+        <span>TEAM BATTLE</span>
     </div>
-
 
     <!-- COUNTDOWN -->
-
     <div class="countdown-card">
-
         <div class="countdown-title">
-
             ⏰ شمارش معکوس تا اولین پیش‌بینی
-
-            <strong>
-                ۲۲:۱۵
-            </strong>
-
+            <strong>22:15</strong>
         </div>
-
 
         <div class="clock">
-
             <div class="clock-box">
-
-                <div
-                    class="clock-number"
-                    id="clockHours"
-                >
-                    00
-                </div>
-
-                <div class="clock-label">
-                    HOURS
-                </div>
-
+                <div class="clock-number" id="clockHours">00</div>
+                <div class="clock-label">HOURS</div>
             </div>
-
-
-            <div class="clock-separator">
-                :
-            </div>
-
-
+            <div class="clock-separator">:</div>
             <div class="clock-box">
-
-                <div
-                    class="clock-number"
-                    id="clockMinutes"
-                >
-                    00
-                </div>
-
-                <div class="clock-label">
-                    MINUTES
-                </div>
-
+                <div class="clock-number" id="clockMinutes">00</div>
+                <div class="clock-label">MINUTES</div>
             </div>
-
-
-            <div class="clock-separator">
-                :
-            </div>
-
-
+            <div class="clock-separator">:</div>
             <div class="clock-box">
-
-                <div
-                    class="clock-number"
-                    id="clockSeconds"
-                >
-                    00
-                </div>
-
-                <div class="clock-label">
-                    SECONDS
-                </div>
-
+                <div class="clock-number" id="clockSeconds">00</div>
+                <div class="clock-label">SECONDS</div>
             </div>
-
         </div>
 
-
-        <div
-            class="countdown-status"
-            id="clockLabel"
-        >
-            مانده تا شروع پیش‌بینی
-        </div>
-
+        <div class="countdown-status" id="clockLabel">مانده تا شروع پیش‌بینی</div>
     </div>
-
-
 
     <!-- TEAM 1 -->
-
     <div class="team-battle">
-
         <div class="team-battle-header">
-
-            <span class="team-name">
-                🩴 اتحاد بدبختا
-            </span>
-
-            <span class="team-total">
-                امتیاز کل: ۰
-            </span>
-
+            <span class="team-name">🩴 اتحاد بدبختا</span>
+            <span class="team-total">امتیاز کل: ۰</span>
         </div>
-
-
         <div class="team-player">
-
-            <span>
-                <span class="player-rank">1</span>
-                پیرا
-            </span>
-
-            <span class="player-score">
-                0
-            </span>
-
+            <span><span class="player-rank">1</span>پیرا</span>
+            <span class="player-score">0</span>
         </div>
-
-
         <div class="team-player">
-
-            <span>
-                <span class="player-rank">2</span>
-                بخشنده
-            </span>
-
-            <span class="player-score">
-                0
-            </span>
-
+            <span><span class="player-rank">2</span>بخشنده</span>
+            <span class="player-score">0</span>
         </div>
-
-
         <div class="team-player">
-
-            <span>
-                <span class="player-rank">3</span>
-                قطیفی
-            </span>
-
-            <span class="player-score">
-                0
-            </span>
-
+            <span><span class="player-rank">3</span>قطیفی</span>
+            <span class="player-score">0</span>
         </div>
-
-
         <div class="team-player">
-
-            <span>
-                <span class="player-rank">4</span>
-                جاسمیان
-            </span>
-
-            <span class="player-score">
-                0
-            </span>
-
+            <span><span class="player-rank">4</span>جاسمیان</span>
+            <span class="player-score">0</span>
         </div>
-
-
         <div class="team-player">
-
-            <span>
-                <span class="player-rank">5</span>
-                داودی
-            </span>
-
-            <span class="player-score">
-                0
-            </span>
-
+            <span><span class="player-rank">5</span>داودی</span>
+            <span class="player-score">0</span>
         </div>
-
-
         <div class="team-player">
-
-            <span>
-                <span class="player-rank">6</span>
-                الجابر
-            </span>
-
-            <span class="player-score">
-                0
-            </span>
-
+            <span><span class="player-rank">6</span>الجابر</span>
+            <span class="player-score">0</span>
         </div>
-
     </div>
-
-
 
     <!-- TEAM 2 -->
-
     <div class="team-battle">
-
         <div class="team-battle-header">
-
-            <span class="team-name">
-                💸 جماعت بی‌پولا
-            </span>
-
-            <span class="team-total">
-                امتیاز کل: ۰
-            </span>
-
+            <span class="team-name">💸 جماعت بی‌پولا</span>
+            <span class="team-total">امتیاز کل: ۰</span>
         </div>
-
-
         <div class="team-player">
-
-            <span>
-                <span class="player-rank">1</span>
-                عصیر
-            </span>
-
-            <span class="player-score">
-                0
-            </span>
-
+            <span><span class="player-rank">1</span>عصیر</span>
+            <span class="player-score">0</span>
         </div>
-
-
         <div class="team-player">
-
-            <span>
-                <span class="player-rank">2</span>
-                زویدات
-            </span>
-
-            <span class="player-score">
-                0
-            </span>
-
+            <span><span class="player-rank">2</span>زویدات</span>
+            <span class="player-score">0</span>
         </div>
-
-
         <div class="team-player">
-
-            <span>
-                <span class="player-rank">3</span>
-                دریس
-            </span>
-
-            <span class="player-score">
-                0
-            </span>
-
+            <span><span class="player-rank">3</span>دریس</span>
+            <span class="player-score">0</span>
         </div>
-
-
         <div class="team-player">
-
-            <span>
-                <span class="player-rank">4</span>
-                خلیلاوی پور
-            </span>
-
-            <span class="player-score">
-                0
-            </span>
-
+            <span><span class="player-rank">4</span>خلیلاوی پور</span>
+            <span class="player-score">0</span>
         </div>
-
-
         <div class="team-player">
-
-            <span>
-                <span class="player-rank">5</span>
-                مهدی
-            </span>
-
-            <span class="player-score">
-                0
-            </span>
-
+            <span><span class="player-rank">5</span>مهدی</span>
+            <span class="player-score">0</span>
         </div>
-
-
         <div class="team-player">
-
-            <span>
-                <span class="player-rank">6</span>
-                نعیمی
-            </span>
-
-            <span class="player-score">
-                0
-            </span>
-
+            <span><span class="player-rank">6</span>نعیمی</span>
+            <span class="player-score">0</span>
         </div>
-
-
         <div class="team-player">
-
-            <span>
-                <span class="player-rank">7</span>
-                سما صالحی
-            </span>
-
-            <span class="player-score">
-                0
-            </span>
-
+            <span><span class="player-rank">7</span>سما صالحی</span>
+            <span class="player-score">0</span>
         </div>
-
     </div>
-
 </section>
 
 </main>
@@ -2921,71 +1725,22 @@ a{
 ========================================================= -->
 
 <nav class="bottom-nav">
-
-
-    <button
-        class="nav-item active"
-        onclick="switchTab('matches',this)"
-    >
-
-        <span class="nav-icon">
-            ⚽
-        </span>
-
-        <span class="nav-text">
-            بازی‌ها
-        </span>
-
+    <button class="nav-item active" onclick="switchTab('matches',this)">
+        <span class="nav-icon">⚽</span>
+        <span class="nav-text">بازی‌ها</span>
     </button>
-
-
-    <button
-        class="nav-item"
-        onclick="switchTab('table',this)"
-    >
-
-        <span class="nav-icon">
-            📊
-        </span>
-
-        <span class="nav-text">
-            جدول
-        </span>
-
+    <button class="nav-item" onclick="switchTab('table',this)">
+        <span class="nav-icon">📊</span>
+        <span class="nav-text">جدول</span>
     </button>
-
-
-    <button
-        class="nav-item"
-        onclick="switchTab('gishah',this)"
-    >
-
-        <span class="nav-icon">
-            🏆
-        </span>
-
-        <span class="nav-text">
-            گیشه
-        </span>
-
+    <button class="nav-item" onclick="switchTab('gishah',this)">
+        <span class="nav-icon">🏆</span>
+        <span class="nav-text">گیشه</span>
     </button>
-
-
-    <button
-        class="nav-item"
-        onclick="switchTab('kalal',this)"
-    >
-
-        <span class="nav-icon">
-            🥊
-        </span>
-
-        <span class="nav-text">
-            کل‌کل
-        </span>
-
+    <button class="nav-item" onclick="switchTab('kalal',this)">
+        <span class="nav-icon">🥊</span>
+        <span class="nav-text">کل‌کل</span>
     </button>
-
 </nav>
 
 
@@ -2997,46 +1752,20 @@ a{
 ========================================================= */
 
 window.addEventListener("load",function(){
-
-    /*
-       مرحله ۱:
-       Splash قبلی حدود ۲.۳ ثانیه نمایش داده می‌شود.
-    */
-
     setTimeout(function(){
-
-        const splash =
-            document.getElementById("splash-screen");
-
-        const main =
-            document.getElementById("main-content");
-
+        const splash = document.getElementById("splash-screen");
+        const main = document.getElementById("main-content");
 
         splash.classList.add("hide");
-
         main.classList.add("visible");
 
-
-        /*
-           مرحله ۲:
-           بعد از محو شدن Splash
-           پنجره قهرمانی باز می‌شود.
-        */
-
         setTimeout(function(){
-
-            const winner =
-                document.getElementById("winner-modal");
-
+            const winner = document.getElementById("winner-modal");
             winner.classList.add("show");
-
             document.body.style.overflow="hidden";
-
         },700);
 
-
     },2300);
-
 });
 
 
@@ -3045,25 +1774,14 @@ window.addEventListener("load",function(){
 ========================================================= */
 
 function closeWinnerModal(){
-
-    const winner =
-        document.getElementById("winner-modal");
-
-
+    const winner = document.getElementById("winner-modal");
     winner.classList.remove("show");
-
     winner.classList.add("hide");
-
-
     document.body.style.overflow="";
 
-
     setTimeout(function(){
-
         winner.style.display="none";
-
     },500);
-
 }
 
 
@@ -3072,40 +1790,20 @@ function closeWinnerModal(){
 ========================================================= */
 
 function switchTab(tabName,element){
-
-    document
-        .querySelectorAll(".nav-item")
-        .forEach(function(item){
-
-            item.classList.remove("active");
-
-        });
-
+    document.querySelectorAll(".nav-item").forEach(function(item){
+        item.classList.remove("active");
+    });
 
     element.classList.add("active");
 
+    document.querySelectorAll(".tab-content").forEach(function(tab){
+        tab.classList.remove("active");
+    });
 
-    document
-        .querySelectorAll(".tab-content")
-        .forEach(function(tab){
-
-            tab.classList.remove("active");
-
-        });
-
-
-    const target =
-        document.getElementById(
-            tabName+"-tab"
-        );
-
-
+    const target = document.getElementById(tabName+"-tab");
     if(target){
-
         target.classList.add("active");
-
     }
-
 }
 
 
@@ -3114,208 +1812,71 @@ function switchTab(tabName,element){
    29 September 2026 - 22:15
 ========================================================= */
 
-const targetDate =
-    new Date(
-        2026,
-        8,
-        29,
-        22,
-        15,
-        0
-    ).getTime();
-
+const targetDate = new Date(2026,8,29,22,15,0).getTime();
 
 function updateCountdown(){
+    const now = new Date().getTime();
+    const difference = targetDate-now;
 
-    const now =
-        new Date().getTime();
+    const clockHours = document.getElementById("clockHours");
+    const clockMinutes = document.getElementById("clockMinutes");
+    const clockSeconds = document.getElementById("clockSeconds");
+    const clockLabel = document.getElementById("clockLabel");
 
-
-    const difference =
-        targetDate-now;
-
-
-    const clockHours =
-        document.getElementById(
-            "clockHours"
-        );
-
-    const clockMinutes =
-        document.getElementById(
-            "clockMinutes"
-        );
-
-    const clockSeconds =
-        document.getElementById(
-            "clockSeconds"
-        );
-
-    const clockLabel =
-        document.getElementById(
-            "clockLabel"
-        );
-
-
-    const match1 =
-        document.getElementById(
-            "matchCountdown1"
-        );
-
-    const match2 =
-        document.getElementById(
-            "matchCountdown2"
-        );
-
-
-    const status1 =
-        document.getElementById(
-            "matchStatus1"
-        );
-
-    const status2 =
-        document.getElementById(
-            "matchStatus2"
-        );
-
-
-    /* ==============================
-       بازی شروع شده
-    ============================== */
+    const match1 = document.getElementById("matchCountdown1");
+    const match2 = document.getElementById("matchCountdown2");
+    const status1 = document.getElementById("matchStatus1");
+    const status2 = document.getElementById("matchStatus2");
 
     if(difference<=0){
-
         clockHours.textContent="00";
-
         clockMinutes.textContent="00";
-
         clockSeconds.textContent="00";
 
+        clockLabel.textContent="سوت آغازین زده شد!";
 
-        clockLabel.textContent=
-            "سوت آغازین زده شد!";
+        match1.textContent="شروع شد";
+        match2.textContent="شروع شد";
 
+        status1.textContent="در حال برگزاری";
+        status2.textContent="در حال برگزاری";
 
-        match1.textContent=
-            "شروع شد";
-
-        match2.textContent=
-            "شروع شد";
-
-
-        status1.textContent=
-            "در حال برگزاری";
-
-        status2.textContent=
-            "در حال برگزاری";
-
-
-        status1.style.background=
-            "#fff1ed";
-
-        status1.style.color=
-            "#e05b36";
-
-
-        status2.style.background=
-            "#fff1ed";
-
-        status2.style.color=
-            "#e05b36";
-
+        status1.style.background="#fff1ed";
+        status1.style.color="#e05b36";
+        status2.style.background="#fff1ed";
+        status2.style.color="#e05b36";
 
         return;
-
     }
 
+    const totalSeconds = Math.floor(difference/1000);
+    const hours = Math.floor(totalSeconds/3600);
+    const minutes = Math.floor((totalSeconds%3600)/60);
+    const seconds = totalSeconds%60;
 
-    /* ==============================
-       محاسبه زمان
-    ============================== */
+    const format = function(value){
+        return String(value).padStart(2,"0");
+    };
 
-    const totalSeconds =
-        Math.floor(
-            difference/1000
-        );
-
-
-    const hours =
-        Math.floor(
-            totalSeconds/3600
-        );
-
-
-    const minutes =
-        Math.floor(
-            (totalSeconds%3600)/60
-        );
-
-
-    const seconds =
-        totalSeconds%60;
-
-
-    const format =
-        function(value){
-
-            return String(value)
-                .padStart(2,"0");
-
-        };
-
-
-    clockHours.textContent =
-        format(hours);
-
-
-    clockMinutes.textContent =
-        format(minutes);
-
-
-    clockSeconds.textContent =
-        format(seconds);
-
+    clockHours.textContent = format(hours);
+    clockMinutes.textContent = format(minutes);
+    clockSeconds.textContent = format(seconds);
 
     let countdownText;
-
-
     if(hours>0){
-
-        countdownText =
-            `${hours} ساعت و ${minutes} دقیقه تا شروع`;
-
+        countdownText = `${hours} ساعت و ${minutes} دقیقه تا شروع`;
+    }else{
+        countdownText = `${minutes} دقیقه و ${seconds} ثانیه تا شروع`;
     }
 
-    else{
-
-        countdownText =
-            `${minutes} دقیقه و ${seconds} ثانیه تا شروع`;
-
-    }
-
-
-    match1.textContent =
-        countdownText;
-
-    match2.textContent =
-        countdownText;
-
+    match1.textContent = countdownText;
+    match2.textContent = countdownText;
 }
 
-
-/* اجرای اولیه */
-
 updateCountdown();
-
-
-/* بروزرسانی هر ثانیه */
-
-setInterval(
-    updateCountdown,
-    1000
-);
+setInterval(updateCountdown, 1000);
 
 </script>
-
 
 </body>
 </html>
