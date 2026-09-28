@@ -24,7 +24,7 @@
             align-items: center;
         }
 
-        /* صفحه لودینگ اولیه (Splash Screen) */
+        /* صفحه لودینگ اولیه با پیام رقابتی و دکمه ورود */
         #splash-screen {
             position: fixed;
             top: 0;
@@ -62,15 +62,15 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            max-width: 380px;
+            max-width: 400px;
             width: 100%;
             text-align: center;
         }
 
         .splash-trophy-container {
-            width: 140px;
-            height: 160px;
-            margin-bottom: 20px;
+            width: 110px;
+            height: 120px;
+            margin-bottom: 15px;
             filter: drop-shadow(0 0 25px rgba(0, 255, 200, 0.6));
             animation: trophyFloatAnim 3s infinite ease-in-out;
         }
@@ -80,72 +80,75 @@
             50% { transform: translateY(-8px) scale(1.03); }
         }
 
-        .splash-text-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 30px;
-            opacity: 0;
-            transform: translateY(15px);
-            transition: all 0.6s ease;
+        .splash-welcome-box {
+            background: rgba(15, 35, 22, 0.85);
+            border: 2px solid rgba(0, 255, 136, 0.4);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            width: 100%;
         }
 
-        .splash-text-box.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .splash-year-green {
+        .splash-league-title {
             color: #00ffaa;
-            font-size: 18px;
+            font-size: 15px;
             font-weight: 900;
-            letter-spacing: 2px;
-            margin-bottom: 4px;
+            margin-bottom: 10px;
             text-shadow: 0 0 10px rgba(0,255,170,0.4);
         }
 
-        .splash-main-title {
+        .splash-matchup-text {
             color: #ffffff;
-            font-size: 26px;
+            font-size: 18px;
             font-weight: 900;
-            letter-spacing: -0.5px;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.8);
-            line-height: 1.3;
+            line-height: 1.6;
+            margin-bottom: 12px;
         }
 
-        .splash-main-title span {
-            color: #00ffcc;
+        .splash-matchup-text span {
+            color: #ffcc00;
         }
 
-        .splash-progress-track {
-            width: 300px;
-            height: 14px;
-            background: #141b26;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.8);
+        .splash-start-time {
+            color: #ff8844;
+            font-size: 13px;
+            font-weight: 700;
+            background: rgba(255, 136, 68, 0.15);
+            padding: 6px 12px;
+            border-radius: 10px;
+            display: inline-block;
+            border: 1px dashed rgba(255, 136, 68, 0.4);
         }
 
-        .splash-progress-fill {
-            height: 100%;
-            width: 0%;
-            background: #00ffcc;
-            border-radius: 20px;
-            box-shadow: 0 0 12px rgba(0, 255, 204, 0.7);
-            animation: fillProgressSmooth 2.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        /* دکمه ورود به سایت در صفحه لودینگ */
+        .enter-site-btn {
+            background: linear-gradient(135deg, #00ff88, #00aa55);
+            color: #031207;
+            font-size: 16px;
+            font-weight: 900;
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.5);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        @keyframes fillProgressSmooth {
-            0% { width: 0%; }
-            100% { width: 100%; }
+        .enter-site-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 255, 136, 0.8);
         }
 
         /* محتوای اصلی سایت */
         #main-content {
             opacity: 0;
             visibility: hidden;
-            transition: opacity 1s ease;
+            transition: opacity 0.8s ease;
             width: 100%;
             max-width: 460px;
             padding: 20px;
@@ -169,54 +172,6 @@
 
         .tab-content.active-tab {
             display: flex;
-        }
-
-        /* کارت برنده هفته */
-        .winner-card-modern {
-            background: #181c18;
-            border: 1.5px solid rgba(255, 215, 0, 0.3);
-            border-radius: 20px;
-            padding: 16px 20px;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 22px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
-
-        .winner-info-side {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .winner-label-en {
-            color: #ffe600;
-            font-size: 15px;
-            font-weight: 700;
-            font-family: Tahoma, sans-serif;
-        }
-
-        .winner-name-val {
-            color: #ffffff;
-            font-size: 18px;
-            font-weight: 900;
-            letter-spacing: 0.5px;
-        }
-
-        .winner-hexagon-badge {
-            width: 60px;
-            height: 60px;
-            background: #252b25;
-            border: 2px solid #ffd700;
-            clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-            flex-shrink: 0;
         }
 
         .header-banner {
@@ -516,7 +471,7 @@
             background: #fff;
         }
 
-        /* استایل‌های بخش کل‌کل و ساعت دیجیتال داوری */
+        /* بخش کل‌کل و ساعت دیجیتال داوری */
         .countdown-box {
             background: #030805;
             border: 2px solid #00ff88;
@@ -706,11 +661,11 @@
 </head>
 <body>
 
-    <!-- صفحه ورود اولیه (Splash Screen) -->
+    <!-- صفحه ورود اولیه (Splash Screen) با پیام رقابتی و دکمه ورود -->
     <div id="splash-screen">
         <div class="splash-inner">
             <div class="splash-trophy-container">
-                <svg width="140" height="160" viewBox="0 0 130 140" xmlns="http://www.w3.org/2000/svg">
+                <svg width="110" height="120" viewBox="0 0 130 140" xmlns="http://www.w3.org/2000/svg">
                     <rect x="45" y="115" width="40" height="15" fill="#1b4d3e" rx="4" stroke="#00ffcc" stroke-width="1.5"/>
                     <rect x="35" y="130" width="60" height="8" fill="#0d2b22" rx="3" stroke="#00ffcc" stroke-width="1"/>
                     <path d="M52 95 L78 95 L80 115 L50 115 Z" fill="url(#gelGrad)"/>
@@ -728,27 +683,24 @@
                     </defs>
                 </svg>
             </div>
-            <div class="splash-progress-track">
-                <div class="splash-progress-fill"></div>
+            
+            <div class="splash-welcome-box">
+                <div class="splash-league-title">🏆 لیگ پیش‌بینی‌های گداهای استرسی (فصل دوم)</div>
+                <div class="splash-matchup-text">
+                    نبرد قرن:<br>
+                    <span>تیم جماعت بی‌پولا 💸</span> 🆚 <span>اتحاد بدبختا 🩴</span>
+                </div>
+                <div class="splash-start-time">⚡️ سوت آغاز رقابت: روز سه‌شنبه</div>
             </div>
-            <div class="splash-text-box" id="splashTextBox">
-                <div class="splash-year-green">۱۴۰۵</div>
-                <div class="splash-main-title">لیگ گداهای استرسی <span>فصل دوم</span></div>
-            </div>
+
+            <button class="enter-site-btn" onclick="enterSite()">
+                <span>🚀</span> ورود به میدان مسابقه
+            </button>
         </div>
     </div>
 
     <!-- محتوای اصلی سایت -->
     <div id="main-content">
-
-        <!-- کارت برنده هفته -->
-        <div class="winner-card-modern">
-            <div class="winner-info-side">
-                <span class="winner-label-en">This week Winner</span>
-                <span class="winner-name-val">پیرا</span>
-            </div>
-            <div class="winner-hexagon-badge">🏆</div>
-        </div>
         
         <!-- تب بازی‌ها -->
         <div id="matches-tab" class="tab-content">
@@ -1014,44 +966,44 @@
 
         </div>
 
-        <!-- تب جدید کل‌کل -->
+        <!-- تب کل‌کل (با آیکون‌های خنده‌دار در جدول تیم‌ها) -->
         <div id="kalal-tab" class="tab-content">
             <div class="header-banner">
                 <span>⚡</span> نبرد تیم‌ها (کل‌کل اختصاصی)
             </div>
 
-            <!-- ساعت شمارش معکوس دیجیتال تا ساعت 22:15 فردا -->
+            <!-- ساعت شمارش معکوس دقیق تا 22:15 فردا -->
             <div class="countdown-box">
-                <div class="countdown-title">⏰ شمارش معکوس تا اولین بازی (ساعت ۲۲:۱۵ فردا)</div>
+                <div class="countdown-title">⏰ شمارش معکوس تا سوت آغاز رقابت (ساعت ۲۲:۱۵ فردا)</div>
                 <div class="digital-clock" id="countdownTimer">00:00:00</div>
             </div>
 
-            <!-- تیم اول: اتحاد بدبختا -->
+            <!-- تیم اول: اتحاد بدبختا با آیکون خنده‌دار 🩴 -->
             <div class="kalal-team-card">
                 <div class="kalal-team-header">
-                    <span class="kalal-team-name">🔥 اتحاد بدبختا</span>
+                    <span class="kalal-team-name">🩴 اتحاد بدبختا</span>
                     <span class="kalal-team-total-score">امتیاز کل: ۰</span>
                 </div>
-                <div class="table-row"><div class="player-info"><span class="rank">1</span><span>پیرا</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">2</span><span>بخشنده</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">3</span><span>قطیفی</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">4</span><span>جاسمیان</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">5</span><span>قطیفی</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">6</span><span>داودی</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">1</span><span>پیرا 🤡</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">2</span><span>بخشنده 🥶</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">3</span><span>قطیفی 🐒</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">4</span><span>جاسمیان 🐢</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">5</span><span>قطیفی 🤥</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">6</span><span>داودی 🐥</span></div><div class="score">0</div></div>
             </div>
 
-            <!-- تیم دوم: جماعت بی پولا -->
+            <!-- تیم دوم: جماعت بی پولا با آیکون خنده‌دار 💸 -->
             <div class="kalal-team-card">
                 <div class="kalal-team-header">
-                    <span class="kalal-team-name">⚡ جماعت بی پولا</span>
+                    <span class="kalal-team-name">💸 جماعت بی‌پولا</span>
                     <span class="kalal-team-total-score">امتیاز کل: ۰</span>
                 </div>
-                <div class="table-row"><div class="player-info"><span class="rank">1</span><span>عصیر</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">2</span><span>زویدات</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">3</span><span>دریس</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">4</span><span>خلیلاوی پور</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">5</span><span>مهدی</span></div><div class="score">0</div></div>
-                <div class="table-row"><div class="player-info"><span class="rank">6</span><span>نعیمی</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">1</span><span>عصیر 🕳️</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">2</span><span>زویدات 🥖</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">3</span><span>دریس 🛵</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">4</span><span>خلیلاوی پور 🐈</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">5</span><span>مهدی 🔋</span></div><div class="score">0</div></div>
+                <div class="table-row"><div class="player-info"><span class="rank">6</span><span>نعیمی 🦉</span></div><div class="score">0</div></div>
             </div>
         </div>
 
@@ -1078,22 +1030,16 @@
     </div>
 
     <script>
-        // مدیریت لودینگ اولیه
-        window.addEventListener('load', () => {
+        // دکمه ورود به سایت از صفحه لودینگ اولیه
+        function enterSite() {
+            const splash = document.getElementById('splash-screen');
+            splash.style.opacity = '0';
+            splash.style.visibility = 'hidden';
+            
             setTimeout(() => {
-                document.getElementById('splashTextBox').classList.add('show');
-            }, 2100);
-
-            setTimeout(() => {
-                const splash = document.getElementById('splash-screen');
-                splash.style.opacity = '0';
-                splash.style.visibility = 'hidden';
-                
-                setTimeout(() => {
-                    document.getElementById('main-content').classList.add('visible');
-                }, 300);
-            }, 3600);
-        });
+                document.getElementById('main-content').classList.add('visible');
+            }, 300);
+        }
 
         // سیستم تعویض تب‌ها
         function switchTab(tabName, element) {
@@ -1113,12 +1059,12 @@
             }
         }
 
-        // ساعت دیجیتال شمارش معکوس دقیقاً تا ساعت 22:15 روز بعد (فردا)
+        // ساعت دیجیتال شمارش معکوس دقیقاً تا ساعت 22:15 روز بعد (فردا) از زمان فعلی کاربر
         function updateCountdown() {
             const now = new Date();
             let target = new Date();
             
-            // تنظیم ساعت هدف روی 22:15 فردا
+            // تنظیم ساعت هدف روی 22:15 روز بعد (فردا)
             target.setDate(now.getDate() + 1);
             target.setHours(22, 15, 0, 0);
 
