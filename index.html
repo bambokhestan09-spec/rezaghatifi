@@ -897,35 +897,73 @@ body:before{
 }
 
 .match-time{
-    font-size:19px;
+    font-size:17px;
 
     font-weight:900;
 
     color:#101719;
 }
 
-/* استایل شیک و کوچک شمارش معکوس زیر ساعت هر مسابقه */
-.match-countdown{
-    font-size:9px;
-    color:#079c53;
-    background:#e2faeb;
-    padding:3px 7px;
-    border-radius:8px;
-    font-weight:800;
-    margin-top:4px;
-    text-align:center;
-    border: 1px solid #c7f2d8;
-    white-space: nowrap;
+/* =========================================================
+   FLIP CLOCK COUNTDOWN (مشابه عکس ارسالی شما)
+========================================================= */
+
+.flip-countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 5px;
+    direction: ltr;
+}
+
+.flip-box {
+    position: relative;
+    background: linear-gradient(135deg, #0ebd63, #079c53);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 900;
+    padding: 3px 6px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(7, 156, 83, 0.25);
+    min-width: 26px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* خط افقی وسط کادر برای شبیه‌سازی استایل برگه / پلاک ساعت */
+.flip-box::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.flip-sep {
+    font-size: 11px;
+    font-weight: 900;
+    color: #079c53;
+}
+
+.flip-label-text {
+    font-size: 7px;
+    font-weight: 800;
+    color: #556b60;
+    text-align: center;
+    margin-top: 2px;
 }
 
 .match-status{
-    margin-top:6px;
+    margin-top:5px;
 
     background:#e7faee;
 
     color:#079d54;
 
-    padding:3px 8px;
+    padding:2px 7px;
 
     border-radius:20px;
 
@@ -1992,13 +2030,15 @@ body:before{
                         22:15
                     </div>
 
-                    <!-- شمارش معکوس اختصاصی زیر ساعت -->
-                    <div
-                        class="match-countdown"
-                        id="matchCountdown1"
-                    >
-                        محاسبه...
+                    <!-- شمارش معکوس بلوکی و فانتزی زیر ساعت -->
+                    <div class="flip-countdown" id="matchCountdown1">
+                        <div class="flip-box" id="m1-h">00</div>
+                        <span class="flip-sep">:</span>
+                        <div class="flip-box" id="m1-m">00</div>
+                        <span class="flip-sep">:</span>
+                        <div class="flip-box" id="m1-s">00</div>
                     </div>
+                    <div class="flip-label-text">HOURS LEFT</div>
 
                     <div
                         class="match-status"
@@ -2074,13 +2114,15 @@ body:before{
                         22:15
                     </div>
 
-                    <!-- شمارش معکوس اختصاصی زیر ساعت -->
-                    <div
-                        class="match-countdown"
-                        id="matchCountdown2"
-                    >
-                        محاسبه...
+                    <!-- شمارش معکوس بلوکی و فانتزی زیر ساعت -->
+                    <div class="flip-countdown" id="matchCountdown2">
+                        <div class="flip-box" id="m2-h">00</div>
+                        <span class="flip-sep">:</span>
+                        <div class="flip-box" id="m2-m">00</div>
+                        <span class="flip-sep">:</span>
+                        <div class="flip-box" id="m2-s">00</div>
                     </div>
+                    <div class="flip-label-text">HOURS LEFT</div>
 
                     <div
                         class="match-status"
@@ -2736,15 +2778,13 @@ function updateCountdown(){
         );
 
 
-    const match1 =
-        document.getElementById(
-            "matchCountdown1"
-        );
+    const m1h = document.getElementById("m1-h");
+    const m1m = document.getElementById("m1-m");
+    const m1s = document.getElementById("m1-s");
 
-    const match2 =
-        document.getElementById(
-            "matchCountdown2"
-        );
+    const m2h = document.getElementById("m2-h");
+    const m2m = document.getElementById("m2-m");
+    const m2s = document.getElementById("m2-s");
 
 
     const status1 =
@@ -2761,43 +2801,27 @@ function updateCountdown(){
     if(difference<=0){
 
         clockHours.textContent="00";
-
         clockMinutes.textContent="00";
-
         clockSeconds.textContent="00";
+        clockLabel.textContent="سوت آغازین زده شد!";
+
+        m1h.textContent="00";
+        m1m.textContent="00";
+        m1s.textContent="00";
+
+        m2h.textContent="00";
+        m2m.textContent="00";
+        m2s.textContent="00";
 
 
-        clockLabel.textContent=
-            "سوت آغازین زده شد!";
+        status1.textContent="در حال برگزاری";
+        status2.textContent="در حال برگزاری";
 
+        status1.style.background="#fff1ed";
+        status1.style.color="#e05b36";
 
-        match1.textContent=
-            "شروع شد";
-
-        match2.textContent=
-            "شروع شد";
-
-
-        status1.textContent=
-            "در حال برگزاری";
-
-        status2.textContent=
-            "در حال برگزاری";
-
-
-        status1.style.background=
-            "#fff1ed";
-
-        status1.style.color=
-            "#e05b36";
-
-
-        status2.style.background=
-            "#fff1ed";
-
-        status2.style.color=
-            "#e05b36";
-
+        status2.style.background="#fff1ed";
+        status2.style.color="#e05b36";
 
         return;
 
@@ -2835,41 +2859,23 @@ function updateCountdown(){
         };
 
 
-    clockHours.textContent =
-        format(hours);
+    clockHours.textContent = format(hours);
+    clockMinutes.textContent = format(minutes);
+    clockSeconds.textContent = format(seconds);
 
 
-    clockMinutes.textContent =
-        format(minutes);
+    // آپدیت شمارش معکوس بلوکی زیر هر بازی
+    const formattedHours = format(hours);
+    const formattedMinutes = format(minutes);
+    const formattedSeconds = format(seconds);
 
+    m1h.textContent = formattedHours;
+    m1m.textContent = formattedMinutes;
+    m1s.textContent = formattedSeconds;
 
-    clockSeconds.textContent =
-        format(seconds);
-
-
-    let countdownText;
-
-
-    if(hours>0){
-
-        countdownText =
-            `${hours} ساعت و ${minutes} دقیقه`;
-
-    }
-
-    else{
-
-        countdownText =
-            `${minutes} دقیقه و ${seconds} ثانیه`;
-
-    }
-
-
-    match1.textContent =
-        countdownText;
-
-    match2.textContent =
-        countdownText;
+    m2h.textContent = formattedHours;
+    m2m.textContent = formattedMinutes;
+    m2s.textContent = formattedSeconds;
 
 }
 
