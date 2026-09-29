@@ -905,7 +905,7 @@ body:before{
 }
 
 /* =========================================================
-   FLIP CLOCK COUNTDOWN (مشابه عکس ارسالی شما)
+   FLIP CLOCK COUNTDOWN (افکت واقعی ورق خوردن کاغذ)
 ========================================================= */
 
 .flip-countdown {
@@ -915,6 +915,7 @@ body:before{
     gap: 4px;
     margin-top: 5px;
     direction: ltr;
+    perspective: 300px;
 }
 
 .flip-box {
@@ -929,9 +930,16 @@ body:before{
     min-width: 26px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.3);
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease-in-out;
 }
 
-/* خط افقی وسط کادر برای شبیه‌سازی استایل برگه / پلاک ساعت */
+/* کلاس کمکی برای اجرای انیمیشن ورق خوردن هنگام تغییر مقدار */
+.flip-box.flipping {
+    transform: rotateX(-90deg);
+}
+
+/* خط افقی وسط کادر برای شبیه‌سازی لولای برگه ساعت */
 .flip-box::after {
     content: "";
     position: absolute;
@@ -939,7 +947,8 @@ body:before{
     right: 0;
     top: 50%;
     height: 1px;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .flip-sep {
@@ -1617,7 +1626,7 @@ body:before{
 
 
 /* =========================================================
-   BOTTOM NAV (بدون دکمه پلاس، با رنگ فعال متمایز)
+   BOTTOM NAV
 ========================================================= */
 
 .bottom-nav{
@@ -1670,7 +1679,6 @@ body:before{
     font-weight: 800;
 }
 
-/* رنگ و استایل متمایز برای حالت فعال */
 .nav-item.active {
     color: #ff3b30;
 }
@@ -2030,7 +2038,7 @@ body:before{
                         22:15
                     </div>
 
-                    <!-- شمارش معکوس بلوکی و فانتزی زیر ساعت -->
+                    <!-- شمارش معکوس فلیپ کلاک با افکت ورق خوردن -->
                     <div class="flip-countdown" id="matchCountdown1">
                         <div class="flip-box" id="m1-h">00</div>
                         <span class="flip-sep">:</span>
@@ -2114,7 +2122,7 @@ body:before{
                         22:15
                     </div>
 
-                    <!-- شمارش معکوس بلوکی و فانتزی زیر ساعت -->
+                    <!-- شمارش معکوس فلیپ کلاک با افکت ورق خوردن -->
                     <div class="flip-countdown" id="matchCountdown2">
                         <div class="flip-box" id="m2-h">00</div>
                         <span class="flip-sep">:</span>
@@ -2564,12 +2572,11 @@ body:before{
 
 
 <!-- =========================================================
-     BOTTOM NAV (بدون دکمه پلاس، با آیکون‌های درخواستی و رنگ اکتیو)
+     BOTTOM NAV
 ========================================================= -->
 
 <nav class="bottom-nav">
 
-    <!-- گیشه (آیکون Home) -->
     <button
         class="nav-item active"
         onclick="switchTab('gishah',this)"
@@ -2583,7 +2590,6 @@ body:before{
     </button>
 
 
-    <!-- مسابقات (آیکون دسته بازی / Gamepad) -->
     <button
         class="nav-item"
         onclick="switchTab('matches',this)"
@@ -2597,7 +2603,6 @@ body:before{
     </button>
 
 
-    <!-- جدول (آیکون زمین فوتبال / استادیوم) -->
     <button
         class="nav-item"
         onclick="switchTab('table',this)"
@@ -2611,7 +2616,6 @@ body:before{
     </button>
 
 
-    <!-- کل‌کل (آیکون توپ فوتبال) -->
     <button
         class="nav-item"
         onclick="switchTab('kalal',this)"
@@ -2732,7 +2736,7 @@ function switchTab(tabName,element){
 
 
 /* =========================================================
-   COUNTDOWN
+   COUNTDOWN WITH FLIP EFFECT
    29 September 2026 - 22:15
 ========================================================= */
 
@@ -2745,6 +2749,21 @@ const targetDate =
         15,
         0
     ).getTime();
+
+
+// تابع کمکی برای آپدیت همراه با افکت ورق خوردن (فلیپ) در صورت تغییر مقدار
+function updateFlipValue(elementId, newValue) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+
+    if (el.textContent !== newValue) {
+        el.classList.add("flipping");
+        setTimeout(() => {
+            el.textContent = newValue;
+            el.classList.remove("flipping");
+        }, 200); // نصف زمان انیمیشن برای تعویض متن در حالت خمیده
+    }
+}
 
 
 function updateCountdown(){
@@ -2778,15 +2797,6 @@ function updateCountdown(){
         );
 
 
-    const m1h = document.getElementById("m1-h");
-    const m1m = document.getElementById("m1-m");
-    const m1s = document.getElementById("m1-s");
-
-    const m2h = document.getElementById("m2-h");
-    const m2m = document.getElementById("m2-m");
-    const m2s = document.getElementById("m2-s");
-
-
     const status1 =
         document.getElementById(
             "matchStatus1"
@@ -2805,13 +2815,13 @@ function updateCountdown(){
         clockSeconds.textContent="00";
         clockLabel.textContent="سوت آغازین زده شد!";
 
-        m1h.textContent="00";
-        m1m.textContent="00";
-        m1s.textContent="00";
+        updateFlipValue("m1-h", "00");
+        updateFlipValue("m1-m", "00");
+        updateFlipValue("m1-s", "00");
 
-        m2h.textContent="00";
-        m2m.textContent="00";
-        m2s.textContent="00";
+        updateFlipValue("m2-h", "00");
+        updateFlipValue("m2-m", "00");
+        updateFlipValue("m2-s", "00");
 
 
         status1.textContent="در حال برگزاری";
@@ -2859,23 +2869,23 @@ function updateCountdown(){
         };
 
 
-    clockHours.textContent = format(hours);
-    clockMinutes.textContent = format(minutes);
-    clockSeconds.textContent = format(seconds);
-
-
-    // آپدیت شمارش معکوس بلوکی زیر هر بازی
     const formattedHours = format(hours);
     const formattedMinutes = format(minutes);
     const formattedSeconds = format(seconds);
 
-    m1h.textContent = formattedHours;
-    m1m.textContent = formattedMinutes;
-    m1s.textContent = formattedSeconds;
+    clockHours.textContent = formattedHours;
+    clockMinutes.textContent = formattedMinutes;
+    clockSeconds.textContent = formattedSeconds;
 
-    m2h.textContent = formattedHours;
-    m2m.textContent = formattedMinutes;
-    m2s.textContent = formattedSeconds;
+
+    // اعمال انیمیشن ورق خوردن روی دقایق و ثانیه‌ها
+    updateFlipValue("m1-h", formattedHours);
+    updateFlipValue("m1-m", formattedMinutes);
+    updateFlipValue("m1-s", formattedSeconds);
+
+    updateFlipValue("m2-h", formattedHours);
+    updateFlipValue("m2-m", formattedMinutes);
+    updateFlipValue("m2-s", formattedSeconds);
 
 }
 
