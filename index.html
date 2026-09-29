@@ -904,26 +904,28 @@ body:before{
     color:#101719;
 }
 
+/* استایل شیک و کوچک شمارش معکوس زیر ساعت هر مسابقه */
 .match-countdown{
-    font-size:8px;
-
-    color:#08a85a;
-
+    font-size:9px;
+    color:#079c53;
+    background:#e2faeb;
+    padding:3px 7px;
+    border-radius:8px;
     font-weight:800;
-
-    margin-top:3px;
-
+    margin-top:4px;
     text-align:center;
+    border: 1px solid #c7f2d8;
+    white-space: nowrap;
 }
 
 .match-status{
-    margin-top:7px;
+    margin-top:6px;
 
     background:#e7faee;
 
     color:#079d54;
 
-    padding:4px 8px;
+    padding:3px 8px;
 
     border-radius:20px;
 
@@ -1577,7 +1579,7 @@ body:before{
 
 
 /* =========================================================
-   BOTTOM NAV (با گرافیک دایره‌ای وسط و رنگ‌بندی متمایز اکتیو)
+   BOTTOM NAV (بدون دکمه پلاس، با رنگ فعال متمایز)
 ========================================================= */
 
 .bottom-nav{
@@ -1630,7 +1632,7 @@ body:before{
     font-weight: 800;
 }
 
-/* رنگ و استایل کاملاً متمایز برای حالت فعال */
+/* رنگ و استایل متمایز برای حالت فعال */
 .nav-item.active {
     color: #ff3b30;
 }
@@ -1638,26 +1640,6 @@ body:before{
 .nav-item.active .nav-icon {
     transform: translateY(-4px);
     filter: drop-shadow(0 0 8px rgba(255, 59, 48, 0.4));
-}
-
-/* دکمه دایره‌ای وسط نوار پایین */
-.nav-center-btn {
-    position: absolute;
-    top: -24px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 50px;
-    background: #079c53;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 6px 15px rgba(7, 156, 83, 0.4);
-    color: #fff;
-    font-size: 1.2rem;
-    border: 4px solid #f5fff9;
-    pointer-events: none;
 }
 
 
@@ -2010,6 +1992,7 @@ body:before{
                         22:15
                     </div>
 
+                    <!-- شمارش معکوس اختصاصی زیر ساعت -->
                     <div
                         class="match-countdown"
                         id="matchCountdown1"
@@ -2091,6 +2074,7 @@ body:before{
                         22:15
                     </div>
 
+                    <!-- شمارش معکوس اختصاصی زیر ساعت -->
                     <div
                         class="match-countdown"
                         id="matchCountdown2"
@@ -2538,7 +2522,7 @@ body:before{
 
 
 <!-- =========================================================
-     BOTTOM NAV (با آیکون‌های درخواستی و رنگ اکتیو متمایز)
+     BOTTOM NAV (بدون دکمه پلاس، با آیکون‌های درخواستی و رنگ اکتیو)
 ========================================================= -->
 
 <nav class="bottom-nav">
@@ -2569,12 +2553,6 @@ body:before{
             مسابقات
         </span>
     </button>
-
-
-    <!-- دکمه مرکزی دایره‌ای تزیینی -->
-    <div class="nav-center-btn">
-        <i class="fa-solid fa-plus"></i>
-    </div>
 
 
     <!-- جدول (آیکون زمین فوتبال / استادیوم) -->
@@ -2875,14 +2853,14 @@ function updateCountdown(){
     if(hours>0){
 
         countdownText =
-            `${hours} ساعت و ${minutes} دقیقه تا شروع`;
+            `${hours} ساعت و ${minutes} دقیقه`;
 
     }
 
     else{
 
         countdownText =
-            `${minutes} دقیقه و ${seconds} ثانیه تا شروع`;
+            `${minutes} دقیقه و ${seconds} ثانیه`;
 
     }
 
