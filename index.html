@@ -7,6 +7,8 @@
 
 <title>گداهای استرسی ۲ | فصل دوم</title>
 
+<!-- FontAwesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
@@ -34,6 +36,7 @@ body{
     color:#101719;
     min-height:100vh;
     overflow-x:hidden;
+    padding-bottom: 110px;
 }
 
 button,
@@ -706,8 +709,7 @@ body:before{
 
     padding:
         16px
-        15px
-        115px;
+        15px;
 
     margin:auto;
 
@@ -1250,7 +1252,7 @@ body:before{
 
     align-items:center;
 
-    min-height:50px;
+    min-height:48px;
 
     padding:6px 10px;
 
@@ -1261,97 +1263,41 @@ body:before{
     font-size:11px;
 
     font-weight:700;
+    
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 2px;
 }
 
-.table-row.first{
-    background:
-        linear-gradient(
-            90deg,
-            #fff9dc,
-            #fff
-        );
-
-    border:
-        1px solid
-        #efd36b;
-
-    border-radius:17px;
-
-    margin-bottom:3px;
-}
-
-.table-row.reza{
-    background:
-        linear-gradient(
-            90deg,
-            #e7fff1,
-            #fff
-        );
-
-    border:
-        1px solid
-        #b6ecca;
-
-    border-radius:17px;
-}
-
-.rank{
+.table-row .rank {
     font-size:12px;
-
     font-weight:900;
-
-    color:#9ca7a2;
+    color:#3a4742;
 }
 
-.first .rank{
-    color:#bd8a0e;
-}
-
-.player{
+.table-row .player {
     display:flex;
-
     align-items:center;
-
     gap:7px;
+    color:#111722;
+    font-weight:800;
 }
 
-.player-dot{
+.table-row .player-dot {
     width:7px;
     height:7px;
-
     border-radius:50%;
-
-    background:#d5dcd9;
-}
-
-.reza .player-dot{
     background:#0bc66a;
-
-    box-shadow:
-        0 0 9px
-        rgba(11,198,106,.5);
 }
 
-.score{
+.table-row .score {
     justify-self:end;
-
     font-size:12px;
-
     font-weight:900;
-
-    color:#bd8b0e;
-
-    background:#fff8dd;
-
-    padding:5px 9px;
-
-    border-radius:9px;
-}
-
-.reza .score{
     color:#079c53;
-
     background:#d9f9e7;
+    padding:5px 9px;
+    border-radius:9px;
 }
 
 
@@ -1616,9 +1562,9 @@ body:before{
 }
 
 .player-score{
-    color:#b5860c;
+    color:#079c53;
 
-    background:#fff8de;
+    background:#d9f9e7;
 
     padding:4px 8px;
 
@@ -1631,101 +1577,87 @@ body:before{
 
 
 /* =========================================================
-   BOTTOM NAV
+   BOTTOM NAV (با گرافیک دایره‌ای وسط و رنگ‌بندی متمایز اکتیو)
 ========================================================= */
 
 .bottom-nav{
     position:fixed;
-
     z-index:9000;
+    bottom:0;
+    left:0;
+    right:0;
+    height:75px;
 
-    bottom:13px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 
-    left:50%;
+    border-top: 1px solid #d8e9df;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
 
-    transform:translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
-    width:calc(100% - 24px);
-
-    max-width:475px;
-
-    padding:7px;
-
-    background:
-        rgba(255,255,255,.91);
-
-    backdrop-filter:blur(22px);
-    -webkit-backdrop-filter:blur(22px);
-
-    border:
-        1px solid
-        #d8e9df;
-
-    border-radius:25px;
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:5px;
-
-    box-shadow:
-        0 17px 45px
-        rgba(0,70,40,.16);
+    box-shadow: 0 -10px 30px rgba(0, 70, 40, 0.12);
+    padding: 0 10px;
 }
 
 .nav-item{
-    border:none;
-
-    background:transparent;
-
-    color:#7b8581;
-
-    padding:9px 4px;
-
-    border-radius:17px;
-
-    cursor:pointer;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:3px;
-
-    transition:.25s;
+    border: none;
+    background: transparent;
+    color: #7b8581;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    flex: 1;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
 .nav-icon{
-    font-size:17px;
-
-    line-height:1;
+    font-size: 20px;
+    line-height: 1;
+    transition: transform 0.3s ease;
 }
 
 .nav-text{
-    font-size:9px;
-
-    font-weight:800;
+    font-size: 9px;
+    font-weight: 800;
 }
 
-.nav-item.active{
-    background:
-        linear-gradient(
-            135deg,
-            #13da72,
-            #079c53
-        );
+/* رنگ و استایل کاملاً متمایز برای حالت فعال */
+.nav-item.active {
+    color: #ff3b30;
+}
 
-    color:#fff;
+.nav-item.active .nav-icon {
+    transform: translateY(-4px);
+    filter: drop-shadow(0 0 8px rgba(255, 59, 48, 0.4));
+}
 
-    box-shadow:
-        0 8px 18px
-        rgba(7,170,86,.25);
+/* دکمه دایره‌ای وسط نوار پایین */
+.nav-center-btn {
+    position: absolute;
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: #079c53;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 15px rgba(7, 156, 83, 0.4);
+    color: #fff;
+    font-size: 1.2rem;
+    border: 4px solid #f5fff9;
+    pointer-events: none;
 }
 
 
@@ -1756,20 +1688,6 @@ body:before{
     to{
         opacity:1;
         transform:translateY(0);
-    }
-
-}
-
-
-/* =========================================================
-   TOUCH / MOBILE
-========================================================= */
-
-@media(hover:none){
-
-    .predict-btn:hover,
-    .winner-enter:hover{
-        transform:none;
     }
 
 }
@@ -1932,18 +1850,124 @@ body:before{
 
 
 <!-- =========================================================
-     MATCHES TAB
+     GISHAH TAB (گیشه)
 ========================================================= -->
 
 <section
-    id="matches-tab"
+    id="gishah-tab"
     class="tab-content active"
 >
 
     <div class="section-head">
 
         <h2>
-            ⚽ مسابقات پیش‌رو
+            📰 گیشه لیگ
+        </h2>
+
+        <span>
+            EXTRA TIME
+        </span>
+
+    </div>
+
+
+    <!-- REPORT 1: WEEK 07 -->
+
+    <div class="achievement-card">
+
+        <div class="news-body">
+
+            <div class="news-title">
+                🔥 شروع طوفانی هفته هفتم؛ جدال تیم‌های فیره‌فروش!
+            </div>
+
+            <div class="news-text">
+                هفته هفتم با شروع رقابت تیمی از امروز با بازی انگلیس/چک و اسپانیا/کرواسی شروع میشه. دو تیم جماعت بی‌پولا و اتحاد بدبختا که سابقه درخشانی در فیره‌فروشی و فروش گوشت ناسالم دارن، حالا قراره از امروز باهم رقابت کنن.<br>
+                تقریباً قدرت‌ها تقسیم شده و هر تیمی با توجه به قدرت پیش‌بینی اعضای درجه یک خودش، باید دید که کدوم تیم در پایان هفته امتیازات بیشتری کسب خواهد کرد.
+            </div>
+
+            <span class="news-badge">
+                ⚔️ BATTLE WEEK 07
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- REPORT 2: WEEK 06 -->
+
+    <div class="achievement-card">
+
+        <div class="achievement-top">
+
+            <div class="achievement-label">
+                GEDAHAYE ESTERESI
+            </div>
+
+            <div class="achievement-script">
+                Achievement
+            </div>
+
+        </div>
+
+
+        <div class="news-trophy-zone">
+
+            <div class="mini-trophy">
+
+                <div class="cup"></div>
+
+                <div class="handle left"></div>
+
+                <div class="handle right"></div>
+
+                <div class="base"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="news-body">
+
+            <div class="news-title">
+                پیرا و نعیمی هم‌شیفت کنار هم در جدول
+            </div>
+
+            <div class="news-text">
+                ایستگاه هفته ششم با قهرمانی زودهنگام پیرا...
+                پیرا بعد از ازدواج و مراسم باشکوه تولد، حالا با
+                ۱۲ امتیاز صدرنشین و قهرمان زودهنگام هفته ششم
+                پیش‌بینی لیگ گداهای استرسی در فصل دوم لقب گرفته.
+            </div>
+
+            <span class="news-badge">
+                🏆 EXTRA TIME
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MATCHES TAB (مسابقات)
+========================================================= -->
+
+<section
+    id="matches-tab"
+    class="tab-content"
+>
+
+    <div class="section-head">
+
+        <h2>
+            🎮 مسابقات پیش‌رو
         </h2>
 
         <span>
@@ -1953,7 +1977,7 @@ body:before{
     </div>
 
 
-    <!-- MATCH 1 -->
+    <!-- MATCH 1: انگلیس / چک -->
 
     <div class="match-card-wrapper">
 
@@ -2118,7 +2142,7 @@ body:before{
 
 
 <!-- =========================================================
-     TABLE TAB
+     TABLE TAB (جدول)
 ========================================================= -->
 
 <section
@@ -2150,211 +2174,82 @@ body:before{
         </div>
 
 
-        <div class="table-row first">
-
+        <div class="table-row">
             <span class="rank">01</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                Asm A
-            </span>
-
-            <span class="score">
-                65
-            </span>
-
+            <span class="player"><span class="player-dot"></span>Asm A</span>
+            <span class="score">65</span>
         </div>
 
-
-        <div class="table-row reza">
-
+        <div class="table-row">
             <span class="rank">02</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                REZA GHATIFI
-            </span>
-
-            <span class="score">
-                62
-            </span>
-
+            <span class="player"><span class="player-dot"></span>REZA GHATIFI</span>
+            <span class="score">62</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">03</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                حبیب نعیمی
-            </span>
-
-            <span class="score">
-                57
-            </span>
-
+            <span class="player"><span class="player-dot"></span>حبیب نعیمی</span>
+            <span class="score">57</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">04</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                Donya Asil
-            </span>
-
-            <span class="score">
-                56
-            </span>
-
+            <span class="player"><span class="player-dot"></span>Donya Asil</span>
+            <span class="score">56</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">05</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                Mahdi
-            </span>
-
-            <span class="score">
-                55
-            </span>
-
+            <span class="player"><span class="player-dot"></span>Mahdi</span>
+            <span class="score">55</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">06</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                محمد خلیلاوی پور
-            </span>
-
-            <span class="score">
-                52
-            </span>
-
+            <span class="player"><span class="player-dot"></span>محمد خلیلاوی پور</span>
+            <span class="score">52</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">07</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                hey10
-            </span>
-
-            <span class="score">
-                51
-            </span>
-
+            <span class="player"><span class="player-dot"></span>hey10</span>
+            <span class="score">51</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">08</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                hajar daoudi
-            </span>
-
-            <span class="score">
-                50
-            </span>
-
+            <span class="player"><span class="player-dot"></span>hajar daoudi</span>
+            <span class="score">50</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">09</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                Ahlam Aljaber
-            </span>
-
-            <span class="score">
-                44
-            </span>
-
+            <span class="player"><span class="player-dot"></span>Ahlam Aljaber</span>
+            <span class="score">44</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">10</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                امین دریس
-            </span>
-
-            <span class="score">
-                39
-            </span>
-
+            <span class="player"><span class="player-dot"></span>امین دریس</span>
+            <span class="score">39</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">11</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                Sama salehi
-            </span>
-
-            <span class="score">
-                32
-            </span>
-
+            <span class="player"><span class="player-dot"></span>Sama salehi</span>
+            <span class="score">32</span>
         </div>
 
-
         <div class="table-row">
-
             <span class="rank">12</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                محمد جاسميان
-            </span>
-
-            <span class="score">
-                26
-            </span>
-
+            <span class="player"><span class="player-dot"></span>محمد جاسميان</span>
+            <span class="score">26</span>
         </div>
-
 
         <div class="table-row">
-
             <span class="rank">13</span>
-
-            <span class="player">
-                <span class="player-dot"></span>
-                مهدی
-            </span>
-
-            <span class="score">
-                15
-            </span>
-
+            <span class="player"><span class="player-dot"></span>مهدی</span>
+            <span class="score">15</span>
         </div>
 
     </div>
@@ -2364,113 +2259,7 @@ body:before{
 
 
 <!-- =========================================================
-     GISHAH TAB
-========================================================= -->
-
-<section
-    id="gishah-tab"
-    class="tab-content"
->
-
-    <div class="section-head">
-
-        <h2>
-            📰 گیشه لیگ
-        </h2>
-
-        <span>
-            EXTRA TIME
-        </span>
-
-    </div>
-
-
-    <!-- REPORT 1: WEEK 07 -->
-
-    <div class="achievement-card">
-
-        <div class="news-body">
-
-            <div class="news-title">
-                🔥 شروع طوفانی هفته هفتم؛ جدال تیم‌های فیره‌فروش!
-            </div>
-
-            <div class="news-text">
-                هفته هفتم با شروع رقابت تیمی از امروز با بازی انگلیس/چک و اسپانیا/کرواسی شروع میشه. دو تیم جماعت بی‌پولا و اتحاد بدبختا که سابقه درخشانی در فیره‌فروشی و فروش گوشت ناسالم دارن، حالا قراره از امروز باهم رقابت کنن.<br>
-                تقریباً قدرت‌ها تقسیم شده و هر تیمی با توجه به قدرت پیش‌بینی اعضای درجه یک خودش، باید دید که کدوم تیم در پایان هفته امتیازات بیشتری کسب خواهد کرد.
-            </div>
-
-            <span class="news-badge">
-                ⚔️ BATTLE WEEK 07
-            </span>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- REPORT 2: WEEK 06 -->
-
-    <div class="achievement-card">
-
-        <div class="achievement-top">
-
-            <div class="achievement-label">
-                GEDAHAYE ESTERESI
-            </div>
-
-            <div class="achievement-script">
-                Achievement
-            </div>
-
-        </div>
-
-
-        <div class="news-trophy-zone">
-
-            <div class="mini-trophy">
-
-                <div class="cup"></div>
-
-                <div class="handle left"></div>
-
-                <div class="handle right"></div>
-
-                <div class="base"></div>
-
-            </div>
-
-        </div>
-
-
-        <div class="news-body">
-
-            <div class="news-title">
-                پیرا و نعیمی هم‌شیفت کنار هم در جدول
-            </div>
-
-            <div class="news-text">
-                ایستگاه هفته ششم با قهرمانی زودهنگام پیرا...
-                پیرا بعد از ازدواج و مراسم باشکوه تولد، حالا با
-                ۱۲ امتیاز صدرنشین و قهرمان زودهنگام هفته ششم
-                پیش‌بینی لیگ گداهای استرسی در فصل دوم لقب گرفته.
-            </div>
-
-            <span class="news-badge">
-                🏆 EXTRA TIME
-            </span>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     KALAL TAB
+     KALAL TAB (کل‌کل)
 ========================================================= -->
 
 <section
@@ -2749,43 +2538,18 @@ body:before{
 
 
 <!-- =========================================================
-     BOTTOM NAV
+     BOTTOM NAV (با آیکون‌های درخواستی و رنگ اکتیو متمایز)
 ========================================================= -->
 
 <nav class="bottom-nav">
 
+    <!-- گیشه (آیکون Home) -->
     <button
         class="nav-item active"
-        onclick="switchTab('matches',this)"
-    >
-        <span class="nav-icon">
-            ⚽
-        </span>
-        <span class="nav-text">
-            بازی‌ها
-        </span>
-    </button>
-
-
-    <button
-        class="nav-item"
-        onclick="switchTab('table',this)"
-    >
-        <span class="nav-icon">
-            📊
-        </span>
-        <span class="nav-text">
-            جدول
-        </span>
-    </button>
-
-
-    <button
-        class="nav-item"
         onclick="switchTab('gishah',this)"
     >
         <span class="nav-icon">
-            🏆
+            <i class="fa-solid fa-house"></i>
         </span>
         <span class="nav-text">
             گیشه
@@ -2793,12 +2557,47 @@ body:before{
     </button>
 
 
+    <!-- مسابقات (آیکون دسته بازی / Gamepad) -->
+    <button
+        class="nav-item"
+        onclick="switchTab('matches',this)"
+    >
+        <span class="nav-icon">
+            <i class="fa-solid fa-gamepad"></i>
+        </span>
+        <span class="nav-text">
+            مسابقات
+        </span>
+    </button>
+
+
+    <!-- دکمه مرکزی دایره‌ای تزیینی -->
+    <div class="nav-center-btn">
+        <i class="fa-solid fa-plus"></i>
+    </div>
+
+
+    <!-- جدول (آیکون زمین فوتبال / استادیوم) -->
+    <button
+        class="nav-item"
+        onclick="switchTab('table',this)"
+    >
+        <span class="nav-icon">
+            <i class="fa-solid fa-landmark-flag"></i>
+        </span>
+        <span class="nav-text">
+            جدول
+        </span>
+    </button>
+
+
+    <!-- کل‌کل (آیکون توپ فوتبال) -->
     <button
         class="nav-item"
         onclick="switchTab('kalal',this)"
     >
         <span class="nav-icon">
-            🥊
+            <i class="fa-solid fa-futbol"></i>
         </span>
         <span class="nav-text">
             کل‌کل
