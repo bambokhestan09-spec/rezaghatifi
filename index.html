@@ -1,111 +1,145 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>گداهای استرسی ۲ | فصل دوم</title>
+
 <!-- FontAwesome for Icons -->
-<link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
-<link href="[https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap](https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap)" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
+
 /* =========================================================
-RESET
+   RESET
 ========================================================= */
+
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
+
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
+
 body{
-font-family:'Vazirmatn',sans-serif;
-background:
-radial-gradient(circle at 50% -10%,rgba(0,255,153,.22),transparent 32%),
-radial-gradient(circle at 0% 45%,rgba(0,190,100,.10),transparent 25%),
-linear-gradient(180deg,#f5fff9 0%,#eafff3 45%,#f5fff9 100%);
-color:#101719;
-min-height:100vh;
-overflow-x:hidden;
-padding-bottom: 110px;
+    font-family:'Vazirmatn',sans-serif;
+    background:
+        radial-gradient(circle at 50% -10%,rgba(0,255,153,.22),transparent 32%),
+        radial-gradient(circle at 0% 45%,rgba(0,190,100,.10),transparent 25%),
+        linear-gradient(180deg,#f5fff9 0%,#eafff3 45%,#f5fff9 100%);
+    color:#101719;
+    min-height:100vh;
+    overflow-x:hidden;
+    padding-bottom: 110px;
 }
+
 button,
 a{
-font-family:'Vazirmatn',sans-serif;
+    font-family:'Vazirmatn',sans-serif;
 }
+
+
 /* =========================================================
-GLOBAL DECORATION
+   GLOBAL DECORATION
 ========================================================= */
+
 body:before{
-content:"";
-position:fixed;
-inset:0;
-pointer-events:none;
-z-index:-1;
-opacity:.32;
-background-image:
-linear-gradient(
-115deg,
-transparent 0 48%,
-rgba(0,160,82,.08) 49%,
-transparent 50%
-);
-background-size:170px 170px;
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+    opacity:.32;
+
+    background-image:
+        linear-gradient(
+            115deg,
+            transparent 0 48%,
+            rgba(0,160,82,.08) 49%,
+            transparent 50%
+        );
+
+    background-size:170px 170px;
 }
+
+
 /* =========================================================
-SPLASH SCREEN
+   SPLASH SCREEN
 ========================================================= */
+
 #splash-screen{
-position:fixed;
-inset:0;
-z-index:99999;
-background:
-radial-gradient(
-circle at 50% 35%,
-#21e982 0%,
-#09b968 28%,
-#047d4c 65%,
-#03462e 100%
-);
-display:flex;
-justify-content:center;
-align-items:center;
-overflow:hidden;
-transition:
-opacity .9s ease,
-visibility .9s ease;
+    position:fixed;
+    inset:0;
+    z-index:99999;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #21e982 0%,
+            #09b968 28%,
+            #047d4c 65%,
+            #03462e 100%
+        );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    transition:
+        opacity .9s ease,
+        visibility .9s ease;
 }
+
 #splash-screen.hide{
-opacity:0;
-visibility:hidden;
-pointer-events:none;
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
 }
+
 #splash-screen:before{
-content:"";
-position:absolute;
-width:650px;
-height:650px;
-border:1px solid rgba(255,255,255,.18);
-border-radius:50%;
-box-shadow:
-0 0 0 80px rgba(255,255,255,.025),
-0 0 0 160px rgba(255,255,255,.018);
+    content:"";
+
+    position:absolute;
+    width:650px;
+    height:650px;
+
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:50%;
+
+    box-shadow:
+        0 0 0 80px rgba(255,255,255,.025),
+        0 0 0 160px rgba(255,255,255,.018);
 }
+
 .splash-confetti{
-position:absolute;
-inset:0;
-pointer-events:none;
+    position:absolute;
+    inset:0;
+    pointer-events:none;
 }
+
 .confetti{
-position:absolute;
-width:8px;
-height:28px;
-border-radius:6px;
-background:#d7ff4f;
-opacity:.75;
-animation:confettiFall 4s infinite ease-in-out;
+    position:absolute;
+
+    width:8px;
+    height:28px;
+
+    border-radius:6px;
+
+    background:#d7ff4f;
+
+    opacity:.75;
+
+    animation:confettiFall 4s infinite ease-in-out;
 }
+
 .confetti:nth-child(1){left:12%;top:10%;transform:rotate(25deg);}
 .confetti:nth-child(2){left:24%;top:28%;transform:rotate(-40deg);}
 .confetti:nth-child(3){left:75%;top:12%;transform:rotate(60deg);}
@@ -114,1831 +148,2758 @@ animation:confettiFall 4s infinite ease-in-out;
 .confetti:nth-child(6){left:90%;top:70%;transform:rotate(-50deg);}
 .confetti:nth-child(7){left:18%;top:82%;transform:rotate(30deg);}
 .confetti:nth-child(8){left:78%;top:82%;transform:rotate(-30deg);}
+
 @keyframes confettiFall{
-0%,100%{
-transform:translateY(0) rotate(20deg);
+    0%,100%{
+        transform:translateY(0) rotate(20deg);
+    }
+
+    50%{
+        transform:translateY(20px) rotate(120deg);
+    }
 }
-50%{
-transform:translateY(20px) rotate(120deg);
-}
-}
+
 .splash-content{
-width:min(92%,430px);
-text-align:center;
-position:relative;
-z-index:2;
+    width:min(92%,430px);
+
+    text-align:center;
+
+    position:relative;
+    z-index:2;
 }
+
 .splash-brand{
-font-family:'Vazirmatn',sans-serif;
-font-size:24px;
-font-weight:900;
-color:#fff;
-letter-spacing:.5px;
+    font-family:'Vazirmatn',sans-serif;
+    font-size:24px;
+    font-weight:900;
+    color:#fff;
+    letter-spacing:.5px;
 }
+
 .splash-script{
-font-family:'Vazirmatn',sans-serif;
-font-size:18px;
-font-weight:800;
-color:#d7ff4f;
-margin-bottom:12px;
+    font-family:'Vazirmatn',sans-serif;
+    font-size:18px;
+    font-weight:800;
+    color:#d7ff4f;
+    margin-bottom:12px;
 }
+
+
 /* =========================================================
-SPLASH TROPHY
+   SPLASH TROPHY
 ========================================================= */
+
 .splash-trophy{
-position:relative;
-width:190px;
-height:235px;
-margin:0 auto 15px;
-filter:
-drop-shadow(
-0 25px 30px
-rgba(0,0,0,.25)
-);
+    position:relative;
+
+    width:190px;
+    height:235px;
+
+    margin:0 auto 15px;
+
+    filter:
+        drop-shadow(
+            0 25px 30px
+            rgba(0,0,0,.25)
+        );
 }
+
 .trophy-cup{
-position:absolute;
-width:118px;
-height:105px;
-top:18px;
-left:36px;
-background:
-linear-gradient(
-100deg,
-#fff6a3 0%,
-#f1c72e 18%,
-#fff7b2 38%,
-#a8730d 65%,
-#ffe15d 88%
-);
-border-radius:
-16px
-16px
-42px
-42px;
-z-index:3;
+    position:absolute;
+
+    width:118px;
+    height:105px;
+
+    top:18px;
+    left:36px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #fff6a3 0%,
+            #f1c72e 18%,
+            #fff7b2 38%,
+            #a8730d 65%,
+            #ffe15d 88%
+        );
+
+    border-radius:
+        16px
+        16px
+        42px
+        42px;
+
+    z-index:3;
 }
+
 .trophy-cup:before{
-content:"";
-position:absolute;
-width:82px;
-height:13px;
-left:18px;
-top:-6px;
-border-radius:50%;
-background:
-linear-gradient(
-90deg,
-#a66c0a,
-#fff3a2,
-#b2780c
-);
+    content:"";
+
+    position:absolute;
+
+    width:82px;
+    height:13px;
+
+    left:18px;
+    top:-6px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #a66c0a,
+            #fff3a2,
+            #b2780c
+        );
 }
+
 .trophy-cup:after{
-content:"";
-position:absolute;
-width:64px;
-height:65px;
-left:27px;
-top:20px;
-border:
-5px solid
-rgba(255,247,185,.55);
-border-radius:50%;
+    content:"";
+
+    position:absolute;
+
+    width:64px;
+    height:65px;
+
+    left:27px;
+    top:20px;
+
+    border:
+        5px solid
+        rgba(255,247,185,.55);
+
+    border-radius:50%;
 }
+
 .trophy-handle{
-position:absolute;
-width:45px;
-height:65px;
-top:27px;
-border:
-10px solid
-#d7a82b;
-border-radius:50%;
-z-index:2;
+    position:absolute;
+
+    width:45px;
+    height:65px;
+
+    top:27px;
+
+    border:
+        10px solid
+        #d7a82b;
+
+    border-radius:50%;
+
+    z-index:2;
 }
+
 .handle-left{
-left:5px;
+    left:5px;
 }
+
 .handle-right{
-right:5px;
+    right:5px;
 }
+
 .trophy-neck{
-position:absolute;
-width:45px;
-height:38px;
-top:110px;
-left:72px;
-background:
-linear-gradient(
-90deg,
-#9a6810,
-#ffe37b,
-#b67b13
-);
+    position:absolute;
+
+    width:45px;
+    height:38px;
+
+    top:110px;
+    left:72px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #9a6810,
+            #ffe37b,
+            #b67b13
+        );
 }
+
 .trophy-base{
-position:absolute;
-width:105px;
-height:32px;
-bottom:35px;
-left:43px;
-background:
-linear-gradient(
-90deg,
-#16191e,
-#52565b,
-#090b0d
-);
-clip-path:
-polygon(
-12% 0,
-88% 0,
-100% 100%,
-0 100%
-);
-z-index:4;
+    position:absolute;
+
+    width:105px;
+    height:32px;
+
+    bottom:35px;
+    left:43px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #16191e,
+            #52565b,
+            #090b0d
+        );
+
+    clip-path:
+        polygon(
+            12% 0,
+            88% 0,
+            100% 100%,
+            0 100%
+        );
+
+    z-index:4;
 }
+
 .trophy-pedestal{
-position:absolute;
-width:72px;
-height:25px;
-bottom:10px;
-left:59px;
-background:#17191d;
-border-radius:5px;
+    position:absolute;
+
+    width:72px;
+    height:25px;
+
+    bottom:10px;
+    left:59px;
+
+    background:#17191d;
+
+    border-radius:5px;
 }
+
 .splash-title{
-font-family:'Vazirmatn',sans-serif;
-font-size:28px;
-font-weight:900;
-color:#fff;
+    font-family:'Vazirmatn',sans-serif;
+    font-size:28px;
+    font-weight:900;
+    color:#fff;
 }
+
 .splash-season{
-margin-top:5px;
-color:#d7ff4f;
-font-weight:900;
-font-size:18px;
-letter-spacing:1px;
+    margin-top:5px;
+    color:#d7ff4f;
+    font-weight:900;
+    font-size:18px;
+    letter-spacing:1px;
 }
+
 .splash-loading{
-width:180px;
-height:5px;
-background:rgba(255,255,255,.22);
-border-radius:20px;
-overflow:hidden;
-margin:22px auto 0;
+    width:180px;
+    height:5px;
+
+    background:rgba(255,255,255,.22);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin:22px auto 0;
 }
+
 .splash-loading span{
-display:block;
-width:0;
-height:100%;
-background:
-linear-gradient(
-90deg,
-#d7ff4f,
-#fff
-);
-animation:
-loading 2.2s ease forwards;
+    display:block;
+
+    width:0;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d7ff4f,
+            #fff
+        );
+
+    animation:
+        loading 2.2s ease forwards;
 }
+
 @keyframes loading{
-to{
-width:100%;
+    to{
+        width:100%;
+    }
 }
-}
+
+
 /* =========================================================
-WINNER MODAL
+   WINNER MODAL
 ========================================================= */
+
 #winner-modal{
-position:fixed;
-inset:0;
-z-index:99998;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:18px;
-background:
-radial-gradient(
-circle at 50% 20%,
-rgba(0,255,145,.22),
-transparent 35%
-),
-rgba(4,18,12,.84);
-backdrop-filter:blur(12px);
--webkit-backdrop-filter:blur(12px);
-opacity:0;
-visibility:hidden;
-pointer-events:none;
-transition:
-opacity .45s ease,
-visibility .45s ease;
+    position:fixed;
+    inset:0;
+
+    z-index:99998;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:18px;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(0,255,145,.22),
+            transparent 35%
+        ),
+        rgba(4,18,12,.84);
+
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+
+    transition:
+        opacity .45s ease,
+        visibility .45s ease;
 }
+
 #winner-modal.show{
-opacity:1;
-visibility:visible;
-pointer-events:auto;
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
 }
+
 #winner-modal.hide{
-opacity:0;
-visibility:hidden;
-pointer-events:none;
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
 }
+
+
 /* =========================================================
-WINNER BOX
+   WINNER BOX
 ========================================================= */
+
 .winner-box{
-width:min(100%,410px);
-max-height:92vh;
-overflow:hidden;
-background:#f7fff9;
-border-radius:30px;
-border:
-1px solid
-rgba(87,255,164,.5);
-box-shadow:
-0 40px 100px rgba(0,0,0,.48),
-0 0 60px rgba(0,255,140,.16);
-transform:
-translateY(25px)
-scale(.92);
-transition:
-transform .55s
-cubic-bezier(.2,.8,.2,1);
-position:relative;
+    width:min(100%,410px);
+
+    max-height:92vh;
+
+    overflow:hidden;
+
+    background:#f7fff9;
+
+    border-radius:30px;
+
+    border:
+        1px solid
+        rgba(87,255,164,.5);
+
+    box-shadow:
+        0 40px 100px rgba(0,0,0,.48),
+        0 0 60px rgba(0,255,140,.16);
+
+    transform:
+        translateY(25px)
+        scale(.92);
+
+    transition:
+        transform .55s
+        cubic-bezier(.2,.8,.2,1);
+
+    position:relative;
 }
+
 #winner-modal.show .winner-box{
-transform:
-translateY(0)
-scale(1);
+    transform:
+        translateY(0)
+        scale(1);
 }
+
+
 /* =========================================================
-WINNER HEADER
+   WINNER HEADER
 ========================================================= */
+
 .winner-top-title{
-text-align:center;
-padding:22px 16px 14px;
-background:#fff;
-position:relative;
-z-index:3;
+    text-align:center;
+
+    padding:22px 16px 14px;
+
+    background:#fff;
+
+    position:relative;
+
+    z-index:3;
 }
+
 .winner-brand{
-font-family:'Vazirmatn',sans-serif;
-font-size:22px;
-font-weight:900;
-color:#123322;
-letter-spacing:.5px;
+    font-family:'Vazirmatn',sans-serif;
+    font-size:22px;
+    font-weight:900;
+    color:#123322;
+    letter-spacing:.5px;
 }
+
 .winner-achievement{
-font-family:'Vazirmatn',sans-serif;
-font-size:28px;
-font-weight:900;
-line-height:1.2;
-color:#0bc66e;
-margin-top:6px;
+    font-family:'Vazirmatn',sans-serif;
+    font-size:28px;
+    font-weight:900;
+    line-height:1.2;
+    color:#0bc66e;
+    margin-top:6px;
 }
+
+
 /* =========================================================
-WINNER MESSAGE
+   WINNER MESSAGE
 ========================================================= */
+
 .winner-message{
-padding:22px 18px 22px;
-text-align:center;
-background:
-linear-gradient(
-180deg,
-#ffffff 0%,
-#effff6 100%
-);
-border-top:
-1px solid
-#d9f4e5;
+    padding:22px 18px 22px;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #effff6 100%
+        );
+
+    border-top:
+        1px solid
+        #d9f4e5;
 }
+
 .winner-kicker{
-display:inline-flex;
-padding:6px 14px;
-border-radius:30px;
-background:#dffbea;
-color:#0aa75d;
-font-size:11px;
-font-weight:900;
-margin-bottom:10px;
+    display:inline-flex;
+
+    padding:6px 14px;
+
+    border-radius:30px;
+
+    background:#dffbea;
+
+    color:#0aa75d;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    margin-bottom:10px;
 }
+
 .winner-title{
-color:#111722;
-font-size:23px;
-line-height:1.5;
-font-weight:900;
+    color:#111722;
+    font-size:23px;
+    line-height:1.5;
+    font-weight:900;
 }
+
 .winner-title span{
-color:#0bbd68;
+    color:#0bbd68;
 }
+
 .winner-description{
-margin-top:8px;
-color:#3a4742;
-font-size:15px;
-line-height:1.8;
-font-weight:800;
+    margin-top:8px;
+    color:#3a4742;
+    font-size:15px;
+    line-height:1.8;
+    font-weight:800;
 }
+
 .winner-season{
-color:#a77b0d;
-font-size:14px;
-font-weight:900;
-margin-top:6px;
+    color:#a77b0d;
+    font-size:14px;
+    font-weight:900;
+    margin-top:6px;
 }
+
 .winner-enter{
-width:100%;
-margin-top:18px;
-border:none;
-padding:15px 15px;
-border-radius:16px;
-color:#fff;
-cursor:pointer;
-font-size:16px;
-font-weight:900;
-background:
-linear-gradient(
-135deg,
-#12db76,
-#04964f
-);
-box-shadow:
-0 9px 22px
-rgba(8,170,88,.25);
-transition:.25s;
+    width:100%;
+
+    margin-top:18px;
+
+    border:none;
+
+    padding:15px 15px;
+
+    border-radius:16px;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            135deg,
+            #12db76,
+            #04964f
+        );
+
+    box-shadow:
+        0 9px 22px
+        rgba(8,170,88,.25);
+
+    transition:.25s;
 }
+
 .winner-enter:hover{
-transform:translateY(-2px);
+    transform:translateY(-2px);
 }
+
 .winner-enter:active{
-transform:scale(.97);
+    transform:scale(.97);
 }
+
+
 /* =========================================================
-WINNER CONFETTI
+   WINNER CONFETTI
 ========================================================= */
+
 .winner-confetti{
-position:absolute;
-width:7px;
-height:17px;
-border-radius:5px;
-background:#d7ff4f;
-z-index:5;
-opacity:.8;
-animation:
-winnerFloat 3s
-infinite ease-in-out;
+    position:absolute;
+
+    width:7px;
+    height:17px;
+
+    border-radius:5px;
+
+    background:#d7ff4f;
+
+    z-index:5;
+
+    opacity:.8;
+
+    animation:
+        winnerFloat 3s
+        infinite ease-in-out;
 }
+
 .winner-confetti.c1{
-top:45px;
-left:13%;
-transform:rotate(25deg);
+    top:45px;
+    left:13%;
+    transform:rotate(25deg);
 }
+
 .winner-confetti.c2{
-top:85px;
-right:11%;
-transform:rotate(-30deg);
+    top:85px;
+    right:11%;
+    transform:rotate(-30deg);
 }
+
 .winner-confetti.c3{
-top:180px;
-left:7%;
-transform:rotate(45deg);
+    top:180px;
+    left:7%;
+    transform:rotate(45deg);
 }
+
 .winner-confetti.c4{
-top:235px;
-right:6%;
-transform:rotate(-45deg);
+    top:235px;
+    right:6%;
+    transform:rotate(-45deg);
 }
+
 @keyframes winnerFloat{
-0%,100%{
-transform:translateY(0) rotate(25deg);
+
+    0%,100%{
+        transform:translateY(0) rotate(25deg);
+    }
+
+    50%{
+        transform:translateY(12px) rotate(75deg);
+    }
+
 }
-50%{
-transform:translateY(12px) rotate(75deg);
-}
-}
+
+
 /* =========================================================
-MAIN
+   MAIN
 ========================================================= */
+
 #main-content{
-width:min(100%,500px);
-padding:
-16px
-15px;
-margin:auto;
-opacity:0;
-visibility:hidden;
-transition:opacity .7s ease;
+    width:min(100%,500px);
+
+    padding:
+        16px
+        15px;
+
+    margin:auto;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:opacity .7s ease;
 }
+
 #main-content.visible{
-opacity:1;
-visibility:visible;
+    opacity:1;
+    visibility:visible;
 }
+
+
 /* =========================================================
-SECTION HEAD
+   SECTION HEAD
 ========================================================= */
+
 .section-head{
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin:20px 0 11px;
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:20px 0 11px;
 }
+
 .section-head h2{
-font-size:16px;
-font-weight:900;
+    font-size:16px;
+
+    font-weight:900;
 }
+
 .section-head span{
-font-size:9px;
-font-weight:900;
-color:#078d4d;
-background:#dffbe9;
-padding:6px 10px;
-border-radius:20px;
-border:
-1px solid
-#c4efd4;
+    font-size:9px;
+
+    font-weight:900;
+
+    color:#078d4d;
+
+    background:#dffbe9;
+
+    padding:6px 10px;
+
+    border-radius:20px;
+
+    border:
+        1px solid
+        #c4efd4;
 }
+
+
 /* =========================================================
-MATCH CARDS
+   MATCH CARDS
 ========================================================= */
+
 .match-card-wrapper{
-width:100%;
-margin-bottom:14px;
+    width:100%;
+
+    margin-bottom:14px;
 }
+
 .match-card{
-position:relative;
-background:
-linear-gradient(
-145deg,
-#ffffff,
-#f5fff9
-);
-border:
-1px solid
-#dcece3;
-border-radius:26px;
-padding:17px 10px 14px;
-box-shadow:
-0 15px 32px
-rgba(0,80,45,.08);
-overflow:hidden;
+    position:relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f5fff9
+        );
+
+    border:
+        1px solid
+        #dcece3;
+
+    border-radius:26px;
+
+    padding:17px 10px 14px;
+
+    box-shadow:
+        0 15px 32px
+        rgba(0,80,45,.08);
+
+    overflow:hidden;
 }
+
 .match-card:after{
-content:"";
-position:absolute;
-width:120px;
-height:120px;
-border-radius:50%;
-left:-60px;
-bottom:-70px;
-background:
-rgba(9,207,105,.06);
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    left:-60px;
+    bottom:-70px;
+
+    background:
+        rgba(9,207,105,.06);
 }
+
 .match-card:before{
-content:"MATCHDAY";
-position:absolute;
-top:9px;
-left:13px;
-font-size:7px;
-color:#9cafaa;
-letter-spacing:1px;
+    content:"MATCHDAY";
+
+    position:absolute;
+
+    top:9px;
+    left:13px;
+
+    font-size:7px;
+
+    color:#9cafaa;
+
+    letter-spacing:1px;
 }
+
 .match-meta{
-text-align:center;
-font-size:10px;
-color:#7b8982;
-font-weight:700;
-margin-bottom:14px;
+    text-align:center;
+
+    font-size:10px;
+
+    color:#7b8982;
+
+    font-weight:700;
+
+    margin-bottom:14px;
 }
+
 .match-main{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:6px;
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:6px;
 }
+
 .team{
-width:34%;
-display:flex;
-align-items:center;
-justify-content:center;
-gap:7px;
-font-size:13px;
-font-weight:900;
+    width:34%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    font-size:13px;
+
+    font-weight:900;
 }
+
 .team img{
-width:38px;
-height:38px;
-border-radius:50%;
-object-fit:cover;
-border:2px solid #fff;
-box-shadow:
-0 5px 12px
-rgba(0,0,0,.13);
+    width:38px;
+    height:38px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:2px solid #fff;
+
+    box-shadow:
+        0 5px 12px
+        rgba(0,0,0,.13);
 }
+
 .match-center{
-width:28%;
-display:flex;
-flex-direction:column;
-align-items:center;
+    width:28%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
 }
+
 .match-time{
-font-size:17px;
-font-weight:900;
-color:#101719;
+    font-size:17px;
+
+    font-weight:900;
+
+    color:#101719;
 }
+
 /* =========================================================
-FLIP CLOCK COUNTDOWN
+   FLIP CLOCK COUNTDOWN (افکت واقعی ورق خوردن کاغذ)
 ========================================================= */
+
 .flip-countdown {
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 4px;
-margin-top: 5px;
-direction: ltr;
-perspective: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 5px;
+    direction: ltr;
+    perspective: 300px;
 }
+
 .flip-box {
-position: relative;
-background: linear-gradient(135deg, #0ebd63, #079c53);
-color: #fff;
-font-size: 13px;
-font-weight: 900;
-padding: 3px 6px;
-border-radius: 6px;
-box-shadow: 0 4px 10px rgba(7, 156, 83, 0.25);
-min-width: 26px;
-text-align: center;
-border: 1px solid rgba(255, 255, 255, 0.3);
-transform-style: preserve-3d;
-transition: transform 0.4s ease-in-out;
+    position: relative;
+    background: linear-gradient(135deg, #0ebd63, #079c53);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 900;
+    padding: 3px 6px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(7, 156, 83, 0.25);
+    min-width: 26px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease-in-out;
 }
+
+/* کلاس کمکی برای اجرای انیمیشن ورق خوردن هنگام تغییر مقدار */
 .flip-box.flipping {
-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
 }
+
+/* خط افقی وسط کادر برای شبیه‌سازی لولای برگه ساعت */
 .flip-box::after {
-content: "";
-position: absolute;
-left: 0;
-right: 0;
-top: 50%;
-height: 1px;
-background: rgba(0, 0, 0, 0.3);
-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 }
+
 .flip-sep {
-font-size: 11px;
-font-weight: 900;
-color: #079c53;
+    font-size: 11px;
+    font-weight: 900;
+    color: #079c53;
 }
+
 .flip-label-text {
-font-size: 7px;
-font-weight: 800;
-color: #556b60;
-text-align: center;
-margin-top: 2px;
+    font-size: 7px;
+    font-weight: 800;
+    color: #556b60;
+    text-align: center;
+    margin-top: 2px;
 }
+
 .match-status{
-margin-top:5px;
-background:#e7faee;
-color:#079d54;
-padding:2px 7px;
-border-radius:20px;
-font-size:8px;
-font-weight:900;
+    margin-top:5px;
+
+    background:#e7faee;
+
+    color:#079d54;
+
+    padding:2px 7px;
+
+    border-radius:20px;
+
+    font-size:8px;
+
+    font-weight:900;
 }
+
 .predict-btn{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:7px;
-width:100%;
-margin-top:7px;
-padding:11px;
-background:
-linear-gradient(
-135deg,
-#11d972,
-#079d53
-);
-color:#fff;
-border-radius:14px;
-text-decoration:none;
-font-size:11px;
-font-weight:900;
-box-shadow:
-0 8px 20px
-rgba(7,170,86,.22);
-transition:.25s;
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:7px;
+
+    width:100%;
+
+    margin-top:7px;
+
+    padding:11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #11d972,
+            #079d53
+        );
+
+    color:#fff;
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    box-shadow:
+        0 8px 20px
+        rgba(7,170,86,.22);
+
+    transition:.25s;
 }
+
 .predict-btn:hover{
-transform:translateY(-2px);
+    transform:translateY(-2px);
 }
+
+
 /* =========================================================
-ACHIEVEMENT / NEWS
+   ACHIEVEMENT / NEWS
 ========================================================= */
+
 .achievement-card{
-position:relative;
-width:100%;
-background:#fff;
-border:
-1px solid
-#dfece4;
-border-radius:30px;
-overflow:hidden;
-margin-bottom:15px;
-box-shadow:
-0 17px 38px
-rgba(0,80,45,.09);
+    position:relative;
+
+    width:100%;
+
+    background:#fff;
+
+    border:
+        1px solid
+        #dfece4;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    margin-bottom:15px;
+
+    box-shadow:
+        0 17px 38px
+        rgba(0,80,45,.09);
 }
+
 .achievement-top{
-text-align:center;
-padding:22px 18px 10px;
+    text-align:center;
+
+    padding:22px 18px 10px;
 }
+
 .achievement-label{
-color:#17231d;
-font-size:10px;
-font-weight:900;
-letter-spacing:1px;
+    color:#17231d;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:1px;
 }
+
 .achievement-script{
-color:#0ac66a;
-font-size:29px;
-font-weight:900;
+    color:#0ac66a;
+
+    font-size:29px;
+
+    font-weight:900;
 }
+
 .news-trophy-zone{
-height:135px;
-position:relative;
-background:
-linear-gradient(
-145deg,
-#13dc76,
-#079c53
-);
-clip-path:
-polygon(
-0 28%,
-23% 8%,
-50% 25%,
-77% 5%,
-100% 27%,
-100% 100%,
-0 100%
-);
+    height:135px;
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #13dc76,
+            #079c53
+        );
+
+    clip-path:
+        polygon(
+            0 28%,
+            23% 8%,
+            50% 25%,
+            77% 5%,
+            100% 27%,
+            100% 100%,
+            0 100%
+        );
 }
+
 .news-trophy-zone:after{
-content:"";
-position:absolute;
-width:170px;
-height:170px;
-border:
-1px solid
-rgba(255,255,255,.2);
-border-radius:50%;
-left:50%;
-top:35%;
-transform:translate(-50%,-50%);
+    content:"";
+
+    position:absolute;
+
+    width:170px;
+    height:170px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+    border-radius:50%;
+
+    left:50%;
+    top:35%;
+
+    transform:translate(-50%,-50%);
 }
+
 .mini-trophy{
-position:absolute;
-width:75px;
-height:90px;
-left:50%;
-bottom:15px;
-transform:translateX(-50%);
-z-index:2;
-filter:
-drop-shadow(
-0 10px 12px
-rgba(0,60,30,.25)
-);
+    position:absolute;
+
+    width:75px;
+    height:90px;
+
+    left:50%;
+    bottom:15px;
+
+    transform:translateX(-50%);
+
+    z-index:2;
+
+    filter:
+        drop-shadow(
+            0 10px 12px
+            rgba(0,60,30,.25)
+        );
 }
+
 .mini-trophy .cup{
-position:absolute;
-width:50px;
-height:48px;
-left:13px;
-top:0;
-background:
-linear-gradient(
-90deg,
-#b77d15,
-#ffe77d,
-#ad7312
-);
-border-radius:
-7px
-7px
-20px
-20px;
+    position:absolute;
+
+    width:50px;
+    height:48px;
+
+    left:13px;
+    top:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #b77d15,
+            #ffe77d,
+            #ad7312
+        );
+
+    border-radius:
+        7px
+        7px
+        20px
+        20px;
 }
+
 .mini-trophy .handle{
-position:absolute;
-width:22px;
-height:34px;
-top:8px;
-border:
-5px solid
-#d2a127;
-border-radius:50%;
+    position:absolute;
+
+    width:22px;
+    height:34px;
+
+    top:8px;
+
+    border:
+        5px solid
+        #d2a127;
+
+    border-radius:50%;
 }
+
 .mini-trophy .handle.left{
-left:0;
+    left:0;
 }
+
 .mini-trophy .handle.right{
-right:0;
+    right:0;
 }
+
 .mini-trophy .base{
-position:absolute;
-width:62px;
-height:24px;
-bottom:0;
-left:6px;
-background:#17191c;
-clip-path:
-polygon(
-10% 0,
-90% 0,
-100% 100%,
-0 100%
-);
+    position:absolute;
+
+    width:62px;
+    height:24px;
+
+    bottom:0;
+    left:6px;
+
+    background:#17191c;
+
+    clip-path:
+        polygon(
+            10% 0,
+            90% 0,
+            100% 100%,
+            0 100%
+        );
 }
+
 .news-body{
-padding:18px;
+    padding:18px;
 }
+
 .news-title{
-font-size:15px;
-font-weight:900;
-margin-bottom:8px;
+    font-size:15px;
+
+    font-weight:900;
+
+    margin-bottom:8px;
 }
+
 .news-text{
-color:#596860;
-font-size:12px;
-line-height:2;
-font-weight:600;
+    color:#596860;
+
+    font-size:12px;
+
+    line-height:2;
+
+    font-weight:600;
 }
+
 .news-badge{
-display:inline-flex;
-margin-top:10px;
-background:#e2faeb;
-color:#079c53;
-padding:5px 9px;
-border-radius:15px;
-font-size:9px;
-font-weight:900;
+    display:inline-flex;
+
+    margin-top:10px;
+
+    background:#e2faeb;
+
+    color:#079c53;
+
+    padding:5px 9px;
+
+    border-radius:15px;
+
+    font-size:9px;
+
+    font-weight:900;
 }
+
+
 /* =========================================================
-TABLE STYLES (UPDATED WITH IMAGE STATS)
+   TABLE
 ========================================================= */
+
 .table-card{
-width:100%;
-background:
-linear-gradient(
-145deg,
-#ffffff,
-#f7fff9
-);
-border:
-1px solid
-#dfece4;
-border-radius:27px;
-padding:8px;
-box-shadow:
-0 15px 34px
-rgba(0,80,45,.08);
+    width:100%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f7fff9
+        );
+
+    border:
+        1px solid
+        #dfece4;
+
+    border-radius:27px;
+
+    padding:8px;
+
+    box-shadow:
+        0 15px 34px
+        rgba(0,80,45,.08);
 }
+
 .table-header{
-display:grid;
-grid-template-columns:
-36px
-1fr
-52px
-45px
-45px;
-padding:10px 6px;
-color:#87958e;
-font-size:9px;
-font-weight:900;
-text-align:center;
+    display:grid;
+
+    grid-template-columns:
+        42px
+        1fr
+        70px;
+
+    padding:10px;
+
+    color:#87958e;
+
+    font-size:9px;
+
+    font-weight:900;
 }
-.table-header span:nth-child(2){
-text-align:right;
-}
+
 .table-row{
-display:grid;
-grid-template-columns:
-36px
-1fr
-52px
-45px
-45px;
-align-items:center;
-min-height:48px;
-padding:6px;
-border-top:
-1px solid
-#edf2ef;
-font-size:11px;
-font-weight:700;
-background: #fff;
-border-radius: 12px;
-margin-bottom: 3px;
-text-align:center;
+    display:grid;
+
+    grid-template-columns:
+        42px
+        1fr
+        70px;
+
+    align-items:center;
+
+    min-height:48px;
+
+    padding:6px 10px;
+
+    border-top:
+        1px solid
+        #edf2ef;
+
+    font-size:11px;
+
+    font-weight:700;
+    
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 2px;
 }
+
 .table-row .rank {
-font-size:12px;
-font-weight:900;
-color:#3a4742;
+    font-size:12px;
+    font-weight:900;
+    color:#3a4742;
 }
+
 .table-row .player {
-display:flex;
-align-items:center;
-gap:7px;
-color:#111722;
-font-weight:800;
-text-align:right;
+    display:flex;
+    align-items:center;
+    gap:7px;
+    color:#111722;
+    font-weight:800;
 }
-.table-row:nth-child(2) .player{
-color:#079c53;
-}
+
 .table-row .player-dot {
-width:7px;
-height:7px;
-border-radius:50%;
-background:#0bc66a;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#0bc66a;
 }
+
 .table-row .score {
-font-size:12px;
-font-weight:900;
-color:#079c53;
-background:#d9f9e7;
-padding:4px 0;
-border-radius:9px;
-display:inline-block;
-width:38px;
-margin:0 auto;
+    justify-self:end;
+    font-size:12px;
+    font-weight:900;
+    color:#079c53;
+    background:#d9f9e7;
+    padding:5px 9px;
+    border-radius:9px;
 }
-.table-row .stat-col {
-font-size:11px;
-font-weight:800;
-color:#556b60;
-}
+
+
 /* =========================================================
-COUNTDOWN
+   COUNTDOWN
 ========================================================= */
+
 .countdown-card{
-width:100%;
-background:
-linear-gradient(
-135deg,
-#101b16,
-#16271e
-);
-border-radius:28px;
-padding:20px 15px;
-color:#fff;
-position:relative;
-overflow:hidden;
-margin-bottom:15px;
-box-shadow:
-0 20px 40px
-rgba(0,40,20,.2);
+    width:100%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #101b16,
+            #16271e
+        );
+
+    border-radius:28px;
+
+    padding:20px 15px;
+
+    color:#fff;
+
+    position:relative;
+
+    overflow:hidden;
+
+    margin-bottom:15px;
+
+    box-shadow:
+        0 20px 40px
+        rgba(0,40,20,.2);
 }
+
 .countdown-card:before{
-content:"";
-position:absolute;
-width:230px;
-height:230px;
-border-radius:50%;
-border:
-1px solid
-rgba(33,240,125,.15);
-right:-130px;
-top:-130px;
+    content:"";
+
+    position:absolute;
+
+    width:230px;
+    height:230px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(33,240,125,.15);
+
+    right:-130px;
+    top:-130px;
 }
+
 .countdown-card:after{
-content:"";
-position:absolute;
-width:180px;
-height:180px;
-background:
-rgba(18,216,111,.10);
-border-radius:50%;
-left:-80px;
-bottom:-90px;
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    background:
+        rgba(18,216,111,.10);
+
+    border-radius:50%;
+
+    left:-80px;
+    bottom:-90px;
 }
+
 .countdown-title{
-text-align:center;
-font-size:12px;
-font-weight:800;
-color:#cbd5d1;
+    text-align:center;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    color:#cbd5d1;
 }
+
 .countdown-title strong{
-color:#3df58a;
+    color:#3df58a;
 }
+
 .clock{
-direction:ltr;
-display:flex;
-justify-content:center;
-align-items:center;
-gap:6px;
-margin:17px 0 9px;
-position:relative;
-z-index:2;
+    direction:ltr;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:6px;
+
+    margin:17px 0 9px;
+
+    position:relative;
+
+    z-index:2;
 }
+
 .clock-box{
-min-width:58px;
-background:#18231d;
-border:
-1px solid
-#2b4034;
-border-radius:14px;
-padding:8px 5px;
-text-align:center;
+    min-width:58px;
+
+    background:#18231d;
+
+    border:
+        1px solid
+        #2b4034;
+
+    border-radius:14px;
+
+    padding:8px 5px;
+
+    text-align:center;
 }
+
 .clock-number{
-font-size:22px;
-font-weight:900;
-color:#fff;
+    font-size:22px;
+
+    font-weight:900;
+
+    color:#fff;
 }
+
 .clock-label{
-font-size:7px;
-color:#76f2a6;
-margin-top:2px;
+    font-size:7px;
+
+    color:#76f2a6;
+
+    margin-top:2px;
 }
+
 .clock-separator{
-color:#22e77c;
-font-size:18px;
-font-weight:900;
+    color:#22e77c;
+
+    font-size:18px;
+
+    font-weight:900;
 }
+
 .countdown-status{
-text-align:center;
-font-size:9px;
-color:#a8b5b0;
+    text-align:center;
+
+    font-size:9px;
+
+    color:#a8b5b0;
 }
+
+
 /* =========================================================
-TEAM BATTLE (UPDATED WITH LOGOS & JELLY NUMBERS)
+   TEAM BATTLE
 ========================================================= */
-.teams-battle-container{
-display: flex;
-flex-direction: column;
-gap: 15px;
-width: 100%;
+
+.team-battle{
+    width:100%;
+
+    background:#fff;
+
+    border:
+        1px solid
+        #dfece4;
+
+    border-radius:27px;
+
+    padding:13px;
+
+    margin-bottom:15px;
+
+    box-shadow:
+        0 13px 30px
+        rgba(0,70,40,.07);
 }
-.team-battle-card{
-background: linear-gradient(145deg, #ffffff, #f4fff8);
-border: 1px solid #d4ece0;
-border-radius: 28px;
-padding: 22px 16px;
-text-align: center;
-position: relative;
-overflow: hidden;
-box-shadow: 0 15px 35px rgba(0, 80, 40, 0.08);
+
+.team-battle-header{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:10px 12px;
+
+    border-radius:17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9fff1,
+            #fff
+        );
+
+    border:
+        1px solid
+        #c9eed6;
+
+    margin-bottom:8px;
 }
-.team-battle-card::before {
-content: "";
-position: absolute;
-width: 150px;
-height: 150px;
-background: rgba(11, 198, 106, 0.05);
-border-radius: 50%;
-top: -60px;
-left: -60px;
+
+.team-name{
+    font-size:13px;
+
+    font-weight:900;
+
+    color:#111820;
 }
-.team-logo-wrap {
-width: 75px;
-height: 75px;
-margin: 0 auto 12px;
-background: linear-gradient(135deg, #11d972, #048a47);
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-box-shadow: 0 10px 25px rgba(7, 156, 83, 0.3);
-border: 3px solid #fff;
-position: relative;
-z-index: 2;
+
+.team-total{
+    font-size:10px;
+
+    color:#079c53;
+
+    background:#e1faea;
+
+    padding:5px 8px;
+
+    border-radius:10px;
+
+    font-weight:900;
 }
-.team-logo-wrap i {
-font-size: 32px;
-color: #fff;
-filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+
+.team-player{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:9px 8px;
+
+    border-bottom:
+        1px solid
+        #f0f2f1;
+
+    font-size:11px;
+
+    font-weight:700;
 }
-.team-card-name {
-font-size: 16px;
-font-weight: 900;
-color: #111722;
-margin-bottom: 8px;
+
+.team-player:last-child{
+    border-bottom:none;
 }
-/* اعداد ژله‌ای بزرگ انگلیسی */
-.jelly-score {
-font-family: 'Vazirmatn', sans-serif;
-font-size: 42px;
-font-weight: 900;
-line-height: 1;
-direction: ltr;
-display: inline-block;
-background: linear-gradient(135deg, #0ac66a, #036838);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-filter: drop-shadow(0 5px 12px rgba(7, 170, 86, 0.25));
-animation: jellyPulse 2.5s infinite ease-in-out;
+
+.player-rank{
+    display:inline-flex;
+
+    width:23px;
+    height:23px;
+
+    justify-content:center;
+    align-items:center;
+
+    background:#f1f4f2;
+
+    border-radius:50%;
+
+    color:#89928f;
+
+    margin-left:6px;
+
+    font-size:9px;
 }
-@keyframes jellyPulse {
-0%, 100% {
-transform: scale(1);
+
+.player-score{
+    color:#079c53;
+
+    background:#d9f9e7;
+
+    padding:4px 8px;
+
+    border-radius:8px;
+
+    font-size:9px;
+
+    font-weight:900;
 }
-50% {
-transform: scale(1.06) rotate(-1deg);
-}
-}
-.team-score-label {
-font-size: 10px;
-font-weight: 800;
-color: #7b8982;
-margin-top: 4px;
-letter-spacing: .5px;
-}
+
+
 /* =========================================================
-BOTTOM NAV
+   BOTTOM NAV
 ========================================================= */
+
 .bottom-nav{
-position:fixed;
-z-index:9000;
-bottom:0;
-left:0;
-right:0;
-height:75px;
-background: rgba(255, 255, 255, 0.95);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-border-top: 1px solid #d8e9df;
-border-top-left-radius: 24px;
-border-top-right-radius: 24px;
-display: flex;
-justify-content: space-around;
-align-items: center;
-box-shadow: 0 -10px 30px rgba(0, 70, 40, 0.12);
-padding: 0 10px;
+    position:fixed;
+    z-index:9000;
+    bottom:0;
+    left:0;
+    right:0;
+    height:75px;
+
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-top: 1px solid #d8e9df;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    box-shadow: 0 -10px 30px rgba(0, 70, 40, 0.12);
+    padding: 0 10px;
 }
+
 .nav-item{
-border: none;
-background: transparent;
-color: #7b8581;
-cursor: pointer;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-gap: 3px;
-flex: 1;
-position: relative;
-transition: all 0.3s ease;
+    border: none;
+    background: transparent;
+    color: #7b8581;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    flex: 1;
+    position: relative;
+    transition: all 0.3s ease;
 }
+
 .nav-icon{
-font-size: 20px;
-line-height: 1;
-transition: transform 0.3s ease;
+    font-size: 20px;
+    line-height: 1;
+    transition: transform 0.3s ease;
 }
+
 .nav-text{
-font-size: 9px;
-font-weight: 800;
+    font-size: 9px;
+    font-weight: 800;
 }
+
 .nav-item.active {
-color: #ff3b30;
+    color: #ff3b30;
 }
+
 .nav-item.active .nav-icon {
-transform: translateY(-4px);
-filter: drop-shadow(0 0 8px rgba(255, 59, 48, 0.4));
+    transform: translateY(-4px);
+    filter: drop-shadow(0 0 8px rgba(255, 59, 48, 0.4));
 }
+
+
 /* =========================================================
-TABS
+   TABS
 ========================================================= */
+
 .tab-content{
-display:none;
-width:100%;
+    display:none;
+
+    width:100%;
 }
+
 .tab-content.active{
-display:block;
-animation:
-tabIn .35s ease;
+    display:block;
+
+    animation:
+        tabIn .35s ease;
 }
+
 @keyframes tabIn{
-from{
-opacity:0;
-transform:translateY(8px);
+
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
 }
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
+
+
 /* =========================================================
-SELECTION
+   SELECTION
 ========================================================= */
+
 ::selection{
-background:#0dcc68;
-color:#fff;
+    background:#0dcc68;
+    color:#fff;
 }
+
 </style>
 </head>
-<body>
-<!-- =========================================================
-SPLASH SCREEN
-========================================================= -->
-<div id="splash-screen">
-<div class="splash-confetti">
-<span class="confetti"></span>
-<span class="confetti"></span>
-<span class="confetti"></span>
-<span class="confetti"></span>
-<span class="confetti"></span>
-<span class="confetti"></span>
-<span class="confetti"></span>
-<span class="confetti"></span>
-</div>
-<div class="splash-content">
-<div class="splash-brand">
-پیش‌بینی مسابقات اروپایی
-</div>
-<div class="splash-script">
-فصل ۱۴۰۵-۱۴۰۶
-</div>
-<div class="splash-trophy">
-<div class="trophy-cup"></div>
-<div class="trophy-handle handle-left"></div>
-<div class="trophy-handle handle-right"></div>
-<div class="trophy-neck"></div>
-<div class="trophy-base"></div>
-<div class="trophy-pedestal"></div>
-</div>
-<div class="splash-title">
-گداهای استرسی
-</div>
-<div class="splash-season">
-فصل دوم
-</div>
-<div class="splash-loading">
-<span></span>
-</div>
-</div>
-</div>
-<!-- =========================================================
-WINNER MODAL
-========================================================= -->
-<div id="winner-modal">
-<span class="winner-confetti c1"></span>
-<span class="winner-confetti c2"></span>
-<span class="winner-confetti c3"></span>
-<span class="winner-confetti c4"></span>
-<div class="winner-box">
-<div class="winner-top-title">
-<div class="winner-brand">
-گداهای استرسی
-</div>
-<div class="winner-achievement">
-Achievement
-</div>
-</div>
-<div class="winner-message">
-<div class="winner-kicker">
-🏆 ACHIEVEMENT UNLOCKED
-</div>
-<div class="winner-title">
-پیرا قهرمان هفته ششم
-</div>
-<div class="winner-description">
-لیگ پیش‌بینی مسابقات اروپا
-</div>
-<div class="winner-season">
-فصل ۱۴۰۵-۱۴۰۶ | فصل دوم لیگ گداهای استرسی
-</div>
-<button
-class="winner-enter"
-type="button"
-onclick="closeWinnerModal()"
->
-ورود به لیگ ⚡
-</button>
-</div>
-</div>
-</div>
-<!-- =========================================================
-MAIN CONTENT
-========================================================= -->
-<main id="main-content">
-<!-- =========================================================
-GISHAH TAB (گیشه)
-========================================================= -->
-<section
-id="gishah-tab"
-class="tab-content active"
-> 
-<div class="section-head">
-<h2>
-📰 گیشه لیگ
-</h2>
-<span>
-EXTRA TIME
-</span>
-</div>
-<!-- REPORT 1: WEEK 07 -->
-<div class="achievement-card">
-<div class="news-body">
-<div class="news-title">
-🔥 شروع طوفانی هفته هفتم؛ جدال تیم‌های فیره‌فروش!
-</div>
-<div class="news-text">
-هفته هفتم با شروع رقابت تیمی از امروز با بازی پرتغال/دانمارک و اسپانیا/کرواسی شروع میشه. دو تیم جماعت بی‌پولا و اتحاد بدبختا که سابقه درخشانی در فیره‌فروشی و فروش گوشت ناسالم دارن، حالا قراره از امروز باهم رقابت کنن.
 
-تقریباً قدرت‌ها تقسیم شده و هر تیمی با توجه به قدرت پیش‌بینی اعضای درجه یک خودش، باید دید که کدوم تیم در پایان هفته امتیازات بیشتری کسب خواهد کرد.
-</div>
-<span class="news-badge">
-⚔️ BATTLE WEEK 07
-</span>
-</div>
-</div>
-<!-- REPORT 2: WEEK 06 -->
-<div class="achievement-card">
-<div class="achievement-top">
-<div class="achievement-label">
-GEDAHAYE ESTERESI
-</div>
-<div class="achievement-script">
-Achievement
-</div>
-</div>
-<div class="news-trophy-zone">
-<div class="mini-trophy">
-<div class="cup"></div>
-<div class="handle left"></div>
-<div class="handle right"></div>
-<div class="base"></div>
-</div>
-</div>
-<div class="news-body">
-<div class="news-title">
-پیرا و نعیمی هم‌شیفت کنار هم در جدول
-</div>
-<div class="news-text">
-ایستگاه هفته ششم با قهرمانی زودهنگام پیرا...
-پیرا بعد از ازدواج و مراسم باشکوه تولد، حالا با
-۱۲ امتیاز صدرنشین و قهرمان زودهنگام هفته ششم
-پیش‌بینی لیگ گداهای استرسی در فصل دوم لقب گرفته.
-</div>
-<span class="news-badge">
-🏆 EXTRA TIME
-</span>
-</div>
-</div>
-</section>
+
+<body>
+
+
 <!-- =========================================================
-MATCHES TAB (مسابقات)
+     SPLASH SCREEN
 ========================================================= -->
-<section
-id="matches-tab"
-class="tab-content"
-> 
-<div class="section-head">
-<h2>
-🎮 مسابقات پیش‌رو
-</h2>
-<span>
-WEEK 07
-</span>
+
+<div id="splash-screen">
+
+    <div class="splash-confetti">
+
+        <span class="confetti"></span>
+        <span class="confetti"></span>
+        <span class="confetti"></span>
+        <span class="confetti"></span>
+        <span class="confetti"></span>
+        <span class="confetti"></span>
+        <span class="confetti"></span>
+        <span class="confetti"></span>
+
+    </div>
+
+
+    <div class="splash-content">
+
+        <div class="splash-brand">
+            پیش‌بینی مسابقات اروپایی
+        </div>
+
+        <div class="splash-script">
+            فصل ۱۴۰۵-۱۴۰۶
+        </div>
+
+
+        <div class="splash-trophy">
+
+            <div class="trophy-cup"></div>
+
+            <div class="trophy-handle handle-left"></div>
+
+            <div class="trophy-handle handle-right"></div>
+
+            <div class="trophy-neck"></div>
+
+            <div class="trophy-base"></div>
+
+            <div class="trophy-pedestal"></div>
+
+        </div>
+
+
+        <div class="splash-title">
+            گداهای استرسی
+        </div>
+
+        <div class="splash-season">
+            فصل دوم
+        </div>
+
+
+        <div class="splash-loading">
+            <span></span>
+        </div>
+
+    </div>
+
 </div>
-<!-- MATCH 1: پرتقال / دانمارک (نتیجه ۲-۰) -->
-<div class="match-card-wrapper">
-<div class="match-card">
-<div class="match-meta">
-سه‌شنبه ۷ مهر ۱۴۰۵
-</div>
-<div class="match-main">
-<div class="team">
-<img
-src="[https://flagcdn.com/w80/pt.png](https://flagcdn.com/w80/pt.png)"
-alt="Portugal"
->
-<span>
-پرتقال
-</span>
-</div>
-<div class="match-center">
-<div class="match-time" style="font-size: 20px; color: #079c53;">
-2 - 0
-</div>
-<!-- شمارش معکوس فلیپ کلاک با افکت ورق خوردن -->
-<div class="flip-countdown" id="matchCountdown1">
-<div class="flip-box" id="m1-h">00</div>
-<span class="flip-sep">:</span>
-<div class="flip-box" id="m1-m">00</div>
-<span class="flip-sep">:</span>
-<div class="flip-box" id="m1-s">00</div>
-</div>
-<div class="flip-label-text">HOURS LEFT</div>
-<div
-class="match-status"
-id="matchStatus1"
->
-پایان یافته
-</div>
-</div>
-<div class="team">
-<span>
-دانمارک
-</span>
-<img
-src="[https://flagcdn.com/w80/dk.png](https://flagcdn.com/w80/dk.png)"
-alt="Denmark"
->
-</div>
-</div>
-</div>
-<a
-class="predict-btn"
-href="[https://predict.fotmob.com/1000086/join/CUHVAFMQ](https://predict.fotmob.com/1000086/join/CUHVAFMQ)"
-target="_blank"
-rel="noopener noreferrer"
->
-⚡ برای پیش‌بینی کلیک کن
-</a>
-</div>
-<!-- MATCH 2: اسپانیا / اسپانیا (نتیجه ۴-۱) -->
-<div class="match-card-wrapper">
-<div class="match-card">
-<div class="match-meta">
-سه‌شنبه ۷ مهر ۱۴۰۵
-</div>
-<div class="match-main">
-<div class="team">
-<img
-src="[https://flagcdn.com/w80/es.png](https://flagcdn.com/w80/es.png)"
-alt="Spain"
->
-<span>
-اسپانیا
-</span>
-</div>
-<div class="match-center">
-<div class="match-time" style="font-size: 20px; color: #079c53;">
-4 - 1
-</div>
-<!-- شمارش معکوس فلیپ کلاک با افکت ورق خوردن -->
-<div class="flip-countdown" id="matchCountdown2">
-<div class="flip-box" id="m2-h">00</div>
-<span class="flip-sep">:</span>
-<div class="flip-box" id="m2-m">00</div>
-<span class="flip-sep">:</span>
-<div class="flip-box" id="m2-s">00</div>
-</div>
-<div class="flip-label-text">HOURS LEFT</div>
-<div
-class="match-status"
-id="matchStatus2"
->
-پایان یافته
-</div>
-</div>
-<div class="team">
-<span>
-اسپانیا
-</span>
-<img
-src="[https://flagcdn.com/w80/es.png](https://flagcdn.com/w80/es.png)"
-alt="Spain"
->
-</div>
-</div>
-</div>
-<a
-class="predict-btn"
-href="[https://predict.fotmob.com/1000086/join/CUHVAFMQ](https://predict.fotmob.com/1000086/join/CUHVAFMQ)"
-target="_blank"
-rel="noopener noreferrer"
->
-⚡ برای پیش‌بینی کلیک کن
-</a>
-</div>
-</section>
+
+
+
 <!-- =========================================================
-TABLE TAB (جدول - بر اساس تصویر جدید)
+     WINNER MODAL
 ========================================================= -->
-<section
-id="table-tab"
-class="tab-content"
-> 
-<div class="section-head">
-<h2>
-📊 جدول رده‌بندی
-</h2>
-<span>
-SEASON 02
-</span>
+
+<div id="winner-modal">
+
+    <span class="winner-confetti c1"></span>
+    <span class="winner-confetti c2"></span>
+    <span class="winner-confetti c3"></span>
+    <span class="winner-confetti c4"></span>
+
+
+    <div class="winner-box">
+
+
+        <div class="winner-top-title">
+
+            <div class="winner-brand">
+                گداهای استرسی
+            </div>
+
+            <div class="winner-achievement">
+                Achievement
+            </div>
+
+        </div>
+
+
+        <div class="winner-message">
+
+            <div class="winner-kicker">
+                🏆 ACHIEVEMENT UNLOCKED
+            </div>
+
+
+            <div class="winner-title">
+                پیرا قهرمان هفته ششم
+            </div>
+
+
+            <div class="winner-description">
+                لیگ پیش‌بینی مسابقات اروپا
+            </div>
+
+
+            <div class="winner-season">
+                فصل ۱۴۰۵-۱۴۰۶ | فصل دوم لیگ گداهای استرسی
+            </div>
+
+
+            <button
+                class="winner-enter"
+                type="button"
+                onclick="closeWinnerModal()"
+            >
+                ورود به لیگ ⚡
+            </button>
+
+        </div>
+
+    </div>
+
 </div>
-<div class="table-card">
-<div class="table-header">
-<span>رتبه</span>
-<span>بازیکن</span>
-<span>امتیاز</span>
-<span>برد</span>
-<span>اختلاف</span>
-</div>
-<div class="table-row">
-<span class="rank">1</span>
-<span class="player"><span class="player-dot"></span>Asm A</span>
-<span class="score">69</span>
-<span class="stat-col">7</span>
-<span class="stat-col">2</span>
-</div>
-<div class="table-row">
-<span class="rank">2</span>
-<span class="player"><span class="player-dot"></span>REZA GHATIFI</span>
-<span class="score">67</span>
-<span class="stat-col">11</span>
-<span class="stat-col">3</span>
-</div>
-<div class="table-row">
-<span class="rank">3</span>
-<span class="player"><span class="player-dot"></span>Donya Asil</span>
-<span class="score">61</span>
-<span class="stat-col">5</span>
-<span class="stat-col">0</span>
-</div>
-<div class="table-row">
-<span class="rank">4</span>
-<span class="player"><span class="player-dot"></span>Mahdi</span>
-<span class="score">60</span>
-<span class="stat-col">6</span>
-<span class="stat-col">1</span>
-</div>
-<div class="table-row">
-<span class="rank">5</span>
-<span class="player"><span class="player-dot"></span>حبیب نعیمی</span>
-<span class="score">57</span>
-<span class="stat-col">5</span>
-<span class="stat-col">0</span>
-</div>
-<div class="table-row">
-<span class="rank">6</span>
-<span class="player"><span class="player-dot"></span>hey10</span>
-<span class="score">55</span>
-<span class="stat-col">5</span>
-<span class="stat-col">1</span>
-</div>
-<div class="table-row">
-<span class="rank">7</span>
-<span class="player"><span class="player-dot"></span>hajar daoudi</span>
-<span class="score">54</span>
-<span class="stat-col">8</span>
-<span class="stat-col">1</span>
-</div>
-<div class="table-row">
-<span class="rank">8</span>
-<span class="player"><span class="player-dot"></span>محمد خلیلاوی پور</span>
-<span class="score">54</span>
-<span class="stat-col">4</span>
-<span class="stat-col">0</span>
-</div>
-<div class="table-row">
-<span class="rank">9</span>
-<span class="player"><span class="player-dot"></span>Ahlam Aljaber</span>
-<span class="score">46</span>
-<span class="stat-col">2</span>
-<span class="stat-col">0</span>
-</div>
-<div class="table-row">
-<span class="rank">10</span>
-<span class="player"><span class="player-dot"></span>امین دریس</span>
-<span class="score">44</span>
-<span class="stat-col">4</span>
-<span class="stat-col">0</span>
-</div>
-<div class="table-row">
-<span class="rank">11</span>
-<span class="player"><span class="player-dot"></span>Sama salehi</span>
-<span class="score">36</span>
-<span class="stat-col">2</span>
-<span class="stat-col">0</span>
-</div>
-<div class="table-row">
-<span class="rank">12</span>
-<span class="player"><span class="player-dot"></span>محمد جاسميان</span>
-<span class="score">31</span>
-<span class="stat-col">3</span>
-<span class="stat-col">0</span>
-</div>
-<div class="table-row">
-<span class="rank">13</span>
-<span class="player"><span class="player-dot"></span>ناجح دریس</span>
-<span class="score">12</span>
-<span class="stat-col">0</span>
-<span class="stat-col">0</span>
-</div>
-</div>
-</section>
+
+
+
 <!-- =========================================================
-KALAL TAB (کل‌کل - لوگوها و امتیازات ژله‌ای)
+     MAIN CONTENT
 ========================================================= -->
+
+<main id="main-content">
+
+
+<!-- =========================================================
+     GISHAH TAB (گیشه)
+========================================================= -->
+
 <section
-id="kalal-tab"
-class="tab-content"
-> 
-<div class="section-head">
-<h2>
-🥊 کل‌کل تیم‌ها
-</h2>
-<span>
-TEAM BATTLE
-</span>
-</div>
-<!-- COUNTDOWN -->
-<div class="countdown-card">
-<div class="countdown-title">
-⏰ شمارش معکوس تا اولین پیش‌بینی
-<strong>
-۲۲:۱۵
-</strong>
-</div>
-<div class="clock">
-<div class="clock-box">
-<div
-class="clock-number"
-id="clockHours"
+    id="gishah-tab"
+    class="tab-content active"
 >
-00
-</div>
-<div class="clock-label">
-HOURS
-</div>
-</div>
-<div class="clock-separator">
-:
-</div>
-<div class="clock-box">
-<div
-class="clock-number"
-id="clockMinutes"
->
-00
-</div>
-<div class="clock-label">
-MINUTES
-</div>
-</div>
-<div class="clock-separator">
-:
-</div>
-<div class="clock-box">
-<div
-class="clock-number"
-id="clockSeconds"
->
-00
-</div>
-<div class="clock-label">
-SECONDS
-</div>
-</div>
-</div>
-<div
-class="countdown-status"
-id="clockLabel"
->
-مانده تا شروع پیش‌بینی
-</div>
-</div>
-<!-- BATTLE CARDS CONTAINER -->
-<div class="teams-battle-container">
-<!-- تیم جماعت بی‌پولا -->
-<div class="team-battle-card">
-<div class="team-logo-wrap">
-<i class="fa-solid fa-fire-flame-curved"></i>
-</div>
-<div class="team-card-name">جماعت بی‌پولا</div>
-<div class="jelly-score">23</div>
-<div class="team-score-label">امتیاز کل تیم</div>
-</div>
-<!-- تیم اتحاد بدبختا -->
-<div class="team-battle-card">
-<div class="team-logo-wrap">
-<i class="fa-solid fa-shield-halved"></i>
-</div>
-<div class="team-card-name">اتحاد بدبختا</div>
-<div class="jelly-score">18</div>
-<div class="team-score-label">امتیاز کل تیم</div>
-</div>
-</div>
+
+    <div class="section-head">
+
+        <h2>
+            📰 گیشه لیگ
+        </h2>
+
+        <span>
+            EXTRA TIME
+        </span>
+
+    </div>
+
+
+    <!-- REPORT 1: WEEK 07 -->
+
+    <div class="achievement-card">
+
+        <div class="news-body">
+
+            <div class="news-title">
+                🔥 شروع طوفانی هفته هفتم؛ جدال تیم‌های فیره‌فروش!
+            </div>
+
+            <div class="news-text">
+                هفته هفتم با شروع رقابت تیمی از امروز با بازی انگلیس/چک و اسپانیا/کرواسی شروع میشه. دو تیم جماعت بی‌پولا و اتحاد بدبختا که سابقه درخشانی در فیره‌فروشی و فروش گوشت ناسالم دارن، حالا قراره از امروز باهم رقابت کنن.<br>
+                تقریباً قدرت‌ها تقسیم شده و هر تیمی با توجه به قدرت پیش‌بینی اعضای درجه یک خودش، باید دید که کدوم تیم در پایان هفته امتیازات بیشتری کسب خواهد کرد.
+            </div>
+
+            <span class="news-badge">
+                ⚔️ BATTLE WEEK 07
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- REPORT 2: WEEK 06 -->
+
+    <div class="achievement-card">
+
+        <div class="achievement-top">
+
+            <div class="achievement-label">
+                GEDAHAYE ESTERESI
+            </div>
+
+            <div class="achievement-script">
+                Achievement
+            </div>
+
+        </div>
+
+
+        <div class="news-trophy-zone">
+
+            <div class="mini-trophy">
+
+                <div class="cup"></div>
+
+                <div class="handle left"></div>
+
+                <div class="handle right"></div>
+
+                <div class="base"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="news-body">
+
+            <div class="news-title">
+                پیرا و نعیمی هم‌شیفت کنار هم در جدول
+            </div>
+
+            <div class="news-text">
+                ایستگاه هفته ششم با قهرمانی زودهنگام پیرا...
+                پیرا بعد از ازدواج و مراسم باشکوه تولد، حالا با
+                ۱۲ امتیاز صدرنشین و قهرمان زودهنگام هفته ششم
+                پیش‌بینی لیگ گداهای استرسی در فصل دوم لقب گرفته.
+            </div>
+
+            <span class="news-badge">
+                🏆 EXTRA TIME
+            </span>
+
+        </div>
+
+    </div>
+
 </section>
+
+
+
+<!-- =========================================================
+     MATCHES TAB (مسابقات)
+========================================================= -->
+
+<section
+    id="matches-tab"
+    class="tab-content"
+>
+
+    <div class="section-head">
+
+        <h2>
+            🎮 مسابقات پیش‌رو
+        </h2>
+
+        <span>
+            WEEK 07
+        </span>
+
+    </div>
+
+
+    <!-- MATCH 1: انگلیس / چک -->
+
+    <div class="match-card-wrapper">
+
+        <div class="match-card">
+
+            <div class="match-meta">
+                سه‌شنبه ۷ مهر ۱۴۰۵
+            </div>
+
+
+            <div class="match-main">
+
+                <div class="team">
+
+                    <img
+                        src="https://flagcdn.com/w80/gb-eng.png"
+                        alt="England"
+                    >
+
+                    <span>
+                        انگلیس
+                    </span>
+
+                </div>
+
+
+                <div class="match-center">
+
+                    <div class="match-time">
+                        22:15
+                    </div>
+
+                    <!-- شمارش معکوس فلیپ کلاک با افکت ورق خوردن -->
+                    <div class="flip-countdown" id="matchCountdown1">
+                        <div class="flip-box" id="m1-h">00</div>
+                        <span class="flip-sep">:</span>
+                        <div class="flip-box" id="m1-m">00</div>
+                        <span class="flip-sep">:</span>
+                        <div class="flip-box" id="m1-s">00</div>
+                    </div>
+                    <div class="flip-label-text">HOURS LEFT</div>
+
+                    <div
+                        class="match-status"
+                        id="matchStatus1"
+                    >
+                        پیش‌رو
+                    </div>
+
+                </div>
+
+
+                <div class="team">
+
+                    <span>
+                        چک
+                    </span>
+
+                    <img
+                        src="https://flagcdn.com/w80/cz.png"
+                        alt="Czech"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <a
+            class="predict-btn"
+            href="https://predict.fotmob.com/1000086/join/CUHVAFMQ"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            ⚡ برای پیش‌بینی کلیک کن
+        </a>
+
+    </div>
+
+
+
+    <!-- MATCH 2 -->
+
+    <div class="match-card-wrapper">
+
+        <div class="match-card">
+
+            <div class="match-meta">
+                سه‌شنبه ۷ مهر ۱۴۰۵
+            </div>
+
+
+            <div class="match-main">
+
+                <div class="team">
+
+                    <img
+                        src="https://flagcdn.com/w80/es.png"
+                        alt="Spain"
+                    >
+
+                    <span>
+                        اسپانیا
+                    </span>
+
+                </div>
+
+
+                <div class="match-center">
+
+                    <div class="match-time">
+                        22:15
+                    </div>
+
+                    <!-- شمارش معکوس فلیپ کلاک با افکت ورق خوردن -->
+                    <div class="flip-countdown" id="matchCountdown2">
+                        <div class="flip-box" id="m2-h">00</div>
+                        <span class="flip-sep">:</span>
+                        <div class="flip-box" id="m2-m">00</div>
+                        <span class="flip-sep">:</span>
+                        <div class="flip-box" id="m2-s">00</div>
+                    </div>
+                    <div class="flip-label-text">HOURS LEFT</div>
+
+                    <div
+                        class="match-status"
+                        id="matchStatus2"
+                    >
+                        پیش‌رو
+                    </div>
+
+                </div>
+
+
+                <div class="team">
+
+                    <span>
+                        کرواسی
+                    </span>
+
+                    <img
+                        src="https://flagcdn.com/w80/hr.png"
+                        alt="Croatia"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <a
+            class="predict-btn"
+            href="https://predict.fotmob.com/1000086/join/CUHVAFMQ"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            ⚡ برای پیش‌بینی کلیک کن
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     TABLE TAB (جدول)
+========================================================= -->
+
+<section
+    id="table-tab"
+    class="tab-content"
+>
+
+    <div class="section-head">
+
+        <h2>
+            📊 جدول رده‌بندی
+        </h2>
+
+        <span>
+            SEASON 02
+        </span>
+
+    </div>
+
+
+    <div class="table-card">
+
+        <div class="table-header">
+
+            <span>رتبه</span>
+            <span>بازیکن</span>
+            <span>امتیاز</span>
+
+        </div>
+
+
+        <div class="table-row">
+            <span class="rank">01</span>
+            <span class="player"><span class="player-dot"></span>Asm A</span>
+            <span class="score">65</span>
+        </div>
+
+        <div class="table-row">
+            <span class="rank">02</span>
+            <span class="player"><span class="player-dot"></span>REZA GHATIFI</span>
+            <span class="score">62</span>
+        </div>
+
+        <div class="table-row">
+            <span class="rank">03</span>
+            <span class="player"><span class="player-dot"></span>حبیب نعیمی</span>
+            <span class="score">57</span>
+        </div>
+
+        <div class="table-row">
+            <span class="rank">04</span>
+            <span class="player"><span class="player-dot"></span>Donya Asil</span>
+            <span class="score">56</span>
+        </div>
+
+        <div class="table-row">
+            <span class="rank">05</span>
+            <span class="player"><span class="player-dot"></span>Mahdi</span>
+            <span class="score">55</span>
+        </div>
+
+        <div class="table-row">
+            <span class="rank">06</span>
+            <span class="player"><span class="player-dot"></span>محمد خلیلاوی پور</span>
+            <span class="score">52</span>
+        </div>
+
+        <div class="table-row">
+            <span class="rank">07</span>
+            <span class="player"><span class="player-dot"></span>hey10</span>
+            <span class="score">51</span>
+        </div>
+
+        <div class="table-row">
+            <span class="rank">08</span>
+            <span class="player"><span class="player-dot"></span>hajar daoudi</span>
+            <span class="score">50</span>
+        </div>
+
+        <div class="table-row">
+            <span class="rank">09</span>
+            <span class="player"><span class="player-dot"></span>Ahlam Aljaber</span>
+            <span class="score">44</span>
+        </div>
+
+        <div class="table-row">
+            <span class="rank">10</span>
+            <span class="player"><span class="player-dot"></span>امین دریس</span>
+            <span class="score">39</span>
+        </div>
+
+        <div class="table-row">
+            <span class="rank">11</span>
+            <span class="player"><span class="player-dot"></span>Sama salehi</span>
+            <span class="score">32</span>
+        </div>
+
+        <div class="table-row">
+            <span class="rank">12</span>
+            <span class="player"><span class="player-dot"></span>محمد جاسميان</span>
+            <span class="score">26</span>
+        </div>
+
+        <div class="table-row">
+            <span class="rank">13</span>
+            <span class="player"><span class="player-dot"></span>مهدی</span>
+            <span class="score">15</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     KALAL TAB (کل‌کل)
+========================================================= -->
+
+<section
+    id="kalal-tab"
+    class="tab-content"
+>
+
+    <div class="section-head">
+
+        <h2>
+            🥊 کل‌کل تیم‌ها
+        </h2>
+
+        <span>
+            TEAM BATTLE
+        </span>
+
+    </div>
+
+
+    <!-- COUNTDOWN -->
+
+    <div class="countdown-card">
+
+        <div class="countdown-title">
+            ⏰ شمارش معکوس تا اولین پیش‌بینی
+            <strong>
+                ۲۲:۱۵
+            </strong>
+        </div>
+
+
+        <div class="clock">
+
+            <div class="clock-box">
+                <div
+                    class="clock-number"
+                    id="clockHours"
+                >
+                    00
+                </div>
+                <div class="clock-label">
+                    HOURS
+                </div>
+            </div>
+
+
+            <div class="clock-separator">
+                :
+            </div>
+
+
+            <div class="clock-box">
+                <div
+                    class="clock-number"
+                    id="clockMinutes"
+                >
+                    00
+                </div>
+                <div class="clock-label">
+                    MINUTES
+                </div>
+            </div>
+
+
+            <div class="clock-separator">
+                :
+            </div>
+
+
+            <div class="clock-box">
+                <div
+                    class="clock-number"
+                    id="clockSeconds"
+                >
+                    00
+                </div>
+                <div class="clock-label">
+                    SECONDS
+                </div>
+            </div>
+
+        </div>
+
+
+        <div
+            class="countdown-status"
+            id="clockLabel"
+        >
+            مانده تا شروع پیش‌بینی
+        </div>
+
+    </div>
+
+
+
+    <!-- TEAM 1 -->
+
+    <div class="team-battle">
+
+        <div class="team-battle-header">
+            <span class="team-name">
+                🩴 اتحاد بدبختا
+            </span>
+            <span class="team-total">
+                امتیاز کل: ۰
+            </span>
+        </div>
+
+
+        <div class="team-player">
+            <span>
+                <span class="player-rank">1</span>
+                پیرا
+            </span>
+            <span class="player-score">
+                0
+            </span>
+        </div>
+
+
+        <div class="team-player">
+            <span>
+                <span class="player-rank">2</span>
+                بخشنده
+            </span>
+            <span class="player-score">
+                0
+            </span>
+        </div>
+
+
+        <div class="team-player">
+            <span>
+                <span class="player-rank">3</span>
+                قطیفی
+            </span>
+            <span class="player-score">
+                0
+            </span>
+        </div>
+
+
+        <div class="team-player">
+            <span>
+                <span class="player-rank">4</span>
+                جاسمیان
+            </span>
+            <span class="player-score">
+                0
+            </span>
+        </div>
+
+
+        <div class="team-player">
+            <span>
+                <span class="player-rank">5</span>
+                داودی
+            </span>
+            <span class="player-score">
+                0
+            </span>
+        </div>
+
+
+        <div class="team-player">
+            <span>
+                <span class="player-rank">6</span>
+                الجابر
+            </span>
+            <span class="player-score">
+                0
+            </span>
+        </div>
+
+    </div>
+
+
+
+    <!-- TEAM 2 -->
+
+    <div class="team-battle">
+
+        <div class="team-battle-header">
+            <span class="team-name">
+                💸 جماعت بی‌پولا
+            </span>
+            <span class="team-total">
+                امتیاز کل: ۰
+            </span>
+        </div>
+
+
+        <div class="team-player">
+            <span>
+                <span class="player-rank">1</span>
+                عصیر
+            </span>
+            <span class="player-score">
+                0
+            </span>
+        </div>
+
+
+        <div class="team-player">
+            <span>
+                <span class="player-rank">2</span>
+                زویدات
+            </span>
+            <span class="player-score">
+                0
+            </span>
+        </div>
+
+
+        <div class="team-player">
+            <span>
+                <span class="player-rank">3</span>
+                دریس
+            </span>
+            <span class="player-score">
+                0
+            </span>
+        </div>
+
+
+        <div class="team-player">
+            <span>
+                <span class="player-rank">4</span>
+                خلیلاوی پور
+            </span>
+            <span class="player-score">
+                0
+            </span>
+        </div>
+
+
+        <div class="team-player">
+            <span>
+                <span class="player-rank">5</span>
+                مهدی
+            </span>
+            <span class="player-score">
+                0
+            </span>
+        </div>
+
+
+        <div class="team-player">
+            <span>
+                <span class="player-rank">6</span>
+                نعیمی
+            </span>
+            <span class="player-score">
+                0
+            </span>
+        </div>
+
+
+        <div class="team-player">
+            <span>
+                <span class="player-rank">7</span>
+                سما صالحی
+            </span>
+            <span class="player-score">
+                0
+            </span>
+        </div>
+
+    </div>
+
+</section>
+
 </main>
+
+
+
 <!-- =========================================================
-BOTTOM NAV
+     BOTTOM NAV
 ========================================================= -->
+
 <nav class="bottom-nav">
-<button
-class="nav-item active"
-onclick="switchTab('gishah',this)"
->
-<span class="nav-icon">
-<i class="fa-solid fa-house"></i>
-</span>
-<span class="nav-text">
-گیشه
-</span>
-</button>
-<button
-class="nav-item"
-onclick="switchTab('matches',this)"
->
-<span class="nav-icon">
-<i class="fa-solid fa-gamepad"></i>
-</span>
-<span class="nav-text">
-مسابقات
-</span>
-</button>
-<button
-class="nav-item"
-onclick="switchTab('table',this)"
->
-<span class="nav-icon">
-<i class="fa-solid fa-landmark-flag"></i>
-</span>
-<span class="nav-text">
-جدول
-</span>
-</button>
-<button
-class="nav-item"
-onclick="switchTab('kalal',this)"
->
-<span class="nav-icon">
-<i class="fa-solid fa-futbol"></i>
-</span>
-<span class="nav-text">
-کل‌کل
-</span>
-</button>
+
+    <button
+        class="nav-item active"
+        onclick="switchTab('gishah',this)"
+    >
+        <span class="nav-icon">
+            <i class="fa-solid fa-house"></i>
+        </span>
+        <span class="nav-text">
+            گیشه
+        </span>
+    </button>
+
+
+    <button
+        class="nav-item"
+        onclick="switchTab('matches',this)"
+    >
+        <span class="nav-icon">
+            <i class="fa-solid fa-gamepad"></i>
+        </span>
+        <span class="nav-text">
+            مسابقات
+        </span>
+    </button>
+
+
+    <button
+        class="nav-item"
+        onclick="switchTab('table',this)"
+    >
+        <span class="nav-icon">
+            <i class="fa-solid fa-landmark-flag"></i>
+        </span>
+        <span class="nav-text">
+            جدول
+        </span>
+    </button>
+
+
+    <button
+        class="nav-item"
+        onclick="switchTab('kalal',this)"
+    >
+        <span class="nav-icon">
+            <i class="fa-solid fa-futbol"></i>
+        </span>
+        <span class="nav-text">
+            کل‌کل
+        </span>
+    </button>
+
 </nav>
+
+
+
 <script>
+
 /* =========================================================
-STARTUP SEQUENCE
+   STARTUP SEQUENCE
 ========================================================= */
+
 window.addEventListener("load",function(){
-setTimeout(function(){
-const splash =
-document.getElementById("splash-screen");
-const main =
-document.getElementById("main-content");
-splash.classList.add("hide");
-main.classList.add("visible");
-setTimeout(function(){
-const winner =
-document.getElementById("winner-modal");
-winner.classList.add("show");
-document.body.style.overflow="hidden";
-},700);
-},2300);
+
+    setTimeout(function(){
+
+        const splash =
+            document.getElementById("splash-screen");
+
+        const main =
+            document.getElementById("main-content");
+
+        splash.classList.add("hide");
+
+        main.classList.add("visible");
+
+
+        setTimeout(function(){
+
+            const winner =
+                document.getElementById("winner-modal");
+
+            winner.classList.add("show");
+
+            document.body.style.overflow="hidden";
+
+        },700);
+
+    },2300);
+
 });
+
+
 /* =========================================================
-CLOSE WINNER MODAL
+   CLOSE WINNER MODAL
 ========================================================= */
+
 function closeWinnerModal(){
-const winner =
-document.getElementById("winner-modal");
-winner.classList.remove("show");
-winner.classList.add("hide");
-document.body.style.overflow="";
-setTimeout(function(){
-winner.style.display="none";
-},500);
+
+    const winner =
+        document.getElementById("winner-modal");
+
+    winner.classList.remove("show");
+
+    winner.classList.add("hide");
+
+    document.body.style.overflow="";
+
+    setTimeout(function(){
+
+        winner.style.display="none";
+
+    },500);
+
 }
+
+
 /* =========================================================
-TAB SYSTEM
+   TAB SYSTEM
 ========================================================= */
+
 function switchTab(tabName,element){
-document
-.querySelectorAll(".nav-item")
-.forEach(function(item){
-item.classList.remove("active");
-});
-element.classList.add("active");
-document
-.querySelectorAll(".tab-content")
-.forEach(function(tab){
-tab.classList.remove("active");
-});
-const target =
-document.getElementById(
-tabName+"-tab"
-);
-if(target){
-target.classList.add("active");
+
+    document
+        .querySelectorAll(".nav-item")
+        .forEach(function(item){
+
+            item.classList.remove("active");
+
+        });
+
+
+    element.classList.add("active");
+
+
+    document
+        .querySelectorAll(".tab-content")
+        .forEach(function(tab){
+
+            tab.classList.remove("active");
+
+        });
+
+
+    const target =
+        document.getElementById(
+            tabName+"-tab"
+        );
+
+
+    if(target){
+
+        target.classList.add("active");
+
+    }
+
 }
-}
+
+
 /* =========================================================
-COUNTDOWN WITH FLIP EFFECT
-29 September 2026 - 22:15
+   COUNTDOWN WITH FLIP EFFECT
+   29 September 2026 - 22:15
 ========================================================= */
+
 const targetDate =
-new Date(
-2026,
-8,
-29,
-22,
-15,
-0
-).getTime();
+    new Date(
+        2026,
+        8,
+        29,
+        22,
+        15,
+        0
+    ).getTime();
+
+
+// تابع کمکی برای آپدیت همراه با افکت ورق خوردن (فلیپ) در صورت تغییر مقدار
 function updateFlipValue(elementId, newValue) {
-const el = document.getElementById(elementId);
-if (!el) return;
-if (el.textContent !== newValue) {
-el.classList.add("flipping");
-setTimeout(() => {
-el.textContent = newValue;
-el.classList.remove("flipping");
-}, 200);
+    const el = document.getElementById(elementId);
+    if (!el) return;
+
+    if (el.textContent !== newValue) {
+        el.classList.add("flipping");
+        setTimeout(() => {
+            el.textContent = newValue;
+            el.classList.remove("flipping");
+        }, 200); // نصف زمان انیمیشن برای تعویض متن در حالت خمیده
+    }
 }
-}
+
+
 function updateCountdown(){
-const now =
-new Date().getTime();
-const difference =
-targetDate-now;
-const clockHours =
-document.getElementById(
-"clockHours"
-);
-const clockMinutes =
-document.getElementById(
-"clockMinutes"
-);
-const clockSeconds =
-document.getElementById(
-"clockSeconds"
-);
-const clockLabel =
-document.getElementById(
-"clockLabel"
-);
-const status1 =
-document.getElementById(
-"matchStatus1"
-);
-const status2 =
-document.getElementById(
-"matchStatus2"
-);
-if(difference<=0){
-clockHours.textContent="00";
-clockMinutes.textContent="00";
-clockSeconds.textContent="00";
-clockLabel.textContent="سوت آغازین زده شد!";
-updateFlipValue("m1-h", "00");
-updateFlipValue("m1-m", "00");
-updateFlipValue("m1-s", "00");
-updateFlipValue("m2-h", "00");
-updateFlipValue("m2-m", "00");
-updateFlipValue("m2-s", "00");
-status1.textContent="پایان یافته";
-status2.textContent="پایان یافته";
-return;
+
+    const now =
+        new Date().getTime();
+
+
+    const difference =
+        targetDate-now;
+
+
+    const clockHours =
+        document.getElementById(
+            "clockHours"
+        );
+
+    const clockMinutes =
+        document.getElementById(
+            "clockMinutes"
+        );
+
+    const clockSeconds =
+        document.getElementById(
+            "clockSeconds"
+        );
+
+    const clockLabel =
+        document.getElementById(
+            "clockLabel"
+        );
+
+
+    const status1 =
+        document.getElementById(
+            "matchStatus1"
+        );
+
+    const status2 =
+        document.getElementById(
+            "matchStatus2"
+        );
+
+
+    if(difference<=0){
+
+        clockHours.textContent="00";
+        clockMinutes.textContent="00";
+        clockSeconds.textContent="00";
+        clockLabel.textContent="سوت آغازین زده شد!";
+
+        updateFlipValue("m1-h", "00");
+        updateFlipValue("m1-m", "00");
+        updateFlipValue("m1-s", "00");
+
+        updateFlipValue("m2-h", "00");
+        updateFlipValue("m2-m", "00");
+        updateFlipValue("m2-s", "00");
+
+
+        status1.textContent="در حال برگزاری";
+        status2.textContent="در حال برگزاری";
+
+        status1.style.background="#fff1ed";
+        status1.style.color="#e05b36";
+
+        status2.style.background="#fff1ed";
+        status2.style.color="#e05b36";
+
+        return;
+
+    }
+
+
+    const totalSeconds =
+        Math.floor(
+            difference/1000
+        );
+
+
+    const hours =
+        Math.floor(
+            totalSeconds/3600
+        );
+
+
+    const minutes =
+        Math.floor(
+            (totalSeconds%3600)/60
+        );
+
+
+    const seconds =
+        totalSeconds%60;
+
+
+    const format =
+        function(value){
+
+            return String(value)
+                .padStart(2,"0");
+
+        };
+
+
+    const formattedHours = format(hours);
+    const formattedMinutes = format(minutes);
+    const formattedSeconds = format(seconds);
+
+    clockHours.textContent = formattedHours;
+    clockMinutes.textContent = formattedMinutes;
+    clockSeconds.textContent = formattedSeconds;
+
+
+    // اعمال انیمیشن ورق خوردن روی دقایق و ثانیه‌ها
+    updateFlipValue("m1-h", formattedHours);
+    updateFlipValue("m1-m", formattedMinutes);
+    updateFlipValue("m1-s", formattedSeconds);
+
+    updateFlipValue("m2-h", formattedHours);
+    updateFlipValue("m2-m", formattedMinutes);
+    updateFlipValue("m2-s", formattedSeconds);
+
 }
-const totalSeconds =
-Math.floor(
-difference/1000
-);
-const hours =
-Math.floor(
-totalSeconds/3600
-);
-const minutes =
-Math.floor(
-(totalSeconds%3600)/60
-);
-const seconds =
-totalSeconds%60;
-const format =
-function(value){
-return String(value)
-.padStart(2,"0");
-};
-const formattedHours = format(hours);
-const formattedMinutes = format(minutes);
-const formattedSeconds = format(seconds);
-clockHours.textContent = formattedHours;
-clockMinutes.textContent = formattedMinutes;
-clockSeconds.textContent = formattedSeconds;
-updateFlipValue("m1-h", formattedHours);
-updateFlipValue("m1-m", formattedMinutes);
-updateFlipValue("m1-s", formattedSeconds);
-updateFlipValue("m2-h", formattedHours);
-updateFlipValue("m2-m", formattedMinutes);
-updateFlipValue("m2-s", formattedSeconds);
-}
+
+
 updateCountdown();
+
+
 setInterval(
-updateCountdown,
-1000
+    updateCountdown,
+    1000
 );
+
 </script>
+
+
 </body>
 </html>
