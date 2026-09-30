@@ -1677,6 +1677,460 @@ body:before{
 
 
 /* =========================================================
+   QUIZ
+========================================================= */
+
+.quiz-box{
+    width:100%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f5fff9
+        );
+
+    border:
+        1px solid
+        #dfece4;
+
+    border-radius:28px;
+
+    padding:20px 15px;
+
+    box-shadow:
+        0 15px 34px
+        rgba(0,80,45,.08);
+
+    text-align:center;
+
+    margin-bottom:15px;
+}
+
+.quiz-icon{
+    width:75px;
+    height:75px;
+
+    margin:5px auto 12px;
+
+    border-radius:24px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:38px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dffbea,
+            #bdf5d4
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(7,170,86,.15);
+}
+
+.quiz-title{
+    font-size:25px;
+    font-weight:900;
+    color:#111820;
+}
+
+.quiz-subtitle{
+    margin-top:5px;
+    color:#718078;
+    font-size:12px;
+    font-weight:700;
+}
+
+.quiz-info{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:7px;
+
+    margin:20px 0 15px;
+}
+
+.quiz-info div{
+    background:#f0fbf4;
+
+    border:
+        1px solid
+        #d8f0df;
+
+    border-radius:15px;
+
+    padding:10px 5px;
+
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+}
+
+.quiz-info strong{
+    color:#079c53;
+    font-size:18px;
+    font-weight:900;
+}
+
+.quiz-info span{
+    color:#718078;
+    font-size:8px;
+    font-weight:800;
+}
+
+.quiz-start-btn{
+    width:100%;
+
+    border:none;
+
+    padding:14px;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #12db76,
+            #04964f
+        );
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 22px
+        rgba(8,170,88,.22);
+
+    transition:.25s;
+}
+
+.quiz-start-btn:hover{
+    transform:translateY(-2px);
+}
+
+.quiz-start-btn:active{
+    transform:scale(.98);
+}
+
+.quiz-record{
+    margin-top:13px;
+
+    color:#718078;
+
+    font-size:10px;
+
+    font-weight:800;
+}
+
+.quiz-record strong{
+    color:#079c53;
+}
+
+.quiz-top{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:10px;
+
+    font-size:10px;
+
+    color:#697971;
+
+    font-weight:800;
+}
+
+.quiz-score{
+    color:#079c53;
+}
+
+.quiz-progress{
+    width:100%;
+    height:7px;
+
+    background:#e3eee7;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-bottom:16px;
+}
+
+#quiz-progress-bar{
+    display:block;
+
+    height:100%;
+    width:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #13dc76,
+            #079c53
+        );
+
+    border-radius:20px;
+
+    transition:.35s;
+}
+
+.quiz-timer{
+    width:66px;
+    height:66px;
+
+    margin:0 auto 14px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #101b16,
+            #1e3227
+        );
+
+    color:#fff;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:7px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,40,20,.2);
+}
+
+.quiz-timer-number{
+    font-size:22px;
+    line-height:1;
+
+    font-weight:900;
+
+    color:#54f49a;
+
+    margin-bottom:3px;
+}
+
+.quiz-question{
+    background:#f0fbf4;
+
+    border:
+        1px solid
+        #d8f0df;
+
+    border-radius:18px;
+
+    padding:17px 12px;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    font-weight:900;
+
+    color:#111820;
+
+    margin-bottom:13px;
+}
+
+.quiz-options{
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:8px;
+}
+
+.quiz-option{
+    width:100%;
+
+    border:
+        1px solid
+        #dcebe2;
+
+    background:#fff;
+
+    color:#25332c;
+
+    border-radius:14px;
+
+    padding:12px 10px;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.quiz-option:hover{
+    border-color:#0bc66a;
+
+    transform:translateY(-1px);
+}
+
+.quiz-option.correct{
+    background:#dffbea;
+
+    border-color:#0bc66a;
+
+    color:#078d4d;
+}
+
+.quiz-option.wrong{
+    background:#fff0ed;
+
+    border-color:#e05b36;
+
+    color:#d54d2c;
+}
+
+.quiz-option.disabled{
+    pointer-events:none;
+}
+
+.quiz-next{
+    margin-top:12px;
+}
+
+.quiz-next button{
+    width:100%;
+
+    border:none;
+
+    background:#101b16;
+
+    color:#fff;
+
+    padding:12px;
+
+    border-radius:14px;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    cursor:pointer;
+}
+
+.result-icon{
+    font-size:55px;
+
+    margin:5px 0 8px;
+}
+
+.result-title{
+    font-size:23px;
+
+    font-weight:900;
+
+    color:#111820;
+}
+
+.result-score{
+    margin:18px 0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:3px;
+}
+
+.result-score span{
+    font-size:10px;
+
+    color:#718078;
+
+    font-weight:800;
+}
+
+.result-score strong{
+    font-size:42px;
+
+    color:#079c53;
+
+    font-weight:900;
+}
+
+.result-stats{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:8px;
+
+    margin-bottom:14px;
+}
+
+.result-stats div{
+    padding:11px;
+
+    background:#f0fbf4;
+
+    border:
+        1px solid
+        #d8f0df;
+
+    border-radius:14px;
+
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+}
+
+.result-stats strong{
+    font-size:20px;
+
+    color:#079c53;
+}
+
+.result-stats span{
+    font-size:8px;
+
+    color:#718078;
+
+    font-weight:800;
+}
+
+.result-best{
+    font-size:10px;
+
+    color:#718078;
+
+    font-weight:800;
+
+    margin-bottom:15px;
+}
+
+.result-best strong{
+    color:#079c53;
+}
+
+
+/* =========================================================
    BOTTOM NAV
 ========================================================= */
 
@@ -1967,45 +2421,156 @@ body:before{
 
 
 <!-- =========================================================
-     GISHAH TAB
+     QUIZ TAB
 ========================================================= -->
 
 <section
-    id="gishah-tab"
+    id="quiz-tab"
     class="tab-content active"
 >
 
     <div class="section-head">
 
         <h2>
-            📰 گیشه لیگ
+            🧠 کوئیزگدا
         </h2>
 
         <span>
-            EXTRA TIME
+            QUIZ
         </span>
 
     </div>
 
 
-    <!-- REPORT 1: WEEK 07 -->
+    <!-- QUIZ START -->
 
-    <div class="achievement-card">
+    <div
+        id="quiz-start"
+        class="quiz-box"
+    >
 
-        <div class="news-body">
+        <div class="quiz-icon">
+            🧠
+        </div>
 
-            <div class="news-title">
-                🔥 شروع طوفانی هفته هفتم؛ جدال تیم‌های فیره‌فروش!
+        <div class="quiz-title">
+            کوئیزگدا
+        </div>
+
+        <div class="quiz-subtitle">
+            خودتو به چالش بکش!
+        </div>
+
+
+        <div class="quiz-info">
+
+            <div>
+                <strong>۱۰</strong>
+                <span>سؤال</span>
             </div>
 
-            <div class="news-text">
-                هفته هفتم با شروع رقابت تیمی از امروز با بازی پرتغال/دانمارک و بازی‌های ملی شروع میشه. دو تیم جماعت بی‌دولت و اتحاد بدبختا که سابقه درخشانی در فیره‌فروشی و فروش گوشت ناسالم دارن، حالا قراره از امروز باهم رقابت کنن.<br>
-                تقریباً قدرت‌ها تقسیم شده و هر تیمی با توجه به قدرت پیش‌بینی اعضای درجه یک خودش، باید دید که کدوم تیم در پایان هفته امتیازات بیشتری کسب خواهد کرد.
+            <div>
+                <strong>۱۵</strong>
+                <span>ثانیه</span>
             </div>
 
-            <span class="news-badge">
-                ⚔️ BATTLE WEEK 07
+            <div>
+                <strong>۱۰۰۰</strong>
+                <span>امتیاز</span>
+            </div>
+
+        </div>
+
+
+        <button
+            class="quiz-start-btn"
+            onclick="startQuiz()"
+        >
+            🚀 شروع مسابقه
+        </button>
+
+
+        <div class="quiz-record">
+            رکورد قبلی:
+            <strong id="bestScore">۰</strong>
+        </div>
+
+    </div>
+
+
+
+    <!-- QUIZ GAME -->
+
+    <div
+        id="quiz-game"
+        class="quiz-box"
+        style="display:none;"
+    >
+
+        <div class="quiz-top">
+
+            <span id="quiz-number">
+                سؤال ۱ از ۱۰
             </span>
+
+            <span class="quiz-score">
+                امتیاز:
+                <strong id="quiz-score">
+                    ۰
+                </strong>
+            </span>
+
+        </div>
+
+
+        <div class="quiz-progress">
+
+            <span id="quiz-progress-bar"></span>
+
+        </div>
+
+
+        <div class="quiz-timer">
+
+            <div
+                class="quiz-timer-number"
+                id="quiz-timer"
+            >
+                ۱۵
+            </div>
+
+            <div>
+                ثانیه
+            </div>
+
+        </div>
+
+
+        <div
+            class="quiz-question"
+            id="quiz-question"
+        >
+            سؤال
+        </div>
+
+
+        <div
+            class="quiz-options"
+            id="quiz-options"
+        ></div>
+
+
+        <div
+            class="quiz-next"
+            id="quiz-next"
+            style="display:none;"
+        >
+
+            <button
+                onclick="nextQuestion()"
+            >
+                سؤال بعدی ←
+            </button>
 
         </div>
 
@@ -2013,55 +2578,82 @@ body:before{
 
 
 
-    <!-- REPORT 2 -->
+    <!-- QUIZ RESULT -->
 
-    <div class="achievement-card">
+    <div
+        id="quiz-result"
+        class="quiz-box"
+        style="display:none;"
+    >
 
-        <div class="achievement-top">
+        <div class="result-icon">
+            🏆
+        </div>
 
-            <div class="achievement-label">
-                GEDAHAYE ESTERESI
-            </div>
-
-            <div class="achievement-script">
-                WEEK 07
-            </div>
-
+        <div class="result-title">
+            مسابقه تمام شد!
         </div>
 
 
-        <div class="news-trophy-zone">
+        <div class="result-score">
 
-            <div class="mini-trophy">
-
-                <div class="cup"></div>
-
-                <div class="handle left"></div>
-
-                <div class="handle right"></div>
-
-                <div class="base"></div>
-
-            </div>
-
-        </div>
-
-
-        <div class="news-body">
-
-            <div class="news-title">
-                شروع رقابت‌های تیمی در هفته هفتم
-            </div>
-
-            <div class="news-text">
-                از امشب رقابت دو تیم جماعت بی‌دولت و اتحاد بدبختا رسماً آغاز می‌شود و اعضای دو تیم برای جمع‌کردن امتیازهای هفته هفتم وارد میدان می‌شوند.
-            </div>
-
-            <span class="news-badge">
-                🏆 WEEK 07
+            <span>
+                امتیاز شما
             </span>
 
+            <strong id="final-score">
+                ۰
+            </strong>
+
         </div>
+
+
+        <div class="result-stats">
+
+            <div>
+
+                <strong id="correct-count">
+                    ۰
+                </strong>
+
+                <span>
+                    پاسخ صحیح
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong id="wrong-count">
+                    ۰
+                </strong>
+
+                <span>
+                    پاسخ غلط
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="result-best">
+
+            رکورد شما:
+            <strong id="final-best">
+                ۰
+            </strong>
+
+        </div>
+
+
+        <button
+            class="quiz-start-btn"
+            onclick="startQuiz()"
+        >
+            🔄 دوباره بازی کن
+        </button>
 
     </div>
 
@@ -2906,15 +3498,15 @@ body:before{
 
     <button
         class="nav-item active"
-        onclick="switchTab('gishah',this)"
+        onclick="switchTab('quiz',this)"
     >
 
         <span class="nav-icon">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-brain"></i>
         </span>
 
         <span class="nav-text">
-            گیشه
+            کوئیز
         </span>
 
     </button>
@@ -3070,6 +3662,601 @@ function switchTab(tabName,element){
         target.classList.add("active");
 
     }
+
+}
+
+
+/* =========================================================
+   QUIZ SYSTEM
+========================================================= */
+
+const quizQuestions = [
+
+    {
+        question:"پایتخت پرتغال کدام شهر است؟",
+        options:[
+            "پورتو",
+            "لیسبون",
+            "مادرید",
+            "رم"
+        ],
+        answer:1
+    },
+
+    {
+        question:"کدام تیم ملی لقب «خروس‌ها» را دارد؟",
+        options:[
+            "ایتالیا",
+            "فرانسه",
+            "بلژیک",
+            "هلند"
+        ],
+        answer:1
+    },
+
+    {
+        question:"بزرگ‌ترین سیاره منظومه شمسی کدام است؟",
+        options:[
+            "زمین",
+            "مریخ",
+            "مشتری",
+            "زحل"
+        ],
+        answer:2
+    },
+
+    {
+        question:"کدام کشور به سرزمین هزار دریاچه معروف است؟",
+        options:[
+            "فنلاند",
+            "اسپانیا",
+            "ترکیه",
+            "یونان"
+        ],
+        answer:0
+    },
+
+    {
+        question:"چند بازیکن از هر تیم در شروع یک مسابقه فوتبال داخل زمین هستند؟",
+        options:[
+            "۹",
+            "۱۰",
+            "۱۱",
+            "۱۲"
+        ],
+        answer:2
+    },
+
+    {
+        question:"کدام غذا معمولاً با برنج و زعفران شناخته می‌شود؟",
+        options:[
+            "پیتزا",
+            "پلو",
+            "همبرگر",
+            "سوشی"
+        ],
+        answer:1
+    },
+
+    {
+        question:"بلندترین کوه جهان کدام است؟",
+        options:[
+            "دماوند",
+            "اورست",
+            "آرارات",
+            "آلپ"
+        ],
+        answer:1
+    },
+
+    {
+        question:"پایتخت ترکیه کدام شهر است؟",
+        options:[
+            "استانبول",
+            "ازمیر",
+            "آنکارا",
+            "آنتالیا"
+        ],
+        answer:2
+    },
+
+    {
+        question:"کدام کشور مبدأ غذای پاستا محسوب می‌شود؟",
+        options:[
+            "ایتالیا",
+            "فرانسه",
+            "آلمان",
+            "پرتغال"
+        ],
+        answer:0
+    },
+
+    {
+        question:"کدام عضو بدن خون را در سراسر بدن پمپاژ می‌کند؟",
+        options:[
+            "مغز",
+            "ریه",
+            "قلب",
+            "کبد"
+        ],
+        answer:2
+    }
+
+];
+
+
+let quizIndex = 0;
+let quizScore = 0;
+let quizCorrect = 0;
+let quizWrong = 0;
+let quizTimer;
+let quizTimeLeft = 15;
+
+
+/* =========================================================
+   QUIZ BEST SCORE
+========================================================= */
+
+function getBestQuizScore(){
+
+    return Number(
+        localStorage.getItem(
+            "geda_quiz_best_score"
+        ) || 0
+    );
+
+}
+
+
+function saveBestQuizScore(score){
+
+    const best =
+        getBestQuizScore();
+
+    if(score > best){
+
+        localStorage.setItem(
+            "geda_quiz_best_score",
+            score
+        );
+
+        return score;
+
+    }
+
+    return best;
+
+}
+
+
+function updateBestScore(){
+
+    const el =
+        document.getElementById(
+            "bestScore"
+        );
+
+    if(el){
+
+        el.textContent =
+            getBestQuizScore()
+                .toLocaleString("fa-IR");
+
+    }
+
+}
+
+
+updateBestScore();
+
+
+/* =========================================================
+   QUIZ SHUFFLE
+========================================================= */
+
+function shuffleArray(array){
+
+    return array
+        .map(function(value){
+
+            return {
+                value:value,
+                sort:Math.random()
+            };
+
+        })
+        .sort(function(a,b){
+
+            return a.sort-b.sort;
+
+        })
+        .map(function(item){
+
+            return item.value;
+
+        });
+
+}
+
+
+/* =========================================================
+   START QUIZ
+========================================================= */
+
+function startQuiz(){
+
+    quizIndex = 0;
+
+    quizScore = 0;
+
+    quizCorrect = 0;
+
+    quizWrong = 0;
+
+    clearInterval(quizTimer);
+
+
+    document.getElementById(
+        "quiz-start"
+    ).style.display="none";
+
+
+    document.getElementById(
+        "quiz-result"
+    ).style.display="none";
+
+
+    document.getElementById(
+        "quiz-game"
+    ).style.display="block";
+
+
+    showQuestion();
+
+}
+
+
+/* =========================================================
+   SHOW QUESTION
+========================================================= */
+
+function showQuestion(){
+
+    clearInterval(quizTimer);
+
+
+    const question =
+        quizQuestions[quizIndex];
+
+
+    document.getElementById(
+        "quiz-number"
+    ).textContent =
+        `سؤال ${quizIndex+1} از ${quizQuestions.length}`;
+
+
+    document.getElementById(
+        "quiz-score"
+    ).textContent =
+        quizScore.toLocaleString("fa-IR");
+
+
+    document.getElementById(
+        "quiz-progress-bar"
+    ).style.width =
+        `${(quizIndex / quizQuestions.length) * 100}%`;
+
+
+    document.getElementById(
+        "quiz-question"
+    ).textContent =
+        question.question;
+
+
+    const options =
+        document.getElementById(
+            "quiz-options"
+        );
+
+
+    options.innerHTML="";
+
+
+    question.options.forEach(
+        function(option,index){
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.className =
+                "quiz-option";
+
+
+            button.textContent =
+                option;
+
+
+            button.onclick =
+                function(){
+
+                    selectAnswer(
+                        index,
+                        button
+                    );
+
+                };
+
+
+            options.appendChild(button);
+
+        }
+    );
+
+
+    document.getElementById(
+        "quiz-next"
+    ).style.display="none";
+
+
+    startQuizTimer();
+
+}
+
+
+/* =========================================================
+   QUIZ TIMER
+========================================================= */
+
+function startQuizTimer(){
+
+    quizTimeLeft = 15;
+
+
+    document.getElementById(
+        "quiz-timer"
+    ).textContent =
+        quizTimeLeft;
+
+
+    quizTimer =
+        setInterval(
+            function(){
+
+                quizTimeLeft--;
+
+
+                document.getElementById(
+                    "quiz-timer"
+                ).textContent =
+                    quizTimeLeft;
+
+
+                if(quizTimeLeft <= 0){
+
+                    clearInterval(
+                        quizTimer
+                    );
+
+                    timeOut();
+
+                }
+
+            },
+            1000
+        );
+
+}
+
+
+/* =========================================================
+   SELECT ANSWER
+========================================================= */
+
+function selectAnswer(
+    selectedIndex,
+    selectedButton
+){
+
+    clearInterval(quizTimer);
+
+
+    const question =
+        quizQuestions[quizIndex];
+
+
+    document
+        .querySelectorAll(
+            ".quiz-option"
+        )
+        .forEach(
+            function(button){
+
+                button.classList.add(
+                    "disabled"
+                );
+
+            }
+        );
+
+
+    if(
+        selectedIndex ===
+        question.answer
+    ){
+
+        selectedButton.classList.add(
+            "correct"
+        );
+
+
+        quizCorrect++;
+
+
+        const speedBonus =
+            quizTimeLeft * 10;
+
+
+        quizScore +=
+            100 + speedBonus;
+
+    }
+    else{
+
+        selectedButton.classList.add(
+            "wrong"
+        );
+
+
+        quizWrong++;
+
+
+        document
+            .querySelectorAll(
+                ".quiz-option"
+            )[question.answer]
+            .classList.add(
+                "correct"
+            );
+
+    }
+
+
+    document.getElementById(
+        "quiz-score"
+    ).textContent =
+        quizScore.toLocaleString("fa-IR");
+
+
+    document.getElementById(
+        "quiz-next"
+    ).style.display="block";
+
+}
+
+
+/* =========================================================
+   TIME OUT
+========================================================= */
+
+function timeOut(){
+
+    const question =
+        quizQuestions[quizIndex];
+
+
+    quizWrong++;
+
+
+    document
+        .querySelectorAll(
+            ".quiz-option"
+        )
+        .forEach(
+            function(button){
+
+                button.classList.add(
+                    "disabled"
+                );
+
+            }
+        );
+
+
+    document
+        .querySelectorAll(
+            ".quiz-option"
+        )[question.answer]
+        .classList.add(
+            "correct"
+        );
+
+
+    document.getElementById(
+        "quiz-next"
+    ).style.display="block";
+
+}
+
+
+/* =========================================================
+   NEXT QUESTION
+========================================================= */
+
+function nextQuestion(){
+
+    quizIndex++;
+
+
+    if(
+        quizIndex >=
+        quizQuestions.length
+    ){
+
+        finishQuiz();
+
+        return;
+
+    }
+
+
+    showQuestion();
+
+}
+
+
+/* =========================================================
+   FINISH QUIZ
+========================================================= */
+
+function finishQuiz(){
+
+    clearInterval(quizTimer);
+
+
+    const best =
+        saveBestQuizScore(
+            quizScore
+        );
+
+
+    document.getElementById(
+        "quiz-game"
+    ).style.display="none";
+
+
+    document.getElementById(
+        "quiz-result"
+    ).style.display="block";
+
+
+    document.getElementById(
+        "final-score"
+    ).textContent =
+        quizScore.toLocaleString("fa-IR");
+
+
+    document.getElementById(
+        "correct-count"
+    ).textContent =
+        quizCorrect;
+
+
+    document.getElementById(
+        "wrong-count"
+    ).textContent =
+        quizWrong;
+
+
+    document.getElementById(
+        "final-best"
+    ).textContent =
+        best.toLocaleString("fa-IR");
+
+
+    updateBestScore();
 
 }
 
