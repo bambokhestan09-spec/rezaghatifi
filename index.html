@@ -1283,69 +1283,252 @@ a{
     font-weight:900;
 }
 
+
+/* =====================================================
+   NEW QUIZ GLASS COUNTDOWN
+===================================================== */
+
 .quiz-start-clock{
 
-    display:flex;
+    position:relative;
 
-    align-items:center;
+    overflow:hidden;
 
-    gap:13px;
-
-    padding:15px;
+    padding:18px 15px 17px;
 
     margin-bottom:13px;
 
-    background:#f5f5f5;
+    text-align:center;
+
+    color:#fff;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(15,54,39,.88),
+        rgba(18,124,77,.88)
+    );
 
     border:
-    2px solid #dcdcdc;
+    1px solid rgba(255,255,255,.38);
 
-    border-radius:22px;
+    border-radius:27px;
+
+    box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.35),
+    0 12px 28px rgba(0,0,0,.16);
+
+    backdrop-filter:
+    blur(16px);
+
+    -webkit-backdrop-filter:
+    blur(16px);
 }
 
-.clock-cartoon{
+.quiz-start-clock::before{
 
-    min-width:64px;
-    height:64px;
+    content:"";
+
+    position:absolute;
+
+    width:130px;
+    height:130px;
+
+    top:-75px;
+    left:-55px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,.13);
+
+    filter:blur(2px);
+}
+
+.quiz-start-clock::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:110px;
+    height:110px;
+
+    right:-45px;
+    bottom:-65px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,.10);
+}
+
+.quiz-clock-heading{
+
+    position:relative;
+    z-index:2;
 
     display:flex;
 
     align-items:center;
     justify-content:center;
 
-    color:#fff;
-
-    background:#35b975;
-
-    border-radius:20px;
-
-    box-shadow:
-    0 6px 0 #218c57;
-
-    font-size:31px;
-}
-
-.clock-text strong{
-
-    display:block;
-
-    color:#222;
+    gap:8px;
 
     font-size:15px;
     font-weight:900;
 }
 
-.clock-text span{
+.quiz-clock-heading i{
+
+    width:31px;
+    height:31px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#168c59;
+
+    background:rgba(255,255,255,.95);
+
+    border-radius:10px;
+
+    font-size:16px;
+}
+
+.quiz-clock-message{
+
+    position:relative;
+    z-index:2;
+
+    margin-top:7px;
+
+    color:rgba(255,255,255,.82);
+
+    font-size:10px;
+    font-weight:600;
+}
+
+.quiz-glass-countdown{
+
+    position:relative;
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:7px;
+
+    margin-top:13px;
+}
+
+.quiz-glass-box{
+
+    min-width:0;
+
+    padding:10px 4px 8px;
+
+    background:
+    rgba(255,255,255,.13);
+
+    border:
+    1px solid rgba(255,255,255,.25);
+
+    border-radius:17px;
+
+    box-shadow:
+    inset 0 1px 0
+    rgba(255,255,255,.2),
+
+    0 5px 15px
+    rgba(0,0,0,.08);
+
+    backdrop-filter:
+    blur(12px);
+
+    -webkit-backdrop-filter:
+    blur(12px);
+}
+
+.quiz-glass-box strong{
 
     display:block;
 
-    margin-top:3px;
-
-    color:#35b975;
-
-    font-size:13px;
+    font-size:25px;
     font-weight:900;
+
+    line-height:1;
 }
+
+.quiz-glass-box span{
+
+    display:block;
+
+    margin-top:5px;
+
+    color:
+    rgba(255,255,255,.72);
+
+    font-size:8px;
+    font-weight:700;
+}
+
+.quiz-clock-date{
+
+    position:relative;
+    z-index:2;
+
+    margin-top:10px;
+
+    color:#fff;
+
+    font-size:10px;
+    font-weight:700;
+}
+
+.quiz-lock-message{
+
+    position:relative;
+    z-index:2;
+
+    margin-top:10px;
+
+    padding:9px 10px;
+
+    color:#fff;
+
+    background:
+    rgba(0,0,0,.17);
+
+    border:
+    1px solid
+    rgba(255,255,255,.16);
+
+    border-radius:13px;
+
+    font-size:11px;
+    font-weight:800;
+}
+
+.quiz-unlocked{
+
+    display:none;
+}
+
+.quiz-start-clock.ready .quiz-lock-message{
+
+    background:
+    rgba(255,255,255,.17);
+}
+
+
+/* =====================================================
+   QUIZ STAT GRID
+===================================================== */
 
 .quiz-stat-grid{
 
@@ -1424,6 +1607,24 @@ a{
 
     box-shadow:
     0 3px 0 #218c57;
+}
+
+.quiz-start-button.locked{
+
+    color:#a4aaa7;
+
+    background:#d9dedb;
+
+    box-shadow:
+    0 7px 0 #b9bfbc;
+
+    cursor:not-allowed;
+
+    transform:none;
+}
+
+.quiz-start-button.locked i{
+    color:#8d9691;
 }
 
 .best-score{
@@ -2364,6 +2565,10 @@ a{
         min-width:38px;
     }
 
+    .quiz-glass-box strong{
+        font-size:21px;
+    }
+
 }
 
 </style>
@@ -2667,23 +2872,91 @@ class="quiz-page">
 </div>
 
 
-<div class="quiz-start-clock">
+<!-- =====================================================
+     QUIZ COUNTDOWN - 21:00
+===================================================== -->
 
-    <div class="clock-cartoon">
+<div
+    id="quizStartClock"
+    class="quiz-start-clock">
+
+    <div class="quiz-clock-heading">
 
         <i class="fa-regular fa-clock"></i>
 
+        <span id="quizClockTitle">
+            شروع کوئیز ساعت ۲۱:۰۰
+        </span>
+
     </div>
 
-    <div class="clock-text">
 
-        <strong>
-            شروع کوئیز
-        </strong>
+    <div class="quiz-clock-message">
 
-        <span>
-            هر روز ساعت ۱۰:۰۰
-        </span>
+        شمارش معکوس تا شروع مسابقه
+
+    </div>
+
+
+    <div class="quiz-glass-countdown">
+
+
+        <div class="quiz-glass-box">
+
+            <strong id="quiz-g-hours">
+                ۰۰
+            </strong>
+
+            <span>
+                ساعت
+            </span>
+
+        </div>
+
+
+        <div class="quiz-glass-box">
+
+            <strong id="quiz-g-minutes">
+                ۰۰
+            </strong>
+
+            <span>
+                دقیقه
+            </span>
+
+        </div>
+
+
+        <div class="quiz-glass-box">
+
+            <strong id="quiz-g-seconds">
+                ۰۰
+            </strong>
+
+            <span>
+                ثانیه
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+    <div
+        id="quizClockDate"
+        class="quiz-clock-date">
+
+        امروز ساعت ۲۱:۰۰
+
+    </div>
+
+
+    <div
+        id="quizLockMessage"
+        class="quiz-lock-message">
+
+        🔒 ورود به کوئیز تا ساعت ۲۱ بسته است
 
     </div>
 
@@ -2728,7 +3001,7 @@ class="quiz-page">
     <i class="fa-solid fa-star"></i>
 
     <strong>
-        ۱۰۰۰+
+        ۱۰۰۰
     </strong>
 
     <small>
@@ -2742,12 +3015,16 @@ class="quiz-page">
 
 
 <button
-class="quiz-start-button"
-onclick="startQuiz()">
+id="quizStartButton"
+class="quiz-start-button locked"
+onclick="startQuiz()"
+disabled>
 
-<i class="fa-solid fa-rocket"></i>
+<i class="fa-solid fa-lock"></i>
 
-شروع مسابقه
+<span id="quizStartButtonText">
+    شروع از ساعت ۲۱:۰۰
+</span>
 
 </button>
 
@@ -3364,13 +3641,11 @@ class="tab-content">
     <div class="player-score">۶۹</div>
 </div>
 
-
 <div class="table-row">
     <div class="rank">۲</div>
     <div class="player-name">REZA GHATIFI</div>
     <div class="player-score">۶۷</div>
 </div>
-
 
 <div class="table-row">
     <div class="rank">۳</div>
@@ -3378,13 +3653,11 @@ class="tab-content">
     <div class="player-score">۶۱</div>
 </div>
 
-
 <div class="table-row">
     <div class="rank">۴</div>
     <div class="player-name">Mahdi</div>
     <div class="player-score">۶۰</div>
 </div>
-
 
 <div class="table-row">
     <div class="rank">۵</div>
@@ -3392,13 +3665,11 @@ class="tab-content">
     <div class="player-score">۵۷</div>
 </div>
 
-
 <div class="table-row">
     <div class="rank">۶</div>
     <div class="player-name">hey10</div>
     <div class="player-score">۵۵</div>
 </div>
-
 
 <div class="table-row">
     <div class="rank">۷</div>
@@ -3406,13 +3677,11 @@ class="tab-content">
     <div class="player-score">۵۴</div>
 </div>
 
-
 <div class="table-row">
     <div class="rank">۸</div>
     <div class="player-name">محمد خلیلاوی پور</div>
     <div class="player-score">۵۴</div>
 </div>
-
 
 <div class="table-row">
     <div class="rank">۹</div>
@@ -3420,13 +3689,11 @@ class="tab-content">
     <div class="player-score">۴۶</div>
 </div>
 
-
 <div class="table-row">
     <div class="rank">۱۰</div>
     <div class="player-name">امین دریس</div>
     <div class="player-score">۴۴</div>
 </div>
-
 
 <div class="table-row">
     <div class="rank">۱۱</div>
@@ -3434,13 +3701,11 @@ class="tab-content">
     <div class="player-score">۳۶</div>
 </div>
 
-
 <div class="table-row">
     <div class="rank">۱۲</div>
     <div class="player-name">محمد جاسمیان</div>
     <div class="player-score">۳۱</div>
 </div>
-
 
 <div class="table-row">
     <div class="rank">۱۳</div>
@@ -3563,8 +3828,6 @@ class="team-clock-status">
 <div class="battle-grid">
 
 
-<!-- TEAM 1 -->
-
 <div class="battle-team">
 
 
@@ -3614,8 +3877,6 @@ class="team-clock-status">
 
 </div>
 
-
-<!-- TEAM 2 -->
 
 <div class="battle-team">
 
@@ -3766,6 +4027,425 @@ let quizTimeLeft = 15;
 let currentQuizQuestions = [];
 
 const QUIZ_LENGTH = 15;
+
+
+/* =====================================================
+   QUIZ START TIME
+   21:00 TONIGHT
+===================================================== */
+
+let quizUnlockTimer = null;
+
+
+/*
+   ساعت مسابقه کوئیز = ۲۱:۰۰
+   بر اساس ساعت ایران
+
+   این قسمت مستقل از Countdown مسابقات است
+   و هیچ‌کدام از تایمرهای دیگر سایت را تغییر نمی‌دهد.
+*/
+
+function getIranNowParts(){
+
+    const parts =
+    new Intl.DateTimeFormat(
+        "en-US",
+        {
+            timeZone:"Asia/Tehran",
+            year:"numeric",
+            month:"2-digit",
+            day:"2-digit",
+            hour:"2-digit",
+            minute:"2-digit",
+            second:"2-digit",
+            hourCycle:"h23"
+        }
+    ).formatToParts(
+        new Date()
+    );
+
+    const result = {};
+
+    parts.forEach(
+        function(part){
+
+            if(
+                part.type !== "literal"
+            ){
+
+                result[
+                    part.type
+                ] = part.value;
+
+            }
+
+        }
+    );
+
+    return {
+
+        year:Number(result.year),
+
+        month:Number(result.month),
+
+        day:Number(result.day),
+
+        hour:Number(result.hour),
+
+        minute:Number(result.minute),
+
+        second:Number(result.second)
+
+    };
+
+}
+
+
+/*
+   ساخت Timestamp برای ساعت ۲۱:۰۰ ایران
+*/
+
+function getQuizUnlockTimestamp(){
+
+    const iran =
+    getIranNowParts();
+
+
+    /*
+       ایران در این تاریخ UTC+3:30 است.
+    */
+
+    return Date.UTC(
+        iran.year,
+        iran.month - 1,
+        iran.day,
+        17,
+        30,
+        0
+    );
+
+}
+
+
+/*
+   تبدیل اعداد به فارسی
+*/
+
+function formatQuizCountdown(
+    number
+){
+
+    return persianNumber(
+        String(
+            number
+        ).padStart(
+            2,
+            "0"
+        )
+    );
+
+}
+
+
+/*
+   بررسی اینکه کوئیز باز شده یا نه
+*/
+
+function isQuizUnlocked(){
+
+    return (
+        Date.now() >=
+        getQuizUnlockTimestamp()
+    );
+
+}
+
+
+/*
+   نمایش وضعیت کوئیز
+*/
+
+function updateQuizLock(){
+
+    const now =
+    Date.now();
+
+
+    const unlock =
+    getQuizUnlockTimestamp();
+
+
+    const distance =
+    Math.max(
+        unlock - now,
+        0
+    );
+
+
+    const button =
+    document.getElementById(
+        "quizStartButton"
+    );
+
+
+    const buttonText =
+    document.getElementById(
+        "quizStartButtonText"
+    );
+
+
+    const buttonIcon =
+    button
+    ?
+    button.querySelector("i")
+    :
+    null;
+
+
+    const hours =
+    document.getElementById(
+        "quiz-g-hours"
+    );
+
+
+    const minutes =
+    document.getElementById(
+        "quiz-g-minutes"
+    );
+
+
+    const seconds =
+    document.getElementById(
+        "quiz-g-seconds"
+    );
+
+
+    const lockMessage =
+    document.getElementById(
+        "quizLockMessage"
+    );
+
+
+    const clockTitle =
+    document.getElementById(
+        "quizClockTitle"
+    );
+
+
+    const clock =
+    document.getElementById(
+        "quizStartClock"
+    );
+
+
+    if(
+        !button ||
+        !buttonText ||
+        !hours ||
+        !minutes ||
+        !seconds
+    ){
+
+        return;
+
+    }
+
+
+    /*
+       اگر ساعت ۲۱ رسیده باشد
+    */
+
+    if(
+        distance <= 0
+    ){
+
+        hours.textContent =
+        "۰۰";
+
+        minutes.textContent =
+        "۰۰";
+
+        seconds.textContent =
+        "۰۰";
+
+
+        button.disabled = false;
+
+        button.classList.remove(
+            "locked"
+        );
+
+
+        if(buttonIcon){
+
+            buttonIcon.className =
+            "fa-solid fa-rocket";
+
+        }
+
+
+        buttonText.textContent =
+        "بدو! شروع کوئیز 🔥";
+
+
+        if(lockMessage){
+
+            lockMessage.textContent =
+            "🔥 کوئیز باز شد! بدو شرکت کن و امتیاز بگیر";
+
+        }
+
+
+        if(clockTitle){
+
+            clockTitle.textContent =
+            "کوئیز همین الان شروع شد!";
+
+        }
+
+
+        if(clock){
+
+            clock.classList.add(
+                "ready"
+            );
+
+        }
+
+
+        if(quizUnlockTimer){
+
+            clearInterval(
+                quizUnlockTimer
+            );
+
+            quizUnlockTimer = null;
+
+        }
+
+
+        return;
+
+    }
+
+
+    /*
+       هنوز قفل است
+    */
+
+    const totalSeconds =
+    Math.floor(
+        distance / 1000
+    );
+
+
+    const remainingHours =
+    Math.floor(
+        totalSeconds / 3600
+    );
+
+
+    const remainingMinutes =
+    Math.floor(
+        (
+            totalSeconds % 3600
+        ) / 60
+    );
+
+
+    const remainingSeconds =
+    totalSeconds % 60;
+
+
+    hours.textContent =
+    formatQuizCountdown(
+        remainingHours
+    );
+
+
+    minutes.textContent =
+    formatQuizCountdown(
+        remainingMinutes
+    );
+
+
+    seconds.textContent =
+    formatQuizCountdown(
+        remainingSeconds
+    );
+
+
+    button.disabled = true;
+
+    button.classList.add(
+        "locked"
+    );
+
+
+    if(buttonIcon){
+
+        buttonIcon.className =
+        "fa-solid fa-lock";
+
+    }
+
+
+    buttonText.textContent =
+    "شروع از ساعت ۲۱:۰۰";
+
+
+    if(lockMessage){
+
+        lockMessage.textContent =
+        "🔒 ورود به کوئیز تا ساعت ۲۱ بسته است";
+
+    }
+
+
+    if(clockTitle){
+
+        clockTitle.textContent =
+        "شروع کوئیز ساعت ۲۱:۰۰";
+
+    }
+
+
+    if(clock){
+
+        clock.classList.remove(
+            "ready"
+        );
+
+    }
+
+}
+
+
+/*
+   شروع شمارش معکوس کوئیز
+*/
+
+function startQuizUnlockCountdown(){
+
+    updateQuizLock();
+
+
+    clearInterval(
+        quizUnlockTimer
+    );
+
+
+    quizUnlockTimer =
+    setInterval(
+        function(){
+
+            updateQuizLock();
+
+        },
+        250
+    );
+
+}
 
 
 /* =====================================================
@@ -4110,6 +4790,21 @@ document
 ===================================================== */
 
 function startQuiz(){
+
+    /*
+       قفل امنیتی دوم:
+       حتی اگر کسی از Console یا کلیک مستقیم
+       تابع را اجرا کند، قبل از ۲۱ اجازه ورود ندارد.
+    */
+
+    if(!isQuizUnlocked()){
+
+        updateQuizLock();
+
+        return;
+
+    }
+
 
     if(!currentUsername){
 
@@ -4669,36 +5364,6 @@ function switchTab(
    MATCH DATES & COUNTDOWN
 ===================================================== */
 
-/*
-   =====================================================
-   مرجع زمانی مسابقات = ساعت ایران
-   ساعت شروع تمام بازی‌ها = ۲۲:۱۵ ایران
-   =====================================================
-
-   ۱۰ مهر ۱۴۰۵
-   = ۱ اکتبر ۲۰۲۶
-   = بازی پرتغال - دانمارک
-
-   ۱۱ مهر ۱۴۰۵
-   = ۲ اکتبر ۲۰۲۶
-   = بازی بلژیک - ترکیه
-
-   ۱۱ مهر ۱۴۰۵
-   = ۲ اکتبر ۲۰۲۶
-   = بازی فرانسه - ایتالیا
-
-
-   نکته مهم:
-
-   از Date.UTC استفاده شده تا ساعت دستگاه کاربر
-   در آلمان، ایران یا هر کشور دیگری باعث جابه‌جایی
-   Countdown نشود.
-
-   ۲۲:۱۵ ایران در این تاریخ‌ها:
-   UTC = ۱۸:۴۵
-*/
-
-
 const MATCHES = {
 
     m1: {
@@ -4814,20 +5479,9 @@ function getMatchStatus(
     );
 
 
-    /*
-       هنوز بازی شروع نشده
-    */
-
     if(
         distance > 0
     ){
-
-        /*
-           زمان ایران را برای تعیین
-           امروز / فردا محاسبه می‌کنیم.
-
-           UTC+3:30
-        */
 
         const iranOffset =
         3.5 * 60 * 60 * 1000;
@@ -4865,10 +5519,6 @@ function getMatchStatus(
         }
 
 
-        /*
-           اگر فرداست
-        */
-
         const tomorrow =
         new Date(
             iranNow.getTime()
@@ -4898,18 +5548,10 @@ function getMatchStatus(
         }
 
 
-        /*
-           برای تاریخ‌های بعدی
-        */
-
         return "پیش‌رو";
 
     }
 
-
-    /*
-       بازی شروع شده
-    */
 
     return "شروع شد";
 
@@ -5046,11 +5688,6 @@ function updateMatchCountdown(
     }
 
 
-    /*
-       اگر بازی شروع شده باشد
-       شمارش منفی نمی‌شود.
-    */
-
     if(
         distance <= 0
     ){
@@ -5072,10 +5709,6 @@ function updateMatchCountdown(
     }
 
 
-    /*
-       تبدیل فاصله به ثانیه
-    */
-
     const totalSeconds =
     Math.floor(
         distance /
@@ -5083,20 +5716,12 @@ function updateMatchCountdown(
     );
 
 
-    /*
-       روز
-    */
-
     const days =
     Math.floor(
         totalSeconds /
         86400
     );
 
-
-    /*
-       ساعت باقی‌مانده
-    */
 
     const hours =
     Math.floor(
@@ -5108,10 +5733,6 @@ function updateMatchCountdown(
     );
 
 
-    /*
-       دقیقه باقی‌مانده
-    */
-
     const minutes =
     Math.floor(
         (
@@ -5121,10 +5742,6 @@ function updateMatchCountdown(
         60
     );
 
-
-    /*
-       ثانیه
-    */
 
     const seconds =
     totalSeconds %
@@ -5178,29 +5795,15 @@ function updateMatchCountdown(
 
 function updateAllMatchCountdowns(){
 
-    /*
-       اطلاعات کارت اول
-    */
-
     updateMatchInfo(
         "m1",
         MATCHES.m1
     );
 
-
-    /*
-       اطلاعات کارت دوم
-    */
-
     updateMatchInfo(
         "m2",
         MATCHES.m2
     );
-
-
-    /*
-       اطلاعات کارت سوم
-    */
 
     updateMatchInfo(
         "m3",
@@ -5208,29 +5811,15 @@ function updateAllMatchCountdowns(){
     );
 
 
-    /*
-       Countdown بازی اول
-    */
-
     updateMatchCountdown(
         MATCHES.m1.dateUTC,
         "m1"
     );
 
-
-    /*
-       Countdown بازی دوم
-    */
-
     updateMatchCountdown(
         MATCHES.m2.dateUTC,
         "m2"
     );
-
-
-    /*
-       Countdown بازی سوم
-    */
 
     updateMatchCountdown(
         MATCHES.m3.dateUTC,
@@ -5304,26 +5893,6 @@ function getNextMatch(){
 
 function updateTeamCountdown(){
 
-    /*
-       کل‌کل تیمی همیشه به نزدیک‌ترین
-       بازی آینده وصل است.
-
-       مثال:
-
-       قبل از ۱ اکتبر ساعت ۲۲:۱۵
-       → پرتغال - دانمارک
-
-       بعد از شروع آن
-       → بلژیک - ترکیه
-
-       بعد از آن
-       → فرانسه - ایتالیا
-
-       بنابراین هیچ‌وقت شمارش به
-       تاریخ گذشته متصل نمی‌ماند.
-    */
-
-
     const nextMatch =
     getNextMatch();
 
@@ -5370,10 +5939,6 @@ function updateTeamCountdown(){
 
     }
 
-
-    /*
-       اگر همه مسابقات گذشته باشند
-    */
 
     if(!nextMatch){
 
@@ -5510,10 +6075,6 @@ function updateTeamCountdown(){
     );
 
 
-    /*
-       نمایش مسابقه بعدی
-    */
-
     status.textContent =
     "مانده تا " +
     nextMatch.home +
@@ -5577,7 +6138,7 @@ window.addEventListener(
     function(){
 
         /*
-           Quiz
+           Quiz user
         */
 
         loadUsername();
@@ -5586,18 +6147,20 @@ window.addEventListener(
 
 
         /*
-           Countdown ها بلافاصله
-           بعد از Load اجرا می‌شوند
+           Quiz countdown تا ساعت ۲۱
+        */
+
+        startQuizUnlockCountdown();
+
+
+        /*
+           Match countdowns
         */
 
         updateAllMatchCountdowns();
 
         updateTeamCountdown();
 
-
-        /*
-           هر ثانیه به‌روزرسانی
-        */
 
         setInterval(
             function(){
