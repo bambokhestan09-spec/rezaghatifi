@@ -3274,7 +3274,7 @@ class="tab-content">
         ۱۰ مهر ۱۴۰۵
     </span>
 
-    <span class="match-status">
+    <span id="m1-status" class="match-status">
         امشب
     </span>
 
@@ -3383,7 +3383,7 @@ target="_blank">
         ۱۱ مهر ۱۴۰۵
     </span>
 
-    <span class="match-status">
+    <span id="m2-status" class="match-status">
         فردا
     </span>
 
@@ -3492,7 +3492,7 @@ target="_blank">
         ۱۱ مهر ۱۴۰۵
     </span>
 
-    <span class="match-status">
+    <span id="m3-status" class="match-status">
         فردا
     </span>
 
@@ -4037,14 +4037,6 @@ const QUIZ_LENGTH = 15;
 let quizUnlockTimer = null;
 
 
-/*
-   ساعت مسابقه کوئیز = ۲۱:۰۰
-   بر اساس ساعت ایران
-
-   این قسمت مستقل از Countdown مسابقات است
-   و هیچ‌کدام از تایمرهای دیگر سایت را تغییر نمی‌دهد.
-*/
-
 function getIranNowParts(){
 
     const parts =
@@ -4101,19 +4093,10 @@ function getIranNowParts(){
 }
 
 
-/*
-   ساخت Timestamp برای ساعت ۲۱:۰۰ ایران
-*/
-
 function getQuizUnlockTimestamp(){
 
     const iran =
     getIranNowParts();
-
-
-    /*
-       ایران در این تاریخ UTC+3:30 است.
-    */
 
     return Date.UTC(
         iran.year,
@@ -4126,10 +4109,6 @@ function getQuizUnlockTimestamp(){
 
 }
 
-
-/*
-   تبدیل اعداد به فارسی
-*/
 
 function formatQuizCountdown(
     number
@@ -4147,10 +4126,6 @@ function formatQuizCountdown(
 }
 
 
-/*
-   بررسی اینکه کوئیز باز شده یا نه
-*/
-
 function isQuizUnlocked(){
 
     return (
@@ -4161,19 +4136,13 @@ function isQuizUnlocked(){
 }
 
 
-/*
-   نمایش وضعیت کوئیز
-*/
-
 function updateQuizLock(){
 
     const now =
     Date.now();
 
-
     const unlock =
     getQuizUnlockTimestamp();
-
 
     const distance =
     Math.max(
@@ -4181,18 +4150,15 @@ function updateQuizLock(){
         0
     );
 
-
     const button =
     document.getElementById(
         "quizStartButton"
     );
 
-
     const buttonText =
     document.getElementById(
         "quizStartButtonText"
     );
-
 
     const buttonIcon =
     button
@@ -4201,36 +4167,30 @@ function updateQuizLock(){
     :
     null;
 
-
     const hours =
     document.getElementById(
         "quiz-g-hours"
     );
-
 
     const minutes =
     document.getElementById(
         "quiz-g-minutes"
     );
 
-
     const seconds =
     document.getElementById(
         "quiz-g-seconds"
     );
-
 
     const lockMessage =
     document.getElementById(
         "quizLockMessage"
     );
 
-
     const clockTitle =
     document.getElementById(
         "quizClockTitle"
     );
-
 
     const clock =
     document.getElementById(
@@ -4251,10 +4211,6 @@ function updateQuizLock(){
     }
 
 
-    /*
-       اگر ساعت ۲۱ رسیده باشد
-    */
-
     if(
         distance <= 0
     ){
@@ -4268,13 +4224,11 @@ function updateQuizLock(){
         seconds.textContent =
         "۰۰";
 
-
         button.disabled = false;
 
         button.classList.remove(
             "locked"
         );
-
 
         if(buttonIcon){
 
@@ -4283,10 +4237,8 @@ function updateQuizLock(){
 
         }
 
-
         buttonText.textContent =
         "بدو! شروع کوئیز 🔥";
-
 
         if(lockMessage){
 
@@ -4295,14 +4247,12 @@ function updateQuizLock(){
 
         }
 
-
         if(clockTitle){
 
             clockTitle.textContent =
             "کوئیز همین الان شروع شد!";
 
         }
-
 
         if(clock){
 
@@ -4311,7 +4261,6 @@ function updateQuizLock(){
             );
 
         }
-
 
         if(quizUnlockTimer){
 
@@ -4323,27 +4272,20 @@ function updateQuizLock(){
 
         }
 
-
         return;
 
     }
 
-
-    /*
-       هنوز قفل است
-    */
 
     const totalSeconds =
     Math.floor(
         distance / 1000
     );
 
-
     const remainingHours =
     Math.floor(
         totalSeconds / 3600
     );
-
 
     const remainingMinutes =
     Math.floor(
@@ -4351,7 +4293,6 @@ function updateQuizLock(){
             totalSeconds % 3600
         ) / 60
     );
-
 
     const remainingSeconds =
     totalSeconds % 60;
@@ -4362,25 +4303,21 @@ function updateQuizLock(){
         remainingHours
     );
 
-
     minutes.textContent =
     formatQuizCountdown(
         remainingMinutes
     );
-
 
     seconds.textContent =
     formatQuizCountdown(
         remainingSeconds
     );
 
-
     button.disabled = true;
 
     button.classList.add(
         "locked"
     );
-
 
     if(buttonIcon){
 
@@ -4389,10 +4326,8 @@ function updateQuizLock(){
 
     }
 
-
     buttonText.textContent =
     "شروع از ساعت ۲۱:۰۰";
-
 
     if(lockMessage){
 
@@ -4401,14 +4336,12 @@ function updateQuizLock(){
 
     }
 
-
     if(clockTitle){
 
         clockTitle.textContent =
         "شروع کوئیز ساعت ۲۱:۰۰";
 
     }
-
 
     if(clock){
 
@@ -4421,19 +4354,13 @@ function updateQuizLock(){
 }
 
 
-/*
-   شروع شمارش معکوس کوئیز
-*/
-
 function startQuizUnlockCountdown(){
 
     updateQuizLock();
 
-
     clearInterval(
         quizUnlockTimer
     );
-
 
     quizUnlockTimer =
     setInterval(
@@ -4704,35 +4631,26 @@ function submitUsername(){
 
     }
 
-
     currentUsername = name;
-
 
     localStorage.setItem(
         "geda_quiz_username",
         currentUsername
     );
 
-
     document.getElementById(
         "quizUserName"
     ).textContent =
     currentUsername;
 
-
     document.getElementById(
         "quiz-login"
     ).classList.add("hidden");
-
 
     error.textContent = "";
 
 }
 
-
-/* =====================================================
-   LOAD USER
-===================================================== */
 
 function loadUsername(){
 
@@ -4740,7 +4658,6 @@ function loadUsername(){
     localStorage.getItem(
         "geda_quiz_username"
     );
-
 
     if(saved){
 
@@ -4765,10 +4682,6 @@ function loadUsername(){
 }
 
 
-/* =====================================================
-   ENTER KEY
-===================================================== */
-
 document
 .getElementById("usernameInput")
 .addEventListener(
@@ -4791,12 +4704,6 @@ document
 
 function startQuiz(){
 
-    /*
-       قفل امنیتی دوم:
-       حتی اگر کسی از Console یا کلیک مستقیم
-       تابع را اجرا کند، قبل از ۲۱ اجازه ورود ندارد.
-    */
-
     if(!isQuizUnlocked()){
 
         updateQuizLock();
@@ -4804,7 +4711,6 @@ function startQuiz(){
         return;
 
     }
-
 
     if(!currentUsername){
 
@@ -4816,18 +4722,12 @@ function startQuiz(){
 
     }
 
-
     clearInterval(quizTimer);
 
-
     quizIndex = 0;
-
     quizScore = 0;
-
     quizCorrect = 0;
-
     quizWrong = 0;
-
 
     currentQuizQuestions =
     shuffleArray(
@@ -4837,41 +4737,31 @@ function startQuiz(){
         QUIZ_LENGTH
     );
 
-
     document
     .getElementById("quizHome")
     .style.display = "none";
-
 
     document
     .getElementById("quizResult")
     .classList.remove("show");
 
-
     document
     .getElementById("quizGame")
     .classList.add("show");
-
 
     showQuestion();
 
 }
 
 
-/* =====================================================
-   SHOW QUESTION
-===================================================== */
-
 function showQuestion(){
 
     clearInterval(quizTimer);
-
 
     const question =
     currentQuizQuestions[
         quizIndex
     ];
-
 
     document
     .getElementById("quizNumber")
@@ -4881,19 +4771,16 @@ function showQuestion(){
     " از " +
     persianNumber(QUIZ_LENGTH);
 
-
     document
     .getElementById("quizScore")
     .textContent =
     "امتیاز: " +
     persianNumber(quizScore);
 
-
     document
     .getElementById("quizQuestion")
     .textContent =
     question.q;
-
 
     const options =
     document.getElementById(
@@ -4901,7 +4788,6 @@ function showQuestion(){
     );
 
     options.innerHTML = "";
-
 
     question.options.forEach(
         function(option,index){
@@ -4911,14 +4797,11 @@ function showQuestion(){
                 "button"
             );
 
-
             button.className =
             "quiz-option";
 
-
             button.textContent =
             option;
-
 
             button.onclick =
             function(){
@@ -4930,14 +4813,12 @@ function showQuestion(){
 
             };
 
-
             options.appendChild(
                 button
             );
 
         }
     );
-
 
     document
     .getElementById("quizProgress")
@@ -4948,11 +4829,9 @@ function showQuestion(){
         100
     ) + "%";
 
-
     document
     .getElementById("quizNext")
     .classList.remove("show");
-
 
     quizTimeLeft = 15;
 
@@ -4963,10 +4842,6 @@ function showQuestion(){
 }
 
 
-/* =====================================================
-   TIMER
-===================================================== */
-
 function startQuizTimer(){
 
     quizTimer =
@@ -4976,7 +4851,6 @@ function startQuizTimer(){
             quizTimeLeft--;
 
             updateTimer();
-
 
             if(quizTimeLeft <= 0){
 
@@ -4995,17 +4869,12 @@ function startQuizTimer(){
 }
 
 
-/* =====================================================
-   UPDATE TIMER
-===================================================== */
-
 function updateTimer(){
 
     const timer =
     document.getElementById(
         "quizTimer"
     );
-
 
     timer.textContent =
     persianNumber(
@@ -5014,7 +4883,6 @@ function updateTimer(){
             0
         )
     );
-
 
     if(quizTimeLeft <= 5){
 
@@ -5033,10 +4901,6 @@ function updateTimer(){
 }
 
 
-/* =====================================================
-   SELECT ANSWER
-===================================================== */
-
 function selectAnswer(
     selectedIndex,
     selectedButton
@@ -5044,18 +4908,15 @@ function selectAnswer(
 
     clearInterval(quizTimer);
 
-
     const question =
     currentQuizQuestions[
         quizIndex
     ];
 
-
     const buttons =
     document.querySelectorAll(
         ".quiz-option"
     );
-
 
     buttons.forEach(
         function(button){
@@ -5067,7 +4928,6 @@ function selectAnswer(
         }
     );
 
-
     if(
         selectedIndex ===
         question.answer
@@ -5077,9 +4937,7 @@ function selectAnswer(
             "correct"
         );
 
-
         quizCorrect++;
-
 
         quizScore +=
         100 +
@@ -5093,9 +4951,7 @@ function selectAnswer(
             "wrong"
         );
 
-
         quizWrong++;
-
 
         if(
             buttons[
@@ -5113,13 +4969,11 @@ function selectAnswer(
 
     }
 
-
     document
     .getElementById("quizScore")
     .textContent =
     "امتیاز: " +
     persianNumber(quizScore);
-
 
     document
     .getElementById("quizNext")
@@ -5128,10 +4982,6 @@ function selectAnswer(
 }
 
 
-/* =====================================================
-   TIMEOUT
-===================================================== */
-
 function timeOut(){
 
     const question =
@@ -5139,12 +4989,10 @@ function timeOut(){
         quizIndex
     ];
 
-
     const buttons =
     document.querySelectorAll(
         ".quiz-option"
     );
-
 
     buttons.forEach(
         function(button){
@@ -5155,7 +5003,6 @@ function timeOut(){
 
         }
     );
-
 
     if(
         buttons[
@@ -5171,9 +5018,7 @@ function timeOut(){
 
     }
 
-
     quizWrong++;
-
 
     document
     .getElementById("quizNext")
@@ -5182,14 +5027,9 @@ function timeOut(){
 }
 
 
-/* =====================================================
-   NEXT
-===================================================== */
-
 function nextQuestion(){
 
     quizIndex++;
-
 
     if(
         quizIndex >=
@@ -5202,30 +5042,22 @@ function nextQuestion(){
 
     }
 
-
     showQuestion();
 
 }
 
 
-/* =====================================================
-   FINISH
-===================================================== */
-
 function finishQuiz(){
 
     clearInterval(quizTimer);
-
 
     document
     .getElementById("quizGame")
     .classList.remove("show");
 
-
     document
     .getElementById("quizResult")
     .classList.add("show");
-
 
     document
     .getElementById("finalScore")
@@ -5234,14 +5066,12 @@ function finishQuiz(){
         quizScore
     );
 
-
     document
     .getElementById("correctCount")
     .textContent =
     persianNumber(
         quizCorrect
     );
-
 
     document
     .getElementById("wrongCount")
@@ -5250,13 +5080,11 @@ function finishQuiz(){
         quizWrong
     );
 
-
     document
     .getElementById("resultUser")
     .textContent =
     "بازیکن: " +
     currentUsername;
-
 
     const oldBest =
     Number(
@@ -5264,7 +5092,6 @@ function finishQuiz(){
             "geda_quiz_best_score"
         ) || 0
     );
-
 
     if(
         quizScore > oldBest
@@ -5277,15 +5104,10 @@ function finishQuiz(){
 
     }
 
-
     updateBestScore();
 
 }
 
-
-/* =====================================================
-   BEST SCORE
-===================================================== */
 
 function updateBestScore(){
 
@@ -5295,7 +5117,6 @@ function updateBestScore(){
             "geda_quiz_best_score"
         ) || 0
     );
-
 
     document
     .getElementById("bestScore")
@@ -5326,11 +5147,9 @@ function switchTab(
         }
     );
 
-
     button.classList.add(
         "active"
     );
-
 
     document
     .querySelectorAll(".tab-content")
@@ -5344,13 +5163,11 @@ function switchTab(
         }
     );
 
-
     document
     .getElementById(tabName)
     .classList.add(
         "active"
     );
-
 
     window.scrollTo({
         top:0,
@@ -5367,882 +5184,127 @@ function switchTab(
 const MATCHES = {
 
     m1: {
-
-        dateUTC:
-        Date.UTC(
-            2026,
-            9,
-            1,
-            18,
-            45,
-            0
-        ),
-
-        dateText:
-        "۱۰ مهر ۱۴۰۵",
-
-        timeText:
-        "۲۲:۱۵",
-
-        home:
-        "پرتغال",
-
-        away:
-        "دانمارک"
-
+        dateUTC: Date.UTC(2026, 9, 1, 18, 45, 0)
     },
-
-
     m2: {
-
-        dateUTC:
-        Date.UTC(
-            2026,
-            9,
-            2,
-            18,
-            45,
-            0
-        ),
-
-        dateText:
-        "۱۱ مهر ۱۴۰۵",
-
-        timeText:
-        "۲۲:۱۵",
-
-        home:
-        "بلژیک",
-
-        away:
-        "ترکیه"
-
+        dateUTC: Date.UTC(2026, 9, 2, 18, 45, 0)
     },
-
-
     m3: {
-
-        dateUTC:
-        Date.UTC(
-            2026,
-            9,
-            2,
-            18,
-            45,
-            0
-        ),
-
-        dateText:
-        "۱۱ مهر ۱۴۰۵",
-
-        timeText:
-        "۲۲:۱۵",
-
-        home:
-        "فرانسه",
-
-        away:
-        "ایتالیا"
-
+        dateUTC: Date.UTC(2026, 9, 2, 18, 45, 0)
     }
 
 };
 
 
-/* =====================================================
-   GET DISTANCE
-===================================================== */
+function updateAllCountdowns(){
 
-function getMatchDistance(
-    target
-){
+    const now = Date.now();
 
-    return (
-        target -
-        Date.now()
-    );
+    for(let id in MATCHES){
 
+        const target = MATCHES[id].dateUTC;
+        const diff = target - now;
+
+        const statusEl = document.getElementById(id + "-status");
+        if(statusEl){
+            statusEl.textContent = getMatchStatus(target);
+        }
+
+        const dEl = document.getElementById(id + "-d");
+        const hEl = document.getElementById(id + "-h");
+        const mEl = document.getElementById(id + "-m");
+        const sEl = document.getElementById(id + "-s");
+
+        if(!dEl || !hEl || !mEl || !sEl) continue;
+
+        if(diff <= 0){
+            dEl.textContent = persianNumber(0);
+            hEl.textContent = persianNumber("۰۰");
+            mEl.textContent = persianNumber("۰۰");
+            sEl.textContent = persianNumber("۰۰");
+            continue;
+        }
+
+        const totalSecs = Math.floor(diff / 1000);
+        const days = Math.floor(totalSecs / 86400);
+        const hours = Math.floor((totalSecs % 86400) / 3600);
+        const mins = Math.floor((totalSecs % 3600) / 60);
+        const secs = totalSecs % 60;
+
+        dEl.textContent = persianNumber(days);
+        hEl.textContent = formatQuizCountdown(hours);
+        mEl.textContent = formatQuizCountdown(mins);
+        sEl.textContent = formatQuizCountdown(secs);
+    }
+
+    // Team clock countdown (matches m1)
+    const teamDiff = MATCHES.m1.dateUTC - now;
+    const tdEl = document.getElementById("team-d");
+    const thEl = document.getElementById("team-h");
+    const tmEl = document.getElementById("team-m");
+    const tsEl = document.getElementById("team-s");
+
+    if(tdEl && thEl && tmEl && tsEl && teamDiff > 0){
+        const totalSecs = Math.floor(teamDiff / 1000);
+        const days = Math.floor(totalSecs / 86400);
+        const hours = Math.floor((totalSecs % 86400) / 3600);
+        const mins = Math.floor((totalSecs % 3600) / 60);
+        const secs = totalSecs % 60;
+
+        tdEl.textContent = persianNumber(days);
+        thEl.textContent = formatQuizCountdown(hours);
+        tmEl.textContent = formatQuizCountdown(mins);
+        tsEl.textContent = formatQuizCountdown(secs);
+    }
 }
 
 
-/* =====================================================
-   MATCH STATUS
-===================================================== */
-
-function getMatchStatus(
-    target
-){
-
-    const distance =
-    getMatchDistance(
-        target
-    );
-
-
-    if(
-        distance > 0
-    ){
-
-        const iranOffset =
-        3.5 * 60 * 60 * 1000;
-
-
-        const iranNow =
-        new Date(
-            Date.now() +
-            iranOffset
-        );
-
-
-        const iranTarget =
-        new Date(
-            target +
-            iranOffset
-        );
-
-
-        const sameDay =
-        iranNow.getUTCFullYear() ===
-        iranTarget.getUTCFullYear() &&
-
-        iranNow.getUTCMonth() ===
-        iranTarget.getUTCMonth() &&
-
-        iranNow.getUTCDate() ===
-        iranTarget.getUTCDate();
-
-
-        if(sameDay){
-
-            return "امشب";
-
-        }
-
-
-        const tomorrow =
-        new Date(
-            iranNow.getTime()
-        );
-
-
-        tomorrow.setUTCDate(
-            tomorrow.getUTCDate() + 1
-        );
-
-
-        const isTomorrow =
-        tomorrow.getUTCFullYear() ===
-        iranTarget.getUTCFullYear() &&
-
-        tomorrow.getUTCMonth() ===
-        iranTarget.getUTCMonth() &&
-
-        tomorrow.getUTCDate() ===
-        iranTarget.getUTCDate();
-
-
-        if(isTomorrow){
-
-            return "فردا";
-
-        }
-
-
+function getMatchStatus(target){
+    const distance = target - Date.now();
+    if(distance > 0){
         return "پیش‌رو";
-
     }
-
-
     return "شروع شد";
-
 }
 
 
 /* =====================================================
-   UPDATE MATCH INFO
+   SPLASH & WINNER MODAL CONTROL
 ===================================================== */
 
-function updateMatchInfo(
-    matchId,
-    match
-){
-
-    const cards =
-    document.querySelectorAll(
-        ".match-card"
-    );
-
-
-    const index =
-    Number(
-        matchId.replace(
-            "m",
-            ""
-        )
-    ) - 1;
-
-
-    const card =
-    cards[index];
-
-
-    if(!card){
-        return;
-    }
-
-
-    const dateElement =
-    card.querySelector(
-        ".match-date span:first-child"
-    );
-
-
-    const statusElement =
-    card.querySelector(
-        ".match-status"
-    );
-
-
-    const timeElement =
-    card.querySelector(
-        ".match-time strong"
-    );
-
-
-    if(dateElement){
-
-        dateElement.textContent =
-        match.dateText;
-
-    }
-
-
-    if(statusElement){
-
-        statusElement.textContent =
-        getMatchStatus(
-            match.dateUTC
-        );
-
-    }
-
-
-    if(timeElement){
-
-        timeElement.textContent =
-        match.timeText;
-
-    }
-
-}
-
-
-/* =====================================================
-   COUNTDOWN
-===================================================== */
-
-function updateMatchCountdown(
-    target,
-    prefix
-){
-
-    const distance =
-    getMatchDistance(
-        target
-    );
-
-
-    const day =
-    document.getElementById(
-        prefix + "-d"
-    );
-
-
-    const hour =
-    document.getElementById(
-        prefix + "-h"
-    );
-
-
-    const minute =
-    document.getElementById(
-        prefix + "-m"
-    );
-
-
-    const second =
-    document.getElementById(
-        prefix + "-s"
-    );
-
-
-    if(
-        !day ||
-        !hour ||
-        !minute ||
-        !second
-    ){
-
-        return;
-
-    }
-
-
-    if(
-        distance <= 0
-    ){
-
-        day.textContent =
-        "۰";
-
-        hour.textContent =
-        "۰۰";
-
-        minute.textContent =
-        "۰۰";
-
-        second.textContent =
-        "۰۰";
-
-        return;
-
-    }
-
-
-    const totalSeconds =
-    Math.floor(
-        distance /
-        1000
-    );
-
-
-    const days =
-    Math.floor(
-        totalSeconds /
-        86400
-    );
-
-
-    const hours =
-    Math.floor(
-        (
-            totalSeconds %
-            86400
-        ) /
-        3600
-    );
-
-
-    const minutes =
-    Math.floor(
-        (
-            totalSeconds %
-            3600
-        ) /
-        60
-    );
-
-
-    const seconds =
-    totalSeconds %
-    60;
-
-
-    day.textContent =
-    persianNumber(
-        days
-    );
-
-
-    hour.textContent =
-    persianNumber(
-        String(
-            hours
-        ).padStart(
-            2,
-            "0"
-        )
-    );
-
-
-    minute.textContent =
-    persianNumber(
-        String(
-            minutes
-        ).padStart(
-            2,
-            "0"
-        )
-    );
-
-
-    second.textContent =
-    persianNumber(
-        String(
-            seconds
-        ).padStart(
-            2,
-            "0"
-        )
-    );
-
-}
-
-
-/* =====================================================
-   UPDATE ALL MATCHES
-===================================================== */
-
-function updateAllMatchCountdowns(){
-
-    updateMatchInfo(
-        "m1",
-        MATCHES.m1
-    );
-
-    updateMatchInfo(
-        "m2",
-        MATCHES.m2
-    );
-
-    updateMatchInfo(
-        "m3",
-        MATCHES.m3
-    );
-
-
-    updateMatchCountdown(
-        MATCHES.m1.dateUTC,
-        "m1"
-    );
-
-    updateMatchCountdown(
-        MATCHES.m2.dateUTC,
-        "m2"
-    );
-
-    updateMatchCountdown(
-        MATCHES.m3.dateUTC,
-        "m3"
-    );
-
-}
-
-
-/* =====================================================
-   GET NEXT MATCH
-===================================================== */
-
-function getNextMatch(){
-
-    const now =
-    Date.now();
-
-
-    const upcoming =
-    Object.entries(
-        MATCHES
-    )
-    .filter(
-        function(
-            [
-                key,
-                match
-            ]
-        ){
-
-            return (
-                match.dateUTC >
-                now
-            );
-
+window.addEventListener("load", function(){
+
+    loadUsername();
+    updateBestScore();
+    startQuizUnlockCountdown();
+
+    // Start interval for match countdowns
+    setInterval(updateAllCountdowns, 1000);
+    updateAllCountdowns();
+
+    // Hide splash screen after 2.2 seconds
+    setTimeout(function(){
+        const splash = document.getElementById("splash-screen");
+        if(splash){
+            splash.style.opacity = "0";
+            setTimeout(function(){
+                splash.style.display = "none";
+                document.getElementById("main-content").classList.add("visible");
+                // Show winner modal after splash
+                document.getElementById("winner-modal").classList.add("show");
+            }, 700);
         }
-    )
-    .sort(
-        function(
-            a,
-            b
-        ){
+    }, 2200);
 
-            return (
-                a[1].dateUTC -
-                b[1].dateUTC
-            );
+});
 
-        }
-    );
-
-
-    if(
-        upcoming.length === 0
-    ){
-
-        return null;
-
-    }
-
-
-    return upcoming[0][1];
-
-}
-
-
-/* =====================================================
-   TEAM COUNTDOWN
-===================================================== */
-
-function updateTeamCountdown(){
-
-    const nextMatch =
-    getNextMatch();
-
-
-    const day =
-    document.getElementById(
-        "team-d"
-    );
-
-
-    const hour =
-    document.getElementById(
-        "team-h"
-    );
-
-
-    const minute =
-    document.getElementById(
-        "team-m"
-    );
-
-
-    const second =
-    document.getElementById(
-        "team-s"
-    );
-
-
-    const status =
-    document.getElementById(
-        "teamClockStatus"
-    );
-
-
-    if(
-        !day ||
-        !hour ||
-        !minute ||
-        !second ||
-        !status
-    ){
-
-        return;
-
-    }
-
-
-    if(!nextMatch){
-
-        day.textContent =
-        "۰۰";
-
-        hour.textContent =
-        "۰۰";
-
-        minute.textContent =
-        "۰۰";
-
-        second.textContent =
-        "۰۰";
-
-        status.textContent =
-        "تمام مسابقات این مرحله آغاز شده‌اند!";
-
-        return;
-
-    }
-
-
-    const distance =
-    getMatchDistance(
-        nextMatch.dateUTC
-    );
-
-
-    if(
-        distance <= 0
-    ){
-
-        day.textContent =
-        "۰۰";
-
-        hour.textContent =
-        "۰۰";
-
-        minute.textContent =
-        "۰۰";
-
-        second.textContent =
-        "۰۰";
-
-        status.textContent =
-        "سوت آغازین زده شد!";
-
-        return;
-
-    }
-
-
-    const totalSeconds =
-    Math.floor(
-        distance /
-        1000
-    );
-
-
-    const days =
-    Math.floor(
-        totalSeconds /
-        86400
-    );
-
-
-    const hours =
-    Math.floor(
-        (
-            totalSeconds %
-            86400
-        ) /
-        3600
-    );
-
-
-    const minutes =
-    Math.floor(
-        (
-            totalSeconds %
-            3600
-        ) /
-        60
-    );
-
-
-    const seconds =
-    totalSeconds %
-    60;
-
-
-    day.textContent =
-    persianNumber(
-        String(
-            days
-        ).padStart(
-            2,
-            "0"
-        )
-    );
-
-
-    hour.textContent =
-    persianNumber(
-        String(
-            hours
-        ).padStart(
-            2,
-            "0"
-        )
-    );
-
-
-    minute.textContent =
-    persianNumber(
-        String(
-            minutes
-        ).padStart(
-            2,
-            "0"
-        )
-    );
-
-
-    second.textContent =
-    persianNumber(
-        String(
-            seconds
-        ).padStart(
-            2,
-            "0"
-        )
-    );
-
-
-    status.textContent =
-    "مانده تا " +
-    nextMatch.home +
-    " 🆚 " +
-    nextMatch.away +
-    " • " +
-    nextMatch.dateText +
-    " • " +
-    nextMatch.timeText;
-
-}
-
-
-/* =====================================================
-   CLOSE MODAL
-===================================================== */
 
 function closeWinnerModal(){
-
-    document
-    .getElementById(
-        "winner-modal"
-    )
-    .classList.remove(
-        "show"
-    );
-
-
-    document.body.style.overflow =
-    "";
-
+    document.getElementById("winner-modal").classList.remove("show");
 }
-
-
-/* =====================================================
-   ESCAPE
-===================================================== */
-
-document.addEventListener(
-    "keydown",
-    function(event){
-
-        if(
-            event.key === "Escape"
-        ){
-
-            closeWinnerModal();
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   INITIALIZATION
-===================================================== */
-
-window.addEventListener(
-    "load",
-    function(){
-
-        /*
-           Quiz user
-        */
-
-        loadUsername();
-
-        updateBestScore();
-
-
-        /*
-           Quiz countdown تا ساعت ۲۱
-        */
-
-        startQuizUnlockCountdown();
-
-
-        /*
-           Match countdowns
-        */
-
-        updateAllMatchCountdowns();
-
-        updateTeamCountdown();
-
-
-        setInterval(
-            function(){
-
-                updateAllMatchCountdowns();
-
-                updateTeamCountdown();
-
-            },
-            1000
-        );
-
-
-        /*
-           Splash
-        */
-
-        setTimeout(
-            function(){
-
-                const splash =
-                document.getElementById(
-                    "splash-screen"
-                );
-
-
-                splash.style.opacity =
-                "0";
-
-
-                setTimeout(
-                    function(){
-
-                        splash.style.display =
-                        "none";
-
-
-                        document
-                        .getElementById(
-                            "main-content"
-                        )
-                        .classList.add(
-                            "visible"
-                        );
-
-                    },
-                    650
-                );
-
-            },
-            2300
-        );
-
-
-        /*
-           Winner modal
-        */
-
-        setTimeout(
-            function(){
-
-                document
-                .getElementById(
-                    "winner-modal"
-                )
-                .classList.add(
-                    "show"
-                );
-
-
-                document.body.style.overflow =
-                "hidden";
-
-            },
-            3000
-        );
-
-    }
-);
 
 </script>
 
-
 </body>
+
 </html>
