@@ -551,1460 +551,106 @@ a{
 
 
 /* =====================================================
-   QUIZ LOGIN
+   PODIUM SECTION (سکو)
 ===================================================== */
 
-#quiz-login{
-
-    position:fixed;
-    inset:0;
-
-    z-index:8000;
-
+.podium-wrap{
     display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    padding:20px;
-
-    background:
-    rgba(0,0,0,.72);
-
-    backdrop-filter:
-    blur(8px);
+    flex-direction:column;
+    gap:12px;
 }
 
-#quiz-login.hidden{
-    display:none;
-}
-
-.quiz-login-box{
-
-    width:100%;
-    max-width:420px;
-
-    position:relative;
-
-    padding:
-    25px 20px 22px;
-
-    overflow:hidden;
-
+.podium-card{
     background:#fff;
-
-    border:
-    5px solid #35b975;
-
-    border-radius:34px;
-
-    box-shadow:
-    0 30px 70px
-    rgba(0,0,0,.35);
-}
-
-.quiz-login-box::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:190px;
-    height:190px;
-
-    top:-100px;
-    left:-80px;
-
-    border-radius:50%;
-
-    background:#e9f8f0;
-}
-
-.quiz-login-box::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:150px;
-    height:150px;
-
-    right:-60px;
-    bottom:-90px;
-
-    border-radius:50%;
-
-    background:#f2faf6;
-}
-
-.login-rocket{
-
-    width:90px;
-    height:90px;
-
-    margin:0 auto 8px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    position:relative;
-    z-index:2;
-
-    background:#dff5e9;
-
-    border-radius:28px;
-}
-
-.login-rocket i{
-
-    color:#24aa6c;
-
-    font-size:48px;
-
-    transform:
-    rotate(-35deg);
-
-    filter:
-    drop-shadow(
-    0 4px 0
-    #b6dfca
-    );
-}
-
-.quiz-login-box h2{
-
-    position:relative;
-    z-index:2;
-
-    text-align:center;
-
-    color:#15925c;
-
-    font-size:23px;
-    font-weight:900;
-}
-
-.quiz-login-box p{
-
-    position:relative;
-    z-index:2;
-
-    margin:
-    6px 0 18px;
-
-    text-align:center;
-
-    color:#777;
-
-    font-size:13px;
-}
-
-.username-input{
-
-    width:100%;
-    height:54px;
-
-    position:relative;
-    z-index:2;
-
-    padding:
-    0 16px;
-
-    outline:none;
-
-    border:
-    2px solid #d6e9df;
-
-    border-radius:16px;
-
-    background:#f9fcfa;
-
-    font-size:15px;
-
-    transition:.2s;
-}
-
-.username-input:focus{
-
-    border-color:#35b975;
-
-    box-shadow:
-    0 0 0 4px
-    rgba(53,185,117,.12);
-}
-
-.login-submit{
-
-    width:100%;
-    height:53px;
-
-    position:relative;
-    z-index:2;
-
-    margin-top:12px;
-
-    color:#fff;
-
-    background:#35b975;
-
-    border-radius:16px;
-
-    font-size:15px;
-    font-weight:900;
-
-    box-shadow:
-    0 6px 0 #218c57;
-}
-
-.login-submit:active{
-
-    transform:translateY(3px);
-
-    box-shadow:
-    0 3px 0 #218c57;
-}
-
-.login-error{
-
-    min-height:18px;
-
-    margin-top:8px;
-
-    text-align:center;
-
-    color:#e74c3c;
-
-    font-size:12px;
-}
-
-
-/* =====================================================
-   QUIZ POSTER
-===================================================== */
-
-.quiz-poster{
-
-    overflow:hidden;
-
-    background:#fff;
-
-    border:
-    1px solid
-    rgba(255,255,255,.7);
-
-    border-radius:32px;
-
-    box-shadow:
-    0 18px 40px
-    rgba(0,0,0,.18);
-}
-
-.quiz-poster-top{
-
-    height:115px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:#fff;
-}
-
-.quiz-poster-top::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:230px;
-    height:40px;
-
-    top:5px;
-    left:-35px;
-
-    background:#35b975;
-
-    transform:
-    rotate(-52deg);
-}
-
-.quiz-poster-top::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:230px;
-    height:42px;
-
-    top:-45px;
-    right:-35px;
-
-    background:#35b975;
-
-    transform:
-    rotate(-52deg);
-}
-
-.quiz-school-mark{
-
-    position:absolute;
-
-    top:15px;
-    right:17px;
-
-    z-index:2;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:7px;
-
-    color:#35b975;
-
-    font-size:12px;
-    font-weight:900;
-}
-
-.quiz-school-mark i{
-    font-size:23px;
-}
-
-.quiz-poster-title{
-
-    position:absolute;
-
-    left:18px;
-    right:18px;
-    bottom:14px;
-
-    z-index:2;
-
-    display:flex;
-
-    align-items:flex-end;
-    justify-content:space-between;
-}
-
-.quiz-poster-title h1{
-
-    color:#35b975;
-
-    font-size:29px;
-    font-weight:900;
-
-    line-height:1.1;
-}
-
-.quiz-poster-title span{
-
-    color:#111;
-
-    font-size:10px;
-    font-weight:800;
-}
-
-
-/* =====================================================
-   QUIZ CARTOON
-===================================================== */
-
-.quiz-cartoon{
-
-    min-height:285px;
-
-    position:relative;
-
-    margin:0 15px;
-
-    overflow:hidden;
-
-    background:#f4f4f4;
-
-    border:
-    1px solid #e3e3e3;
-
-    border-radius:24px;
-}
-
-.quiz-speech{
-
-    position:absolute;
-
-    top:15px;
-    left:50%;
-
-    width:88%;
-
-    transform:
-    translateX(-50%);
-
-    z-index:5;
-
-    padding:
-    13px 10px 15px;
-
-    text-align:center;
-
-    background:#fff;
-
-    border:
-    4px solid #c9c9c9;
-
-    border-radius:25px;
-}
-
-.quiz-speech::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-    bottom:-18px;
-
-    width:29px;
-    height:29px;
-
-    transform:
-    translateX(-50%)
-    rotate(45deg);
-
-    background:#fff;
-
-    border-right:
-    4px solid #c9c9c9;
-
-    border-bottom:
-    4px solid #c9c9c9;
-}
-
-.quiz-speech .green{
-
-    display:block;
-
-    color:#35b975;
-
-    font-size:22px;
-    font-weight:900;
-}
-
-.quiz-speech .black{
-
-    display:block;
-
-    margin-top:2px;
-
-    color:#111;
-
-    font-size:18px;
-    font-weight:900;
-}
-
-.quiz-character{
-
-    width:160px;
-    height:115px;
-
-    position:absolute;
-
-    bottom:38px;
-    left:50%;
-
-    z-index:3;
-
-    transform:
-    translateX(-50%);
-
-    background:#35b975;
-
-    border-radius:
-    75px 75px 45px 45px;
-
-    box-shadow:
-    inset -12px -10px 0
-    rgba(0,0,0,.06),
-
-    0 8px 0
-    rgba(0,0,0,.08);
-}
-
-.quiz-character::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:100px;
-    height:52px;
-
-    left:30px;
-    top:38px;
-
-    background:#78d89f;
-
-    border-radius:50%;
-}
-
-.eye{
-
-    width:42px;
-    height:42px;
-
-    position:absolute;
-
-    top:30px;
-
-    z-index:2;
-
-    background:#fff;
-
-    border-radius:50%;
-}
-
-.eye::after{
-
-    content:"";
-
-    width:17px;
-    height:22px;
-
-    position:absolute;
-
-    top:10px;
-
-    background:#222;
-
-    border-radius:50%;
-}
-
-.eye.left{
-    left:30px;
-}
-
-.eye.left::after{
-    right:5px;
-}
-
-.eye.right{
-    right:30px;
-}
-
-.eye.right::after{
-    left:5px;
-}
-
-.owl-beak{
-
-    width:25px;
-    height:20px;
-
-    position:absolute;
-
-    top:60px;
-    left:68px;
-
-    z-index:4;
-
-    background:#f49d17;
-
-    clip-path:
-    polygon(
-        50% 0,
-        100% 100%,
-        0 100%
-    );
-}
-
-.owl-wing{
-
-    width:53px;
-    height:76px;
-
-    position:absolute;
-
-    bottom:0;
-
-    background:#28aa69;
-
-    border-radius:50%;
-}
-
-.owl-wing.left{
-
-    left:-22px;
-
-    transform:
-    rotate(20deg);
-}
-
-.owl-wing.right{
-
-    right:-22px;
-
-    transform:
-    rotate(-20deg);
-}
-
-.jelly-icon{
-
-    width:48px;
-    height:48px;
-
-    position:absolute;
-
-    z-index:6;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    color:#35b975;
-
-    background:#fff;
-
-    border:
-    3px solid #35b975;
-
-    border-radius:15px;
-
-    box-shadow:
-    0 6px 0
-    rgba(53,185,117,.18);
-}
-
-.jelly-icon i{
-    font-size:22px;
-}
-
-.jelly-icon.question{
-
-    top:77px;
-    left:18px;
-
-    transform:
-    rotate(-12deg);
-}
-
-.jelly-icon.book{
-
-    right:18px;
-    bottom:48px;
-
-    transform:
-    rotate(12deg);
-}
-
-.jelly-icon.pencil{
-
-    left:28px;
-    bottom:70px;
-
-    transform:
-    rotate(-25deg);
-}
-
-.quiz-floor{
-
-    position:absolute;
-
-    left:0;
-    right:0;
-    bottom:0;
-
-    height:74px;
-
-    background:
-    radial-gradient(
-        circle at 20% 30%,
-        #cfcfcf 0 3px,
-        transparent 4px
-    ),
-    radial-gradient(
-        circle at 60% 60%,
-        #cfcfcf 0 2px,
-        transparent 3px
-    ),
-    radial-gradient(
-        circle at 80% 25%,
-        #d5d5d5 0 4px,
-        transparent 5px
-    ),
-    #c7c7c7;
-}
-
-
-/* =====================================================
-   QUIZ INFO
-===================================================== */
-
-.quiz-info{
-    padding:18px 17px 20px;
-}
-
-.quiz-user{
-
-    display:flex;
-
-    align-items:center;
-    justify-content:space-between;
-
-    margin-bottom:13px;
-}
-
-.quiz-user-name{
-
-    color:#333;
-
-    font-size:13px;
-    font-weight:900;
-}
-
-.quiz-user-name span{
-    color:#35b975;
-}
-
-.quiz-user-badge{
-
-    padding:
-    6px 10px;
-
-    color:#15925c;
-
-    background:#eaf8f0;
-
-    border-radius:50px;
-
-    font-size:10px;
-    font-weight:900;
-}
-
-
-/* =====================================================
-   NEW QUIZ GLASS COUNTDOWN
-===================================================== */
-
-.quiz-start-clock{
-
-    position:relative;
-
-    overflow:hidden;
-
-    padding:18px 15px 17px;
-
-    margin-bottom:13px;
-
-    text-align:center;
-
-    color:#fff;
-
-    background:
-    linear-gradient(
-        135deg,
-        rgba(15,54,39,.88),
-        rgba(18,124,77,.88)
-    );
-
-    border:
-    1px solid rgba(255,255,255,.38);
-
     border-radius:27px;
-
-    box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.35),
-    0 12px 28px rgba(0,0,0,.16);
-
-    backdrop-filter:
-    blur(16px);
-
-    -webkit-backdrop-filter:
-    blur(16px);
+    padding:20px 15px;
+    box-shadow:0 15px 32px rgba(0,0,0,.15);
 }
 
-.quiz-start-clock::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:130px;
-    height:130px;
-
-    top:-75px;
-    left:-55px;
-
-    border-radius:50%;
-
-    background:
-    rgba(255,255,255,.13);
-
-    filter:blur(2px);
+.podium-title-box{
+    text-align:center;
+    margin-bottom:20px;
 }
 
-.quiz-start-clock::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:110px;
-    height:110px;
-
-    right:-45px;
-    bottom:-65px;
-
-    border-radius:50%;
-
-    background:
-    rgba(255,255,255,.10);
-}
-
-.quiz-clock-heading{
-
-    position:relative;
-    z-index:2;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    gap:8px;
-
-    font-size:15px;
+.podium-title-box h3{
+    color:#15925c;
+    font-size:18px;
     font-weight:900;
 }
 
-.quiz-clock-heading i{
-
-    width:31px;
-    height:31px;
-
+.podium-container{
     display:flex;
-
-    align-items:center;
+    align-items:flex-end;
     justify-content:center;
-
-    color:#168c59;
-
-    background:rgba(255,255,255,.95);
-
-    border-radius:10px;
-
-    font-size:16px;
+    gap:10px;
+    padding-top:15px;
 }
 
-.quiz-clock-message{
-
-    position:relative;
-    z-index:2;
-
-    margin-top:7px;
-
-    color:rgba(255,255,255,.82);
-
-    font-size:10px;
-    font-weight:600;
+.podium-col{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
-.quiz-glass-countdown{
-
-    position:relative;
-    z-index:2;
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:7px;
-
-    margin-top:13px;
-}
-
-.quiz-glass-box{
-
-    min-width:0;
-
-    padding:10px 4px 8px;
-
-    background:
-    rgba(255,255,255,.13);
-
-    border:
-    1px solid rgba(255,255,255,.25);
-
-    border-radius:17px;
-
-    box-shadow:
-    inset 0 1px 0
-    rgba(255,255,255,.2),
-
-    0 5px 15px
-    rgba(0,0,0,.08);
-
-    backdrop-filter:
-    blur(12px);
-
-    -webkit-backdrop-filter:
-    blur(12px);
-}
-
-.quiz-glass-box strong{
-
-    display:block;
-
-    font-size:25px;
-    font-weight:900;
-
-    line-height:1;
-}
-
-.quiz-glass-box span{
-
-    display:block;
-
-    margin-top:5px;
-
-    color:
-    rgba(255,255,255,.72);
-
-    font-size:8px;
-    font-weight:700;
-}
-
-.quiz-clock-date{
-
-    position:relative;
-    z-index:2;
-
-    margin-top:10px;
-
-    color:#fff;
-
-    font-size:10px;
-    font-weight:700;
-}
-
-.quiz-lock-message{
-
-    position:relative;
-    z-index:2;
-
-    margin-top:10px;
-
-    padding:9px 10px;
-
-    color:#fff;
-
-    background:
-    rgba(0,0,0,.17);
-
-    border:
-    1px solid
-    rgba(255,255,255,.16);
-
-    border-radius:13px;
-
+.podium-user{
     font-size:11px;
+    font-weight:900;
+    color:#333;
+    margin-bottom:6px;
+    text-align:center;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    max-width:100px;
+}
+
+.podium-score-badge{
+    font-size:10px;
     font-weight:800;
-}
-
-.quiz-unlocked{
-
-    display:none;
-}
-
-.quiz-start-clock.ready .quiz-lock-message{
-
-    background:
-    rgba(255,255,255,.17);
-}
-
-
-/* =====================================================
-   QUIZ STAT GRID
-===================================================== */
-
-.quiz-stat-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:8px;
-
-    margin-bottom:14px;
-}
-
-.quiz-stat{
-
-    padding:11px 5px;
-
-    text-align:center;
-
-    background:#eaf8f0;
-
-    border-radius:17px;
-}
-
-.quiz-stat i{
-
-    color:#35b975;
-
-    font-size:18px;
-}
-
-.quiz-stat strong{
-
-    display:block;
-
-    margin-top:4px;
-
-    font-size:14px;
-}
-
-.quiz-stat small{
-
-    color:#777;
-
-    font-size:9px;
-}
-
-.quiz-start-button{
-
-    width:100%;
-    height:58px;
-
-    color:#fff;
-
-    background:#35b975;
-
-    border-radius:19px;
-
-    font-size:17px;
-    font-weight:900;
-
-    box-shadow:
-    0 7px 0 #218c57;
-
-    transition:.2s;
-}
-
-.quiz-start-button i{
-    margin-left:6px;
-}
-
-.quiz-start-button:active{
-
-    transform:
-    translateY(4px);
-
-    box-shadow:
-    0 3px 0 #218c57;
-}
-
-.quiz-start-button.locked{
-
-    color:#a4aaa7;
-
-    background:#d9dedb;
-
-    box-shadow:
-    0 7px 0 #b9bfbc;
-
-    cursor:not-allowed;
-
-    transform:none;
-}
-
-.quiz-start-button.locked i{
-    color:#8d9691;
-}
-
-.best-score{
-
-    margin-top:11px;
-
-    text-align:center;
-
-    color:#777;
-
-    font-size:11px;
-}
-
-.best-score strong{
-    color:#35b975;
-}
-
-
-/* =====================================================
-   QUIZ GAME
-===================================================== */
-
-.quiz-game-card{
-    display:none;
-}
-
-.quiz-game-card.show{
-    display:block;
-}
-
-.quiz-game{
-
-    overflow:hidden;
-
-    background:#fff;
-
-    border-radius:30px;
-
-    box-shadow:
-    0 18px 40px
-    rgba(0,0,0,.18);
-}
-
-.quiz-game-head{
-
-    padding:14px;
-
-    color:#fff;
-
-    background:#35b975;
-}
-
-.quiz-game-top{
-
-    display:flex;
-
-    align-items:center;
-    justify-content:space-between;
-}
-
-.quiz-number{
-
-    font-size:13px;
-    font-weight:900;
-}
-
-.quiz-score{
-
-    padding:
-    6px 10px;
-
-    background:
-    rgba(255,255,255,.2);
-
-    border-radius:50px;
-
-    font-size:12px;
-    font-weight:900;
-}
-
-.quiz-progress{
-
-    height:7px;
-
-    margin-top:11px;
-
-    overflow:hidden;
-
-    background:
-    rgba(255,255,255,.25);
-
-    border-radius:50px;
-}
-
-.quiz-progress-bar{
-
-    width:0;
-    height:100%;
-
-    background:#fff;
-
-    border-radius:50px;
-
-    transition:.3s;
-}
-
-.quiz-question-area{
-    padding:20px 17px;
-}
-
-.quiz-timer-row{
-
-    display:flex;
-
-    justify-content:center;
-
-    margin-bottom:14px;
-}
-
-.quiz-timer{
-
-    width:73px;
-    height:73px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
     color:#15925c;
-
-    background:#fff;
-
-    border:
-    6px solid #e4f4eb;
-
-    border-radius:50%;
-
-    font-size:23px;
-    font-weight:900;
-}
-
-.quiz-timer.warning{
-
-    color:#e74c3c;
-
-    border-color:#fde1dc;
-
-    animation:
-    timerPulse .5s
-    infinite alternate;
-}
-
-@keyframes timerPulse{
-
-    to{
-        transform:scale(1.06);
-    }
-
-}
-
-.quiz-question{
-
-    padding:20px 14px;
-
-    margin-bottom:14px;
-
-    text-align:center;
-
-    color:#111;
-
-    background:#f5faf7;
-
-    border:
-    2px solid #e0eee7;
-
-    border-radius:22px;
-
-    font-size:18px;
-    font-weight:900;
-
-    line-height:1.8;
-}
-
-.quiz-options{
-
-    display:grid;
-
-    gap:9px;
-}
-
-.quiz-option{
-
-    width:100%;
-    min-height:52px;
-
-    padding:10px 13px;
-
-    text-align:right;
-
-    color:#222;
-
-    background:#fff;
-
-    border:
-    2px solid #e3e8e5;
-
-    border-radius:17px;
-
-    font-size:14px;
-    font-weight:700;
-
-    transition:.2s;
-}
-
-.quiz-option:hover{
-
-    background:#f4fbf7;
-
-    border-color:#35b975;
-}
-
-.quiz-option.correct{
-
-    color:#128350;
-
-    background:#e8f8ef;
-
-    border-color:#35b975;
-}
-
-.quiz-option.wrong{
-
-    color:#d63b2d;
-
-    background:#fff0ed;
-
-    border-color:#e74c3c;
-}
-
-.quiz-option.disabled{
-    pointer-events:none;
-}
-
-.quiz-next{
-
-    width:100%;
-    height:51px;
-
-    display:none;
-
-    margin-top:13px;
-
-    color:#fff;
-
-    background:#35b975;
-
-    border-radius:16px;
-
-    font-weight:900;
-}
-
-.quiz-next.show{
-    display:block;
-}
-
-
-/* =====================================================
-   RESULT
-===================================================== */
-
-.quiz-result{
-
-    display:none;
-
-    padding:30px 20px;
-
-    text-align:center;
-
-    background:#fff;
-
-    border-radius:30px;
-
-    box-shadow:
-    0 18px 40px
-    rgba(0,0,0,.18);
-}
-
-.quiz-result.show{
-    display:block;
-}
-
-.result-trophy{
-
-    width:92px;
-    height:92px;
-
-    margin:0 auto 13px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
     background:#eaf8f0;
-
-    border-radius:50%;
-
-    font-size:45px;
+    padding:3px 8px;
+    border-radius:20px;
+    margin-bottom:8px;
 }
 
-.quiz-result h2{
-
-    color:#15925c;
-
-    font-size:22px;
-    font-weight:900;
-}
-
-.final-score{
-
-    margin:10px 0;
-
-    color:#35b975;
-
-    font-size:45px;
-    font-weight:900;
-}
-
-.result-user{
-
-    color:#777;
-
-    font-size:13px;
-}
-
-.result-stats{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:8px;
-
-    margin:18px 0;
-}
-
-.result-stat{
-
-    padding:13px;
-
-    background:#f4f7f5;
-
-    border-radius:17px;
-}
-
-.result-stat strong{
-
-    display:block;
-
-    font-size:18px;
-}
-
-.result-stat small{
-    color:#777;
-}
-
-.replay-button{
-
+.podium-pillar{
     width:100%;
-    height:52px;
-
+    border-radius:16px 16px 0 0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    padding-top:12px;
     color:#fff;
-
-    background:#35b975;
-
-    border-radius:16px;
-
     font-weight:900;
+    box-shadow:inset 0 4px 6px rgba(255,255,255,.2);
+}
+
+.podium-pillar.first{
+    height:130px;
+    background:linear-gradient(135deg, #f1c40f, #d4ac0d);
+}
+
+.podium-pillar.second{
+    height:105px;
+    background:linear-gradient(135deg, #95a5a6, #7f8c8d);
+}
+
+.podium-pillar.third{
+    height:85px;
+    background:linear-gradient(135deg, #e67e22, #d35400);
+}
+
+.podium-rank-num{
+    font-size:18px;
+    text-shadow:0 2px 4px rgba(0,0,0,.2);
+}
+
+.podium-medal-icon{
+    font-size:14px;
+    margin-top:2px;
 }
 
 
@@ -2297,156 +943,6 @@ a{
 
 
 /* =====================================================
-   TEAM BATTLE
-===================================================== */
-
-.team-countdown-card{
-
-    padding:17px;
-
-    margin-bottom:13px;
-
-    text-align:center;
-
-    background:#fff;
-
-    border-radius:25px;
-
-    box-shadow:
-    0 13px 30px
-    rgba(0,0,0,.15);
-}
-
-.team-countdown-title{
-
-    color:#666;
-
-    font-size:12px;
-    font-weight:800;
-}
-
-.team-clock{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:7px;
-
-    margin:13px 0 7px;
-
-    direction:ltr;
-}
-
-.team-clock-box{
-
-    min-width:55px;
-
-    padding:8px 10px;
-
-    color:#fff;
-
-    background:#111;
-
-    border-radius:13px;
-}
-
-.team-clock-box strong{
-
-    display:block;
-
-    font-size:19px;
-}
-
-.team-clock-box span{
-
-    color:#bbb;
-
-    font-size:8px;
-}
-
-.team-clock-status{
-
-    color:#35b975;
-
-    font-size:10px;
-    font-weight:900;
-}
-
-.battle-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:10px;
-}
-
-.battle-team{
-
-    padding:14px 10px;
-
-    background:#fff;
-
-    border-radius:23px;
-
-    box-shadow:
-    0 12px 25px
-    rgba(0,0,0,.13);
-}
-
-.battle-team-head{
-
-    padding-bottom:12px;
-
-    text-align:center;
-
-    border-bottom:
-    1px solid #eee;
-}
-
-.battle-team-head h3{
-
-    font-size:13px;
-    font-weight:900;
-}
-
-.team-total{
-
-    margin-top:4px;
-
-    color:#35b975;
-
-    font-size:26px;
-    font-weight:900;
-}
-
-.player-line{
-
-    display:flex;
-
-    align-items:center;
-    justify-content:space-between;
-
-    padding:9px 2px;
-
-    border-bottom:
-    1px solid #f0f0f0;
-
-    font-size:10px;
-}
-
-.player-line:last-child{
-    border-bottom:0;
-}
-
-.player-line strong{
-    color:#15925c;
-}
-
-
-/* =====================================================
    BOTTOM NAV
 ===================================================== */
 
@@ -2473,7 +969,7 @@ a{
     display:grid;
 
     grid-template-columns:
-    repeat(4,1fr);
+    repeat(3,1fr);
 
     padding:5px;
 
@@ -2534,28 +1030,6 @@ a{
 ===================================================== */
 
 @media(max-width:380px){
-
-    .quiz-poster-title h1{
-        font-size:25px;
-    }
-
-    .quiz-speech .green{
-        font-size:20px;
-    }
-
-    .quiz-speech .black{
-        font-size:16px;
-    }
-
-    .quiz-character{
-        transform:
-        translateX(-50%)
-        scale(.9);
-
-        transform-origin:
-        bottom center;
-    }
-
     .match-main{
         grid-template-columns:
         1fr 60px 1fr;
@@ -2564,11 +1038,6 @@ a{
     .cd-box{
         min-width:38px;
     }
-
-    .quiz-glass-box strong{
-        font-size:21px;
-    }
-
 }
 
 </style>
@@ -2636,21 +1105,17 @@ a{
 
         <div class="winner-message">
 
-            ⚔️ شروع رقابت‌های تیمی
+            ⚔️ مسابقات لیگ ملت‌های اروپا
 
             <br>
 
             <strong>
-                جماعت بی پولا 🆚 اتحاد بدبختا
+                پرتغال 🆚 نروژ  |  آلمان 🆚 یونان
             </strong>
 
             <br>
 
-            هفته هفتم لیگ پیش‌بینی‌ها
-
-            <br>
-
-            مسابقات اروپایی و ملی
+            هفته هفتم لیگ پیش‌‌بینی‌ها
 
             <br>
 
@@ -2676,55 +1141,6 @@ a{
 
 
 <!-- =====================================================
-     QUIZ LOGIN
-===================================================== -->
-
-<div id="quiz-login">
-
-    <div class="quiz-login-box">
-
-        <div class="login-rocket">
-
-            <i class="fa-solid fa-rocket"></i>
-
-        </div>
-
-        <h2>
-            آماده‌ای برای کوئیز؟
-        </h2>
-
-        <p>
-            قبل از شروع یک نام کاربری انتخاب کن
-        </p>
-
-        <input
-            id="usernameInput"
-            class="username-input"
-            type="text"
-            maxlength="20"
-            autocomplete="off"
-            placeholder="نام کاربری خودت را وارد کن..."
-        >
-
-        <button
-            class="login-submit"
-            onclick="submitUsername()">
-
-            ورود به کوئیز 🚀
-
-        </button>
-
-        <div
-            id="loginError"
-            class="login-error">
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
      MAIN
 ===================================================== -->
 
@@ -2732,11 +1148,11 @@ a{
 
 
 <!-- =====================================================
-     QUIZ
+     PODIUM (سکو)
 ===================================================== -->
 
 <section
-id="quiz"
+id="podium"
 class="tab-content active">
 
 
@@ -2744,492 +1160,64 @@ class="tab-content active">
 
     <div class="section-title">
 
-        <i class="fa-solid fa-rocket"></i>
+        <i class="fa-solid fa-ranking-star"></i>
 
-        کوئیزگدا
+        سکوی افتخارات
 
     </div>
 
     <div class="section-badge">
-        QUIZ
+        PODIUM
     </div>
 
 </div>
 
 
-<!-- QUIZ HOME -->
-
-<div
-id="quizHome"
-class="quiz-page">
-
-<div class="quiz-poster">
-
-
-<div class="quiz-poster-top">
-
-    <div class="quiz-school-mark">
-
-        <i class="fa-solid fa-graduation-cap"></i>
-
-        GEDA QUIZ
-
-    </div>
-
-
-    <div class="quiz-poster-title">
-
-        <h1>
-            QUIZ GEDA
-        </h1>
-
-        <span>
-            GENERAL KNOWLEDGE
-        </span>
-
-    </div>
-
-</div>
-
-
-<div class="quiz-cartoon">
-
-
-<div class="quiz-speech">
-
-    <span class="green">
-        اطلاعات عمومی
-    </span>
-
-    <span class="black">
-        WE NEED YOU!!!!!
-    </span>
-
-</div>
-
-
-<div class="jelly-icon question">
-
-    <i class="fa-solid fa-circle-question"></i>
-
-</div>
-
-
-<div class="jelly-icon book">
-
-    <i class="fa-solid fa-book-open"></i>
-
-</div>
-
-
-<div class="jelly-icon pencil">
-
-    <i class="fa-solid fa-pencil"></i>
-
-</div>
-
-
-<div class="quiz-character">
-
-    <div class="eye left"></div>
-
-    <div class="eye right"></div>
-
-    <div class="owl-beak"></div>
-
-    <div class="owl-wing left"></div>
-
-    <div class="owl-wing right"></div>
-
-</div>
-
-
-<div class="quiz-floor"></div>
-
-
-</div>
-
-
-<div class="quiz-info">
-
-
-<div class="quiz-user">
-
-    <div class="quiz-user-name">
-
-        بازیکن:
-
-        <span id="quizUserName">
-            مهمان
-        </span>
-
-    </div>
-
-    <div class="quiz-user-badge">
-        فصل دوم
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     QUIZ COUNTDOWN - 21:00
-===================================================== -->
-
-<div
-    id="quizStartClock"
-    class="quiz-start-clock">
-
-    <div class="quiz-clock-heading">
-
-        <i class="fa-regular fa-clock"></i>
-
-        <span id="quizClockTitle">
-            شروع کوئیز ساعت ۲۱:۰۰
-        </span>
-
-    </div>
-
-
-    <div class="quiz-clock-message">
-
-        شمارش معکوس تا شروع مسابقه
-
-    </div>
-
-
-    <div class="quiz-glass-countdown">
-
-
-        <div class="quiz-glass-box">
-
-            <strong id="quiz-g-hours">
-                ۰۰
-            </strong>
-
-            <span>
-                ساعت
-            </span>
+<div class="podium-wrap">
+
+    <div class="podium-card">
+
+        <div class="podium-title-box">
+            <h3>افتخارات هفته ششم</h3>
+        </div>
+
+        <div class="podium-container">
+
+            <!-- دومین نفر: خلیلاوی -->
+            <div class="podium-col">
+                <div class="podium-user" title="خلیلاوی">خلیلاوی</div>
+                <div class="podium-score-badge">۹ امتیاز</div>
+                <div class="podium-pillar second">
+                    <span class="podium-rank-num">۲</span>
+                    <i class="fa-solid fa-medal podium-medal-icon"></i>
+                </div>
+            </div>
+
+            <!-- اولین نفر: پیرا -->
+            <div class="podium-col">
+                <div class="podium-user" title="پیرا">پیرا</div>
+                <div class="podium-score-badge">۱۲ امتیاز</div>
+                <div class="podium-pillar first">
+                    <span class="podium-rank-num">۱</span>
+                    <i class="fa-solid fa-trophy podium-medal-icon"></i>
+                </div>
+            </div>
+
+            <!-- سومین نفر: نعیمی -->
+            <div class="podium-col">
+                <div class="podium-user" title="نعیمی">نعیمی</div>
+                <div class="podium-score-badge">۹ امتیاز</div>
+                <div class="podium-pillar third">
+                    <span class="podium-rank-num">۳</span>
+                    <i class="fa-solid fa-award podium-medal-icon"></i>
+                </div>
+            </div>
 
         </div>
 
-
-        <div class="quiz-glass-box">
-
-            <strong id="quiz-g-minutes">
-                ۰۰
-            </strong>
-
-            <span>
-                دقیقه
-            </span>
-
-        </div>
-
-
-        <div class="quiz-glass-box">
-
-            <strong id="quiz-g-seconds">
-                ۰۰
-            </strong>
-
-            <span>
-                ثانیه
-            </span>
-
-        </div>
-
-
-    </div>
-
-
-    <div
-        id="quizClockDate"
-        class="quiz-clock-date">
-
-        امروز ساعت ۲۱:۰۰
-
-    </div>
-
-
-    <div
-        id="quizLockMessage"
-        class="quiz-lock-message">
-
-        🔒 ورود به کوئیز تا ساعت ۲۱ بسته است
-
     </div>
 
 </div>
-
-
-<div class="quiz-stat-grid">
-
-
-<div class="quiz-stat">
-
-    <i class="fa-solid fa-list-ol"></i>
-
-    <strong>
-        ۱۵
-    </strong>
-
-    <small>
-        سؤال
-    </small>
-
-</div>
-
-
-<div class="quiz-stat">
-
-    <i class="fa-regular fa-clock"></i>
-
-    <strong>
-        ۱۵
-    </strong>
-
-    <small>
-        ثانیه
-    </small>
-
-</div>
-
-
-<div class="quiz-stat">
-
-    <i class="fa-solid fa-star"></i>
-
-    <strong>
-        ۱۰۰۰
-    </strong>
-
-    <small>
-        امتیاز
-    </small>
-
-</div>
-
-
-</div>
-
-
-<button
-id="quizStartButton"
-class="quiz-start-button locked"
-onclick="startQuiz()"
-disabled>
-
-<i class="fa-solid fa-lock"></i>
-
-<span id="quizStartButtonText">
-    شروع از ساعت ۲۱:۰۰
-</span>
-
-</button>
-
-
-<div class="best-score">
-
-    بهترین امتیاز:
-
-    <strong id="bestScore">
-        ۰
-    </strong>
-
-</div>
-
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =====================================================
-     QUIZ GAME
-===================================================== -->
-
-<div
-id="quizGame"
-class="quiz-game-card">
-
-
-<div class="quiz-game">
-
-
-<div class="quiz-game-head">
-
-
-<div class="quiz-game-top">
-
-    <div
-    id="quizNumber"
-    class="quiz-number">
-
-        سؤال ۱ از ۱۵
-
-    </div>
-
-
-    <div
-    id="quizScore"
-    class="quiz-score">
-
-        امتیاز: ۰
-
-    </div>
-
-</div>
-
-
-<div class="quiz-progress">
-
-    <div
-    id="quizProgress"
-    class="quiz-progress-bar">
-    </div>
-
-</div>
-
-
-</div>
-
-
-<div class="quiz-question-area">
-
-
-<div class="quiz-timer-row">
-
-    <div
-    id="quizTimer"
-    class="quiz-timer">
-
-        ۱۵
-
-    </div>
-
-</div>
-
-
-<div
-id="quizQuestion"
-class="quiz-question">
-
-    سؤال
-
-</div>
-
-
-<div
-id="quizOptions"
-class="quiz-options">
-</div>
-
-
-<button
-id="quizNext"
-class="quiz-next"
-onclick="nextQuestion()">
-
-    سؤال بعدی
-
-    <i class="fa-solid fa-arrow-left"></i>
-
-</button>
-
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =====================================================
-     QUIZ RESULT
-===================================================== -->
-
-<div
-id="quizResult"
-class="quiz-result">
-
-
-<div class="result-trophy">
-    🏆
-</div>
-
-<h2>
-    مسابقه تمام شد!
-</h2>
-
-<div
-id="resultUser"
-class="result-user">
-
-    بازیکن
-
-</div>
-
-<div
-id="finalScore"
-class="final-score">
-
-    ۰
-
-</div>
-
-<div>
-    امتیاز نهایی
-</div>
-
-
-<div class="result-stats">
-
-
-<div class="result-stat">
-
-    <strong id="correctCount">
-        ۰
-    </strong>
-
-    <small>
-        پاسخ درست
-    </small>
-
-</div>
-
-
-<div class="result-stat">
-
-    <strong id="wrongCount">
-        ۰
-    </strong>
-
-    <small>
-        پاسخ غلط
-    </small>
-
-</div>
-
-
-</div>
-
-
-<button
-class="replay-button"
-onclick="startQuiz()">
-
-<i class="fa-solid fa-rotate-right"></i>
-
-دوباره بازی کن
-
-</button>
-
-
-</div>
-
 
 </section>
 
@@ -3254,7 +1242,7 @@ class="tab-content">
     </div>
 
     <div class="section-badge">
-        WEEK 07
+        UNIONS
     </div>
 
 </div>
@@ -3263,7 +1251,7 @@ class="tab-content">
 <div class="matches-wrap">
 
 
-<!-- BELGIUM - TURKEY (Moved Up) -->
+<!-- PORTUGAL - NORWAY -->
 
 <div class="match-card">
 
@@ -3271,11 +1259,11 @@ class="tab-content">
 <div class="match-date">
 
     <span>
-        ۱۱ مهر ۱۴۰۵
+        ۱۲ مهر ۱۴۰۵
     </span>
 
-    <span id="m2-status" class="match-status">
-        فردا
+    <span id="m1-status" class="match-status">
+        پیش‌رو
     </span>
 
 </div>
@@ -3287,11 +1275,11 @@ class="tab-content">
 <div class="team">
 
     <img
-    src="https://flagcdn.com/w80/be.png"
-    alt="Belgium">
+    src="https://flagcdn.com/w80/pt.png"
+    alt="Portugal">
 
     <div class="team-name">
-        بلژیک
+        پرتغال
     </div>
 
 </div>
@@ -3313,11 +1301,120 @@ class="tab-content">
 <div class="team">
 
     <img
-    src="https://flagcdn.com/w80/tr.png"
-    alt="Turkey">
+    src="https://flagcdn.com/w80/no.png"
+    alt="Norway">
 
     <div class="team-name">
-        ترکیه
+        نروژ
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="match-countdown">
+
+    <div class="countdown-label">
+        شمارش معکوس تا شروع بازی
+    </div>
+
+    <div class="countdown-boxes">
+
+        <div class="cd-box">
+            <strong id="m1-d">۰</strong>
+            <span>روز</span>
+        </div>
+
+        <div class="cd-box">
+            <strong id="m1-h">۰۰</strong>
+            <span>ساعت</span>
+        </div>
+
+        <div class="cd-box">
+            <strong id="m1-m">۰۰</strong>
+            <span>دقیقه</span>
+        </div>
+
+        <div class="cd-box">
+            <strong id="m1-s">۰۰</strong>
+            <span>ثانیه</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<a
+class="match-predict"
+href="https://predict.fotmob.com/1000086/join/CUHVAFMQ"
+target="_blank">
+
+پیش‌بینی مسابقه ⚽
+
+</a>
+
+
+</div>
+
+
+<!-- GERMANY - GREECE -->
+
+<div class="match-card">
+
+
+<div class="match-date">
+
+    <span>
+        ۱۲ مهر ۱۴۰۵
+    </span>
+
+    <span id="m2-status" class="match-status">
+        پیش‌رو
+    </span>
+
+</div>
+
+
+<div class="match-main">
+
+
+<div class="team">
+
+    <img
+    src="https://flagcdn.com/w80/de.png"
+    alt="Germany">
+
+    <div class="team-name">
+        آلمان
+    </div>
+
+</div>
+
+
+<div class="match-time">
+
+    <strong>
+        ۲۲:۱۵
+    </strong>
+
+    <small>
+        VS
+    </small>
+
+</div>
+
+
+<div class="team">
+
+    <img
+    src="https://flagcdn.com/w80/gr.png"
+    alt="Greece">
+
+    <div class="team-name">
+        یونان
     </div>
 
 </div>
@@ -3365,192 +1462,6 @@ href="https://predict.fotmob.com/1000086/join/CUHVAFMQ"
 target="_blank">
 
 پیش‌بینی مسابقه ⚽
-
-</a>
-
-
-</div>
-
-
-<!-- FRANCE - ITALY (Moved Up) -->
-
-<div class="match-card">
-
-
-<div class="match-date">
-
-    <span>
-        ۱۱ مهر ۱۴۰۵
-    </span>
-
-    <span id="m3-status" class="match-status">
-        فردا
-    </span>
-
-</div>
-
-
-<div class="match-main">
-
-
-<div class="team">
-
-    <img
-    src="https://flagcdn.com/w80/fr.png"
-    alt="France">
-
-    <div class="team-name">
-        فرانسه
-    </div>
-
-</div>
-
-
-<div class="match-time">
-
-    <strong>
-        ۲۲:۱۵
-    </strong>
-
-    <small>
-        VS
-    </small>
-
-</div>
-
-
-<div class="team">
-
-    <img
-    src="https://flagcdn.com/w80/it.png"
-    alt="Italy">
-
-    <div class="team-name">
-        ایتالیا
-    </div>
-
-</div>
-
-
-</div>
-
-
-<div class="match-countdown">
-
-    <div class="countdown-label">
-        شمارش معکوس تا شروع بازی
-    </div>
-
-    <div class="countdown-boxes">
-
-        <div class="cd-box">
-            <strong id="m3-d">۰</strong>
-            <span>روز</span>
-        </div>
-
-        <div class="cd-box">
-            <strong id="m3-h">۰۰</strong>
-            <span>ساعت</span>
-        </div>
-
-        <div class="cd-box">
-            <strong id="m3-m">۰۰</strong>
-            <span>دقیقه</span>
-        </div>
-
-        <div class="cd-box">
-            <strong id="m3-s">۰۰</strong>
-            <span>ثانیه</span>
-        </div>
-
-    </div>
-
-</div>
-
-
-<a
-class="match-predict"
-href="https://predict.fotmob.com/1000086/join/CUHVAFMQ"
-target="_blank">
-
-پیش‌بینی مسابقه ⚽
-
-</a>
-
-
-</div>
-
-
-<!-- PORTUGAL - DENMARK (Moved Down with 4-2 Score Cleaned) -->
-
-<div class="match-card">
-
-
-<div class="match-date">
-
-    <span>
-        ۱۰ مهر ۱۴۰۵
-    </span>
-
-    <span class="match-status" style="background:#e8f8ef; color:#128350;">
-        پایان بازی
-    </span>
-
-</div>
-
-
-<div class="match-main">
-
-
-<div class="team">
-
-    <img
-    src="https://flagcdn.com/w80/pt.png"
-    alt="Portugal">
-
-    <div class="team-name">
-        پرتغال
-    </div>
-
-</div>
-
-
-<div class="match-time">
-
-    <strong style="color: #128350; font-size: 22px;">
-        ۴ - ۲
-    </strong>
-
-    <small style="color: #128350; font-weight: bold;">
-        پرتغال
-    </small>
-
-</div>
-
-
-<div class="team">
-
-    <img
-    src="https://flagcdn.com/w80/dk.png"
-    alt="Denmark">
-
-    <div class="team-name">
-        دانمارک
-    </div>
-
-</div>
-
-
-</div>
-
-
-<a
-class="match-predict"
-href="https://predict.fotmob.com/1000086/join/CUHVAFMQ"
-target="_blank"
-style="background: #128350; margin-top: 15px;">
-
-جزئیات پیش‌بینی در فوت‌ماب ⚽
 
 </a>
 
@@ -3606,43 +1517,43 @@ class="tab-content">
 <div class="table-row">
     <div class="rank">۱</div>
     <div class="player-name">Asm A</div>
-    <div class="player-score">۷۱</div>
+    <div class="player-score">۷۵</div>
 </div>
 
 <div class="table-row">
     <div class="rank">۲</div>
-    <div class="player-name">REZA GHATIFI</div>
-    <div class="player-score">۶۹</div>
+    <div class="player-name" style="color: #15925c;">REZA GHATIFI</div>
+    <div class="player-score">۷۳</div>
 </div>
 
 <div class="table-row">
     <div class="rank">۳</div>
-    <div class="player-name">Donya Asil</div>
-    <div class="player-score">۶۳</div>
+    <div class="player-name">Mahdi</div>
+    <div class="player-score">۶۹</div>
 </div>
 
 <div class="table-row">
     <div class="rank">۴</div>
-    <div class="player-name">Mahdi</div>
-    <div class="player-score">۶۲</div>
+    <div class="player-name">Donya Asil</div>
+    <div class="player-score">۶۷</div>
 </div>
 
 <div class="table-row">
     <div class="rank">۵</div>
     <div class="player-name">حبیب نعیمی</div>
-    <div class="player-score">۵۹</div>
+    <div class="player-score">۶۳</div>
 </div>
 
 <div class="table-row">
     <div class="rank">۶</div>
-    <div class="player-name">hey10</div>
-    <div class="player-score">۵۷</div>
+    <div class="player-name">hajar daoudi</div>
+    <div class="player-score">۶۰</div>
 </div>
 
 <div class="table-row">
     <div class="rank">۷</div>
-    <div class="player-name">hajar daoudi</div>
-    <div class="player-score">۵۶</div>
+    <div class="player-name">hey10</div>
+    <div class="player-score">۵۹</div>
 </div>
 
 <div class="table-row">
@@ -3654,250 +1565,31 @@ class="tab-content">
 <div class="table-row">
     <div class="rank">۹</div>
     <div class="player-name">Ahlam Aljaber</div>
-    <div class="player-score">۴۸</div>
+    <div class="player-score">۵۰</div>
 </div>
 
 <div class="table-row">
     <div class="rank">۱۰</div>
     <div class="player-name">امین دریس</div>
-    <div class="player-score">۴۴</div>
+    <div class="player-score">۴۶</div>
 </div>
 
 <div class="table-row">
     <div class="rank">۱۱</div>
     <div class="player-name">Sama salehi</div>
-    <div class="player-score">۳۸</div>
+    <div class="player-score">۴۲</div>
 </div>
 
 <div class="table-row">
     <div class="rank">۱۲</div>
     <div class="player-name">محمد جاسمیان</div>
-    <div class="player-score">۳۱</div>
+    <div class="player-score">۳۶</div>
 </div>
 
 <div class="table-row">
     <div class="rank">۱۳</div>
     <div class="player-name">مهدی</div>
-    <div class="player-score">۲۲</div>
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     TEAM BATTLE
-===================================================== -->
-
-<section
-id="kalal"
-class="tab-content">
-
-
-<div class="section-head">
-
-    <div class="section-title">
-
-        <i class="fa-solid fa-futbol"></i>
-
-        کل‌کل تیم‌ها
-
-    </div>
-
-    <div class="section-badge">
-        TEAM BATTLE
-    </div>
-
-</div>
-
-
-<div class="team-countdown-card">
-
-
-<div class="team-countdown-title">
-
-    ⏰ شمارش معکوس تا اولین پیش‌بینی ۲۲:۱۵
-
-</div>
-
-
-<div class="team-clock">
-
-
-<div class="team-clock-box">
-
-    <strong id="team-d">
-        ۰۰
-    </strong>
-
-    <span>
-        روز
-    </span>
-
-</div>
-
-
-<div class="team-clock-box">
-
-    <strong id="team-h">
-        ۰۰
-    </strong>
-
-    <span>
-        ساعت
-    </span>
-
-</div>
-
-
-<div class="team-clock-box">
-
-    <strong id="team-m">
-        ۰۰
-    </strong>
-
-    <span>
-        دقیقه
-    </span>
-
-</div>
-
-
-<div class="team-clock-box">
-
-    <strong id="team-s">
-        ۰۰
-    </strong>
-
-    <span>
-        ثانیه
-    </span>
-
-</div>
-
-
-</div>
-
-
-<div
-id="teamClockStatus"
-class="team-clock-status">
-
-    مانده تا شروع پیش‌بینی
-
-</div>
-
-
-</div>
-
-
-<div class="battle-grid">
-
-
-<div class="battle-team">
-
-
-<div class="battle-team-head">
-
-    <h3>
-        🩴 اتحاد بدبختا
-    </h3>
-
-    <div class="team-total">
-        ۲۸
-    </div>
-
-</div>
-
-
-<div class="player-line">
-    <span>پیرا</span>
-    <strong>۶</strong>
-</div>
-
-<div class="player-line">
-    <span>بخشنده</span>
-    <strong>۷</strong>
-</div>
-
-<div class="player-line">
-    <span>قطیفی</span>
-    <strong>۷</strong>
-</div>
-
-<div class="player-line">
-    <span>جاسمیان</span>
-    <strong>۵</strong>
-</div>
-
-<div class="player-line">
-    <span>داودی</span>
-    <strong>۶</strong>
-</div>
-
-<div class="player-line">
-    <span>الجابر</span>
-    <strong>۲</strong>
-</div>
-
-
-</div>
-
-
-<div class="battle-team">
-
-
-<div class="battle-team-head">
-
-    <h3>
-        💸 جماعت بی پولا
-    </h3>
-
-    <div class="team-total">
-        ۳۲
-    </div>
-
-</div>
-
-
-<div class="player-line">
-    <span>عصیر</span>
-    <strong>۷</strong>
-</div>
-
-<div class="player-line">
-    <span>زویدات</span>
-    <strong>۶</strong>
-</div>
-
-<div class="player-line">
-    <span>دریس</span>
-    <strong>۵</strong>
-</div>
-
-<div class="player-line">
-    <span>خلیلاوی پور</span>
-    <strong>۰</strong>
-</div>
-
-<div class="player-line">
-    <span>مهدی</span>
-    <strong>۷</strong>
-</div>
-
-<div class="player-line">
-    <span>نعیمی</span>
-    <strong>۲</strong>
-</div>
-
-<div class="player-line">
-    <span>سما صالحی</span>
-    <strong>۶</strong>
-</div>
-
-
+    <div class="player-score">۲۶</div>
 </div>
 
 
@@ -3918,12 +1610,12 @@ class="team-clock-status">
 
 <button
 class="nav-item active"
-onclick="switchTab('quiz',this)">
+onclick="switchTab('podium',this)">
 
-    <i class="fa-solid fa-rocket"></i>
+    <i class="fa-solid fa-trophy"></i>
 
     <span>
-        کوئیز
+        سکوی برتر
     </span>
 
 </button>
@@ -3955,567 +1647,11 @@ onclick="switchTab('table',this)">
 </button>
 
 
-<button
-class="nav-item"
-onclick="switchTab('kalal',this)">
-
-    <i class="fa-solid fa-futbol"></i>
-
-    <span>
-        کل‌کل
-    </span>
-
-</button>
-
-
 </nav>
 
 
 
 <script>
-
-/* =====================================================
-   VARIABLES
-===================================================== */
-
-let currentUsername = "";
-
-let quizIndex = 0;
-
-let quizScore = 0;
-
-let quizCorrect = 0;
-
-let quizWrong = 0;
-
-let quizTimer = null;
-
-let quizTimeLeft = 15;
-
-let currentQuizQuestions = [];
-
-const QUIZ_LENGTH = 15;
-
-
-/* =====================================================
-   QUIZ START TIME
-   21:00 TONIGHT
-===================================================== */
-
-let quizUnlockTimer = null;
-
-
-function getIranNowParts(){
-
-    const parts =
-    new Intl.DateTimeFormat(
-        "en-US",
-        {
-            timeZone:"Asia/Tehran",
-            year:"numeric",
-            month:"2-digit",
-            day:"2-digit",
-            hour:"2-digit",
-            minute:"2-digit",
-            second:"2-digit",
-            hourCycle:"h23"
-        }
-    ).formatToParts(
-        new Date()
-    );
-
-    const result = {};
-
-    parts.forEach(
-        function(part){
-
-            if(
-                part.type !== "literal"
-            ){
-
-                result[
-                    part.type
-                ] = part.value;
-
-            }
-
-        }
-    );
-
-    return {
-
-        year:Number(result.year),
-
-        month:Number(result.month),
-
-        day:Number(result.day),
-
-        hour:Number(result.hour),
-
-        minute:Number(result.minute),
-
-        second:Number(result.second)
-
-    };
-
-}
-
-
-function getQuizUnlockTimestamp(){
-
-    const iran =
-    getIranNowParts();
-
-    return Date.UTC(
-        iran.year,
-        iran.month - 1,
-        iran.day,
-        17,
-        30,
-        0
-    );
-
-}
-
-
-function formatQuizCountdown(
-    number
-){
-
-    return persianNumber(
-        String(
-            number
-        ).padStart(
-            2,
-            "0"
-        )
-    );
-
-}
-
-
-function isQuizUnlocked(){
-
-    return (
-        Date.now() >=
-        getQuizUnlockTimestamp()
-    );
-
-}
-
-
-function updateQuizLock(){
-
-    const now =
-    Date.now();
-
-    const unlock =
-    getQuizUnlockTimestamp();
-
-    const distance =
-    Math.max(
-        unlock - now,
-        0
-    );
-
-    const button =
-    document.getElementById(
-        "quizStartButton"
-    );
-
-    const buttonText =
-    document.getElementById(
-        "quizStartButtonText"
-    );
-
-    const buttonIcon =
-    button
-    ?
-    button.querySelector("i")
-    :
-    null;
-
-    const hours =
-    document.getElementById(
-        "quiz-g-hours"
-    );
-
-    const minutes =
-    document.getElementById(
-        "quiz-g-minutes"
-    );
-
-    const seconds =
-    document.getElementById(
-        "quiz-g-seconds"
-    );
-
-    const lockMessage =
-    document.getElementById(
-        "quizLockMessage"
-    );
-
-    const clockTitle =
-    document.getElementById(
-        "quizClockTitle"
-    );
-
-    const clock =
-    document.getElementById(
-        "quizStartClock"
-    );
-
-
-    if(
-        !button ||
-        !buttonText ||
-        !hours ||
-        !minutes ||
-        !seconds
-    ){
-
-        return;
-
-    }
-
-
-    if(
-        distance <= 0
-    ){
-
-        hours.textContent =
-        "۰۰";
-
-        minutes.textContent =
-        "۰۰";
-
-        seconds.textContent =
-        "۰۰";
-
-        button.disabled = false;
-
-        button.classList.remove(
-            "locked"
-        );
-
-        if(buttonIcon){
-
-            buttonIcon.className =
-            "fa-solid fa-rocket";
-
-        }
-
-        buttonText.textContent =
-        "بدو! شروع کوئیز 🔥";
-
-        if(lockMessage){
-
-            lockMessage.textContent =
-            "🔥 کوئیز باز شد! بدو شرکت کن و امتیاز بگیر";
-
-        }
-
-        if(clockTitle){
-
-            clockTitle.textContent =
-            "کوئیز همین الان شروع شد!";
-
-        }
-
-        if(clock){
-
-            clock.classList.add(
-                "ready"
-            );
-
-        }
-
-        if(quizUnlockTimer){
-
-            clearInterval(
-                quizUnlockTimer
-            );
-
-            quizUnlockTimer = null;
-
-        }
-
-        return;
-
-    }
-
-
-    const totalSeconds =
-    Math.floor(
-        distance / 1000
-    );
-
-    const remainingHours =
-    Math.floor(
-        totalSeconds / 3600
-    );
-
-    const remainingMinutes =
-    Math.floor(
-        (
-            totalSeconds % 3600
-        ) / 60
-    );
-
-    const remainingSeconds =
-    totalSeconds % 60;
-
-
-    hours.textContent =
-    formatQuizCountdown(
-        remainingHours
-    );
-
-    minutes.textContent =
-    formatQuizCountdown(
-        remainingMinutes
-    );
-
-    seconds.textContent =
-    formatQuizCountdown(
-        remainingSeconds
-    );
-
-    button.disabled = true;
-
-    button.classList.add(
-        "locked"
-    );
-
-    if(buttonIcon){
-
-        buttonIcon.className =
-        "fa-solid fa-lock";
-
-    }
-
-    buttonText.textContent =
-    "شروع از ساعت ۲۱:۰۰";
-
-    if(lockMessage){
-
-        lockMessage.textContent =
-        "🔒 ورود به کوئیز تا ساعت ۲۱ بسته است";
-
-    }
-
-    if(clockTitle){
-
-        clockTitle.textContent =
-        "شروع کوئیز ساعت ۲۱:۰۰";
-
-    }
-
-    if(clock){
-
-        clock.classList.remove(
-            "ready"
-        );
-
-    }
-
-}
-
-
-function startQuizUnlockCountdown(){
-
-    updateQuizLock();
-
-    clearInterval(
-        quizUnlockTimer
-    );
-
-    quizUnlockTimer =
-    setInterval(
-        function(){
-
-            updateQuizLock();
-
-        },
-        250
-    );
-
-}
-
-
-/* =====================================================
-   QUESTION BANK
-===================================================== */
-
-const quizQuestions = [
-
-{
-    q:"پایتخت کشور استرالیا کدام شهر است؟",
-    options:[
-        "سیدنی",
-        "ملبورن",
-        "کانبرا",
-        "پرت"
-    ],
-    answer:2
-},
-
-{
-    q:"بزرگ‌ترین اقیانوس جهان کدام است؟",
-    options:[
-        "اطلس",
-        "هند",
-        "آرام",
-        "منجمد شمالی"
-    ],
-    answer:2
-},
-
-{
-    q:"واحد پول کشور ژاپن چیست؟",
-    options:[
-        "وون",
-        "یوان",
-        "ین",
-        "روپیه"
-    ],
-    answer:2
-},
-
-{
-    q:"نماد شیمیایی سدیم کدام است؟",
-    options:[
-        "S",
-        "Na",
-        "So",
-        "Sd"
-    ],
-    answer:1
-},
-
-{
-    q:"کدام سیاره به «سیاره سرخ» معروف است؟",
-    options:[
-        "زهره",
-        "مریخ",
-        "مشتری",
-        "عطارد"
-    ],
-    answer:1
-},
-
-{
-    q:"نویسنده کتاب «شازده کوچولو» چه کسی است؟",
-    options:[
-        "ژول ورن",
-        "ویکتور هوگو",
-        "آنتوان دو سنت‌اگزوپری",
-        "لئو تولستوی"
-    ],
-    answer:2
-},
-
-{
-    q:"سریع‌ترین حیوان خشکی کدام است؟",
-    options:[
-        "شیر",
-        "یوزپلنگ",
-        "اسب",
-        "پلنگ"
-    ],
-    answer:1
-},
-
-{
-    q:"بزرگ‌ترین اندام بدن انسان کدام است؟",
-    options:[
-        "کبد",
-        "مغز",
-        "پوست",
-        "ریه"
-    ],
-    answer:2
-},
-
-{
-    q:"دفتر مرکزی سازمان ملل متحد در کدام شهر قرار دارد؟",
-    options:[
-        "ژنو",
-        "پاریس",
-        "لندن",
-        "نیویورک"
-    ],
-    answer:3
-},
-
-{
-    q:"نقطه جوش آب در سطح دریا تقریباً چند درجه سانتی‌گراد است؟",
-    options:[
-        "۵۰",
-        "۷۵",
-        "۱۰۰",
-        "۱۲۰"
-    ],
-    answer:2
-},
-
-{
-    q:"کدام سیاره به دلیل حلقه‌های بسیار معروف خود شناخته می‌شود؟",
-    options:[
-        "زحل",
-        "مریخ",
-        "عطارد",
-        "زمین"
-    ],
-    answer:0
-},
-
-{
-    q:"تابلوی معروف «مونالیزا» اثر کدام هنرمند است؟",
-    options:[
-        "پابلو پیکاسو",
-        "لئوناردو داوینچی",
-        "ونسان ون‌گوگ",
-        "میکل‌آنژ"
-    ],
-    answer:1
-},
-
-{
-    q:"اولین انسانی که روی ماه قدم گذاشت چه کسی بود؟",
-    options:[
-        "یوری گاگارین",
-        "نیل آرمسترانگ",
-        "باز آلدرین",
-        "مایکل کالینز"
-    ],
-    answer:1
-},
-
-{
-    q:"برگ افرا نماد کدام کشور است؟",
-    options:[
-        "کانادا",
-        "آمریکا",
-        "سوئیس",
-        "سوئد"
-    ],
-    answer:0
-},
-
-{
-    q:"چند قاره در جهان وجود دارد؟",
-    options:[
-        "۵",
-        "۶",
-        "۷",
-        "۸"
-    ],
-    answer:2
-}
-
-];
-
 
 /* =====================================================
    PERSIAN NUMBERS
@@ -4533,563 +1669,11 @@ function persianNumber(number){
 
 }
 
+function formatQuizCountdown(number){
 
-/* =====================================================
-   SHUFFLE
-===================================================== */
-
-function shuffleArray(array){
-
-    const copy = [...array];
-
-    for(
-        let i = copy.length - 1;
-        i > 0;
-        i--
-    ){
-
-        const j =
-        Math.floor(
-            Math.random() * (i + 1)
-        );
-
-        [
-            copy[i],
-            copy[j]
-        ] = [
-            copy[j],
-            copy[i]
-        ];
-
-    }
-
-    return copy;
-
-}
-
-
-/* =====================================================
-   USERNAME
-===================================================== */
-
-function submitUsername(){
-
-    const input =
-    document.getElementById(
-        "usernameInput"
+    return persianNumber(
+        String(number).padStart(2, "0")
     );
-
-    const error =
-    document.getElementById(
-        "loginError"
-    );
-
-    const name =
-    input.value.trim();
-
-
-    if(name.length < 2){
-
-        error.textContent =
-        "لطفاً یک نام کاربری حداقل دو حرفی وارد کن.";
-
-        input.focus();
-
-        return;
-
-    }
-
-    currentUsername = name;
-
-    localStorage.setItem(
-        "geda_quiz_username",
-        currentUsername
-    );
-
-    document.getElementById(
-        "quizUserName"
-    ).textContent =
-    currentUsername;
-
-    document.getElementById(
-        "quiz-login"
-    ).classList.add("hidden");
-
-    error.textContent = "";
-
-}
-
-
-function loadUsername(){
-
-    const saved =
-    localStorage.getItem(
-        "geda_quiz_username"
-    );
-
-    if(saved){
-
-        currentUsername = saved;
-
-        document.getElementById(
-            "usernameInput"
-        ).value =
-        saved;
-
-        document.getElementById(
-            "quizUserName"
-        ).textContent =
-        saved;
-
-        document.getElementById(
-            "quiz-login"
-        ).classList.add("hidden");
-
-    }
-
-}
-
-
-document
-.getElementById("usernameInput")
-.addEventListener(
-    "keydown",
-    function(event){
-
-        if(event.key === "Enter"){
-
-            submitUsername();
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   START QUIZ
-===================================================== */
-
-function startQuiz(){
-
-    if(!isQuizUnlocked()){
-
-        updateQuizLock();
-
-        return;
-
-    }
-
-    if(!currentUsername){
-
-        document
-        .getElementById("quiz-login")
-        .classList.remove("hidden");
-
-        return;
-
-    }
-
-    clearInterval(quizTimer);
-
-    quizIndex = 0;
-    quizScore = 0;
-    quizCorrect = 0;
-    quizWrong = 0;
-
-    currentQuizQuestions =
-    shuffleArray(
-        quizQuestions
-    ).slice(
-        0,
-        QUIZ_LENGTH
-    );
-
-    document
-    .getElementById("quizHome")
-    .style.display = "none";
-
-    document
-    .getElementById("quizResult")
-    .classList.remove("show");
-
-    document
-    .getElementById("quizGame")
-    .classList.add("show");
-
-    showQuestion();
-
-}
-
-
-function showQuestion(){
-
-    clearInterval(quizTimer);
-
-    const question =
-    currentQuizQuestions[
-        quizIndex
-    ];
-
-    document
-    .getElementById("quizNumber")
-    .textContent =
-    "سؤال " +
-    persianNumber(quizIndex + 1) +
-    " از " +
-    persianNumber(QUIZ_LENGTH);
-
-    document
-    .getElementById("quizScore")
-    .textContent =
-    "امتیاز: " +
-    persianNumber(quizScore);
-
-    document
-    .getElementById("quizQuestion")
-    .textContent =
-    question.q;
-
-    const options =
-    document.getElementById(
-        "quizOptions"
-    );
-
-    options.innerHTML = "";
-
-    question.options.forEach(
-        function(option,index){
-
-            const button =
-            document.createElement(
-                "button"
-            );
-
-            button.className =
-            "quiz-option";
-
-            button.textContent =
-            option;
-
-            button.onclick =
-            function(){
-
-                selectAnswer(
-                    index,
-                    button
-                );
-
-            };
-
-            options.appendChild(
-                button
-            );
-
-        }
-    );
-
-    document
-    .getElementById("quizProgress")
-    .style.width =
-    (
-        quizIndex /
-        QUIZ_LENGTH *
-        100
-    ) + "%";
-
-    document
-    .getElementById("quizNext")
-    .classList.remove("show");
-
-    quizTimeLeft = 15;
-
-    updateTimer();
-
-    startQuizTimer();
-
-}
-
-
-function startQuizTimer(){
-
-    quizTimer =
-    setInterval(
-        function(){
-
-            quizTimeLeft--;
-
-            updateTimer();
-
-            if(quizTimeLeft <= 0){
-
-                clearInterval(
-                    quizTimer
-                );
-
-                timeOut();
-
-            }
-
-        },
-        1000
-    );
-
-}
-
-
-function updateTimer(){
-
-    const timer =
-    document.getElementById(
-        "quizTimer"
-    );
-
-    timer.textContent =
-    persianNumber(
-        Math.max(
-            quizTimeLeft,
-            0
-        )
-    );
-
-    if(quizTimeLeft <= 5){
-
-        timer.classList.add(
-            "warning"
-        );
-
-    }else{
-
-        timer.classList.remove(
-            "warning"
-        );
-
-    }
-
-}
-
-
-function selectAnswer(
-    selectedIndex,
-    selectedButton
-){
-
-    clearInterval(quizTimer);
-
-    const question =
-    currentQuizQuestions[
-        quizIndex
-    ];
-
-    const buttons =
-    document.querySelectorAll(
-        ".quiz-option"
-    );
-
-    buttons.forEach(
-        function(button){
-
-            button.classList.add(
-                "disabled"
-            );
-
-        }
-    );
-
-    if(
-        selectedIndex ===
-        question.answer
-    ){
-
-        selectedButton.classList.add(
-            "correct"
-        );
-
-        quizCorrect++;
-
-        quizScore +=
-        100 +
-        (
-            quizTimeLeft * 10
-        );
-
-    }else{
-
-        selectedButton.classList.add(
-            "wrong"
-        );
-
-        quizWrong++;
-
-        if(
-            buttons[
-                question.answer
-            ]
-        ){
-
-            buttons[
-                question.answer
-            ].classList.add(
-                "correct"
-            );
-
-        }
-
-    }
-
-    document
-    .getElementById("quizScore")
-    .textContent =
-    "امتیاز: " +
-    persianNumber(quizScore);
-
-    document
-    .getElementById("quizNext")
-    .classList.add("show");
-
-}
-
-
-function timeOut(){
-
-    const question =
-    currentQuizQuestions[
-        quizIndex
-    ];
-
-    const buttons =
-    document.querySelectorAll(
-        ".quiz-option"
-    );
-
-    buttons.forEach(
-        function(button){
-
-            button.classList.add(
-                "disabled"
-            );
-
-        }
-    );
-
-    if(
-        buttons[
-            question.answer
-        ]
-    ){
-
-        buttons[
-            question.answer
-        ].classList.add(
-            "correct"
-        );
-
-    }
-
-    quizWrong++;
-
-    document
-    .getElementById("quizNext")
-    .classList.add("show");
-
-}
-
-
-function nextQuestion(){
-
-    quizIndex++;
-
-    if(
-        quizIndex >=
-        QUIZ_LENGTH
-    ){
-
-        finishQuiz();
-
-        return;
-
-    }
-
-    showQuestion();
-
-}
-
-
-function finishQuiz(){
-
-    clearInterval(quizTimer);
-
-    document
-    .getElementById("quizGame")
-    .classList.remove("show");
-
-    document
-    .getElementById("quizResult")
-    .classList.add("show");
-
-    document
-    .getElementById("finalScore")
-    .textContent =
-    persianNumber(
-        quizScore
-    );
-
-    document
-    .getElementById("correctCount")
-    .textContent =
-    persianNumber(
-        quizCorrect
-    );
-
-    document
-    .getElementById("wrongCount")
-    .textContent =
-    persianNumber(
-        quizWrong
-    );
-
-    document
-    .getElementById("resultUser")
-    .textContent =
-    "بازیکن: " +
-    currentUsername;
-
-    const oldBest =
-    Number(
-        localStorage.getItem(
-            "geda_quiz_best_score"
-        ) || 0
-    );
-
-    if(
-        quizScore > oldBest
-    ){
-
-        localStorage.setItem(
-            "geda_quiz_best_score",
-            quizScore
-        );
-
-    }
-
-    updateBestScore();
-
-}
-
-
-function updateBestScore(){
-
-    const best =
-    Number(
-        localStorage.getItem(
-            "geda_quiz_best_score"
-        ) || 0
-    );
-
-    document
-    .getElementById("bestScore")
-    .textContent =
-    persianNumber(best);
 
 }
 
@@ -5147,15 +1731,16 @@ function switchTab(
 
 /* =====================================================
    MATCH DATES & COUNTDOWN
+   12 October 2026 at 22:15 Iran Time (18:45 UTC)
 ===================================================== */
 
 const MATCHES = {
 
-    m2: {
-        dateUTC: Date.UTC(2026, 9, 2, 18, 45, 0)
+    m1: {
+        dateUTC: Date.UTC(2026, 9, 12, 18, 45, 0)
     },
-    m3: {
-        dateUTC: Date.UTC(2026, 9, 2, 18, 45, 0)
+    m2: {
+        dateUTC: Date.UTC(2026, 9, 12, 18, 45, 0)
     }
 
 };
@@ -5202,25 +1787,6 @@ function updateAllCountdowns(){
         sEl.textContent = formatQuizCountdown(secs);
     }
 
-    // Team clock countdown (matches m2)
-    const teamDiff = MATCHES.m2.dateUTC - now;
-    const tdEl = document.getElementById("team-d");
-    const thEl = document.getElementById("team-h");
-    const tmEl = document.getElementById("team-m");
-    const tsEl = document.getElementById("team-s");
-
-    if(tdEl && thEl && tmEl && tsEl && teamDiff > 0){
-        const totalSecs = Math.floor(teamDiff / 1000);
-        const days = Math.floor(totalSecs / 86400);
-        const hours = Math.floor((totalSecs % 86400) / 3600);
-        const mins = Math.floor((totalSecs % 3600) / 60);
-        const secs = totalSecs % 60;
-
-        tdEl.textContent = persianNumber(days);
-        thEl.textContent = formatQuizCountdown(hours);
-        tmEl.textContent = formatQuizCountdown(mins);
-        tsEl.textContent = formatQuizCountdown(secs);
-    }
 }
 
 
@@ -5239,11 +1805,6 @@ function getMatchStatus(target){
 
 window.addEventListener("load", function(){
 
-    loadUsername();
-    updateBestScore();
-    startQuizUnlockCountdown();
-
-    // Start interval for match countdowns
     setInterval(updateAllCountdowns, 1000);
     updateAllCountdowns();
 
