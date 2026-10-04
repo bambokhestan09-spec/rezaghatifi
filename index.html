@@ -443,6 +443,55 @@ a{
 
 
 /* =====================================================
+   APP HEADER (NEW)
+===================================================== */
+
+.app-header {
+    position: relative;
+    width: 100%;
+    padding: 24px 20px;
+    margin-bottom: 18px;
+    background: url('https://i.ibb.co/3yk357x/image.png') center/cover no-repeat;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.app-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(23, 170, 108, 0.88), rgba(8, 120, 74, 0.92));
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    text-align: right;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.header-title {
+    font-size: 20px;
+    font-weight: 900;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.header-subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
    MAIN
 ===================================================== */
 
@@ -1145,6 +1194,17 @@ a{
 ===================================================== -->
 
 <main id="main-content">
+
+
+<!-- =====================================================
+     APP HEADER (NEW)
+===================================================== -->
+<header class="app-header">
+    <div class="header-content">
+        <h1 class="header-title">لیگ گداهای استرسی فصل دوم ۱۴۰۶-۱۴۰۵</h1>
+        <div class="header-subtitle">Leage GEDAHAYE ESTERESI 2</div>
+    </div>
+</header>
 
 
 <!-- =====================================================
