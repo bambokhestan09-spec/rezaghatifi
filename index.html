@@ -690,6 +690,20 @@ a{
     font-size:11px;
 }
 
+.match-league-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 800;
+    color: #444;
+}
+
+.match-league-info img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
 .match-status{
 
     padding:
@@ -1100,22 +1114,22 @@ a{
         </h2>
 
         <div class="week">
-            هفته هفتم
+            هفتم
         </div>
 
         <div class="winner-message">
 
-            ⚔️ مسابقات لیگ ملت‌های اروپا
+            ⚔️ هفته جدید مسابقات پیش‌‌بینی‌ها
 
             <br>
 
             <strong>
-                پرتغال 🆚 نروژ  |  آلمان 🆚 یونان
+                لیگ برتر انگلیس ، لالیگا و سری آ ایتالیا
             </strong>
 
             <br>
 
-            هفته هفتم لیگ پیش‌‌بینی‌ها
+            هفته پیش‌‌بینی‌ها
 
             <br>
 
@@ -1178,35 +1192,35 @@ class="tab-content active">
     <div class="podium-card">
 
         <div class="podium-title-box">
-            <h3>افتخارات هفته ششم</h3>
+            <h3>افتخارات هفته</h3>
         </div>
 
         <div class="podium-container">
 
-            <!-- دومین نفر: خلیلاوی -->
+            <!-- دومین نفر: بخشنده -->
             <div class="podium-col">
-                <div class="podium-user" title="خلیلاوی">خلیلاوی</div>
-                <div class="podium-score-badge">۹ امتیاز</div>
+                <div class="podium-user" title="بخشنده">بخشنده</div>
+                <div class="podium-score-badge">۱۴ امتیاز</div>
                 <div class="podium-pillar second">
                     <span class="podium-rank-num">۲</span>
                     <i class="fa-solid fa-medal podium-medal-icon"></i>
                 </div>
             </div>
 
-            <!-- اولین نفر: پیرا -->
+            <!-- اولین نفر: Mahdi -->
             <div class="podium-col">
-                <div class="podium-user" title="پیرا">پیرا</div>
-                <div class="podium-score-badge">۱۲ امتیاز</div>
+                <div class="podium-user" title="Mahdi">Mahdi</div>
+                <div class="podium-score-badge">۱۴ امتیاز</div>
                 <div class="podium-pillar first">
                     <span class="podium-rank-num">۱</span>
                     <i class="fa-solid fa-trophy podium-medal-icon"></i>
                 </div>
             </div>
 
-            <!-- سومین نفر: نعیمی -->
+            <!-- سومین نفر: قطیفی -->
             <div class="podium-col">
-                <div class="podium-user" title="نعیمی">نعیمی</div>
-                <div class="podium-score-badge">۹ امتیاز</div>
+                <div class="podium-user" title="قطیفی">قطیفی</div>
+                <div class="podium-score-badge">۱۴ امتیاز</div>
                 <div class="podium-pillar third">
                     <span class="podium-rank-num">۳</span>
                     <i class="fa-solid fa-award podium-medal-icon"></i>
@@ -1242,7 +1256,7 @@ class="tab-content">
     </div>
 
     <div class="section-badge">
-        UNIONS
+        MATCHES
     </div>
 
 </div>
@@ -1251,221 +1265,299 @@ class="tab-content">
 <div class="matches-wrap">
 
 
-<!-- PORTUGAL - NORWAY -->
-
+<!-- 1. Leeds vs Arsenal -->
 <div class="match-card">
-
-
 <div class="match-date">
-
-    <span>
-        امشب (۴ مهر ۱۴۰۵)
-    </span>
-
-    <span id="m1-status" class="match-status">
-        پیش‌رو
-    </span>
-
+    <span>شنبه ۱۸ مهر ۱۴۰۵</span>
+    <div class="match-league-info">
+        <img src="https://media.api-sports.io/football/leagues/39.png" alt="Premier League">
+        <span>لیگ برتر انگلیس</span>
+    </div>
+    <span id="m1-status" class="match-status">پیش‌رو</span>
 </div>
-
-
 <div class="match-main">
-
-
 <div class="team">
-
-    <img
-    src="https://flagcdn.com/w80/pt.png"
-    alt="Portugal">
-
-    <div class="team-name">
-        پرتغال
-    </div>
-
+    <img src="https://media.api-sports.io/football/teams/63.png" alt="Leeds">
+    <div class="team-name">لیدز</div>
 </div>
-
-
 <div class="match-time">
-
-    <strong>
-        ۲۲:۱۵
-    </strong>
-
-    <small>
-        VS
-    </small>
-
+    <strong>۱۵:۰۰</strong>
+    <small>VS</small>
 </div>
-
-
 <div class="team">
-
-    <img
-    src="https://flagcdn.com/w80/no.png"
-    alt="Norway">
-
-    <div class="team-name">
-        نروژ
-    </div>
-
+    <img src="https://media.api-sports.io/football/teams/42.png" alt="Arsenal">
+    <div class="team-name">آرسنال</div>
 </div>
-
-
 </div>
-
-
 <div class="match-countdown">
-
-    <div class="countdown-label">
-        شمارش معکوس تا شروع بازی
-    </div>
-
+    <div class="countdown-label">شمارش معکوس تا شروع بازی</div>
     <div class="countdown-boxes">
-
-        <div class="cd-box">
-            <strong id="m1-d">۰</strong>
-            <span>روز</span>
-        </div>
-
-        <div class="cd-box">
-            <strong id="m1-h">۰۰</strong>
-            <span>ساعت</span>
-        </div>
-
-        <div class="cd-box">
-            <strong id="m1-m">۰۰</strong>
-            <span>دقیقه</span>
-        </div>
-
-        <div class="cd-box">
-            <strong id="m1-s">۰۰</strong>
-            <span>ثانیه</span>
-        </div>
-
+        <div class="cd-box"><strong id="m1-d">۰</strong><span>روز</span></div>
+        <div class="cd-box"><strong id="m1-h">۰۰</strong><span>ساعت</span></div>
+        <div class="cd-box"><strong id="m1-m">۰۰</strong><span>دقیقه</span></div>
+        <div class="cd-box"><strong id="m1-s">۰۰</strong><span>ثانیه</span></div>
     </div>
-
+</div>
+<a class="match-predict" href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank">پیش‌بینی مسابقه ⚽</a>
 </div>
 
 
-<a
-class="match-predict"
-href="https://predict.fotmob.com/1000086/join/CUHVAFMQ"
-target="_blank">
-
-پیش‌بینی مسابقه ⚽
-
-</a>
-
-
-</div>
-
-
-<!-- GERMANY - GREECE -->
-
+<!-- 2. Chelsea vs Bournemouth -->
 <div class="match-card">
-
-
 <div class="match-date">
-
-    <span>
-        امشب (۴ مهر ۱۴۰۵)
-    </span>
-
-    <span id="m2-status" class="match-status">
-        پیش‌‌رو
-    </span>
-
+    <span>شنبه ۱۸ مهر ۱۴۰۵</span>
+    <div class="match-league-info">
+        <img src="https://media.api-sports.io/football/leagues/39.png" alt="Premier League">
+        <span>لیگ برتر انگلیس</span>
+    </div>
+    <span id="m2-status" class="match-status">پیش‌رو</span>
 </div>
-
-
 <div class="match-main">
-
-
 <div class="team">
-
-    <img
-    src="https://flagcdn.com/w80/de.png"
-    alt="Germany">
-
-    <div class="team-name">
-        آلمان
-    </div>
-
+    <img src="https://media.api-sports.io/football/teams/49.png" alt="Chelsea">
+    <div class="team-name">چلسی</div>
 </div>
-
-
 <div class="match-time">
-
-    <strong>
-        ۲۲:۱۵
-    </strong>
-
-    <small>
-        VS
-    </small>
-
+    <strong>۱۷:۳۰</strong>
+    <small>VS</small>
 </div>
-
-
 <div class="team">
-
-    <img
-    src="https://flagcdn.com/w80/gr.png"
-    alt="Greece">
-
-    <div class="team-name">
-        یونان
-    </div>
-
+    <img src="https://media.api-sports.io/football/teams/35.png" alt="Bournemouth">
+    <div class="team-name">بورنموث</div>
 </div>
-
-
 </div>
-
-
 <div class="match-countdown">
-
-    <div class="countdown-label">
-        شمارش معکوس تا شروع بازی
-    </div>
-
+    <div class="countdown-label">شمارش معکوس تا شروع بازی</div>
     <div class="countdown-boxes">
-
-        <div class="cd-box">
-            <strong id="m2-d">۰</strong>
-            <span>روز</span>
-        </div>
-
-        <div class="cd-box">
-            <strong id="m2-h">۰۰</strong>
-            <span>ساعت</span>
-        </div>
-
-        <div class="cd-box">
-            <strong id="m2-m">۰۰</strong>
-            <span>دقیقه</span>
-        </div>
-
-        <div class="cd-box">
-            <strong id="m2-s">۰۰</strong>
-            <span>ثانیه</span>
-        </div>
-
+        <div class="cd-box"><strong id="m2-d">۰</strong><span>روز</span></div>
+        <div class="cd-box"><strong id="m2-h">۰۰</strong><span>ساعت</span></div>
+        <div class="cd-box"><strong id="m2-m">۰۰</strong><span>دقیقه</span></div>
+        <div class="cd-box"><strong id="m2-s">۰۰</strong><span>ثانیه</span></div>
     </div>
-
+</div>
+<a class="match-predict" href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank">پیش‌بینی مسابقه ⚽</a>
 </div>
 
 
-<a
-class="match-predict"
-href="https://predict.fotmob.com/1000086/join/CUHVAFMQ"
-target="_blank">
+<!-- 3. Aston Villa vs Brentford -->
+<div class="match-card">
+<div class="match-date">
+    <span>شنبه ۱۸ مهر ۱۴۰۵</span>
+    <div class="match-league-info">
+        <img src="https://media.api-sports.io/football/leagues/39.png" alt="Premier League">
+        <span>لیگ برتر انگلیس</span>
+    </div>
+    <span id="m3-status" class="match-status">پیش‌رو</span>
+</div>
+<div class="match-main">
+<div class="team">
+    <img src="https://media.api-sports.io/football/teams/66.png" alt="Aston Villa">
+    <div class="team-name">استون ویلا</div>
+</div>
+<div class="match-time">
+    <strong>۱۷:۳۰</strong>
+    <small>VS</small>
+</div>
+<div class="team">
+    <img src="https://media.api-sports.io/football/teams/55.png" alt="Brentford">
+    <div class="team-name">برنتفورد</div>
+</div>
+</div>
+<div class="match-countdown">
+    <div class="countdown-label">شمارش معکوس تا شروع بازی</div>
+    <div class="countdown-boxes">
+        <div class="cd-box"><strong id="m3-d">۰</strong><span>روز</span></div>
+        <div class="cd-box"><strong id="m3-h">۰۰</strong><span>ساعت</span></div>
+        <div class="cd-box"><strong id="m3-m">۰۰</strong><span>دقیقه</span></div>
+        <div class="cd-box"><strong id="m3-s">۰۰</strong><span>ثانیه</span></div>
+    </div>
+</div>
+<a class="match-predict" href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank">پیش‌بینی مسابقه ⚽</a>
+</div>
 
-پیش‌بینی مسابقه ⚽
 
-</a>
+<!-- 4. Chelsea vs Tottenham -->
+<div class="match-card">
+<div class="match-date">
+    <span>شنبه ۱۸ مهر ۱۴۰۵</span>
+    <div class="match-league-info">
+        <img src="https://media.api-sports.io/football/leagues/39.png" alt="Premier League">
+        <span>لیگ برتر انگلیس</span>
+    </div>
+    <span id="m4-status" class="match-status">پیش‌رو</span>
+</div>
+<div class="match-main">
+<div class="team">
+    <img src="https://media.api-sports.io/football/teams/49.png" alt="Chelsea">
+    <div class="team-name">چلسی</div>
+</div>
+<div class="match-time">
+    <strong>۲۰:۰۰</strong>
+    <small>VS</small>
+</div>
+<div class="team">
+    <img src="https://media.api-sports.io/football/teams/47.png" alt="Tottenham">
+    <div class="team-name">تاتنهام</div>
+</div>
+</div>
+<div class="match-countdown">
+    <div class="countdown-label">شمارش معکوس تا شروع بازی</div>
+    <div class="countdown-boxes">
+        <div class="cd-box"><strong id="m4-d">۰</strong><span>روز</span></div>
+        <div class="cd-box"><strong id="m4-h">۰۰</strong><span>ساعت</span></div>
+        <div class="cd-box"><strong id="m4-m">۰۰</strong><span>دقیقه</span></div>
+        <div class="cd-box"><strong id="m4-s">۰۰</strong><span>ثانیه</span></div>
+    </div>
+</div>
+<a class="match-predict" href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank">پیش‌بینی مسابقه ⚽</a>
+</div>
 
 
+<!-- 5. Getafe vs Barcelona -->
+<div class="match-card">
+<div class="match-date">
+    <span>شنبه ۱۸ مهر ۱۴۰۵</span>
+    <div class="match-league-info">
+        <img src="https://media.api-sports.io/football/leagues/140.png" alt="La Liga">
+        <span>لالیگا اسپانیا</span>
+    </div>
+    <span id="m5-status" class="match-status">پیش‌رو</span>
+</div>
+<div class="match-main">
+<div class="team">
+    <img src="https://media.api-sports.io/football/teams/532.png" alt="Getafe">
+    <div class="team-name">ختافه</div>
+</div>
+<div class="match-time">
+    <strong>۲۰:۰۰</strong>
+    <small>VS</small>
+</div>
+<div class="team">
+    <img src="https://media.api-sports.io/football/teams/529.png" alt="Barcelona">
+    <div class="team-name">بارسلونا</div>
+</div>
+</div>
+<div class="match-countdown">
+    <div class="countdown-label">شمارش معکوس تا شروع بازی</div>
+    <div class="countdown-boxes">
+        <div class="cd-box"><strong id="m5-d">۰</strong><span>روز</span></div>
+        <div class="cd-box"><strong id="m5-h">۰۰</strong><span>ساعت</span></div>
+        <div class="cd-box"><strong id="m5-m">۰۰</strong><span>دقیقه</span></div>
+        <div class="cd-box"><strong id="m5-s">۰۰</strong><span>ثانیه</span></div>
+    </div>
+</div>
+<a class="match-predict" href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank">پیش‌بینی مسابقه ⚽</a>
+</div>
+
+
+<!-- 6. Real Madrid vs Villarreal -->
+<div class="match-card">
+<div class="match-date">
+    <span>شنبه ۱۸ مهر ۱۴۰۵</span>
+    <div class="match-league-info">
+        <img src="https://media.api-sports.io/football/leagues/140.png" alt="La Liga">
+        <span>لالیگا اسپانیا</span>
+    </div>
+    <span id="m6-status" class="match-status">پیش‌‌رو</span>
+</div>
+<div class="match-main">
+<div class="team">
+    <img src="https://media.api-sports.io/football/teams/541.png" alt="Real Madrid">
+    <div class="team-name">رئال مادرید</div>
+</div>
+<div class="match-time">
+    <strong>۲۲:۳۰</strong>
+    <small>VS</small>
+</div>
+<div class="team">
+    <img src="https://media.api-sports.io/football/teams/533.png" alt="Villarreal">
+    <div class="team-name">ویارئال</div>
+</div>
+</div>
+<div class="match-countdown">
+    <div class="countdown-label">شمارش معکوس تا شروع بازی</div>
+    <div class="countdown-boxes">
+        <div class="cd-box"><strong id="m6-d">۰</strong><span>روز</span></div>
+        <div class="cd-box"><strong id="m6-h">۰۰</strong><span>ساعت</span></div>
+        <div class="cd-box"><strong id="m6-m">۰۰</strong><span>دقیقه</span></div>
+        <div class="cd-box"><strong id="m6-s">۰۰</strong><span>ثانیه</span></div>
+    </div>
+</div>
+<a class="match-predict" href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank">پیش‌بینی مسابقه ⚽</a>
+</div>
+
+
+<!-- 7. Roma vs Como -->
+<div class="match-card">
+<div class="match-date">
+    <span>یکشنبه ۱۹ مهر ۱۴۰۵</span>
+    <div class="match-league-info">
+        <img src="https://media.api-sports.io/football/leagues/135.png" alt="Serie A">
+        <span>سری آ ایتالیا</span>
+    </div>
+    <span id="m7-status" class="match-status">پیش‌رو</span>
+</div>
+<div class="match-main">
+<div class="team">
+    <img src="https://media.api-sports.io/football/teams/497.png" alt="Roma">
+    <div class="team-name">رم</div>
+</div>
+<div class="match-time">
+    <strong>۱۴:۰۰</strong>
+    <small>VS</small>
+</div>
+<div class="team">
+    <img src="https://media.api-sports.io/football/teams/1579.png" alt="Como">
+    <div class="team-name">کومو</div>
+</div>
+</div>
+<div class="match-countdown">
+    <div class="countdown-label">شمارش معکوس تا شروع بازی</div>
+    <div class="countdown-boxes">
+        <div class="cd-box"><strong id="m7-d">۰</strong><span>روز</span></div>
+        <div class="cd-box"><strong id="m7-h">۰۰</strong><span>ساعت</span></div>
+        <div class="cd-box"><strong id="m7-m">۰۰</strong><span>دقیقه</span></div>
+        <div class="cd-box"><strong id="m7-s">۰۰</strong><span>ثانیه</span></div>
+    </div>
+</div>
+<a class="match-predict" href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank">پیش‌بینی مسابقه ⚽</a>
+</div>
+
+
+<!-- 8. Manchester City vs Liverpool -->
+<div class="match-card">
+<div class="match-date">
+    <span>یکشنبه ۱۹ مهر ۱۴۰۵</span>
+    <div class="match-league-info">
+        <img src="https://media.api-sports.io/football/leagues/39.png" alt="Premier League">
+        <span>لیگ برتر انگلیس</span>
+    </div>
+    <span id="m8-status" class="match-status">پیش‌رو</span>
+</div>
+<div class="match-main">
+<div class="team">
+    <img src="https://media.api-sports.io/football/teams/50.png" alt="Manchester City">
+    <div class="team-name">منچسترسیتی</div>
+</div>
+<div class="match-time">
+    <strong>۱۹:۰۰</strong>
+    <small>VS</small>
+</div>
+<div class="team">
+    <img src="https://media.api-sports.io/football/teams/40.png" alt="Liverpool">
+    <div class="team-name">لیورپول</div>
+</div>
+</div>
+<div class="match-countdown">
+    <div class="countdown-label">شمارش معکوس تا شروع بازی</div>
+    <div class="countdown-boxes">
+        <div class="cd-box"><strong id="m8-d">۰</strong><span>روز</span></div>
+        <div class="cd-box"><strong id="m8-h">۰۰</strong><span>ساعت</span></div>
+        <div class="cd-box"><strong id="m8-m">۰۰</strong><span>دقیقه</span></div>
+        <div class="cd-box"><strong id="m8-s">۰۰</strong><span>ثانیه</span></div>
+    </div>
+</div>
+<a class="match-predict" href="https://predict.fotmob.com/1000086/join/CUHVAFMQ" target="_blank">پیش‌بینی مسابقه ⚽</a>
 </div>
 
 
@@ -1475,7 +1567,7 @@ target="_blank">
 
 
 <!-- =====================================================
-     TABLE (UPDATED)
+     TABLE (UPDATED FROM IMAGE)
 ===================================================== -->
 
 <section
@@ -1517,13 +1609,13 @@ class="tab-content">
 <div class="table-row">
     <div class="rank">۱</div>
     <div class="player-name">Asm A</div>
-    <div class="player-score">۷۵</div>
+    <div class="player-score">۷۸</div>
 </div>
 
 <div class="table-row">
     <div class="rank">۲</div>
     <div class="player-name" style="color: #15925c;">REZA GHATIFI</div>
-    <div class="player-score">۷۳</div>
+    <div class="player-score">۷۶</div>
 </div>
 
 <div class="table-row">
@@ -1535,25 +1627,25 @@ class="tab-content">
 <div class="table-row">
     <div class="rank">۴</div>
     <div class="player-name">Donya Asil</div>
-    <div class="player-score">۶۷</div>
+    <div class="player-score">۶۹</div>
 </div>
 
 <div class="table-row">
     <div class="rank">۵</div>
-    <div class="player-name">حبیب نعیمی</div>
+    <div class="player-name">hajar daoudi</div>
     <div class="player-score">۶۳</div>
 </div>
 
 <div class="table-row">
     <div class="rank">۶</div>
-    <div class="player-name">hajar daoudi</div>
-    <div class="player-score">۶۰</div>
+    <div class="player-name">حبیب نعیمی</div>
+    <div class="player-score">۶۳</div>
 </div>
 
 <div class="table-row">
     <div class="rank">۷</div>
     <div class="player-name">hey10</div>
-    <div class="player-score">۵۹</div>
+    <div class="player-score">۶۲</div>
 </div>
 
 <div class="table-row">
@@ -1565,7 +1657,7 @@ class="tab-content">
 <div class="table-row">
     <div class="rank">۹</div>
     <div class="player-name">Ahlam Aljaber</div>
-    <div class="player-score">۵۰</div>
+    <div class="player-score">۵۲</div>
 </div>
 
 <div class="table-row">
@@ -1577,7 +1669,7 @@ class="tab-content">
 <div class="table-row">
     <div class="rank">۱۱</div>
     <div class="player-name">Sama salehi</div>
-    <div class="player-score">۴۲</div>
+    <div class="player-score">۴۴</div>
 </div>
 
 <div class="table-row">
@@ -1589,7 +1681,7 @@ class="tab-content">
 <div class="table-row">
     <div class="rank">۱۳</div>
     <div class="player-name">مهدی</div>
-    <div class="player-score">۲۶</div>
+    <div class="player-score">۲۹</div>
 </div>
 
 
@@ -1730,19 +1822,23 @@ function switchTab(
 
 
 /* =====================================================
-   MATCH DATES & COUNTDOWN
-   Tonight: 4 October 2026 at 22:15 Iran Time (18:45 UTC)
+   MATCH DATES & COUNTDOWN (Iran Time / UTC+3:30)
+   Saturday 18 Mehr 1405 = 10 October 2026
+   Sunday 19 Mehr 1405 = 11 October 2026
 ===================================================== */
 
 const MATCHES = {
-
-    m1: {
-        dateUTC: Date.UTC(2026, 9, 4, 18, 45, 0)
-    },
-    m2: {
-        dateUTC: Date.UTC(2026, 9, 4, 18, 45, 0)
-    }
-
+    // شنبه ۱۸ مهر ۱۴۰۵
+    m1: { dateUTC: Date.UTC(2026, 9, 10, 11, 30, 0) }, // 15:00 Iran (UTC+3:30 -> 11:30 UTC) - Leeds vs Arsenal
+    m2: { dateUTC: Date.UTC(2026, 9, 10, 14, 0, 0) },  // 17:30 Iran -> 14:00 UTC - Chelsea vs Bournemouth
+    m3: { dateUTC: Date.UTC(2026, 9, 10, 14, 0, 0) },  // 17:30 Iran -> 14:00 UTC - Aston Villa vs Brentford
+    m4: { dateUTC: Date.UTC(2026, 9, 10, 16, 30, 0) }, // 20:00 Iran -> 16:30 UTC - Chelsea vs Tottenham
+    m5: { dateUTC: Date.UTC(2026, 9, 10, 16, 30, 0) }, // 20:00 Iran -> 16:30 UTC - Getafe vs Barcelona
+    m6: { dateUTC: Date.UTC(2026, 9, 10, 19, 0, 0) },  // 22:30 Iran -> 19:00 UTC - Real Madrid vs Villarreal
+    
+    // یکشنبه ۱۹ مهر ۱۴۰۵
+    m7: { dateUTC: Date.UTC(2026, 9, 11, 10, 30, 0) }, // 14:00 Iran -> 10:30 UTC - Roma vs Como
+    m8: { dateUTC: Date.UTC(2026, 9, 11, 15, 30, 0) }  // 19:00 Iran -> 15:30 UTC - Man City vs Liverpool
 };
 
 
